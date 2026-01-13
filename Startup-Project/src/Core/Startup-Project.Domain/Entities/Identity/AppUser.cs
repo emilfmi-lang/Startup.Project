@@ -1,5 +1,13 @@
-﻿namespace Startup_Project.Domain.Entities.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 
-public class AppUser
+namespace Startup_Project.Domain.Entities.Identity;
+
+public class AppUser:IdentityUser<Guid>
 {
+    public string FullName { get;private set; } = null!;
+    private AppUser() { }
+    public AppUser(string fullName)
+    {
+        FullName = fullName;
+    }
 }

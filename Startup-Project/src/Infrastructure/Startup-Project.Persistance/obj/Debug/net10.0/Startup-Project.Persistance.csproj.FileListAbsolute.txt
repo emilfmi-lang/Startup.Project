@@ -10,3 +10,9 @@ C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Infrastructure\Startup
 C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Infrastructure\Startup-Project.Persistance\obj\Debug\net10.0\refint\Startup-Project.Persistance.dll
 C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Infrastructure\Startup-Project.Persistance\obj\Debug\net10.0\Startup-Project.Persistance.pdb
 C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Infrastructure\Startup-Project.Persistance\obj\Debug\net10.0\ref\Startup-Project.Persistance.dll
+C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Infrastructure\Startup-Project.Persistance\bin\Debug\net10.0\Startup-Project.Application.dll
+C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Infrastructure\Startup-Project.Persistance\bin\Debug\net10.0\Startup-Project.Domain.dll
+C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Infrastructure\Startup-Project.Persistance\bin\Debug\net10.0\Startup-Project.Application.pdb
+C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Infrastructure\Startup-Project.Persistance\bin\Debug\net10.0\Startup-Project.Domain.pdb
+C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Infrastructure\Startup-Project.Persistance\obj\Debug\net10.0\Startup-Project.Persistance.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Infrastructure\Startup-Project.Persistance\obj\Debug\net10.0\Startup-.D3C5497F.Up2Date
