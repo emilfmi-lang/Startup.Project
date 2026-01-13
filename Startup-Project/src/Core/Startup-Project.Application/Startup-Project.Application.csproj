@@ -8,8 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Services\Interfaces\" />
-    <Folder Include="Services\Concretes\" />
+    <Folder Include="Services\Subscriptions\" />
+    <Folder Include="Services\Packages\" />
+    <Folder Include="Services\Gyms\" />
   </ItemGroup>
 
   <ItemGroup>
