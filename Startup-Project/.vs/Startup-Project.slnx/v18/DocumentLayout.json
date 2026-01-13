@@ -3,16 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AD773E88-F03D-1A3F-FD06-6E6FFAE722E4}|src\\Core\\Startup-Project.Domain\\Startup-Project.Domain.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.domain\\entities\\identity\\approle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD773E88-F03D-1A3F-FD06-6E6FFAE722E4}|src\\Core\\Startup-Project.Domain\\Startup-Project.Domain.csproj|solutionrelative:src\\core\\startup-project.domain\\entities\\identity\\approle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7B1964D5-45F3-0B52-56F2-9456F0B7BE8C}|src\\Infrastructure\\Startup-Project.Persistance\\Startup-Project.Persistance.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\infrastructure\\startup-project.persistance\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B1964D5-45F3-0B52-56F2-9456F0B7BE8C}|src\\Infrastructure\\Startup-Project.Persistance\\Startup-Project.Persistance.csproj|solutionrelative:src\\infrastructure\\startup-project.persistance\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B1964D5-45F3-0B52-56F2-9456F0B7BE8C}|src\\Infrastructure\\Startup-Project.Persistance\\Startup-Project.Persistance.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\infrastructure\\startup-project.persistance\\startup-project.persistance.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{7B1964D5-45F3-0B52-56F2-9456F0B7BE8C}|src\\Infrastructure\\Startup-Project.Persistance\\Startup-Project.Persistance.csproj|solutionrelative:src\\infrastructure\\startup-project.persistance\\startup-project.persistance.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\interfaces\\iapplicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\interfaces\\iapplicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\startup-project.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\startup-project.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\dtos\\account\\userlogindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\dtos\\account\\userlogindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\dtos\\account\\userregisterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\dtos\\account\\userregisterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AD773E88-F03D-1A3F-FD06-6E6FFAE722E4}|src\\Core\\Startup-Project.Domain\\Startup-Project.Domain.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.domain\\entities\\identity\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AD773E88-F03D-1A3F-FD06-6E6FFAE722E4}|src\\Core\\Startup-Project.Domain\\Startup-Project.Domain.csproj|solutionrelative:src\\core\\startup-project.domain\\entities\\identity\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\startup-project.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\startup-project.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{AD773E88-F03D-1A3F-FD06-6E6FFAE722E4}|src\\Core\\Startup-Project.Domain\\Startup-Project.Domain.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.domain\\entities\\identity\\approle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD773E88-F03D-1A3F-FD06-6E6FFAE722E4}|src\\Core\\Startup-Project.Domain\\Startup-Project.Domain.csproj|solutionrelative:src\\core\\startup-project.domain\\entities\\identity\\approle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AD773E88-F03D-1A3F-FD06-6E6FFAE722E4}|src\\Core\\Startup-Project.Domain\\Startup-Project.Domain.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.domain\\entities\\common\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -30,24 +50,76 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AppRole.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Entities\\Identity\\AppRole.cs",
-              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Domain\\Entities\\Identity\\AppRole.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Entities\\Identity\\AppRole.cs",
-              "RelativeToolTip": "src\\Core\\Startup-Project.Domain\\Entities\\Identity\\AppRole.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-13T12:21:31.512Z",
+              "DocumentIndex": 1,
+              "Title": "Startup-Project.Persistance",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Persistance\\Startup-Project.Persistance.csproj",
+              "RelativeDocumentMoniker": "src\\Infrastructure\\Startup-Project.Persistance\\Startup-Project.Persistance.csproj",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Persistance\\Startup-Project.Persistance.csproj",
+              "RelativeToolTip": "src\\Infrastructure\\Startup-Project.Persistance\\Startup-Project.Persistance.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-01-13T12:38:37.792Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Persistance\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "src\\Infrastructure\\Startup-Project.Persistance\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Persistance\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "src\\Infrastructure\\Startup-Project.Persistance\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-13T12:38:45.431Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Interfaces\\IApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Interfaces\\IApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Interfaces\\IApplicationDbContext.cs",
+              "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Interfaces\\IApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-13T12:32:59.595Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UserRegisterDto.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Dtos\\Account\\UserRegisterDto.cs",
+              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Dtos\\Account\\UserRegisterDto.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Dtos\\Account\\UserRegisterDto.cs",
+              "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Dtos\\Account\\UserRegisterDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-13T12:28:28.277Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UserLoginDto.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Dtos\\Account\\UserLoginDto.cs",
+              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Dtos\\Account\\UserLoginDto.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Dtos\\Account\\UserLoginDto.cs",
+              "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Dtos\\Account\\UserLoginDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-13T12:28:13.106Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "AppUser.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Entities\\Identity\\AppUser.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Domain\\Entities\\Identity\\AppUser.cs",
@@ -60,20 +132,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Startup-Project.Application",
+              "DocumentIndex": 3,
+              "Title": "Startup-Project.Application.csproj",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj",
               "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj",
               "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2026-01-13T12:17:26.064Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
+              "Title": "AppRole.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Entities\\Identity\\AppRole.cs",
+              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Domain\\Entities\\Identity\\AppRole.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Entities\\Identity\\AppRole.cs",
+              "RelativeToolTip": "src\\Core\\Startup-Project.Domain\\Entities\\Identity\\AppRole.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-13T12:21:31.512Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "BaseEntity.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Entities\\Common\\BaseEntity.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Domain\\Entities\\Common\\BaseEntity.cs",
@@ -86,7 +171,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
               "Title": "Startup-Project.Domain.csproj",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Startup-Project.Domain.csproj",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Domain\\Startup-Project.Domain.csproj",
