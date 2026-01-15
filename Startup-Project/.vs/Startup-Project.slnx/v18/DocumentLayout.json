@@ -3,12 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\mappings\\packages\\packageprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\mappings\\packages\\packageprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\validators\\packages\\createpackagerequestvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\validators\\packages\\createpackagerequestvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\mappings\\subscriptions\\subscriptionprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\mappings\\subscriptions\\subscriptionprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\dtos\\packages\\createpackagerequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\dtos\\packages\\createpackagerequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B1964D5-45F3-0B52-56F2-9456F0B7BE8C}|src\\Infrastructure\\Startup-Project.Persistance\\Startup-Project.Persistance.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\infrastructure\\startup-project.persistance\\repositories\\concretes\\gyms\\gymrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B1964D5-45F3-0B52-56F2-9456F0B7BE8C}|src\\Infrastructure\\Startup-Project.Persistance\\Startup-Project.Persistance.csproj|solutionrelative:src\\infrastructure\\startup-project.persistance\\repositories\\concretes\\gyms\\gymrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\dtos\\gymdtos\\creategymrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\dtos\\gymdtos\\creategymrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD773E88-F03D-1A3F-FD06-6E6FFAE722E4}|src\\Core\\Startup-Project.Domain\\Startup-Project.Domain.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.domain\\entities\\gym.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD773E88-F03D-1A3F-FD06-6E6FFAE722E4}|src\\Core\\Startup-Project.Domain\\Startup-Project.Domain.csproj|solutionrelative:src\\core\\startup-project.domain\\entities\\gym.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\usecases\\gyms\\creategymusecase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -19,8 +31,16 @@
       "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\usecases\\packages\\createpackageusecase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AD773E88-F03D-1A3F-FD06-6E6FFAE722E4}|src\\Core\\Startup-Project.Domain\\Startup-Project.Domain.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.domain\\entities\\gym.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD773E88-F03D-1A3F-FD06-6E6FFAE722E4}|src\\Core\\Startup-Project.Domain\\Startup-Project.Domain.csproj|solutionrelative:src\\core\\startup-project.domain\\entities\\gym.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7B1964D5-45F3-0B52-56F2-9456F0B7BE8C}|src\\Infrastructure\\Startup-Project.Persistance\\Startup-Project.Persistance.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\infrastructure\\startup-project.persistance\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B1964D5-45F3-0B52-56F2-9456F0B7BE8C}|src\\Infrastructure\\Startup-Project.Persistance\\Startup-Project.Persistance.csproj|solutionrelative:src\\infrastructure\\startup-project.persistance\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\mappings\\packages\\packageprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\mappings\\packages\\packageprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\mappings\\subscriptions\\subscriptionprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\mappings\\subscriptions\\subscriptionprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\mappings\\gyms\\gymprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -31,24 +51,12 @@
       "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\startup-project.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\dtos\\gymdtos\\creategymrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\dtos\\gymdtos\\creategymrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7B1964D5-45F3-0B52-56F2-9456F0B7BE8C}|src\\Infrastructure\\Startup-Project.Persistance\\Startup-Project.Persistance.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\infrastructure\\startup-project.persistance\\startup-project.persistance.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{7B1964D5-45F3-0B52-56F2-9456F0B7BE8C}|src\\Infrastructure\\Startup-Project.Persistance\\Startup-Project.Persistance.csproj|solutionrelative:src\\infrastructure\\startup-project.persistance\\startup-project.persistance.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7B1964D5-45F3-0B52-56F2-9456F0B7BE8C}|src\\Infrastructure\\Startup-Project.Persistance\\Startup-Project.Persistance.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\infrastructure\\startup-project.persistance\\repositories\\concretes\\gyms\\gymrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7B1964D5-45F3-0B52-56F2-9456F0B7BE8C}|src\\Infrastructure\\Startup-Project.Persistance\\Startup-Project.Persistance.csproj|solutionrelative:src\\infrastructure\\startup-project.persistance\\repositories\\concretes\\gyms\\gymrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\interfaces\\igymrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\interfaces\\igymrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7B1964D5-45F3-0B52-56F2-9456F0B7BE8C}|src\\Infrastructure\\Startup-Project.Persistance\\Startup-Project.Persistance.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\infrastructure\\startup-project.persistance\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7B1964D5-45F3-0B52-56F2-9456F0B7BE8C}|src\\Infrastructure\\Startup-Project.Persistance\\Startup-Project.Persistance.csproj|solutionrelative:src\\infrastructure\\startup-project.persistance\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\validators\\gym\\creategymrequestvalidator .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -75,10 +83,6 @@
       "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\validators\\subscriptions\\createsubscriptionrequestvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\validators\\packages\\createpackagerequestvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\validators\\packages\\createpackagerequestvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\dtos\\subscriptions\\subscriptionresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\dtos\\subscriptions\\subscriptionresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -89,10 +93,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\dtos\\packages\\packageresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\dtos\\packages\\packageresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\dtos\\packages\\createpackagerequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\dtos\\packages\\createpackagerequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AD773E88-F03D-1A3F-FD06-6E6FFAE722E4}|src\\Core\\Startup-Project.Domain\\Startup-Project.Domain.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.domain\\entities\\subscription.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -134,41 +134,42 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "SubscriptionProfile.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Mappings\\Subscriptions\\SubscriptionProfile.cs",
-              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Mappings\\Subscriptions\\SubscriptionProfile.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Mappings\\Subscriptions\\SubscriptionProfile.cs",
-              "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Mappings\\Subscriptions\\SubscriptionProfile.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "GymRepository.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Persistance\\Repositories\\Concretes\\Gyms\\GymRepository.cs",
+              "RelativeDocumentMoniker": "src\\Infrastructure\\Startup-Project.Persistance\\Repositories\\Concretes\\Gyms\\GymRepository.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Persistance\\Repositories\\Concretes\\Gyms\\GymRepository.cs",
+              "RelativeToolTip": "src\\Infrastructure\\Startup-Project.Persistance\\Repositories\\Concretes\\Gyms\\GymRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-13T18:56:31.989Z",
+              "WhenOpened": "2026-01-13T16:47:30.717Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "CreateGymUseCase.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\UseCases\\Gyms\\CreateGymUseCase.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\UseCases\\Gyms\\CreateGymUseCase.cs",
               "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\UseCases\\Gyms\\CreateGymUseCase.cs",
               "RelativeToolTip": "src\\Core\\Startup-Project.Application\\UseCases\\Gyms\\CreateGymUseCase.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-13T16:34:20.681Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 3,
               "Title": "CreateGymRequestDto.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Dtos\\GymDtos\\CreateGymRequestDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Dtos\\GymDtos\\CreateGymRequestDto.cs",
               "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Dtos\\GymDtos\\CreateGymRequestDto.cs",
               "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Dtos\\GymDtos\\CreateGymRequestDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-13T16:03:08.43Z"
+              "WhenOpened": "2026-01-13T16:03:08.43Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -178,14 +179,40 @@
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Domain\\Entities\\Gym.cs",
               "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Entities\\Gym.cs",
               "RelativeToolTip": "src\\Core\\Startup-Project.Domain\\Entities\\Gym.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAA5wBUAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAqwAsAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-13T15:41:38.854Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
+              "Title": "CreatePackageRequestDto.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Dtos\\Packages\\CreatePackageRequestDto.cs",
+              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Dtos\\Packages\\CreatePackageRequestDto.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Dtos\\Packages\\CreatePackageRequestDto.cs",
+              "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Dtos\\Packages\\CreatePackageRequestDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-13T16:11:29.248Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CreatePackageRequestValidator.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Validators\\Packages\\CreatePackageRequestValidator.cs",
+              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Validators\\Packages\\CreatePackageRequestValidator.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Validators\\Packages\\CreatePackageRequestValidator.cs",
+              "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Validators\\Packages\\CreatePackageRequestValidator.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-13T16:13:00.38Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "CreatePackageUseCase.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\UseCases\\Packages\\CreatePackageUseCase.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\UseCases\\Packages\\CreatePackageUseCase.cs",
@@ -198,7 +225,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Persistance\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "src\\Infrastructure\\Startup-Project.Persistance\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Persistance\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "src\\Infrastructure\\Startup-Project.Persistance\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-13T12:38:45.431Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "PackageProfile.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Mappings\\Packages\\PackageProfile.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Mappings\\Packages\\PackageProfile.cs",
@@ -211,7 +251,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
+              "Title": "SubscriptionProfile.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Mappings\\Subscriptions\\SubscriptionProfile.cs",
+              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Mappings\\Subscriptions\\SubscriptionProfile.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Mappings\\Subscriptions\\SubscriptionProfile.cs",
+              "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Mappings\\Subscriptions\\SubscriptionProfile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-13T18:56:31.989Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "Startup-Project.Persistance.csproj",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Persistance\\Startup-Project.Persistance.csproj",
               "RelativeDocumentMoniker": "src\\Infrastructure\\Startup-Project.Persistance\\Startup-Project.Persistance.csproj",
@@ -223,7 +275,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 10,
               "Title": "GymProfile.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Mappings\\Gyms\\GymProfile.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Mappings\\Gyms\\GymProfile.cs",
@@ -235,7 +287,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 11,
               "Title": "Startup-Project.Application.csproj",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj",
@@ -247,19 +299,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "GymRepository.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Persistance\\Repositories\\Concretes\\Gyms\\GymRepository.cs",
-              "RelativeDocumentMoniker": "src\\Infrastructure\\Startup-Project.Persistance\\Repositories\\Concretes\\Gyms\\GymRepository.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Persistance\\Repositories\\Concretes\\Gyms\\GymRepository.cs",
-              "RelativeToolTip": "src\\Infrastructure\\Startup-Project.Persistance\\Repositories\\Concretes\\Gyms\\GymRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-13T16:47:30.717Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "IGymRepository.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Interfaces\\IGymRepository.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Interfaces\\IGymRepository.cs",
@@ -271,19 +311,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Persistance\\Data\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "src\\Infrastructure\\Startup-Project.Persistance\\Data\\ApplicationDbContext.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Persistance\\Data\\ApplicationDbContext.cs",
-              "RelativeToolTip": "src\\Infrastructure\\Startup-Project.Persistance\\Data\\ApplicationDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAgAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-13T12:38:45.431Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "CreateGymRequestValidator .cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Validators\\Gym\\CreateGymRequestValidator .cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Validators\\Gym\\CreateGymRequestValidator .cs",
@@ -295,7 +323,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "CreateSubscriptionUseCase.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\UseCases\\Subscriptions\\CreateSubscriptionUseCase.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\UseCases\\Subscriptions\\CreateSubscriptionUseCase.cs",
@@ -307,7 +335,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "IApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Interfaces\\IApplicationDbContext.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Interfaces\\IApplicationDbContext.cs",
@@ -319,7 +347,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "PersistenceServiceRegistration.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Persistance\\PersistenceServiceRegistration.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\Startup-Project.Persistance\\PersistenceServiceRegistration.cs",
@@ -331,7 +359,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "GymResponseDto.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Dtos\\GymDtos\\GymResponseDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Dtos\\GymDtos\\GymResponseDto.cs",
@@ -343,7 +371,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "CreateSubscriptionRequestValidator.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Validators\\Subscriptions\\CreateSubscriptionRequestValidator.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Validators\\Subscriptions\\CreateSubscriptionRequestValidator.cs",
@@ -355,19 +383,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "CreatePackageRequestValidator.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Validators\\Packages\\CreatePackageRequestValidator.cs",
-              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Validators\\Packages\\CreatePackageRequestValidator.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Validators\\Packages\\CreatePackageRequestValidator.cs",
-              "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Validators\\Packages\\CreatePackageRequestValidator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-13T16:13:00.38Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "SubscriptionResponseDto.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Dtos\\Subscriptions\\SubscriptionResponseDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Dtos\\Subscriptions\\SubscriptionResponseDto.cs",
@@ -379,7 +395,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "CreateSubscriptionRequestDto.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Dtos\\Subscriptions\\CreateSubscriptionRequestDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Dtos\\Subscriptions\\CreateSubscriptionRequestDto.cs",
@@ -391,7 +407,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "PackageResponseDto.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Dtos\\Packages\\PackageResponseDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Dtos\\Packages\\PackageResponseDto.cs",
@@ -400,18 +416,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-13T16:11:40.189Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "CreatePackageRequestDto.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Dtos\\Packages\\CreatePackageRequestDto.cs",
-              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Dtos\\Packages\\CreatePackageRequestDto.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Dtos\\Packages\\CreatePackageRequestDto.cs",
-              "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Dtos\\Packages\\CreatePackageRequestDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-13T16:11:29.248Z"
             },
             {
               "$type": "Document",
