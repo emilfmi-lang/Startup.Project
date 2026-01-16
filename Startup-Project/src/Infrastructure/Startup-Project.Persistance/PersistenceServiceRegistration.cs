@@ -1,6 +1,21 @@
 ﻿
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Startup_Project.Application.Interfaces;
+using Startup_Project.Persistance.Data;
+
 namespace Startup_Project.Persistance;
 
-public class PersistenceServiceRegistration
+public static class PersistenceServiceRegistration
 {
+    extension(IServiceCollection services)
+    {
+        public void AddPersistanceServices(IConfiguration configuration)
+        {
+            services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+            services.AddScoped<IApplicationDbContext, ApplicationDbContext>();
+        }
+    }
 }
