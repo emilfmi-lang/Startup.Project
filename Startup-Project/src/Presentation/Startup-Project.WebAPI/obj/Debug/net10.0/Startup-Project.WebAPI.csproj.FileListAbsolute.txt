@@ -167,3 +167,7 @@ C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-P
 C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI\bin\Debug\net10.0\Startup-Project.Application.pdb
 C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI\bin\Debug\net10.0\Startup-Project.Domain.pdb
 C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI\obj\Debug\net10.0\Startup-Project.WebAPI.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI\bin\Debug\net10.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI\bin\Debug\net10.0\Microsoft.OpenApi.dll
+C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI\bin\Debug\net10.0\Scalar.AspNetCore.dll
+C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI\obj\Debug\net10.0\Startup-Project.WebAPI.MvcApplicationPartsAssemblyInfo.cs
