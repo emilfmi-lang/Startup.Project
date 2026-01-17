@@ -14,4 +14,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Infrastructure\Startup-Project.Infrastructure\Startup-Project.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\Startup-Project.Persistance\Startup-Project.Persistance.csproj" />
+  </ItemGroup>
+
 </Project>

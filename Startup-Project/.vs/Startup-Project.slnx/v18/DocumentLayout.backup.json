@@ -3,6 +3,26 @@
   "WorkspaceRootPath": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{7B1964D5-45F3-0B52-56F2-9456F0B7BE8C}|src\\Infrastructure\\Startup-Project.Persistance\\Startup-Project.Persistance.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\infrastructure\\startup-project.persistance\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B1964D5-45F3-0B52-56F2-9456F0B7BE8C}|src\\Infrastructure\\Startup-Project.Persistance\\Startup-Project.Persistance.csproj|solutionrelative:src\\infrastructure\\startup-project.persistance\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\interfaces\\iapplicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\interfaces\\iapplicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B1964D5-45F3-0B52-56F2-9456F0B7BE8C}|src\\Infrastructure\\Startup-Project.Persistance\\Startup-Project.Persistance.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\infrastructure\\startup-project.persistance\\persistenceserviceregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B1964D5-45F3-0B52-56F2-9456F0B7BE8C}|src\\Infrastructure\\Startup-Project.Persistance\\Startup-Project.Persistance.csproj|solutionrelative:src\\infrastructure\\startup-project.persistance\\persistenceserviceregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42118A8D-BC21-8554-454A-CEDC6F4DF82B}|src\\Presentation\\Startup-Project.WebAPI\\Startup-Project.WebAPI.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\presentation\\startup-project.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42118A8D-BC21-8554-454A-CEDC6F4DF82B}|src\\Presentation\\Startup-Project.WebAPI\\Startup-Project.WebAPI.csproj|solutionrelative:src\\presentation\\startup-project.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{AD773E88-F03D-1A3F-FD06-6E6FFAE722E4}|src\\Core\\Startup-Project.Domain\\Startup-Project.Domain.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.domain\\exceptions\\usernotfoundexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AD773E88-F03D-1A3F-FD06-6E6FFAE722E4}|src\\Core\\Startup-Project.Domain\\Startup-Project.Domain.csproj|solutionrelative:src\\core\\startup-project.domain\\exceptions\\usernotfoundexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -31,32 +51,12 @@
       "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\dtos\\subscriptions\\createsubscriptionrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{42118A8D-BC21-8554-454A-CEDC6F4DF82B}|src\\Presentation\\Startup-Project.WebAPI\\Startup-Project.WebAPI.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\presentation\\startup-project.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{42118A8D-BC21-8554-454A-CEDC6F4DF82B}|src\\Presentation\\Startup-Project.WebAPI\\Startup-Project.WebAPI.csproj|solutionrelative:src\\presentation\\startup-project.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7B1964D5-45F3-0B52-56F2-9456F0B7BE8C}|src\\Infrastructure\\Startup-Project.Persistance\\Startup-Project.Persistance.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\infrastructure\\startup-project.persistance\\persistenceserviceregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7B1964D5-45F3-0B52-56F2-9456F0B7BE8C}|src\\Infrastructure\\Startup-Project.Persistance\\Startup-Project.Persistance.csproj|solutionrelative:src\\infrastructure\\startup-project.persistance\\persistenceserviceregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{42118A8D-BC21-8554-454A-CEDC6F4DF82B}|src\\Presentation\\Startup-Project.WebAPI\\Startup-Project.WebAPI.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\presentation\\startup-project.webapi\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{42118A8D-BC21-8554-454A-CEDC6F4DF82B}|src\\Presentation\\Startup-Project.WebAPI\\Startup-Project.WebAPI.csproj|solutionrelative:src\\presentation\\startup-project.webapi\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\usecases\\gyms\\creategymusecase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\usecases\\gyms\\creategymusecase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\dtos\\packages\\createpackagerequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\dtos\\packages\\createpackagerequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7B1964D5-45F3-0B52-56F2-9456F0B7BE8C}|src\\Infrastructure\\Startup-Project.Persistance\\Startup-Project.Persistance.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\infrastructure\\startup-project.persistance\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7B1964D5-45F3-0B52-56F2-9456F0B7BE8C}|src\\Infrastructure\\Startup-Project.Persistance\\Startup-Project.Persistance.csproj|solutionrelative:src\\infrastructure\\startup-project.persistance\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AD773E88-F03D-1A3F-FD06-6E6FFAE722E4}|src\\Core\\Startup-Project.Domain\\Startup-Project.Domain.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.domain\\entities\\identity\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -69,10 +69,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{AD773E88-F03D-1A3F-FD06-6E6FFAE722E4}|src\\Core\\Startup-Project.Domain\\Startup-Project.Domain.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.domain\\startup-project.domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{AD773E88-F03D-1A3F-FD06-6E6FFAE722E4}|src\\Core\\Startup-Project.Domain\\Startup-Project.Domain.csproj|solutionrelative:src\\core\\startup-project.domain\\startup-project.domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\interfaces\\iapplicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\interfaces\\iapplicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{42118A8D-BC21-8554-454A-CEDC6F4DF82B}|src\\Presentation\\Startup-Project.WebAPI\\Startup-Project.WebAPI.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\presentation\\startup-project.webapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -107,10 +103,6 @@
       "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\dtos\\gymdtos\\gymresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\usecases\\packages\\createpackageusecase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\usecases\\packages\\createpackageusecase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\validators\\packages\\createpackagerequestvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\validators\\packages\\createpackagerequestvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -121,10 +113,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\mappings\\subscriptions\\subscriptionprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\mappings\\subscriptions\\subscriptionprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\usecases\\subscriptions\\createsubscriptionusecase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\usecases\\subscriptions\\createsubscriptionusecase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\validators\\subscriptions\\createsubscriptionrequestvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -162,75 +150,89 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Presentation\\Startup-Project.WebAPI\\Program.cs",
+              "RelativeDocumentMoniker": "src\\Presentation\\Startup-Project.WebAPI\\Program.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Presentation\\Startup-Project.WebAPI\\Program.cs",
+              "RelativeToolTip": "src\\Presentation\\Startup-Project.WebAPI\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-16T07:53:00.251Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DependencyInjection.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\DependencyInjection.cs",
+              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\DependencyInjection.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\DependencyInjection.cs",
+              "RelativeToolTip": "src\\Core\\Startup-Project.Application\\DependencyInjection.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA8AAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-16T07:28:28.227Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PersistenceServiceRegistration.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Persistance\\PersistenceServiceRegistration.cs",
+              "RelativeDocumentMoniker": "src\\Infrastructure\\Startup-Project.Persistance\\PersistenceServiceRegistration.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Persistance\\PersistenceServiceRegistration.cs",
+              "RelativeToolTip": "src\\Infrastructure\\Startup-Project.Persistance\\PersistenceServiceRegistration.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-13T16:26:09.693Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Persistance\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "src\\Infrastructure\\Startup-Project.Persistance\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Persistance\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "src\\Infrastructure\\Startup-Project.Persistance\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAuwAwAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-13T12:38:45.431Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Interfaces\\IApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Interfaces\\IApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Interfaces\\IApplicationDbContext.cs",
+              "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Interfaces\\IApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAkAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-13T12:32:59.595Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "UserNotFoundException.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Exceptions\\UserNotFoundException.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Domain\\Exceptions\\UserNotFoundException.cs",
               "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Exceptions\\UserNotFoundException.cs",
               "RelativeToolTip": "src\\Core\\Startup-Project.Domain\\Exceptions\\UserNotFoundException.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-16T14:47:46.773Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "CreateSubscriptionRequestDto.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Dtos\\Subscriptions\\CreateSubscriptionRequestDto.cs",
-              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Dtos\\Subscriptions\\CreateSubscriptionRequestDto.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Dtos\\Subscriptions\\CreateSubscriptionRequestDto.cs",
-              "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Dtos\\Subscriptions\\CreateSubscriptionRequestDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-13T16:11:55.484Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CreateGymRequestValidator .cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Validators\\Gym\\CreateGymRequestValidator .cs",
-              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Validators\\Gym\\CreateGymRequestValidator .cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Validators\\Gym\\CreateGymRequestValidator .cs",
-              "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Validators\\Gym\\CreateGymRequestValidator .cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAqwAEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-13T16:04:20.628Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "GymRepository.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Persistance\\Repositories\\Gyms\\GymRepository.cs",
-              "RelativeDocumentMoniker": "src\\Infrastructure\\Startup-Project.Persistance\\Repositories\\Gyms\\GymRepository.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Persistance\\Repositories\\Gyms\\GymRepository.cs",
-              "RelativeToolTip": "src\\Infrastructure\\Startup-Project.Persistance\\Repositories\\Gyms\\GymRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-16T05:59:48.265Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "IGymRepository.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Repositories\\IGymRepository.cs",
-              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Domain\\Repositories\\IGymRepository.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Repositories\\IGymRepository.cs",
-              "RelativeToolTip": "src\\Core\\Startup-Project.Domain\\Repositories\\IGymRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-16T05:53:55.213Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
               "Title": "IRepository.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Repositories\\IRepository.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Domain\\Repositories\\IRepository.cs",
@@ -243,7 +245,59 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
+              "Title": "IGymRepository.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Repositories\\IGymRepository.cs",
+              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Domain\\Repositories\\IGymRepository.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Repositories\\IGymRepository.cs",
+              "RelativeToolTip": "src\\Core\\Startup-Project.Domain\\Repositories\\IGymRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-16T05:53:55.213Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "GymRepository.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Persistance\\Repositories\\Gyms\\GymRepository.cs",
+              "RelativeDocumentMoniker": "src\\Infrastructure\\Startup-Project.Persistance\\Repositories\\Gyms\\GymRepository.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Persistance\\Repositories\\Gyms\\GymRepository.cs",
+              "RelativeToolTip": "src\\Infrastructure\\Startup-Project.Persistance\\Repositories\\Gyms\\GymRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-16T05:59:48.265Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CreateGymRequestValidator .cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Validators\\Gym\\CreateGymRequestValidator .cs",
+              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Validators\\Gym\\CreateGymRequestValidator .cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Validators\\Gym\\CreateGymRequestValidator .cs",
+              "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Validators\\Gym\\CreateGymRequestValidator .cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAqwAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-13T16:04:20.628Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "CreateSubscriptionRequestDto.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Dtos\\Subscriptions\\CreateSubscriptionRequestDto.cs",
+              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Dtos\\Subscriptions\\CreateSubscriptionRequestDto.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Dtos\\Subscriptions\\CreateSubscriptionRequestDto.cs",
+              "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Dtos\\Subscriptions\\CreateSubscriptionRequestDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-13T16:11:55.484Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "BusinessException.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Exceptions\\BusinessException.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Domain\\Exceptions\\BusinessException.cs",
@@ -256,19 +310,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Persistance\\Data\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "src\\Infrastructure\\Startup-Project.Persistance\\Data\\ApplicationDbContext.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Persistance\\Data\\ApplicationDbContext.cs",
-              "RelativeToolTip": "src\\Infrastructure\\Startup-Project.Persistance\\Data\\ApplicationDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-13T12:38:45.431Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Presentation\\Startup-Project.WebAPI\\appsettings.Development.json",
               "RelativeDocumentMoniker": "src\\Presentation\\Startup-Project.WebAPI\\appsettings.Development.json",
@@ -276,47 +318,12 @@
               "RelativeToolTip": "src\\Presentation\\Startup-Project.WebAPI\\appsettings.Development.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-01-16T07:57:31.41Z"
+              "WhenOpened": "2026-01-16T07:57:31.41Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Presentation\\Startup-Project.WebAPI\\Program.cs",
-              "RelativeDocumentMoniker": "src\\Presentation\\Startup-Project.WebAPI\\Program.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Presentation\\Startup-Project.WebAPI\\Program.cs",
-              "RelativeToolTip": "src\\Presentation\\Startup-Project.WebAPI\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-16T07:53:00.251Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "DependencyInjection.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\DependencyInjection.cs",
-              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\DependencyInjection.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\DependencyInjection.cs",
-              "RelativeToolTip": "src\\Core\\Startup-Project.Application\\DependencyInjection.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAoAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-16T07:28:28.227Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "PersistenceServiceRegistration.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Persistance\\PersistenceServiceRegistration.cs",
-              "RelativeDocumentMoniker": "src\\Infrastructure\\Startup-Project.Persistance\\PersistenceServiceRegistration.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Persistance\\PersistenceServiceRegistration.cs",
-              "RelativeToolTip": "src\\Infrastructure\\Startup-Project.Persistance\\PersistenceServiceRegistration.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-13T16:26:09.693Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "CreatePackageRequestDto.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Dtos\\Packages\\CreatePackageRequestDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Dtos\\Packages\\CreatePackageRequestDto.cs",
@@ -324,19 +331,8 @@
               "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Dtos\\Packages\\CreatePackageRequestDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-13T16:11:29.248Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "CreateGymUseCase.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\UseCases\\Gyms\\CreateGymUseCase.cs",
-              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\UseCases\\Gyms\\CreateGymUseCase.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\UseCases\\Gyms\\CreateGymUseCase.cs",
-              "RelativeToolTip": "src\\Core\\Startup-Project.Application\\UseCases\\Gyms\\CreateGymUseCase.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-13T16:34:20.681Z"
+              "WhenOpened": "2026-01-13T16:11:29.248Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -348,7 +344,8 @@
               "RelativeToolTip": "src\\Core\\Startup-Project.Domain\\Entities\\Identity\\AppUser.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-13T12:20:03.78Z"
+              "WhenOpened": "2026-01-13T12:20:03.78Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -360,7 +357,8 @@
               "RelativeToolTip": "src\\Core\\Startup-Project.Domain\\Entities\\Common\\BaseEntity.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-13T11:21:37.105Z"
+              "WhenOpened": "2026-01-13T11:21:37.105Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -372,11 +370,12 @@
               "RelativeToolTip": "src\\Core\\Startup-Project.Domain\\Startup-Project.Domain.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-01-13T11:20:56.788Z"
+              "WhenOpened": "2026-01-13T11:20:56.788Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 17,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Presentation\\Startup-Project.WebAPI\\appsettings.json",
               "RelativeDocumentMoniker": "src\\Presentation\\Startup-Project.WebAPI\\appsettings.json",
@@ -384,23 +383,12 @@
               "RelativeToolTip": "src\\Presentation\\Startup-Project.WebAPI\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-01-16T07:52:58.769Z"
+              "WhenOpened": "2026-01-16T07:52:58.769Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "IApplicationDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Interfaces\\IApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Interfaces\\IApplicationDbContext.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Interfaces\\IApplicationDbContext.cs",
-              "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Interfaces\\IApplicationDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAsAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-13T12:32:59.595Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 18,
               "Title": "Startup-Project.Application.csproj",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj",
@@ -408,11 +396,12 @@
               "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-01-13T12:17:26.064Z"
+              "WhenOpened": "2026-01-13T12:17:26.064Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 20,
               "Title": "GymProfile.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Mappings\\Gyms\\GymProfile.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Mappings\\Gyms\\GymProfile.cs",
@@ -420,11 +409,12 @@
               "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Mappings\\Gyms\\GymProfile.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABRAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-13T18:55:33.044Z"
+              "WhenOpened": "2026-01-13T18:55:33.044Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 19,
               "Title": "CreateGymRequestDto.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Dtos\\GymDtos\\CreateGymRequestDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Dtos\\GymDtos\\CreateGymRequestDto.cs",
@@ -432,11 +422,12 @@
               "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Dtos\\GymDtos\\CreateGymRequestDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-13T16:03:08.43Z"
+              "WhenOpened": "2026-01-13T16:03:08.43Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 21,
               "Title": "Startup-Project.Persistance.csproj",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Persistance\\Startup-Project.Persistance.csproj",
               "RelativeDocumentMoniker": "src\\Infrastructure\\Startup-Project.Persistance\\Startup-Project.Persistance.csproj",
@@ -444,11 +435,12 @@
               "RelativeToolTip": "src\\Infrastructure\\Startup-Project.Persistance\\Startup-Project.Persistance.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-01-13T12:38:37.792Z"
+              "WhenOpened": "2026-01-13T12:38:37.792Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 22,
               "Title": "Gym.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Entities\\Gym.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Domain\\Entities\\Gym.cs",
@@ -456,11 +448,12 @@
               "RelativeToolTip": "src\\Core\\Startup-Project.Domain\\Entities\\Gym.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-13T15:41:38.854Z"
+              "WhenOpened": "2026-01-13T15:41:38.854Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 24,
               "Title": "GymResponseDto.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Dtos\\GymDtos\\GymResponseDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Dtos\\GymDtos\\GymResponseDto.cs",
@@ -468,11 +461,12 @@
               "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Dtos\\GymDtos\\GymResponseDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-13T16:10:42.447Z"
+              "WhenOpened": "2026-01-13T16:10:42.447Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 23,
               "Title": "GymService.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Services\\Gyms\\GymService.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Services\\Gyms\\GymService.cs",
@@ -480,23 +474,12 @@
               "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Services\\Gyms\\GymService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-15T14:05:50.445Z"
+              "WhenOpened": "2026-01-15T14:05:50.445Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "CreatePackageUseCase.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\UseCases\\Packages\\CreatePackageUseCase.cs",
-              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\UseCases\\Packages\\CreatePackageUseCase.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\UseCases\\Packages\\CreatePackageUseCase.cs",
-              "RelativeToolTip": "src\\Core\\Startup-Project.Application\\UseCases\\Packages\\CreatePackageUseCase.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-13T16:34:50.471Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 25,
               "Title": "CreatePackageRequestValidator.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Validators\\Packages\\CreatePackageRequestValidator.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Validators\\Packages\\CreatePackageRequestValidator.cs",
@@ -504,11 +487,12 @@
               "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Validators\\Packages\\CreatePackageRequestValidator.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-13T16:13:00.38Z"
+              "WhenOpened": "2026-01-13T16:13:00.38Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 26,
               "Title": "PackageProfile.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Mappings\\Packages\\PackageProfile.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Mappings\\Packages\\PackageProfile.cs",
@@ -516,11 +500,12 @@
               "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Mappings\\Packages\\PackageProfile.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-13T18:56:00.876Z"
+              "WhenOpened": "2026-01-13T18:56:00.876Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 27,
               "Title": "SubscriptionProfile.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Mappings\\Subscriptions\\SubscriptionProfile.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Mappings\\Subscriptions\\SubscriptionProfile.cs",
@@ -528,23 +513,12 @@
               "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Mappings\\Subscriptions\\SubscriptionProfile.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-13T18:56:31.989Z"
+              "WhenOpened": "2026-01-13T18:56:31.989Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "CreateSubscriptionUseCase.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\UseCases\\Subscriptions\\CreateSubscriptionUseCase.cs",
-              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\UseCases\\Subscriptions\\CreateSubscriptionUseCase.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\UseCases\\Subscriptions\\CreateSubscriptionUseCase.cs",
-              "RelativeToolTip": "src\\Core\\Startup-Project.Application\\UseCases\\Subscriptions\\CreateSubscriptionUseCase.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-13T16:35:05.438Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 28,
               "Title": "CreateSubscriptionRequestValidator.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Validators\\Subscriptions\\CreateSubscriptionRequestValidator.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Validators\\Subscriptions\\CreateSubscriptionRequestValidator.cs",
@@ -552,11 +526,12 @@
               "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Validators\\Subscriptions\\CreateSubscriptionRequestValidator.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-13T16:13:40.823Z"
+              "WhenOpened": "2026-01-13T16:13:40.823Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 29,
               "Title": "SubscriptionResponseDto.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Dtos\\Subscriptions\\SubscriptionResponseDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Dtos\\Subscriptions\\SubscriptionResponseDto.cs",
@@ -564,11 +539,12 @@
               "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Dtos\\Subscriptions\\SubscriptionResponseDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-13T16:12:04.775Z"
+              "WhenOpened": "2026-01-13T16:12:04.775Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 30,
               "Title": "PackageResponseDto.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Dtos\\Packages\\PackageResponseDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Dtos\\Packages\\PackageResponseDto.cs",
@@ -576,11 +552,12 @@
               "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Dtos\\Packages\\PackageResponseDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-13T16:11:40.189Z"
+              "WhenOpened": "2026-01-13T16:11:40.189Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 31,
               "Title": "Subscription.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Entities\\Subscription.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Domain\\Entities\\Subscription.cs",
@@ -588,11 +565,12 @@
               "RelativeToolTip": "src\\Core\\Startup-Project.Domain\\Entities\\Subscription.cs",
               "ViewState": "AgIAABIAAAAAAAAAAAAIwAYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-13T15:46:02.213Z"
+              "WhenOpened": "2026-01-13T15:46:02.213Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 32,
               "Title": "Package .cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Entities\\Package .cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Domain\\Entities\\Package .cs",
@@ -600,11 +578,12 @@
               "RelativeToolTip": "src\\Core\\Startup-Project.Domain\\Entities\\Package .cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-13T15:44:09.366Z"
+              "WhenOpened": "2026-01-13T15:44:09.366Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 33,
               "Title": "UserLoginDto.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Dtos\\Account\\UserLoginDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Dtos\\Account\\UserLoginDto.cs",
@@ -612,11 +591,12 @@
               "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Dtos\\Account\\UserLoginDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-13T12:28:13.106Z"
+              "WhenOpened": "2026-01-13T12:28:13.106Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 34,
               "Title": "UserRegisterDto.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Dtos\\Account\\UserRegisterDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Dtos\\Account\\UserRegisterDto.cs",
@@ -624,7 +604,8 @@
               "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Dtos\\Account\\UserRegisterDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-13T12:28:28.277Z"
+              "WhenOpened": "2026-01-13T12:28:28.277Z",
+              "EditorCaption": ""
             }
           ]
         }
