@@ -1,8 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore.Diagnostics;
+﻿using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 using Startup_Project.Application.Mappings.Gyms;
-using System.Reflection;
-using FluentValidation;
 
 
 namespace Startup_Project.Application;
