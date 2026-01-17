@@ -7,7 +7,7 @@ using Startup_Project.Domain.Entities.Identity;
 
 namespace Startup_Project.Persistance.Data;
 
-public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : IdentityDbContext<AppUser,IdentityRole<Guid>,Guid>, IApplicationDbContext
+public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : IdentityDbContext<AppUser,IdentityRole<Guid>,Guid>(options), IApplicationDbContext
 {
     public DbSet<Gym> Gyms { get; set; }
     public DbSet<Subscription> Subscriptions { get; set; }

@@ -7,7 +7,7 @@ public class Gym:BaseEntity
 {
     public string Name { get;private set; } = null!;
     public string Address { get;private set; } = null!;
-    public Guid OnwerId { get;private set; }
+    public Guid OwnerId { get;private set; }
     public AppUser Owner { get;private set; } = null!;
     private Gym() { }
     public Gym(string name, string address, Guid ownerId)
@@ -16,7 +16,7 @@ public class Gym:BaseEntity
             throw new Exception("Gym name is required");
         Name = name;
         Address = address;
-        OnwerId = ownerId;
+        OwnerId = ownerId;
     }
     public void ChangeAdress(string address)
     {
