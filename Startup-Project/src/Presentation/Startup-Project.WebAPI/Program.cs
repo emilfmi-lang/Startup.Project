@@ -10,9 +10,11 @@ builder.Services.AddPersistanceServices(builder.Configuration);
 builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 var app = builder.Build();
-app.UseMiddleware<ExceptionHandlingMiddleware>();
+
 app.MapOpenApi();
 app.MapScalarApiReference();
+
+app.UseMiddleware<ExceptionHandlingMiddleware>();
 app.UseAuthorization();
 app.MapControllers();
 app.Run();
