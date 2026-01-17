@@ -2,11 +2,13 @@
 using Scalar.AspNetCore;
 using Startup_Project.Application;
 using Startup_Project.Persistance;
+using Startup_Project.Infrastructure;
 using Startup_Project.WebAPI.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddApplicationServices();
 builder.Services.AddPersistanceServices(builder.Configuration);
+builder.Services.AddInfrastructureServices(builder.Configuration);
 builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 var app = builder.Build();
