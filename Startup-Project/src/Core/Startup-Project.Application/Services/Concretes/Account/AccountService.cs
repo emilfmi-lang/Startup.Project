@@ -1,11 +1,10 @@
-﻿
-
-using AutoMapper;
+﻿using AutoMapper;
 using Microsoft.AspNetCore.Identity;
 using Startup_Project.Application.Abstractions.Services;
 using Startup_Project.Application.Dtos.Account;
 using Startup_Project.Application.Models;
 using Startup_Project.Application.Services.Interfaces;
+using Startup_Project.Application.Validators.Account;
 using Startup_Project.Domain.Entities.Identity;
 using Startup_Project.Domain.Exceptions;
 
@@ -30,14 +29,23 @@ public class AccountService(UserManager<AppUser> userManager,
 
     public async Task<ResponseModel<bool>> RegisterAsync(UserRegisterDto dto)
     {
+        var validator = new UserRegisterDtoValidator();
+        var validationResult = await validator.ValidateAsync(dto);
+
+        if (!validationResult.IsValid)
+        {
+            var errorMessages = validationResult.Errors.Select(e => e.ErrorMessage).ToList();
+            return ResponseModel<bool>.FailureResponse(errorMessages);
+        }
         var user = mapper.Map<AppUser>(dto);
-        var result  = await userManager.CreateAsync(user, dto.Password);
+        var result = await userManager.CreateAsync(user, dto.Password);
         if (!result.Succeeded)
         {
-            var errors = result.Errors.Select(e => e.Description).ToList();
-            return ResponseModel<bool>.FailureResponse(errors);
+            var identityErrors = result.Errors.Select(e => e.Description).ToList();
+            return ResponseModel<bool>.FailureResponse(identityErrors);
         }
         return ResponseModel<bool>.SuccessResponse(true);
+
     }
     
 }

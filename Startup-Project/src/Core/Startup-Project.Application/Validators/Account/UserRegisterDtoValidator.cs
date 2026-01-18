@@ -8,6 +8,7 @@ public class UserRegisterDtoValidator : AbstractValidator<UserRegisterDto>
     public UserRegisterDtoValidator()
     {
         RuleFor(x => x.Email)
+            .MinimumLength(5).WithMessage("Email ən az 5 simvol olmalıdır.")
             .NotEmpty().WithMessage("Email boş ola bilməz.")
             .EmailAddress().WithMessage("Düzgün email formatı daxil edin.");
 
@@ -23,6 +24,7 @@ public class UserRegisterDtoValidator : AbstractValidator<UserRegisterDto>
             .Equal(x => x.Password).WithMessage("Şifrələr üst-üstə düşmür.");
 
         RuleFor(x => x.FullName)
+            .MinimumLength(3).WithMessage("Ad və Soyad ən az 3 simvol olmalıdır.")
             .NotEmpty().WithMessage("Ad və Soyad qeyd edilməlidir.");
     }
 }

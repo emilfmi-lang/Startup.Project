@@ -3,24 +3,34 @@ using System.Text.Json;
 
 namespace Startup_Project.WebAPI.Middlewares;
 
-public class ExceptionHandlingMiddleware(RequestDelegate next)
+public class ExceptionHandlingMiddleware
 {
+    private readonly RequestDelegate _next;
+    private readonly ILogger<ExceptionHandlingMiddleware> _logger;
+    public ExceptionHandlingMiddleware(RequestDelegate next, ILogger<ExceptionHandlingMiddleware> logger)
+    {
+        _next = next;
+        _logger = logger;
+        
+    }
     public async Task InvokeAsync(HttpContext context)
     {
         try
         {
-            await next(context);
+            await _next(context);
         }
         catch (Exception ex)
         {
-            ResponseModel<bool> responseModel = ResponseModel<bool>.FailureResponse(ex.Message);
-            {
-                context.Response.ContentType = "application/json";
-                var serializedResponse = JsonSerializer.Serialize(responseModel);
-                context.Response.StatusCode = StatusCodes.Status500InternalServerError;
-                await context.Response.WriteAsync(serializedResponse);
-            }
-            ;
+            _logger.LogError(ex, "Sistemdə xəta baş verdi: {Message}", ex.Message);
+
+            context.Response.ContentType = "application/json";
+            context.Response.StatusCode = StatusCodes.Status500InternalServerError;
+
+            var responseModel = ResponseModel<bool>.FailureResponse("Gözlənilməz bir xəta baş verdi.");
+
+
+            var serializedResponse = JsonSerializer.Serialize(responseModel);
+            await context.Response.WriteAsync(serializedResponse);
         }
     }
 
