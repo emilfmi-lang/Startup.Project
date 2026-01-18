@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Startup_Project.Application.Dtos.Account;
-using Startup_Project.Application.Services.Interfaces;
+using Startup_Project.Application.Services.Interfaces.Account;
 
 namespace Startup_Project.WebAPI.Controllers;
 

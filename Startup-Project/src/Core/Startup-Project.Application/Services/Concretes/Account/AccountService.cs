@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Startup_Project.Application.Abstractions.Services;
 using Startup_Project.Application.Dtos.Account;
 using Startup_Project.Application.Models;
-using Startup_Project.Application.Services.Interfaces;
+using Startup_Project.Application.Services.Interfaces.Account;
 using Startup_Project.Application.Validators.Account;
 using Startup_Project.Domain.Entities.Identity;
 using Startup_Project.Domain.Exceptions;

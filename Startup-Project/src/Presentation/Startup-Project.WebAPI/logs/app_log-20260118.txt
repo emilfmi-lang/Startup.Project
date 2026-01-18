@@ -410,3 +410,197 @@ System.Exception: Sətir nömrəsi yoxlama sınağı!
    at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
    at Startup_Project.WebAPI.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context) in C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI\Middlewares\ExceptionHandlingMiddleware.cs:line 20
 2026-01-18 12:46:43 [INF] Request finished HTTP/1.1 POST http://localhost:5086/api/Account/register - 500 null application/json 352.9785ms
+2026-01-18 13:30:46 [INF] Proqram başladılır...
+2026-01-18 13:30:47 [INF] User profile is available. Using 'C:\Users\User\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-01-18 13:30:47 [INF] Now listening on: http://localhost:5086
+2026-01-18 13:30:47 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-18 13:30:47 [INF] Hosting environment: Development
+2026-01-18 13:30:47 [INF] Content root path: C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI
+2026-01-18 13:30:47 [INF] Request starting HTTP/1.1 GET http://localhost:5086/scalar/v1 - null null
+2026-01-18 13:30:47 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2026-01-18 13:30:47 [INF] Write content with HTTP Response ContentType of text/html
+2026-01-18 13:30:47 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2026-01-18 13:30:47 [INF] Request finished HTTP/1.1 GET http://localhost:5086/scalar/v1 - 200 null text/html 433.6773ms
+2026-01-18 13:30:47 [INF] Request starting HTTP/1.1 GET http://localhost:5086/scalar/scalar.js - null null
+2026-01-18 13:30:47 [INF] Request starting HTTP/1.1 GET http://localhost:5086/scalar/scalar.aspnetcore.js - null null
+2026-01-18 13:30:47 [INF] Request starting HTTP/1.1 GET http://localhost:5086/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-18 13:30:47 [INF] Request starting HTTP/1.1 GET http://localhost:5086/_vs/browserLink - null null
+2026-01-18 13:30:47 [INF] Request finished HTTP/1.1 GET http://localhost:5086/_framework/aspnetcore-browser-refresh.js - 200 16529 application/javascript; charset=utf-8 41.8919ms
+2026-01-18 13:30:47 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.js'
+2026-01-18 13:30:47 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2026-01-18 13:30:48 [INF] Sending file with download name ''.
+2026-01-18 13:30:48 [INF] Sending file with download name ''.
+2026-01-18 13:30:48 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2026-01-18 13:30:48 [INF] Request finished HTTP/1.1 GET http://localhost:5086/scalar/scalar.aspnetcore.js - 200 1111 text/javascript 75.1369ms
+2026-01-18 13:30:48 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.js'
+2026-01-18 13:30:48 [INF] Request finished HTTP/1.1 GET http://localhost:5086/scalar/scalar.js - 200 909417 text/javascript 93.0266ms
+2026-01-18 13:30:48 [INF] Request finished HTTP/1.1 GET http://localhost:5086/_vs/browserLink - 200 null text/javascript; charset=UTF-8 70.762ms
+2026-01-18 13:30:48 [INF] Request starting HTTP/1.1 GET http://localhost:5086/openapi/v1.json - null null
+2026-01-18 13:30:48 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
+2026-01-18 13:30:48 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
+2026-01-18 13:30:48 [INF] Request finished HTTP/1.1 GET http://localhost:5086/openapi/v1.json - 200 null application/json;charset=utf-8 26.9064ms
+2026-01-18 17:03:25 [INF] Proqram başladılır...
+2026-01-18 17:03:25 [INF] User profile is available. Using 'C:\Users\User\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-01-18 17:03:26 [INF] Now listening on: http://localhost:5086
+2026-01-18 17:03:26 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-18 17:03:26 [INF] Hosting environment: Development
+2026-01-18 17:03:26 [INF] Content root path: C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI
+2026-01-18 17:03:26 [INF] Request starting HTTP/1.1 GET http://localhost:5086/scalar/v1 - null null
+2026-01-18 17:03:26 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2026-01-18 17:03:26 [INF] Write content with HTTP Response ContentType of text/html
+2026-01-18 17:03:26 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2026-01-18 17:03:26 [INF] Request starting HTTP/1.1 GET http://localhost:5086/scalar/scalar.js - null null
+2026-01-18 17:03:26 [INF] Request starting HTTP/1.1 GET http://localhost:5086/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-18 17:03:26 [INF] Request starting HTTP/1.1 GET http://localhost:5086/scalar/scalar.aspnetcore.js - null null
+2026-01-18 17:03:26 [INF] Request starting HTTP/1.1 GET http://localhost:5086/_vs/browserLink - null null
+2026-01-18 17:03:26 [INF] Request finished HTTP/1.1 GET http://localhost:5086/scalar/v1 - 200 null text/html 454.5848ms
+2026-01-18 17:03:26 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.js'
+2026-01-18 17:03:26 [INF] Request finished HTTP/1.1 GET http://localhost:5086/_framework/aspnetcore-browser-refresh.js - 200 16529 application/javascript; charset=utf-8 11.0564ms
+2026-01-18 17:03:26 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2026-01-18 17:03:26 [INF] Sending file with download name ''.
+2026-01-18 17:03:26 [INF] Sending file with download name ''.
+2026-01-18 17:03:26 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2026-01-18 17:03:26 [INF] Request finished HTTP/1.1 GET http://localhost:5086/scalar/scalar.aspnetcore.js - 200 1111 text/javascript 58.4382ms
+2026-01-18 17:03:26 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.js'
+2026-01-18 17:03:26 [INF] Request finished HTTP/1.1 GET http://localhost:5086/scalar/scalar.js - 200 909417 text/javascript 74.7023ms
+2026-01-18 17:03:26 [INF] Request finished HTTP/1.1 GET http://localhost:5086/_vs/browserLink - 200 null text/javascript; charset=UTF-8 79.2101ms
+2026-01-18 17:03:27 [INF] Request starting HTTP/1.1 GET http://localhost:5086/openapi/v1.json - null null
+2026-01-18 17:03:27 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
+2026-01-18 17:03:27 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
+2026-01-18 17:03:27 [INF] Request finished HTTP/1.1 GET http://localhost:5086/openapi/v1.json - 200 null application/json;charset=utf-8 24.3419ms
+2026-01-18 17:04:26 [INF] Request starting HTTP/1.1 POST http://localhost:5086/api/Account/login - application/json 50
+2026-01-18 17:04:26 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.AccountController.Login (Startup-Project.WebAPI)'
+2026-01-18 17:04:26 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(Startup_Project.Application.Dtos.Account.UserLoginDto) on controller Startup_Project.WebAPI.Controllers.AccountController (Startup-Project.WebAPI).
+2026-01-18 17:04:26 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-01-18 17:04:28 [INF] Executed DbCommand (98ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-01-18 17:04:29 [INF] Executed DbCommand (9ms) [Parameters=[@userId='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @userId
+2026-01-18 17:04:29 [INF] Executed action Startup_Project.WebAPI.Controllers.AccountController.Login (Startup-Project.WebAPI) in 2905.948ms
+2026-01-18 17:04:29 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.AccountController.Login (Startup-Project.WebAPI)'
+2026-01-18 17:04:29 [ERR] Sistemdə xəta baş verdi: Value cannot be null. (Parameter 's')
+System.ArgumentNullException: Value cannot be null. (Parameter 's')
+   at System.ArgumentNullException.Throw(String paramName)
+   at System.Text.Encoding.GetBytes(String s)
+   at Startup_Project.Infrastructure.Security.JwtTokenService.GenerateTokenAsync(AppUser user, IList`1 roles) in C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Infrastructure\Startup-Project.Infrastructure\Security\JwtTokenService .cs:line 23
+   at Startup_Project.Application.Services.Concretes.Account.AccountService.LoginAsync(UserLoginDto dto) in C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Core\Startup-Project.Application\Services\Concretes\Account\AccountService.cs:line 26
+   at Startup_Project.WebAPI.Controllers.AccountController.Login(UserLoginDto dto) in C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI\Controllers\AccountController.cs:line 21
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Startup_Project.WebAPI.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context) in C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI\Middlewares\ExceptionHandlingMiddleware.cs:line 20
+2026-01-18 17:04:29 [INF] Request finished HTTP/1.1 POST http://localhost:5086/api/Account/login - 500 null application/json 3075.0746ms
+2026-01-18 17:09:35 [INF] Proqram başladılır...
+2026-01-18 17:09:35 [INF] User profile is available. Using 'C:\Users\User\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-01-18 17:09:35 [INF] Now listening on: http://localhost:5086
+2026-01-18 17:09:35 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-18 17:09:35 [INF] Hosting environment: Development
+2026-01-18 17:09:35 [INF] Content root path: C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI
+2026-01-18 17:09:36 [INF] Request starting HTTP/1.1 GET http://localhost:5086/scalar/v1 - null null
+2026-01-18 17:09:36 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2026-01-18 17:09:36 [INF] Write content with HTTP Response ContentType of text/html
+2026-01-18 17:09:36 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2026-01-18 17:09:36 [INF] Request finished HTTP/1.1 GET http://localhost:5086/scalar/v1 - 200 null text/html 351.2583ms
+2026-01-18 17:09:36 [INF] Request starting HTTP/1.1 GET http://localhost:5086/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-18 17:09:36 [INF] Request starting HTTP/1.1 GET http://localhost:5086/scalar/scalar.aspnetcore.js - null null
+2026-01-18 17:09:36 [INF] Request starting HTTP/1.1 GET http://localhost:5086/scalar/scalar.js - null null
+2026-01-18 17:09:36 [INF] Request finished HTTP/1.1 GET http://localhost:5086/_framework/aspnetcore-browser-refresh.js - 200 16529 application/javascript; charset=utf-8 22.1632ms
+2026-01-18 17:09:36 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2026-01-18 17:09:36 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.js'
+2026-01-18 17:09:36 [INF] Request starting HTTP/1.1 GET http://localhost:5086/_vs/browserLink - null null
+2026-01-18 17:09:36 [INF] Sending file with download name ''.
+2026-01-18 17:09:36 [INF] Sending file with download name ''.
+2026-01-18 17:09:36 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2026-01-18 17:09:36 [INF] Request finished HTTP/1.1 GET http://localhost:5086/scalar/scalar.aspnetcore.js - 200 1111 text/javascript 48.227ms
+2026-01-18 17:09:36 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.js'
+2026-01-18 17:09:36 [INF] Request finished HTTP/1.1 GET http://localhost:5086/scalar/scalar.js - 200 909417 text/javascript 51.779ms
+2026-01-18 17:09:36 [INF] Request finished HTTP/1.1 GET http://localhost:5086/_vs/browserLink - 200 null text/javascript; charset=UTF-8 50.3446ms
+2026-01-18 17:09:36 [INF] Request starting HTTP/1.1 GET http://localhost:5086/openapi/v1.json - null null
+2026-01-18 17:09:36 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
+2026-01-18 17:09:37 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
+2026-01-18 17:09:37 [INF] Request finished HTTP/1.1 GET http://localhost:5086/openapi/v1.json - 200 null application/json;charset=utf-8 23.4789ms
+2026-01-18 17:09:37 [INF] Request starting HTTP/1.1 GET http://localhost:5086/scalar/favicon.svg - null null
+2026-01-18 17:09:37 [INF] Executing endpoint 'HTTP: GET /scalar/favicon.svg'
+2026-01-18 17:09:37 [INF] Sending file with download name ''.
+2026-01-18 17:09:37 [INF] Executed endpoint 'HTTP: GET /scalar/favicon.svg'
+2026-01-18 17:09:37 [INF] Request finished HTTP/1.1 GET http://localhost:5086/scalar/favicon.svg - 200 533 image/svg+xml 10.2801ms
+2026-01-18 17:10:29 [INF] Proqram başladılır...
+2026-01-18 17:10:29 [INF] User profile is available. Using 'C:\Users\User\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-01-18 17:10:29 [INF] Now listening on: http://localhost:5086
+2026-01-18 17:10:29 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-18 17:10:29 [INF] Hosting environment: Development
+2026-01-18 17:10:29 [INF] Content root path: C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI
+2026-01-18 17:10:30 [INF] Request starting HTTP/1.1 GET http://localhost:5086/scalar/v1 - null null
+2026-01-18 17:10:30 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2026-01-18 17:10:30 [INF] Write content with HTTP Response ContentType of text/html
+2026-01-18 17:10:30 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2026-01-18 17:10:30 [INF] Request finished HTTP/1.1 GET http://localhost:5086/scalar/v1 - 200 null text/html 335.9472ms
+2026-01-18 17:10:30 [INF] Request starting HTTP/1.1 GET http://localhost:5086/scalar/scalar.js - null null
+2026-01-18 17:10:30 [INF] Request starting HTTP/1.1 GET http://localhost:5086/scalar/scalar.aspnetcore.js - null null
+2026-01-18 17:10:30 [INF] Request starting HTTP/1.1 GET http://localhost:5086/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-18 17:10:30 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2026-01-18 17:10:30 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.js'
+2026-01-18 17:10:30 [INF] Request finished HTTP/1.1 GET http://localhost:5086/_framework/aspnetcore-browser-refresh.js - 200 16529 application/javascript; charset=utf-8 9.6467ms
+2026-01-18 17:10:30 [INF] Sending file with download name ''.
+2026-01-18 17:10:30 [INF] Sending file with download name ''.
+2026-01-18 17:10:30 [INF] Request starting HTTP/1.1 GET http://localhost:5086/_vs/browserLink - null null
+2026-01-18 17:10:30 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2026-01-18 17:10:30 [INF] Request finished HTTP/1.1 GET http://localhost:5086/scalar/scalar.aspnetcore.js - 200 1111 text/javascript 47.2522ms
+2026-01-18 17:10:30 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.js'
+2026-01-18 17:10:30 [INF] Request finished HTTP/1.1 GET http://localhost:5086/scalar/scalar.js - 200 909417 text/javascript 66.2181ms
+2026-01-18 17:10:30 [INF] Request finished HTTP/1.1 GET http://localhost:5086/_vs/browserLink - 200 null text/javascript; charset=UTF-8 49.2524ms
+2026-01-18 17:10:30 [INF] Request starting HTTP/1.1 GET http://localhost:5086/openapi/v1.json - null null
+2026-01-18 17:10:30 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
+2026-01-18 17:10:30 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
+2026-01-18 17:10:30 [INF] Request finished HTTP/1.1 GET http://localhost:5086/openapi/v1.json - 200 null application/json;charset=utf-8 22.2207ms
+2026-01-18 17:10:31 [INF] Request starting HTTP/1.1 GET http://localhost:5086/scalar/favicon.svg - null null
+2026-01-18 17:10:31 [INF] Executing endpoint 'HTTP: GET /scalar/favicon.svg'
+2026-01-18 17:10:31 [INF] Sending file with download name ''.
+2026-01-18 17:10:31 [INF] Executed endpoint 'HTTP: GET /scalar/favicon.svg'
+2026-01-18 17:10:31 [INF] Request finished HTTP/1.1 GET http://localhost:5086/scalar/favicon.svg - 200 533 image/svg+xml 10.0607ms
+2026-01-18 17:11:02 [INF] Request starting HTTP/1.1 POST http://localhost:5086/api/Account/login - application/json 50
+2026-01-18 17:11:02 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.AccountController.Login (Startup-Project.WebAPI)'
+2026-01-18 17:11:02 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(Startup_Project.Application.Dtos.Account.UserLoginDto) on controller Startup_Project.WebAPI.Controllers.AccountController (Startup-Project.WebAPI).
+2026-01-18 17:11:02 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-01-18 17:11:04 [INF] Executed DbCommand (68ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-01-18 17:11:04 [INF] Executed DbCommand (8ms) [Parameters=[@userId='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @userId
+2026-01-18 17:11:04 [INF] Executing OkObjectResult, writing value of type 'Startup_Project.Application.Models.ResponseModel`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-01-18 17:11:04 [INF] Executed action Startup_Project.WebAPI.Controllers.AccountController.Login (Startup-Project.WebAPI) in 2373.8648ms
+2026-01-18 17:11:04 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.AccountController.Login (Startup-Project.WebAPI)'
+2026-01-18 17:11:04 [INF] Request finished HTTP/1.1 POST http://localhost:5086/api/Account/login - 200 null application/json; charset=utf-8 2445.1925ms
+2026-01-18 17:12:38 [INF] Request starting HTTP/1.1 POST http://localhost:5086/api/Account/login - application/json 50
+2026-01-18 17:12:38 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.AccountController.Login (Startup-Project.WebAPI)'
+2026-01-18 17:12:38 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(Startup_Project.Application.Dtos.Account.UserLoginDto) on controller Startup_Project.WebAPI.Controllers.AccountController (Startup-Project.WebAPI).
+2026-01-18 17:12:38 [INF] Executed DbCommand (5ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-01-18 17:12:38 [INF] Executed DbCommand (4ms) [Parameters=[@userId='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @userId
+2026-01-18 17:12:38 [INF] Executing OkObjectResult, writing value of type 'Startup_Project.Application.Models.ResponseModel`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-01-18 17:12:38 [INF] Executed action Startup_Project.WebAPI.Controllers.AccountController.Login (Startup-Project.WebAPI) in 265.8696ms
+2026-01-18 17:12:38 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.AccountController.Login (Startup-Project.WebAPI)'
+2026-01-18 17:12:38 [INF] Request finished HTTP/1.1 POST http://localhost:5086/api/Account/login - 200 null application/json; charset=utf-8 281.4992ms

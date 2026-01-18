@@ -5,7 +5,7 @@ namespace Startup_Project.Domain.Entities.Identity;
 public class AppUser:IdentityUser<Guid>
 {
     public string FullName { get; set; } = null!;
-    public List<Gym> Gyms { get; set; } = new List<Gym>();
+    public List<Gym> Gyms { get; set; } = [];
 
     public AppUser() { }
 
