@@ -1,6 +1,7 @@
 ﻿
+
 namespace Startup_Project.Application.Dtos.GymDtos;
 
-public class GymResponseDto
+public class GymListDto
 {
 }

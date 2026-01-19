@@ -1,5 +1,6 @@
 ﻿namespace Startup_Project.Application.Abstractions.UnitOfWork;
 
-public interface IUnitOfWork
+public interface IUnitOfWork: IAsyncDisposable
 {
+    Task<int> SaveChangesAsync();
 }

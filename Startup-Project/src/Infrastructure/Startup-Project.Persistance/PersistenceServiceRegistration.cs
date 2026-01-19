@@ -8,6 +8,10 @@ using Microsoft.AspNetCore.Identity;
 using Startup_Project.Domain.Entities.Identity;
 using Startup_Project.Application.Services.Concretes.Account;
 using Startup_Project.Application.Services.Interfaces.Account;
+using Startup_Project.Persistance.Concretes;
+using Startup_Project.Application.Abstractions.UnitOfWork;
+using Startup_Project.Persistance.Concretes.Repositories;
+using Startup_Project.Domain.Abstractions.Repositories;
 
 namespace Startup_Project.Persistance;
 
@@ -18,6 +22,8 @@ public static class PersistenceServiceRegistration
         services.AddDbContext<ApplicationDbContext>(options =>
             options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
         services.AddScoped<IApplicationDbContext, ApplicationDbContext>();
+        services.AddScoped<IUnitOfWork, UnitOfWork>();
+        services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
         services.AddIdentity<AppUser, IdentityRole<Guid>>(options=>
         {
             options.Password.RequireDigit = true;
