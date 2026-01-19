@@ -1,4 +1,6 @@
-﻿using Startup_Project.Domain.Abstractions.Repositories;
+﻿using FluentValidation;
+using Microsoft.EntityFrameworkCore;
+using Startup_Project.Domain.Abstractions.Repositories;
 using Startup_Project.Domain.Entities.Common;
 using Startup_Project.Persistance.Data;
 using System.Linq.Expressions;
@@ -9,39 +11,50 @@ public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
 {
     private readonly ApplicationDbContext _context;
     public GenericRepository(ApplicationDbContext context) => _context = context;
+    public DbSet<T> Table => _context.Set<T>();
 
-    public Task<bool> AddAsync(T entity)
+    public async Task<bool> AddAsync(T entity)
     {
-        throw new NotImplementedException();
+        var entityEntry = await Table.AddAsync(entity);
+        return entityEntry.State == EntityState.Added;
     }
 
-    public List<T> GetAll(bool tracking = true)
+    public async Task<List<T>> GetAllAsync(bool tracking = true)
     {
-        throw new NotImplementedException();
+        var query = Table.AsQueryable();
+        if (!tracking)
+            query = query.AsNoTracking();
+        return await query.ToListAsync();
     }
 
-    public Task<T> GetByIdAsync(string id, bool tracking = true)
+    public async Task<T> GetByIdAsync(string id, bool tracking = true)
     {
-        throw new NotImplementedException();
+        var query = Table.AsQueryable();
+        if (!tracking)
+            query = query.AsNoTracking();
+        return await query.FirstOrDefaultAsync(data => data.Id == Guid.Parse(id));
     }
 
-    public List<T> GetWhere(Expression<Func<T, bool>> method, bool tracking = true)
+    public async Task<List<T>> GetWhereAsync(Expression<Func<T, bool>> method, bool tracking = true)
     {
-        throw new NotImplementedException();
+        var query = Table.AsQueryable();
+        if (!tracking)
+            query = query.AsNoTracking();
+        return await query.Where(method).ToListAsync();
     }
 
     public bool Remove(T entity)
     {
-        throw new NotImplementedException();
+        Table.Remove(entity);
+        return true;
     }
 
-    public Task<int> SaveAsync()
-    {
-        throw new NotImplementedException();
-    }
+    public async Task<int> SaveAsync() => await _context.SaveChangesAsync();
 
     public bool Update(T entity)
     {
-        throw new NotImplementedException();
+        Table.Update(entity);
+        return true;
     }
+
 }
