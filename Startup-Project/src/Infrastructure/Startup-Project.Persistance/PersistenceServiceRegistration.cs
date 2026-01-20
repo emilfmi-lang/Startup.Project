@@ -13,7 +13,6 @@ using Startup_Project.Application.Abstractions.UnitOfWork;
 using Startup_Project.Persistance.Concretes.Repositories;
 using Startup_Project.Domain.Abstractions.Repositories;
 using Startup_Project.Application.Abstractions.Services;
-using Startup_Project.Persistance.Concretes.Services;
 
 namespace Startup_Project.Persistance;
 
@@ -26,8 +25,6 @@ public static class PersistenceServiceRegistration
         services.AddScoped<IApplicationDbContext, ApplicationDbContext>();
         services.AddScoped<IUnitOfWork, UnitOfWork>();
         services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-        services.AddScoped<IUserRepository, UserRepository>();
-        services.AddScoped<IAuthService, AuthService>();
         services.AddIdentity<AppUser, IdentityRole<Guid>>(options=>
         {
             options.Password.RequireDigit = true;

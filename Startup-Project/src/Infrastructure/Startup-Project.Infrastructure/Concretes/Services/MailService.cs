@@ -9,15 +9,23 @@ public class MailService : IMailService
 {
     public async Task SendEmailAsync(string toEmail, string subject, string body)
     {
-        var email = new MimeMessage();
-        email.From.Add(MailboxAddress.Parse("perviznovruzov136@gmail.com"));
-        email.To.Add(MailboxAddress.Parse(toEmail));
-        email.Subject = subject;
-        email.Body = new TextPart(MimeKit.Text.TextFormat.Html) { Text = body };
-        using var smtp = new SmtpClient();
-        await smtp.ConnectAsync("smtp.gmail.com", 587, MailKit.Security.SecureSocketOptions.StartTls);
-        await smtp.AuthenticateAsync("perviznovruzov136@gmail.com", "qjpm nvkg lqsp wirf");
-        await smtp.SendAsync(email);
-        await smtp.DisconnectAsync(true);
-    }
+        try
+        {
+            var email = new MimeMessage();
+            email.From.Add(MailboxAddress.Parse("perviznovruzov136@gmail.com"));
+            email.To.Add(MailboxAddress.Parse(toEmail));
+            email.Subject = subject;
+            email.Body = new TextPart(MimeKit.Text.TextFormat.Html) { Text = body };
+            using var smtp = new SmtpClient();
+            await smtp.ConnectAsync("smtp.gmail.com", 587, MailKit.Security.SecureSocketOptions.StartTls);
+            await smtp.AuthenticateAsync("perviznovruzov136@gmail.com", "qjpm nvkg lqsp wirf");
+            await smtp.SendAsync(email);
+            await smtp.DisconnectAsync(true);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Mail xətası: {ex.Message}");
+            throw new Exception("Email göndərilərkən xəta baş verdi. Zəhmət olmasa email ünvanınızı yoxlayın.");
+        }   
+        }
 }

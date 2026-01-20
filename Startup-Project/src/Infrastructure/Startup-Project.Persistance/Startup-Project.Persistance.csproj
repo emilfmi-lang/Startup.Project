@@ -20,4 +20,8 @@
     <ProjectReference Include="..\..\Core\Startup-Project.Application\Startup-Project.Application.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Concretes\Services\" />
+  </ItemGroup>
+
 </Project>

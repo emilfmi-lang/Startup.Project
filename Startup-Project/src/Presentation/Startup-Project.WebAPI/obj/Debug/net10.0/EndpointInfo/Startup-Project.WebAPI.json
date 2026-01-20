@@ -74,42 +74,10 @@
         }
       }
     },
-    "/api/Auth/send-code": {
+    "/api/Account/verify-login": {
       "post": {
         "tags": [
-          "Auth"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/LoginStepOneDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/LoginStepOneDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/LoginStepOneDto"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Auth/verify-code": {
-      "post": {
-        "tags": [
-          "Auth"
+          "Account"
         ],
         "requestBody": {
           "content": {
@@ -153,14 +121,6 @@
   },
   "components": {
     "schemas": {
-      "LoginStepOneDto": {
-        "type": "object",
-        "properties": {
-          "email": {
-            "type": "string"
-          }
-        }
-      },
       "UserLoginDto": {
         "type": "object",
         "properties": {
@@ -208,9 +168,6 @@
   "tags": [
     {
       "name": "Account"
-    },
-    {
-      "name": "Auth"
     },
     {
       "name": "Test"

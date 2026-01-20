@@ -32,31 +32,15 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Startup_Project.WebAPI.Controllers.AuthController",
-    "Method": "SendCode",
-    "RelativePath": "api/Auth/send-code",
+    "ContainingType": "Startup_Project.WebAPI.Controllers.AccountController",
+    "Method": "VerifyAndLogin",
+    "RelativePath": "api/Account/verify-login",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "loginStep",
-        "Type": "Startup_Project.Application.Dtos.User.LoginStepOneDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Startup_Project.WebAPI.Controllers.AuthController",
-    "Method": "VerifyCode",
-    "RelativePath": "api/Auth/verify-code",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "verifyCodeDto",
+        "Name": "dto",
         "Type": "Startup_Project.Application.Dtos.User.VerifyCodeDto",
         "IsRequired": true
       }
