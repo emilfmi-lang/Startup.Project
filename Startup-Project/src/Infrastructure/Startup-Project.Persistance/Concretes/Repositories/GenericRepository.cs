@@ -34,6 +34,14 @@ public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
             query = query.AsNoTracking();
         return await query.FirstOrDefaultAsync(data => data.Id == Guid.Parse(id));
     }
+     
+    public async Task<T> GetSingleAsync(Expression<Func<T, bool>> method, bool tracking = true)
+    {
+        var query = Table.AsQueryable();
+        if (!tracking)
+            query = query.AsNoTracking();
+        return await query.FirstOrDefaultAsync(method);
+    }
 
     public async Task<List<T>> GetWhereAsync(Expression<Func<T, bool>> method, bool tracking = true)
     {
