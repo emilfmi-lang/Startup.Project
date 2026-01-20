@@ -1,41 +1,47 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using Startup_Project.Application.Abstractions.Services;
 using Startup_Project.Application.Dtos.Token;
-using Startup_Project.Domain.Entities;
+using Startup_Project.Domain.Entities.Identity;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
 namespace Startup_Project.Infrastructure.Concretes.Services;
 
-public class TokenHandler(IConfiguration configuration) : ITokenHandler
+public class TokenHandler(IConfiguration configuration,
+                          UserManager<AppUser> userManager) : ITokenHandler
 {
-    public async Task<TokenDto> CreateAccessToken(User user)
+    public async Task<TokenDto> CreateAccessToken(AppUser appUser)
     {
-        TokenDto tokenDto = new();
-        var jwtSettings = configuration.GetSection("JwtSettings");
-        var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings["SecretKey"]));
+        var roles = await userManager.GetRolesAsync(appUser);
 
         var claims = new List<Claim>
         {
-            new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-            new Claim(ClaimTypes.Email, user.Email),
-            new Claim("FullName", user.FullName ?? "")
-        };
+            new Claim(ClaimTypes.NameIdentifier, appUser.Id.ToString()),
+            new Claim(ClaimTypes.Name, appUser.UserName),
+            new Claim("FullName", appUser.Email)
 
-        DateTime expires = DateTime.UtcNow.AddMinutes(60);
+        };
+        foreach(var role in roles)
+        {
+            claims.Add(new Claim(ClaimTypes.Role, role));
+        }
+        var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["JwtSettings:SecretKey"]!));
+        var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
         var token = new JwtSecurityToken(
-            issuer: jwtSettings["Issuer"],
-            audience: jwtSettings["Audience"],
+            issuer: configuration["JwtSettings:Issuer"],
+            audience: configuration["JwtSettings:Audience"],
             claims: claims,
-            notBefore: DateTime.UtcNow,
-            expires: expires,
-            signingCredentials: new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256)
-        );
-        tokenDto.AccessToken = new JwtSecurityTokenHandler().WriteToken(token);
-        tokenDto.Expiration = expires;
-        return tokenDto;
+            expires: DateTime.UtcNow.AddHours(3),
+            signingCredentials: creds
+            );
+        return new TokenDto
+        {
+            AccessToken = new JwtSecurityTokenHandler().WriteToken(token),
+            Expiration = token.ValidTo
+        };
     }
 }

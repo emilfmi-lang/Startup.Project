@@ -5,6 +5,6 @@ namespace Startup_Project.Application.Abstractions.Services;
 
 public interface IAuthService
 {
-    Task SendVerificationCodeAsync(string email); 
+    Task<bool> SendVerificationCodeAsync(string email); 
     Task<TokenDto> VerifyCodeAsync(VerifyCodeDto verifyCodeDto);
 }
