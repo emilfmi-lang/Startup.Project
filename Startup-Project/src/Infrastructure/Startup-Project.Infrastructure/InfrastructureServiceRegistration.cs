@@ -13,6 +13,7 @@ public static class InfrastructureServiceRegistration
         services.Configure<JwtSettings>(configuration.GetSection("JwtSettings"));
         services.AddScoped<IJwtTokenService, JwtTokenService>();
         services.AddScoped<IMailService, MailService>();
+        services.AddScoped<ITokenHandler, TokenHandler>();
         return services;
     }
 }

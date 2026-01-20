@@ -1,6 +1,7 @@
 ﻿using Microsoft.Identity.Client;
 using Startup_Project.Application.Abstractions.Services;
 using Startup_Project.Application.Abstractions.UnitOfWork;
+using Startup_Project.Application.Dtos.Token;
 using Startup_Project.Application.Dtos.User;
 using Startup_Project.Domain.Abstractions.Repositories;
 using Startup_Project.Domain.Entities;
@@ -12,11 +13,13 @@ public class AuthService : IAuthService
     private readonly IGenericRepository<User> _userRepository;
     private readonly IUnitOfWork _unitOfWork;
     private readonly IMailService _mailService;
-    public AuthService(IGenericRepository<User> userRepository, IUnitOfWork unitOfWork, IMailService mailService)
+    private readonly ITokenHandler _tokenHandler;
+    public AuthService(IGenericRepository<User> userRepository, IUnitOfWork unitOfWork, IMailService mailService, ITokenHandler tokenHandler)
     {
         _userRepository = userRepository;
         _unitOfWork = unitOfWork;
         _mailService = mailService;
+        _tokenHandler = tokenHandler;
     }
     public async Task SendVerificationCodeAsync(string email)
     {
@@ -33,7 +36,7 @@ public class AuthService : IAuthService
         await _mailService.SendEmailAsync(user.Email, "Giriş Təsdiq Kodu", $"Sizin kodunuz: <b>{code}</b>");
     }
 
-    public async Task<bool> VerifyCodeAsync(VerifyCodeDto verifyCodeDto)
+    public async Task<TokenDto> VerifyCodeAsync(VerifyCodeDto verifyCodeDto)
     {
         var user = await _userRepository.GetSingleAsync(u => u.Email == verifyCodeDto.Email);
         if (user == null || user.VerificationCode != verifyCodeDto.Code || user.CodeExpireDate < DateTime.UtcNow)
@@ -45,6 +48,7 @@ public class AuthService : IAuthService
 
         _userRepository.Update(user);
         await _unitOfWork.SaveChangesAsync();
-        return true;
+        TokenDto tokenDto = await _tokenHandler.CreateAccessToken(user);
+        return tokenDto;
     }
 }

@@ -18,9 +18,7 @@ public class AuthController(IAuthService authService) : ControllerBase
     [HttpPost("verify-code")]
     public async Task<IActionResult> VerifyCode([FromBody] VerifyCodeDto verifyCodeDto)
     {
-        var result = await authService.VerifyCodeAsync(verifyCodeDto);
-        if(result)
-            return Ok(new { Message = "Giriş uğurludur! Təbrik edirik." });
-        return BadRequest(new {Message = "Kod yanlışdır." });
+        var tokenDto = await authService.VerifyCodeAsync(verifyCodeDto);
+        return Ok(tokenDto);
     }
 }

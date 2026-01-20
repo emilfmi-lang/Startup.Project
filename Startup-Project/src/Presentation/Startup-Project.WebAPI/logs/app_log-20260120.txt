@@ -234,3 +234,253 @@ WHERE [Id] = @p8;
 2026-01-20 15:50:00 [INF] Executed action Startup_Project.WebAPI.Controllers.AuthController.VerifyCode (Startup-Project.WebAPI) in 150.266ms
 2026-01-20 15:50:00 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.AuthController.VerifyCode (Startup-Project.WebAPI)'
 2026-01-20 15:50:00 [INF] Request finished HTTP/1.1 POST http://localhost:5086/api/Auth/verify-code - 200 null application/json; charset=utf-8 198.8093ms
+2026-01-20 16:17:13 [INF] Proqram başladılır...
+2026-01-20 16:17:14 [INF] User profile is available. Using 'C:\Users\User\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-01-20 16:17:14 [INF] Now listening on: http://localhost:5086
+2026-01-20 16:17:14 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-20 16:17:14 [INF] Hosting environment: Development
+2026-01-20 16:17:14 [INF] Content root path: C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI
+2026-01-20 16:17:14 [INF] Request starting HTTP/1.1 GET http://localhost:5086/scalar/v1 - null null
+2026-01-20 16:17:14 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2026-01-20 16:17:14 [INF] Write content with HTTP Response ContentType of text/html
+2026-01-20 16:17:15 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2026-01-20 16:17:15 [INF] Request finished HTTP/1.1 GET http://localhost:5086/scalar/v1 - 200 null text/html 394.4627ms
+2026-01-20 16:17:15 [INF] Request starting HTTP/1.1 GET http://localhost:5086/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-20 16:17:15 [INF] Request starting HTTP/1.1 GET http://localhost:5086/scalar/scalar.aspnetcore.js - null null
+2026-01-20 16:17:15 [INF] Request starting HTTP/1.1 GET http://localhost:5086/scalar/scalar.js - null null
+2026-01-20 16:17:15 [INF] Request finished HTTP/1.1 GET http://localhost:5086/_framework/aspnetcore-browser-refresh.js - 200 16529 application/javascript; charset=utf-8 26.1329ms
+2026-01-20 16:17:15 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2026-01-20 16:17:15 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.js'
+2026-01-20 16:17:15 [INF] Request starting HTTP/1.1 GET http://localhost:5086/_vs/browserLink - null null
+2026-01-20 16:17:15 [INF] Sending file with download name ''.
+2026-01-20 16:17:15 [INF] Sending file with download name ''.
+2026-01-20 16:17:15 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2026-01-20 16:17:15 [INF] Request finished HTTP/1.1 GET http://localhost:5086/scalar/scalar.aspnetcore.js - 200 1111 text/javascript 62.6626ms
+2026-01-20 16:17:15 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.js'
+2026-01-20 16:17:15 [INF] Request finished HTTP/1.1 GET http://localhost:5086/scalar/scalar.js - 200 909417 text/javascript 79.9937ms
+2026-01-20 16:17:15 [INF] Request finished HTTP/1.1 GET http://localhost:5086/_vs/browserLink - 200 null text/javascript; charset=UTF-8 69.9567ms
+2026-01-20 16:17:15 [INF] Request starting HTTP/1.1 GET http://localhost:5086/openapi/v1.json - null null
+2026-01-20 16:17:15 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
+2026-01-20 16:17:15 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
+2026-01-20 16:17:15 [INF] Request finished HTTP/1.1 GET http://localhost:5086/openapi/v1.json - 200 null application/json;charset=utf-8 41.2501ms
+2026-01-20 16:17:40 [INF] Request starting HTTP/1.1 POST http://localhost:5086/api/Auth/send-code - application/json 39
+2026-01-20 16:17:40 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.AuthController.SendCode (Startup-Project.WebAPI)'
+2026-01-20 16:17:40 [INF] Route matched with {action = "SendCode", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SendCode(Startup_Project.Application.Dtos.User.LoginStepOneDto) on controller Startup_Project.WebAPI.Controllers.AuthController (Startup-Project.WebAPI).
+2026-01-20 16:17:42 [INF] Executed DbCommand (67ms) [Parameters=[@email='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CodeExpireDate], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[PasswordHash], [u].[UpdatedAt], [u].[VerificationCode]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @email
+2026-01-20 16:17:42 [INF] Executed DbCommand (32ms) [Parameters=[@p8='?' (DbType = Guid), @p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Boolean), @p5='?' (Size = 4000), @p6='?' (DbType = DateTime2), @p7='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [CodeExpireDate] = @p0, [CreatedAt] = @p1, [Email] = @p2, [FullName] = @p3, [IsDeleted] = @p4, [PasswordHash] = @p5, [UpdatedAt] = @p6, [VerificationCode] = @p7
+OUTPUT 1
+WHERE [Id] = @p8;
+2026-01-20 16:17:45 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-01-20 16:17:45 [INF] Executed action Startup_Project.WebAPI.Controllers.AuthController.SendCode (Startup-Project.WebAPI) in 4999.63ms
+2026-01-20 16:17:45 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.AuthController.SendCode (Startup-Project.WebAPI)'
+2026-01-20 16:17:45 [INF] Request finished HTTP/1.1 POST http://localhost:5086/api/Auth/send-code - 200 null application/json; charset=utf-8 5075.7834ms
+2026-01-20 16:18:32 [INF] Request starting HTTP/1.1 POST http://localhost:5086/api/Auth/verify-code - application/json 53
+2026-01-20 16:18:32 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.AuthController.VerifyCode (Startup-Project.WebAPI)'
+2026-01-20 16:18:32 [INF] Route matched with {action = "VerifyCode", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] VerifyCode(Startup_Project.Application.Dtos.User.VerifyCodeDto) on controller Startup_Project.WebAPI.Controllers.AuthController (Startup-Project.WebAPI).
+2026-01-20 16:18:32 [INF] Executed DbCommand (3ms) [Parameters=[@verifyCodeDto_Email='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CodeExpireDate], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[PasswordHash], [u].[UpdatedAt], [u].[VerificationCode]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @verifyCodeDto_Email
+2026-01-20 16:18:33 [INF] Executed DbCommand (26ms) [Parameters=[@p8='?' (DbType = Guid), @p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Boolean), @p5='?' (Size = 4000), @p6='?' (DbType = DateTime2), @p7='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [CodeExpireDate] = @p0, [CreatedAt] = @p1, [Email] = @p2, [FullName] = @p3, [IsDeleted] = @p4, [PasswordHash] = @p5, [UpdatedAt] = @p6, [VerificationCode] = @p7
+OUTPUT 1
+WHERE [Id] = @p8;
+2026-01-20 16:18:33 [INF] Executed action Startup_Project.WebAPI.Controllers.AuthController.VerifyCode (Startup-Project.WebAPI) in 154.3806ms
+2026-01-20 16:18:33 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.AuthController.VerifyCode (Startup-Project.WebAPI)'
+2026-01-20 16:18:33 [ERR] Sistemdə xəta baş verdi: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Startup_Project.Persistance.Concretes.Services.AuthService.VerifyCodeAsync(VerifyCodeDto verifyCodeDto) in C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Infrastructure\Startup-Project.Persistance\Concretes\Services\AuthService.cs:line 50
+   at Startup_Project.WebAPI.Controllers.AuthController.VerifyCode(VerifyCodeDto verifyCodeDto) in C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI\Controllers\AuthController.cs:line 21
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Startup_Project.WebAPI.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context) in C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI\Middlewares\ExceptionHandlingMiddleware.cs:line 20
+2026-01-20 16:18:33 [INF] Request finished HTTP/1.1 POST http://localhost:5086/api/Auth/verify-code - 500 null application/json 247.6437ms
+2026-01-20 16:20:55 [INF] Proqram başladılır...
+2026-01-20 16:20:55 [INF] User profile is available. Using 'C:\Users\User\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-01-20 16:20:55 [INF] Now listening on: http://localhost:5086
+2026-01-20 16:20:56 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-20 16:20:56 [INF] Hosting environment: Development
+2026-01-20 16:20:56 [INF] Content root path: C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI
+2026-01-20 16:20:56 [INF] Request starting HTTP/1.1 GET http://localhost:5086/scalar/v1 - null null
+2026-01-20 16:20:56 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2026-01-20 16:20:56 [INF] Write content with HTTP Response ContentType of text/html
+2026-01-20 16:20:56 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2026-01-20 16:20:56 [INF] Request finished HTTP/1.1 GET http://localhost:5086/scalar/v1 - 200 null text/html 363.493ms
+2026-01-20 16:20:56 [INF] Request starting HTTP/1.1 GET http://localhost:5086/scalar/scalar.js - null null
+2026-01-20 16:20:56 [INF] Request starting HTTP/1.1 GET http://localhost:5086/scalar/scalar.aspnetcore.js - null null
+2026-01-20 16:20:56 [INF] Request starting HTTP/1.1 GET http://localhost:5086/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-20 16:20:56 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2026-01-20 16:20:56 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.js'
+2026-01-20 16:20:56 [INF] Request finished HTTP/1.1 GET http://localhost:5086/_framework/aspnetcore-browser-refresh.js - 200 16529 application/javascript; charset=utf-8 10.7098ms
+2026-01-20 16:20:56 [INF] Sending file with download name ''.
+2026-01-20 16:20:56 [INF] Sending file with download name ''.
+2026-01-20 16:20:56 [INF] Request starting HTTP/1.1 GET http://localhost:5086/_vs/browserLink - null null
+2026-01-20 16:20:56 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2026-01-20 16:20:56 [INF] Request finished HTTP/1.1 GET http://localhost:5086/scalar/scalar.aspnetcore.js - 200 1111 text/javascript 53.5323ms
+2026-01-20 16:20:56 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.js'
+2026-01-20 16:20:56 [INF] Request finished HTTP/1.1 GET http://localhost:5086/scalar/scalar.js - 200 909417 text/javascript 68.6916ms
+2026-01-20 16:20:56 [INF] Request finished HTTP/1.1 GET http://localhost:5086/_vs/browserLink - 200 null text/javascript; charset=UTF-8 48.4012ms
+2026-01-20 16:20:56 [INF] Request starting HTTP/1.1 GET http://localhost:5086/openapi/v1.json - null null
+2026-01-20 16:20:56 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
+2026-01-20 16:20:56 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
+2026-01-20 16:20:56 [INF] Request finished HTTP/1.1 GET http://localhost:5086/openapi/v1.json - 200 null application/json;charset=utf-8 37.7809ms
+2026-01-20 16:20:57 [INF] Request starting HTTP/1.1 GET http://localhost:5086/scalar/favicon.svg - null null
+2026-01-20 16:20:57 [INF] Executing endpoint 'HTTP: GET /scalar/favicon.svg'
+2026-01-20 16:20:57 [INF] Sending file with download name ''.
+2026-01-20 16:20:57 [INF] Executed endpoint 'HTTP: GET /scalar/favicon.svg'
+2026-01-20 16:20:57 [INF] Request finished HTTP/1.1 GET http://localhost:5086/scalar/favicon.svg - 200 533 image/svg+xml 12.0804ms
+2026-01-20 16:21:15 [INF] Request starting HTTP/1.1 POST http://localhost:5086/api/Auth/verify-code - application/json 53
+2026-01-20 16:21:15 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.AuthController.VerifyCode (Startup-Project.WebAPI)'
+2026-01-20 16:21:15 [INF] Route matched with {action = "VerifyCode", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] VerifyCode(Startup_Project.Application.Dtos.User.VerifyCodeDto) on controller Startup_Project.WebAPI.Controllers.AuthController (Startup-Project.WebAPI).
+2026-01-20 16:21:16 [INF] Executed DbCommand (54ms) [Parameters=[@verifyCodeDto_Email='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CodeExpireDate], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[PasswordHash], [u].[UpdatedAt], [u].[VerificationCode]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @verifyCodeDto_Email
+2026-01-20 16:21:16 [INF] Executed action Startup_Project.WebAPI.Controllers.AuthController.VerifyCode (Startup-Project.WebAPI) in 1918.3193ms
+2026-01-20 16:21:16 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.AuthController.VerifyCode (Startup-Project.WebAPI)'
+2026-01-20 16:21:17 [ERR] Sistemdə xəta baş verdi: Kod yanlışdır və ya vaxtı bitib!
+System.Exception: Kod yanlışdır və ya vaxtı bitib!
+   at Startup_Project.Persistance.Concretes.Services.AuthService.VerifyCodeAsync(VerifyCodeDto verifyCodeDto) in C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Infrastructure\Startup-Project.Persistance\Concretes\Services\AuthService.cs:line 43
+   at Startup_Project.WebAPI.Controllers.AuthController.VerifyCode(VerifyCodeDto verifyCodeDto) in C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI\Controllers\AuthController.cs:line 21
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Startup_Project.WebAPI.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context) in C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI\Middlewares\ExceptionHandlingMiddleware.cs:line 20
+2026-01-20 16:21:17 [INF] Request finished HTTP/1.1 POST http://localhost:5086/api/Auth/verify-code - 500 null application/json 2015.9096ms
+2026-01-20 16:21:37 [INF] Request starting HTTP/1.1 POST http://localhost:5086/api/Auth/send-code - application/json 39
+2026-01-20 16:21:37 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.AuthController.SendCode (Startup-Project.WebAPI)'
+2026-01-20 16:21:37 [INF] Route matched with {action = "SendCode", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SendCode(Startup_Project.Application.Dtos.User.LoginStepOneDto) on controller Startup_Project.WebAPI.Controllers.AuthController (Startup-Project.WebAPI).
+2026-01-20 16:21:37 [INF] Executed DbCommand (4ms) [Parameters=[@email='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CodeExpireDate], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[PasswordHash], [u].[UpdatedAt], [u].[VerificationCode]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @email
+2026-01-20 16:21:37 [INF] Executed DbCommand (43ms) [Parameters=[@p8='?' (DbType = Guid), @p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Boolean), @p5='?' (Size = 4000), @p6='?' (DbType = DateTime2), @p7='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [CodeExpireDate] = @p0, [CreatedAt] = @p1, [Email] = @p2, [FullName] = @p3, [IsDeleted] = @p4, [PasswordHash] = @p5, [UpdatedAt] = @p6, [VerificationCode] = @p7
+OUTPUT 1
+WHERE [Id] = @p8;
+2026-01-20 16:21:40 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-01-20 16:21:40 [INF] Executed action Startup_Project.WebAPI.Controllers.AuthController.SendCode (Startup-Project.WebAPI) in 3337.3566ms
+2026-01-20 16:21:40 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.AuthController.SendCode (Startup-Project.WebAPI)'
+2026-01-20 16:21:40 [INF] Request finished HTTP/1.1 POST http://localhost:5086/api/Auth/send-code - 200 null application/json; charset=utf-8 3365.6552ms
+2026-01-20 16:22:01 [INF] Request starting HTTP/1.1 POST http://localhost:5086/api/Auth/verify-code - application/json 53
+2026-01-20 16:22:01 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.AuthController.VerifyCode (Startup-Project.WebAPI)'
+2026-01-20 16:22:01 [INF] Route matched with {action = "VerifyCode", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] VerifyCode(Startup_Project.Application.Dtos.User.VerifyCodeDto) on controller Startup_Project.WebAPI.Controllers.AuthController (Startup-Project.WebAPI).
+2026-01-20 16:22:01 [INF] Executed DbCommand (1ms) [Parameters=[@verifyCodeDto_Email='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CodeExpireDate], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[PasswordHash], [u].[UpdatedAt], [u].[VerificationCode]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @verifyCodeDto_Email
+2026-01-20 16:22:01 [INF] Executed DbCommand (3ms) [Parameters=[@p8='?' (DbType = Guid), @p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Boolean), @p5='?' (Size = 4000), @p6='?' (DbType = DateTime2), @p7='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [CodeExpireDate] = @p0, [CreatedAt] = @p1, [Email] = @p2, [FullName] = @p3, [IsDeleted] = @p4, [PasswordHash] = @p5, [UpdatedAt] = @p6, [VerificationCode] = @p7
+OUTPUT 1
+WHERE [Id] = @p8;
+2026-01-20 16:22:01 [INF] Executed action Startup_Project.WebAPI.Controllers.AuthController.VerifyCode (Startup-Project.WebAPI) in 71.5012ms
+2026-01-20 16:22:01 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.AuthController.VerifyCode (Startup-Project.WebAPI)'
+2026-01-20 16:22:01 [ERR] Sistemdə xəta baş verdi: Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Startup_Project.Persistance.Concretes.Services.AuthService.VerifyCodeAsync(VerifyCodeDto verifyCodeDto) in C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Infrastructure\Startup-Project.Persistance\Concretes\Services\AuthService.cs:line 50
+   at Startup_Project.WebAPI.Controllers.AuthController.VerifyCode(VerifyCodeDto verifyCodeDto) in C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI\Controllers\AuthController.cs:line 21
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Startup_Project.WebAPI.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context) in C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI\Middlewares\ExceptionHandlingMiddleware.cs:line 20
+2026-01-20 16:22:01 [INF] Request finished HTTP/1.1 POST http://localhost:5086/api/Auth/verify-code - 500 null application/json 95.696ms
+2026-01-20 16:27:43 [INF] Proqram başladılır...
+2026-01-20 16:27:44 [INF] User profile is available. Using 'C:\Users\User\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-01-20 16:27:44 [INF] Now listening on: http://localhost:5086
+2026-01-20 16:27:44 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-20 16:27:44 [INF] Hosting environment: Development
+2026-01-20 16:27:44 [INF] Content root path: C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI
+2026-01-20 16:27:44 [INF] Request starting HTTP/1.1 GET http://localhost:5086/scalar/v1 - null null
+2026-01-20 16:27:44 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2026-01-20 16:27:45 [INF] Write content with HTTP Response ContentType of text/html
+2026-01-20 16:27:45 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2026-01-20 16:27:45 [INF] Request finished HTTP/1.1 GET http://localhost:5086/scalar/v1 - 200 null text/html 372.2208ms
+2026-01-20 16:27:45 [INF] Request starting HTTP/1.1 GET http://localhost:5086/scalar/scalar.aspnetcore.js - null null
+2026-01-20 16:27:45 [INF] Request starting HTTP/1.1 GET http://localhost:5086/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-20 16:27:45 [INF] Request starting HTTP/1.1 GET http://localhost:5086/scalar/scalar.js - null null
+2026-01-20 16:27:45 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2026-01-20 16:27:45 [INF] Request finished HTTP/1.1 GET http://localhost:5086/_framework/aspnetcore-browser-refresh.js - 200 16529 application/javascript; charset=utf-8 29.8074ms
+2026-01-20 16:27:45 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.js'
+2026-01-20 16:27:45 [INF] Request starting HTTP/1.1 GET http://localhost:5086/_vs/browserLink - null null
+2026-01-20 16:27:45 [INF] Sending file with download name ''.
+2026-01-20 16:27:45 [INF] Sending file with download name ''.
+2026-01-20 16:27:45 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2026-01-20 16:27:45 [INF] Request finished HTTP/1.1 GET http://localhost:5086/scalar/scalar.aspnetcore.js - 200 1111 text/javascript 50.9266ms
+2026-01-20 16:27:45 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.js'
+2026-01-20 16:27:45 [INF] Request finished HTTP/1.1 GET http://localhost:5086/scalar/scalar.js - 200 909417 text/javascript 47.7787ms
+2026-01-20 16:27:45 [INF] Request finished HTTP/1.1 GET http://localhost:5086/_vs/browserLink - 200 null text/javascript; charset=UTF-8 50.3628ms
+2026-01-20 16:27:45 [INF] Request starting HTTP/1.1 GET http://localhost:5086/openapi/v1.json - null null
+2026-01-20 16:27:45 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
+2026-01-20 16:27:45 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
+2026-01-20 16:27:45 [INF] Request finished HTTP/1.1 GET http://localhost:5086/openapi/v1.json - 200 null application/json;charset=utf-8 35.5757ms
+2026-01-20 16:28:01 [INF] Request starting HTTP/1.1 POST http://localhost:5086/api/Auth/send-code - application/json 39
+2026-01-20 16:28:01 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.AuthController.SendCode (Startup-Project.WebAPI)'
+2026-01-20 16:28:01 [INF] Route matched with {action = "SendCode", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SendCode(Startup_Project.Application.Dtos.User.LoginStepOneDto) on controller Startup_Project.WebAPI.Controllers.AuthController (Startup-Project.WebAPI).
+2026-01-20 16:28:03 [INF] Executed DbCommand (68ms) [Parameters=[@email='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CodeExpireDate], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[PasswordHash], [u].[UpdatedAt], [u].[VerificationCode]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @email
+2026-01-20 16:28:04 [INF] Executed DbCommand (11ms) [Parameters=[@p8='?' (DbType = Guid), @p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Boolean), @p5='?' (Size = 4000), @p6='?' (DbType = DateTime2), @p7='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [CodeExpireDate] = @p0, [CreatedAt] = @p1, [Email] = @p2, [FullName] = @p3, [IsDeleted] = @p4, [PasswordHash] = @p5, [UpdatedAt] = @p6, [VerificationCode] = @p7
+OUTPUT 1
+WHERE [Id] = @p8;
+2026-01-20 16:28:06 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-01-20 16:28:06 [INF] Executed action Startup_Project.WebAPI.Controllers.AuthController.SendCode (Startup-Project.WebAPI) in 4926.1562ms
+2026-01-20 16:28:06 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.AuthController.SendCode (Startup-Project.WebAPI)'
+2026-01-20 16:28:06 [INF] Request finished HTTP/1.1 POST http://localhost:5086/api/Auth/send-code - 200 null application/json; charset=utf-8 5008.3736ms
+2026-01-20 16:28:32 [INF] Request starting HTTP/1.1 POST http://localhost:5086/api/Auth/verify-code - application/json 53
+2026-01-20 16:28:32 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.AuthController.VerifyCode (Startup-Project.WebAPI)'
+2026-01-20 16:28:32 [INF] Route matched with {action = "VerifyCode", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] VerifyCode(Startup_Project.Application.Dtos.User.VerifyCodeDto) on controller Startup_Project.WebAPI.Controllers.AuthController (Startup-Project.WebAPI).
+2026-01-20 16:28:32 [INF] Executed DbCommand (3ms) [Parameters=[@verifyCodeDto_Email='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CodeExpireDate], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[PasswordHash], [u].[UpdatedAt], [u].[VerificationCode]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @verifyCodeDto_Email
+2026-01-20 16:28:32 [INF] Executed DbCommand (23ms) [Parameters=[@p8='?' (DbType = Guid), @p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Boolean), @p5='?' (Size = 4000), @p6='?' (DbType = DateTime2), @p7='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [CodeExpireDate] = @p0, [CreatedAt] = @p1, [Email] = @p2, [FullName] = @p3, [IsDeleted] = @p4, [PasswordHash] = @p5, [UpdatedAt] = @p6, [VerificationCode] = @p7
+OUTPUT 1
+WHERE [Id] = @p8;
+2026-01-20 16:28:32 [INF] Executing OkObjectResult, writing value of type 'Startup_Project.Application.Dtos.Token.TokenDto'.
+2026-01-20 16:28:32 [INF] Executed action Startup_Project.WebAPI.Controllers.AuthController.VerifyCode (Startup-Project.WebAPI) in 219.5757ms
+2026-01-20 16:28:32 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.AuthController.VerifyCode (Startup-Project.WebAPI)'
+2026-01-20 16:28:32 [INF] Request finished HTTP/1.1 POST http://localhost:5086/api/Auth/verify-code - 200 null application/json; charset=utf-8 248.9744ms
