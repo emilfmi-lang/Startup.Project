@@ -12,6 +12,7 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
     public DbSet<Gym> Gyms { get; set; }
     public DbSet<Subscription> Subscriptions { get; set; }
     public DbSet<Package> Packages { get; set; }
+    public DbSet<User> Users {  get; set; }
     public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
     {
         return base.SaveChangesAsync(cancellationToken);
