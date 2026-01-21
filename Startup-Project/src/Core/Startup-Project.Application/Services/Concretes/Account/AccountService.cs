@@ -2,11 +2,14 @@
 using Microsoft.AspNetCore.Identity;
 using Startup_Project.Application.Abstractions.Services;
 using Startup_Project.Application.Dtos.Account;
+using Startup_Project.Application.Dtos.Account.Password;
 using Startup_Project.Application.Dtos.User;
 using Startup_Project.Application.Models;
 using Startup_Project.Application.Services.Interfaces.Account;
 using Startup_Project.Application.Validators.Account;
 using Startup_Project.Domain.Entities.Identity;
+using System.Net.NetworkInformation;
+
 
 namespace Startup_Project.Application.Services.Concretes.Account;
 
@@ -80,4 +83,40 @@ public class AccountService(UserManager<AppUser> userManager,
         return ResponseModel<string>.SuccessResponse(token);
     }
 
+    public async Task<ResponseModel<bool>> ForgotPasswordAsync(string email)
+    {
+        var user = await userManager.FindByEmailAsync(email);
+        if(user == null)
+            return ResponseModel<bool>.FailureResponse("İstifadəçi tapılmadı.");
+        var token = await userManager.GeneratePasswordResetTokenAsync(user);
+
+        byte[] tokenBytes = System.Text.Encoding.UTF8.GetBytes(token);
+        var encodedToken = Microsoft.AspNetCore.WebUtilities.WebEncoders.Base64UrlEncode(tokenBytes);
+        var callbackUrl= $"https://localhost:7000/api/Account/ResetPassword?email={user.Email}&token={encodedToken}";
+        string mailBody = $@"<h3>Şifrə Sıfırlama İstəyi</h3>
+                             <p>Salam {user.FullName},</p>
+                             <p>Şifrənizi yeniləmək üçün aşağıdakı linkə klikləyin:</p>
+                             <a href='{callbackUrl}'>Şifrəni Yenilə</a>
+                             <p>Əgər bu istəyi siz etməmisinizsə, bu emaili görməzdən gəlin.</p>";
+
+        await mailService.SendEmailAsync(user.Email!, "Şifrə Sıfırlama", mailBody);
+
+        return ResponseModel<bool>.SuccessResponse(true);
+    }
+
+    public async Task<ResponseModel<bool>> ResetPasswordAsync(ResetPasswordDto dto)
+    {
+        var user = await userManager.FindByEmailAsync(dto.Email);
+        if (user == null)
+            return ResponseModel<bool>.FailureResponse("İstifadəçi tapılmadı.");
+        if(dto.NewPassword != dto.ConfirmPassword)
+            return ResponseModel<bool>.FailureResponse("Yeni şifrə və təsdiq şifrəsi uyğun gəlmir.");
+
+        var decodedTokenBytes = Microsoft.AspNetCore.WebUtilities.WebEncoders.Base64UrlDecode(dto.Token);
+        var orginalToken = System.Text.Encoding.UTF8.GetString(decodedTokenBytes);
+        var result = await userManager.ResetPasswordAsync(user, orginalToken, dto.NewPassword);
+        if(!result.Succeeded)
+            return ResponseModel<bool>.FailureResponse(result.Errors.Select(e => e.Description).ToList());
+        return ResponseModel<bool>.SuccessResponse(true);
+    }
 }
