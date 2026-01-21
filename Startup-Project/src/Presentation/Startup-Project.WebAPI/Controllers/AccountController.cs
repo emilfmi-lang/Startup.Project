@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Startup_Project.Application.Dtos.Account;
 using Startup_Project.Application.Dtos.User;
 using Startup_Project.Application.Services.Interfaces.Account;
