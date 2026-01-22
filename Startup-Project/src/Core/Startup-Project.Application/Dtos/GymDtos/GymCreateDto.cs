@@ -14,5 +14,5 @@ public class GymCreateDto
     public string Address { get; set; } = null!;
     [FileLength(2 * 1024 * 1024)] 
     [FileType(new string[] { ".jpg", ".jpeg", ".png" })]
-    public IFormFile? IMage { get; set; }
+    public IFormFile? Image { get; set; }
 }

@@ -8,9 +8,9 @@
     ".NETCoreApp,Version=v10.0": {
       "Startup-Project.WebAPI/1.0.0": {
         "dependencies": {
-          "Microsoft.AspNetCore.OpenApi": "10.0.1",
+          "Microsoft.AspNetCore.OpenApi": "10.0.2",
           "Microsoft.EntityFrameworkCore.Tools": "10.0.2",
-          "Scalar.AspNetCore": "2.12.11",
+          "Scalar.AspNetCore": "2.12.14",
           "Serilog.AspNetCore": "10.0.0",
           "Serilog.Sinks.Console": "6.1.1",
           "Serilog.Sinks.File": "7.0.0",
@@ -126,14 +126,14 @@
           }
         }
       },
-      "Microsoft.AspNetCore.OpenApi/10.0.1": {
+      "Microsoft.AspNetCore.OpenApi/10.0.2": {
         "dependencies": {
           "Microsoft.OpenApi": "2.0.0"
         },
         "runtime": {
           "lib/net10.0/Microsoft.AspNetCore.OpenApi.dll": {
-            "assemblyVersion": "10.0.1.0",
-            "fileVersion": "10.0.125.57005"
+            "assemblyVersion": "10.0.2.0",
+            "fileVersion": "10.0.225.61305"
           }
         }
       },
@@ -740,11 +740,11 @@
           }
         }
       },
-      "Scalar.AspNetCore/2.12.11": {
+      "Scalar.AspNetCore/2.12.14": {
         "runtime": {
           "lib/net10.0/Scalar.AspNetCore.dll": {
-            "assemblyVersion": "2.12.11.0",
-            "fileVersion": "2.12.11.0"
+            "assemblyVersion": "2.12.14.0",
+            "fileVersion": "2.12.14.0"
           }
         }
       },
@@ -1099,12 +1099,12 @@
       "path": "microsoft.aspnetcore.identity.entityframeworkcore/10.0.2",
       "hashPath": "microsoft.aspnetcore.identity.entityframeworkcore.10.0.2.nupkg.sha512"
     },
-    "Microsoft.AspNetCore.OpenApi/10.0.1": {
+    "Microsoft.AspNetCore.OpenApi/10.0.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-gMY53EggRIFawhue66GanHcm1Tcd0+QzzMwnMl60LrEoJhGgzA9qAbLx6t/ON3hX4flc2NcEbTK1Z5GCLYHcwA==",
-      "path": "microsoft.aspnetcore.openapi/10.0.1",
-      "hashPath": "microsoft.aspnetcore.openapi.10.0.1.nupkg.sha512"
+      "sha512": "sha512-YuEjUNpsoZLs0I5ONt013Z+Udsz3f9sPUh1Xm59LN7+/Z8oVG/swCUYLBbANtfreiunWnoT2uk+5kst4s2jr3Q==",
+      "path": "microsoft.aspnetcore.openapi/10.0.2",
+      "hashPath": "microsoft.aspnetcore.openapi.10.0.2.nupkg.sha512"
     },
     "Microsoft.Bcl.AsyncInterfaces/8.0.0": {
       "type": "package",
@@ -1323,12 +1323,12 @@
       "path": "newtonsoft.json/13.0.3",
       "hashPath": "newtonsoft.json.13.0.3.nupkg.sha512"
     },
-    "Scalar.AspNetCore/2.12.11": {
+    "Scalar.AspNetCore/2.12.14": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-3QqVTb8juNA7oW1of14vyoE+Eg694w6TwEQZuEr6Sr/6Jb3DMS7X7V/qkGjiguvMT6PNq6qd5O1gXA2wIC1vgw==",
-      "path": "scalar.aspnetcore/2.12.11",
-      "hashPath": "scalar.aspnetcore.2.12.11.nupkg.sha512"
+      "sha512": "sha512-VEGl5/zr5G/g/OYrYxBuYzt3/VCHnxzaOGZC3JoOV7i4quP0bbTrt4oDKCp+rqzjJqg6AkeWH5mJ/iMFysLwbQ==",
+      "path": "scalar.aspnetcore/2.12.14",
+      "hashPath": "scalar.aspnetcore.2.12.14.nupkg.sha512"
     },
     "Serilog/4.3.0": {
       "type": "package",

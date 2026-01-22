@@ -3,25 +3,44 @@ using Startup_Project.Domain.Entities.Identity;
 
 namespace Startup_Project.Domain.Entities;
 
-public class Gym:BaseEntity
+public class Gym : BaseEntity
 {
-    public string Name { get;private set; } = null!;
-    public string Address { get;private set; } = null!;
-    public Guid OwnerId { get;private set; }
-    public AppUser Owner { get;private set; } = null!;
+    public string Name { get; private set; } = null!;
+    public string Address { get; private set; } = null!;
+    public string? ImagePath { get; private set; }
+
+    public Guid OwnerId { get; private set; }
+    public AppUser Owner { get; private set; } = null!;
+
     private Gym() { }
-    public Gym(string name, string address, Guid ownerId)
+
+    public Gym(string name, string address, Guid ownerId, string? imagePath = null)
+    {
+        SetName(name);
+        SetAddress(address);
+        OwnerId = ownerId;
+        ImagePath = imagePath;
+        CreatedAt = DateTime.UtcNow;
+    }
+    public void SetName(string name)
     {
         if (string.IsNullOrWhiteSpace(name))
-            throw new Exception("Gym name is required");
+            throw new ArgumentException("Gym name cannot be empty.");
         Name = name;
-        Address = address;
-        OwnerId = ownerId;
+        UpdatedAt = DateTime.UtcNow;
     }
-    public void ChangeAdress(string address)
+
+    public void SetAddress(string address)
     {
+        if (string.IsNullOrWhiteSpace(address))
+            throw new ArgumentException("Address cannot be empty.");
         Address = address;
         UpdatedAt = DateTime.UtcNow;
+    }
 
+    public void UpdateImage(string newPath)
+    {
+        ImagePath = newPath;
+        UpdatedAt = DateTime.UtcNow;
     }
 }

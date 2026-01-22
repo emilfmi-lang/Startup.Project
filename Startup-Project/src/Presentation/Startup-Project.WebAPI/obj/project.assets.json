@@ -160,7 +160,7 @@
           }
         }
       },
-      "Microsoft.AspNetCore.OpenApi/10.0.1": {
+      "Microsoft.AspNetCore.OpenApi/10.0.2": {
         "type": "package",
         "dependencies": {
           "Microsoft.OpenApi": "2.0.0"
@@ -958,7 +958,7 @@
           }
         }
       },
-      "Scalar.AspNetCore/2.12.11": {
+      "Scalar.AspNetCore/2.12.14": {
         "type": "package",
         "compile": {
           "lib/net10.0/Scalar.AspNetCore.dll": {
@@ -1367,7 +1367,7 @@
         "dependencies": {
           "AutoMapper": "16.0.0",
           "FluentValidation.DependencyInjectionExtensions": "12.1.1",
-          "Microsoft.EntityFrameworkCore": "10.0.1",
+          "Microsoft.EntityFrameworkCore": "10.0.2",
           "Startup-Project.Domain": "1.0.0"
         },
         "compile": {
@@ -1375,13 +1375,16 @@
         },
         "runtime": {
           "bin/placeholder/Startup-Project.Application.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       },
       "Startup-Project.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
-          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "10.0.1"
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "10.0.2"
         },
         "compile": {
           "bin/placeholder/Startup-Project.Domain.dll": {}
@@ -1630,10 +1633,10 @@
         "microsoft.aspnetcore.identity.entityframeworkcore.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.OpenApi/10.0.1": {
-      "sha512": "gMY53EggRIFawhue66GanHcm1Tcd0+QzzMwnMl60LrEoJhGgzA9qAbLx6t/ON3hX4flc2NcEbTK1Z5GCLYHcwA==",
+    "Microsoft.AspNetCore.OpenApi/10.0.2": {
+      "sha512": "YuEjUNpsoZLs0I5ONt013Z+Udsz3f9sPUh1Xm59LN7+/Z8oVG/swCUYLBbANtfreiunWnoT2uk+5kst4s2jr3Q==",
       "type": "package",
-      "path": "microsoft.aspnetcore.openapi/10.0.1",
+      "path": "microsoft.aspnetcore.openapi/10.0.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1644,7 +1647,7 @@
         "build/Microsoft.AspNetCore.OpenApi.targets",
         "lib/net10.0/Microsoft.AspNetCore.OpenApi.dll",
         "lib/net10.0/Microsoft.AspNetCore.OpenApi.xml",
-        "microsoft.aspnetcore.openapi.10.0.1.nupkg.sha512",
+        "microsoft.aspnetcore.openapi.10.0.2.nupkg.sha512",
         "microsoft.aspnetcore.openapi.nuspec"
       ]
     },
@@ -3334,10 +3337,10 @@
         "packageIcon.png"
       ]
     },
-    "Scalar.AspNetCore/2.12.11": {
-      "sha512": "3QqVTb8juNA7oW1of14vyoE+Eg694w6TwEQZuEr6Sr/6Jb3DMS7X7V/qkGjiguvMT6PNq6qd5O1gXA2wIC1vgw==",
+    "Scalar.AspNetCore/2.12.14": {
+      "sha512": "VEGl5/zr5G/g/OYrYxBuYzt3/VCHnxzaOGZC3JoOV7i4quP0bbTrt4oDKCp+rqzjJqg6AkeWH5mJ/iMFysLwbQ==",
       "type": "package",
-      "path": "scalar.aspnetcore/2.12.11",
+      "path": "scalar.aspnetcore/2.12.14",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3349,7 +3352,7 @@
         "lib/net8.0/Scalar.AspNetCore.xml",
         "lib/net9.0/Scalar.AspNetCore.dll",
         "lib/net9.0/Scalar.AspNetCore.xml",
-        "scalar.aspnetcore.2.12.11.nupkg.sha512",
+        "scalar.aspnetcore.2.12.14.nupkg.sha512",
         "scalar.aspnetcore.nuspec"
       ]
     },
@@ -3947,9 +3950,9 @@
   },
   "projectFileDependencyGroups": {
     "net10.0": [
-      "Microsoft.AspNetCore.OpenApi >= 10.0.1",
+      "Microsoft.AspNetCore.OpenApi >= 10.0.2",
       "Microsoft.EntityFrameworkCore.Tools >= 10.0.2",
-      "Scalar.AspNetCore >= 2.12.11",
+      "Scalar.AspNetCore >= 2.12.14",
       "Serilog.AspNetCore >= 10.0.0",
       "Serilog.Sinks.Console >= 6.1.1",
       "Serilog.Sinks.File >= 7.0.0",
@@ -4016,7 +4019,7 @@
         "dependencies": {
           "Microsoft.AspNetCore.OpenApi": {
             "target": "Package",
-            "version": "[10.0.1, )"
+            "version": "[10.0.2, )"
           },
           "Microsoft.EntityFrameworkCore.Tools": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -4026,7 +4029,7 @@
           },
           "Scalar.AspNetCore": {
             "target": "Package",
-            "version": "[2.12.11, )"
+            "version": "[2.12.14, )"
           },
           "Serilog.AspNetCore": {
             "target": "Package",
