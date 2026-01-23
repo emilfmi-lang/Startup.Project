@@ -2,6 +2,7 @@
 
 using AutoMapper;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Startup_Project.Application.Dtos.GymDtos.GymReview;
 using Startup_Project.Application.Models;
 using Startup_Project.Application.Services.Interfaces;
@@ -49,5 +50,16 @@ public class ReviewService(
         await reviewRepository.SaveAsync();
 
         return ResponseModel<bool>.SuccessResponse(true);
+    }
+    public async Task<ResponseModel<List<ReviewGetDto>>> GetGymReviewsAsync(Guid gymId)
+    {
+        var reviews = await reviewRepository.Table
+            .Include(r => r.User)
+            .Where(r => r.GymId == gymId)
+            .OrderByDescending(r => r.CreatedAt) 
+            .AsNoTracking()
+            .ToListAsync();
+        var dtos = mapper.Map<List<ReviewGetDto>>(reviews);
+        return ResponseModel<List<ReviewGetDto>>.SuccessResponse(dtos);
     }
 }

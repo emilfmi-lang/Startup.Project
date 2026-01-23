@@ -34,11 +34,7 @@ public class GymService(IGenericRepository<Gym> repository,
             return ResponseModel<bool>.FailureResponse("İstifadəçi təyin edilməyib.");
         }
 
-        string? imagePath = null;
-        if (dto.Image != null)
-        {
-            imagePath = await fileService.UploadFileAsync(dto.Image, "gyms");
-        }
+        var imagePath = await fileService.UploadFileAsync(dto.Image, "gyms");
 
         var gym = new Gym(dto.Name, dto.Address, Guid.Parse(userId), imagePath);
 

@@ -30,6 +30,7 @@ try
     builder.Services.AddInfrastructureServices(builder.Configuration);
 
     builder.Services.AddControllers();
+
     builder.Services.AddOpenApi();
 
     var app = builder.Build();
@@ -38,7 +39,13 @@ try
     app.UseMiddleware<ExceptionHandlingMiddleware>();
 
     app.MapOpenApi();
-    app.MapScalarApiReference();
+    app.MapScalarApiReference(options =>
+    {
+        options.Title = "Startup Project API";
+        options.DefaultHttpClient = new(ScalarTarget.CSharp, ScalarClient.HttpClient);
+    });
+
+    app.UseStaticFiles();
 
     app.UseAuthorization();
     app.MapControllers();
