@@ -64,5 +64,8 @@ public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
         Table.Update(entity);
         return true;
     }
-
+    public async Task<bool> AnyAsync(Expression<Func<T, bool>> method)
+    {
+        return await Table.AnyAsync(method);
+    }
 }

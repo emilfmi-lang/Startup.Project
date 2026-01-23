@@ -17,4 +17,5 @@ public interface IGenericRepository<T> where T : BaseEntity
     bool Remove(T entity);
     Task<int> SaveAsync();
     Task<T> GetSingleAsync(Expression<Func<T, bool>> method, bool tracking = true);
+    Task<bool> AnyAsync(Expression<Func<T, bool>> method);
 }

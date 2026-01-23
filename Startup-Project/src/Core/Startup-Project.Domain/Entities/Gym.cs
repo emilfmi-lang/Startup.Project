@@ -8,7 +8,8 @@ public class Gym : BaseEntity
     public string Name { get; private set; } = null!;
     public string Address { get; private set; } = null!;
     public string? ImagePath { get; private set; }
-
+    public List<GymReview> Reviews { get; private set; } = [];
+    public double AverageRating => Reviews.Any() ? Reviews.Average(r => r.StarCount) : 0;
     public Guid OwnerId { get; private set; }
     public AppUser Owner { get; private set; } = null!;
 

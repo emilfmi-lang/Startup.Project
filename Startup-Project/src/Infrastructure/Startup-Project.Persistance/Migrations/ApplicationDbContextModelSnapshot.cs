@@ -191,6 +191,50 @@ namespace Startup_Project.Persistance.Migrations
                     b.ToTable("Gyms");
                 });
 
+            modelBuilder.Entity("Startup_Project.Domain.Entities.GymReview", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("AppUserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Comment")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("GymId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("StarCount")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AppUserId");
+
+                    b.HasIndex("UserId");
+
+                    b.HasIndex("GymId", "UserId")
+                        .IsUnique();
+
+                    b.ToTable("GymReview");
+                });
+
             modelBuilder.Entity("Startup_Project.Domain.Entities.Identity.AppUser", b =>
                 {
                     b.Property<Guid>("Id")
@@ -402,6 +446,29 @@ namespace Startup_Project.Persistance.Migrations
                     b.Navigation("Owner");
                 });
 
+            modelBuilder.Entity("Startup_Project.Domain.Entities.GymReview", b =>
+                {
+                    b.HasOne("Startup_Project.Domain.Entities.Identity.AppUser", null)
+                        .WithMany("Reviews")
+                        .HasForeignKey("AppUserId");
+
+                    b.HasOne("Startup_Project.Domain.Entities.Gym", "Gym")
+                        .WithMany("Reviews")
+                        .HasForeignKey("GymId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Startup_Project.Domain.Entities.Identity.AppUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.Navigation("Gym");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("Startup_Project.Domain.Entities.Package", b =>
                 {
                     b.HasOne("Startup_Project.Domain.Entities.Gym", "Gym")
@@ -432,9 +499,16 @@ namespace Startup_Project.Persistance.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("Startup_Project.Domain.Entities.Gym", b =>
+                {
+                    b.Navigation("Reviews");
+                });
+
             modelBuilder.Entity("Startup_Project.Domain.Entities.Identity.AppUser", b =>
                 {
                     b.Navigation("Gyms");
+
+                    b.Navigation("Reviews");
                 });
 #pragma warning restore 612, 618
         }
