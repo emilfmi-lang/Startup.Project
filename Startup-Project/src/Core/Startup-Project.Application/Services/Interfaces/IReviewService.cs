@@ -7,4 +7,5 @@ public interface IReviewService
 {
     Task<ResponseModel<bool>> AddReviewAsync(ReviewCreateDto dto);
     Task<ResponseModel<List<ReviewGetDto>>> GetGymReviewsAsync(Guid gymId);
+    Task<ResponseModel<bool>> DeleteReviewAsync(string reviewId);
 }

@@ -164,6 +164,22 @@
   },
   {
     "ContainingType": "Startup_Project.WebAPI.Controllers.ReviewController",
+    "Method": "DeleteReview",
+    "RelativePath": "api/Review/{reviewId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "reviewId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Startup_Project.WebAPI.Controllers.ReviewController",
     "Method": "AddReview",
     "RelativePath": "api/Review/add-review",
     "HttpMethod": "POST",

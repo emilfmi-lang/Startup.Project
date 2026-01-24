@@ -20,14 +20,26 @@ public class ReviewController(IReviewService service) : ControllerBase
         }
         return Ok(result);
     }
-    [HttpGet("gym/{gymId}")]
-    public async Task<IActionResult> GetGymReviews([FromRoute] Guid gymId)
-    {
-        var result = await service.GetGymReviewsAsync(gymId);
-        if (!result.Success)
+        [HttpGet("gym/{gymId}")]
+        public async Task<IActionResult> GetGymReviews([FromRoute] Guid gymId)
         {
-            return BadRequest(result);
+            var result = await service.GetGymReviewsAsync(gymId);
+            if (!result.Success)
+            {
+                return BadRequest(result);
+            }
+            return Ok(result);
         }
-        return Ok(result);
+
+        [Authorize]
+        [HttpDelete("{reviewId}")]
+        public async Task<IActionResult> DeleteReview([FromRoute] string reviewId)
+        {
+            var result = await service.DeleteReviewAsync(reviewId);
+            if (!result.Success)
+            {
+                return BadRequest(result);
+            }
+            return Ok(result);
+        }
     }
-}

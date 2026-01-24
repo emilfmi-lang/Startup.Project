@@ -3,28 +3,68 @@
   "WorkspaceRootPath": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\services\\concretes\\reviewservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\services\\concretes\\reviewservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{42118A8D-BC21-8554-454A-CEDC6F4DF82B}|src\\Presentation\\Startup-Project.WebAPI\\Startup-Project.WebAPI.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\presentation\\startup-project.webapi\\controllers\\gymcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42118A8D-BC21-8554-454A-CEDC6F4DF82B}|src\\Presentation\\Startup-Project.WebAPI\\Startup-Project.WebAPI.csproj|solutionrelative:src\\presentation\\startup-project.webapi\\controllers\\gymcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AD773E88-F03D-1A3F-FD06-6E6FFAE722E4}|src\\Core\\Startup-Project.Domain\\Startup-Project.Domain.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.domain\\entities\\gymreview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD773E88-F03D-1A3F-FD06-6E6FFAE722E4}|src\\Core\\Startup-Project.Domain\\Startup-Project.Domain.csproj|solutionrelative:src\\core\\startup-project.domain\\entities\\gymreview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C5EBB276-6BC9-301D-AA79-BF84E6410A10}|src\\Infrastructure\\Startup-Project.Infrastructure\\Startup-Project.Infrastructure.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\infrastructure\\startup-project.infrastructure\\infrastructureserviceregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C5EBB276-6BC9-301D-AA79-BF84E6410A10}|src\\Infrastructure\\Startup-Project.Infrastructure\\Startup-Project.Infrastructure.csproj|solutionrelative:src\\infrastructure\\startup-project.infrastructure\\infrastructureserviceregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\services\\concretes\\gymservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\services\\concretes\\gymservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C5EBB276-6BC9-301D-AA79-BF84E6410A10}|src\\Infrastructure\\Startup-Project.Infrastructure\\Startup-Project.Infrastructure.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\infrastructure\\startup-project.infrastructure\\concretes\\services\\fileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C5EBB276-6BC9-301D-AA79-BF84E6410A10}|src\\Infrastructure\\Startup-Project.Infrastructure\\Startup-Project.Infrastructure.csproj|solutionrelative:src\\infrastructure\\startup-project.infrastructure\\concretes\\services\\fileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{42118A8D-BC21-8554-454A-CEDC6F4DF82B}|src\\Presentation\\Startup-Project.WebAPI\\Startup-Project.WebAPI.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\presentation\\startup-project.webapi\\controllers\\gymcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{42118A8D-BC21-8554-454A-CEDC6F4DF82B}|src\\Presentation\\Startup-Project.WebAPI\\Startup-Project.WebAPI.csproj|solutionrelative:src\\presentation\\startup-project.webapi\\controllers\\gymcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\services\\interfaces\\ifileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\services\\interfaces\\ifileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\services\\interfaces\\igymservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\services\\interfaces\\igymservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\services\\concretes\\reviewservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\services\\concretes\\reviewservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42118A8D-BC21-8554-454A-CEDC6F4DF82B}|src\\Presentation\\Startup-Project.WebAPI\\Startup-Project.WebAPI.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\presentation\\startup-project.webapi\\controllers\\reviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42118A8D-BC21-8554-454A-CEDC6F4DF82B}|src\\Presentation\\Startup-Project.WebAPI\\Startup-Project.WebAPI.csproj|solutionrelative:src\\presentation\\startup-project.webapi\\controllers\\reviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD773E88-F03D-1A3F-FD06-6E6FFAE722E4}|src\\Core\\Startup-Project.Domain\\Startup-Project.Domain.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.domain\\entities\\gym.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD773E88-F03D-1A3F-FD06-6E6FFAE722E4}|src\\Core\\Startup-Project.Domain\\Startup-Project.Domain.csproj|solutionrelative:src\\core\\startup-project.domain\\entities\\gym.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B1964D5-45F3-0B52-56F2-9456F0B7BE8C}|src\\Infrastructure\\Startup-Project.Persistance\\Startup-Project.Persistance.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\infrastructure\\startup-project.persistance\\concretes\\repositories\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B1964D5-45F3-0B52-56F2-9456F0B7BE8C}|src\\Infrastructure\\Startup-Project.Persistance\\Startup-Project.Persistance.csproj|solutionrelative:src\\infrastructure\\startup-project.persistance\\concretes\\repositories\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD773E88-F03D-1A3F-FD06-6E6FFAE722E4}|src\\Core\\Startup-Project.Domain\\Startup-Project.Domain.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.domain\\abstractions\\repositories\\igenericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD773E88-F03D-1A3F-FD06-6E6FFAE722E4}|src\\Core\\Startup-Project.Domain\\Startup-Project.Domain.csproj|solutionrelative:src\\core\\startup-project.domain\\abstractions\\repositories\\igenericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\dtos\\gymdtos\\gymreview\\reviewcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\dtos\\gymdtos\\gymreview\\reviewcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42118A8D-BC21-8554-454A-CEDC6F4DF82B}|src\\Presentation\\Startup-Project.WebAPI\\Startup-Project.WebAPI.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\presentation\\startup-project.webapi\\controllers\\testcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42118A8D-BC21-8554-454A-CEDC6F4DF82B}|src\\Presentation\\Startup-Project.WebAPI\\Startup-Project.WebAPI.csproj|solutionrelative:src\\presentation\\startup-project.webapi\\controllers\\testcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42118A8D-BC21-8554-454A-CEDC6F4DF82B}|src\\Presentation\\Startup-Project.WebAPI\\Startup-Project.WebAPI.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\presentation\\startup-project.webapi\\filters\\fileuploadoperationfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42118A8D-BC21-8554-454A-CEDC6F4DF82B}|src\\Presentation\\Startup-Project.WebAPI\\Startup-Project.WebAPI.csproj|solutionrelative:src\\presentation\\startup-project.webapi\\filters\\fileuploadoperationfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD773E88-F03D-1A3F-FD06-6E6FFAE722E4}|src\\Core\\Startup-Project.Domain\\Startup-Project.Domain.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.domain\\entities\\gymreview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD773E88-F03D-1A3F-FD06-6E6FFAE722E4}|src\\Core\\Startup-Project.Domain\\Startup-Project.Domain.csproj|solutionrelative:src\\core\\startup-project.domain\\entities\\gymreview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{42118A8D-BC21-8554-454A-CEDC6F4DF82B}|src\\Presentation\\Startup-Project.WebAPI\\Startup-Project.WebAPI.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\presentation\\startup-project.webapi\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -33,10 +73,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\attributes\\filelengthattribute .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\attributes\\filelengthattribute .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{42118A8D-BC21-8554-454A-CEDC6F4DF82B}|src\\Presentation\\Startup-Project.WebAPI\\Startup-Project.WebAPI.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\presentation\\startup-project.webapi\\filters\\fileuploadoperationfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{42118A8D-BC21-8554-454A-CEDC6F4DF82B}|src\\Presentation\\Startup-Project.WebAPI\\Startup-Project.WebAPI.csproj|solutionrelative:src\\presentation\\startup-project.webapi\\filters\\fileuploadoperationfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{42118A8D-BC21-8554-454A-CEDC6F4DF82B}|src\\Presentation\\Startup-Project.WebAPI\\Startup-Project.WebAPI.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\presentation\\startup-project.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -51,20 +87,8 @@
       "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\dtos\\gymdtos\\gymcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{42118A8D-BC21-8554-454A-CEDC6F4DF82B}|src\\Presentation\\Startup-Project.WebAPI\\Startup-Project.WebAPI.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\presentation\\startup-project.webapi\\controllers\\reviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{42118A8D-BC21-8554-454A-CEDC6F4DF82B}|src\\Presentation\\Startup-Project.WebAPI\\Startup-Project.WebAPI.csproj|solutionrelative:src\\presentation\\startup-project.webapi\\controllers\\reviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\services\\interfaces\\ireviewservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\services\\interfaces\\ireviewservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD773E88-F03D-1A3F-FD06-6E6FFAE722E4}|src\\Core\\Startup-Project.Domain\\Startup-Project.Domain.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.domain\\abstractions\\repositories\\igenericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD773E88-F03D-1A3F-FD06-6E6FFAE722E4}|src\\Core\\Startup-Project.Domain\\Startup-Project.Domain.csproj|solutionrelative:src\\core\\startup-project.domain\\abstractions\\repositories\\igenericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7B1964D5-45F3-0B52-56F2-9456F0B7BE8C}|src\\Infrastructure\\Startup-Project.Persistance\\Startup-Project.Persistance.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\infrastructure\\startup-project.persistance\\concretes\\repositories\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7B1964D5-45F3-0B52-56F2-9456F0B7BE8C}|src\\Infrastructure\\Startup-Project.Persistance\\Startup-Project.Persistance.csproj|solutionrelative:src\\infrastructure\\startup-project.persistance\\concretes\\repositories\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\mappings\\gyms\\reviewprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -73,10 +97,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\dtos\\gymdtos\\gymreview\\reviewgetdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\dtos\\gymdtos\\gymreview\\reviewgetdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\dtos\\gymdtos\\gymreview\\reviewcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\dtos\\gymdtos\\gymreview\\reviewcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\startup-project.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
@@ -91,24 +111,8 @@
       "RelativeMoniker": "D:0:0:{7B1964D5-45F3-0B52-56F2-9456F0B7BE8C}|src\\Infrastructure\\Startup-Project.Persistance\\Startup-Project.Persistance.csproj|solutionrelative:src\\infrastructure\\startup-project.persistance\\configurations\\gymreviewconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AD773E88-F03D-1A3F-FD06-6E6FFAE722E4}|src\\Core\\Startup-Project.Domain\\Startup-Project.Domain.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.domain\\entities\\gym.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD773E88-F03D-1A3F-FD06-6E6FFAE722E4}|src\\Core\\Startup-Project.Domain\\Startup-Project.Domain.csproj|solutionrelative:src\\core\\startup-project.domain\\entities\\gym.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{42118A8D-BC21-8554-454A-CEDC6F4DF82B}|src\\Presentation\\Startup-Project.WebAPI\\Startup-Project.WebAPI.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\presentation\\startup-project.webapi\\services\\fileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{42118A8D-BC21-8554-454A-CEDC6F4DF82B}|src\\Presentation\\Startup-Project.WebAPI\\Startup-Project.WebAPI.csproj|solutionrelative:src\\presentation\\startup-project.webapi\\services\\fileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\services\\interfaces\\ifileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\services\\interfaces\\ifileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\dtos\\gymdtos\\gymupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\dtos\\gymdtos\\gymupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\validators\\gym\\gymupdatedtovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\validators\\gym\\gymupdatedtovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\dtos\\gymdtos\\gymgetdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -141,6 +145,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{7B1964D5-45F3-0B52-56F2-9456F0B7BE8C}|src\\Infrastructure\\Startup-Project.Persistance\\Startup-Project.Persistance.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\infrastructure\\startup-project.persistance\\migrations\\20260123110557_mig_7.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7B1964D5-45F3-0B52-56F2-9456F0B7BE8C}|src\\Infrastructure\\Startup-Project.Persistance\\Startup-Project.Persistance.csproj|solutionrelative:src\\infrastructure\\startup-project.persistance\\migrations\\20260123110557_mig_7.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\validators\\gym\\gymupdatedtovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\validators\\gym\\gymupdatedtovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -154,28 +162,133 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DependencyInjection.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\DependencyInjection.cs",
-              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\DependencyInjection.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\DependencyInjection.cs",
-              "RelativeToolTip": "src\\Core\\Startup-Project.Application\\DependencyInjection.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA+AAAAAAAAAA==",
+              "DocumentIndex": 36,
+              "Title": "GymUpdateDtoValidator.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Validators\\Gym\\GymUpdateDtoValidator.cs",
+              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Validators\\Gym\\GymUpdateDtoValidator.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Validators\\Gym\\GymUpdateDtoValidator.cs",
+              "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Validators\\Gym\\GymUpdateDtoValidator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-23T12:47:31.362Z",
+              "WhenOpened": "2026-01-24T13:41:19.583Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "InfrastructureServiceRegistration.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Infrastructure\\InfrastructureServiceRegistration.cs",
+              "RelativeDocumentMoniker": "src\\Infrastructure\\Startup-Project.Infrastructure\\InfrastructureServiceRegistration.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Infrastructure\\InfrastructureServiceRegistration.cs",
+              "RelativeToolTip": "src\\Infrastructure\\Startup-Project.Infrastructure\\InfrastructureServiceRegistration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-24T13:38:23.807Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FileService.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Infrastructure\\Concretes\\Services\\FileService.cs",
+              "RelativeDocumentMoniker": "src\\Infrastructure\\Startup-Project.Infrastructure\\Concretes\\Services\\FileService.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Infrastructure\\Concretes\\Services\\FileService.cs",
+              "RelativeToolTip": "src\\Infrastructure\\Startup-Project.Infrastructure\\Concretes\\Services\\FileService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-24T13:38:12.022Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "IFileService.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Services\\Interfaces\\IFileService.cs",
+              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Services\\Interfaces\\IFileService.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Services\\Interfaces\\IFileService.cs",
+              "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Services\\Interfaces\\IFileService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-24T13:38:03.504Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GymService.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Services\\Concretes\\GymService.cs",
+              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Services\\Concretes\\GymService.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Services\\Concretes\\GymService.cs",
+              "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Services\\Concretes\\GymService.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-22T18:31:02.193Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "GymController.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Presentation\\Startup-Project.WebAPI\\Controllers\\GymController.cs",
               "RelativeDocumentMoniker": "src\\Presentation\\Startup-Project.WebAPI\\Controllers\\GymController.cs",
               "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Presentation\\Startup-Project.WebAPI\\Controllers\\GymController.cs",
               "RelativeToolTip": "src\\Presentation\\Startup-Project.WebAPI\\Controllers\\GymController.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAAuwCoAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-23T10:35:41.82Z"
+              "WhenOpened": "2026-01-23T10:35:41.82Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ReviewService.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Services\\Concretes\\ReviewService.cs",
+              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Services\\Concretes\\ReviewService.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Services\\Concretes\\ReviewService.cs",
+              "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Services\\Concretes\\ReviewService.cs",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAQwDwAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-23T11:21:56.613Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ReviewController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Presentation\\Startup-Project.WebAPI\\Controllers\\ReviewController.cs",
+              "RelativeDocumentMoniker": "src\\Presentation\\Startup-Project.WebAPI\\Controllers\\ReviewController.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Presentation\\Startup-Project.WebAPI\\Controllers\\ReviewController.cs",
+              "RelativeToolTip": "src\\Presentation\\Startup-Project.WebAPI\\Controllers\\ReviewController.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAhwAgAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-23T12:03:48.124Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Gym.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Entities\\Gym.cs",
+              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Domain\\Entities\\Gym.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Entities\\Gym.cs",
+              "RelativeToolTip": "src\\Core\\Startup-Project.Domain\\Entities\\Gym.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAAwBsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-22T18:21:49.811Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "GenericRepository.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Persistance\\Concretes\\Repositories\\GenericRepository.cs",
+              "RelativeDocumentMoniker": "src\\Infrastructure\\Startup-Project.Persistance\\Concretes\\Repositories\\GenericRepository.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Persistance\\Concretes\\Repositories\\GenericRepository.cs",
+              "RelativeToolTip": "src\\Infrastructure\\Startup-Project.Persistance\\Concretes\\Repositories\\GenericRepository.cs",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAUwEgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-23T11:29:45.182Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -187,62 +300,87 @@
               "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Services\\Interfaces\\IGymService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-22T18:31:15.925Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "GymService.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Services\\Concretes\\GymService.cs",
-              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Services\\Concretes\\GymService.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Services\\Concretes\\GymService.cs",
-              "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Services\\Concretes\\GymService.cs",
-              "ViewState": "AgIAAE0AAAAAAAAAAAAqwE4AAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-22T18:31:02.193Z",
+              "WhenOpened": "2026-01-22T18:31:15.925Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
+              "Title": "IGenericRepository.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Abstractions\\Repositories\\IGenericRepository.cs",
+              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Domain\\Abstractions\\Repositories\\IGenericRepository.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Abstractions\\Repositories\\IGenericRepository.cs",
+              "RelativeToolTip": "src\\Core\\Startup-Project.Domain\\Abstractions\\Repositories\\IGenericRepository.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAsAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-23T11:30:10.565Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ReviewCreateDto.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Dtos\\GymDtos\\GymReview\\ReviewCreateDto.cs",
+              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Dtos\\GymDtos\\GymReview\\ReviewCreateDto.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Dtos\\GymDtos\\GymReview\\ReviewCreateDto.cs",
+              "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Dtos\\GymDtos\\GymReview\\ReviewCreateDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-23T11:08:30.027Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "GymReview.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Entities\\GymReview.cs",
+              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Domain\\Entities\\GymReview.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Entities\\GymReview.cs",
+              "RelativeToolTip": "src\\Core\\Startup-Project.Domain\\Entities\\GymReview.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAsAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-23T10:48:41.119Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Presentation\\Startup-Project.WebAPI\\Program.cs",
               "RelativeDocumentMoniker": "src\\Presentation\\Startup-Project.WebAPI\\Program.cs",
               "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Presentation\\Startup-Project.WebAPI\\Program.cs",
               "RelativeToolTip": "src\\Presentation\\Startup-Project.WebAPI\\Program.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAAAQAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAACkAAAAAAAAAAIBJwAQAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-23T12:14:36.129Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ReviewService.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Services\\Concretes\\ReviewService.cs",
-              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Services\\Concretes\\ReviewService.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Services\\Concretes\\ReviewService.cs*",
-              "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Services\\Concretes\\ReviewService.cs*",
-              "ViewState": "AgIAACcAAAAAAAAAAAAQwDIAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-23T11:21:56.613Z",
+              "WhenOpened": "2026-01-23T12:14:36.129Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "GymReview.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Entities\\GymReview.cs",
-              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Domain\\Entities\\GymReview.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Entities\\GymReview.cs*",
-              "RelativeToolTip": "src\\Core\\Startup-Project.Domain\\Entities\\GymReview.cs*",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAsAAAAdAAAAAAAAAA==",
+              "DocumentIndex": 15,
+              "Title": "DependencyInjection.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\DependencyInjection.cs",
+              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\DependencyInjection.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\DependencyInjection.cs",
+              "RelativeToolTip": "src\\Core\\Startup-Project.Application\\DependencyInjection.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-23T10:48:41.119Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-23T12:47:31.362Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 12,
+              "Title": "TestController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Presentation\\Startup-Project.WebAPI\\Controllers\\TestController.cs",
+              "RelativeDocumentMoniker": "src\\Presentation\\Startup-Project.WebAPI\\Controllers\\TestController.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Presentation\\Startup-Project.WebAPI\\Controllers\\TestController.cs",
+              "RelativeToolTip": "src\\Presentation\\Startup-Project.WebAPI\\Controllers\\TestController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-24T12:53:19.5Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "FileUploadOperationFilter.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Presentation\\Startup-Project.WebAPI\\Filters\\FileUploadOperationFilter.cs",
               "RelativeDocumentMoniker": "src\\Presentation\\Startup-Project.WebAPI\\Filters\\FileUploadOperationFilter.cs",
@@ -254,7 +392,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 16,
               "Title": "AccountController.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Presentation\\Startup-Project.WebAPI\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "src\\Presentation\\Startup-Project.WebAPI\\Controllers\\AccountController.cs",
@@ -266,7 +404,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 19,
               "Title": "Startup-Project.WebAPI.csproj",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Presentation\\Startup-Project.WebAPI\\Startup-Project.WebAPI.csproj",
               "RelativeDocumentMoniker": "src\\Presentation\\Startup-Project.WebAPI\\Startup-Project.WebAPI.csproj",
@@ -278,19 +416,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "ReviewController.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Presentation\\Startup-Project.WebAPI\\Controllers\\ReviewController.cs",
-              "RelativeDocumentMoniker": "src\\Presentation\\Startup-Project.WebAPI\\Controllers\\ReviewController.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Presentation\\Startup-Project.WebAPI\\Controllers\\ReviewController.cs",
-              "RelativeToolTip": "src\\Presentation\\Startup-Project.WebAPI\\Controllers\\ReviewController.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAQwBwAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-23T12:03:48.124Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 17,
               "Title": "FileLengthAttribute .cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Attributes\\FileLengthAttribute .cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Attributes\\FileLengthAttribute .cs",
@@ -302,19 +428,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 21,
               "Title": "IReviewService.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Services\\Interfaces\\IReviewService.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Services\\Interfaces\\IReviewService.cs",
               "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Services\\Interfaces\\IReviewService.cs",
               "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Services\\Interfaces\\IReviewService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAYAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAEBUwAYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-23T11:21:43.013Z"
+              "WhenOpened": "2026-01-23T11:21:43.013Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 20,
               "Title": "GymCreateDto.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Dtos\\GymDtos\\GymCreateDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Dtos\\GymDtos\\GymCreateDto.cs",
@@ -326,7 +453,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 22,
               "Title": "ReviewProfile.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Mappings\\Gyms\\ReviewProfile.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Mappings\\Gyms\\ReviewProfile.cs",
@@ -338,7 +465,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 23,
               "Title": "ReviewGetDto.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Dtos\\GymDtos\\GymReview\\ReviewGetDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Dtos\\GymDtos\\GymReview\\ReviewGetDto.cs",
@@ -350,43 +477,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "GenericRepository.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Persistance\\Concretes\\Repositories\\GenericRepository.cs",
-              "RelativeDocumentMoniker": "src\\Infrastructure\\Startup-Project.Persistance\\Concretes\\Repositories\\GenericRepository.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Persistance\\Concretes\\Repositories\\GenericRepository.cs",
-              "RelativeToolTip": "src\\Infrastructure\\Startup-Project.Persistance\\Concretes\\Repositories\\GenericRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-23T11:29:45.182Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "IGenericRepository.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Abstractions\\Repositories\\IGenericRepository.cs",
-              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Domain\\Abstractions\\Repositories\\IGenericRepository.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Abstractions\\Repositories\\IGenericRepository.cs",
-              "RelativeToolTip": "src\\Core\\Startup-Project.Domain\\Abstractions\\Repositories\\IGenericRepository.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAYwBAAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-23T11:30:10.565Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "ReviewCreateDto.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Dtos\\GymDtos\\GymReview\\ReviewCreateDto.cs",
-              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Dtos\\GymDtos\\GymReview\\ReviewCreateDto.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Dtos\\GymDtos\\GymReview\\ReviewCreateDto.cs",
-              "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Dtos\\GymDtos\\GymReview\\ReviewCreateDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-23T11:08:30.027Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 35,
               "Title": "20260123110557_mig_7.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Persistance\\Migrations\\20260123110557_mig_7.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\Startup-Project.Persistance\\Migrations\\20260123110557_mig_7.cs",
@@ -398,7 +489,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 25,
               "Title": "AppUser.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Entities\\Identity\\AppUser.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Domain\\Entities\\Identity\\AppUser.cs",
@@ -410,7 +501,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 26,
               "Title": "GymReviewConfiguration.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Persistance\\Configurations\\GymReviewConfiguration.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\Startup-Project.Persistance\\Configurations\\GymReviewConfiguration.cs",
@@ -422,7 +513,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 27,
               "Title": "GymUpdateDto.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Dtos\\GymDtos\\GymUpdateDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Dtos\\GymDtos\\GymUpdateDto.cs",
@@ -434,7 +525,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 24,
               "Title": "Startup-Project.Application.csproj",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj",
@@ -446,7 +537,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "GymGetDto.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Dtos\\GymDtos\\GymGetDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Dtos\\GymDtos\\GymGetDto.cs",
@@ -458,43 +549,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "IFileService.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Services\\Interfaces\\IFileService.cs",
-              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Services\\Interfaces\\IFileService.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Services\\Interfaces\\IFileService.cs",
-              "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Services\\Interfaces\\IFileService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-22T18:31:52.135Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "Gym.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Entities\\Gym.cs",
-              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Domain\\Entities\\Gym.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Entities\\Gym.cs",
-              "RelativeToolTip": "src\\Core\\Startup-Project.Domain\\Entities\\Gym.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-22T18:21:49.811Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "GymUpdateDtoValidator.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Validators\\Gym\\GymUpdateDtoValidator.cs",
-              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Validators\\Gym\\GymUpdateDtoValidator.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Validators\\Gym\\GymUpdateDtoValidator.cs",
-              "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Validators\\Gym\\GymUpdateDtoValidator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA0AAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-23T10:16:19.321Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "GymProfile.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Mappings\\Gyms\\GymProfile.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Mappings\\Gyms\\GymProfile.cs",
@@ -506,19 +561,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "FileService.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Presentation\\Startup-Project.WebAPI\\Services\\FileService.cs",
-              "RelativeDocumentMoniker": "src\\Presentation\\Startup-Project.WebAPI\\Services\\FileService.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Presentation\\Startup-Project.WebAPI\\Services\\FileService.cs",
-              "RelativeToolTip": "src\\Presentation\\Startup-Project.WebAPI\\Services\\FileService.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAAAAsAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-22T18:45:11.015Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 30,
               "Title": "GymCreateDtoValidator.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Validators\\Gym\\GymCreateDtoValidator.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Validators\\Gym\\GymCreateDtoValidator.cs",
@@ -530,7 +573,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 31,
               "Title": "FileTypeAttribute.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Attributes\\FileTypeAttribute.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Attributes\\FileTypeAttribute.cs",
@@ -542,7 +585,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 34,
               "Title": "20260122182358_mig_6.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Persistance\\Migrations\\20260122182358_mig_6.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\Startup-Project.Persistance\\Migrations\\20260122182358_mig_6.cs",
@@ -554,7 +597,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 32,
               "Title": "IJwtTokenService.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Abstractions\\Services\\IJwtTokenService.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Abstractions\\Services\\IJwtTokenService.cs",
@@ -566,7 +609,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 33,
               "Title": "Category.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Entities\\Category.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Domain\\Entities\\Category.cs",

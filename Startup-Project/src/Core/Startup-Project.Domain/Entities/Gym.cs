@@ -9,7 +9,8 @@ public class Gym : BaseEntity
     public string Address { get; private set; } = null!;
     public string? ImagePath { get; private set; }
     public List<GymReview> Reviews { get; private set; } = [];
-    public double AverageRating => Reviews.Any() ? Reviews.Average(r => r.StarCount) : 0;
+    public double AverageRating {  get;  set; } = 0;
+    public int ReviewCount { get; set; } = 0;
     public Guid OwnerId { get; private set; }
     public AppUser Owner { get; private set; } = null!;
 
@@ -23,6 +24,31 @@ public class Gym : BaseEntity
         ImagePath = imagePath;
         CreatedAt = DateTime.UtcNow;
     }
+    public void AddReview(double rating)
+    {
+        var total = AverageRating * ReviewCount;
+        ReviewCount++;
+        AverageRating = (total + rating) / ReviewCount;
+    }
+
+    public void RemoveReview(double rating)
+    {
+        if (ReviewCount <= 0)
+            return;
+
+        var total = AverageRating * ReviewCount;
+        ReviewCount--;
+
+        if (ReviewCount == 0)
+        {
+            AverageRating = 0;
+        }
+        else
+        {
+            AverageRating = (total - rating) / ReviewCount;
+        }
+    }
+
     public void SetName(string name)
     {
         if (string.IsNullOrWhiteSpace(name))

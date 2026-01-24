@@ -9,6 +9,7 @@ namespace Startup_Project.Domain.Abstractions.Repositories;
 public interface IGenericRepository<T> where T : BaseEntity
 {
     DbSet<T> Table { get; }
+    Task<T?> GetByIdAsync(Guid id);
     Task<List<T>> GetAllAsync(bool tracking = true);
     Task<List<T>> GetWhereAsync(Expression<Func<T, bool>> method, bool tracking = true);
     Task<T> GetByIdAsync(string id, bool tracking = true);

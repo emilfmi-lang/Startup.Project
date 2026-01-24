@@ -10,13 +10,12 @@ using Startup_Project.Domain.Abstractions.Repositories;
 using Startup_Project.Domain.Entities;
 using System.Security.Claims;
 
-
 namespace Startup_Project.Application.Services.Concretes;
 
 public class GymService(IGenericRepository<Gym> repository,
                         IFileService fileService,
                         IMapper mapper,
-                         IHttpContextAccessor httpContextAccessor ) : IGymService
+                         IHttpContextAccessor httpContextAccessor) : IGymService
 {
     public async Task<ResponseModel<bool>> CreateAsync(GymCreateDto dto)
     {
@@ -29,14 +28,20 @@ public class GymService(IGenericRepository<Gym> repository,
         }
 
         var userId = httpContextAccessor.HttpContext?.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+        Guid ownerGuid;
         if (string.IsNullOrEmpty(userId))
         {
-            return ResponseModel<bool>.FailureResponse("İstifadəçi təyin edilməyib.");
+            ownerGuid = Guid.Parse("00000000-0000-0000-0000-000000000001");
+        }
+        else
+        {
+            ownerGuid = Guid.Parse(userId);
         }
 
         var imagePath = await fileService.UploadFileAsync(dto.Image, "gyms");
 
-        var gym = new Gym(dto.Name, dto.Address, Guid.Parse(userId), imagePath);
+        var gym = new Gym(dto.Name, dto.Address, ownerGuid, imagePath);
 
         var result = await repository.AddAsync(gym);
         if (!result)
@@ -59,7 +64,7 @@ public class GymService(IGenericRepository<Gym> repository,
         }
 
         var gym = await repository.GetByIdAsync(id, tracking: true);
-        if (gym == null)
+        if (gym == null || gym.IsDeleted)
         {
             return ResponseModel<bool>.FailureResponse("Zal tapılmadı.");
         }
@@ -70,11 +75,20 @@ public class GymService(IGenericRepository<Gym> repository,
             return ResponseModel<bool>.FailureResponse("Bu əməliyyatı yerinə yetirmək üçün icazəniz yoxdur.");
         }
 
-        gym.SetName(dto.Name);
+        if (!string.IsNullOrEmpty(dto.Name))
+        {
+            gym.SetName(dto.Name);
+        }
+
         gym.SetAddress(dto.Address);
 
         if (dto.NewImage != null)
         {
+            if (!string.IsNullOrEmpty(gym.ImagePath))
+            {
+                await fileService.DeleteFileAsync(gym.ImagePath);
+            }
+
             var newImagePath = await fileService.UploadFileAsync(dto.NewImage, "gyms");
             gym.UpdateImage(newImagePath);
         }
@@ -87,7 +101,12 @@ public class GymService(IGenericRepository<Gym> repository,
 
     public async Task<ResponseModel<List<GymGetDto>>> GetAllAsync()
     {
-        var gyms = await repository.Table.Include(g => g.Owner).AsNoTracking().ToListAsync();
+        var gyms = await repository.Table
+            .Include(g => g.Owner)
+            .Where(g => !g.IsDeleted)
+            .AsNoTracking()
+            .ToListAsync();
+
         var gymDtos = mapper.Map<List<GymGetDto>>(gyms);
         return ResponseModel<List<GymGetDto>>.SuccessResponse(gymDtos);
     }
@@ -95,7 +114,7 @@ public class GymService(IGenericRepository<Gym> repository,
     public async Task<ResponseModel<bool>> DeleteAsync(string id)
     {
         var gym = await repository.GetByIdAsync(id, tracking: true);
-        if (gym == null)
+        if (gym == null || gym.IsDeleted)
         {
             return ResponseModel<bool>.FailureResponse("Zal tapılmadı.");
         }
@@ -105,12 +124,9 @@ public class GymService(IGenericRepository<Gym> repository,
         {
             return ResponseModel<bool>.FailureResponse("Bu əməliyyatı yerinə yetirmək üçün icazəniz yoxdur.");
         }
-        if(!string.IsNullOrEmpty(gym.ImagePath))
-        {
-            await fileService.DeleteFileAsync(gym.ImagePath);
-        }
 
-        repository.Remove(gym);
+        gym.IsDeleted = true;
+        repository.Update(gym);
         await repository.SaveAsync();
 
         return ResponseModel<bool>.SuccessResponse(true);

@@ -68,4 +68,9 @@ public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
     {
         return await Table.AnyAsync(method);
     }
+
+    public async Task<T?> GetByIdAsync(Guid id)
+    {
+        return await Table.FindAsync(id);
+    }
 }
