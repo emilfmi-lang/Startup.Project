@@ -45,8 +45,10 @@ public class ReviewService(
             return ResponseModel<bool>.FailureResponse("Siz bu zala artıq qiymət vermisiniz.");
         }
         var review = mapper.Map<GymReview>(dto);
+        review.UserId = userGuid;
         var result = await reviewRepository.AddAsync(review);
-        if (!result) return ResponseModel<bool>.FailureResponse("Xəta baş verdi, rəy qeydə alınmadı.");
+        if (!result) 
+            return ResponseModel<bool>.FailureResponse("Xəta baş verdi, rəy qeydə alınmadı.");
         await reviewRepository.SaveAsync();
 
         return ResponseModel<bool>.SuccessResponse(true);

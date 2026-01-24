@@ -9,7 +9,7 @@ public class GymReview:BaseEntity
     public int StarCount { get; private set; }
     public Guid GymId { get; private set; }
     public Gym Gym { get; private set; }    
-    public Guid UserId { get; private set; }
+    public Guid UserId { get; set; }
     public AppUser User { get; private set; }
     public GymReview()
     {
