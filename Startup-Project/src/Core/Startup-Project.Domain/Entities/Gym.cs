@@ -17,6 +17,17 @@ public class Gym : BaseEntity
 
     private Gym() { }
 
+    public bool IsOpenNow()
+    { 
+        var now = DateTime.UtcNow.AddHours(4);
+        var currentDay = now.DayOfWeek;
+        var currentMonth = now.TimeOfDay;
+        var todayHours = OpeningHours.FirstOrDefault(oh => oh.DayOfWeek == currentDay);
+        if (todayHours == null || todayHours.IsClosed)
+            return false;
+        return currentMonth >= todayHours.OpenTime && currentMonth <= todayHours.ClosingTime;
+    }
+
     public Gym(string name, string address, Guid ownerId, string? imagePath = null)
     {
         SetName(name);
