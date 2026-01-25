@@ -19,7 +19,6 @@ public class GymController(IGymService service) : ControllerBase
         return Ok(result);
     }
     [HttpPost]
-    [Consumes("multipart/form-data")]
     public async Task<IActionResult> CreateAsync([FromForm] GymCreateDto dto)
     {
         var result = await service.CreateAsync(dto);
@@ -31,7 +30,6 @@ public class GymController(IGymService service) : ControllerBase
     }
 
     [HttpPut("{id}")]
-    [Consumes("multipart/form-data")]
     public async Task<IActionResult> UpdateAsync(string id, [FromForm] GymUpdateDto dto)
     {
         var result = await service.UpdateAsync(id, dto);

@@ -7,7 +7,6 @@ namespace Startup_Project.Application.Dtos.GymDtos;
 public class GymCreateDto
 {
     [Required]
-    [MaxLength(100)]
     public string Name { get; set; } = null!;
 
     [Required]

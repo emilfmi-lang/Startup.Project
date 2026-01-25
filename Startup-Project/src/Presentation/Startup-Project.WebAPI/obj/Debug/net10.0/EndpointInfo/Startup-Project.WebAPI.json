@@ -192,7 +192,6 @@
                 "type": "object",
                 "properties": {
                   "Name": {
-                    "maxLength": 100,
                     "type": "string"
                   },
                   "Address": {

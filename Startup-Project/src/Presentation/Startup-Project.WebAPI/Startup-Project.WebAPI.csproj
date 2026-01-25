@@ -25,4 +25,8 @@
     <ProjectReference Include="..\..\Infrastructure\Startup-Project.Persistance\Startup-Project.Persistance.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Filters\" />
+  </ItemGroup>
+
 </Project>

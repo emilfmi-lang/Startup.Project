@@ -5,14 +5,15 @@ namespace Startup_Project.Domain.Entities;
 
 public class Gym : BaseEntity
 {
-    public string Name { get; private set; } = null!;
-    public string Address { get; private set; } = null!;
-    public string? ImagePath { get; private set; }
+    public string Name { get; set; } = null!;
+    public string Address { get; set; } = null!;
+    public string? ImagePath { get; set; }
     public List<GymReview> Reviews { get; private set; } = [];
-    public double AverageRating {  get;  set; } = 0;
+    public double AverageRating { get; set; } = 0;
     public int ReviewCount { get; set; } = 0;
-    public Guid OwnerId { get; private set; }
+    public Guid? OwnerId { get; private set; }
     public AppUser Owner { get; private set; } = null!;
+    public List<GymOpeningHour> OpeningHours { get; private set; } = [];    
 
     private Gym() { }
 

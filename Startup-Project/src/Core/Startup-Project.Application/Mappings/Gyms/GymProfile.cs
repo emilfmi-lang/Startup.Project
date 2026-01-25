@@ -11,7 +11,6 @@ public class GymProfile:Profile
     public GymProfile()
     {
         CreateMap<Gym, GymGetDto>().ForMember(dest => dest.OwnerFullName, opt => opt.MapFrom(src => src.Owner.FullName));
-        CreateMap<GymCreateDto, Gym>()
-            .ConstructUsing(src => new Gym(src.Name, src.Address, Guid.Empty, null));
+        
     }
 }

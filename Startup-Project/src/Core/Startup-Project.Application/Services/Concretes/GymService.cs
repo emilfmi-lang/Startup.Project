@@ -1,11 +1,9 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
-using Startup_Project.Application.Abstractions.Services;
 using Startup_Project.Application.Dtos.GymDtos;
 using Startup_Project.Application.Models;
 using Startup_Project.Application.Services.Interfaces;
-using Startup_Project.Application.Validators.Gym;
 using Startup_Project.Domain.Abstractions.Repositories;
 using Startup_Project.Domain.Entities;
 using System.Security.Claims;
@@ -15,79 +13,64 @@ namespace Startup_Project.Application.Services.Concretes;
 public class GymService(IGenericRepository<Gym> repository,
                         IFileService fileService,
                         IMapper mapper,
-                         IHttpContextAccessor httpContextAccessor) : IGymService
+                        IHttpContextAccessor httpContextAccessor) : IGymService
 {
     public async Task<ResponseModel<bool>> CreateAsync(GymCreateDto dto)
     {
-        var validator = new GymCreateDtoValidator();
-        var validationResult = await validator.ValidateAsync(dto);
-
-        if (!validationResult.IsValid)
-        {
-            return ResponseModel<bool>.FailureResponse(validationResult.Errors.Select(e => e.ErrorMessage).ToList());
-        }
-
-        var userId = httpContextAccessor.HttpContext?.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-
-        Guid ownerGuid;
+        var userId = httpContextAccessor.HttpContext?
+            .User.FindFirstValue(ClaimTypes.NameIdentifier);
+        
         if (string.IsNullOrEmpty(userId))
-        {
-            ownerGuid = Guid.Parse("00000000-0000-0000-0000-000000000001");
-        }
-        else
-        {
-            ownerGuid = Guid.Parse(userId);
-        }
+            return ResponseModel<bool>.FailureResponse("Zal yaratmaq üçün qeydiyyatdan keçməlisiniz.");
 
-        var imagePath = await fileService.UploadFileAsync(dto.Image, "gyms");
+        if (!Guid.TryParse(userId, out var ownerGuid))
+            return ResponseModel<bool>.FailureResponse("İstifadəçi məlumatı yanlışdır.");
+
+        string? imagePath = null;
+
+        if (dto.Image != null)
+            imagePath = await fileService.UploadFileAsync(dto.Image, "gyms");
 
         var gym = new Gym(dto.Name, dto.Address, ownerGuid, imagePath);
 
-        var result = await repository.AddAsync(gym);
-        if (!result)
-        {
-            return ResponseModel<bool>.FailureResponse("Zal yaradılarkən xəta baş verdi.");
-        }
-
+        await repository.AddAsync(gym);
         await repository.SaveAsync();
+
         return ResponseModel<bool>.SuccessResponse(true);
     }
 
     public async Task<ResponseModel<bool>> UpdateAsync(string id, GymUpdateDto dto)
     {
-        var validator = new GymUpdateDtoValidator();
-        var validationResult = await validator.ValidateAsync(dto);
+        if (!Guid.TryParse(id, out var gymGuid))
+            return ResponseModel<bool>.FailureResponse("Zal ID-si yanlışdır.");
 
-        if (!validationResult.IsValid)
-        {
-            return ResponseModel<bool>.FailureResponse(validationResult.Errors.Select(e => e.ErrorMessage).ToList());
-        }
+        var gym = await repository.GetByIdAsync(gymGuid);
 
-        var gym = await repository.GetByIdAsync(id, tracking: true);
-        if (gym == null || gym.IsDeleted)
-        {
+        if (gym == null)
             return ResponseModel<bool>.FailureResponse("Zal tapılmadı.");
-        }
 
-        var userId = httpContextAccessor.HttpContext?.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-        if (string.IsNullOrEmpty(userId) || gym.OwnerId != Guid.Parse(userId))
-        {
-            return ResponseModel<bool>.FailureResponse("Bu əməliyyatı yerinə yetirmək üçün icazəniz yoxdur.");
-        }
+        var userId = httpContextAccessor.HttpContext?
+            .User.FindFirstValue(ClaimTypes.NameIdentifier);
 
-        if (!string.IsNullOrEmpty(dto.Name))
-        {
+        if (string.IsNullOrEmpty(userId))
+            return ResponseModel<bool>.FailureResponse("İstifadəçi təyin edilməyib.");
+
+        if (!Guid.TryParse(userId, out var ownerGuid))
+            return ResponseModel<bool>.FailureResponse("İstifadəçi məlumatı yanlışdır.");
+
+        if (gym.OwnerId != ownerGuid)
+            return ResponseModel<bool>.FailureResponse("Bu zalı yalnız özünüz yeniləyə bilərsiniz.");
+
+        if (!string.IsNullOrWhiteSpace(dto.Name))
             gym.SetName(dto.Name);
-        }
 
-        gym.SetAddress(dto.Address);
+        if (!string.IsNullOrWhiteSpace(dto.Address))
+            gym.SetAddress(dto.Address);
 
         if (dto.NewImage != null)
         {
             if (!string.IsNullOrEmpty(gym.ImagePath))
-            {
                 await fileService.DeleteFileAsync(gym.ImagePath);
-            }
 
             var newImagePath = await fileService.UploadFileAsync(dto.NewImage, "gyms");
             gym.UpdateImage(newImagePath);
@@ -108,22 +91,34 @@ public class GymService(IGenericRepository<Gym> repository,
             .ToListAsync();
 
         var gymDtos = mapper.Map<List<GymGetDto>>(gyms);
+
         return ResponseModel<List<GymGetDto>>.SuccessResponse(gymDtos);
     }
 
     public async Task<ResponseModel<bool>> DeleteAsync(string id)
     {
-        var gym = await repository.GetByIdAsync(id, tracking: true);
-        if (gym == null || gym.IsDeleted)
-        {
-            return ResponseModel<bool>.FailureResponse("Zal tapılmadı.");
-        }
+        if (!Guid.TryParse(id, out var gymGuid))
+            return ResponseModel<bool>.FailureResponse("Zal ID-si yanlışdır.");
 
-        var userId = httpContextAccessor.HttpContext?.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-        if (string.IsNullOrEmpty(userId) || gym.OwnerId != Guid.Parse(userId))
-        {
-            return ResponseModel<bool>.FailureResponse("Bu əməliyyatı yerinə yetirmək üçün icazəniz yoxdur.");
-        }
+        var gym = await repository.GetByIdAsync(gymGuid);
+
+        if (gym == null || gym.IsDeleted)
+            return ResponseModel<bool>.FailureResponse("Zal tapılmadı.");
+
+        var userId = httpContextAccessor.HttpContext?
+            .User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+        if (string.IsNullOrEmpty(userId))
+            return ResponseModel<bool>.FailureResponse("İstifadəçi təyin edilməyib.");
+
+        if (!Guid.TryParse(userId, out var ownerGuid))
+            return ResponseModel<bool>.FailureResponse("İstifadəçi məlumatı yanlışdır.");
+
+        if (gym.OwnerId != ownerGuid)
+            return ResponseModel<bool>.FailureResponse("Bu zalı yalnız özünüz silə bilərsiniz.");
+
+        if (!string.IsNullOrEmpty(gym.ImagePath))
+            await fileService.DeleteFileAsync(gym.ImagePath);
 
         gym.IsDeleted = true;
         repository.Update(gym);
