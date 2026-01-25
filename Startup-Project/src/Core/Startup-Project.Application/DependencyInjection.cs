@@ -20,6 +20,7 @@ public static class DependencyInjection
             services.AddValidatorsFromAssembly(typeof(DependencyInjection).Assembly);
             services.AddScoped<IAccountService, AccountService>();
             services.AddScoped<IGymService, GymService>();
+            services.AddScoped<IGymOpeningHourService, GymOpeningHourService>();
 
 
         }

@@ -4,6 +4,7 @@ using AutoMapper;
 using Startup_Project.Application.Abstractions.UnitOfWork;
 using Startup_Project.Application.Dtos.GymOpeningHour;
 using Startup_Project.Application.Models;
+using Startup_Project.Application.Services.Interfaces;
 using Startup_Project.Domain.Abstractions.Repositories;
 using Startup_Project.Domain.Entities;
 
@@ -14,7 +15,7 @@ public class GymOpeningHourService(
     IGenericRepository<Gym> gymRepository,
     IMapper mapper,
     IUnitOfWork unitOfWork
-    )
+    ): IGymOpeningHourService
 {
     public async Task<ResponseModel<bool>> SetOpeningHoursAsync(Guid gymId, List<OpeningHourDto> dtos)
     {

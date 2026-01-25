@@ -3,8 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\models\\responsemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\models\\responsemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42118A8D-BC21-8554-454A-CEDC6F4DF82B}|src\\Presentation\\Startup-Project.WebAPI\\Startup-Project.WebAPI.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\presentation\\startup-project.webapi\\controllers\\gymopeninghourcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42118A8D-BC21-8554-454A-CEDC6F4DF82B}|src\\Presentation\\Startup-Project.WebAPI\\Startup-Project.WebAPI.csproj|solutionrelative:src\\presentation\\startup-project.webapi\\controllers\\gymopeninghourcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42118A8D-BC21-8554-454A-CEDC6F4DF82B}|src\\Presentation\\Startup-Project.WebAPI\\Startup-Project.WebAPI.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\presentation\\startup-project.webapi\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42118A8D-BC21-8554-454A-CEDC6F4DF82B}|src\\Presentation\\Startup-Project.WebAPI\\Startup-Project.WebAPI.csproj|solutionrelative:src\\presentation\\startup-project.webapi\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\services\\concretes\\gymopeninghourservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\services\\concretes\\gymopeninghourservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\services\\interfaces\\igymopeninghourservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\services\\interfaces\\igymopeninghourservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AD773E88-F03D-1A3F-FD06-6E6FFAE722E4}|src\\Core\\Startup-Project.Domain\\Startup-Project.Domain.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.domain\\entities\\gymopeninghour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -90,24 +110,89 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Presentation\\Startup-Project.WebAPI\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "src\\Presentation\\Startup-Project.WebAPI\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Presentation\\Startup-Project.WebAPI\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "src\\Presentation\\Startup-Project.WebAPI\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAlwBAAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-25T12:17:11.066Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ResponseModel.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Models\\ResponseModel.cs",
+              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Models\\ResponseModel.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Models\\ResponseModel.cs",
+              "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Models\\ResponseModel.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAkwAwAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-25T12:16:18.069Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GymOpeningHourController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Presentation\\Startup-Project.WebAPI\\Controllers\\GymOpeningHourController.cs",
+              "RelativeDocumentMoniker": "src\\Presentation\\Startup-Project.WebAPI\\Controllers\\GymOpeningHourController.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Presentation\\Startup-Project.WebAPI\\Controllers\\GymOpeningHourController.cs",
+              "RelativeToolTip": "src\\Presentation\\Startup-Project.WebAPI\\Controllers\\GymOpeningHourController.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAAAA8AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-25T12:12:29.435Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DependencyInjection.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\DependencyInjection.cs",
+              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\DependencyInjection.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\DependencyInjection.cs",
+              "RelativeToolTip": "src\\Core\\Startup-Project.Application\\DependencyInjection.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAwBYAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-25T12:11:27.017Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IGymOpeningHourService.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Services\\Interfaces\\IGymOpeningHourService.cs",
+              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Services\\Interfaces\\IGymOpeningHourService.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Services\\Interfaces\\IGymOpeningHourService.cs",
+              "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Services\\Interfaces\\IGymOpeningHourService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-25T12:10:39.454Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "GymOpeningHourService.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Services\\Concretes\\GymOpeningHourService.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Services\\Concretes\\GymOpeningHourService.cs",
               "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Services\\Concretes\\GymOpeningHourService.cs",
               "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Services\\Concretes\\GymOpeningHourService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-25T10:18:32.737Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 12,
               "Title": "20260125095626_add-migration mig_9.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Persistance\\Migrations\\20260125095626_add-migration mig_9.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\Startup-Project.Persistance\\Migrations\\20260125095626_add-migration mig_9.cs",
@@ -119,7 +204,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 15,
               "Title": "TokenDto.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Dtos\\Token\\TokenDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Dtos\\Token\\TokenDto.cs",
@@ -131,7 +216,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 16,
               "Title": "IUnitOfWork.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Abstractions\\UnitOfWork\\IUnitOfWork.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Abstractions\\UnitOfWork\\IUnitOfWork.cs",
@@ -143,7 +228,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
               "Title": "GymProfile.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Mappings\\Gyms\\GymProfile.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Mappings\\Gyms\\GymProfile.cs",
@@ -155,7 +240,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "GymOpeningHour.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Entities\\GymOpeningHour.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Domain\\Entities\\GymOpeningHour.cs",
@@ -167,7 +252,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "OpeningHourDtoValidator.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Validators\\GymOpeningHour\\OpeningHourDtoValidator.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Validators\\GymOpeningHour\\OpeningHourDtoValidator.cs",
@@ -179,7 +264,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 14,
               "Title": "IApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Interfaces\\IApplicationDbContext.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Interfaces\\IApplicationDbContext.cs",
@@ -191,7 +276,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
               "Title": "OpeningHourDto.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Dtos\\GymOpeningHour\\OpeningHourDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Dtos\\GymOpeningHour\\OpeningHourDto.cs",
@@ -203,7 +288,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 10,
               "Title": "GymListDto.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Dtos\\GymDtos\\GymListDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Dtos\\GymDtos\\GymListDto.cs",
@@ -215,7 +300,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 11,
               "Title": "Gym.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Entities\\Gym.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Domain\\Entities\\Gym.cs",
@@ -227,7 +312,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 13,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Persistance\\Data\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\Startup-Project.Persistance\\Data\\ApplicationDbContext.cs",
@@ -239,7 +324,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 19,
               "Title": "GymCreateDtoValidator.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Validators\\Gym\\GymCreateDtoValidator.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Validators\\Gym\\GymCreateDtoValidator.cs",
@@ -251,7 +336,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 21,
               "Title": "GymCreateDto.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Dtos\\GymDtos\\GymCreateDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Dtos\\GymDtos\\GymCreateDto.cs",
@@ -263,7 +348,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 20,
               "Title": "GymService.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Services\\Concretes\\GymService.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Services\\Concretes\\GymService.cs",
@@ -275,7 +360,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 18,
               "Title": "GymController.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Presentation\\Startup-Project.WebAPI\\Controllers\\GymController.cs",
               "RelativeDocumentMoniker": "src\\Presentation\\Startup-Project.WebAPI\\Controllers\\GymController.cs",
@@ -287,7 +372,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 17,
               "Title": "IFileService.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Services\\Interfaces\\IFileService.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Services\\Interfaces\\IFileService.cs",
@@ -299,7 +384,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 22,
               "Title": "FileService.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Infrastructure\\Concretes\\Services\\FileService.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\Startup-Project.Infrastructure\\Concretes\\Services\\FileService.cs",
@@ -311,7 +396,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 24,
               "Title": "20260125084337_mig_8.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Persistance\\Migrations\\20260125084337_mig_8.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\Startup-Project.Persistance\\Migrations\\20260125084337_mig_8.cs",
@@ -323,7 +408,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 23,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Presentation\\Startup-Project.WebAPI\\Program.cs",
               "RelativeDocumentMoniker": "src\\Presentation\\Startup-Project.WebAPI\\Program.cs",
