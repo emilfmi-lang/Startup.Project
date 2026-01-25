@@ -276,6 +276,58 @@
         }
       }
     },
+    "/api/GymOpeningHour/SetOpeningHours/{gymId}": {
+      "post": {
+        "tags": [
+          "GymOpeningHour"
+        ],
+        "parameters": [
+          {
+            "name": "gymId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/OpeningHourDto"
+                }
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/OpeningHourDto"
+                }
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/OpeningHourDto"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Review/add-review": {
       "post": {
         "tags": [
@@ -368,6 +420,9 @@
   },
   "components": {
     "schemas": {
+      "DayOfWeek": {
+        "type": "integer"
+      },
       "ForgotPasswordDto": {
         "required": [
           "email"
@@ -382,6 +437,23 @@
       "IFormFile": {
         "type": "string",
         "format": "binary"
+      },
+      "OpeningHourDto": {
+        "type": "object",
+        "properties": {
+          "dayOfWeek": {
+            "$ref": "#/components/schemas/DayOfWeek"
+          },
+          "openTime": {
+            "type": "string"
+          },
+          "closingTime": {
+            "type": "string"
+          },
+          "isClosed": {
+            "type": "boolean"
+          }
+        }
       },
       "ResetPasswordDto": {
         "type": "object",
@@ -475,6 +547,9 @@
     },
     {
       "name": "Gym"
+    },
+    {
+      "name": "GymOpeningHour"
     },
     {
       "name": "Review"

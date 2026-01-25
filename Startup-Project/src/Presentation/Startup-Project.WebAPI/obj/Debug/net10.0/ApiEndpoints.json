@@ -163,6 +163,27 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Startup_Project.WebAPI.Controllers.GymOpeningHourController",
+    "Method": "SetOpeningHoursAsync",
+    "RelativePath": "api/GymOpeningHour/SetOpeningHours/{gymId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "gymId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dtos",
+        "Type": "System.Collections.Generic.List\u00601[[Startup_Project.Application.Dtos.GymOpeningHour.OpeningHourDto, Startup-Project.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Startup_Project.WebAPI.Controllers.ReviewController",
     "Method": "DeleteReview",
     "RelativePath": "api/Review/{reviewId}",
