@@ -1,7 +1,6 @@
 ﻿using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 using Startup_Project.Application.Mappings.Account;
-using Startup_Project.Application.Mappings.Gyms;
 using Startup_Project.Application.Services.Concretes;
 using Startup_Project.Application.Services.Concretes.Account;
 using Startup_Project.Application.Services.Interfaces;
@@ -21,6 +20,7 @@ public static class DependencyInjection
             services.AddScoped<IAccountService, AccountService>();
             services.AddScoped<IGymService, GymService>();
             services.AddScoped<IGymOpeningHourService, GymOpeningHourService>();
+            services.AddScoped<IPaymentService, PaymentService>();
 
 
         }

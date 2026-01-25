@@ -23,6 +23,13 @@ public class Payment : BaseEntity
         SessionId = sessionId;
         Status = PaymentStatus.Pending;
     }
+    public void SetInitialDetails(Guid userId, decimal amount, string sessionId)
+    {
+        UserId = userId;
+        Amount = amount;
+        SessionId = sessionId;
+        Status = PaymentStatus.Pending;
+    }
 
     public void MarkAsSuccess() => Status = PaymentStatus.Successful;
     public void MarkAsFailed() => Status = PaymentStatus.Failed;

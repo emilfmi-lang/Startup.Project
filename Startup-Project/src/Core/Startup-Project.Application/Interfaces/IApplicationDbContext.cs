@@ -11,5 +11,6 @@ public interface IApplicationDbContext
     DbSet<Package> Packages { get; set; }
     DbSet<GymReview> GymReviews { get; set; }
     DbSet<GymOpeningHour> GymOpeningHours { get; set; }
+    DbSet<Payment> Payments { get; set; }
     Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
 }

@@ -1,10 +1,13 @@
 ﻿
-using Serilog;
 using Scalar.AspNetCore;
+using Serilog;
 using Startup_Project.Application;
-using Startup_Project.Persistance;
+using Startup_Project.Application.Interfaces;
 using Startup_Project.Infrastructure;
+using Startup_Project.Infrastructure.Concretes.Services;
+using Startup_Project.Persistance;
 using Startup_Project.WebAPI.Middlewares;
+using System.Security.Cryptography.X509Certificates;
 
 // 1. Serilog-u hər şeydən əvvəl konfiqurasiya edirik
 Log.Logger = new LoggerConfiguration()
@@ -28,6 +31,13 @@ try
     builder.Services.AddApplicationServices();
     builder.Services.AddPersistanceServices(builder.Configuration);
     builder.Services.AddInfrastructureServices(builder.Configuration);
+    builder.Services.AddHttpClient<IBankService, KapitalBankService>()
+    .ConfigurePrimaryHttpMessageHandler(() => {
+        var handler = new HttpClientHandler();
+        // Sertifikatı bura yükləyirik
+        handler.ClientCertificates.Add(new X509Certificate2("path_to_cert.pfx", "password"));
+        return handler;
+    });
 
     builder.Services.AddControllers();
 

@@ -28,4 +28,9 @@ public class Subscription: BaseEntity
         EndDate = EndDate.AddDays(extraDays);
         UpdatedAt = DateTime.UtcNow;
     }
+    public void SetUser(Guid userId)
+    {
+        UserId = userId;
+    }
+
 }

@@ -14,6 +14,7 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
     public DbSet<Package> Packages { get; set; }
     public DbSet<GymReview> GymReviews { get; set; }
     public DbSet<GymOpeningHour> GymOpeningHours { get; set; }
+    public DbSet<Payment> Payments { get; set; }
 
     public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
     {

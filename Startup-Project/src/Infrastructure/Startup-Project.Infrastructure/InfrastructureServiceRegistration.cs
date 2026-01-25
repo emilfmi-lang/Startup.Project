@@ -1,6 +1,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Startup_Project.Application.Abstractions.Services;
+using Startup_Project.Application.Interfaces;
 using Startup_Project.Application.Services.Interfaces;
 using Startup_Project.Infrastructure.Concretes.Services;
 using Startup_Project.Infrastructure.Security;
@@ -16,6 +17,7 @@ public static class InfrastructureServiceRegistration
         services.AddScoped<IMailService, MailService>();
         services.AddScoped<ITokenHandler, TokenHandler>();
         services.AddScoped<IFileService, FileService>();
+        services.AddScoped<IBankService, KapitalBankService>();
         return services;
     }
 }
