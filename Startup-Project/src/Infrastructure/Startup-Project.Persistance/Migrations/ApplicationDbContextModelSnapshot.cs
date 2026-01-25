@@ -197,6 +197,43 @@ namespace Startup_Project.Persistance.Migrations
                     b.ToTable("Gyms");
                 });
 
+            modelBuilder.Entity("Startup_Project.Domain.Entities.GymOpeningHour", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<TimeOnly>("ClosingTime")
+                        .HasColumnType("time");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("DayOfWeek")
+                        .HasColumnType("int");
+
+                    b.Property<Guid>("GymId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("IsClosed")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<TimeSpan>("OpenTime")
+                        .HasColumnType("time");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("GymId");
+
+                    b.ToTable("GymOpeningHours");
+                });
+
             modelBuilder.Entity("Startup_Project.Domain.Entities.GymReview", b =>
                 {
                     b.Property<Guid>("Id")
@@ -238,7 +275,7 @@ namespace Startup_Project.Persistance.Migrations
                     b.HasIndex("GymId", "UserId")
                         .IsUnique();
 
-                    b.ToTable("GymReview");
+                    b.ToTable("GymReviews");
                 });
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.Identity.AppUser", b =>
@@ -451,6 +488,17 @@ namespace Startup_Project.Persistance.Migrations
                     b.Navigation("Owner");
                 });
 
+            modelBuilder.Entity("Startup_Project.Domain.Entities.GymOpeningHour", b =>
+                {
+                    b.HasOne("Startup_Project.Domain.Entities.Gym", "Gym")
+                        .WithMany("OpeningHours")
+                        .HasForeignKey("GymId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Gym");
+                });
+
             modelBuilder.Entity("Startup_Project.Domain.Entities.GymReview", b =>
                 {
                     b.HasOne("Startup_Project.Domain.Entities.Identity.AppUser", null)
@@ -506,6 +554,8 @@ namespace Startup_Project.Persistance.Migrations
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.Gym", b =>
                 {
+                    b.Navigation("OpeningHours");
+
                     b.Navigation("Reviews");
                 });
 
