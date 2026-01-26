@@ -55,18 +55,20 @@ public class PaymentService : IPaymentService
 
     public async Task<ResponseModel<bool>> FinalizePaymentAsync(string sessionId)
     {
-        var isActuallyPaid = await _bankService.CheckPaymentStatusAsync(sessionId);
-        if (!isActuallyPaid)
-            return ResponseModel<bool>.FailureResponse("Ödəniş bank tərəfindən təsdiqlənməyib.");
-
         var payment = await _paymentRepository.GetSingleAsync(p => p.SessionId == sessionId);
         if (payment == null)
             return ResponseModel<bool>.FailureResponse("Ödəniş tapılmadı.");
+
+        var isActuallyPaid = await _bankService.CheckPaymentStatusAsync(sessionId);
+        if (!isActuallyPaid)
+            return ResponseModel<bool>.FailureResponse("Ödəniş bank tərəfindən təsdiqlənməyib.");
 
         if (payment.Status == PaymentStatus.Successful)
             return ResponseModel<bool>.SuccessResponse(true);
 
         var package = await _packageRepository.GetByIdAsync(payment.PackageId.ToString());
+        if(package == null)
+            return ResponseModel<bool>.FailureResponse("Paket tapılmadı.");
 
         payment.MarkAsSuccess();
 
