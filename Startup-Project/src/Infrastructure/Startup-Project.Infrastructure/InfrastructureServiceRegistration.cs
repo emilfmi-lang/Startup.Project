@@ -18,6 +18,7 @@ public static class InfrastructureServiceRegistration
         services.AddScoped<ITokenHandler, TokenHandler>();
         services.AddScoped<IFileService, FileService>();
         services.AddScoped<IBankService, KapitalBankService>();
+        services.AddScoped< QrTokenService>();
         return services;
     }
 }

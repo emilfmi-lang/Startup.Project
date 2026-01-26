@@ -22,9 +22,9 @@ public class PaymentController(IPaymentService service) : ControllerBase
             return BadRequest(result);
         return Ok(result);
     }
-    [HttpPost("callback")]
+    [HttpPost("result")]
     [AllowAnonymous]
-    public async Task<IActionResult> PaymentCallback([FromQuery] string sessionId)
+    public async Task<IActionResult> PaymentResult([FromQuery] string sessionId)
     {
         if(string.IsNullOrEmpty(sessionId))
             return BadRequest("SessionId boş ola bilməz.");
