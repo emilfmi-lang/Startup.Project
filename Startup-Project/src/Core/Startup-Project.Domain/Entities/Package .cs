@@ -27,4 +27,34 @@ public class Package: BaseEntity
         DurationInDays = durationInDays;
         GymId = gymId;
     }
+
+    public void SetName(string name)
+    {
+        if (string.IsNullOrWhiteSpace(name))
+            throw new ArgumentException("Package name cannot be empty.");
+        Name = name;
+        UpdatedAt = DateTime.UtcNow;
+    }
+
+    public void SetPrice(decimal price)
+    {
+        if (price <= 0)
+            throw new ArgumentException("Price must be positive.");
+        Price = price;
+        UpdatedAt = DateTime.UtcNow;
+    }
+
+    public void SetDurationInDays(int durationInDays)
+    {
+        if (durationInDays <= 0)
+            throw new ArgumentException("Duration must be positive.");
+        DurationInDays = durationInDays;
+        UpdatedAt = DateTime.UtcNow;
+    }
+
+    public void SetGymId(Guid gymId)
+    {
+        GymId = gymId;
+        UpdatedAt = DateTime.UtcNow;
+    }
 }
