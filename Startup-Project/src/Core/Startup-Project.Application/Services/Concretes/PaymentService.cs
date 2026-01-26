@@ -37,7 +37,6 @@ public class PaymentService : IPaymentService
 
     public async Task<ResponseModel<PaymentResponseDto>> CreatePaymentSessionAsync(Guid userId, PaymentRequestDto dto)
     {
-        // 1. Paket yoxlanışı
         var package = await _packageRepository.GetByIdAsync(dto.PackageId.ToString());
         if (package == null)
             return ResponseModel<PaymentResponseDto>.FailureResponse("Paket tapılmadı.");
@@ -56,7 +55,10 @@ public class PaymentService : IPaymentService
 
     public async Task<ResponseModel<bool>> FinalizePaymentAsync(string sessionId)
     {
-        // 1. Tranzaksiyanı tapırıq
+        var isActuallyPaid = await _bankService.CheckPaymentStatusAsync(sessionId);
+        if (!isActuallyPaid)
+            return ResponseModel<bool>.FailureResponse("Ödəniş bank tərəfindən təsdiqlənməyib.");
+
         var payment = await _paymentRepository.GetSingleAsync(p => p.SessionId == sessionId);
         if (payment == null)
             return ResponseModel<bool>.FailureResponse("Ödəniş tapılmadı.");
@@ -69,7 +71,7 @@ public class PaymentService : IPaymentService
         payment.MarkAsSuccess();
 
         var subscription = _mapper.Map<Subscription>(package);
-        subscription.SetUser(payment.UserId); 
+        subscription.SetUser(payment.UserId);
 
         await _subscriptionRepository.AddAsync(subscription);
 
@@ -77,6 +79,6 @@ public class PaymentService : IPaymentService
 
         return result > 0
             ? ResponseModel<bool>.SuccessResponse(true)
-            : ResponseModel<bool>.FailureResponse("Abunəlik aktivləşdirilə bilmədi.");
+            : ResponseModel<bool>.FailureResponse("Xəta: Abunəlik bazaya yazıla bilmədi.");
     }
 }

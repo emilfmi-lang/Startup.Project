@@ -3,6 +3,7 @@ using Startup_Project.Application.Dtos.Payment;
 using Startup_Project.Application.Interfaces;
 using Startup_Project.Application.Models;
 using System.Net.Http.Json;
+using static System.Net.WebRequestMethods;
 
 namespace Startup_Project.Infrastructure.Concretes.Services;
 
@@ -37,5 +38,13 @@ public class KapitalBankService : IBankService
         var bankData = await response.Content.ReadFromJsonAsync<KapitalBankResponse>();
 
         return new PaymentResponseDto(bankData.RedirectUrl, bankData.SessionId);
+    }
+    public async Task<bool> CheckPaymentStatusAsync(string sessionId)
+    {
+        var merchantId = _config["KapitalBank:MerchantId"];
+        var response = await _httpClient.GetAsync(
+                    $"https://tpay.kapitalbank.az/api/v1/checkout/{sessionId}?merchantId={merchantId}");
+        var result = await response.Content.ReadFromJsonAsync<KapitalBankResponse>();
+        return result.Status == "APPROVED";
     }
 }

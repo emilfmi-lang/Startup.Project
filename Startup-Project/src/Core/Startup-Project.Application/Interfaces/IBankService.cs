@@ -5,4 +5,5 @@ namespace Startup_Project.Application.Interfaces;
 public interface IBankService
 {
     Task<PaymentResponseDto> CreateSessionAsync(decimal amount, string packageName);
+    Task<bool> CheckPaymentStatusAsync(string sessionId);
 }
