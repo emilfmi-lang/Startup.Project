@@ -9,7 +9,6 @@ using Startup_Project.Persistance;
 using Startup_Project.WebAPI.Middlewares;
 using System.Security.Cryptography.X509Certificates;
 
-// 1. Serilog-u hər şeydən əvvəl konfiqurasiya edirik
 Log.Logger = new LoggerConfiguration()
     .MinimumLevel.Information()
     .WriteTo.Console()
@@ -24,17 +23,14 @@ try
 
     var builder = WebApplication.CreateBuilder(args);
 
-    // 2. Serilog-u .NET-in daxili log sistemi ilə əvəz edirik
     builder.Host.UseSerilog();
 
-    // Servis qeydiyyatları
     builder.Services.AddApplicationServices();
     builder.Services.AddPersistanceServices(builder.Configuration);
     builder.Services.AddInfrastructureServices(builder.Configuration);
     builder.Services.AddHttpClient<IBankService, KapitalBankService>()
     .ConfigurePrimaryHttpMessageHandler(() => {
         var handler = new HttpClientHandler();
-        // Sertifikatı bura yükləyirik
         handler.ClientCertificates.Add(new X509Certificate2("path_to_cert.pfx", "password"));
         return handler;
     });
@@ -44,8 +40,6 @@ try
     builder.Services.AddOpenApi();
 
     var app = builder.Build();
-
-    // 3. Xəta tutan Middleware (Mütləq MapOpenApi-dən əvvəl olmalıdır ki, hər şeyi tutsun)
     app.UseMiddleware<ExceptionHandlingMiddleware>();
 
     app.MapOpenApi();
@@ -64,11 +58,9 @@ try
 }
 catch (Exception ex)
 {
-    // Əgər proqram açılmasa, səbəbi burada (və log faylında) görünəcək
     Log.Fatal(ex, "Proqramın işə düşməsi zamanı kritik xəta baş verdi!");
 }
 finally
 {
-    // Yaddaşdakı logları təmizləyib bağlayırıq
     Log.CloseAndFlush();
 }

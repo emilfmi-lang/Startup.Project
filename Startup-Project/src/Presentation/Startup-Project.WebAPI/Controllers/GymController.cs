@@ -19,6 +19,7 @@ public class GymController(IGymService service) : ControllerBase
         return Ok(result);
     }
     [HttpPost]
+
     public async Task<IActionResult> CreateAsync([FromForm] GymCreateDto dto)
     {
         var result = await service.CreateAsync(dto);

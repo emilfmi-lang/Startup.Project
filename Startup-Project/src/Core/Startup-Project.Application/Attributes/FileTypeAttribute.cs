@@ -16,7 +16,7 @@ public class FileTypeAttribute : ValidationAttribute
     protected override ValidationResult? IsValid(object? value, ValidationContext validationContext)
     {
         if (value is not IFormFile file)
-            return ValidationResult.Success; // NULLs üçün ayrı [Required] istifadə edin
+            return ValidationResult.Success; 
 
         var ext = Path.GetExtension(file.FileName).ToLower();
 
