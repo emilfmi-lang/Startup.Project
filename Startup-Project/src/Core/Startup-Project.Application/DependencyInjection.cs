@@ -1,6 +1,5 @@
 ﻿using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
-using Startup_Project.Application.Mappings.Account;
 using Startup_Project.Application.Services.Concretes;
 using Startup_Project.Application.Services.Concretes.Account;
 using Startup_Project.Application.Services.Interfaces;
@@ -15,14 +14,14 @@ public static class DependencyInjection
     {
         public void AddApplicationServices()
         {
-            services.AddAutoMapper(cfg => { cfg.AddProfile<AccountProfile>(); });
+            services.AddAutoMapper(cfg => cfg.AddMaps(typeof(DependencyInjection).Assembly));
             services.AddValidatorsFromAssembly(typeof(DependencyInjection).Assembly);
             services.AddScoped<IAccountService, AccountService>();
             services.AddScoped<IGymService, GymService>();
             services.AddScoped<IGymOpeningHourService, GymOpeningHourService>();
             services.AddScoped<IPaymentService, PaymentService>();
-
-
+            services.AddScoped<IPackageService, PackageService>();
+            services.AddScoped<IReviewService, ReviewService>();
         }
     }
 }

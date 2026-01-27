@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Startup_Project.Application.Dtos.GymDtos;
 using Startup_Project.Application.Services.Interfaces;
 
@@ -9,6 +10,7 @@ namespace Startup_Project.WebAPI.Controllers;
 public class GymController(IGymService service) : ControllerBase
 {
     [HttpGet]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> GetAllAsync()
     {
         var result = await service.GetAllAsync();
@@ -18,9 +20,9 @@ public class GymController(IGymService service) : ControllerBase
         }
         return Ok(result);
     }
-    [HttpPost]
 
-    public async Task<IActionResult> CreateAsync([FromForm] GymCreateDto dto)
+    [HttpPost]
+    public async Task<IActionResult> CreateAsync([FromBody] GymCreateDto dto)
     {
         var result = await service.CreateAsync(dto);
         if (!result.Success)

@@ -6,13 +6,10 @@ using Startup_Project.Application.Interfaces;
 using Startup_Project.Persistance.Data;
 using Microsoft.AspNetCore.Identity;
 using Startup_Project.Domain.Entities.Identity;
-using Startup_Project.Application.Services.Concretes.Account;
-using Startup_Project.Application.Services.Interfaces.Account;
 using Startup_Project.Persistance.Concretes;
 using Startup_Project.Application.Abstractions.UnitOfWork;
 using Startup_Project.Persistance.Concretes.Repositories;
 using Startup_Project.Domain.Abstractions.Repositories;
-using Startup_Project.Application.Abstractions.Services;
 
 namespace Startup_Project.Persistance;
 
@@ -36,7 +33,6 @@ public static class PersistenceServiceRegistration
         }) .AddEntityFrameworkStores<ApplicationDbContext>()
             .AddDefaultTokenProviders();
 
-        services.AddScoped<IAccountService, AccountService> ();
         return services;
     }
 }

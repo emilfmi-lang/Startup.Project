@@ -1,11 +1,12 @@
 ﻿using Startup_Project.Application.Abstractions.UnitOfWork;
 using Startup_Project.Application.Models;
+using Startup_Project.Application.Services.Interfaces;
 using Startup_Project.Domain.Abstractions.Repositories;
 using Startup_Project.Domain.Entities;
 
 namespace Startup_Project.Infrastructure.Concretes.Services;
 
-public class QrTokenService
+public class QrTokenService : IQrTokenService
 {
     private readonly IGenericRepository<CheckInToken> _tokenRepository;
     private readonly IGenericRepository<Subscription> _subscriptionRepository;

@@ -15,8 +15,5 @@ public class GymCreateDtoValidator: AbstractValidator<GymCreateDto>
 
         RuleFor(x => x.Address)
             .NotEmpty().WithMessage("Ünvan qeyd edilməlidir.");
-
-        RuleFor(x => x.Image)
-            .NotNull().WithMessage("Şəkil yüklənməlidir.");
     }
 }

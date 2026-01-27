@@ -1,13 +1,13 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Startup_Project.Infrastructure.Concretes.Services;
+using Startup_Project.Application.Services.Interfaces;
 
 namespace Startup_Project.WebAPI.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-public class QrTokenController(QrTokenService service) : ControllerBase
+public class QrTokenController(IQrTokenService service) : ControllerBase
 {
     [Authorize]
     [HttpPost("generate")]

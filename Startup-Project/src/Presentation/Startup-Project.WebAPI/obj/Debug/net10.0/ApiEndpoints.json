@@ -98,19 +98,9 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "Name",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Address",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Image",
-        "Type": "Microsoft.AspNetCore.Http.IFormFile",
-        "IsRequired": false
+        "Name": "dto",
+        "Type": "Startup_Project.Application.Dtos.GymDtos.GymCreateDto",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []

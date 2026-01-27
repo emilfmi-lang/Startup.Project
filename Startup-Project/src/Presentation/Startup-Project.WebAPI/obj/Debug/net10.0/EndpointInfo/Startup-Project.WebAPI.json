@@ -187,20 +187,19 @@
         ],
         "requestBody": {
           "content": {
-            "application/x-www-form-urlencoded": {
+            "application/json": {
               "schema": {
-                "type": "object",
-                "properties": {
-                  "Name": {
-                    "type": "string"
-                  },
-                  "Address": {
-                    "type": "string"
-                  },
-                  "Image": {
-                    "$ref": "#/components/schemas/IFormFile"
-                  }
-                }
+                "$ref": "#/components/schemas/GymCreateDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GymCreateDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GymCreateDto"
               }
             }
           },
@@ -516,6 +515,17 @@
         "type": "object",
         "properties": {
           "email": {
+            "type": "string"
+          }
+        }
+      },
+      "GymCreateDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "address": {
             "type": "string"
           }
         }

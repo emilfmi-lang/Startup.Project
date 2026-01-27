@@ -28,3 +28,400 @@
 2026-01-27 13:47:02 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
 2026-01-27 13:47:02 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
 2026-01-27 13:47:02 [INF] Request finished HTTP/1.1 GET http://localhost:5086/openapi/v1.json - 200 null application/json;charset=utf-8 34.2796ms
+2026-01-27 15:25:46 [INF] Proqram başladılır...
+2026-01-27 15:25:47 [INF] User profile is available. Using 'C:\Users\User\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-01-27 15:25:47 [WRN] The WebRootPath was not found: C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI\wwwroot. Static files may be unavailable.
+2026-01-27 15:25:47 [INF] Now listening on: http://localhost:5086
+2026-01-27 15:25:47 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-27 15:25:47 [INF] Hosting environment: Development
+2026-01-27 15:25:47 [INF] Content root path: C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI
+2026-01-27 15:25:47 [INF] Request starting HTTP/1.1 GET http://localhost:5086/scalar/v1 - null null
+2026-01-27 15:25:47 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2026-01-27 15:25:47 [INF] Write content with HTTP Response ContentType of text/html
+2026-01-27 15:25:47 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2026-01-27 15:25:47 [INF] Request starting HTTP/1.1 GET http://localhost:5086/scalar/scalar.js - null null
+2026-01-27 15:25:47 [INF] Request starting HTTP/1.1 GET http://localhost:5086/scalar/scalar.aspnetcore.js - null null
+2026-01-27 15:25:47 [INF] Request finished HTTP/1.1 GET http://localhost:5086/scalar/v1 - 200 null text/html 254.443ms
+2026-01-27 15:25:47 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2026-01-27 15:25:47 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.js'
+2026-01-27 15:25:47 [INF] Request starting HTTP/1.1 GET http://localhost:5086/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-27 15:25:47 [INF] Sending file with download name ''.
+2026-01-27 15:25:47 [INF] Sending file with download name ''.
+2026-01-27 15:25:47 [INF] Request finished HTTP/1.1 GET http://localhost:5086/_framework/aspnetcore-browser-refresh.js - 200 16529 application/javascript; charset=utf-8 4.0145ms
+2026-01-27 15:25:47 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2026-01-27 15:25:47 [INF] Request starting HTTP/1.1 GET http://localhost:5086/_vs/browserLink - null null
+2026-01-27 15:25:47 [INF] Request finished HTTP/1.1 GET http://localhost:5086/scalar/scalar.aspnetcore.js - 200 1111 text/javascript 33.1575ms
+2026-01-27 15:25:47 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.js'
+2026-01-27 15:25:47 [INF] Request finished HTTP/1.1 GET http://localhost:5086/scalar/scalar.js - 200 922147 text/javascript 43.3584ms
+2026-01-27 15:25:47 [INF] Request finished HTTP/1.1 GET http://localhost:5086/_vs/browserLink - 200 null text/javascript; charset=UTF-8 40.9436ms
+2026-01-27 15:25:47 [INF] Request starting HTTP/1.1 GET http://localhost:5086/openapi/v1.json - null null
+2026-01-27 15:25:47 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
+2026-01-27 15:25:48 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
+2026-01-27 15:25:48 [INF] Request finished HTTP/1.1 GET http://localhost:5086/openapi/v1.json - 200 null application/json;charset=utf-8 21.1281ms
+2026-01-27 15:26:09 [INF] Request starting HTTP/1.1 POST http://localhost:5086/api/Gym - multipart/form-data 36768
+2026-01-27 15:26:09 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.GymController.CreateAsync (Startup-Project.WebAPI)'
+2026-01-27 15:26:09 [INF] Route matched with {action = "Create", controller = "Gym"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateAsync(Startup_Project.Application.Dtos.GymDtos.GymCreateDto) on controller Startup_Project.WebAPI.Controllers.GymController (Startup-Project.WebAPI).
+2026-01-27 15:26:09 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-01-27 15:26:09 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2026-01-27 15:26:09 [INF] Executed action Startup_Project.WebAPI.Controllers.GymController.CreateAsync (Startup-Project.WebAPI) in 278.642ms
+2026-01-27 15:26:09 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.GymController.CreateAsync (Startup-Project.WebAPI)'
+2026-01-27 15:26:09 [INF] Request finished HTTP/1.1 POST http://localhost:5086/api/Gym - 400 null application/problem+json; charset=utf-8 328.6804ms
+2026-01-27 15:35:12 [INF] Proqram başladılır...
+2026-01-27 15:35:12 [INF] User profile is available. Using 'C:\Users\User\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-01-27 15:35:12 [WRN] The WebRootPath was not found: C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI\wwwroot. Static files may be unavailable.
+2026-01-27 15:35:12 [INF] Now listening on: http://localhost:5086
+2026-01-27 15:35:12 [INF] Request starting HTTP/1.1 GET http://localhost:5086/scalar/v1 - null null
+2026-01-27 15:35:12 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2026-01-27 15:35:12 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-27 15:35:12 [INF] Hosting environment: Development
+2026-01-27 15:35:12 [INF] Content root path: C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI
+2026-01-27 15:35:12 [INF] Write content with HTTP Response ContentType of text/html
+2026-01-27 15:35:12 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2026-01-27 15:35:12 [INF] Request finished HTTP/1.1 GET http://localhost:5086/scalar/v1 - 200 null text/html 270.6121ms
+2026-01-27 15:35:12 [INF] Request starting HTTP/1.1 GET http://localhost:5086/scalar/scalar.aspnetcore.js - null null
+2026-01-27 15:35:12 [INF] Request starting HTTP/1.1 GET http://localhost:5086/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-27 15:35:12 [INF] Request starting HTTP/1.1 GET http://localhost:5086/scalar/scalar.js - null null
+2026-01-27 15:35:12 [INF] Request finished HTTP/1.1 GET http://localhost:5086/_framework/aspnetcore-browser-refresh.js - 200 16529 application/javascript; charset=utf-8 12.965ms
+2026-01-27 15:35:12 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2026-01-27 15:35:12 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.js'
+2026-01-27 15:35:12 [INF] Request starting HTTP/1.1 GET http://localhost:5086/_vs/browserLink - null null
+2026-01-27 15:35:12 [INF] Sending file with download name ''.
+2026-01-27 15:35:12 [INF] Sending file with download name ''.
+2026-01-27 15:35:12 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2026-01-27 15:35:12 [INF] Request finished HTTP/1.1 GET http://localhost:5086/scalar/scalar.aspnetcore.js - 200 1111 text/javascript 27.5871ms
+2026-01-27 15:35:12 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.js'
+2026-01-27 15:35:12 [INF] Request finished HTTP/1.1 GET http://localhost:5086/scalar/scalar.js - 200 922147 text/javascript 32.2218ms
+2026-01-27 15:35:12 [INF] Request finished HTTP/1.1 GET http://localhost:5086/_vs/browserLink - 200 null text/javascript; charset=UTF-8 35.2522ms
+2026-01-27 15:35:13 [INF] Request starting HTTP/1.1 GET http://localhost:5086/openapi/v1.json - null null
+2026-01-27 15:35:13 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
+2026-01-27 15:35:13 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
+2026-01-27 15:35:13 [INF] Request finished HTTP/1.1 GET http://localhost:5086/openapi/v1.json - 200 null application/json;charset=utf-8 20.9681ms
+2026-01-27 15:35:13 [INF] Request starting HTTP/1.1 GET http://localhost:5086/scalar/favicon.svg - null null
+2026-01-27 15:35:13 [INF] Executing endpoint 'HTTP: GET /scalar/favicon.svg'
+2026-01-27 15:35:13 [INF] Sending file with download name ''.
+2026-01-27 15:35:13 [INF] Executed endpoint 'HTTP: GET /scalar/favicon.svg'
+2026-01-27 15:35:13 [INF] Request finished HTTP/1.1 GET http://localhost:5086/scalar/favicon.svg - 200 533 image/svg+xml 7.1402ms
+2026-01-27 15:36:26 [INF] Proqram başladılır...
+2026-01-27 15:36:26 [INF] User profile is available. Using 'C:\Users\User\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-01-27 15:36:26 [WRN] The WebRootPath was not found: C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI\wwwroot. Static files may be unavailable.
+2026-01-27 15:36:26 [INF] Now listening on: http://localhost:5086
+2026-01-27 15:36:26 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-27 15:36:26 [INF] Hosting environment: Development
+2026-01-27 15:36:26 [INF] Content root path: C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI
+2026-01-27 15:36:27 [INF] Request starting HTTP/1.1 GET http://localhost:5086/scalar/v1 - null null
+2026-01-27 15:36:27 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2026-01-27 15:36:27 [INF] Write content with HTTP Response ContentType of text/html
+2026-01-27 15:36:27 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2026-01-27 15:36:27 [INF] Request finished HTTP/1.1 GET http://localhost:5086/scalar/v1 - 200 null text/html 269.7389ms
+2026-01-27 15:36:27 [INF] Request starting HTTP/1.1 GET http://localhost:5086/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-27 15:36:27 [INF] Request starting HTTP/1.1 GET http://localhost:5086/scalar/scalar.aspnetcore.js - null null
+2026-01-27 15:36:27 [INF] Request starting HTTP/1.1 GET http://localhost:5086/scalar/scalar.js - null null
+2026-01-27 15:36:27 [INF] Request starting HTTP/1.1 GET http://localhost:5086/_vs/browserLink - null null
+2026-01-27 15:36:27 [INF] Request finished HTTP/1.1 GET http://localhost:5086/_framework/aspnetcore-browser-refresh.js - 200 16529 application/javascript; charset=utf-8 18.6152ms
+2026-01-27 15:36:27 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2026-01-27 15:36:27 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.js'
+2026-01-27 15:36:27 [INF] Sending file with download name ''.
+2026-01-27 15:36:27 [INF] Sending file with download name ''.
+2026-01-27 15:36:27 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2026-01-27 15:36:27 [INF] Request finished HTTP/1.1 GET http://localhost:5086/scalar/scalar.aspnetcore.js - 200 1111 text/javascript 42.5443ms
+2026-01-27 15:36:27 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.js'
+2026-01-27 15:36:27 [INF] Request finished HTTP/1.1 GET http://localhost:5086/scalar/scalar.js - 200 922147 text/javascript 55.757ms
+2026-01-27 15:36:27 [INF] Request finished HTTP/1.1 GET http://localhost:5086/_vs/browserLink - 200 null text/javascript; charset=UTF-8 58.1419ms
+2026-01-27 15:36:27 [INF] Request starting HTTP/1.1 GET http://localhost:5086/openapi/v1.json - null null
+2026-01-27 15:36:27 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
+2026-01-27 15:36:27 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
+2026-01-27 15:36:27 [INF] Request finished HTTP/1.1 GET http://localhost:5086/openapi/v1.json - 200 null application/json;charset=utf-8 26.626ms
+2026-01-27 15:36:39 [INF] Request starting HTTP/1.1 POST http://localhost:5086/api/Gym - multipart/form-data 32523
+2026-01-27 15:36:39 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.GymController.CreateAsync (Startup-Project.WebAPI)'
+2026-01-27 15:36:39 [INF] Route matched with {action = "Create", controller = "Gym"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateAsync(Startup_Project.Application.Dtos.GymDtos.GymCreateDto, Microsoft.AspNetCore.Http.IFormFile) on controller Startup_Project.WebAPI.Controllers.GymController (Startup-Project.WebAPI).
+2026-01-27 15:36:39 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-01-27 15:36:39 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2026-01-27 15:36:39 [INF] Executed action Startup_Project.WebAPI.Controllers.GymController.CreateAsync (Startup-Project.WebAPI) in 267.8802ms
+2026-01-27 15:36:39 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.GymController.CreateAsync (Startup-Project.WebAPI)'
+2026-01-27 15:36:39 [INF] Request finished HTTP/1.1 POST http://localhost:5086/api/Gym - 400 null application/problem+json; charset=utf-8 315.6517ms
+2026-01-27 15:41:48 [INF] Proqram başladılır...
+2026-01-27 15:41:48 [INF] User profile is available. Using 'C:\Users\User\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-01-27 15:41:48 [WRN] The WebRootPath was not found: C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI\wwwroot. Static files may be unavailable.
+2026-01-27 15:41:48 [INF] Now listening on: http://localhost:5086
+2026-01-27 15:41:49 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-27 15:41:49 [INF] Hosting environment: Development
+2026-01-27 15:41:49 [INF] Content root path: C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI
+2026-01-27 15:41:49 [INF] Request starting HTTP/1.1 GET http://localhost:5086/scalar/v1 - null null
+2026-01-27 15:41:49 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2026-01-27 15:41:49 [INF] Write content with HTTP Response ContentType of text/html
+2026-01-27 15:41:49 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2026-01-27 15:41:49 [INF] Request starting HTTP/1.1 GET http://localhost:5086/scalar/scalar.js - null null
+2026-01-27 15:41:49 [INF] Request finished HTTP/1.1 GET http://localhost:5086/scalar/v1 - 200 null text/html 226.233ms
+2026-01-27 15:41:49 [INF] Request starting HTTP/1.1 GET http://localhost:5086/scalar/scalar.aspnetcore.js - null null
+2026-01-27 15:41:49 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.js'
+2026-01-27 15:41:49 [INF] Request starting HTTP/1.1 GET http://localhost:5086/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-27 15:41:49 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2026-01-27 15:41:49 [INF] Sending file with download name ''.
+2026-01-27 15:41:49 [INF] Sending file with download name ''.
+2026-01-27 15:41:49 [INF] Request finished HTTP/1.1 GET http://localhost:5086/_framework/aspnetcore-browser-refresh.js - 200 16529 application/javascript; charset=utf-8 6.6393ms
+2026-01-27 15:41:49 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2026-01-27 15:41:49 [INF] Request starting HTTP/1.1 GET http://localhost:5086/_vs/browserLink - null null
+2026-01-27 15:41:49 [INF] Request finished HTTP/1.1 GET http://localhost:5086/scalar/scalar.aspnetcore.js - 200 1111 text/javascript 32.2296ms
+2026-01-27 15:41:49 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.js'
+2026-01-27 15:41:49 [INF] Request finished HTTP/1.1 GET http://localhost:5086/scalar/scalar.js - 200 922147 text/javascript 46.0369ms
+2026-01-27 15:41:49 [INF] Request finished HTTP/1.1 GET http://localhost:5086/_vs/browserLink - 200 null text/javascript; charset=UTF-8 32.6759ms
+2026-01-27 15:41:49 [INF] Request starting HTTP/1.1 GET http://localhost:5086/openapi/v1.json - null null
+2026-01-27 15:41:49 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
+2026-01-27 15:41:49 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
+2026-01-27 15:41:49 [INF] Request finished HTTP/1.1 GET http://localhost:5086/openapi/v1.json - 200 null application/json;charset=utf-8 20.6514ms
+2026-01-27 15:42:19 [INF] Proqram başladılır...
+2026-01-27 15:42:19 [INF] User profile is available. Using 'C:\Users\User\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-01-27 15:42:19 [WRN] The WebRootPath was not found: C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI\wwwroot. Static files may be unavailable.
+2026-01-27 15:42:19 [INF] Now listening on: http://localhost:5086
+2026-01-27 15:42:19 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-27 15:42:19 [INF] Hosting environment: Development
+2026-01-27 15:42:19 [INF] Content root path: C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI
+2026-01-27 15:42:19 [INF] Request starting HTTP/1.1 GET http://localhost:5086/scalar/v1 - null null
+2026-01-27 15:42:20 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2026-01-27 15:42:20 [INF] Write content with HTTP Response ContentType of text/html
+2026-01-27 15:42:20 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2026-01-27 15:42:20 [INF] Request finished HTTP/1.1 GET http://localhost:5086/scalar/v1 - 200 null text/html 233.8093ms
+2026-01-27 15:42:20 [INF] Request starting HTTP/1.1 GET http://localhost:5086/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-27 15:42:20 [INF] Request starting HTTP/1.1 GET http://localhost:5086/scalar/scalar.aspnetcore.js - null null
+2026-01-27 15:42:20 [INF] Request starting HTTP/1.1 GET http://localhost:5086/scalar/scalar.js - null null
+2026-01-27 15:42:20 [INF] Request finished HTTP/1.1 GET http://localhost:5086/_framework/aspnetcore-browser-refresh.js - 200 16529 application/javascript; charset=utf-8 16.3576ms
+2026-01-27 15:42:20 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2026-01-27 15:42:20 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.js'
+2026-01-27 15:42:20 [INF] Request starting HTTP/1.1 GET http://localhost:5086/_vs/browserLink - null null
+2026-01-27 15:42:20 [INF] Sending file with download name ''.
+2026-01-27 15:42:20 [INF] Sending file with download name ''.
+2026-01-27 15:42:20 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2026-01-27 15:42:20 [INF] Request finished HTTP/1.1 GET http://localhost:5086/scalar/scalar.aspnetcore.js - 200 1111 text/javascript 38.1108ms
+2026-01-27 15:42:20 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.js'
+2026-01-27 15:42:20 [INF] Request finished HTTP/1.1 GET http://localhost:5086/scalar/scalar.js - 200 922147 text/javascript 37.5504ms
+2026-01-27 15:42:20 [INF] Request finished HTTP/1.1 GET http://localhost:5086/_vs/browserLink - 200 null text/javascript; charset=UTF-8 38.1135ms
+2026-01-27 15:42:20 [INF] Request starting HTTP/1.1 GET http://localhost:5086/openapi/v1.json - null null
+2026-01-27 15:42:20 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
+2026-01-27 15:42:20 [INF] Request starting HTTP/1.1 GET http://localhost:5086/scalar/favicon.svg - null null
+2026-01-27 15:42:20 [INF] Executing endpoint 'HTTP: GET /scalar/favicon.svg'
+2026-01-27 15:42:20 [INF] Sending file with download name ''.
+2026-01-27 15:42:20 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
+2026-01-27 15:42:20 [INF] Executed endpoint 'HTTP: GET /scalar/favicon.svg'
+2026-01-27 15:42:20 [INF] Request finished HTTP/1.1 GET http://localhost:5086/openapi/v1.json - 200 null application/json;charset=utf-8 27.6017ms
+2026-01-27 15:42:20 [INF] Request finished HTTP/1.1 GET http://localhost:5086/scalar/favicon.svg - 200 533 image/svg+xml 9.5562ms
+2026-01-27 15:43:18 [INF] Proqram başladılır...
+2026-01-27 15:43:19 [INF] User profile is available. Using 'C:\Users\User\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-01-27 15:43:19 [WRN] The WebRootPath was not found: C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI\wwwroot. Static files may be unavailable.
+2026-01-27 15:43:19 [INF] Now listening on: http://localhost:5086
+2026-01-27 15:43:19 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-27 15:43:19 [INF] Hosting environment: Development
+2026-01-27 15:43:19 [INF] Content root path: C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI
+2026-01-27 15:43:19 [INF] Request starting HTTP/1.1 GET http://localhost:5086/scalar/v1 - null null
+2026-01-27 15:43:19 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2026-01-27 15:43:19 [INF] Write content with HTTP Response ContentType of text/html
+2026-01-27 15:43:19 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2026-01-27 15:43:19 [INF] Request finished HTTP/1.1 GET http://localhost:5086/scalar/v1 - 200 null text/html 240.8204ms
+2026-01-27 15:43:19 [INF] Request starting HTTP/1.1 GET http://localhost:5086/scalar/scalar.js - null null
+2026-01-27 15:43:19 [INF] Request starting HTTP/1.1 GET http://localhost:5086/scalar/scalar.aspnetcore.js - null null
+2026-01-27 15:43:19 [INF] Request starting HTTP/1.1 GET http://localhost:5086/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-27 15:43:19 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.js'
+2026-01-27 15:43:19 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2026-01-27 15:43:19 [INF] Request finished HTTP/1.1 GET http://localhost:5086/_framework/aspnetcore-browser-refresh.js - 200 16529 application/javascript; charset=utf-8 6.645ms
+2026-01-27 15:43:19 [INF] Sending file with download name ''.
+2026-01-27 15:43:19 [INF] Sending file with download name ''.
+2026-01-27 15:43:19 [INF] Request starting HTTP/1.1 GET http://localhost:5086/_vs/browserLink - null null
+2026-01-27 15:43:19 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2026-01-27 15:43:19 [INF] Request finished HTTP/1.1 GET http://localhost:5086/scalar/scalar.aspnetcore.js - 200 1111 text/javascript 35.4843ms
+2026-01-27 15:43:19 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.js'
+2026-01-27 15:43:19 [INF] Request finished HTTP/1.1 GET http://localhost:5086/scalar/scalar.js - 200 922147 text/javascript 46.3831ms
+2026-01-27 15:43:19 [INF] Request finished HTTP/1.1 GET http://localhost:5086/_vs/browserLink - 200 null text/javascript; charset=UTF-8 33.5037ms
+2026-01-27 15:43:20 [INF] Request starting HTTP/1.1 GET http://localhost:5086/openapi/v1.json - null null
+2026-01-27 15:43:20 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
+2026-01-27 15:43:20 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
+2026-01-27 15:43:20 [INF] Request finished HTTP/1.1 GET http://localhost:5086/openapi/v1.json - 200 null application/json;charset=utf-8 19.274ms
+2026-01-27 15:43:20 [INF] Request starting HTTP/1.1 GET http://localhost:5086/scalar/favicon.svg - null null
+2026-01-27 15:43:20 [INF] Executing endpoint 'HTTP: GET /scalar/favicon.svg'
+2026-01-27 15:43:20 [INF] Sending file with download name ''.
+2026-01-27 15:43:20 [INF] Executed endpoint 'HTTP: GET /scalar/favicon.svg'
+2026-01-27 15:43:20 [INF] Request finished HTTP/1.1 GET http://localhost:5086/scalar/favicon.svg - 200 533 image/svg+xml 7.7391ms
+2026-01-27 15:43:38 [INF] Request starting HTTP/1.1 POST http://localhost:5086/api/Gym - multipart/form-data 49359
+2026-01-27 15:43:38 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.GymController.CreateAsync (Startup-Project.WebAPI)'
+2026-01-27 15:43:38 [INF] Route matched with {action = "Create", controller = "Gym"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateAsync(Startup_Project.Application.Dtos.GymDtos.GymCreateDto, Startup_Project.Application.Dtos.GymDtos.GymReview.File.GymFileDto) on controller Startup_Project.WebAPI.Controllers.GymController (Startup-Project.WebAPI).
+2026-01-27 15:43:38 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-01-27 15:43:38 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2026-01-27 15:43:38 [INF] Executed action Startup_Project.WebAPI.Controllers.GymController.CreateAsync (Startup-Project.WebAPI) in 227.3654ms
+2026-01-27 15:43:38 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.GymController.CreateAsync (Startup-Project.WebAPI)'
+2026-01-27 15:43:38 [INF] Request finished HTTP/1.1 POST http://localhost:5086/api/Gym - 400 null application/problem+json; charset=utf-8 269.5838ms
+2026-01-27 15:46:48 [INF] Proqram başladılır...
+2026-01-27 15:46:49 [INF] User profile is available. Using 'C:\Users\User\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-01-27 15:46:49 [WRN] The WebRootPath was not found: C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI\wwwroot. Static files may be unavailable.
+2026-01-27 15:46:49 [INF] Now listening on: http://localhost:5086
+2026-01-27 15:46:49 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-27 15:46:49 [INF] Hosting environment: Development
+2026-01-27 15:46:49 [INF] Content root path: C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI
+2026-01-27 15:47:37 [INF] Proqram başladılır...
+2026-01-27 15:47:37 [INF] User profile is available. Using 'C:\Users\User\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-01-27 15:47:37 [WRN] The WebRootPath was not found: C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI\wwwroot. Static files may be unavailable.
+2026-01-27 15:47:37 [INF] Now listening on: http://localhost:5086
+2026-01-27 15:47:38 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-27 15:47:38 [INF] Hosting environment: Development
+2026-01-27 15:47:38 [INF] Content root path: C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI
+2026-01-27 15:47:38 [INF] Request starting HTTP/1.1 GET http://localhost:5086/scalar/v1 - null null
+2026-01-27 15:47:38 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2026-01-27 15:47:38 [INF] Write content with HTTP Response ContentType of text/html
+2026-01-27 15:47:38 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2026-01-27 15:47:38 [INF] Request finished HTTP/1.1 GET http://localhost:5086/scalar/v1 - 200 null text/html 225.3322ms
+2026-01-27 15:47:38 [INF] Request starting HTTP/1.1 GET http://localhost:5086/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-27 15:47:38 [INF] Request starting HTTP/1.1 GET http://localhost:5086/scalar/scalar.aspnetcore.js - null null
+2026-01-27 15:47:38 [INF] Request starting HTTP/1.1 GET http://localhost:5086/scalar/scalar.js - null null
+2026-01-27 15:47:38 [INF] Request finished HTTP/1.1 GET http://localhost:5086/_framework/aspnetcore-browser-refresh.js - 200 16529 application/javascript; charset=utf-8 18.0261ms
+2026-01-27 15:47:38 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2026-01-27 15:47:38 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.js'
+2026-01-27 15:47:38 [INF] Request starting HTTP/1.1 GET http://localhost:5086/_vs/browserLink - null null
+2026-01-27 15:47:38 [INF] Sending file with download name ''.
+2026-01-27 15:47:38 [INF] Sending file with download name ''.
+2026-01-27 15:47:38 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2026-01-27 15:47:38 [INF] Request finished HTTP/1.1 GET http://localhost:5086/scalar/scalar.aspnetcore.js - 200 1111 text/javascript 40.8303ms
+2026-01-27 15:47:38 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.js'
+2026-01-27 15:47:38 [INF] Request finished HTTP/1.1 GET http://localhost:5086/scalar/scalar.js - 200 922147 text/javascript 36.1607ms
+2026-01-27 15:47:38 [INF] Request finished HTTP/1.1 GET http://localhost:5086/_vs/browserLink - 200 null text/javascript; charset=UTF-8 38.0553ms
+2026-01-27 15:47:38 [INF] Request starting HTTP/1.1 GET http://localhost:5086/openapi/v1.json - null null
+2026-01-27 15:47:38 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
+2026-01-27 15:47:38 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
+2026-01-27 15:47:38 [INF] Request finished HTTP/1.1 GET http://localhost:5086/openapi/v1.json - 200 null application/json;charset=utf-8 19.0243ms
+2026-01-27 15:48:03 [INF] Request starting HTTP/1.1 POST http://localhost:5086/api/Gym - multipart/form-data 32521
+2026-01-27 15:48:03 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.GymController.CreateAsync (Startup-Project.WebAPI)'
+2026-01-27 15:48:03 [INF] Route matched with {action = "Create", controller = "Gym"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateAsync(Startup_Project.Application.Dtos.GymDtos.GymCreateDto, Startup_Project.Application.Dtos.GymDtos.GymReview.File.GymFileDto) on controller Startup_Project.WebAPI.Controllers.GymController (Startup-Project.WebAPI).
+2026-01-27 15:48:03 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-01-27 15:48:03 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2026-01-27 15:48:03 [INF] Executed action Startup_Project.WebAPI.Controllers.GymController.CreateAsync (Startup-Project.WebAPI) in 231.5025ms
+2026-01-27 15:48:03 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.GymController.CreateAsync (Startup-Project.WebAPI)'
+2026-01-27 15:48:03 [INF] Request finished HTTP/1.1 POST http://localhost:5086/api/Gym - 400 null application/problem+json; charset=utf-8 274.7114ms
+2026-01-27 15:49:31 [INF] Request starting HTTP/1.1 POST http://localhost:5086/api/Gym - multipart/form-data 239
+2026-01-27 15:49:31 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.GymController.CreateAsync (Startup-Project.WebAPI)'
+2026-01-27 15:49:31 [INF] Route matched with {action = "Create", controller = "Gym"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateAsync(Startup_Project.Application.Dtos.GymDtos.GymCreateDto, Startup_Project.Application.Dtos.GymDtos.GymReview.File.GymFileDto) on controller Startup_Project.WebAPI.Controllers.GymController (Startup-Project.WebAPI).
+2026-01-27 15:49:31 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2026-01-27 15:49:31 [INF] Executed action Startup_Project.WebAPI.Controllers.GymController.CreateAsync (Startup-Project.WebAPI) in 9.7145ms
+2026-01-27 15:49:31 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.GymController.CreateAsync (Startup-Project.WebAPI)'
+2026-01-27 15:49:31 [INF] Request finished HTTP/1.1 POST http://localhost:5086/api/Gym - 400 null application/problem+json; charset=utf-8 20.546ms
+2026-01-27 15:49:33 [INF] Request starting HTTP/1.1 POST http://localhost:5086/api/Gym - multipart/form-data 239
+2026-01-27 15:49:33 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.GymController.CreateAsync (Startup-Project.WebAPI)'
+2026-01-27 15:49:33 [INF] Route matched with {action = "Create", controller = "Gym"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateAsync(Startup_Project.Application.Dtos.GymDtos.GymCreateDto, Startup_Project.Application.Dtos.GymDtos.GymReview.File.GymFileDto) on controller Startup_Project.WebAPI.Controllers.GymController (Startup-Project.WebAPI).
+2026-01-27 15:49:33 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2026-01-27 15:49:33 [INF] Executed action Startup_Project.WebAPI.Controllers.GymController.CreateAsync (Startup-Project.WebAPI) in 7.0844ms
+2026-01-27 15:49:33 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.GymController.CreateAsync (Startup-Project.WebAPI)'
+2026-01-27 15:49:33 [INF] Request finished HTTP/1.1 POST http://localhost:5086/api/Gym - 400 null application/problem+json; charset=utf-8 16.2743ms
+2026-01-27 15:49:42 [INF] Proqram başladılır...
+2026-01-27 15:49:42 [INF] User profile is available. Using 'C:\Users\User\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-01-27 15:49:42 [WRN] The WebRootPath was not found: C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI\wwwroot. Static files may be unavailable.
+2026-01-27 15:49:42 [INF] Now listening on: http://localhost:5086
+2026-01-27 15:49:42 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-27 15:49:42 [INF] Hosting environment: Development
+2026-01-27 15:49:42 [INF] Content root path: C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI
+2026-01-27 15:49:42 [INF] Request starting HTTP/1.1 GET http://localhost:5086/scalar/v1 - null null
+2026-01-27 15:49:42 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2026-01-27 15:49:43 [INF] Write content with HTTP Response ContentType of text/html
+2026-01-27 15:49:43 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2026-01-27 15:49:43 [INF] Request finished HTTP/1.1 GET http://localhost:5086/scalar/v1 - 200 null text/html 253.7488ms
+2026-01-27 15:49:43 [INF] Request starting HTTP/1.1 GET http://localhost:5086/scalar/scalar.js - null null
+2026-01-27 15:49:43 [INF] Request starting HTTP/1.1 GET http://localhost:5086/scalar/scalar.aspnetcore.js - null null
+2026-01-27 15:49:43 [INF] Request starting HTTP/1.1 GET http://localhost:5086/_vs/browserLink - null null
+2026-01-27 15:49:43 [INF] Request starting HTTP/1.1 GET http://localhost:5086/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-27 15:49:43 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.js'
+2026-01-27 15:49:43 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2026-01-27 15:49:43 [INF] Request finished HTTP/1.1 GET http://localhost:5086/_framework/aspnetcore-browser-refresh.js - 200 16529 application/javascript; charset=utf-8 13.1935ms
+2026-01-27 15:49:43 [INF] Sending file with download name ''.
+2026-01-27 15:49:43 [INF] Sending file with download name ''.
+2026-01-27 15:49:43 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2026-01-27 15:49:43 [INF] Request finished HTTP/1.1 GET http://localhost:5086/scalar/scalar.aspnetcore.js - 200 1111 text/javascript 40.3891ms
+2026-01-27 15:49:43 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.js'
+2026-01-27 15:49:43 [INF] Request finished HTTP/1.1 GET http://localhost:5086/scalar/scalar.js - 200 922147 text/javascript 52.322ms
+2026-01-27 15:49:43 [INF] Request finished HTTP/1.1 GET http://localhost:5086/_vs/browserLink - 200 null text/javascript; charset=UTF-8 55.847ms
+2026-01-27 15:49:43 [INF] Request starting HTTP/1.1 GET http://localhost:5086/openapi/v1.json - null null
+2026-01-27 15:49:43 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
+2026-01-27 15:49:43 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
+2026-01-27 15:49:43 [INF] Request finished HTTP/1.1 GET http://localhost:5086/openapi/v1.json - 200 null application/json;charset=utf-8 23.5545ms
+2026-01-27 15:49:54 [INF] Request starting HTTP/1.1 POST http://localhost:5086/api/Gym - multipart/form-data 342
+2026-01-27 15:49:54 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.GymController.CreateAsync (Startup-Project.WebAPI)'
+2026-01-27 15:49:54 [INF] Route matched with {action = "Create", controller = "Gym"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateAsync(Startup_Project.Application.Dtos.GymDtos.GymCreateDto, Startup_Project.Application.Dtos.GymDtos.GymReview.File.GymFileDto) on controller Startup_Project.WebAPI.Controllers.GymController (Startup-Project.WebAPI).
+2026-01-27 15:49:54 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-01-27 15:49:54 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2026-01-27 15:49:54 [INF] Executed action Startup_Project.WebAPI.Controllers.GymController.CreateAsync (Startup-Project.WebAPI) in 229.5613ms
+2026-01-27 15:49:54 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.GymController.CreateAsync (Startup-Project.WebAPI)'
+2026-01-27 15:49:54 [INF] Request finished HTTP/1.1 POST http://localhost:5086/api/Gym - 400 null application/problem+json; charset=utf-8 276.2431ms
+2026-01-27 15:54:43 [INF] Proqram başladılır...
+2026-01-27 15:54:43 [INF] User profile is available. Using 'C:\Users\User\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-01-27 15:54:43 [WRN] The WebRootPath was not found: C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI\wwwroot. Static files may be unavailable.
+2026-01-27 15:54:43 [INF] Now listening on: http://localhost:5086
+2026-01-27 15:54:43 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-27 15:54:43 [INF] Hosting environment: Development
+2026-01-27 15:54:43 [INF] Content root path: C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI
+2026-01-27 15:54:44 [INF] Request starting HTTP/1.1 GET http://localhost:5086/scalar/v1 - null null
+2026-01-27 15:54:44 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2026-01-27 15:54:44 [INF] Write content with HTTP Response ContentType of text/html
+2026-01-27 15:54:44 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2026-01-27 15:54:44 [INF] Request finished HTTP/1.1 GET http://localhost:5086/scalar/v1 - 200 null text/html 240.1289ms
+2026-01-27 15:54:44 [INF] Request starting HTTP/1.1 GET http://localhost:5086/_vs/browserLink - null null
+2026-01-27 15:54:44 [INF] Request starting HTTP/1.1 GET http://localhost:5086/scalar/scalar.js - null null
+2026-01-27 15:54:44 [INF] Request starting HTTP/1.1 GET http://localhost:5086/scalar/scalar.aspnetcore.js - null null
+2026-01-27 15:54:44 [INF] Request starting HTTP/1.1 GET http://localhost:5086/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-27 15:54:44 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.js'
+2026-01-27 15:54:44 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2026-01-27 15:54:44 [INF] Request finished HTTP/1.1 GET http://localhost:5086/_framework/aspnetcore-browser-refresh.js - 200 16529 application/javascript; charset=utf-8 12.3433ms
+2026-01-27 15:54:44 [INF] Sending file with download name ''.
+2026-01-27 15:54:44 [INF] Sending file with download name ''.
+2026-01-27 15:54:44 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2026-01-27 15:54:44 [INF] Request finished HTTP/1.1 GET http://localhost:5086/scalar/scalar.aspnetcore.js - 200 1111 text/javascript 39.2207ms
+2026-01-27 15:54:44 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.js'
+2026-01-27 15:54:44 [INF] Request finished HTTP/1.1 GET http://localhost:5086/scalar/scalar.js - 200 922147 text/javascript 50.5128ms
+2026-01-27 15:54:44 [INF] Request finished HTTP/1.1 GET http://localhost:5086/_vs/browserLink - 200 null text/javascript; charset=UTF-8 50.4215ms
+2026-01-27 15:54:44 [INF] Request starting HTTP/1.1 GET http://localhost:5086/openapi/v1.json - null null
+2026-01-27 15:54:44 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
+2026-01-27 15:54:44 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
+2026-01-27 15:54:44 [INF] Request finished HTTP/1.1 GET http://localhost:5086/openapi/v1.json - 200 null application/json;charset=utf-8 25.5995ms
+2026-01-27 15:55:18 [INF] Request starting HTTP/1.1 POST http://localhost:5086/api/Gym - application/json 41
+2026-01-27 15:55:18 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.GymController.CreateAsync (Startup-Project.WebAPI)'
+2026-01-27 15:55:18 [INF] Route matched with {action = "Create", controller = "Gym"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateAsync(Startup_Project.Application.Dtos.GymDtos.GymCreateDto) on controller Startup_Project.WebAPI.Controllers.GymController (Startup-Project.WebAPI).
+2026-01-27 15:55:18 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-01-27 15:55:18 [INF] Executing BadRequestObjectResult, writing value of type 'Startup_Project.Application.Models.ResponseModel`1[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-01-27 15:55:18 [INF] Executed action Startup_Project.WebAPI.Controllers.GymController.CreateAsync (Startup-Project.WebAPI) in 268.1714ms
+2026-01-27 15:55:18 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.GymController.CreateAsync (Startup-Project.WebAPI)'
+2026-01-27 15:55:18 [INF] Request finished HTTP/1.1 POST http://localhost:5086/api/Gym - 400 null application/json; charset=utf-8 313.7373ms
+2026-01-27 15:56:55 [INF] Proqram başladılır...
+2026-01-27 15:56:56 [INF] User profile is available. Using 'C:\Users\User\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-01-27 15:56:56 [WRN] The WebRootPath was not found: C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI\wwwroot. Static files may be unavailable.
+2026-01-27 15:56:56 [INF] Now listening on: http://localhost:5086
+2026-01-27 15:56:56 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-27 15:56:56 [INF] Hosting environment: Development
+2026-01-27 15:56:56 [INF] Content root path: C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI
+2026-01-27 15:56:56 [INF] Request starting HTTP/1.1 GET http://localhost:5086/scalar/v1 - null null
+2026-01-27 15:56:56 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2026-01-27 15:56:56 [INF] Write content with HTTP Response ContentType of text/html
+2026-01-27 15:56:56 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2026-01-27 15:56:56 [INF] Request finished HTTP/1.1 GET http://localhost:5086/scalar/v1 - 200 null text/html 253.7597ms
+2026-01-27 15:56:56 [INF] Request starting HTTP/1.1 GET http://localhost:5086/scalar/scalar.aspnetcore.js - null null
+2026-01-27 15:56:56 [INF] Request starting HTTP/1.1 GET http://localhost:5086/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-27 15:56:56 [INF] Request starting HTTP/1.1 GET http://localhost:5086/scalar/scalar.js - null null
+2026-01-27 15:56:56 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2026-01-27 15:56:56 [INF] Request finished HTTP/1.1 GET http://localhost:5086/_framework/aspnetcore-browser-refresh.js - 200 16529 application/javascript; charset=utf-8 18.8558ms
+2026-01-27 15:56:56 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.js'
+2026-01-27 15:56:56 [INF] Request starting HTTP/1.1 GET http://localhost:5086/_vs/browserLink - null null
+2026-01-27 15:56:56 [INF] Sending file with download name ''.
+2026-01-27 15:56:56 [INF] Sending file with download name ''.
+2026-01-27 15:56:56 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2026-01-27 15:56:56 [INF] Request finished HTTP/1.1 GET http://localhost:5086/scalar/scalar.aspnetcore.js - 200 1111 text/javascript 34.1498ms
+2026-01-27 15:56:56 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.js'
+2026-01-27 15:56:56 [INF] Request finished HTTP/1.1 GET http://localhost:5086/scalar/scalar.js - 200 922147 text/javascript 39.9224ms
+2026-01-27 15:56:56 [INF] Request finished HTTP/1.1 GET http://localhost:5086/_vs/browserLink - 200 null text/javascript; charset=UTF-8 33.1248ms
+2026-01-27 15:56:57 [INF] Request starting HTTP/1.1 GET http://localhost:5086/openapi/v1.json - null null
+2026-01-27 15:56:57 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
+2026-01-27 15:56:57 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
+2026-01-27 15:56:57 [INF] Request finished HTTP/1.1 GET http://localhost:5086/openapi/v1.json - 200 null application/json;charset=utf-8 22.2723ms
+2026-01-27 15:56:57 [INF] Request starting HTTP/1.1 GET http://localhost:5086/scalar/favicon.svg - null null
+2026-01-27 15:56:57 [INF] Executing endpoint 'HTTP: GET /scalar/favicon.svg'
+2026-01-27 15:56:57 [INF] Sending file with download name ''.
+2026-01-27 15:56:57 [INF] Executed endpoint 'HTTP: GET /scalar/favicon.svg'
+2026-01-27 15:56:57 [INF] Request finished HTTP/1.1 GET http://localhost:5086/scalar/favicon.svg - 200 533 image/svg+xml 8.0162ms
+2026-01-27 15:57:09 [INF] Request starting HTTP/1.1 POST http://localhost:5086/api/Gym - application/json 38
+2026-01-27 15:57:09 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.GymController.CreateAsync (Startup-Project.WebAPI)'
+2026-01-27 15:57:09 [INF] Route matched with {action = "Create", controller = "Gym"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateAsync(Startup_Project.Application.Dtos.GymDtos.GymCreateDto) on controller Startup_Project.WebAPI.Controllers.GymController (Startup-Project.WebAPI).
+2026-01-27 15:57:09 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-01-27 15:57:09 [INF] Executing BadRequestObjectResult, writing value of type 'Startup_Project.Application.Models.ResponseModel`1[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-01-27 15:57:09 [INF] Executed action Startup_Project.WebAPI.Controllers.GymController.CreateAsync (Startup-Project.WebAPI) in 259.8632ms
+2026-01-27 15:57:09 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.GymController.CreateAsync (Startup-Project.WebAPI)'
+2026-01-27 15:57:09 [INF] Request finished HTTP/1.1 POST http://localhost:5086/api/Gym - 400 null application/json; charset=utf-8 309.6676ms
