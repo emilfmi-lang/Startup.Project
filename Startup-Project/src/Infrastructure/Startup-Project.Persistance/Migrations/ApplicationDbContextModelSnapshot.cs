@@ -353,6 +353,9 @@ namespace Startup_Project.Persistance.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
+                    b.Property<int>("AuthProvider")
+                        .HasColumnType("int");
+
                     b.Property<DateTime?>("CodeExpireDate")
                         .HasColumnType("datetime2");
 
@@ -371,6 +374,9 @@ namespace Startup_Project.Persistance.Migrations
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("GoogleId")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");

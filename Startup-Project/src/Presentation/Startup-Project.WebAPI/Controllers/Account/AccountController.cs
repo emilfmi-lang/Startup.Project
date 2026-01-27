@@ -4,7 +4,7 @@ using Startup_Project.Application.Dtos.Account.Password;
 using Startup_Project.Application.Dtos.User;
 using Startup_Project.Application.Services.Interfaces.Account;
 
-namespace Startup_Project.WebAPI.Controllers;
+namespace Startup_Project.WebAPI.Controllers.Account;
 
 [Route("api/[controller]")]
 [ApiController]
@@ -18,7 +18,8 @@ public class AccountController(IAccountService accountService) : ControllerBase
             return BadRequest(result);
         return Ok(result);
     }
-    [HttpPost("login")] 
+
+    [HttpPost("login")]
     public async Task<IActionResult> Login([FromBody] UserLoginDto dto)
     {
         var result = await accountService.LoginAsync(dto);
@@ -26,6 +27,16 @@ public class AccountController(IAccountService accountService) : ControllerBase
             return BadRequest(result);
         return Ok(result);
     }
+
+    [HttpPost("google")]
+    public async Task<IActionResult> GoogleLogin([FromBody] GoogleLoginDto dto)
+    {
+        var result = await accountService.GoogleLoginAsync(dto);
+        if (!result.Success)
+            return BadRequest(result);
+        return Ok(result);
+    }
+
     [HttpPost("verify-login")]
     public async Task<IActionResult> VerifyAndLogin([FromBody] VerifyCodeDto dto)
     {
@@ -34,6 +45,7 @@ public class AccountController(IAccountService accountService) : ControllerBase
             return BadRequest(result);
         return Ok(result);
     }
+
     [HttpPost("forgot-password")]
     public async Task<IActionResult> ForgotPassword([FromBody] ForgotPasswordDto dto)
     {
@@ -42,6 +54,7 @@ public class AccountController(IAccountService accountService) : ControllerBase
             return BadRequest(result);
         return Ok(result);
     }
+
     [HttpPost("reset-password")]
     public async Task<IActionResult> ResetPassword([FromBody] ResetPasswordDto dto)
     {

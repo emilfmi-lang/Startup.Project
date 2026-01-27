@@ -10,6 +10,7 @@ public interface IAccountService
     Task<ResponseModel<bool>> RegisterAsync(UserRegisterDto dto);
     Task<ResponseModel<string>> VerifyAndLoginAsync(VerifyCodeDto dto);
     Task<ResponseModel<string>> LoginAsync(UserLoginDto dto);
+    Task<ResponseModel<string>> GoogleLoginAsync(GoogleLoginDto dto);
     Task<ResponseModel<bool>> ForgotPasswordAsync(string email);
     Task<ResponseModel<bool>> ResetPasswordAsync(ResetPasswordDto dto);
 }
