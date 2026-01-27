@@ -1,4 +1,6 @@
 ﻿
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 using Scalar.AspNetCore;
 using Serilog;
 using Startup_Project.Application;
@@ -8,6 +10,7 @@ using Startup_Project.Infrastructure.Concretes.Services;
 using Startup_Project.Persistance;
 using Startup_Project.WebAPI.Middlewares;
 using System.Security.Cryptography.X509Certificates;
+using System.Text;
 
 Log.Logger = new LoggerConfiguration()
     .MinimumLevel.Information()
@@ -25,6 +28,8 @@ try
 
     builder.Host.UseSerilog();
 
+    builder.Services.AddHttpContextAccessor();
+
     builder.Services.AddApplicationServices();
     builder.Services.AddPersistanceServices(builder.Configuration);
     builder.Services.AddInfrastructureServices(builder.Configuration);
@@ -35,32 +40,63 @@ try
         return handler;
     });
 
-    builder.Services.AddControllers();
-
-    builder.Services.AddOpenApi();
-
-    var app = builder.Build();
-    app.UseMiddleware<ExceptionHandlingMiddleware>();
-
-    app.MapOpenApi();
-    app.MapScalarApiReference(options =>
+    builder.Services.AddAuthentication(options =>
     {
-        options.Title = "Startup Project API";
-        options.DefaultHttpClient = new(ScalarTarget.CSharp, ScalarClient.HttpClient);
-    });
+        options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+        options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    })
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = builder.Configuration["JwtSettings:Issuer"],
+            ValidAudience = builder.Configuration["JwtSettings:Audience"],
+            IssuerSigningKey = new SymmetricSecurityKey(
+                Encoding.UTF8.GetBytes(builder.Configuration["JwtSettings:SecretKey"]!))
+                };
+            });
 
-    app.UseStaticFiles();
+            builder.Services.AddAuthorization();
 
-    app.UseAuthentication();
-    app.UseAuthorization();
-    app.MapControllers();
+            builder.Services.AddControllers();
 
-    app.Run();
-}
-catch (Exception ex)
-{
-    Log.Fatal(ex, "Proqramın işə düşməsi zamanı kritik xəta baş verdi!");
-}
+            builder.Services.AddOpenApi();
+
+            var app = builder.Build();
+
+            using (var scope = app.Services.CreateScope())
+            {
+                var services = scope.ServiceProvider;
+                await Startup_Project.Persistance.Seeding.RoleSeeder.SeedRolesAsync(services);
+                await Startup_Project.Persistance.Seeding.AdminUserSeeder.SeedAdminAsync(services);
+                await Startup_Project.Persistance.Seeding.GymSeeder.SeedGymsAsync(services);
+            }
+
+            app.UseMiddleware<ExceptionHandlingMiddleware>();
+
+            app.MapOpenApi();
+            app.MapScalarApiReference(options =>
+            {
+                options.Title = "Startup Project API";
+                options.DefaultHttpClient = new(ScalarTarget.CSharp, ScalarClient.HttpClient);
+            });
+
+            app.UseStaticFiles();
+
+            app.UseAuthentication();
+            app.UseAuthorization();
+            app.MapControllers();
+
+            app.Run();
+        }
+        catch (Exception ex)
+        {
+            Log.Fatal(ex, "Proqramın işə düşməsi zamanı kritik xəta baş verdi!");
+        }
 finally
 {
     Log.CloseAndFlush();

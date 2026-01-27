@@ -15,7 +15,8 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
     public DbSet<GymReview> GymReviews { get; set; }
     public DbSet<GymOpeningHour> GymOpeningHours { get; set; }
     public DbSet<Payment> Payments { get; set; }
-
+    public DbSet<CheckInLog> CheckInLogs { get; set; } 
+    public DbSet<CheckInToken> CheckInTokens { get; set; }
     public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
     {
         return base.SaveChangesAsync(cancellationToken);

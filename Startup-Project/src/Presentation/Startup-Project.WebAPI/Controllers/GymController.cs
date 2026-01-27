@@ -10,7 +10,7 @@ namespace Startup_Project.WebAPI.Controllers;
 public class GymController(IGymService service) : ControllerBase
 {
     [HttpGet]
-    [Authorize(Roles = "Admin")]
+    [AllowAnonymous]
     public async Task<IActionResult> GetAllAsync()
     {
         var result = await service.GetAllAsync();
@@ -22,6 +22,7 @@ public class GymController(IGymService service) : ControllerBase
     }
 
     [HttpPost]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> CreateAsync([FromBody] GymCreateDto dto)
     {
         var result = await service.CreateAsync(dto);
@@ -33,7 +34,8 @@ public class GymController(IGymService service) : ControllerBase
     }
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> UpdateAsync(string id, [FromForm] GymUpdateDto dto)
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> UpdateAsync(string id, [FromBody] GymUpdateDto dto)
     {
         var result = await service.UpdateAsync(id, dto);
         if (!result.Success)
@@ -42,7 +44,9 @@ public class GymController(IGymService service) : ControllerBase
         }
         return Ok(result);
     }
+
     [HttpDelete("{id}")]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> DeleteAsync(string id)
     {
         var result = await service.DeleteAsync(id);
@@ -52,5 +56,4 @@ public class GymController(IGymService service) : ControllerBase
         }
         return Ok(result);
     }
-
 }

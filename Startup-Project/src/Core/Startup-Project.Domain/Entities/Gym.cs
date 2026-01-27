@@ -36,6 +36,13 @@ public class Gym : BaseEntity
         ImagePath = imagePath;
         CreatedAt = DateTime.UtcNow;
     }
+
+    public Gym(string name, string address)
+    {
+        Name = name;
+        Address = address;
+        CreatedAt = DateTime.UtcNow;
+    }
     public void AddReview(double rating)
     {
         var total = AverageRating * ReviewCount;
@@ -72,14 +79,20 @@ public class Gym : BaseEntity
     public void SetAddress(string address)
     {
         if (string.IsNullOrWhiteSpace(address))
-            throw new ArgumentException("Address cannot be empty.");
-        Address = address;
-        UpdatedAt = DateTime.UtcNow;
-    }
+                        throw new ArgumentException("Address cannot be empty.");
+                    Address = address;
+                    UpdatedAt = DateTime.UtcNow;
+                }
 
-    public void UpdateImage(string newPath)
-    {
-        ImagePath = newPath;
-        UpdatedAt = DateTime.UtcNow;
-    }
-}
+                public void UpdateImage(string newPath)
+                {
+                    ImagePath = newPath;
+                    UpdatedAt = DateTime.UtcNow;
+                }
+
+                public void SetOwner(Guid ownerId)
+                {
+                    OwnerId = ownerId;
+                    UpdatedAt = DateTime.UtcNow;
+                }
+            }

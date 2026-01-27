@@ -21,7 +21,7 @@ public class GymOpeningHourService(
     {
         var gymExists = await gymRepository.AnyAsync(x => x.Id == gymId);
         if (!gymExists)
-            return ResponseModel<bool>.FailureResponse("Zal tapılmadı.");
+            return ResponseModel<bool>.FailureResponse("Zal tapilmadi.");
 
         var oldHours = await gymOpeningHourRepository.GetWhereAsync(x => x.GymId == gymId);
         if (oldHours.Any())
@@ -43,7 +43,25 @@ public class GymOpeningHourService(
 
         return affectedRows > 0
             ? ResponseModel<bool>.SuccessResponse(true)
-            : ResponseModel<bool>.FailureResponse("Xəta baş verdi: Məlumatlar yadda saxlanılmadı.");
+            : ResponseModel<bool>.FailureResponse("Xeta bas verdi: Melumatlar yadda saxlanilmadi.");
     }
 
+    public async Task<ResponseModel<List<OpeningHourDto>>> GetOpeningHoursAsync(Guid gymId)
+    {
+        var gymExists = await gymRepository.AnyAsync(x => x.Id == gymId);
+        if (!gymExists)
+            return ResponseModel<List<OpeningHourDto>>.FailureResponse("Zal tapilmadi.");
+
+        var hours = await gymOpeningHourRepository.GetWhereAsync(x => x.GymId == gymId);
+
+        var dtos = hours.Select(h => new OpeningHourDto
+        {
+            DayOfWeek = h.DayOfWeek,
+            OpenTime = h.OpenTime.ToString(@"hh\:mm"),
+            ClosingTime = h.ClosingTime.ToString(@"hh\:mm"),
+            IsClosed = h.IsClosed
+        }).ToList();
+
+        return ResponseModel<List<OpeningHourDto>>.SuccessResponse(dtos);
+    }
 }

@@ -2,8 +2,10 @@
 using Microsoft.Extensions.DependencyInjection;
 using Startup_Project.Application.Services.Concretes;
 using Startup_Project.Application.Services.Concretes.Account;
+using Startup_Project.Application.Services.Concretes.Admin;
 using Startup_Project.Application.Services.Interfaces;
 using Startup_Project.Application.Services.Interfaces.Account;
+using Startup_Project.Application.Services.Interfaces.Admin;
 
 
 namespace Startup_Project.Application;
@@ -22,6 +24,8 @@ public static class DependencyInjection
             services.AddScoped<IPaymentService, PaymentService>();
             services.AddScoped<IPackageService, PackageService>();
             services.AddScoped<IReviewService, ReviewService>();
+            services.AddScoped<IAdminService, AdminService>();
+            services.AddScoped<IGymOwnerService, GymOwnerService>();
         }
     }
 }

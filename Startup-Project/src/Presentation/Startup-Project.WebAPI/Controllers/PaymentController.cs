@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Startup_Project.Application.Dtos.Payment;
 using Startup_Project.Application.Services.Interfaces;
@@ -11,26 +10,28 @@ namespace Startup_Project.WebAPI.Controllers;
 public class PaymentController(IPaymentService service) : ControllerBase
 {
     [HttpPost("initiate")]
+    [Authorize]
     public async Task<IActionResult> InitiatePayment([FromBody] PaymentRequestDto dto)
     {
         var userIdClaim = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier);
         if (userIdClaim == null)
-            return Unauthorized("İstifadəçi tapılmadı.");
+            return Unauthorized("Istifadeci tapilmadi.");
         var userId = Guid.Parse(userIdClaim.Value);
         var result = await service.CreatePaymentSessionAsync(userId, dto);
         if (!result.Success)
             return BadRequest(result);
         return Ok(result);
     }
+
     [HttpPost("result")]
     [AllowAnonymous]
     public async Task<IActionResult> PaymentResult([FromQuery] string sessionId)
     {
-        if(string.IsNullOrEmpty(sessionId))
-            return BadRequest("SessionId boş ola bilməz.");
+        if (string.IsNullOrEmpty(sessionId))
+            return BadRequest("SessionId bos ola bilmez.");
 
         var result = await service.FinalizePaymentAsync(sessionId);
-        if(result.Success)
+        if (result.Success)
             return Redirect("https://senin-app-saytin.com/payment/success");
         return Redirect("https://senin-app-saytin.com/payment/fail");
     }

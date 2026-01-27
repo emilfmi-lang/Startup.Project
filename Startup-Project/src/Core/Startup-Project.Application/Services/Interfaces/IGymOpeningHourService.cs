@@ -6,4 +6,5 @@ namespace Startup_Project.Application.Services.Interfaces;
 public interface IGymOpeningHourService
 {
     Task<ResponseModel<bool>> SetOpeningHoursAsync(Guid gymId, List<OpeningHourDto> dtos);
+    Task<ResponseModel<List<OpeningHourDto>>> GetOpeningHoursAsync(Guid gymId);
 }
