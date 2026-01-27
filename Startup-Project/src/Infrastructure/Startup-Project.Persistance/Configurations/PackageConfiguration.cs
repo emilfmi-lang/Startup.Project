@@ -1,6 +1,4 @@
-﻿
-
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Startup_Project.Domain.Entities;
 
@@ -20,9 +18,18 @@ public class PackageConfiguration : IEntityTypeConfiguration<Package>
             .HasColumnType("decimal(18,2)")
             .IsRequired();
 
+        builder.Property(p => p.DurationInDays)
+            .IsRequired();
+
+        builder.Property(p => p.IsDeleted)
+            .HasDefaultValue(false);
+
         builder.HasOne(p => p.Gym)
             .WithMany()
             .HasForeignKey(p => p.GymId)
             .OnDelete(DeleteBehavior.Cascade);
+
+        builder.HasIndex(p => p.GymId);
+        builder.HasIndex(p => p.IsDeleted);
     }
 }

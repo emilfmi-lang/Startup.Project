@@ -18,9 +18,37 @@ public class GymConfiguration : IEntityTypeConfiguration<Gym>
             .HasMaxLength(500)
             .IsRequired();
 
+        builder.Property(g => g.ImagePath)
+            .HasMaxLength(500);
+
+        builder.Property(g => g.AverageRating)
+            .HasColumnType("float")
+            .HasDefaultValue(0);
+
+        builder.Property(g => g.ReviewCount)
+            .HasDefaultValue(0);
+
+        builder.Property(g => g.IsDeleted)
+            .HasDefaultValue(false);
+
         builder.HasOne(g => g.Owner)
             .WithMany(u => u.Gyms)
             .HasForeignKey(g => g.OwnerId)
-            .OnDelete(DeleteBehavior.Restrict);
+            .OnDelete(DeleteBehavior.Restrict)
+            .IsRequired(false);
+
+        builder.HasMany(g => g.Reviews)
+            .WithOne(r => r.Gym)
+            .HasForeignKey(r => r.GymId)
+            .OnDelete(DeleteBehavior.Cascade);
+
+        builder.HasMany(g => g.OpeningHours)
+            .WithOne(oh => oh.Gym)
+            .HasForeignKey(oh => oh.GymId)
+            .OnDelete(DeleteBehavior.Cascade);
+
+        builder.HasIndex(g => g.Name);
+        builder.HasIndex(g => g.OwnerId);
+        builder.HasIndex(g => g.IsDeleted);
     }
 }

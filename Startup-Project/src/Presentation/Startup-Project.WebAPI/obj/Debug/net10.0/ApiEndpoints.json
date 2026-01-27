@@ -1,6 +1,6 @@
 [
   {
-    "ContainingType": "Startup_Project.WebAPI.Controllers.AccountController",
+    "ContainingType": "Startup_Project.WebAPI.Controllers.Account.AccountController",
     "Method": "ForgotPassword",
     "RelativePath": "api/Account/forgot-password",
     "HttpMethod": "POST",
@@ -16,7 +16,23 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Startup_Project.WebAPI.Controllers.AccountController",
+    "ContainingType": "Startup_Project.WebAPI.Controllers.Account.AccountController",
+    "Method": "GoogleLogin",
+    "RelativePath": "api/Account/google",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Startup_Project.Application.Dtos.Account.GoogleLoginDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Startup_Project.WebAPI.Controllers.Account.AccountController",
     "Method": "Login",
     "RelativePath": "api/Account/login",
     "HttpMethod": "POST",
@@ -32,7 +48,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Startup_Project.WebAPI.Controllers.AccountController",
+    "ContainingType": "Startup_Project.WebAPI.Controllers.Account.AccountController",
     "Method": "Register",
     "RelativePath": "api/Account/register",
     "HttpMethod": "POST",
@@ -48,7 +64,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Startup_Project.WebAPI.Controllers.AccountController",
+    "ContainingType": "Startup_Project.WebAPI.Controllers.Account.AccountController",
     "Method": "ResetPassword",
     "RelativePath": "api/Account/reset-password",
     "HttpMethod": "POST",
@@ -64,7 +80,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Startup_Project.WebAPI.Controllers.AccountController",
+    "ContainingType": "Startup_Project.WebAPI.Controllers.Account.AccountController",
     "Method": "VerifyAndLogin",
     "RelativePath": "api/Account/verify-login",
     "HttpMethod": "POST",

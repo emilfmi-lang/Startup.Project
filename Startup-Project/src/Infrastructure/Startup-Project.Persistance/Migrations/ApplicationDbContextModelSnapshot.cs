@@ -179,9 +179,13 @@ namespace Startup_Project.Persistance.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CheckInTime");
+
                     b.HasIndex("UserId");
 
-                    b.ToTable("CheckInLogs");
+                    b.HasIndex("UserId", "CheckInTime");
+
+                    b.ToTable("CheckInLogs", (string)null);
                 });
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.CheckInToken", b =>
@@ -200,11 +204,14 @@ namespace Startup_Project.Persistance.Migrations
                         .HasColumnType("bit");
 
                     b.Property<bool>("IsUsed")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<string>("Token")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
@@ -214,9 +221,14 @@ namespace Startup_Project.Persistance.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("ExpiryDate");
+
+                    b.HasIndex("Token")
+                        .IsUnique();
+
                     b.HasIndex("UserId");
 
-                    b.ToTable("CheckInTokens");
+                    b.ToTable("CheckInTokens", (string)null);
                 });
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.Gym", b =>
@@ -231,16 +243,21 @@ namespace Startup_Project.Persistance.Migrations
                         .HasColumnType("nvarchar(500)");
 
                     b.Property<double>("AverageRating")
-                        .HasColumnType("float");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("float")
+                        .HasDefaultValue(0.0);
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("ImagePath")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -251,16 +268,22 @@ namespace Startup_Project.Persistance.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("ReviewCount")
-                        .HasColumnType("int");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasDefaultValue(0);
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
+                    b.HasIndex("IsDeleted");
+
+                    b.HasIndex("Name");
+
                     b.HasIndex("OwnerId");
 
-                    b.ToTable("Gyms");
+                    b.ToTable("Gyms", (string)null);
                 });
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.GymOpeningHour", b =>
@@ -282,7 +305,9 @@ namespace Startup_Project.Persistance.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("IsClosed")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
@@ -295,18 +320,16 @@ namespace Startup_Project.Persistance.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("GymId");
+                    b.HasIndex("GymId", "DayOfWeek")
+                        .IsUnique();
 
-                    b.ToTable("GymOpeningHours");
+                    b.ToTable("GymOpeningHours", (string)null);
                 });
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.GymReview", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("AppUserId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Comment")
@@ -334,14 +357,14 @@ namespace Startup_Project.Persistance.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AppUserId");
+                    b.HasIndex("GymId");
 
                     b.HasIndex("UserId");
 
                     b.HasIndex("GymId", "UserId")
                         .IsUnique();
 
-                    b.ToTable("GymReviews");
+                    b.ToTable("GymReviews", (string)null);
                 });
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.Identity.AppUser", b =>
@@ -354,7 +377,9 @@ namespace Startup_Project.Persistance.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("AuthProvider")
-                        .HasColumnType("int");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasDefaultValue(0);
 
                     b.Property<DateTime?>("CodeExpireDate")
                         .HasColumnType("datetime2");
@@ -376,7 +401,8 @@ namespace Startup_Project.Persistance.Migrations
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("GoogleId")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
@@ -416,6 +442,12 @@ namespace Startup_Project.Persistance.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("Email");
+
+                    b.HasIndex("GoogleId")
+                        .IsUnique()
+                        .HasFilter("[GoogleId] IS NOT NULL");
+
                     b.HasIndex("NormalizedEmail")
                         .HasDatabaseName("EmailIndex");
 
@@ -443,7 +475,9 @@ namespace Startup_Project.Persistance.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -460,7 +494,9 @@ namespace Startup_Project.Persistance.Migrations
 
                     b.HasIndex("GymId");
 
-                    b.ToTable("Packages");
+                    b.HasIndex("IsDeleted");
+
+                    b.ToTable("Packages", (string)null);
                 });
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.Payment", b =>
@@ -482,7 +518,8 @@ namespace Startup_Project.Persistance.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("SessionId")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
 
                     b.Property<int>("Status")
                         .HasColumnType("int");
@@ -497,9 +534,13 @@ namespace Startup_Project.Persistance.Migrations
 
                     b.HasIndex("PackageId");
 
+                    b.HasIndex("SessionId");
+
+                    b.HasIndex("Status");
+
                     b.HasIndex("UserId");
 
-                    b.ToTable("Payments");
+                    b.ToTable("Payments", (string)null);
                 });
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.Subscription", b =>
@@ -531,11 +572,15 @@ namespace Startup_Project.Persistance.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("EndDate");
+
                     b.HasIndex("PackageId");
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Subscriptions");
+                    b.HasIndex("UserId", "EndDate");
+
+                    b.ToTable("Subscriptions", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
@@ -634,10 +679,6 @@ namespace Startup_Project.Persistance.Migrations
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.GymReview", b =>
                 {
-                    b.HasOne("Startup_Project.Domain.Entities.Identity.AppUser", null)
-                        .WithMany("Reviews")
-                        .HasForeignKey("AppUserId");
-
                     b.HasOne("Startup_Project.Domain.Entities.Gym", "Gym")
                         .WithMany("Reviews")
                         .HasForeignKey("GymId")
@@ -645,7 +686,7 @@ namespace Startup_Project.Persistance.Migrations
                         .IsRequired();
 
                     b.HasOne("Startup_Project.Domain.Entities.Identity.AppUser", "User")
-                        .WithMany()
+                        .WithMany("Reviews")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
@@ -671,7 +712,7 @@ namespace Startup_Project.Persistance.Migrations
                     b.HasOne("Startup_Project.Domain.Entities.Package", "Package")
                         .WithMany()
                         .HasForeignKey("PackageId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("Startup_Project.Domain.Entities.Identity.AppUser", "User")
