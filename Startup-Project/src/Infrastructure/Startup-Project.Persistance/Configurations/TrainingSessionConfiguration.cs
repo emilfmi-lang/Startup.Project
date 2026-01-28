@@ -41,7 +41,7 @@ public class TrainingSessionConfiguration : IEntityTypeConfiguration<TrainingSes
         builder.HasOne(s => s.Payment)
             .WithMany()
             .HasForeignKey(s => s.PaymentId)
-            .OnDelete(DeleteBehavior.SetNull);
+            .OnDelete(DeleteBehavior.NoAction);
 
         builder.HasIndex(s => s.TrainerId);
         builder.HasIndex(s => s.UserId);

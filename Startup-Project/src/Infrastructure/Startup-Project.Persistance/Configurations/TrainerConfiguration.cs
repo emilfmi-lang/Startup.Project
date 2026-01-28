@@ -63,6 +63,11 @@ public class TrainerConfiguration : IEntityTypeConfiguration<Trainer>
             .HasForeignKey(s => s.TrainerId)
             .OnDelete(DeleteBehavior.Cascade);
 
+        builder.HasMany(t => t.Sessions)
+    .WithOne(s => s.Trainer)
+    .HasForeignKey(s => s.TrainerId)
+    .OnDelete(DeleteBehavior.Restrict);
+
         builder.HasIndex(t => t.UserId).IsUnique();
         builder.HasIndex(t => t.GymId);
         builder.HasIndex(t => t.Status);

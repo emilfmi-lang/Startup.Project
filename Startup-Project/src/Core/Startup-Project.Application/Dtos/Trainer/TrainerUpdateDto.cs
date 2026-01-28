@@ -7,4 +7,5 @@ public class TrainerUpdateDto
     public string? Specialization { get; set; }
     public string? Bio { get; set; }
     public decimal? HourlyRate { get; set; }
+    public decimal? SessionPrice { get; set; }
 }

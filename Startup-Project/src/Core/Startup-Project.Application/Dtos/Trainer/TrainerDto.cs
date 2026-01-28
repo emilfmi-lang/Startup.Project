@@ -17,4 +17,5 @@ public class TrainerDto
     public int TotalClients { get; set; }
     public int TotalSessions { get; set; }
     public string Status { get; set; } = null!;
+    public decimal SessionPrice { get; set; }
 }
