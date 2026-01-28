@@ -3,8 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Persistance\\Migrations\\20260128123445_mig_13.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\Infrastructure\\Startup-Project.Persistance\\Migrations\\20260128123445_mig_13.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Persistance\\Migrations\\20260128154701_mig_14.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\Infrastructure\\Startup-Project.Persistance\\Migrations\\20260128154701_mig_14.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\services\\concretes\\trainingsessionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\services\\concretes\\trainingsessionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\services\\concretes\\trainerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\services\\concretes\\trainerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\services\\interfaces\\itrainerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\services\\interfaces\\itrainerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\services\\interfaces\\itrainingsessionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\services\\interfaces\\itrainingsessionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\dtos\\trainer\\trainerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\dtos\\trainer\\trainerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B1964D5-45F3-0B52-56F2-9456F0B7BE8C}|src\\Infrastructure\\Startup-Project.Persistance\\Startup-Project.Persistance.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\infrastructure\\startup-project.persistance\\migrations\\20260128123445_mig_13.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B1964D5-45F3-0B52-56F2-9456F0B7BE8C}|src\\Infrastructure\\Startup-Project.Persistance\\Startup-Project.Persistance.csproj|solutionrelative:src\\infrastructure\\startup-project.persistance\\migrations\\20260128123445_mig_13.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Persistance\\Migrations\\20260128123430_mig13.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -29,10 +53,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\dtos\\trainer\\trainercreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\dtos\\trainer\\trainercreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\dtos\\trainer\\trainerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\dtos\\trainer\\trainerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\dtos\\trainingsession\\sessioncanceldto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -145,6 +165,42 @@
     {
       "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\services\\concretes\\gymservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\services\\concretes\\gymservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\dtos\\trainer\\trainerlistdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\dtos\\trainer\\trainerlistdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42118A8D-BC21-8554-454A-CEDC6F4DF82B}|src\\Presentation\\Startup-Project.WebAPI\\Startup-Project.WebAPI.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\presentation\\startup-project.webapi\\controllers\\trainercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42118A8D-BC21-8554-454A-CEDC6F4DF82B}|src\\Presentation\\Startup-Project.WebAPI\\Startup-Project.WebAPI.csproj|solutionrelative:src\\presentation\\startup-project.webapi\\controllers\\trainercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42118A8D-BC21-8554-454A-CEDC6F4DF82B}|src\\Presentation\\Startup-Project.WebAPI\\Startup-Project.WebAPI.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\presentation\\startup-project.webapi\\controllers\\gymowner\\ownertrainercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42118A8D-BC21-8554-454A-CEDC6F4DF82B}|src\\Presentation\\Startup-Project.WebAPI\\Startup-Project.WebAPI.csproj|solutionrelative:src\\presentation\\startup-project.webapi\\controllers\\gymowner\\ownertrainercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42118A8D-BC21-8554-454A-CEDC6F4DF82B}|src\\Presentation\\Startup-Project.WebAPI\\Startup-Project.WebAPI.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\presentation\\startup-project.webapi\\controllers\\trainer\\mytrainercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42118A8D-BC21-8554-454A-CEDC6F4DF82B}|src\\Presentation\\Startup-Project.WebAPI\\Startup-Project.WebAPI.csproj|solutionrelative:src\\presentation\\startup-project.webapi\\controllers\\trainer\\mytrainercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42118A8D-BC21-8554-454A-CEDC6F4DF82B}|src\\Presentation\\Startup-Project.WebAPI\\Startup-Project.WebAPI.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\presentation\\startup-project.webapi\\controllers\\trainingsessioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42118A8D-BC21-8554-454A-CEDC6F4DF82B}|src\\Presentation\\Startup-Project.WebAPI\\Startup-Project.WebAPI.csproj|solutionrelative:src\\presentation\\startup-project.webapi\\controllers\\trainingsessioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42118A8D-BC21-8554-454A-CEDC6F4DF82B}|src\\Presentation\\Startup-Project.WebAPI\\Startup-Project.WebAPI.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\presentation\\startup-project.webapi\\controllers\\sessionverifycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42118A8D-BC21-8554-454A-CEDC6F4DF82B}|src\\Presentation\\Startup-Project.WebAPI\\Startup-Project.WebAPI.csproj|solutionrelative:src\\presentation\\startup-project.webapi\\controllers\\sessionverifycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42118A8D-BC21-8554-454A-CEDC6F4DF82B}|src\\Presentation\\Startup-Project.WebAPI\\Startup-Project.WebAPI.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\presentation\\startup-project.webapi\\controllers\\trainer\\trainersessioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42118A8D-BC21-8554-454A-CEDC6F4DF82B}|src\\Presentation\\Startup-Project.WebAPI\\Startup-Project.WebAPI.csproj|solutionrelative:src\\presentation\\startup-project.webapi\\controllers\\trainer\\trainersessioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42118A8D-BC21-8554-454A-CEDC6F4DF82B}|src\\Presentation\\Startup-Project.WebAPI\\Startup-Project.WebAPI.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\presentation\\startup-project.webapi\\controllers\\gymowner\\mygymcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42118A8D-BC21-8554-454A-CEDC6F4DF82B}|src\\Presentation\\Startup-Project.WebAPI\\Startup-Project.WebAPI.csproj|solutionrelative:src\\presentation\\startup-project.webapi\\controllers\\gymowner\\mygymcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -159,19 +215,198 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "20260128123445_mig_13.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Persistance\\Migrations\\20260128123445_mig_13.cs",
-              "RelativeDocumentMoniker": "src\\Infrastructure\\Startup-Project.Persistance\\Migrations\\20260128123445_mig_13.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Persistance\\Migrations\\20260128123445_mig_13.cs",
-              "RelativeToolTip": "src\\Infrastructure\\Startup-Project.Persistance\\Migrations\\20260128123445_mig_13.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAJAAAAAAAAAA==",
+              "Title": "20260128154701_mig_14.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Persistance\\Migrations\\20260128154701_mig_14.cs",
+              "RelativeDocumentMoniker": "src\\Infrastructure\\Startup-Project.Persistance\\Migrations\\20260128154701_mig_14.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Persistance\\Migrations\\20260128154701_mig_14.cs",
+              "RelativeToolTip": "src\\Infrastructure\\Startup-Project.Persistance\\Migrations\\20260128154701_mig_14.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-28T12:34:45.557Z",
+              "WhenOpened": "2026-01-28T15:47:01.262Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "MyTrainerController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Presentation\\Startup-Project.WebAPI\\Controllers\\Trainer\\MyTrainerController.cs",
+              "RelativeDocumentMoniker": "src\\Presentation\\Startup-Project.WebAPI\\Controllers\\Trainer\\MyTrainerController.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Presentation\\Startup-Project.WebAPI\\Controllers\\Trainer\\MyTrainerController.cs",
+              "RelativeToolTip": "src\\Presentation\\Startup-Project.WebAPI\\Controllers\\Trainer\\MyTrainerController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-28T15:42:50.094Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "OwnerTrainerController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Presentation\\Startup-Project.WebAPI\\Controllers\\GymOwner\\OwnerTrainerController.cs",
+              "RelativeDocumentMoniker": "src\\Presentation\\Startup-Project.WebAPI\\Controllers\\GymOwner\\OwnerTrainerController.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Presentation\\Startup-Project.WebAPI\\Controllers\\GymOwner\\OwnerTrainerController.cs",
+              "RelativeToolTip": "src\\Presentation\\Startup-Project.WebAPI\\Controllers\\GymOwner\\OwnerTrainerController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-28T15:42:35.087Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "TrainerController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Presentation\\Startup-Project.WebAPI\\Controllers\\TrainerController.cs",
+              "RelativeDocumentMoniker": "src\\Presentation\\Startup-Project.WebAPI\\Controllers\\TrainerController.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Presentation\\Startup-Project.WebAPI\\Controllers\\TrainerController.cs",
+              "RelativeToolTip": "src\\Presentation\\Startup-Project.WebAPI\\Controllers\\TrainerController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-28T15:42:16.695Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "TrainerListDto.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Dtos\\Trainer\\TrainerListDto.cs",
+              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Dtos\\Trainer\\TrainerListDto.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Dtos\\Trainer\\TrainerListDto.cs",
+              "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Dtos\\Trainer\\TrainerListDto.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAABYwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-28T15:41:20.442Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "DependencyInjection.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\DependencyInjection.cs",
+              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\DependencyInjection.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\DependencyInjection.cs",
+              "RelativeToolTip": "src\\Core\\Startup-Project.Application\\DependencyInjection.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAABRwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-28T15:37:35.498Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "TrainingSessionService.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Services\\Concretes\\TrainingSessionService.cs",
+              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Services\\Concretes\\TrainingSessionService.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Services\\Concretes\\TrainingSessionService.cs",
+              "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Services\\Concretes\\TrainingSessionService.cs",
+              "ViewState": "AgIAAMIAAAAAAAAAAAAAAMoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-28T15:28:43.349Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "MyGymController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Presentation\\Startup-Project.WebAPI\\Controllers\\GymOwner\\MyGymController.cs",
+              "RelativeDocumentMoniker": "src\\Presentation\\Startup-Project.WebAPI\\Controllers\\GymOwner\\MyGymController.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Presentation\\Startup-Project.WebAPI\\Controllers\\GymOwner\\MyGymController.cs",
+              "RelativeToolTip": "src\\Presentation\\Startup-Project.WebAPI\\Controllers\\GymOwner\\MyGymController.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-28T15:44:31.941Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "TrainerSessionController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Presentation\\Startup-Project.WebAPI\\Controllers\\Trainer\\TrainerSessionController.cs",
+              "RelativeDocumentMoniker": "src\\Presentation\\Startup-Project.WebAPI\\Controllers\\Trainer\\TrainerSessionController.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Presentation\\Startup-Project.WebAPI\\Controllers\\Trainer\\TrainerSessionController.cs",
+              "RelativeToolTip": "src\\Presentation\\Startup-Project.WebAPI\\Controllers\\Trainer\\TrainerSessionController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-28T15:43:51.967Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "SessionVerifyController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Presentation\\Startup-Project.WebAPI\\Controllers\\SessionVerifyController.cs",
+              "RelativeDocumentMoniker": "src\\Presentation\\Startup-Project.WebAPI\\Controllers\\SessionVerifyController.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Presentation\\Startup-Project.WebAPI\\Controllers\\SessionVerifyController.cs",
+              "RelativeToolTip": "src\\Presentation\\Startup-Project.WebAPI\\Controllers\\SessionVerifyController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-28T15:43:39.464Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "TrainingSessionController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Presentation\\Startup-Project.WebAPI\\Controllers\\TrainingSessionController.cs",
+              "RelativeDocumentMoniker": "src\\Presentation\\Startup-Project.WebAPI\\Controllers\\TrainingSessionController.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Presentation\\Startup-Project.WebAPI\\Controllers\\TrainingSessionController.cs",
+              "RelativeToolTip": "src\\Presentation\\Startup-Project.WebAPI\\Controllers\\TrainingSessionController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-28T15:43:24.917Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TrainerService.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Services\\Concretes\\TrainerService.cs",
+              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Services\\Concretes\\TrainerService.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Services\\Concretes\\TrainerService.cs",
+              "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Services\\Concretes\\TrainerService.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAIBJwBEAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-28T15:29:01.776Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ITrainerService.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Services\\Interfaces\\ITrainerService.cs",
+              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Services\\Interfaces\\ITrainerService.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Services\\Interfaces\\ITrainerService.cs",
+              "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Services\\Interfaces\\ITrainerService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-28T15:28:23.866Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ITrainingSessionService.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Services\\Interfaces\\ITrainingSessionService.cs",
+              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Services\\Interfaces\\ITrainingSessionService.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Services\\Interfaces\\ITrainingSessionService.cs",
+              "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Services\\Interfaces\\ITrainingSessionService.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAA3wBMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-28T15:26:16.705Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "20260128123445_mig_13.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Persistance\\Migrations\\20260128123445_mig_13.cs",
+              "RelativeDocumentMoniker": "src\\Infrastructure\\Startup-Project.Persistance\\Migrations\\20260128123445_mig_13.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Persistance\\Migrations\\20260128123445_mig_13.cs",
+              "RelativeToolTip": "src\\Infrastructure\\Startup-Project.Persistance\\Migrations\\20260128123445_mig_13.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAQwCcAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-28T12:34:45.557Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "20260128123430_mig13.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Persistance\\Migrations\\20260128123430_mig13.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\Startup-Project.Persistance\\Migrations\\20260128123430_mig13.cs",
@@ -179,12 +414,11 @@
               "RelativeToolTip": "src\\Infrastructure\\Startup-Project.Persistance\\Migrations\\20260128123430_mig13.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-28T12:34:30.418Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-28T12:34:30.418Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 9,
               "Title": "PaymentConfiguration.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Persistance\\Configurations\\PaymentConfiguration.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\Startup-Project.Persistance\\Configurations\\PaymentConfiguration.cs",
@@ -196,7 +430,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 10,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Persistance\\Data\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\Startup-Project.Persistance\\Data\\ApplicationDbContext.cs",
@@ -208,7 +442,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 11,
               "Title": "TrainerUpdateDto.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Dtos\\Trainer\\TrainerUpdateDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Dtos\\Trainer\\TrainerUpdateDto.cs",
@@ -220,7 +454,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
+              "Title": "TrainerDto.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Dtos\\Trainer\\TrainerDto.cs",
+              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Dtos\\Trainer\\TrainerDto.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Dtos\\Trainer\\TrainerDto.cs",
+              "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Dtos\\Trainer\\TrainerDto.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAABYwBIAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-28T12:19:29.661Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "TrainingSessionConfiguration.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Persistance\\Configurations\\TrainingSessionConfiguration.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\Startup-Project.Persistance\\Configurations\\TrainingSessionConfiguration.cs",
@@ -228,12 +475,11 @@
               "RelativeToolTip": "src\\Infrastructure\\Startup-Project.Persistance\\Configurations\\TrainingSessionConfiguration.cs",
               "ViewState": "AgIAABwAAAAAAAAAAAAQwCsAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-28T12:11:26.881Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-28T12:11:26.881Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 12,
               "Title": "TrainerCreateDto.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Dtos\\Trainer\\TrainerCreateDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Dtos\\Trainer\\TrainerCreateDto.cs",
@@ -245,19 +491,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "TrainerDto.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Dtos\\Trainer\\TrainerDto.cs",
-              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Dtos\\Trainer\\TrainerDto.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Dtos\\Trainer\\TrainerDto.cs",
-              "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Dtos\\Trainer\\TrainerDto.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAywBIAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-28T12:19:29.661Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 13,
               "Title": "SessionCancelDto.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Dtos\\TrainingSession\\SessionCancelDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Dtos\\TrainingSession\\SessionCancelDto.cs",
@@ -269,19 +503,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 14,
               "Title": "SessionVerifyResultDto.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Dtos\\TrainingSession\\SessionVerifyResultDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Dtos\\TrainingSession\\SessionVerifyResultDto.cs",
               "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Dtos\\TrainingSession\\SessionVerifyResultDto.cs",
               "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Dtos\\TrainingSession\\SessionVerifyResultDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAApAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAEBUwAcAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-28T12:18:39.538Z"
+              "WhenOpened": "2026-01-28T12:18:39.538Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 15,
               "Title": "SessionVerifyDto.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Dtos\\TrainingSession\\SessionVerifyDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Dtos\\TrainingSession\\SessionVerifyDto.cs",
@@ -293,19 +528,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 16,
               "Title": "SessionQrDto.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Dtos\\TrainingSession\\SessionQrDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Dtos\\TrainingSession\\SessionQrDto.cs",
               "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Dtos\\TrainingSession\\SessionQrDto.cs",
               "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Dtos\\TrainingSession\\SessionQrDto.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAQwAoAAAAsAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAxwAkAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-28T12:17:53.211Z"
+              "WhenOpened": "2026-01-28T12:17:53.211Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 17,
               "Title": "SessionDto.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Dtos\\TrainingSession\\SessionDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Dtos\\TrainingSession\\SessionDto.cs",
@@ -317,7 +553,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 18,
               "Title": "SessionPurchaseDto.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Dtos\\TrainingSession\\SessionPurchaseDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Dtos\\TrainingSession\\SessionPurchaseDto.cs",
@@ -329,7 +565,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 19,
               "Title": "TrainerConfiguration.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Persistance\\Configurations\\TrainerConfiguration.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\Startup-Project.Persistance\\Configurations\\TrainerConfiguration.cs",
@@ -341,7 +577,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 20,
               "Title": "IApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Interfaces\\IApplicationDbContext.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Interfaces\\IApplicationDbContext.cs",
@@ -353,7 +589,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 21,
               "Title": "AppUser.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Entities\\Identity\\AppUser.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Domain\\Entities\\Identity\\AppUser.cs",
@@ -365,7 +601,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 22,
               "Title": "Trainer.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Entities\\Trainer.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Domain\\Entities\\Trainer.cs",
@@ -377,7 +613,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 23,
               "Title": "TrainingSession.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Entities\\TrainingSession.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Domain\\Entities\\TrainingSession.cs",
@@ -389,7 +625,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 24,
               "Title": "SessionStatus.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Enums\\SessionStatus.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Domain\\Enums\\SessionStatus.cs",
@@ -401,7 +637,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 26,
               "Title": "ExceptionHandlingMiddleware.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Presentation\\Startup-Project.WebAPI\\Middlewares\\ExceptionHandlingMiddleware.cs",
               "RelativeDocumentMoniker": "src\\Presentation\\Startup-Project.WebAPI\\Middlewares\\ExceptionHandlingMiddleware.cs",
@@ -413,7 +649,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 27,
               "Title": "QrTokenController.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Presentation\\Startup-Project.WebAPI\\Controllers\\QrTokenController.cs",
               "RelativeDocumentMoniker": "src\\Presentation\\Startup-Project.WebAPI\\Controllers\\QrTokenController.cs",
@@ -425,7 +661,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 25,
               "Title": "QrTokenService.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Infrastructure\\Concretes\\Services\\QrTokenService.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\Startup-Project.Infrastructure\\Concretes\\Services\\QrTokenService.cs",
@@ -437,7 +673,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 28,
               "Title": "IReviewService.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Services\\Interfaces\\IReviewService.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Services\\Interfaces\\IReviewService.cs",
@@ -449,7 +685,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 29,
               "Title": "IQrTokenService.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Services\\Interfaces\\IQrTokenService.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Services\\Interfaces\\IQrTokenService.cs",
@@ -461,7 +697,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 30,
               "Title": "IBankService.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Interfaces\\IBankService.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Interfaces\\IBankService.cs",
@@ -473,7 +709,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 31,
               "Title": "FileTypeAttribute.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Attributes\\FileTypeAttribute.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Attributes\\FileTypeAttribute.cs",
@@ -485,7 +721,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 32,
               "Title": "FileLengthAttribute.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Attributes\\FileLengthAttribute.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Attributes\\FileLengthAttribute.cs",
@@ -497,7 +733,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 33,
               "Title": "IUnitOfWork.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Abstractions\\UnitOfWork\\IUnitOfWork.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Abstractions\\UnitOfWork\\IUnitOfWork.cs",
@@ -509,7 +745,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 34,
               "Title": "IJwtTokenService.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Abstractions\\Services\\IJwtTokenService.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Abstractions\\Services\\IJwtTokenService.cs",
@@ -521,7 +757,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 35,
               "Title": "IGoogleTokenValidator.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Abstractions\\Services\\IGoogleTokenValidator.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Abstractions\\Services\\IGoogleTokenValidator.cs",
@@ -533,7 +769,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 36,
               "Title": "IGenericRepository.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Abstractions\\Repositories\\IGenericRepository.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Domain\\Abstractions\\Repositories\\IGenericRepository.cs",
@@ -545,7 +781,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 37,
               "Title": "PaymentController.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Presentation\\Startup-Project.WebAPI\\Controllers\\PaymentController.cs",
               "RelativeDocumentMoniker": "src\\Presentation\\Startup-Project.WebAPI\\Controllers\\PaymentController.cs",
@@ -557,7 +793,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 38,
               "Title": "KapitalBankService.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Infrastructure\\Concretes\\Services\\KapitalBankService.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\Startup-Project.Infrastructure\\Concretes\\Services\\KapitalBankService.cs",
@@ -569,7 +805,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 40,
               "Title": "GymService.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Services\\Concretes\\GymService.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Services\\Concretes\\GymService.cs",
@@ -581,7 +817,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 39,
               "Title": "Gym.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Entities\\Gym.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Domain\\Entities\\Gym.cs",

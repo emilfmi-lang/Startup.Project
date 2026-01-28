@@ -11,10 +11,12 @@ namespace Startup_Project.WebAPI.Controllers.GymOwner;
 public class MyGymController : ControllerBase
 {
     private readonly IGymOwnerService _gymOwnerService;
+    private readonly ITrainingSessionService _sessionService;
 
-    public MyGymController(IGymOwnerService gymOwnerService)
+    public MyGymController(IGymOwnerService gymOwnerService, ITrainingSessionService sessionService)
     {
         _gymOwnerService = gymOwnerService;
+        _sessionService = sessionService;
     }
 
     [HttpGet("my-gym")]
@@ -66,6 +68,18 @@ public class MyGymController : ControllerBase
     public async Task<IActionResult> GetMyPackages()
     {
         var result = await _gymOwnerService.GetMyPackagesAsync();
+        if (!result.Success)
+            return BadRequest(result);
+        return Ok(result);
+    }
+
+    /// <summary>
+    /// Zalimin butun training sessiyalari
+    /// </summary>
+    [HttpGet("sessions")]
+    public async Task<IActionResult> GetGymSessions()
+    {
+        var result = await _sessionService.GetGymSessionsAsync();
         if (!result.Success)
             return BadRequest(result);
         return Ok(result);

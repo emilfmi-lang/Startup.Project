@@ -7,4 +7,6 @@ public class SessionVerifyResultDto
     public Guid? SessionId { get; set; }
     public string? UserName { get; set; }
     public string? TrainerName { get; set; }
+    public string? GymName { get; set; }
+    public DateTime? UsedAt { get; set; }
 }

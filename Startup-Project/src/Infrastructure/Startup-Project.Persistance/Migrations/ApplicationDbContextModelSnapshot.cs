@@ -185,7 +185,7 @@ namespace Startup_Project.Persistance.Migrations
 
                     b.HasIndex("UserId", "CheckInTime");
 
-                    b.ToTable("CheckInLogs");
+                    b.ToTable("CheckInLogs", (string)null);
                 });
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.CheckInToken", b =>
@@ -228,7 +228,7 @@ namespace Startup_Project.Persistance.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("CheckInTokens");
+                    b.ToTable("CheckInTokens", (string)null);
                 });
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.Gym", b =>
@@ -283,7 +283,7 @@ namespace Startup_Project.Persistance.Migrations
 
                     b.HasIndex("OwnerId");
 
-                    b.ToTable("Gyms");
+                    b.ToTable("Gyms", (string)null);
                 });
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.GymOpeningHour", b =>
@@ -323,7 +323,7 @@ namespace Startup_Project.Persistance.Migrations
                     b.HasIndex("GymId", "DayOfWeek")
                         .IsUnique();
 
-                    b.ToTable("GymOpeningHours");
+                    b.ToTable("GymOpeningHours", (string)null);
                 });
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.GymReview", b =>
@@ -364,7 +364,7 @@ namespace Startup_Project.Persistance.Migrations
                     b.HasIndex("GymId", "UserId")
                         .IsUnique();
 
-                    b.ToTable("GymReviews");
+                    b.ToTable("GymReviews", (string)null);
                 });
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.Identity.AppUser", b =>
@@ -496,7 +496,7 @@ namespace Startup_Project.Persistance.Migrations
 
                     b.HasIndex("IsDeleted");
 
-                    b.ToTable("Packages");
+                    b.ToTable("Packages", (string)null);
                 });
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.Payment", b =>
@@ -540,7 +540,7 @@ namespace Startup_Project.Persistance.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Payments");
+                    b.ToTable("Payments", (string)null);
                 });
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.Subscription", b =>
@@ -580,7 +580,7 @@ namespace Startup_Project.Persistance.Migrations
 
                     b.HasIndex("UserId", "EndDate");
 
-                    b.ToTable("Subscriptions");
+                    b.ToTable("Subscriptions", (string)null);
                 });
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.Trainer", b =>
@@ -658,7 +658,7 @@ namespace Startup_Project.Persistance.Migrations
                     b.HasIndex("UserId")
                         .IsUnique();
 
-                    b.ToTable("Trainers");
+                    b.ToTable("Trainers", (string)null);
                 });
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.TrainerReview", b =>
@@ -698,7 +698,7 @@ namespace Startup_Project.Persistance.Migrations
                     b.HasIndex("TrainerId", "UserId")
                         .IsUnique();
 
-                    b.ToTable("TrainerReviews");
+                    b.ToTable("TrainerReviews", (string)null);
                 });
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.TrainerSchedule", b =>
@@ -738,7 +738,7 @@ namespace Startup_Project.Persistance.Migrations
                     b.HasIndex("TrainerId", "DayOfWeek")
                         .IsUnique();
 
-                    b.ToTable("TrainerSchedules");
+                    b.ToTable("TrainerSchedules", (string)null);
                 });
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.TrainingSession", b =>
@@ -815,7 +815,7 @@ namespace Startup_Project.Persistance.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("TrainingSessions");
+                    b.ToTable("TrainingSessions", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
