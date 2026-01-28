@@ -23,6 +23,89 @@ public class Trainer : BaseEntity
     public List<TrainerSchedule> Schedules { get; private set; } = [];
     private Trainer() { }
 
-   
+    public Trainer(Guid userId, Guid gymId, string specialization, decimal hourlyRate)
+    {
+        UserId = userId;
+        GymId = gymId;
+        SetSpecialization(specialization);
+        Status = TrainerStatus.Pending;
+        CreatedAt = DateTime.UtcNow;
+    }
+
+    // Methods
+    public void SetSpecialization(string specialization)
+    {
+        if (string.IsNullOrWhiteSpace(specialization))
+            throw new ArgumentException("Specialization bos ola bilmez.");
+        Specialization = specialization;
+        UpdatedAt = DateTime.UtcNow;
+    }
+
+    public void SetBio(string? bio)
+    {
+        Bio = bio;
+        UpdatedAt = DateTime.UtcNow;
+    }
+
+
+    public void SetCertificateUrl(string? url)
+    {
+        CertificateUrl = url;
+        UpdatedAt = DateTime.UtcNow;
+    }
+
+    public void SetProfileImageUrl(string? url)
+    {
+        ProfileImageUrl = url;
+        UpdatedAt = DateTime.UtcNow;
+    }
+
+    public void Activate()
+    {
+        Status = TrainerStatus.Active;
+        UpdatedAt = DateTime.UtcNow;
+    }
+
+    public void Deactivate()
+    {
+        Status = TrainerStatus.Inactive;
+        UpdatedAt = DateTime.UtcNow;
+    }
+
+    public void Suspend()
+    {
+        Status = TrainerStatus.Suspended;
+        UpdatedAt = DateTime.UtcNow;
+    }
+
+    public void AddReview(int starCount)
+    {
+        var total = AverageRating * ReviewCount;
+        ReviewCount++;
+        AverageRating = (total + starCount) / ReviewCount;
+        UpdatedAt = DateTime.UtcNow;
+    }
+
+    public void RemoveReview(int starCount)
+    {
+        if (ReviewCount <= 0) return;
+
+        var total = AverageRating * ReviewCount;
+        ReviewCount--;
+        AverageRating = ReviewCount == 0 ? 0 : (total - starCount) / ReviewCount;
+        UpdatedAt = DateTime.UtcNow;
+    }
+
+    public void IncrementClients()
+    {
+        TotalClients++;
+        UpdatedAt = DateTime.UtcNow;
+    }
+
+    public void IncrementSessions()
+    {
+        TotalSessions++;
+        UpdatedAt = DateTime.UtcNow;
+    }
 
 }

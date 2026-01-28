@@ -12,6 +12,8 @@ public class AppUser : IdentityUser<Guid>
     public List<GymReview> Reviews { get; set; } = [];
     public string? GoogleId { get; set; }
     public AuthProvider AuthProvider { get; set; } = AuthProvider.Local;
+    public Trainer? TrainerProfile { get; set; }
+    public List<TrainerReview> TrainerReviews { get; set; } = [];
 
     public AppUser() { }
 

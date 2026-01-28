@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Startup-Project.Persistance")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+31f2b1f9839d44e14cadf23d895279b20688e743")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+adb0f559079c7a0c63c22d3e4f3a6f7919d14c73")]
 [assembly: System.Reflection.AssemblyProductAttribute("Startup-Project.Persistance")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Startup-Project.Persistance")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

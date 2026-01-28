@@ -13,12 +13,13 @@ public class Gym : BaseEntity
     public int ReviewCount { get; set; } = 0;
     public Guid? OwnerId { get; private set; }
     public AppUser Owner { get; private set; } = null!;
-    public List<GymOpeningHour> OpeningHours { get; private set; } = [];    
+    public List<GymOpeningHour> OpeningHours { get; private set; } = [];
+    public List<Trainer> Trainers { get; private set; } = [];
 
     private Gym() { }
 
     public bool IsOpenNow()
-    { 
+    {
         var now = DateTime.UtcNow.AddHours(4);
         var currentDay = now.DayOfWeek;
         var currentMonth = now.TimeOfDay;
@@ -79,20 +80,20 @@ public class Gym : BaseEntity
     public void SetAddress(string address)
     {
         if (string.IsNullOrWhiteSpace(address))
-                        throw new ArgumentException("Address cannot be empty.");
-                    Address = address;
-                    UpdatedAt = DateTime.UtcNow;
-                }
+            throw new ArgumentException("Address cannot be empty.");
+        Address = address;
+        UpdatedAt = DateTime.UtcNow;
+    }
 
-                public void UpdateImage(string newPath)
-                {
-                    ImagePath = newPath;
-                    UpdatedAt = DateTime.UtcNow;
-                }
+    public void UpdateImage(string newPath)
+    {
+        ImagePath = newPath;
+        UpdatedAt = DateTime.UtcNow;
+    }
 
-                public void SetOwner(Guid ownerId)
-                {
-                    OwnerId = ownerId;
-                    UpdatedAt = DateTime.UtcNow;
-                }
-            }
+    public void SetOwner(Guid ownerId)
+    {
+        OwnerId = ownerId;
+        UpdatedAt = DateTime.UtcNow;
+    }
+}

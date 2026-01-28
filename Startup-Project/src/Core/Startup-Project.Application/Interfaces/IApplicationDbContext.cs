@@ -14,5 +14,8 @@ public interface IApplicationDbContext
     DbSet<Payment> Payments { get; set; }
     DbSet<CheckInLog> CheckInLogs { get; set; }
     DbSet<CheckInToken> CheckInTokens { get; set; }
+    DbSet<Trainer> Trainers { get; set; }
+    DbSet<TrainerReview> TrainerReviews { get; set; }
+    DbSet<TrainerSchedule> TrainerSchedules { get; set; }
     Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
 }
