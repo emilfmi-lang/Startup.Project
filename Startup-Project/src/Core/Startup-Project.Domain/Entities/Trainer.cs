@@ -21,13 +21,23 @@ public class Trainer : BaseEntity
     public TrainerStatus Status { get; private set; } = TrainerStatus.Pending;
     public List<TrainerReview> Reviews { get; private set; } = [];
     public List<TrainerSchedule> Schedules { get; private set; } = [];
-    private Trainer() { }
+    public decimal SessionPrice { get; private set; }
 
-    public Trainer(Guid userId, Guid gymId, string specialization, decimal hourlyRate)
+    public List<TrainingSession> Sessions { get; private set; } = [];
+    private Trainer() { }
+    public void SetSessionPrice(decimal price)
+    {
+        if (price < 0)
+            throw new ArgumentException("Qiymet menfi ola bilmez.");
+        SessionPrice = price;
+        UpdatedAt = DateTime.UtcNow;
+    }
+    public Trainer(Guid userId, Guid gymId, string specialization, decimal sessionPrice)
     {
         UserId = userId;
         GymId = gymId;
         SetSpecialization(specialization);
+        SetSessionPrice(sessionPrice);
         Status = TrainerStatus.Pending;
         CreatedAt = DateTime.UtcNow;
     }

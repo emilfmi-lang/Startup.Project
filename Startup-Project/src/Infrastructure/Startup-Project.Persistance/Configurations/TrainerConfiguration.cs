@@ -33,6 +33,10 @@ public class TrainerConfiguration : IEntityTypeConfiguration<Trainer>
         builder.Property(t => t.TotalClients)
             .HasDefaultValue(0);
 
+        builder.Property(t => t.SessionPrice)
+            .HasColumnType("decimal(18,2)")
+            .IsRequired();
+
         builder.Property(t => t.TotalSessions)
             .HasDefaultValue(0);
 

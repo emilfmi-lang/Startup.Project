@@ -14,6 +14,7 @@ public class AppUser : IdentityUser<Guid>
     public AuthProvider AuthProvider { get; set; } = AuthProvider.Local;
     public Trainer? TrainerProfile { get; set; }
     public List<TrainerReview> TrainerReviews { get; set; } = [];
+    public List<TrainingSession> TrainingSessions { get; set; } = [];
 
     public AppUser() { }
 

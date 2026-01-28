@@ -15,6 +15,7 @@ public class Gym : BaseEntity
     public AppUser Owner { get; private set; } = null!;
     public List<GymOpeningHour> OpeningHours { get; private set; } = [];
     public List<Trainer> Trainers { get; private set; } = [];
+    public List<TrainingSession> TrainingSessions { get; private set; } = [];
 
     private Gym() { }
 
