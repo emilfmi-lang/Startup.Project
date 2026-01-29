@@ -63,4 +63,28 @@ public class AccountController(IAccountService accountService) : ControllerBase
             return BadRequest(result);
         return Ok(result);
     }
+
+    /// <summary>
+    /// Telefon nömrəsinə SMS OTP göndərir
+    /// </summary>
+    [HttpPost("send-otp")]
+    public async Task<IActionResult> SendSmsOtp([FromBody] SendSmsOtpDto dto)
+    {
+        var result = await accountService.SendSmsOtpAsync(dto);
+        if (!result.Success)
+            return BadRequest(result);
+        return Ok(result);
+    }
+
+    /// <summary>
+    /// SMS OTP-ni doğrulayır və JWT token qaytarır
+    /// </summary>
+    [HttpPost("verify-otp")]
+    public async Task<IActionResult> VerifySmsOtp([FromBody] VerifySmsOtpDto dto)
+    {
+        var result = await accountService.VerifySmsOtpAsync(dto);
+        if (!result.Success)
+            return BadRequest(result);
+        return Ok(result);
+    }
 }

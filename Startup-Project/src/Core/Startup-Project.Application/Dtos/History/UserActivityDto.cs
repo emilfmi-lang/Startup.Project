@@ -2,18 +2,18 @@ using Startup_Project.Application.Enums;
 
 namespace Startup_Project.Application.Dtos.History;
 
-public record UserActivityDto
+public class UserActivityDto
 {
-    public Guid Id { get; init; }
-    public ActivityType ActivityType { get; init; }
-    public string Title { get; init; } = null!;
-    public string? Description { get; init; }
-    public decimal? Amount { get; init; }
-    public ActivityStatus Status { get; init; }
-    public string StatusText { get; init; } = null!;
-    public DateTime Date { get; init; }
-    public string Icon { get; init; } = null!;
-    public string Color { get; init; } = null!;
-    public string? GymName { get; init; }
-    public string? PackageName { get; init; }
+    public Guid Id { get; set; }
+    public ActivityType ActivityType { get; set; }
+    public string Title { get; set; } = null!;
+    public string? Description { get; set; }
+    public decimal? Amount { get; set; }
+    public ActivityStatus Status { get; set; }
+    public string StatusText { get; set; } = null!;
+    public DateTime Date { get; set; }
+    public string Icon { get; set; } = null!;
+    public string Color { get; set; } = null!;
+    public string? GymName { get; set; }
+    public string? PackageName { get; set; }
 }

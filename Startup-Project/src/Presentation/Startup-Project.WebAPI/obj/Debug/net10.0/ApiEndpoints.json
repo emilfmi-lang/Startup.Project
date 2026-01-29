@@ -81,6 +81,22 @@
   },
   {
     "ContainingType": "Startup_Project.WebAPI.Controllers.Account.AccountController",
+    "Method": "SendSmsOtp",
+    "RelativePath": "api/Account/send-otp",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Startup_Project.Application.Dtos.Account.SendSmsOtpDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Startup_Project.WebAPI.Controllers.Account.AccountController",
     "Method": "VerifyAndLogin",
     "RelativePath": "api/Account/verify-login",
     "HttpMethod": "POST",
@@ -90,6 +106,22 @@
       {
         "Name": "dto",
         "Type": "Startup_Project.Application.Dtos.User.VerifyCodeDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Startup_Project.WebAPI.Controllers.Account.AccountController",
+    "Method": "VerifySmsOtp",
+    "RelativePath": "api/Account/verify-otp",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Startup_Project.Application.Dtos.Account.VerifySmsOtpDto",
         "IsRequired": true
       }
     ],
@@ -129,6 +161,37 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Startup_Project.WebAPI.Controllers.Admin.AdminController",
+    "Method": "VerifyOnlineTrainer",
+    "RelativePath": "api/admin/trainers/{id}/verify",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "Startup_Project.Application.Dtos.Trainer.TrainerVerifyDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Startup_Project.WebAPI.Controllers.Admin.AdminController",
+    "Method": "GetPendingOnlineTrainers",
+    "RelativePath": "api/admin/trainers/pending-online",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   },
   {
@@ -308,6 +371,145 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Startup_Project.WebAPI.Controllers.HistoryController",
+    "Method": "GetHistory",
+    "RelativePath": "api/History",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "status",
+        "Type": "System.Nullable\u00601[[Startup_Project.Application.Enums.ActivityStatus, Startup-Project.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "type",
+        "Type": "System.Nullable\u00601[[Startup_Project.Application.Enums.ActivityType, Startup-Project.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "startDate",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "endDate",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Startup_Project.WebAPI.Controllers.HistoryController",
+    "Method": "GetCheckIns",
+    "RelativePath": "api/History/check-ins",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "status",
+        "Type": "System.Nullable\u00601[[Startup_Project.Application.Enums.ActivityStatus, Startup-Project.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "startDate",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "endDate",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Startup_Project.WebAPI.Controllers.HistoryController",
+    "Method": "GetPayments",
+    "RelativePath": "api/History/payments",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "status",
+        "Type": "System.Nullable\u00601[[Startup_Project.Application.Enums.ActivityStatus, Startup-Project.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "startDate",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "endDate",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Startup_Project.WebAPI.Controllers.HistoryController",
+    "Method": "GetRecent",
+    "RelativePath": "api/History/recent",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "count",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Startup_Project.WebAPI.Controllers.HistoryController",
+    "Method": "GetSummary",
+    "RelativePath": "api/History/summary",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   },
   {
@@ -936,6 +1138,22 @@
   },
   {
     "ContainingType": "Startup_Project.WebAPI.Controllers.TrainerController",
+    "Method": "ApplyAsOnlineTrainer",
+    "RelativePath": "api/trainers/apply-online",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Startup_Project.Application.Dtos.Trainer.OnlineTrainerApplyDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Startup_Project.WebAPI.Controllers.TrainerController",
     "Method": "GetByGym",
     "RelativePath": "api/trainers/gym/{gymId}",
     "HttpMethod": "GET",
@@ -948,6 +1166,16 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Startup_Project.WebAPI.Controllers.TrainerController",
+    "Method": "GetOnlineTrainers",
+    "RelativePath": "api/trainers/online",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   }
 ]

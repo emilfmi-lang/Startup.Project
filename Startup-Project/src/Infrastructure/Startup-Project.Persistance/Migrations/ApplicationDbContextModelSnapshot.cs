@@ -168,8 +168,22 @@ namespace Startup_Project.Persistance.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("FailureReason")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<Guid>("GymId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<string>("TokenUsed")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
@@ -181,9 +195,16 @@ namespace Startup_Project.Persistance.Migrations
 
                     b.HasIndex("CheckInTime");
 
+                    b.HasIndex("GymId");
+
+                    b.HasIndex("Status");
+
                     b.HasIndex("UserId");
 
-                    b.HasIndex("UserId", "CheckInTime");
+                    b.HasIndex("UserId", "CheckInTime")
+                        .IsDescending(false, true);
+
+                    b.HasIndex("UserId", "Status");
 
                     b.ToTable("CheckInLogs");
                 });
@@ -543,6 +564,57 @@ namespace Startup_Project.Persistance.Migrations
                     b.ToTable("Payments");
                 });
 
+            modelBuilder.Entity("Startup_Project.Domain.Entities.SmsOtp", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("AttemptCount")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasDefaultValue(0);
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasMaxLength(6)
+                        .HasColumnType("nvarchar(6)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("ExpiryDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsUsed")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PhoneNumber");
+
+                    b.HasIndex("PhoneNumber", "Code");
+
+                    b.HasIndex("PhoneNumber", "IsUsed");
+
+                    b.HasIndex("PhoneNumber", "IsUsed", "ExpiryDate");
+
+                    b.ToTable("SmsOtps");
+                });
+
             modelBuilder.Entity("Startup_Project.Domain.Entities.Subscription", b =>
                 {
                     b.Property<Guid>("Id")
@@ -895,11 +967,19 @@ namespace Startup_Project.Persistance.Migrations
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.CheckInLog", b =>
                 {
+                    b.HasOne("Startup_Project.Domain.Entities.Gym", "Gym")
+                        .WithMany()
+                        .HasForeignKey("GymId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.HasOne("Startup_Project.Domain.Entities.Identity.AppUser", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Gym");
 
                     b.Navigation("User");
                 });

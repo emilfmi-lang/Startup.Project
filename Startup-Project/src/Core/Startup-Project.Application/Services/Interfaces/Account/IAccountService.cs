@@ -13,4 +13,8 @@ public interface IAccountService
     Task<ResponseModel<string>> GoogleLoginAsync(GoogleLoginDto dto);
     Task<ResponseModel<bool>> ForgotPasswordAsync(string email);
     Task<ResponseModel<bool>> ResetPasswordAsync(ResetPasswordDto dto);
+
+    // SMS OTP Methods
+    Task<ResponseModel<bool>> SendSmsOtpAsync(SendSmsOtpDto dto);
+    Task<ResponseModel<string>> VerifySmsOtpAsync(VerifySmsOtpDto dto);
 }

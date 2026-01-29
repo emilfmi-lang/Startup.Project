@@ -2,12 +2,15 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Startup_Project.Application.Abstractions.Services;
+using Startup_Project.Application.Abstractions.UnitOfWork;
 using Startup_Project.Application.Dtos.Account;
 using Startup_Project.Application.Dtos.Account.Password;
 using Startup_Project.Application.Dtos.User;
 using Startup_Project.Application.Models;
 using Startup_Project.Application.Services.Interfaces.Account;
 using Startup_Project.Application.Validators.Account;
+using Startup_Project.Domain.Abstractions.Repositories;
+using Startup_Project.Domain.Entities;
 using Startup_Project.Domain.Entities.Identity;
 using Startup_Project.Domain.Enums;
 
@@ -19,7 +22,10 @@ public class AccountService(
     IMapper mapper,
     IJwtTokenService jwtTokenService,
     IMailService mailService,
-    IGoogleTokenValidator googleTokenValidator
+    IGoogleTokenValidator googleTokenValidator,
+    IGenericRepository<SmsOtp> smsOtpRepository,
+    ISmsService smsService,
+    IUnitOfWork unitOfWork
     ) : IAccountService
 {
     public async Task<ResponseModel<string>> VerifyAndLoginAsync(VerifyCodeDto dto)
@@ -80,6 +86,9 @@ public class AccountService(
 
         if (user.AuthProvider == AuthProvider.Google)
             return ResponseModel<string>.FailureResponse("Bu hesab Google ile qeydiyyatdan kecib. Zehmmet olmasa Google ile daxil olun.");
+
+        if (user.AuthProvider == AuthProvider.Phone)
+            return ResponseModel<string>.FailureResponse("Bu hesab telefon nömrəsi ilə qeydiyyatdan keçib. Zəhmət olmasa SMS OTP ilə daxil olun.");
 
         var isPasswordValid = await userManager.CheckPasswordAsync(user, dto.Password);
         if (!isPasswordValid)
@@ -156,6 +165,9 @@ public class AccountService(
         if (user.AuthProvider == AuthProvider.Google)
             return ResponseModel<bool>.FailureResponse("Google hesabi ucun sifre sifirlama mumkun deyil.");
 
+        if (user.AuthProvider == AuthProvider.Phone)
+            return ResponseModel<bool>.FailureResponse("Telefon ilə qeydiyyatdan keçmiş hesab üçün şifrə sıfırlama mümkün deyil.");
+
         var token = await userManager.GeneratePasswordResetTokenAsync(user);
 
         byte[] tokenBytes = System.Text.Encoding.UTF8.GetBytes(token);
@@ -181,6 +193,9 @@ public class AccountService(
         if (user.AuthProvider == AuthProvider.Google)
             return ResponseModel<bool>.FailureResponse("Google hesabi ucun sifre sifirlama mumkun deyil.");
 
+        if (user.AuthProvider == AuthProvider.Phone)
+            return ResponseModel<bool>.FailureResponse("Telefon ilə qeydiyyatdan keçmiş hesab üçün şifrə sıfırlama mümkün deyil.");
+
         if (dto.NewPassword != dto.ConfirmPassword)
             return ResponseModel<bool>.FailureResponse("Yeni sifre ve tesdiq sifresi uygun gelmir.");
 
@@ -191,4 +206,114 @@ public class AccountService(
             return ResponseModel<bool>.FailureResponse(result.Errors.Select(e => e.Description).ToList());
         return ResponseModel<bool>.SuccessResponse(true);
     }
+
+    #region SMS OTP Methods
+
+    public async Task<ResponseModel<bool>> SendSmsOtpAsync(SendSmsOtpDto dto)
+    {
+        // Validate
+        var validator = new SendSmsOtpDtoValidator();
+        var validationResult = await validator.ValidateAsync(dto);
+        if (!validationResult.IsValid)
+            return ResponseModel<bool>.FailureResponse(validationResult.Errors.Select(e => e.ErrorMessage).ToList());
+
+        // Invalidate all previous active codes for this phone number
+        var activeCodes = await smsOtpRepository.Table
+            .Where(x => x.PhoneNumber == dto.PhoneNumber && !x.IsUsed && x.ExpiryDate > DateTime.UtcNow)
+            .ToListAsync();
+
+        foreach (var code in activeCodes)
+        {
+            code.MarkAsUsed();
+        }
+
+        // Generate new 6-digit code
+        var random = new Random();
+        var otpCode = random.Next(100000, 999999).ToString();
+
+        // Create new OTP record
+        var smsOtp = new SmsOtp(dto.PhoneNumber, otpCode, expiryMinutes: 3);
+        await smsOtpRepository.AddAsync(smsOtp);
+        await unitOfWork.SaveChangesAsync();
+
+        // Send SMS
+        var message = $"Doğrulama kodunuz: {otpCode}. Bu kod 3 dəqiqə ərzində etibarlıdır.";
+        await smsService.SendAsync(dto.PhoneNumber, message);
+
+        return ResponseModel<bool>.SuccessResponse(true);
+    }
+
+    public async Task<ResponseModel<string>> VerifySmsOtpAsync(VerifySmsOtpDto dto)
+    {
+        var validator = new VerifySmsOtpDtoValidator();
+        var validationResult = await validator.ValidateAsync(dto);
+        if (!validationResult.IsValid)
+            return ResponseModel<string>.FailureResponse(validationResult.Errors.Select(e => e.ErrorMessage).ToList());
+
+        var otp = await smsOtpRepository.Table
+            .Where(x => x.PhoneNumber == dto.PhoneNumber && !x.IsUsed && x.ExpiryDate > DateTime.UtcNow && x.AttemptCount < 3)
+            .OrderByDescending(x => x.CreatedAt)
+            .FirstOrDefaultAsync();
+
+        if (otp == null)
+            return ResponseModel<string>.FailureResponse("Aktiv doğrulama kodu tapılmadı. Yeni kod tələb edin.");
+
+        if (otp.Code != dto.Code)
+        {
+            otp.IncrementAttempt();
+
+            if (otp.AttemptCount >= 3)
+            {
+                otp.MarkAsUsed();
+                await unitOfWork.SaveChangesAsync();
+                return ResponseModel<string>.FailureResponse("3 səhv cəhd. Kod ləğv edildi. Yeni kod tələb edin.");
+            }
+
+            await unitOfWork.SaveChangesAsync();
+            return ResponseModel<string>.FailureResponse($"Kod səhvdir. {3 - otp.AttemptCount} cəhd qalıb.");
+        }
+
+        otp.MarkAsUsed();
+        await unitOfWork.SaveChangesAsync();
+
+        var user = await userManager.Users.FirstOrDefaultAsync(u => u.PhoneNumber == dto.PhoneNumber);
+
+        if (user == null)
+        {
+            var phoneDigits = dto.PhoneNumber.Replace("+", "");
+            var placeholderEmail = $"{phoneDigits}@phone.local";
+
+            user = new AppUser
+            {
+                UserName = dto.PhoneNumber,
+                Email = placeholderEmail,
+                PhoneNumber = dto.PhoneNumber,
+                PhoneNumberConfirmed = true,
+                EmailConfirmed = false, 
+                FullName = $"User_{dto.PhoneNumber[^4..]}", 
+                AuthProvider = AuthProvider.Phone
+            };
+
+            var createResult = await userManager.CreateAsync(user);
+            if (!createResult.Succeeded)
+                return ResponseModel<string>.FailureResponse(createResult.Errors.Select(e => e.Description).ToList());
+
+            await userManager.AddToRoleAsync(user, "User");
+        }
+        else
+        {
+            if (!user.PhoneNumberConfirmed)
+            {
+                user.PhoneNumberConfirmed = true;
+                await userManager.UpdateAsync(user);
+            }
+        }
+
+        var roles = await userManager.GetRolesAsync(user);
+        var token = jwtTokenService.GenerateTokenAsync(user, roles);
+
+        return ResponseModel<string>.SuccessResponse(token);
+    }
+
+    #endregion
 }

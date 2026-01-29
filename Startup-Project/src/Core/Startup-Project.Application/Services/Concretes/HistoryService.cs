@@ -39,23 +39,18 @@ public class HistoryService : IHistoryService
         if (userId == Guid.Empty)
             return ResponseModel<HistoryResponseDto>.FailureResponse("?stifad?çi tap?lmad?.");
 
-        // Validate pagination
         var page = Math.Max(1, filter.Page);
         var pageSize = Math.Clamp(filter.PageSize, 1, 100);
 
-        // Build unified query with projection (no full entity loading)
         var activities = await GetUnifiedActivitiesAsync(userId, filter);
-        
-        // Get total count for pagination
+
         var totalCount = activities.Count;
-        
-        // Apply pagination
+
         var paginatedActivities = activities
             .Skip((page - 1) * pageSize)
             .Take(pageSize)
             .ToList();
 
-        // Get summary (single optimized query)
         var summary = await GetSummaryForUserAsync(userId);
 
         var response = new HistoryResponseDto
@@ -97,94 +92,104 @@ public class HistoryService : IHistoryService
 
     private async Task<List<UserActivityDto>> GetUnifiedActivitiesAsync(Guid userId, HistoryFilterDto filter)
     {
-        // Payment query with projection
-        var paymentQuery = _paymentRepository.Table
+        // Payment base query
+        IQueryable<Payment> paymentQuery = _paymentRepository.Table
             .AsNoTracking()
             .Where(p => p.UserId == userId)
             .Include(p => p.Package)
-                .ThenInclude(pkg => pkg.Gym)
-            .Select(p => new UserActivityDto
-            {
-                Id = p.Id,
-                ActivityType = ActivityType.Payment,
-                Title = $"{p.Package.Name} öd?ni?i",
-                Description = $"{p.Package.Gym.Name} - {p.Package.DurationInDays} günlük",
-                Amount = p.Amount,
-                Status = MapPaymentStatus(p.Status),
-                StatusText = GetStatusText(MapPaymentStatus(p.Status)),
-                Date = p.CreatedAt,
-                Icon = "payment",
-                Color = GetStatusColor(MapPaymentStatus(p.Status)),
-                GymName = p.Package.Gym.Name,
-                PackageName = p.Package.Name
-            });
+                .ThenInclude(pkg => pkg.Gym);
 
-        // CheckIn query with projection
-        var checkInQuery = _checkInRepository.Table
+        // CheckIn base query
+        IQueryable<CheckInLog> checkInQuery = _checkInRepository.Table
             .AsNoTracking()
             .Where(c => c.UserId == userId)
-            .Include(c => c.Gym)
-            .Select(c => new UserActivityDto
-            {
-                Id = c.Id,
-                ActivityType = ActivityType.CheckIn,
-                Title = "Zala giri?",
-                Description = c.Gym.Name,
-                Amount = null,
-                Status = MapCheckInStatus(c.Status),
-                StatusText = GetStatusText(MapCheckInStatus(c.Status)),
-                Date = c.CheckInTime,
-                Icon = "check-in",
-                Color = GetStatusColor(MapCheckInStatus(c.Status)),
-                GymName = c.Gym.Name,
-                PackageName = null
-            });
+            .Include(c => c.Gym);
 
-        // Apply filters
-        if (filter.ActivityType.HasValue)
-        {
-            if (filter.ActivityType == ActivityType.Payment)
-                checkInQuery = checkInQuery.Where(x => false); // Exclude check-ins
-            else if (filter.ActivityType == ActivityType.CheckIn)
-                paymentQuery = paymentQuery.Where(x => false); // Exclude payments
-        }
-
+        // Apply date filters at database level
         if (filter.StartDate.HasValue)
         {
-            paymentQuery = paymentQuery.Where(p => p.Date >= filter.StartDate.Value);
-            checkInQuery = checkInQuery.Where(c => c.Date >= filter.StartDate.Value);
+            paymentQuery = paymentQuery.Where(p => p.CreatedAt >= filter.StartDate.Value);
+            checkInQuery = checkInQuery.Where(c => c.CheckInTime >= filter.StartDate.Value);
         }
 
         if (filter.EndDate.HasValue)
         {
-            paymentQuery = paymentQuery.Where(p => p.Date <= filter.EndDate.Value);
-            checkInQuery = checkInQuery.Where(c => c.Date <= filter.EndDate.Value);
+            paymentQuery = paymentQuery.Where(p => p.CreatedAt <= filter.EndDate.Value);
+            checkInQuery = checkInQuery.Where(c => c.CheckInTime <= filter.EndDate.Value);
         }
 
-        // Execute queries
-        var payments = await paymentQuery.ToListAsync();
-        var checkIns = await checkInQuery.ToListAsync();
+        var activities = new List<UserActivityDto>();
 
-        // Union and sort
-        var allActivities = payments
-            .Concat(checkIns)
-            .OrderByDescending(a => a.Date)
-            .ToList();
+        // Fetch and map payments (if not filtered out)
+        if (!filter.ActivityType.HasValue || filter.ActivityType == ActivityType.Payment)
+        {
+            var payments = await paymentQuery.ToListAsync();
+            var paymentDtos = payments.Select(MapPaymentToActivity);
+            activities.AddRange(paymentDtos);
+        }
 
-        // Apply status filter after union
+        // Fetch and map check-ins (if not filtered out)
+        if (!filter.ActivityType.HasValue || filter.ActivityType == ActivityType.CheckIn)
+        {
+            var checkIns = await checkInQuery.ToListAsync();
+            var checkInDtos = checkIns.Select(MapCheckInToActivity);
+            activities.AddRange(checkInDtos);
+        }
+
+        // Sort by date descending
+        activities = activities.OrderByDescending(a => a.Date).ToList();
+
+        // Apply status filter in memory
         if (filter.Status.HasValue)
         {
-            allActivities = allActivities
-                .Where(a => a.Status == filter.Status.Value)
-                .ToList();
+            activities = activities.Where(a => a.Status == filter.Status.Value).ToList();
         }
 
-        return allActivities;
+        return activities;
+    }
+
+    private static UserActivityDto MapPaymentToActivity(Payment payment)
+    {
+        var status = MapPaymentStatus(payment.Status);
+        return new UserActivityDto
+        {
+            Id = payment.Id,
+            ActivityType = ActivityType.Payment,
+            Title = $"{payment.Package?.Name ?? "Paket"} öd?ni?i",
+            Description = $"{payment.Package?.Gym?.Name ?? "Zal"} - {payment.Package?.DurationInDays ?? 0} günlük",
+            Amount = payment.Amount,
+            Status = status,
+            StatusText = GetStatusText(status),
+            Date = payment.CreatedAt,
+            Icon = "payment",
+            Color = GetStatusColor(status),
+            GymName = payment.Package?.Gym?.Name,
+            PackageName = payment.Package?.Name
+        };
+    }
+
+    private static UserActivityDto MapCheckInToActivity(CheckInLog checkIn)
+    {
+        var status = MapCheckInStatus(checkIn.Status);
+        return new UserActivityDto
+        {
+            Id = checkIn.Id,
+            ActivityType = ActivityType.CheckIn,
+            Title = "Zala giri?",
+            Description = checkIn.Gym?.Name ?? "Zal",
+            Amount = null,
+            Status = status,
+            StatusText = GetStatusText(status),
+            Date = checkIn.CheckInTime,
+            Icon = "check-in",
+            Color = GetStatusColor(status),
+            GymName = checkIn.Gym?.Name,
+            PackageName = null
+        };
     }
 
     private async Task<HistorySummaryDto> GetSummaryForUserAsync(Guid userId)
     {
-        // Single query for payment stats
         var paymentStats = await _paymentRepository.Table
             .AsNoTracking()
             .Where(p => p.UserId == userId)
@@ -199,7 +204,6 @@ public class HistoryService : IHistoryService
             })
             .FirstOrDefaultAsync();
 
-        // Single query for check-in stats
         var checkInStats = await _checkInRepository.Table
             .AsNoTracking()
             .Where(c => c.UserId == userId)
