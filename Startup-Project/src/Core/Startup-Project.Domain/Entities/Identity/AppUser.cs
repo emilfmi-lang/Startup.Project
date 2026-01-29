@@ -15,6 +15,7 @@ public class AppUser : IdentityUser<Guid>
     public Trainer? TrainerProfile { get; set; }
     public List<TrainerReview> TrainerReviews { get; set; } = [];
     public List<TrainingSession> TrainingSessions { get; set; } = [];
+    public List<FavoriteGym> FavoriteGyms { get; private set; } = [];
 
     public AppUser() { }
 

@@ -10,9 +10,11 @@ using System.Security.Claims;
 
 namespace Startup_Project.Application.Services.Concretes;
 
-public class GymService(IGenericRepository<Gym> repository,
-                        IMapper mapper,
-                        IHttpContextAccessor httpContextAccessor) : IGymService
+public class GymService(
+    IGenericRepository<Gym> repository,
+    IGenericRepository<FavoriteGym> favoriteRepository,
+    IMapper mapper,
+    IHttpContextAccessor httpContextAccessor) : IGymService
 {
     private bool IsAdmin()
     {
@@ -77,6 +79,54 @@ public class GymService(IGenericRepository<Gym> repository,
         var gymDtos = mapper.Map<List<GymGetDto>>(gyms);
 
         return ResponseModel<List<GymGetDto>>.SuccessResponse(gymDtos);
+    }
+
+    public async Task<ResponseModel<List<GymListDto>>> GetAllWithFavoritesAsync(int page = 1, int pageSize = 20)
+    {
+        var userId = GetCurrentUserId();
+
+        // Validate pagination
+        page = Math.Max(1, page);
+        pageSize = Math.Clamp(pageSize, 1, 100);
+
+        // Get user's favorite gym IDs (if logged in)
+        var userFavoriteGymIds = new HashSet<Guid>();
+        if (userId != null)
+        {
+            userFavoriteGymIds = (await favoriteRepository.Table
+                .AsNoTracking()
+                .Where(f => f.UserId == userId.Value)
+                .Select(f => f.GymId)
+                .ToListAsync())
+                .ToHashSet();
+        }
+
+        // Get gyms with pagination
+        var gyms = await repository.Table
+            .AsNoTracking()
+            .Where(g => !g.IsDeleted)
+            .Include(g => g.OpeningHours)
+            .Include(g => g.FavoritedByUsers)
+            .OrderByDescending(g => g.AverageRating)
+            .Skip((page - 1) * pageSize)
+            .Take(pageSize)
+            .ToListAsync();
+
+        // Map to DTOs with IsFavorite
+        var gymDtos = gyms.Select(g => new GymListDto
+        {
+            Id = g.Id,
+            Name = g.Name,
+            Address = g.Address,
+            ImagePath = g.ImagePath,
+            AverageRating = g.AverageRating,
+            ReviewCount = g.ReviewCount,
+            IsOpen = g.IsOpenNow(),
+            IsFavorite = userFavoriteGymIds.Contains(g.Id),
+            FavoriteCount = g.FavoritedByUsers.Count
+        }).ToList();
+
+        return ResponseModel<List<GymListDto>>.SuccessResponse(gymDtos);
     }
 
     public async Task<ResponseModel<bool>> DeleteAsync(string id)

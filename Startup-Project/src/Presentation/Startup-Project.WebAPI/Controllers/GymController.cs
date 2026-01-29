@@ -21,6 +21,21 @@ public class GymController(IGymService service) : ControllerBase
         return Ok(result);
     }
 
+    /// <summary>
+    /// Bütün zalları gətirir (IsFavorite flag ilə)
+    /// </summary>
+    [HttpGet("list")]
+    [AllowAnonymous]
+    public async Task<IActionResult> GetAllWithFavoritesAsync([FromQuery] int page = 1, [FromQuery] int pageSize = 20)
+    {
+        var result = await service.GetAllWithFavoritesAsync(page, pageSize);
+        if (!result.Success)
+        {
+            return BadRequest(result);
+        }
+        return Ok(result);
+    }
+
     [HttpPost]
     [Authorize(Roles = "Admin")]
     public async Task<IActionResult> CreateAsync([FromBody] GymCreateDto dto)

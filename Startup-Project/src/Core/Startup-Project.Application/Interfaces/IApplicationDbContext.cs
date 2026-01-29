@@ -19,5 +19,6 @@ public interface IApplicationDbContext
     DbSet<TrainerSchedule> TrainerSchedules { get; set; }
     DbSet<TrainingSession> TrainingSessions { get; set; }
     DbSet<SmsOtp> SmsOtps { get; set; }
+    DbSet<FavoriteGym> FavoriteGyms { get; set; }
     Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
 }
