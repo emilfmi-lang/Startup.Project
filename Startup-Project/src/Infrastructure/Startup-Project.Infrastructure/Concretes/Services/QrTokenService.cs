@@ -1,4 +1,5 @@
-﻿using Startup_Project.Application.Abstractions.UnitOfWork;
+﻿using Microsoft.EntityFrameworkCore;
+using Startup_Project.Application.Abstractions.UnitOfWork;
 using Startup_Project.Application.Models;
 using Startup_Project.Application.Services.Interfaces;
 using Startup_Project.Domain.Abstractions.Repositories;
@@ -11,17 +12,20 @@ public class QrTokenService : IQrTokenService
     private readonly IGenericRepository<CheckInToken> _tokenRepository;
     private readonly IGenericRepository<Subscription> _subscriptionRepository;
     private readonly IGenericRepository<CheckInLog> _logRepository;
+    private readonly IGenericRepository<Package> _packageRepository;
     private readonly IUnitOfWork _unitOfWork;
 
     public QrTokenService(
         IGenericRepository<CheckInToken> tokenRepository,
         IGenericRepository<Subscription> subscriptionRepository,
         IGenericRepository<CheckInLog> logRepository,
+        IGenericRepository<Package> packageRepository,
         IUnitOfWork unitOfWork)
     {
         _tokenRepository = tokenRepository;
         _subscriptionRepository = subscriptionRepository;
         _logRepository = logRepository;
+        _packageRepository = packageRepository;
         _unitOfWork = unitOfWork;
     }
 
@@ -56,25 +60,44 @@ public class QrTokenService : IQrTokenService
         if (tokenData == null)
             return ResponseModel<bool>.FailureResponse("QR kod etibarsızdır.");
 
+        // Get user's active subscription with Gym info
+        var activeSub = await _subscriptionRepository.Table
+            .AsNoTracking()
+            .Include(s => s.Package)
+            .FirstOrDefaultAsync(s => s.UserId == tokenData.UserId && s.EndDate > DateTime.Now);
+
+        var gymId = activeSub?.Package?.GymId ?? Guid.Empty;
+
+        // Create check-in log regardless of outcome
+        var checkInLog = new CheckInLog(tokenData.UserId, gymId, token);
+
         if (tokenData.IsUsed)
+        {
+            checkInLog.MarkAsFailed("Bu QR kod artıq istifadə edilib.");
+            await _logRepository.AddAsync(checkInLog);
+            await _unitOfWork.SaveChangesAsync();
             return ResponseModel<bool>.FailureResponse("Bu QR kod artıq istifadə edilib.");
+        }
 
         if (tokenData.ExpiryDate < DateTime.Now)
-            return ResponseModel<bool>.FailureResponse("QR kodun vaxtı bitib, yenisini alın.");
-
-        var isSubValid = await _subscriptionRepository
-            .AnyAsync(s => s.UserId == tokenData.UserId && s.EndDate > DateTime.Now);
-
-        if (!isSubValid)
-            return ResponseModel<bool>.FailureResponse("İstifadəçinin abunəlik müddəti artıq bitib.");
-
-        tokenData.IsUsed = true; 
-
-        var checkInLog = new CheckInLog
         {
-            UserId = tokenData.UserId,
-            CheckInTime = DateTime.Now
-        };
+            checkInLog.MarkAsExpired();
+            await _logRepository.AddAsync(checkInLog);
+            await _unitOfWork.SaveChangesAsync();
+            return ResponseModel<bool>.FailureResponse("QR kodun vaxtı bitib, yenisini alın.");
+        }
+
+        if (activeSub == null)
+        {
+            checkInLog.MarkAsFailed("İstifadəçinin abunəlik müddəti bitib.");
+            await _logRepository.AddAsync(checkInLog);
+            await _unitOfWork.SaveChangesAsync();
+            return ResponseModel<bool>.FailureResponse("İstifadəçinin abunəlik müddəti artıq bitib.");
+        }
+
+        // Success case
+        tokenData.IsUsed = true;
+        checkInLog.MarkAsSuccess();
 
         await _logRepository.AddAsync(checkInLog);
         await _unitOfWork.SaveChangesAsync();

@@ -28,6 +28,7 @@ public static class DependencyInjection
             services.AddScoped<IGymOwnerService, GymOwnerService>();
             services.AddScoped<ITrainerService, TrainerService>();
             services.AddScoped<ITrainingSessionService, TrainingSessionService>();
+            services.AddScoped<IHistoryService, HistoryService>();
         }
     }
 }
