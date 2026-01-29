@@ -5,8 +5,8 @@ public class TrainerDto
     public Guid Id { get; set; }
     public Guid UserId { get; set; }
     public string UserFullName { get; set; } = null!;
-    public Guid GymId { get; set; }
-    public string GymName { get; set; } = null!;
+    public Guid? GymId { get; set; }
+    public string? GymName { get; set; }
     public string Specialization { get; set; } = null!;
     public string? Bio { get; set; }
     public string? CertificateUrl { get; set; }
@@ -17,4 +17,8 @@ public class TrainerDto
     public int TotalClients { get; set; }
     public int TotalSessions { get; set; }
     public string Status { get; set; } = null!;
+    public bool IsOnlineTrainer { get; set; }
+    public bool IsVerified { get; set; }
+    public string? VideoIntroUrl { get; set; }
+    public string? SocialMediaLinks { get; set; }
 }

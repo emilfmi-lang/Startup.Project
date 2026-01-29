@@ -1,0 +1,61 @@
+2026-01-29 11:03:23 [INF] Proqram başladılır...
+2026-01-29 11:03:25 [INF] Executed DbCommand (35ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-01-29 11:03:25 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-01-29 11:03:25 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-01-29 11:03:25 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-01-29 11:03:25 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-01-29 11:03:25 [INF] User profile is available. Using 'C:\Users\User\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-01-29 11:03:25 [INF] Executed DbCommand (7ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-01-29 11:03:25 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Gyms] AS [g]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-01-29 11:03:25 [WRN] The WebRootPath was not found: C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI\wwwroot. Static files may be unavailable.
+2026-01-29 11:03:25 [INF] Now listening on: http://localhost:5086
+2026-01-29 11:03:25 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-29 11:03:25 [INF] Hosting environment: Development
+2026-01-29 11:03:25 [INF] Content root path: C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI
+2026-01-29 11:03:25 [INF] Request starting HTTP/1.1 GET http://localhost:5086/scalar/v1 - null null
+2026-01-29 11:03:26 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2026-01-29 11:03:26 [INF] Write content with HTTP Response ContentType of text/html
+2026-01-29 11:03:26 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2026-01-29 11:03:26 [INF] Request starting HTTP/1.1 GET http://localhost:5086/scalar/scalar.js - null null
+2026-01-29 11:03:26 [INF] Request finished HTTP/1.1 GET http://localhost:5086/scalar/v1 - 200 null text/html 301.8297ms
+2026-01-29 11:03:26 [INF] Request starting HTTP/1.1 GET http://localhost:5086/_vs/browserLink - null null
+2026-01-29 11:03:26 [INF] Request starting HTTP/1.1 GET http://localhost:5086/scalar/scalar.aspnetcore.js - null null
+2026-01-29 11:03:26 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.js'
+2026-01-29 11:03:26 [INF] Request starting HTTP/1.1 GET http://localhost:5086/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-29 11:03:26 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2026-01-29 11:03:26 [INF] Request finished HTTP/1.1 GET http://localhost:5086/_framework/aspnetcore-browser-refresh.js - 200 16529 application/javascript; charset=utf-8 13.3706ms
+2026-01-29 11:03:26 [INF] Sending file with download name ''.
+2026-01-29 11:03:26 [INF] Sending file with download name ''.
+2026-01-29 11:03:26 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2026-01-29 11:03:26 [INF] Request finished HTTP/1.1 GET http://localhost:5086/scalar/scalar.aspnetcore.js - 200 1111 text/javascript 34.4925ms
+2026-01-29 11:03:26 [INF] Request finished HTTP/1.1 GET http://localhost:5086/_vs/browserLink - 200 null text/javascript; charset=UTF-8 58.2131ms
+2026-01-29 11:03:26 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.js'
+2026-01-29 11:03:26 [INF] Request finished HTTP/1.1 GET http://localhost:5086/scalar/scalar.js - 200 922147 text/javascript 67.8303ms
+2026-01-29 11:03:26 [INF] Request starting HTTP/1.1 GET http://localhost:5086/openapi/v1.json - null null
+2026-01-29 11:03:26 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
+2026-01-29 11:03:26 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
+2026-01-29 11:03:26 [INF] Request finished HTTP/1.1 GET http://localhost:5086/openapi/v1.json - 200 null application/json;charset=utf-8 39.0204ms

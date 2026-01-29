@@ -377,6 +377,122 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Startup_Project.WebAPI.Controllers.GymOwner.MyGymController",
+    "Method": "GetGymSessions",
+    "RelativePath": "api/owner/sessions",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Startup_Project.WebAPI.Controllers.GymOwner.OwnerTrainerController",
+    "Method": "Create",
+    "RelativePath": "api/owner/trainers",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Startup_Project.Application.Dtos.Trainer.TrainerCreateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Startup_Project.WebAPI.Controllers.GymOwner.OwnerTrainerController",
+    "Method": "Update",
+    "RelativePath": "api/owner/trainers/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "Startup_Project.Application.Dtos.Trainer.TrainerUpdateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Startup_Project.WebAPI.Controllers.GymOwner.OwnerTrainerController",
+    "Method": "Delete",
+    "RelativePath": "api/owner/trainers/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Startup_Project.WebAPI.Controllers.GymOwner.OwnerTrainerController",
+    "Method": "Activate",
+    "RelativePath": "api/owner/trainers/{id}/activate",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Startup_Project.WebAPI.Controllers.GymOwner.OwnerTrainerController",
+    "Method": "Deactivate",
+    "RelativePath": "api/owner/trainers/{id}/deactivate",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Startup_Project.WebAPI.Controllers.GymOwner.OwnerTrainerController",
+    "Method": "SetSchedule",
+    "RelativePath": "api/owner/trainers/{id}/schedule",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "schedules",
+        "Type": "System.Collections.Generic.List\u00601[[Startup_Project.Application.Dtos.TrainerSchedule.TrainerScheduleDto, Startup-Project.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Startup_Project.WebAPI.Controllers.PackageController",
     "Method": "GetAllAsync",
     "RelativePath": "api/Package",
@@ -562,6 +678,122 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Startup_Project.WebAPI.Controllers.TrainingSessionController",
+    "Method": "GetById",
+    "RelativePath": "api/sessions/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Startup_Project.WebAPI.Controllers.TrainingSessionController",
+    "Method": "Cancel",
+    "RelativePath": "api/sessions/{id}/cancel",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "Startup_Project.Application.Dtos.TrainingSession.SessionCancelDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Startup_Project.WebAPI.Controllers.TrainingSessionController",
+    "Method": "ConfirmPayment",
+    "RelativePath": "api/sessions/{id}/confirm-payment",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "paymentId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Startup_Project.WebAPI.Controllers.TrainingSessionController",
+    "Method": "GetQr",
+    "RelativePath": "api/sessions/{id}/qr",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Startup_Project.WebAPI.Controllers.TrainingSessionController",
+    "Method": "GetMySessions",
+    "RelativePath": "api/sessions/my",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Startup_Project.WebAPI.Controllers.TrainingSessionController",
+    "Method": "Purchase",
+    "RelativePath": "api/sessions/purchase",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Startup_Project.Application.Dtos.TrainingSession.SessionPurchaseDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Startup_Project.WebAPI.Controllers.SessionVerifyController",
+    "Method": "Verify",
+    "RelativePath": "api/sessions/verify",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Startup_Project.Application.Dtos.TrainingSession.SessionVerifyDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Startup_Project.WebAPI.Controllers.TestController",
     "Method": "Get",
     "RelativePath": "api/Test",
@@ -569,6 +801,153 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Startup_Project.WebAPI.Controllers.Trainer.MyTrainerController",
+    "Method": "GetMyProfile",
+    "RelativePath": "api/trainer/me",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Startup_Project.WebAPI.Controllers.Trainer.MyTrainerController",
+    "Method": "UpdateMyProfile",
+    "RelativePath": "api/trainer/me",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Startup_Project.Application.Dtos.Trainer.TrainerUpdateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Startup_Project.WebAPI.Controllers.Trainer.MyTrainerController",
+    "Method": "UpdateMySchedule",
+    "RelativePath": "api/trainer/me/schedule",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "schedules",
+        "Type": "System.Collections.Generic.List\u00601[[Startup_Project.Application.Dtos.TrainerSchedule.TrainerScheduleDto, Startup-Project.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Startup_Project.WebAPI.Controllers.Trainer.TrainerSessionController",
+    "Method": "GetMySessions",
+    "RelativePath": "api/trainer/sessions",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Startup_Project.WebAPI.Controllers.TrainerController",
+    "Method": "GetAll",
+    "RelativePath": "api/trainers",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Startup_Project.WebAPI.Controllers.TrainerController",
+    "Method": "GetById",
+    "RelativePath": "api/trainers/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Startup_Project.WebAPI.Controllers.TrainerController",
+    "Method": "GetReviews",
+    "RelativePath": "api/trainers/{id}/reviews",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Startup_Project.WebAPI.Controllers.TrainerController",
+    "Method": "AddReview",
+    "RelativePath": "api/trainers/{id}/reviews",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "Startup_Project.Application.Dtos.TrainerReview.TrainerReviewCreateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Startup_Project.WebAPI.Controllers.TrainerController",
+    "Method": "GetSchedule",
+    "RelativePath": "api/trainers/{id}/schedule",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Startup_Project.WebAPI.Controllers.TrainerController",
+    "Method": "GetByGym",
+    "RelativePath": "api/trainers/gym/{gymId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "gymId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   }
 ]

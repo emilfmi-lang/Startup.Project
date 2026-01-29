@@ -23,6 +23,11 @@ public class TrainingSessionConfiguration : IEntityTypeConfiguration<TrainingSes
         builder.Property(s => s.CancellationReason)
             .HasMaxLength(500);
 
+        // GymId nullable - Online trainer ucun
+        builder.Property(s => s.GymId)
+            .IsRequired(false);
+
+        // Relations
         builder.HasOne(s => s.Trainer)
             .WithMany(t => t.Sessions)
             .HasForeignKey(s => s.TrainerId)
@@ -36,13 +41,15 @@ public class TrainingSessionConfiguration : IEntityTypeConfiguration<TrainingSes
         builder.HasOne(s => s.Gym)
             .WithMany(g => g.TrainingSessions)
             .HasForeignKey(s => s.GymId)
-            .OnDelete(DeleteBehavior.Restrict);
+            .OnDelete(DeleteBehavior.Restrict)
+            .IsRequired(false);
 
         builder.HasOne(s => s.Payment)
             .WithMany()
             .HasForeignKey(s => s.PaymentId)
             .OnDelete(DeleteBehavior.NoAction);
 
+        // Indexes
         builder.HasIndex(s => s.TrainerId);
         builder.HasIndex(s => s.UserId);
         builder.HasIndex(s => s.GymId);

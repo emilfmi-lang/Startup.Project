@@ -9,5 +9,7 @@ public class TrainerListDto
     public decimal SessionPrice { get; set; }
     public double AverageRating { get; set; }
     public int ReviewCount { get; set; }
-    public string GymName { get; set; } = null!;
+    public string? GymName { get; set; }
+    public bool IsOnlineTrainer { get; set; }
+    public bool IsVerified { get; set; }
 }

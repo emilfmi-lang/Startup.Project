@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Startup-Project.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d2679f1698491f54e84ef3113002b52acc2693f8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6e74a45b43fce69bddf45836bd2550ae7442f2ef")]
 [assembly: System.Reflection.AssemblyProductAttribute("Startup-Project.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Startup-Project.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

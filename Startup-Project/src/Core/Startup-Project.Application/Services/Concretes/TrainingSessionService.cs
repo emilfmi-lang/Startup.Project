@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+using AutoMapper;
+using FluentValidation;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Startup_Project.Application.Dtos.TrainingSession;
@@ -19,6 +20,9 @@ public class TrainingSessionService : ITrainingSessionService
     private readonly IGenericRepository<Payment> _paymentRepository;
     private readonly IHttpContextAccessor _httpContextAccessor;
     private readonly IMapper _mapper;
+    private readonly IValidator<SessionPurchaseDto> _purchaseValidator;
+    private readonly IValidator<SessionCancelDto> _cancelValidator;
+    private readonly IValidator<SessionVerifyDto> _verifyValidator;
 
     public TrainingSessionService(
         IGenericRepository<TrainingSession> sessionRepository,
@@ -26,7 +30,10 @@ public class TrainingSessionService : ITrainingSessionService
         IGenericRepository<Gym> gymRepository,
         IGenericRepository<Payment> paymentRepository,
         IHttpContextAccessor httpContextAccessor,
-        IMapper mapper)
+        IMapper mapper,
+        IValidator<SessionPurchaseDto> purchaseValidator,
+        IValidator<SessionCancelDto> cancelValidator,
+        IValidator<SessionVerifyDto> verifyValidator)
     {
         _sessionRepository = sessionRepository;
         _trainerRepository = trainerRepository;
@@ -34,6 +41,9 @@ public class TrainingSessionService : ITrainingSessionService
         _paymentRepository = paymentRepository;
         _httpContextAccessor = httpContextAccessor;
         _mapper = mapper;
+        _purchaseValidator = purchaseValidator;
+        _cancelValidator = cancelValidator;
+        _verifyValidator = verifyValidator;
     }
 
     private Guid? GetCurrentUserId()
@@ -63,12 +73,20 @@ public class TrainingSessionService : ITrainingSessionService
             .FirstOrDefaultAsync(t => t.UserId == userId && !t.IsDeleted);
     }
 
-    // ══════════════════════════════════════════════════════════════
+    // ??????????????????????????????????????????????????????????????
     // USER ENDPOINTS
-    // ══════════════════════════════════════════════════════════════
+    // ??????????????????????????????????????????????????????????????
 
     public async Task<ResponseModel<string>> PurchaseSessionAsync(SessionPurchaseDto dto)
     {
+        // Validation
+        var validationResult = await _purchaseValidator.ValidateAsync(dto);
+        if (!validationResult.IsValid)
+        {
+            var errors = string.Join(", ", validationResult.Errors.Select(e => e.ErrorMessage));
+            return ResponseModel<string>.FailureResponse(errors);
+        }
+
         var userId = GetCurrentUserId();
         if (userId == null)
             return ResponseModel<string>.FailureResponse("Giris etmelisiniz.");
@@ -83,19 +101,21 @@ public class TrainingSessionService : ITrainingSessionService
         if (trainer.Status != TrainerStatus.Active)
             return ResponseModel<string>.FailureResponse("Bu mesqci hazirda aktiv deyil.");
 
+        // Online trainer verify olunmalidi
+        if (trainer.IsOnlineTrainer && !trainer.IsVerified)
+            return ResponseModel<string>.FailureResponse("Bu online mesqci henuz tesdiqlenib.");
+
         // Yeni sessiya yarat
         var session = new TrainingSession(
             trainerId: trainer.Id,
             userId: userId.Value,
-            gymId: trainer.GymId,
+            gymId: trainer.GymId ?? Guid.Empty,
             price: trainer.SessionPrice
         );
 
         await _sessionRepository.AddAsync(session);
         await _sessionRepository.SaveAsync();
 
-        // Burada odenis sistemi ile inteqrasiya olacaq
-        // Hazirda sessionId qaytaririg, sonra payment endpoint-e yonlendirilecek
         return ResponseModel<string>.SuccessResponse(session.Id.ToString());
     }
 
@@ -114,8 +134,7 @@ public class TrainingSessionService : ITrainingSessionService
             .AsNoTracking()
             .ToListAsync();
 
-        var dtos = sessions.Select(s => MapToSessionDto(s)).ToList();
-
+        var dtos = _mapper.Map<List<SessionDto>>(sessions);
         return ResponseModel<List<SessionDto>>.SuccessResponse(dtos);
     }
 
@@ -134,8 +153,7 @@ public class TrainingSessionService : ITrainingSessionService
         if (session == null)
             return ResponseModel<SessionDto>.FailureResponse("Sessiya tapilmadi.");
 
-        var dto = MapToSessionDto(session);
-
+        var dto = _mapper.Map<SessionDto>(session);
         return ResponseModel<SessionDto>.SuccessResponse(dto);
     }
 
@@ -168,11 +186,11 @@ public class TrainingSessionService : ITrainingSessionService
             SessionId = session.Id,
             QrToken = session.QrToken,
             TrainerName = session.Trainer.User.FullName,
-            GymName = session.Gym.Name,
-            GymAddress = session.Gym.Address,
+            GymName = session.Gym?.Name ?? "Online Session",
+            GymAddress = session.Gym?.Address ?? "Online",
             ExpiresAt = session.ExpiresAt,
-            DaysUntilExpiry = session.ExpiresAt.HasValue 
-                ? (int)(session.ExpiresAt.Value - DateTime.UtcNow).TotalDays 
+            DaysUntilExpiry = session.ExpiresAt.HasValue
+                ? (int)(session.ExpiresAt.Value - DateTime.UtcNow).TotalDays
                 : null
         };
 
@@ -181,6 +199,14 @@ public class TrainingSessionService : ITrainingSessionService
 
     public async Task<ResponseModel<bool>> CancelSessionAsync(Guid sessionId, SessionCancelDto dto)
     {
+        // Validation
+        var validationResult = await _cancelValidator.ValidateAsync(dto);
+        if (!validationResult.IsValid)
+        {
+            var errors = string.Join(", ", validationResult.Errors.Select(e => e.ErrorMessage));
+            return ResponseModel<bool>.FailureResponse(errors);
+        }
+
         var userId = GetCurrentUserId();
         if (userId == null)
             return ResponseModel<bool>.FailureResponse("Giris etmelisiniz.");
@@ -201,19 +227,24 @@ public class TrainingSessionService : ITrainingSessionService
         _sessionRepository.Update(session);
         await _sessionRepository.SaveAsync();
 
-
         return ResponseModel<bool>.SuccessResponse(true);
     }
 
+    // ??????????????????????????????????????????????????????????????
+    // QR VERIFY (STAFF/ADMIN)
+    // ??????????????????????????????????????????????????????????????
 
     public async Task<ResponseModel<SessionVerifyResultDto>> VerifyAndUseSessionAsync(SessionVerifyDto dto)
     {
-        if (string.IsNullOrWhiteSpace(dto.QrToken))
+        // Validation
+        var validationResult = await _verifyValidator.ValidateAsync(dto);
+        if (!validationResult.IsValid)
         {
+            var errors = string.Join(", ", validationResult.Errors.Select(e => e.ErrorMessage));
             return ResponseModel<SessionVerifyResultDto>.SuccessResponse(new SessionVerifyResultDto
             {
                 IsValid = false,
-                Message = "QR token bos ola bilmez."
+                Message = errors
             });
         }
 
@@ -269,7 +300,7 @@ public class TrainingSessionService : ITrainingSessionService
             });
         }
 
-        // Sessiyanı istifadə et
+        // Sessiyani istifade et
         session.Use();
 
         // Trainer statistikasini yenile
@@ -293,18 +324,18 @@ public class TrainingSessionService : ITrainingSessionService
         return ResponseModel<SessionVerifyResultDto>.SuccessResponse(new SessionVerifyResultDto
         {
             IsValid = true,
-            Message = "Giris uGurla tesdislendi!",
+            Message = "Giris ugurla tesdislendi!",
             SessionId = session.Id,
             UserName = session.User.FullName,
             TrainerName = session.Trainer.User.FullName,
-            GymName = session.Gym.Name,
+            GymName = session.Gym?.Name ?? "Online",
             UsedAt = session.UsedAt
         });
     }
 
-    // ══════════════════════════════════════════════════════════════
+    // ??????????????????????????????????????????????????????????????
     // TRAINER ENDPOINTS
-    // ══════════════════════════════════════════════════════════════
+    // ??????????????????????????????????????????????????????????????
 
     public async Task<ResponseModel<List<SessionDto>>> GetTrainerSessionsAsync()
     {
@@ -322,14 +353,13 @@ public class TrainingSessionService : ITrainingSessionService
             .AsNoTracking()
             .ToListAsync();
 
-        var dtos = sessions.Select(s => MapToSessionDto(s)).ToList();
-
+        var dtos = _mapper.Map<List<SessionDto>>(sessions);
         return ResponseModel<List<SessionDto>>.SuccessResponse(dtos);
     }
 
-    // ══════════════════════════════════════════════════════════════
+    // ??????????????????????????????????????????????????????????????
     // GYM OWNER ENDPOINTS
-    // ══════════════════════════════════════════════════════════════
+    // ??????????????????????????????????????????????????????????????
 
     public async Task<ResponseModel<List<SessionDto>>> GetGymSessionsAsync()
     {
@@ -347,14 +377,13 @@ public class TrainingSessionService : ITrainingSessionService
             .AsNoTracking()
             .ToListAsync();
 
-        var dtos = sessions.Select(s => MapToSessionDto(s)).ToList();
-
+        var dtos = _mapper.Map<List<SessionDto>>(sessions);
         return ResponseModel<List<SessionDto>>.SuccessResponse(dtos);
     }
 
-    // ══════════════════════════════════════════════════════════════
+    // ??????????????????????????????????????????????????????????????
     // PAYMENT CALLBACK
-    // ══════════════════════════════════════════════════════════════
+    // ??????????????????????????????????????????????????????????????
 
     public async Task<ResponseModel<bool>> ConfirmPaymentAsync(Guid sessionId, Guid paymentId)
     {
@@ -370,35 +399,5 @@ public class TrainingSessionService : ITrainingSessionService
         await _sessionRepository.SaveAsync();
 
         return ResponseModel<bool>.SuccessResponse(true);
-    }
-
-    // ══════════════════════════════════════════════════════════════
-    // HELPER METHODS
-    // ══════════════════════════════════════════════════════════════
-
-    private static SessionDto MapToSessionDto(TrainingSession session)
-    {
-        return new SessionDto
-        {
-            Id = session.Id,
-            TrainerId = session.TrainerId,
-            TrainerName = session.Trainer?.User?.FullName ?? "N/A",
-            TrainerSpecialization = session.Trainer?.Specialization ?? "N/A",
-            TrainerProfileImage = session.Trainer?.ProfileImageUrl,
-            GymId = session.GymId,
-            GymName = session.Gym?.Name ?? "N/A",
-            GymAddress = session.Gym?.Address ?? "N/A",
-            Price = session.Price,
-            Status = session.Status.ToString(),
-            CreatedAt = session.CreatedAt,
-            PaidAt = session.PaidAt,
-            ExpiresAt = session.ExpiresAt,
-            UsedAt = session.UsedAt,
-            IsExpired = session.IsExpired(),
-            CanBeUsed = session.Status == SessionStatus.Paid && !session.IsExpired(),
-            DaysUntilExpiry = session.ExpiresAt.HasValue && session.Status == SessionStatus.Paid
-                ? Math.Max(0, (int)(session.ExpiresAt.Value - DateTime.UtcNow).TotalDays)
-                : null
-        };
     }
 }

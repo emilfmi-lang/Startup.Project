@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Startup_Project.Application.Dtos.Admin;
 using Startup_Project.Application.Dtos.GymDtos;
+using Startup_Project.Application.Dtos.Trainer;
+using Startup_Project.Application.Services.Interfaces;
 using Startup_Project.Application.Services.Interfaces.Admin;
 
 namespace Startup_Project.WebAPI.Controllers.Admin;
@@ -12,10 +14,12 @@ namespace Startup_Project.WebAPI.Controllers.Admin;
 public class AdminController : ControllerBase
 {
     private readonly IAdminService _adminService;
+    private readonly ITrainerService _trainerService;
 
-    public AdminController(IAdminService adminService)
+    public AdminController(IAdminService adminService, ITrainerService trainerService)
     {
         _adminService = adminService;
+        _trainerService = trainerService;
     }
 
     [HttpGet("dashboard")]
@@ -85,6 +89,28 @@ public class AdminController : ControllerBase
     public async Task<IActionResult> GetAllGyms()
     {
         var result = await _adminService.GetAllGymsAsync();
+        if (!result.Success)
+            return BadRequest(result);
+        return Ok(result);
+    }
+
+    // ??????????????????????????????????????????????????????????????
+    // ONLINE TRAINER MANAGEMENT
+    // ??????????????????????????????????????????????????????????????
+
+    [HttpGet("trainers/pending-online")]
+    public async Task<IActionResult> GetPendingOnlineTrainers()
+    {
+        var result = await _trainerService.GetPendingOnlineTrainersAsync();
+        if (!result.Success)
+            return BadRequest(result);
+        return Ok(result);
+    }
+
+    [HttpPut("trainers/{id}/verify")]
+    public async Task<IActionResult> VerifyOnlineTrainer(Guid id, [FromBody] TrainerVerifyDto dto)
+    {
+        var result = await _trainerService.VerifyOnlineTrainerAsync(id, dto);
         if (!result.Success)
             return BadRequest(result);
         return Ok(result);

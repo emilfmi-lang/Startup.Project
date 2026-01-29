@@ -17,10 +17,6 @@ public class MyTrainerController : ControllerBase
     {
         _trainerService = trainerService;
     }
-
-    /// <summary>
-    /// Oz profilimi getir
-    /// </summary>
     [HttpGet]
     public async Task<IActionResult> GetMyProfile()
     {
@@ -29,9 +25,6 @@ public class MyTrainerController : ControllerBase
         return Ok(result);
     }
 
-    /// <summary>
-    /// Oz profilimi yenile
-    /// </summary>
     [HttpPut]
     public async Task<IActionResult> UpdateMyProfile([FromBody] TrainerUpdateDto dto)
     {
@@ -40,9 +33,6 @@ public class MyTrainerController : ControllerBase
         return Ok(result);
     }
 
-    /// <summary>
-    /// Oz is cedvelimi yenile
-    /// </summary>
     [HttpPut("schedule")]
     public async Task<IActionResult> UpdateMySchedule([FromBody] List<TrainerScheduleDto> schedules)
     {

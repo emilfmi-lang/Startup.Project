@@ -4,7 +4,7 @@ using Startup_Project.Domain.Enums;
 
 namespace Startup_Project.Domain.Entities;
 
-public class TrainingSession :BaseEntity
+public class TrainingSession : BaseEntity
 {
     public Guid TrainerId { get; private set; }
     public Trainer Trainer { get; private set; } = null!;
@@ -12,22 +12,25 @@ public class TrainingSession :BaseEntity
     public Guid UserId { get; private set; }
     public AppUser User { get; private set; } = null!;
 
-    public Guid GymId { get; private set; }
-    public Gym Gym { get; private set; } = null!;
+    // GymId nullable - Online trainer ucun NULL olacaq
+    public Guid? GymId { get; private set; }
+    public Gym? Gym { get; private set; }
+
     public decimal Price { get; private set; }
-    public Guid? PaymentId { get; private set; }    
+    public Guid? PaymentId { get; private set; }
     public Payment? Payment { get; private set; }
-    public string? QrToken { get; private set; }          
+    public string? QrToken { get; private set; }
     public DateTime? QrGeneratedAt { get; private set; }
     public SessionStatus Status { get; private set; } = SessionStatus.Pending;
-    public DateTime? PaidAt { get; private set; }         
-    public DateTime? ExpiresAt { get; private set; }      
-    public DateTime? UsedAt { get; private set; }         
+    public DateTime? PaidAt { get; private set; }
+    public DateTime? ExpiresAt { get; private set; }
+    public DateTime? UsedAt { get; private set; }
     public DateTime? CancelledAt { get; private set; }
     public string? CancellationReason { get; private set; }
+
     private TrainingSession() { }
 
-    public TrainingSession(Guid trainerId, Guid userId, Guid gymId, decimal price)
+    public TrainingSession(Guid trainerId, Guid userId, Guid? gymId, decimal price)
     {
         TrainerId = trainerId;
         UserId = userId;
@@ -45,10 +48,11 @@ public class TrainingSession :BaseEntity
         PaymentId = paymentId;
         Status = SessionStatus.Paid;
         PaidAt = DateTime.UtcNow;
-        ExpiresAt = DateTime.UtcNow.AddDays(30);  
+        ExpiresAt = DateTime.UtcNow.AddDays(30);
         GenerateQrToken();
         UpdatedAt = DateTime.UtcNow;
     }
+
     private void GenerateQrToken()
     {
         QrToken = $"TS-{Id}-{Guid.NewGuid().ToString("N")[..8]}-{DateTime.UtcNow.Ticks}";
@@ -81,9 +85,10 @@ public class TrainingSession :BaseEntity
         Status = SessionStatus.Cancelled;
         CancellationReason = reason;
         CancelledAt = DateTime.UtcNow;
-        QrToken = null;  
+        QrToken = null;
         UpdatedAt = DateTime.UtcNow;
     }
+
     public void MarkAsRefunded()
     {
         if (Status != SessionStatus.Cancelled)
@@ -101,6 +106,7 @@ public class TrainingSession :BaseEntity
             UpdatedAt = DateTime.UtcNow;
         }
     }
+
     public bool ValidateQrToken(string token)
     {
         return Status == SessionStatus.Paid

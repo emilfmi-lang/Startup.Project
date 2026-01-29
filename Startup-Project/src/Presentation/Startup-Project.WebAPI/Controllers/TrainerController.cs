@@ -17,9 +17,6 @@ public class TrainerController : ControllerBase
         _trainerService = trainerService;
     }
 
-    /// <summary>
-    /// Butun aktiv mesqcileri getir
-    /// </summary>
     [HttpGet]
     [AllowAnonymous]
     public async Task<IActionResult> GetAll()
@@ -29,9 +26,15 @@ public class TrainerController : ControllerBase
         return Ok(result);
     }
 
-    /// <summary>
-    /// Mesqci profilini getir
-    /// </summary>
+    [HttpGet("online")]
+    [AllowAnonymous]
+    public async Task<IActionResult> GetOnlineTrainers()
+    {
+        var result = await _trainerService.GetOnlineTrainersAsync();
+        if (!result.Success) return BadRequest(result);
+        return Ok(result);
+    }
+
     [HttpGet("{id}")]
     [AllowAnonymous]
     public async Task<IActionResult> GetById(Guid id)
@@ -41,9 +44,6 @@ public class TrainerController : ControllerBase
         return Ok(result);
     }
 
-    /// <summary>
-    /// Zalin mesqcilerini getir
-    /// </summary>
     [HttpGet("gym/{gymId}")]
     [AllowAnonymous]
     public async Task<IActionResult> GetByGym(Guid gymId)
@@ -53,9 +53,6 @@ public class TrainerController : ControllerBase
         return Ok(result);
     }
 
-    /// <summary>
-    /// Mesqcinin reviewlarini getir
-    /// </summary>
     [HttpGet("{id}/reviews")]
     [AllowAnonymous]
     public async Task<IActionResult> GetReviews(Guid id)
@@ -65,9 +62,6 @@ public class TrainerController : ControllerBase
         return Ok(result);
     }
 
-    /// <summary>
-    /// Mesqcinin is cedvelini getir
-    /// </summary>
     [HttpGet("{id}/schedule")]
     [AllowAnonymous]
     public async Task<IActionResult> GetSchedule(Guid id)
@@ -77,14 +71,20 @@ public class TrainerController : ControllerBase
         return Ok(result);
     }
 
-    /// <summary>
-    /// Mesqciye review yaz
-    /// </summary>
     [HttpPost("{id}/reviews")]
     [Authorize]
     public async Task<IActionResult> AddReview(Guid id, [FromBody] TrainerReviewCreateDto dto)
     {
         var result = await _trainerService.AddReviewAsync(id, dto);
+        if (!result.Success) return BadRequest(result);
+        return Ok(result);
+    }
+
+    [HttpPost("apply-online")]
+    [Authorize]
+    public async Task<IActionResult> ApplyAsOnlineTrainer([FromBody] OnlineTrainerApplyDto dto)
+    {
+        var result = await _trainerService.ApplyAsOnlineTrainerAsync(dto);
         if (!result.Success) return BadRequest(result);
         return Ok(result);
     }

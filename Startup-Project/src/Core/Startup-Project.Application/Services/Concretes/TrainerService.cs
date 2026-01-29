@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using FluentValidation;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -25,6 +26,10 @@ public class TrainerService : ITrainerService
     private readonly RoleManager<IdentityRole<Guid>> _roleManager;
     private readonly IHttpContextAccessor _httpContextAccessor;
     private readonly IMapper _mapper;
+    private readonly IValidator<TrainerCreateDto> _createValidator;
+    private readonly IValidator<TrainerUpdateDto> _updateValidator;
+    private readonly IValidator<OnlineTrainerApplyDto> _applyValidator;
+    private readonly IValidator<TrainerVerifyDto> _verifyValidator;
 
     public TrainerService(
         IGenericRepository<Trainer> trainerRepository,
@@ -34,7 +39,11 @@ public class TrainerService : ITrainerService
         UserManager<AppUser> userManager,
         RoleManager<IdentityRole<Guid>> roleManager,
         IHttpContextAccessor httpContextAccessor,
-        IMapper mapper)
+        IMapper mapper,
+        IValidator<TrainerCreateDto> createValidator,
+        IValidator<TrainerUpdateDto> updateValidator,
+        IValidator<OnlineTrainerApplyDto> applyValidator,
+        IValidator<TrainerVerifyDto> verifyValidator)
     {
         _trainerRepository = trainerRepository;
         _reviewRepository = reviewRepository;
@@ -44,6 +53,10 @@ public class TrainerService : ITrainerService
         _roleManager = roleManager;
         _httpContextAccessor = httpContextAccessor;
         _mapper = mapper;
+        _createValidator = createValidator;
+        _updateValidator = updateValidator;
+        _applyValidator = applyValidator;
+        _verifyValidator = verifyValidator;
     }
 
     private Guid? GetCurrentUserId()
@@ -77,18 +90,7 @@ public class TrainerService : ITrainerService
             .AsNoTracking()
             .ToListAsync();
 
-        var dtos = trainers.Select(t => new TrainerListDto
-        {
-            Id = t.Id,
-            UserFullName = t.User.FullName,
-            Specialization = t.Specialization,
-            ProfileImageUrl = t.ProfileImageUrl,
-            SessionPrice = t.SessionPrice,
-            AverageRating = t.AverageRating,
-            ReviewCount = t.ReviewCount,
-            GymName = t.Gym.Name
-        }).ToList();
-
+        var dtos = _mapper.Map<List<TrainerListDto>>(trainers);
         return ResponseModel<List<TrainerListDto>>.SuccessResponse(dtos);
     }
 
@@ -102,25 +104,7 @@ public class TrainerService : ITrainerService
         if (trainer == null)
             return ResponseModel<TrainerDto>.FailureResponse("Mesqci tapilmadi.");
 
-        var dto = new TrainerDto
-        {
-            Id = trainer.Id,
-            UserId = trainer.UserId,
-            UserFullName = trainer.User.FullName,
-            GymId = trainer.GymId,
-            GymName = trainer.Gym.Name,
-            Specialization = trainer.Specialization,
-            Bio = trainer.Bio,
-            CertificateUrl = trainer.CertificateUrl,
-            ProfileImageUrl = trainer.ProfileImageUrl,
-            SessionPrice = trainer.SessionPrice,
-            AverageRating = trainer.AverageRating,
-            ReviewCount = trainer.ReviewCount,
-            TotalClients = trainer.TotalClients,
-            TotalSessions = trainer.TotalSessions,
-            Status = trainer.Status.ToString()
-        };
-
+        var dto = _mapper.Map<TrainerDto>(trainer);
         return ResponseModel<TrainerDto>.SuccessResponse(dto);
     }
 
@@ -133,18 +117,19 @@ public class TrainerService : ITrainerService
             .AsNoTracking()
             .ToListAsync();
 
-        var dtos = trainers.Select(t => new TrainerListDto
-        {
-            Id = t.Id,
-            UserFullName = t.User.FullName,
-            Specialization = t.Specialization,
-            ProfileImageUrl = t.ProfileImageUrl,
-            SessionPrice = t.SessionPrice,
-            AverageRating = t.AverageRating,
-            ReviewCount = t.ReviewCount,
-            GymName = t.Gym.Name
-        }).ToList();
+        var dtos = _mapper.Map<List<TrainerListDto>>(trainers);
+        return ResponseModel<List<TrainerListDto>>.SuccessResponse(dtos);
+    }
 
+    public async Task<ResponseModel<List<TrainerListDto>>> GetOnlineTrainersAsync()
+    {
+        var trainers = await _trainerRepository.Table
+            .Include(t => t.User)
+            .Where(t => t.IsOnlineTrainer && t.IsVerified && t.Status == TrainerStatus.Active && !t.IsDeleted)
+            .AsNoTracking()
+            .ToListAsync();
+
+        var dtos = _mapper.Map<List<TrainerListDto>>(trainers);
         return ResponseModel<List<TrainerListDto>>.SuccessResponse(dtos);
     }
 
@@ -157,16 +142,7 @@ public class TrainerService : ITrainerService
             .AsNoTracking()
             .ToListAsync();
 
-        var dtos = reviews.Select(r => new TrainerReviewDto
-        {
-            Id = r.Id,
-            UserId = r.UserId,
-            UserFullName = r.User.FullName,
-            StarCount = r.StarCount,
-            Comment = r.Comment,
-            CreatedAt = r.CreatedAt
-        }).ToList();
-
+        var dtos = _mapper.Map<List<TrainerReviewDto>>(reviews);
         return ResponseModel<List<TrainerReviewDto>>.SuccessResponse(dtos);
     }
 
@@ -178,14 +154,7 @@ public class TrainerService : ITrainerService
             .AsNoTracking()
             .ToListAsync();
 
-        var dtos = schedules.Select(s => new TrainerScheduleDto
-        {
-            DayOfWeek = s.DayOfWeek,
-            StartTime = s.StartTime.ToString(@"hh\:mm"),
-            EndTime = s.EndTime.ToString(@"hh\:mm"),
-            IsAvailable = s.IsAvailable
-        }).ToList();
-
+        var dtos = _mapper.Map<List<TrainerScheduleDto>>(schedules);
         return ResponseModel<List<TrainerScheduleDto>>.SuccessResponse(dtos);
     }
 
@@ -220,11 +189,61 @@ public class TrainerService : ITrainerService
     }
 
     // ══════════════════════════════════════════════════════════════
+    // ONLINE TRAINER APPLICATION
+    // ══════════════════════════════════════════════════════════════
+
+    public async Task<ResponseModel<bool>> ApplyAsOnlineTrainerAsync(OnlineTrainerApplyDto dto)
+    {
+        // Validation
+        var validationResult = await _applyValidator.ValidateAsync(dto);
+        if (!validationResult.IsValid)
+        {
+            var errors = string.Join(", ", validationResult.Errors.Select(e => e.ErrorMessage));
+            return ResponseModel<bool>.FailureResponse(errors);
+        }
+
+        var userId = GetCurrentUserId();
+        if (userId == null)
+            return ResponseModel<bool>.FailureResponse("Giris etmelisiniz.");
+
+        var existingTrainer = await _trainerRepository.Table
+            .FirstOrDefaultAsync(t => t.UserId == userId && !t.IsDeleted);
+
+        if (existingTrainer != null)
+            return ResponseModel<bool>.FailureResponse("Siz artiq mesqci kimi qeydiyyatdan kecmisiniz.");
+
+        // Online Trainer yarat
+        var trainer = new Trainer(userId.Value, dto.Specialization, dto.SessionPrice);
+
+        if (!string.IsNullOrWhiteSpace(dto.Bio))
+            trainer.SetBio(dto.Bio);
+        if (!string.IsNullOrWhiteSpace(dto.CertificateUrl))
+            trainer.SetCertificateUrl(dto.CertificateUrl);
+        if (!string.IsNullOrWhiteSpace(dto.VideoIntroUrl))
+            trainer.SetVideoIntroUrl(dto.VideoIntroUrl);
+        if (!string.IsNullOrWhiteSpace(dto.SocialMediaLinks))
+            trainer.SetSocialMediaLinks(dto.SocialMediaLinks);
+
+        await _trainerRepository.AddAsync(trainer);
+        await _trainerRepository.SaveAsync();
+
+        return ResponseModel<bool>.SuccessResponse(true);
+    }
+
+    // ══════════════════════════════════════════════════════════════
     // GYM OWNER ENDPOINTS
     // ══════════════════════════════════════════════════════════════
 
     public async Task<ResponseModel<bool>> CreateTrainerAsync(TrainerCreateDto dto)
     {
+        // Validation
+        var validationResult = await _createValidator.ValidateAsync(dto);
+        if (!validationResult.IsValid)
+        {
+            var errors = string.Join(", ", validationResult.Errors.Select(e => e.ErrorMessage));
+            return ResponseModel<bool>.FailureResponse(errors);
+        }
+
         var gymId = await GetCurrentUserGymIdAsync();
         if (gymId == null)
             return ResponseModel<bool>.FailureResponse("Zaliniz tapilmadi.");
@@ -239,6 +258,7 @@ public class TrainerService : ITrainerService
         if (existingTrainer != null)
             return ResponseModel<bool>.FailureResponse("Bu istifadeci artiq mesqcidir.");
 
+        // Gym-based Trainer yarat
         var trainer = new Trainer(dto.UserId, gymId.Value, dto.Specialization, dto.SessionPrice);
         if (!string.IsNullOrWhiteSpace(dto.Bio))
             trainer.SetBio(dto.Bio);
@@ -258,6 +278,14 @@ public class TrainerService : ITrainerService
 
     public async Task<ResponseModel<bool>> UpdateTrainerAsync(Guid trainerId, TrainerUpdateDto dto)
     {
+        // Validation
+        var validationResult = await _updateValidator.ValidateAsync(dto);
+        if (!validationResult.IsValid)
+        {
+            var errors = string.Join(", ", validationResult.Errors.Select(e => e.ErrorMessage));
+            return ResponseModel<bool>.FailureResponse(errors);
+        }
+
         var gymId = await GetCurrentUserGymIdAsync();
         if (gymId == null)
             return ResponseModel<bool>.FailureResponse("Zaliniz tapilmadi.");
@@ -376,6 +404,64 @@ public class TrainerService : ITrainerService
     }
 
     // ══════════════════════════════════════════════════════════════
+    // ADMIN ENDPOINTS
+    // ══════════════════════════════════════════════════════════════
+
+    public async Task<ResponseModel<List<TrainerListDto>>> GetPendingOnlineTrainersAsync()
+    {
+        var trainers = await _trainerRepository.Table
+            .Include(t => t.User)
+            .Where(t => t.IsOnlineTrainer && !t.IsVerified && t.Status == TrainerStatus.Pending && !t.IsDeleted)
+            .AsNoTracking()
+            .ToListAsync();
+
+        var dtos = _mapper.Map<List<TrainerListDto>>(trainers);
+        return ResponseModel<List<TrainerListDto>>.SuccessResponse(dtos);
+    }
+
+    public async Task<ResponseModel<bool>> VerifyOnlineTrainerAsync(Guid trainerId, TrainerVerifyDto dto)
+    {
+        // Validation
+        var validationResult = await _verifyValidator.ValidateAsync(dto);
+        if (!validationResult.IsValid)
+        {
+            var errors = string.Join(", ", validationResult.Errors.Select(e => e.ErrorMessage));
+            return ResponseModel<bool>.FailureResponse(errors);
+        }
+
+        var trainer = await _trainerRepository.Table
+            .Include(t => t.User)
+            .FirstOrDefaultAsync(t => t.Id == trainerId && t.IsOnlineTrainer && !t.IsDeleted);
+
+        if (trainer == null)
+            return ResponseModel<bool>.FailureResponse("Online mesqci tapilmadi.");
+
+        if (trainer.IsVerified)
+            return ResponseModel<bool>.FailureResponse("Bu mesqci artiq tesdiqlenib.");
+
+        if (dto.Approve)
+        {
+            trainer.Verify();
+
+            // User-e Trainer rolu ver
+            var user = trainer.User;
+            if (!await _userManager.IsInRoleAsync(user, "Trainer"))
+            {
+                await _userManager.AddToRoleAsync(user, "Trainer");
+            }
+        }
+        else
+        {
+            trainer.Reject();
+        }
+
+        _trainerRepository.Update(trainer);
+        await _trainerRepository.SaveAsync();
+
+        return ResponseModel<bool>.SuccessResponse(true);
+    }
+
+    // ══════════════════════════════════════════════════════════════
     // TRAINER OWN PROFILE
     // ══════════════════════════════════════════════════════════════
 
@@ -393,30 +479,20 @@ public class TrainerService : ITrainerService
         if (trainer == null)
             return ResponseModel<TrainerDto>.FailureResponse("Mesqci profiliniz tapilmadi.");
 
-        var dto = new TrainerDto
-        {
-            Id = trainer.Id,
-            UserId = trainer.UserId,
-            UserFullName = trainer.User.FullName,
-            GymId = trainer.GymId,
-            GymName = trainer.Gym.Name,
-            Specialization = trainer.Specialization,
-            Bio = trainer.Bio,
-            CertificateUrl = trainer.CertificateUrl,
-            ProfileImageUrl = trainer.ProfileImageUrl,
-            SessionPrice = trainer.SessionPrice,
-            AverageRating = trainer.AverageRating,
-            ReviewCount = trainer.ReviewCount,
-            TotalClients = trainer.TotalClients,
-            TotalSessions = trainer.TotalSessions,
-            Status = trainer.Status.ToString()
-        };
-
+        var dto = _mapper.Map<TrainerDto>(trainer);
         return ResponseModel<TrainerDto>.SuccessResponse(dto);
     }
 
     public async Task<ResponseModel<bool>> UpdateMyProfileAsync(TrainerUpdateDto dto)
     {
+        // Validation
+        var validationResult = await _updateValidator.ValidateAsync(dto);
+        if (!validationResult.IsValid)
+        {
+            var errors = string.Join(", ", validationResult.Errors.Select(e => e.ErrorMessage));
+            return ResponseModel<bool>.FailureResponse(errors);
+        }
+
         var userId = GetCurrentUserId();
         if (userId == null)
             return ResponseModel<bool>.FailureResponse("Giris etmelisiniz.");
@@ -433,9 +509,15 @@ public class TrainerService : ITrainerService
         if (dto.Bio != null)
             trainer.SetBio(dto.Bio);
 
-        // Trainer oz qiymetini deyise bilmez - yalniz GymOwner
-        // if (dto.SessionPrice.HasValue)
-        //     trainer.SetSessionPrice(dto.SessionPrice.Value);
+        if (!string.IsNullOrWhiteSpace(dto.VideoIntroUrl))
+            trainer.SetVideoIntroUrl(dto.VideoIntroUrl);
+
+        if (!string.IsNullOrWhiteSpace(dto.SocialMediaLinks))
+            trainer.SetSocialMediaLinks(dto.SocialMediaLinks);
+
+        // Trainer oz qiymetini deyise bilmez (yalniz online trainer deyise biler)
+        if (dto.SessionPrice.HasValue && trainer.IsOnlineTrainer)
+            trainer.SetSessionPrice(dto.SessionPrice.Value);
 
         _trainerRepository.Update(trainer);
         await _trainerRepository.SaveAsync();
