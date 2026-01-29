@@ -185,7 +185,7 @@ namespace Startup_Project.Persistance.Migrations
 
                     b.HasIndex("UserId", "CheckInTime");
 
-                    b.ToTable("CheckInLogs", (string)null);
+                    b.ToTable("CheckInLogs");
                 });
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.CheckInToken", b =>
@@ -228,7 +228,7 @@ namespace Startup_Project.Persistance.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("CheckInTokens", (string)null);
+                    b.ToTable("CheckInTokens");
                 });
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.Gym", b =>
@@ -283,7 +283,7 @@ namespace Startup_Project.Persistance.Migrations
 
                     b.HasIndex("OwnerId");
 
-                    b.ToTable("Gyms", (string)null);
+                    b.ToTable("Gyms");
                 });
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.GymOpeningHour", b =>
@@ -323,7 +323,7 @@ namespace Startup_Project.Persistance.Migrations
                     b.HasIndex("GymId", "DayOfWeek")
                         .IsUnique();
 
-                    b.ToTable("GymOpeningHours", (string)null);
+                    b.ToTable("GymOpeningHours");
                 });
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.GymReview", b =>
@@ -364,7 +364,7 @@ namespace Startup_Project.Persistance.Migrations
                     b.HasIndex("GymId", "UserId")
                         .IsUnique();
 
-                    b.ToTable("GymReviews", (string)null);
+                    b.ToTable("GymReviews");
                 });
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.Identity.AppUser", b =>
@@ -496,7 +496,7 @@ namespace Startup_Project.Persistance.Migrations
 
                     b.HasIndex("IsDeleted");
 
-                    b.ToTable("Packages", (string)null);
+                    b.ToTable("Packages");
                 });
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.Payment", b =>
@@ -540,7 +540,7 @@ namespace Startup_Project.Persistance.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Payments", (string)null);
+                    b.ToTable("Payments");
                 });
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.Subscription", b =>
@@ -580,7 +580,7 @@ namespace Startup_Project.Persistance.Migrations
 
                     b.HasIndex("UserId", "EndDate");
 
-                    b.ToTable("Subscriptions", (string)null);
+                    b.ToTable("Subscriptions");
                 });
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.Trainer", b =>
@@ -605,11 +605,21 @@ namespace Startup_Project.Persistance.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid>("GymId")
+                    b.Property<Guid?>("GymId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
+
+                    b.Property<bool>("IsOnlineTrainer")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
+                    b.Property<bool>("IsVerified")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<string>("ProfileImageUrl")
                         .HasMaxLength(500)
@@ -622,6 +632,10 @@ namespace Startup_Project.Persistance.Migrations
 
                     b.Property<decimal>("SessionPrice")
                         .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("SocialMediaLinks")
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
 
                     b.Property<string>("Specialization")
                         .IsRequired()
@@ -647,18 +661,28 @@ namespace Startup_Project.Persistance.Migrations
                     b.Property<Guid>("UserId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("VideoIntroUrl")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("AverageRating");
 
                     b.HasIndex("GymId");
 
+                    b.HasIndex("IsOnlineTrainer");
+
+                    b.HasIndex("IsVerified");
+
                     b.HasIndex("Status");
 
                     b.HasIndex("UserId")
                         .IsUnique();
 
-                    b.ToTable("Trainers", (string)null);
+                    b.HasIndex("IsOnlineTrainer", "Status");
+
+                    b.ToTable("Trainers");
                 });
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.TrainerReview", b =>
@@ -698,7 +722,7 @@ namespace Startup_Project.Persistance.Migrations
                     b.HasIndex("TrainerId", "UserId")
                         .IsUnique();
 
-                    b.ToTable("TrainerReviews", (string)null);
+                    b.ToTable("TrainerReviews");
                 });
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.TrainerSchedule", b =>
@@ -738,7 +762,7 @@ namespace Startup_Project.Persistance.Migrations
                     b.HasIndex("TrainerId", "DayOfWeek")
                         .IsUnique();
 
-                    b.ToTable("TrainerSchedules", (string)null);
+                    b.ToTable("TrainerSchedules");
                 });
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.TrainingSession", b =>
@@ -760,7 +784,7 @@ namespace Startup_Project.Persistance.Migrations
                     b.Property<DateTime?>("ExpiresAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid>("GymId")
+                    b.Property<Guid?>("GymId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("IsDeleted")
@@ -815,7 +839,7 @@ namespace Startup_Project.Persistance.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("TrainingSessions", (string)null);
+                    b.ToTable("TrainingSessions");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
@@ -985,8 +1009,7 @@ namespace Startup_Project.Persistance.Migrations
                     b.HasOne("Startup_Project.Domain.Entities.Gym", "Gym")
                         .WithMany("Trainers")
                         .HasForeignKey("GymId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("Startup_Project.Domain.Entities.Identity.AppUser", "User")
                         .WithOne("TrainerProfile")
@@ -1034,8 +1057,7 @@ namespace Startup_Project.Persistance.Migrations
                     b.HasOne("Startup_Project.Domain.Entities.Gym", "Gym")
                         .WithMany("TrainingSessions")
                         .HasForeignKey("GymId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("Startup_Project.Domain.Entities.Payment", "Payment")
                         .WithMany()
