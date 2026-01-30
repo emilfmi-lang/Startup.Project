@@ -274,6 +274,75 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Startup_Project.WebAPI.Controllers.FavoritesController",
+    "Method": "GetUserFavorites",
+    "RelativePath": "api/Favorites",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Startup_Project.WebAPI.Controllers.FavoritesController",
+    "Method": "ToggleFavorite",
+    "RelativePath": "api/Favorites/{gymId}/toggle",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "gymId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Startup_Project.WebAPI.Controllers.FavoritesController",
+    "Method": "CheckFavorite",
+    "RelativePath": "api/Favorites/check/{gymId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "gymId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Startup_Project.WebAPI.Controllers.FavoritesController",
+    "Method": "GetFavoriteCount",
+    "RelativePath": "api/Favorites/count/{gymId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "gymId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Startup_Project.WebAPI.Controllers.GymController",
     "Method": "GetAllAsync",
     "RelativePath": "api/Gym",
@@ -332,6 +401,27 @@
         "Name": "id",
         "Type": "System.String",
         "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Startup_Project.WebAPI.Controllers.GymController",
+    "Method": "GetAllWithFavoritesAsync",
+    "RelativePath": "api/Gym/list",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
