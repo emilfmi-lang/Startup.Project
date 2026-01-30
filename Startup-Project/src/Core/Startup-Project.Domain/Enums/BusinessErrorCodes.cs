@@ -3,11 +3,13 @@ namespace Startup_Project.Domain.Enums;
 
 public enum BusinessErrorCodes
 {
+    // GENERAL ERRORS (1000-1999)
     UnknownError = 1000,
     ValidationFailed = 1001,
     UnauthorizedAccess = 1002,
     ForbiddenAccess = 1003,
 
+    // USER ERRORS (2000-2999)
     UserNotFound = 2000,
     UserAlreadyExists = 2001,
     InvalidCredentials = 2002,
