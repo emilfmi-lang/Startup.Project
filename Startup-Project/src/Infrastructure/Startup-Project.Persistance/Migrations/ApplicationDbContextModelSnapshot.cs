@@ -252,6 +252,40 @@ namespace Startup_Project.Persistance.Migrations
                     b.ToTable("CheckInTokens");
                 });
 
+            modelBuilder.Entity("Startup_Project.Domain.Entities.FavoriteGym", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("GymId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("GymId");
+
+                    b.HasIndex("UserId");
+
+                    b.HasIndex("UserId", "GymId")
+                        .IsUnique()
+                        .HasDatabaseName("IX_FavoriteGyms_UserId_GymId");
+
+                    b.ToTable("FavoriteGyms");
+                });
+
             modelBuilder.Entity("Startup_Project.Domain.Entities.Gym", b =>
                 {
                     b.Property<Guid>("Id")
@@ -995,6 +1029,25 @@ namespace Startup_Project.Persistance.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("Startup_Project.Domain.Entities.FavoriteGym", b =>
+                {
+                    b.HasOne("Startup_Project.Domain.Entities.Gym", "Gym")
+                        .WithMany("FavoritedByUsers")
+                        .HasForeignKey("GymId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Startup_Project.Domain.Entities.Identity.AppUser", "User")
+                        .WithMany("FavoriteGyms")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Gym");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("Startup_Project.Domain.Entities.Gym", b =>
                 {
                     b.HasOne("Startup_Project.Domain.Entities.Identity.AppUser", "Owner")
@@ -1167,6 +1220,8 @@ namespace Startup_Project.Persistance.Migrations
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.Gym", b =>
                 {
+                    b.Navigation("FavoritedByUsers");
+
                     b.Navigation("OpeningHours");
 
                     b.Navigation("Reviews");
@@ -1178,6 +1233,8 @@ namespace Startup_Project.Persistance.Migrations
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.Identity.AppUser", b =>
                 {
+                    b.Navigation("FavoriteGyms");
+
                     b.Navigation("Gyms");
 
                     b.Navigation("Reviews");
