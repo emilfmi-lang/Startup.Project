@@ -12,6 +12,7 @@ using Startup_Project.Domain.Abstractions.Repositories;
 using Startup_Project.Domain.Entities;
 using Startup_Project.Domain.Entities.Identity;
 using Startup_Project.Domain.Enums;
+using Startup_Project.Domain.Exceptions;
 using System.Security.Claims;
 
 namespace Startup_Project.Application.Services.Concretes;
@@ -59,22 +60,24 @@ public class TrainerService : ITrainerService
         _verifyValidator = verifyValidator;
     }
 
-    private Guid? GetCurrentUserId()
+    private Guid GetCurrentUserId()
     {
         var userIdClaim = _httpContextAccessor.HttpContext?.User.FindFirstValue(ClaimTypes.NameIdentifier);
         if (string.IsNullOrEmpty(userIdClaim) || !Guid.TryParse(userIdClaim, out var userId))
-            return null;
+            throw BusinessException.UnauthorizedAccess();
         return userId;
     }
 
-    private async Task<Guid?> GetCurrentUserGymIdAsync()
+    private async Task<Guid> GetCurrentUserGymIdAsync()
     {
         var userId = GetCurrentUserId();
-        if (userId == null) return null;
-
         var gym = await _gymRepository.Table
             .FirstOrDefaultAsync(g => g.OwnerId == userId && !g.IsDeleted);
-        return gym?.Id;
+
+        if (gym == null)
+            throw NotFoundException.GymForOwner();
+
+        return gym.Id;
     }
 
     // ══════════════════════════════════════════════════════════════
@@ -102,7 +105,7 @@ public class TrainerService : ITrainerService
             .FirstOrDefaultAsync(t => t.Id == trainerId && !t.IsDeleted);
 
         if (trainer == null)
-            return ResponseModel<TrainerDto>.FailureResponse("Mesqci tapilmadi.");
+            throw NotFoundException.Trainer(trainerId);
 
         var dto = _mapper.Map<TrainerDto>(trainer);
         return ResponseModel<TrainerDto>.SuccessResponse(dto);
@@ -161,23 +164,20 @@ public class TrainerService : ITrainerService
     public async Task<ResponseModel<bool>> AddReviewAsync(Guid trainerId, TrainerReviewCreateDto dto)
     {
         var userId = GetCurrentUserId();
-        if (userId == null)
-            return ResponseModel<bool>.FailureResponse("Giris etmelisiniz.");
 
         var trainer = await _trainerRepository.GetByIdAsync(trainerId);
         if (trainer == null || trainer.IsDeleted)
-            return ResponseModel<bool>.FailureResponse("Mesqci tapilmadi.");
+            throw NotFoundException.Trainer(trainerId);
 
         var existingReview = await _reviewRepository.Table
             .FirstOrDefaultAsync(r => r.TrainerId == trainerId && r.UserId == userId);
-
         if (existingReview != null)
-            return ResponseModel<bool>.FailureResponse("Bu mesqciye artiq review yazmisiz.");
+            throw BusinessException.AlreadyReviewed();
 
         if (dto.StarCount < 1 || dto.StarCount > 5)
-            return ResponseModel<bool>.FailureResponse("Ulduz 1-5 arasi olmalidir.");
+            throw BusinessException.ValidationFailed("Ulduz 1-5 arası olmalıdır.");
 
-        var review = new TrainerReview(trainerId, userId.Value, dto.StarCount, dto.Comment);
+        var review = new TrainerReview(trainerId, userId, dto.StarCount, dto.Comment);
         await _reviewRepository.AddAsync(review);
 
         trainer.AddReview(dto.StarCount);
@@ -194,26 +194,18 @@ public class TrainerService : ITrainerService
 
     public async Task<ResponseModel<bool>> ApplyAsOnlineTrainerAsync(OnlineTrainerApplyDto dto)
     {
-        // Validation
         var validationResult = await _applyValidator.ValidateAsync(dto);
         if (!validationResult.IsValid)
-        {
-            var errors = string.Join(", ", validationResult.Errors.Select(e => e.ErrorMessage));
-            return ResponseModel<bool>.FailureResponse(errors);
-        }
+            throw BusinessException.ValidationFailed(string.Join(", ", validationResult.Errors.Select(e => e.ErrorMessage)));
 
         var userId = GetCurrentUserId();
-        if (userId == null)
-            return ResponseModel<bool>.FailureResponse("Giris etmelisiniz.");
 
         var existingTrainer = await _trainerRepository.Table
             .FirstOrDefaultAsync(t => t.UserId == userId && !t.IsDeleted);
-
         if (existingTrainer != null)
-            return ResponseModel<bool>.FailureResponse("Siz artiq mesqci kimi qeydiyyatdan kecmisiniz.");
+            throw BusinessException.TrainerAlreadyExists();
 
-        // Online Trainer yarat
-        var trainer = new Trainer(userId.Value, dto.Specialization, dto.SessionPrice);
+        var trainer = new Trainer(userId, dto.Specialization, dto.SessionPrice);
 
         if (!string.IsNullOrWhiteSpace(dto.Bio))
             trainer.SetBio(dto.Bio);
@@ -236,40 +228,29 @@ public class TrainerService : ITrainerService
 
     public async Task<ResponseModel<bool>> CreateTrainerAsync(TrainerCreateDto dto)
     {
-        // Validation
         var validationResult = await _createValidator.ValidateAsync(dto);
         if (!validationResult.IsValid)
-        {
-            var errors = string.Join(", ", validationResult.Errors.Select(e => e.ErrorMessage));
-            return ResponseModel<bool>.FailureResponse(errors);
-        }
+            throw BusinessException.ValidationFailed(string.Join(", ", validationResult.Errors.Select(e => e.ErrorMessage)));
 
         var gymId = await GetCurrentUserGymIdAsync();
-        if (gymId == null)
-            return ResponseModel<bool>.FailureResponse("Zaliniz tapilmadi.");
 
         var user = await _userManager.FindByIdAsync(dto.UserId.ToString());
         if (user == null)
-            return ResponseModel<bool>.FailureResponse("Istifadeci tapilmadi.");
+            throw NotFoundException.User(dto.UserId);
 
         var existingTrainer = await _trainerRepository.Table
             .FirstOrDefaultAsync(t => t.UserId == dto.UserId && !t.IsDeleted);
-
         if (existingTrainer != null)
-            return ResponseModel<bool>.FailureResponse("Bu istifadeci artiq mesqcidir.");
+            throw BusinessException.TrainerAlreadyExists();
 
-        // Gym-based Trainer yarat
-        var trainer = new Trainer(dto.UserId, gymId.Value, dto.Specialization, dto.SessionPrice);
+        var trainer = new Trainer(dto.UserId, gymId, dto.Specialization, dto.SessionPrice);
         if (!string.IsNullOrWhiteSpace(dto.Bio))
             trainer.SetBio(dto.Bio);
 
         await _trainerRepository.AddAsync(trainer);
 
-        // User-e Trainer rolu ver
         if (!await _userManager.IsInRoleAsync(user, "Trainer"))
-        {
             await _userManager.AddToRoleAsync(user, "Trainer");
-        }
 
         await _trainerRepository.SaveAsync();
 
@@ -278,23 +259,16 @@ public class TrainerService : ITrainerService
 
     public async Task<ResponseModel<bool>> UpdateTrainerAsync(Guid trainerId, TrainerUpdateDto dto)
     {
-        // Validation
         var validationResult = await _updateValidator.ValidateAsync(dto);
         if (!validationResult.IsValid)
-        {
-            var errors = string.Join(", ", validationResult.Errors.Select(e => e.ErrorMessage));
-            return ResponseModel<bool>.FailureResponse(errors);
-        }
+            throw BusinessException.ValidationFailed(string.Join(", ", validationResult.Errors.Select(e => e.ErrorMessage)));
 
         var gymId = await GetCurrentUserGymIdAsync();
-        if (gymId == null)
-            return ResponseModel<bool>.FailureResponse("Zaliniz tapilmadi.");
 
         var trainer = await _trainerRepository.Table
             .FirstOrDefaultAsync(t => t.Id == trainerId && t.GymId == gymId && !t.IsDeleted);
-
         if (trainer == null)
-            return ResponseModel<bool>.FailureResponse("Mesqci tapilmadi ve ya sizin zaliniza aid deyil.");
+            throw NotFoundException.Trainer(trainerId);
 
         if (!string.IsNullOrWhiteSpace(dto.Specialization))
             trainer.SetSpecialization(dto.Specialization);
@@ -314,14 +288,11 @@ public class TrainerService : ITrainerService
     public async Task<ResponseModel<bool>> DeleteTrainerAsync(Guid trainerId)
     {
         var gymId = await GetCurrentUserGymIdAsync();
-        if (gymId == null)
-            return ResponseModel<bool>.FailureResponse("Zaliniz tapilmadi.");
 
         var trainer = await _trainerRepository.Table
             .FirstOrDefaultAsync(t => t.Id == trainerId && t.GymId == gymId && !t.IsDeleted);
-
         if (trainer == null)
-            return ResponseModel<bool>.FailureResponse("Mesqci tapilmadi ve ya sizin zaliniza aid deyil.");
+            throw NotFoundException.Trainer(trainerId);
 
         trainer.IsDeleted = true;
         _trainerRepository.Update(trainer);
@@ -333,14 +304,11 @@ public class TrainerService : ITrainerService
     public async Task<ResponseModel<bool>> ActivateTrainerAsync(Guid trainerId)
     {
         var gymId = await GetCurrentUserGymIdAsync();
-        if (gymId == null)
-            return ResponseModel<bool>.FailureResponse("Zaliniz tapilmadi.");
 
         var trainer = await _trainerRepository.Table
             .FirstOrDefaultAsync(t => t.Id == trainerId && t.GymId == gymId && !t.IsDeleted);
-
         if (trainer == null)
-            return ResponseModel<bool>.FailureResponse("Mesqci tapilmadi ve ya sizin zaliniza aid deyil.");
+            throw NotFoundException.Trainer(trainerId);
 
         trainer.Activate();
         _trainerRepository.Update(trainer);
@@ -352,14 +320,11 @@ public class TrainerService : ITrainerService
     public async Task<ResponseModel<bool>> DeactivateTrainerAsync(Guid trainerId)
     {
         var gymId = await GetCurrentUserGymIdAsync();
-        if (gymId == null)
-            return ResponseModel<bool>.FailureResponse("Zaliniz tapilmadi.");
 
         var trainer = await _trainerRepository.Table
             .FirstOrDefaultAsync(t => t.Id == trainerId && t.GymId == gymId && !t.IsDeleted);
-
         if (trainer == null)
-            return ResponseModel<bool>.FailureResponse("Mesqci tapilmadi ve ya sizin zaliniza aid deyil.");
+            throw NotFoundException.Trainer(trainerId);
 
         trainer.Deactivate();
         _trainerRepository.Update(trainer);
@@ -371,23 +336,16 @@ public class TrainerService : ITrainerService
     public async Task<ResponseModel<bool>> SetTrainerScheduleAsync(Guid trainerId, List<TrainerScheduleDto> schedules)
     {
         var gymId = await GetCurrentUserGymIdAsync();
-        if (gymId == null)
-            return ResponseModel<bool>.FailureResponse("Zaliniz tapilmadi.");
 
         var trainer = await _trainerRepository.Table
             .FirstOrDefaultAsync(t => t.Id == trainerId && t.GymId == gymId && !t.IsDeleted);
-
         if (trainer == null)
-            return ResponseModel<bool>.FailureResponse("Mesqci tapilmadi ve ya sizin zaliniza aid deyil.");
+            throw NotFoundException.Trainer(trainerId);
 
-        // Kohne schedule-lari sil
         var existingSchedules = await _scheduleRepository.GetWhereAsync(s => s.TrainerId == trainerId);
         foreach (var s in existingSchedules)
-        {
             _scheduleRepository.Remove(s);
-        }
 
-        // Yeni schedule-lari elave et
         foreach (var dto in schedules)
         {
             if (!TimeSpan.TryParse(dto.StartTime, out var startTime) ||
@@ -421,34 +379,26 @@ public class TrainerService : ITrainerService
 
     public async Task<ResponseModel<bool>> VerifyOnlineTrainerAsync(Guid trainerId, TrainerVerifyDto dto)
     {
-        // Validation
         var validationResult = await _verifyValidator.ValidateAsync(dto);
         if (!validationResult.IsValid)
-        {
-            var errors = string.Join(", ", validationResult.Errors.Select(e => e.ErrorMessage));
-            return ResponseModel<bool>.FailureResponse(errors);
-        }
+            throw BusinessException.ValidationFailed(string.Join(", ", validationResult.Errors.Select(e => e.ErrorMessage)));
 
         var trainer = await _trainerRepository.Table
             .Include(t => t.User)
             .FirstOrDefaultAsync(t => t.Id == trainerId && t.IsOnlineTrainer && !t.IsDeleted);
-
         if (trainer == null)
-            return ResponseModel<bool>.FailureResponse("Online mesqci tapilmadi.");
+            throw NotFoundException.Trainer(trainerId);
 
         if (trainer.IsVerified)
-            return ResponseModel<bool>.FailureResponse("Bu mesqci artiq tesdiqlenib.");
+            throw BusinessException.Custom(BusinessErrorCodes.ValidationFailed, "Bu məşqçi artıq təsdiqlənib.");
 
         if (dto.Approve)
         {
             trainer.Verify();
 
-            // User-e Trainer rolu ver
             var user = trainer.User;
             if (!await _userManager.IsInRoleAsync(user, "Trainer"))
-            {
                 await _userManager.AddToRoleAsync(user, "Trainer");
-            }
         }
         else
         {
@@ -461,102 +411,84 @@ public class TrainerService : ITrainerService
         return ResponseModel<bool>.SuccessResponse(true);
     }
 
-    // ══════════════════════════════════════════════════════════════
-    // TRAINER OWN PROFILE
-    // ══════════════════════════════════════════════════════════════
 
     public async Task<ResponseModel<TrainerDto>> GetMyProfileAsync()
     {
-        var userId = GetCurrentUserId();
-        if (userId == null)
-            return ResponseModel<TrainerDto>.FailureResponse("Giris etmelisiniz.");
+            var userId = GetCurrentUserId();
 
-        var trainer = await _trainerRepository.Table
-            .Include(t => t.User)
-            .Include(t => t.Gym)
-            .FirstOrDefaultAsync(t => t.UserId == userId && !t.IsDeleted);
+            var trainer = await _trainerRepository.Table
+                .Include(t => t.User)
+                .Include(t => t.Gym)
+                .FirstOrDefaultAsync(t => t.UserId == userId && !t.IsDeleted);
 
-        if (trainer == null)
-            return ResponseModel<TrainerDto>.FailureResponse("Mesqci profiliniz tapilmadi.");
+            if (trainer == null)
+                throw NotFoundException.Trainer(userId);
 
-        var dto = _mapper.Map<TrainerDto>(trainer);
-        return ResponseModel<TrainerDto>.SuccessResponse(dto);
-    }
-
-    public async Task<ResponseModel<bool>> UpdateMyProfileAsync(TrainerUpdateDto dto)
-    {
-        // Validation
-        var validationResult = await _updateValidator.ValidateAsync(dto);
-        if (!validationResult.IsValid)
-        {
-            var errors = string.Join(", ", validationResult.Errors.Select(e => e.ErrorMessage));
-            return ResponseModel<bool>.FailureResponse(errors);
+            var dto = _mapper.Map<TrainerDto>(trainer);
+            return ResponseModel<TrainerDto>.SuccessResponse(dto);
         }
 
-        var userId = GetCurrentUserId();
-        if (userId == null)
-            return ResponseModel<bool>.FailureResponse("Giris etmelisiniz.");
-
-        var trainer = await _trainerRepository.Table
-            .FirstOrDefaultAsync(t => t.UserId == userId && !t.IsDeleted);
-
-        if (trainer == null)
-            return ResponseModel<bool>.FailureResponse("Mesqci profiliniz tapilmadi.");
-
-        if (!string.IsNullOrWhiteSpace(dto.Specialization))
-            trainer.SetSpecialization(dto.Specialization);
-
-        if (dto.Bio != null)
-            trainer.SetBio(dto.Bio);
-
-        if (!string.IsNullOrWhiteSpace(dto.VideoIntroUrl))
-            trainer.SetVideoIntroUrl(dto.VideoIntroUrl);
-
-        if (!string.IsNullOrWhiteSpace(dto.SocialMediaLinks))
-            trainer.SetSocialMediaLinks(dto.SocialMediaLinks);
-
-        // Trainer oz qiymetini deyise bilmez (yalniz online trainer deyise biler)
-        if (dto.SessionPrice.HasValue && trainer.IsOnlineTrainer)
-            trainer.SetSessionPrice(dto.SessionPrice.Value);
-
-        _trainerRepository.Update(trainer);
-        await _trainerRepository.SaveAsync();
-
-        return ResponseModel<bool>.SuccessResponse(true);
-    }
-
-    public async Task<ResponseModel<bool>> UpdateMyScheduleAsync(List<TrainerScheduleDto> schedules)
-    {
-        var userId = GetCurrentUserId();
-        if (userId == null)
-            return ResponseModel<bool>.FailureResponse("Giris etmelisiniz.");
-
-        var trainer = await _trainerRepository.Table
-            .FirstOrDefaultAsync(t => t.UserId == userId && !t.IsDeleted);
-
-        if (trainer == null)
-            return ResponseModel<bool>.FailureResponse("Mesqci profiliniz tapilmadi.");
-
-        // Kohne schedule-lari sil
-        var existingSchedules = await _scheduleRepository.GetWhereAsync(s => s.TrainerId == trainer.Id);
-        foreach (var s in existingSchedules)
+        public async Task<ResponseModel<bool>> UpdateMyProfileAsync(TrainerUpdateDto dto)
         {
-            _scheduleRepository.Remove(s);
+            var validationResult = await _updateValidator.ValidateAsync(dto);
+            if (!validationResult.IsValid)
+                throw BusinessException.ValidationFailed(string.Join(", ", validationResult.Errors.Select(e => e.ErrorMessage)));
+
+            var userId = GetCurrentUserId();
+
+            var trainer = await _trainerRepository.Table
+                .FirstOrDefaultAsync(t => t.UserId == userId && !t.IsDeleted);
+
+            if (trainer == null)
+                throw NotFoundException.Trainer(userId);
+
+            if (!string.IsNullOrWhiteSpace(dto.Specialization))
+                trainer.SetSpecialization(dto.Specialization);
+
+            if (dto.Bio != null)
+                trainer.SetBio(dto.Bio);
+
+            if (!string.IsNullOrWhiteSpace(dto.VideoIntroUrl))
+                trainer.SetVideoIntroUrl(dto.VideoIntroUrl);
+
+            if (!string.IsNullOrWhiteSpace(dto.SocialMediaLinks))
+                trainer.SetSocialMediaLinks(dto.SocialMediaLinks);
+
+            if (dto.SessionPrice.HasValue && trainer.IsOnlineTrainer)
+                trainer.SetSessionPrice(dto.SessionPrice.Value);
+
+            _trainerRepository.Update(trainer);
+            await _trainerRepository.SaveAsync();
+
+            return ResponseModel<bool>.SuccessResponse(true);
         }
 
-        // Yeni schedule-lari elave et
-        foreach (var dto in schedules)
+        public async Task<ResponseModel<bool>> UpdateMyScheduleAsync(List<TrainerScheduleDto> schedules)
         {
-            if (!TimeSpan.TryParse(dto.StartTime, out var startTime) ||
-                !TimeSpan.TryParse(dto.EndTime, out var endTime))
-                continue;
+            var userId = GetCurrentUserId();
 
-            var schedule = new TrainerSchedule(trainer.Id, dto.DayOfWeek, startTime, endTime);
-            await _scheduleRepository.AddAsync(schedule);
+            var trainer = await _trainerRepository.Table
+                .FirstOrDefaultAsync(t => t.UserId == userId && !t.IsDeleted);
+
+            if (trainer == null)
+                throw NotFoundException.Trainer(userId);
+
+            var existingSchedules = await _scheduleRepository.GetWhereAsync(s => s.TrainerId == trainer.Id);
+            foreach (var s in existingSchedules)
+                _scheduleRepository.Remove(s);
+
+            foreach (var dto in schedules)
+            {
+                if (!TimeSpan.TryParse(dto.StartTime, out var startTime) ||
+                    !TimeSpan.TryParse(dto.EndTime, out var endTime))
+                    continue;
+
+                var schedule = new TrainerSchedule(trainer.Id, dto.DayOfWeek, startTime, endTime);
+                await _scheduleRepository.AddAsync(schedule);
+            }
+
+            await _scheduleRepository.SaveAsync();
+
+            return ResponseModel<bool>.SuccessResponse(true);
         }
-
-        await _scheduleRepository.SaveAsync();
-
-        return ResponseModel<bool>.SuccessResponse(true);
     }
-}

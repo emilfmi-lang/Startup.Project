@@ -34,11 +34,11 @@ public class AccountController(IAccountService accountService) : ControllerBase
     public async Task<IActionResult> ResetPassword([FromBody] ResetPasswordDto dto)
         => Ok(await accountService.ResetPasswordAsync(dto));
 
-        [HttpPost("send-otp")]
-        public async Task<IActionResult> SendSmsOtp([FromBody] SendSmsOtpDto dto)
-            => Ok(await accountService.SendSmsOtpAsync(dto));
+    [HttpPost("send-otp")]
+    public async Task<IActionResult> SendSmsOtp([FromBody] SendSmsOtpDto dto)
+        => Ok(await accountService.SendSmsOtpAsync(dto));
 
-        [HttpPost("verify-otp")]
-        public async Task<IActionResult> VerifySmsOtp([FromBody] VerifySmsOtpDto dto)
-            => Ok(await accountService.VerifySmsOtpAsync(dto));
-    }
+    [HttpPost("verify-otp")]
+    public async Task<IActionResult> VerifySmsOtp([FromBody] VerifySmsOtpDto dto)
+        => Ok(await accountService.VerifySmsOtpAsync(dto));
+}

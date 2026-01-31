@@ -8,6 +8,7 @@ using Startup_Project.Application.Models;
 using Startup_Project.Application.Services.Interfaces;
 using Startup_Project.Domain.Abstractions.Repositories;
 using Startup_Project.Domain.Entities;
+using Startup_Project.Domain.Exceptions;
 using System.Security.Claims;
 
 namespace Startup_Project.Application.Services.Concretes;
@@ -40,26 +41,30 @@ public class GymOwnerService : IGymOwnerService
         _mapper = mapper;
     }
 
-    private Guid? GetCurrentUserId()
+    private Guid GetCurrentUserId()
     {
         var userIdClaim = _httpContextAccessor.HttpContext?.User.FindFirstValue(ClaimTypes.NameIdentifier);
         if (string.IsNullOrEmpty(userIdClaim) || !Guid.TryParse(userIdClaim, out var userId))
-            return null;
+            throw BusinessException.UnauthorizedAccess();
         return userId;
     }
 
-    public async Task<ResponseModel<MyGymDetailDto>> GetMyGymAsync()
+    private async Task<Gym> GetCurrentUserGymAsync()
     {
         var userId = GetCurrentUserId();
-        if (userId == null)
-            return ResponseModel<MyGymDetailDto>.FailureResponse("Istifadeci tapilmadi.");
-
         var gym = await _gymRepository.Table
             .Include(g => g.OpeningHours)
             .FirstOrDefaultAsync(g => g.OwnerId == userId && !g.IsDeleted);
 
         if (gym == null)
-            return ResponseModel<MyGymDetailDto>.FailureResponse("Sizin zal?n?z tap?lmad?.");
+            throw NotFoundException.GymForOwner();
+
+        return gym;
+    }
+
+    public async Task<ResponseModel<MyGymDetailDto>> GetMyGymAsync()
+    {
+        var gym = await GetCurrentUserGymAsync();
 
         var dto = new MyGymDetailDto
         {
@@ -78,15 +83,7 @@ public class GymOwnerService : IGymOwnerService
 
     public async Task<ResponseModel<bool>> UpdateMyGymAsync(GymUpdateDto dto)
     {
-        var userId = GetCurrentUserId();
-        if (userId == null)
-            return ResponseModel<bool>.FailureResponse("Istifadeci tapilmadi.");
-
-        var gym = await _gymRepository.Table
-            .FirstOrDefaultAsync(g => g.OwnerId == userId && !g.IsDeleted);
-
-        if (gym == null)
-            return ResponseModel<bool>.FailureResponse("Sizin zal?n?z tap?lmad?.");
+        var gym = await GetCurrentUserGymAsync();
 
         if (!string.IsNullOrWhiteSpace(dto.Name))
             gym.SetName(dto.Name);
@@ -102,15 +99,7 @@ public class GymOwnerService : IGymOwnerService
 
     public async Task<ResponseModel<MyGymStatsDto>> GetMyGymStatsAsync()
     {
-        var userId = GetCurrentUserId();
-        if (userId == null)
-            return ResponseModel<MyGymStatsDto>.FailureResponse("Istifadeci tapilmadi.");
-
-        var gym = await _gymRepository.Table
-            .FirstOrDefaultAsync(g => g.OwnerId == userId && !g.IsDeleted);
-
-        if (gym == null)
-            return ResponseModel<MyGymStatsDto>.FailureResponse("Sizin zal?n?z tap?lmad?.");
+        var gym = await GetCurrentUserGymAsync();
 
         var gymPackageIds = await _packageRepository.Table
             .Where(p => p.GymId == gym.Id && !p.IsDeleted)
@@ -136,7 +125,7 @@ public class GymOwnerService : IGymOwnerService
 
         var startOfMonth = new DateTime(DateTime.UtcNow.Year, DateTime.UtcNow.Month, 1);
         var monthlyRevenue = await _paymentRepository.Table
-            .Where(p => gymPackageIds.Contains(p.PackageId) && 
+            .Where(p => gymPackageIds.Contains(p.PackageId) &&
                         p.Status == Domain.Enums.PaymentStatus.Successful &&
                         p.CreatedAt >= startOfMonth)
             .SumAsync(p => p.Amount);
@@ -157,15 +146,7 @@ public class GymOwnerService : IGymOwnerService
 
     public async Task<ResponseModel<List<GymMemberDto>>> GetMyGymMembersAsync()
     {
-        var userId = GetCurrentUserId();
-        if (userId == null)
-            return ResponseModel<List<GymMemberDto>>.FailureResponse("Istifadeci tapilmadi.");
-
-        var gym = await _gymRepository.Table
-            .FirstOrDefaultAsync(g => g.OwnerId == userId && !g.IsDeleted);
-
-        if (gym == null)
-            return ResponseModel<List<GymMemberDto>>.FailureResponse("Sizin zal?n?z tap?lmad?.");
+        var gym = await GetCurrentUserGymAsync();
 
         var gymPackageIds = await _packageRepository.Table
             .Where(p => p.GymId == gym.Id && !p.IsDeleted)
@@ -193,15 +174,7 @@ public class GymOwnerService : IGymOwnerService
 
     public async Task<ResponseModel<List<GymCheckInDto>>> GetTodayCheckInsAsync()
     {
-        var userId = GetCurrentUserId();
-        if (userId == null)
-            return ResponseModel<List<GymCheckInDto>>.FailureResponse("Istifadeci tapilmadi.");
-
-        var gym = await _gymRepository.Table
-            .FirstOrDefaultAsync(g => g.OwnerId == userId && !g.IsDeleted);
-
-        if (gym == null)
-            return ResponseModel<List<GymCheckInDto>>.FailureResponse("Sizin zal?n?z tap?lmad?.");
+        var gym = await GetCurrentUserGymAsync();
 
         var today = DateTime.UtcNow.Date;
         var checkIns = await _checkInLogRepository.Table
@@ -222,15 +195,7 @@ public class GymOwnerService : IGymOwnerService
 
     public async Task<ResponseModel<List<PackageResponseDto>>> GetMyPackagesAsync()
     {
-        var userId = GetCurrentUserId();
-        if (userId == null)
-            return ResponseModel<List<PackageResponseDto>>.FailureResponse("Istifadeci tapilmadi.");
-
-        var gym = await _gymRepository.Table
-            .FirstOrDefaultAsync(g => g.OwnerId == userId && !g.IsDeleted);
-
-        if (gym == null)
-            return ResponseModel<List<PackageResponseDto>>.FailureResponse("Sizin zal?n?z tap?lmad?.");
+        var gym = await GetCurrentUserGymAsync();
 
         var packages = await _packageRepository.Table
             .Where(p => p.GymId == gym.Id && !p.IsDeleted)

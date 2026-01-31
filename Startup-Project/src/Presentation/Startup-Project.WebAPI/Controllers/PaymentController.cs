@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Startup_Project.Application.Dtos.Payment;
 using Startup_Project.Application.Services.Interfaces;
+using Startup_Project.Domain.Exceptions;
+using System.Security.Claims;
 
 namespace Startup_Project.WebAPI.Controllers;
 
@@ -13,14 +15,11 @@ public class PaymentController(IPaymentService service) : ControllerBase
     [Authorize]
     public async Task<IActionResult> InitiatePayment([FromBody] PaymentRequestDto dto)
     {
-        var userIdClaim = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier);
-        if (userIdClaim == null)
-            return Unauthorized("Istifadeci tapilmadi.");
-        var userId = Guid.Parse(userIdClaim.Value);
-        var result = await service.CreatePaymentSessionAsync(userId, dto);
-        if (!result.Success)
-            return BadRequest(result);
-        return Ok(result);
+        var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
+        if (userIdClaim == null || !Guid.TryParse(userIdClaim.Value, out var userId))
+            throw BusinessException.UnauthorizedAccess();
+
+        return Ok(await service.CreatePaymentSessionAsync(userId, dto));
     }
 
     [HttpPost("result")]
@@ -28,8 +27,7 @@ public class PaymentController(IPaymentService service) : ControllerBase
     public async Task<IActionResult> PaymentResult([FromQuery] string sessionId)
     {
         if (string.IsNullOrEmpty(sessionId))
-            return BadRequest("SessionId bos ola bilmez.");
-
+            throw BusinessException.ValidationFailed("SessionId boş ola bilməz.");
         var result = await service.FinalizePaymentAsync(sessionId);
         if (result.Success)
             return Redirect("https://senin-app-saytin.com/payment/success");

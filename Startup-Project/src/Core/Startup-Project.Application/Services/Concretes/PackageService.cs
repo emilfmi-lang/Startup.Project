@@ -6,6 +6,7 @@ using Startup_Project.Application.Models;
 using Startup_Project.Application.Services.Interfaces;
 using Startup_Project.Domain.Abstractions.Repositories;
 using Startup_Project.Domain.Entities;
+using Startup_Project.Domain.Exceptions;
 
 namespace Startup_Project.Application.Services.Concretes;
 
@@ -18,10 +19,7 @@ public class PackageService(IGenericRepository<Package> repository,
     {
         var validationResult = await createValidator.ValidateAsync(dto);
         if (!validationResult.IsValid)
-        {
-            var errors = validationResult.Errors.Select(e => e.ErrorMessage).ToList();
-            return ResponseModel<bool>.FailureResponse(errors);
-        }
+            throw BusinessException.ValidationFailed(string.Join(", ", validationResult.Errors.Select(e => e.ErrorMessage)));
 
         var package = new Package(dto.Name, dto.Price, dto.DurationInDays, dto.GymId);
 
@@ -34,19 +32,15 @@ public class PackageService(IGenericRepository<Package> repository,
     public async Task<ResponseModel<bool>> UpdateAsync(string id, UpdatePackageRequestDto dto)
     {
         if (!Guid.TryParse(id, out var packageGuid))
-            return ResponseModel<bool>.FailureResponse("Paket ID-si yanlışdır.");
+            throw BusinessException.ValidationFailed("Paket ID-si yanlışdır.");
 
         var validationResult = await updateValidator.ValidateAsync(dto);
         if (!validationResult.IsValid)
-        {
-            var errors = validationResult.Errors.Select(e => e.ErrorMessage).ToList();
-            return ResponseModel<bool>.FailureResponse(errors);
-        }
+            throw BusinessException.ValidationFailed(string.Join(", ", validationResult.Errors.Select(e => e.ErrorMessage)));
 
         var package = await repository.GetByIdAsync(packageGuid);
-
         if (package == null || package.IsDeleted)
-            return ResponseModel<bool>.FailureResponse("Paket tapılmadı.");
+            throw NotFoundException.Package(packageGuid);
 
         package.SetName(dto.Name);
         package.SetPrice(dto.Price);
@@ -62,12 +56,11 @@ public class PackageService(IGenericRepository<Package> repository,
     public async Task<ResponseModel<bool>> DeleteAsync(string id)
     {
         if (!Guid.TryParse(id, out var packageGuid))
-            return ResponseModel<bool>.FailureResponse("Paket ID-si yanlışdır.");
+            throw BusinessException.ValidationFailed("Paket ID-si yanlışdır.");
 
         var package = await repository.GetByIdAsync(packageGuid);
-
         if (package == null || package.IsDeleted)
-            return ResponseModel<bool>.FailureResponse("Paket tapılmadı.");
+            throw NotFoundException.Package(packageGuid);
 
         package.IsDeleted = true;
         repository.Update(package);
@@ -92,7 +85,7 @@ public class PackageService(IGenericRepository<Package> repository,
     public async Task<ResponseModel<PackageResponseDto>> GetByIdAsync(string id)
     {
         if (!Guid.TryParse(id, out var packageGuid))
-            return ResponseModel<PackageResponseDto>.FailureResponse("Paket ID-si yanlışdır.");
+            throw BusinessException.ValidationFailed("Paket ID-si yanlışdır.");
 
         var package = await repository.Table
             .Include(p => p.Gym)
@@ -101,7 +94,7 @@ public class PackageService(IGenericRepository<Package> repository,
             .FirstOrDefaultAsync();
 
         if (package == null)
-            return ResponseModel<PackageResponseDto>.FailureResponse("Paket tapılmadı.");
+            throw NotFoundException.Package(packageGuid);
 
         var packageDto = mapper.Map<PackageResponseDto>(package);
 

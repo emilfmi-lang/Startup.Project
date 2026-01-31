@@ -8,84 +8,45 @@ namespace Startup_Project.WebAPI.Controllers;
 
 [Route("api/trainers")]
 [ApiController]
-public class TrainerController : ControllerBase
+public class TrainerController(ITrainerService trainerService) : ControllerBase
 {
-    private readonly ITrainerService _trainerService;
-
-    public TrainerController(ITrainerService trainerService)
-    {
-        _trainerService = trainerService;
-    }
-
     [HttpGet]
     [AllowAnonymous]
     public async Task<IActionResult> GetAll()
-    {
-        var result = await _trainerService.GetAllTrainersAsync();
-        if (!result.Success) return BadRequest(result);
-        return Ok(result);
-    }
+        => Ok(await trainerService.GetAllTrainersAsync());
 
     [HttpGet("online")]
     [AllowAnonymous]
     public async Task<IActionResult> GetOnlineTrainers()
-    {
-        var result = await _trainerService.GetOnlineTrainersAsync();
-        if (!result.Success) return BadRequest(result);
-        return Ok(result);
-    }
+        => Ok(await trainerService.GetOnlineTrainersAsync());
 
     [HttpGet("{id}")]
     [AllowAnonymous]
     public async Task<IActionResult> GetById(Guid id)
-    {
-        var result = await _trainerService.GetTrainerByIdAsync(id);
-        if (!result.Success) return BadRequest(result);
-        return Ok(result);
-    }
+        => Ok(await trainerService.GetTrainerByIdAsync(id));
 
     [HttpGet("gym/{gymId}")]
     [AllowAnonymous]
     public async Task<IActionResult> GetByGym(Guid gymId)
-    {
-        var result = await _trainerService.GetTrainersByGymAsync(gymId);
-        if (!result.Success) return BadRequest(result);
-        return Ok(result);
-    }
+        => Ok(await trainerService.GetTrainersByGymAsync(gymId));
 
     [HttpGet("{id}/reviews")]
     [AllowAnonymous]
     public async Task<IActionResult> GetReviews(Guid id)
-    {
-        var result = await _trainerService.GetTrainerReviewsAsync(id);
-        if (!result.Success) return BadRequest(result);
-        return Ok(result);
-    }
+        => Ok(await trainerService.GetTrainerReviewsAsync(id));
 
     [HttpGet("{id}/schedule")]
     [AllowAnonymous]
     public async Task<IActionResult> GetSchedule(Guid id)
-    {
-        var result = await _trainerService.GetTrainerScheduleAsync(id);
-        if (!result.Success) return BadRequest(result);
-        return Ok(result);
-    }
+        => Ok(await trainerService.GetTrainerScheduleAsync(id));
 
     [HttpPost("{id}/reviews")]
     [Authorize]
     public async Task<IActionResult> AddReview(Guid id, [FromBody] TrainerReviewCreateDto dto)
-    {
-        var result = await _trainerService.AddReviewAsync(id, dto);
-        if (!result.Success) return BadRequest(result);
-        return Ok(result);
-    }
+        => Ok(await trainerService.AddReviewAsync(id, dto));
 
     [HttpPost("apply-online")]
     [Authorize]
     public async Task<IActionResult> ApplyAsOnlineTrainer([FromBody] OnlineTrainerApplyDto dto)
-    {
-        var result = await _trainerService.ApplyAsOnlineTrainerAsync(dto);
-        if (!result.Success) return BadRequest(result);
-        return Ok(result);
-    }
+        => Ok(await trainerService.ApplyAsOnlineTrainerAsync(dto));
 }
