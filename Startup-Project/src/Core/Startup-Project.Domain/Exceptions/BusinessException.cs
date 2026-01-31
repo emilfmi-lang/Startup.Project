@@ -37,7 +37,41 @@ public class BusinessException : BaseException
     // USER FACTORY METHODS
     public static BusinessException InvalidCredentials()
         => new(BusinessErrorCodes.InvalidCredentials,
-               "Email v? ya ?ifr? yanl??d?r.");
+               "Email və ya şifrə yanlışdır.");
+
+    // AUTH PROVIDER FACTORY METHODS
+    public static BusinessException GoogleTokenInvalid()
+        => new(BusinessErrorCodes.GoogleTokenInvalid,
+               "Google token etibarsızdır.");
+
+    public static BusinessException GoogleEmailNotVerified()
+        => new(BusinessErrorCodes.GoogleEmailNotVerified,
+               "Google hesabınızın emaili təsdiq olunmayıb.");
+
+    public static BusinessException GoogleAuthRequired()
+        => new(BusinessErrorCodes.GoogleAuthRequired,
+               "Bu hesab Google ilə qeydiyyatdan keçib. Zəhmət olmasa Google ilə daxil olun.");
+
+    public static BusinessException PhoneAuthRequired()
+        => new(BusinessErrorCodes.PhoneAuthRequired,
+               "Bu hesab telefon nömrəsi ilə qeydiyyatdan keçib. Zəhmət olmasa SMS OTP ilə daxil olun.");
+
+    public static BusinessException PasswordResetNotAllowed(string provider)
+        => new(BusinessErrorCodes.PasswordResetNotAllowed,
+               $"{provider} ilə qeydiyyatdan keçmiş hesab üçün şifrə sıfırlama mümkün deyil.");
+
+    // OTP FACTORY METHODS
+    public static BusinessException OtpNotFound()
+        => new(BusinessErrorCodes.OtpNotFound,
+               "Aktiv doğrulama kodu tapılmadı. Yeni kod tələb edin.");
+
+    public static BusinessException OtpInvalidCode(int remainingAttempts)
+        => new(BusinessErrorCodes.OtpInvalidCode,
+               $"Kod səhvdir. {remainingAttempts} cəhd qalıb.");
+
+    public static BusinessException OtpMaxAttemptsExceeded()
+        => new(BusinessErrorCodes.OtpMaxAttemptsExceeded,
+               "3 səhv cəhd. Kod ləğv edildi. Yeni kod tələb edin.");
 
     public static BusinessException EmailNotConfirmed()
         => new(BusinessErrorCodes.EmailNotConfirmed,

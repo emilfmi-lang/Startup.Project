@@ -6,6 +6,7 @@ using Startup_Project.Application.Models;
 using Startup_Project.Application.Services.Interfaces;
 using Startup_Project.Domain.Abstractions.Repositories;
 using Startup_Project.Domain.Entities;
+using Startup_Project.Domain.Exceptions;
 using System.Security.Claims;
 
 namespace Startup_Project.Application.Services.Concretes;
@@ -37,7 +38,7 @@ public class GymService(
     {
         var userId = GetCurrentUserId();
         if (userId == null)
-            return ResponseModel<bool>.FailureResponse("Zal yaratmaq ucun giris etmelisiniz.");
+            throw BusinessException.UnauthorizedAccess();
 
         var gym = new Gym(dto.Name, dto.Address, userId.Value);
 
@@ -50,11 +51,11 @@ public class GymService(
     public async Task<ResponseModel<bool>> UpdateAsync(string id, GymUpdateDto dto)
     {
         if (!Guid.TryParse(id, out var gymGuid))
-            return ResponseModel<bool>.FailureResponse("Zal ID-si yanlisdir.");
+            throw BusinessException.ValidationFailed("Zal ID-si yanlışdır.");
 
         var gym = await repository.GetByIdAsync(gymGuid);
         if (gym == null || gym.IsDeleted)
-            return ResponseModel<bool>.FailureResponse("Zal tapilmadi.");
+            throw NotFoundException.Gym(gymGuid);
 
         if (!string.IsNullOrWhiteSpace(dto.Name))
             gym.SetName(dto.Name);
@@ -132,11 +133,11 @@ public class GymService(
     public async Task<ResponseModel<bool>> DeleteAsync(string id)
     {
         if (!Guid.TryParse(id, out var gymGuid))
-            return ResponseModel<bool>.FailureResponse("Zal ID-si yanlisdir.");
+            throw BusinessException.ValidationFailed("Zal ID-si yanlışdır.");
 
         var gym = await repository.GetByIdAsync(gymGuid);
         if (gym == null || gym.IsDeleted)
-            return ResponseModel<bool>.FailureResponse("Zal tapilmadi.");
+            throw NotFoundException.Gym(gymGuid);
 
         gym.IsDeleted = true;
         repository.Update(gym);

@@ -6,6 +6,7 @@ using Startup_Project.Application.Models;
 using Startup_Project.Application.Services.Interfaces;
 using Startup_Project.Domain.Abstractions.Repositories;
 using Startup_Project.Domain.Entities;
+using Startup_Project.Domain.Exceptions;
 using System.Security.Claims;
 
 namespace Startup_Project.Application.Services.Concretes;
@@ -39,15 +40,14 @@ public class FavoriteService : IFavoriteService
     {
         var userId = GetCurrentUserId();
         if (userId == null)
-            return ResponseModel<bool>.FailureResponse("?stifad?çi tap?lmad?. Z?hm?t olmasa daxil olun.");
+            throw BusinessException.UnauthorizedAccess();
 
-        // Check if gym exists
         var gymExists = await _gymRepository.Table
             .AsNoTracking()
             .AnyAsync(g => g.Id == gymId && !g.IsDeleted);
 
         if (!gymExists)
-            return ResponseModel<bool>.FailureResponse("Zal tap?lmad?.");
+            throw NotFoundException.Gym(gymId);
 
         // Check if already favorited
         var existingFavorite = await _favoriteRepository.Table
@@ -73,7 +73,7 @@ public class FavoriteService : IFavoriteService
     {
         var userId = GetCurrentUserId();
         if (userId == null)
-            return ResponseModel<List<GymListDto>>.FailureResponse("?stifad?çi tap?lmad?. Z?hm?t olmasa daxil olun.");
+            throw BusinessException.UnauthorizedAccess();
 
         // Validate pagination
         page = Math.Max(1, page);

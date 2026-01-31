@@ -6,15 +6,8 @@ namespace Startup_Project.WebAPI.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class FavoritesController : ControllerBase
+public class FavoritesController(IFavoriteService favoriteService) : ControllerBase
 {
-    private readonly IFavoriteService _favoriteService;
-
-    public FavoritesController(IFavoriteService favoriteService)
-    {
-        _favoriteService = favoriteService;
-    }
-
     /// <summary>
     /// Zal? sevimlil?r? ?lav? et v? ya sil (Toggle)
     /// </summary>
@@ -23,11 +16,7 @@ public class FavoritesController : ControllerBase
     [Authorize]
     public async Task<IActionResult> ToggleFavorite(Guid gymId)
     {
-        var result = await _favoriteService.ToggleFavoriteAsync(gymId);
-
-        if (!result.Success)
-            return BadRequest(result);
-
+        var result = await favoriteService.ToggleFavoriteAsync(gymId);
         return Ok(result);
     }
 
@@ -38,11 +27,7 @@ public class FavoritesController : ControllerBase
     [Authorize]
     public async Task<IActionResult> GetUserFavorites([FromQuery] int page = 1, [FromQuery] int pageSize = 20)
     {
-        var result = await _favoriteService.GetUserFavoritesAsync(page, pageSize);
-
-        if (!result.Success)
-            return BadRequest(result);
-
+        var result = await favoriteService.GetUserFavoritesAsync(page, pageSize);
         return Ok(result);
     }
 
@@ -53,11 +38,7 @@ public class FavoritesController : ControllerBase
     [Authorize]
     public async Task<IActionResult> CheckFavorite(Guid gymId)
     {
-        var result = await _favoriteService.IsFavoriteAsync(gymId);
-
-        if (!result.Success)
-            return BadRequest(result);
-
+        var result = await favoriteService.IsFavoriteAsync(gymId);
         return Ok(result);
     }
 
@@ -67,11 +48,7 @@ public class FavoritesController : ControllerBase
     [HttpGet("count/{gymId:guid}")]
     public async Task<IActionResult> GetFavoriteCount(Guid gymId)
     {
-        var result = await _favoriteService.GetFavoriteCountAsync(gymId);
-
-        if (!result.Success)
-            return BadRequest(result);
-
+        var result = await favoriteService.GetFavoriteCountAsync(gymId);
         return Ok(result);
     }
 }

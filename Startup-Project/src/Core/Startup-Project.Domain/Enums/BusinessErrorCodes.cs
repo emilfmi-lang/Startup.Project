@@ -19,6 +19,19 @@ public enum BusinessErrorCodes
     InvalidVerificationCode = 2006,
     VerificationCodeExpired = 2007,
 
+    // AUTH PROVIDER ERRORS (2100-2199)
+    GoogleTokenInvalid = 2100,
+    GoogleEmailNotVerified = 2101,
+    GoogleAuthRequired = 2102,
+    PhoneAuthRequired = 2103,
+    PasswordResetNotAllowed = 2104,
+
+    // OTP ERRORS (2200-2299)
+    OtpNotFound = 2200,
+    OtpExpired = 2201,
+    OtpInvalidCode = 2202,
+    OtpMaxAttemptsExceeded = 2203,
+
     // GYM ERRORS (3000-3999)
     GymNotFound = 3000,
     GymAlreadyExists = 3001,

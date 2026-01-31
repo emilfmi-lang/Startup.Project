@@ -20,10 +20,10 @@ public class NotFoundException : BaseException
         => new(BusinessErrorCodes.UserNotFound, $"?stifad?çi tap?lmad?. ID: {userId}");
 
     public static NotFoundException User(string identifier)
-        => new(BusinessErrorCodes.UserNotFound, $"'{identifier}' il? istifad?çi tap?lmad?.");
+        => new(BusinessErrorCodes.UserNotFound, $"'{identifier}' ile istifadeçi tapilmadi.");
 
     public static NotFoundException UserByEmail(string email)
-        => new(BusinessErrorCodes.UserNotFound, $"'{email}' email il? istifad?çi tap?lmad?.");
+        => new(BusinessErrorCodes.UserNotFound, $"'{email}' email ile istifadeçi tapilmadi.");
 
 
     // GYM FACTORY METHODS

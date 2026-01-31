@@ -13,6 +13,7 @@ using Startup_Project.Domain.Abstractions.Repositories;
 using Startup_Project.Domain.Entities;
 using Startup_Project.Domain.Entities.Identity;
 using Startup_Project.Domain.Enums;
+using Startup_Project.Domain.Exceptions;
 
 
 namespace Startup_Project.Application.Services.Concretes.Account;
@@ -32,11 +33,11 @@ public class AccountService(
     {
         var user = await userManager.FindByEmailAsync(dto.Email);
         if (user == null)
-            return ResponseModel<string>.FailureResponse("Istifadeci tapilmadi.");
+            throw NotFoundException.UserByEmail(dto.Email);
         if (user.VerificationCode != dto.Code)
-            return ResponseModel<string>.FailureResponse("Daxil etdiyiniz kod yanlisdir.");
+            throw BusinessException.InvalidVerificationCode();
         if (user.CodeExpireDate < DateTime.UtcNow)
-            return ResponseModel<string>.FailureResponse("Daxil etdiyiniz kodun etibarliliq muddeti bitib.");
+            throw BusinessException.VerificationCodeExpired();
         user.EmailConfirmed = true;
         user.VerificationCode = null;
         user.CodeExpireDate = null;
@@ -52,9 +53,8 @@ public class AccountService(
         var validationResult = await validator.ValidateAsync(dto);
 
         if (!validationResult.IsValid)
-        {
-            return ResponseModel<bool>.FailureResponse(validationResult.Errors.Select(e => e.ErrorMessage).ToList());
-        }
+            throw BusinessException.ValidationFailed(string.Join(", ", validationResult.Errors.Select(e => e.ErrorMessage)));
+
         var user = mapper.Map<AppUser>(dto);
         user.UserName = dto.Email;
         user.AuthProvider = AuthProvider.Local;
@@ -65,9 +65,7 @@ public class AccountService(
         var result = await userManager.CreateAsync(user, dto.Password);
 
         if (!result.Succeeded)
-        {
-            return ResponseModel<bool>.FailureResponse(result.Errors.Select(e => e.Description).ToList());
-        }
+            throw BusinessException.ValidationFailed(string.Join(", ", result.Errors.Select(e => e.Description)));
 
         await userManager.AddToRoleAsync(user, "User");
 
@@ -82,20 +80,20 @@ public class AccountService(
     {
         var user = await userManager.FindByEmailAsync(dto.Email);
         if (user == null)
-            return ResponseModel<string>.FailureResponse("Istifadeci tapilmadi.");
+            throw NotFoundException.UserByEmail(dto.Email);
 
         if (user.AuthProvider == AuthProvider.Google)
-            return ResponseModel<string>.FailureResponse("Bu hesab Google ile qeydiyyatdan kecib. Zehmmet olmasa Google ile daxil olun.");
+            throw BusinessException.GoogleAuthRequired();
 
         if (user.AuthProvider == AuthProvider.Phone)
-            return ResponseModel<string>.FailureResponse("Bu hesab telefon nömrəsi ilə qeydiyyatdan keçib. Zəhmət olmasa SMS OTP ilə daxil olun.");
+            throw BusinessException.PhoneAuthRequired();
 
         var isPasswordValid = await userManager.CheckPasswordAsync(user, dto.Password);
         if (!isPasswordValid)
-            return ResponseModel<string>.FailureResponse("Email ve ya sifre yanlisdir.");
+            throw BusinessException.InvalidCredentials();
 
         if (!user.EmailConfirmed)
-            return ResponseModel<string>.FailureResponse("Zehmet olmasa evvelce emailinizi tesdiqleyin.");
+            throw BusinessException.EmailNotConfirmed();
 
         var roles = await userManager.GetRolesAsync(user);
         var token = jwtTokenService.GenerateTokenAsync(user, roles);
@@ -107,10 +105,10 @@ public class AccountService(
     {
         var googleUser = await googleTokenValidator.ValidateAsync(dto.IdToken);
         if (googleUser == null)
-            return ResponseModel<string>.FailureResponse("Google token etibarsizdir.");
+            throw BusinessException.GoogleTokenInvalid();
 
         if (!googleUser.EmailVerified)
-            return ResponseModel<string>.FailureResponse("Google hesabinizin emaili tesdiq olunmayib.");
+            throw BusinessException.GoogleEmailNotVerified();
 
         var existingUserByGoogleId = await userManager.Users
             .FirstOrDefaultAsync(u => u.GoogleId == googleUser.GoogleId);
@@ -147,7 +145,7 @@ public class AccountService(
 
         var createResult = await userManager.CreateAsync(newUser);
         if (!createResult.Succeeded)
-            return ResponseModel<string>.FailureResponse(createResult.Errors.Select(e => e.Description).ToList());
+            throw BusinessException.ValidationFailed(string.Join(", ", createResult.Errors.Select(e => e.Description)));
 
         await userManager.AddToRoleAsync(newUser, "User");
 
@@ -160,13 +158,13 @@ public class AccountService(
     {
         var user = await userManager.FindByEmailAsync(email);
         if (user == null)
-            return ResponseModel<bool>.FailureResponse("Istifadeci tapilmadi.");
+            throw NotFoundException.UserByEmail(email);
 
         if (user.AuthProvider == AuthProvider.Google)
-            return ResponseModel<bool>.FailureResponse("Google hesabi ucun sifre sifirlama mumkun deyil.");
+            throw BusinessException.PasswordResetNotAllowed("Google");
 
         if (user.AuthProvider == AuthProvider.Phone)
-            return ResponseModel<bool>.FailureResponse("Telefon ilə qeydiyyatdan keçmiş hesab üçün şifrə sıfırlama mümkün deyil.");
+            throw BusinessException.PasswordResetNotAllowed("Telefon");
 
         var token = await userManager.GeneratePasswordResetTokenAsync(user);
 
@@ -188,22 +186,23 @@ public class AccountService(
     {
         var user = await userManager.FindByEmailAsync(dto.Email);
         if (user == null)
-            return ResponseModel<bool>.FailureResponse("Istifadeci tapilmadi.");
+            throw NotFoundException.UserByEmail(dto.Email);
 
         if (user.AuthProvider == AuthProvider.Google)
-            return ResponseModel<bool>.FailureResponse("Google hesabi ucun sifre sifirlama mumkun deyil.");
+            throw BusinessException.PasswordResetNotAllowed("Google");
 
         if (user.AuthProvider == AuthProvider.Phone)
-            return ResponseModel<bool>.FailureResponse("Telefon ilə qeydiyyatdan keçmiş hesab üçün şifrə sıfırlama mümkün deyil.");
+            throw BusinessException.PasswordResetNotAllowed("Telefon");
 
         if (dto.NewPassword != dto.ConfirmPassword)
-            return ResponseModel<bool>.FailureResponse("Yeni sifre ve tesdiq sifresi uygun gelmir.");
+            throw BusinessException.ValidationFailed("Yeni şifrə və təsdiq şifrəsi uyğun gəlmir.");
 
         var decodedTokenBytes = Microsoft.AspNetCore.WebUtilities.WebEncoders.Base64UrlDecode(dto.Token);
         var orginalToken = System.Text.Encoding.UTF8.GetString(decodedTokenBytes);
         var result = await userManager.ResetPasswordAsync(user, orginalToken, dto.NewPassword);
         if (!result.Succeeded)
-            return ResponseModel<bool>.FailureResponse(result.Errors.Select(e => e.Description).ToList());
+            throw BusinessException.ValidationFailed(string.Join(", ", result.Errors.Select(e => e.Description)));
+
         return ResponseModel<bool>.SuccessResponse(true);
     }
 
@@ -211,13 +210,11 @@ public class AccountService(
 
     public async Task<ResponseModel<bool>> SendSmsOtpAsync(SendSmsOtpDto dto)
     {
-        // Validate
         var validator = new SendSmsOtpDtoValidator();
         var validationResult = await validator.ValidateAsync(dto);
         if (!validationResult.IsValid)
-            return ResponseModel<bool>.FailureResponse(validationResult.Errors.Select(e => e.ErrorMessage).ToList());
+            throw BusinessException.ValidationFailed(string.Join(", ", validationResult.Errors.Select(e => e.ErrorMessage)));
 
-        // Invalidate all previous active codes for this phone number
         var activeCodes = await smsOtpRepository.Table
             .Where(x => x.PhoneNumber == dto.PhoneNumber && !x.IsUsed && x.ExpiryDate > DateTime.UtcNow)
             .ToListAsync();
@@ -227,7 +224,6 @@ public class AccountService(
             code.MarkAsUsed();
         }
 
-        // Generate new 6-digit code
         var random = new Random();
         var otpCode = random.Next(100000, 999999).ToString();
 
@@ -248,7 +244,7 @@ public class AccountService(
         var validator = new VerifySmsOtpDtoValidator();
         var validationResult = await validator.ValidateAsync(dto);
         if (!validationResult.IsValid)
-            return ResponseModel<string>.FailureResponse(validationResult.Errors.Select(e => e.ErrorMessage).ToList());
+            throw BusinessException.ValidationFailed(string.Join(", ", validationResult.Errors.Select(e => e.ErrorMessage)));
 
         var otp = await smsOtpRepository.Table
             .Where(x => x.PhoneNumber == dto.PhoneNumber && !x.IsUsed && x.ExpiryDate > DateTime.UtcNow && x.AttemptCount < 3)
@@ -256,7 +252,7 @@ public class AccountService(
             .FirstOrDefaultAsync();
 
         if (otp == null)
-            return ResponseModel<string>.FailureResponse("Aktiv doğrulama kodu tapılmadı. Yeni kod tələb edin.");
+            throw BusinessException.OtpNotFound();
 
         if (otp.Code != dto.Code)
         {
@@ -266,11 +262,11 @@ public class AccountService(
             {
                 otp.MarkAsUsed();
                 await unitOfWork.SaveChangesAsync();
-                return ResponseModel<string>.FailureResponse("3 səhv cəhd. Kod ləğv edildi. Yeni kod tələb edin.");
+                throw BusinessException.OtpMaxAttemptsExceeded();
             }
 
             await unitOfWork.SaveChangesAsync();
-            return ResponseModel<string>.FailureResponse($"Kod səhvdir. {3 - otp.AttemptCount} cəhd qalıb.");
+            throw BusinessException.OtpInvalidCode(3 - otp.AttemptCount);
         }
 
         otp.MarkAsUsed();
@@ -296,7 +292,7 @@ public class AccountService(
 
             var createResult = await userManager.CreateAsync(user);
             if (!createResult.Succeeded)
-                return ResponseModel<string>.FailureResponse(createResult.Errors.Select(e => e.Description).ToList());
+                throw BusinessException.ValidationFailed(string.Join(", ", createResult.Errors.Select(e => e.Description)));
 
             await userManager.AddToRoleAsync(user, "User");
         }

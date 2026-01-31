@@ -14,10 +14,6 @@ public class GymController(IGymService service) : ControllerBase
     public async Task<IActionResult> GetAllAsync()
     {
         var result = await service.GetAllAsync();
-        if (!result.Success)
-        {
-            return BadRequest(result);
-        }
         return Ok(result);
     }
 
@@ -29,10 +25,6 @@ public class GymController(IGymService service) : ControllerBase
     public async Task<IActionResult> GetAllWithFavoritesAsync([FromQuery] int page = 1, [FromQuery] int pageSize = 20)
     {
         var result = await service.GetAllWithFavoritesAsync(page, pageSize);
-        if (!result.Success)
-        {
-            return BadRequest(result);
-        }
         return Ok(result);
     }
 
@@ -41,10 +33,6 @@ public class GymController(IGymService service) : ControllerBase
     public async Task<IActionResult> CreateAsync([FromBody] GymCreateDto dto)
     {
         var result = await service.CreateAsync(dto);
-        if (!result.Success)
-        {
-            return BadRequest(result);
-        }
         return Ok(result);
     }
 
@@ -53,10 +41,6 @@ public class GymController(IGymService service) : ControllerBase
     public async Task<IActionResult> UpdateAsync(string id, [FromBody] GymUpdateDto dto)
     {
         var result = await service.UpdateAsync(id, dto);
-        if (!result.Success)
-        {
-            return BadRequest(result);
-        }
         return Ok(result);
     }
 
@@ -65,10 +49,6 @@ public class GymController(IGymService service) : ControllerBase
     public async Task<IActionResult> DeleteAsync(string id)
     {
         var result = await service.DeleteAsync(id);
-        if (!result.Success)
-        {
-            return BadRequest(result);
-        }
         return Ok(result);
     }
 }
