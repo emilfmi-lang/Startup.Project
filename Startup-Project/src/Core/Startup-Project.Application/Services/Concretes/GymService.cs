@@ -86,11 +86,9 @@ public class GymService(
     {
         var userId = GetCurrentUserId();
 
-        // Validate pagination
         page = Math.Max(1, page);
         pageSize = Math.Clamp(pageSize, 1, 100);
 
-        // Get user's favorite gym IDs (if logged in)
         var userFavoriteGymIds = new HashSet<Guid>();
         if (userId != null)
         {
@@ -102,7 +100,6 @@ public class GymService(
                 .ToHashSet();
         }
 
-        // Get gyms with pagination
         var gyms = await repository.Table
             .AsNoTracking()
             .Where(g => !g.IsDeleted)
