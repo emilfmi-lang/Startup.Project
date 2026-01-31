@@ -49,24 +49,21 @@ public class FavoriteService : IFavoriteService
         if (!gymExists)
             throw NotFoundException.Gym(gymId);
 
-        // Check if already favorited
         var existingFavorite = await _favoriteRepository.Table
             .FirstOrDefaultAsync(f => f.UserId == userId.Value && f.GymId == gymId);
 
         if (existingFavorite != null)
         {
-            // Remove from favorites
             _favoriteRepository.Remove(existingFavorite);
             await _unitOfWork.SaveChangesAsync();
-            return ResponseModel<bool>.SuccessResponse(false); // Silindi
+            return ResponseModel<bool>.SuccessResponse(false);
         }
 
-        // Add to favorites
         var favorite = new FavoriteGym(userId.Value, gymId);
         await _favoriteRepository.AddAsync(favorite);
         await _unitOfWork.SaveChangesAsync();
 
-        return ResponseModel<bool>.SuccessResponse(true); // ?lav? edildi
+        return ResponseModel<bool>.SuccessResponse(true); 
     }
 
     public async Task<ResponseModel<List<GymListDto>>> GetUserFavoritesAsync(int page = 1, int pageSize = 20)
@@ -75,7 +72,6 @@ public class FavoriteService : IFavoriteService
         if (userId == null)
             throw BusinessException.UnauthorizedAccess();
 
-        // Validate pagination
         page = Math.Max(1, page);
         pageSize = Math.Clamp(pageSize, 1, 100);
 
@@ -96,7 +92,7 @@ public class FavoriteService : IFavoriteService
                 AverageRating = f.Gym.AverageRating,
                 ReviewCount = f.Gym.ReviewCount,
                 IsOpen = f.Gym.IsOpenNow(),
-                IsFavorite = true, // Bu list art?q favorit olanlar? g?tirir
+                IsFavorite = true, 
                 FavoriteCount = f.Gym.FavoritedByUsers.Count
             })
             .ToListAsync();
