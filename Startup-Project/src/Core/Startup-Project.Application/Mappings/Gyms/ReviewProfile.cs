@@ -5,7 +5,7 @@ using Startup_Project.Domain.Entities;
 
 namespace Startup_Project.Application.Mappings.Gyms;
 
-public class ReviewProfile:Profile
+public class ReviewProfile : Profile
 {
     public ReviewProfile()
     {
@@ -14,5 +14,6 @@ public class ReviewProfile:Profile
                        opt => opt.MapFrom(src => src.User.FullName))
             .ForMember(dest => dest.CreatedAt,
                        opt => opt.MapFrom(src => src.CreatedAt));
+        CreateMap<ReviewCreateDto, GymReview>();
     }
 }

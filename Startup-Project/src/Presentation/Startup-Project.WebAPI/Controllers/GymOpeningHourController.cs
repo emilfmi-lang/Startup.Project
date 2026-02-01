@@ -9,23 +9,13 @@ namespace Startup_Project.WebAPI.Controllers;
 [ApiController]
 public class GymOpeningHourController(IGymOpeningHourService service) : ControllerBase
 {
-    [HttpPost("SetOpeningHours/{gymId}")]
+    [HttpPost("SetOpeningHours/{gymId:guid}")]
     [Authorize(Roles = "Admin,GymOwner")]
     public async Task<IActionResult> SetOpeningHoursAsync([FromRoute] Guid gymId, [FromBody] List<OpeningHourDto> dtos)
-    {
-        var result = await service.SetOpeningHoursAsync(gymId, dtos);
-        if (result.Success)
-            return Ok(result);
-        return BadRequest(result);
-    }
+        => Ok(await service.SetOpeningHoursAsync(gymId, dtos));
 
-    [HttpGet("{gymId}")]
+    [HttpGet("{gymId:guid}")]
     [AllowAnonymous]
     public async Task<IActionResult> GetOpeningHoursAsync([FromRoute] Guid gymId)
-    {
-        var result = await service.GetOpeningHoursAsync(gymId);
-        if (result.Success)
-            return Ok(result);
-        return BadRequest(result);
-    }
+        => Ok(await service.GetOpeningHoursAsync(gymId));
 }

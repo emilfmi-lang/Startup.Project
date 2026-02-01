@@ -7,83 +7,34 @@ namespace Startup_Project.WebAPI.Controllers;
 
 [Route("api/sessions")]
 [ApiController]
-public class TrainingSessionController : ControllerBase
+public class TrainingSessionController(ITrainingSessionService sessionService) : ControllerBase
 {
-    private readonly ITrainingSessionService _sessionService;
-
-    public TrainingSessionController(ITrainingSessionService sessionService)
-    {
-        _sessionService = sessionService;
-    }
-
-    /// <summary>
-    /// Sessiya satin al (mesqci ile bir gedislik)
-    /// </summary>
     [HttpPost("purchase")]
     [Authorize]
     public async Task<IActionResult> Purchase([FromBody] SessionPurchaseDto dto)
-    {
-        var result = await _sessionService.PurchaseSessionAsync(dto);
-        if (!result.Success) return BadRequest(result);
-        return Ok(result);
-    }
+        => Ok(await sessionService.PurchaseSessionAsync(dto));
 
-    /// <summary>
-    /// Menim sessiyalarim
-    /// </summary>
     [HttpGet("my")]
     [Authorize]
     public async Task<IActionResult> GetMySessions()
-    {
-        var result = await _sessionService.GetMySessionsAsync();
-        if (!result.Success) return BadRequest(result);
-        return Ok(result);
-    }
+        => Ok(await sessionService.GetMySessionsAsync());
 
-    /// <summary>
-    /// Sessiya detali
-    /// </summary>
-    [HttpGet("{id}")]
+    [HttpGet("{id:guid}")]
     [Authorize]
     public async Task<IActionResult> GetById(Guid id)
-    {
-        var result = await _sessionService.GetSessionByIdAsync(id);
-        if (!result.Success) return BadRequest(result);
-        return Ok(result);
-    }
+        => Ok(await sessionService.GetSessionByIdAsync(id));
 
-    /// <summary>
-    /// Sessiyanin QR kodunu al
-    /// </summary>
-    [HttpGet("{id}/qr")]
+    [HttpGet("{id:guid}/qr")]
     [Authorize]
     public async Task<IActionResult> GetQr(Guid id)
-    {
-        var result = await _sessionService.GetSessionQrAsync(id);
-        if (!result.Success) return BadRequest(result);
-        return Ok(result);
-    }
+        => Ok(await sessionService.GetSessionQrAsync(id));
 
-    /// <summary>
-    /// Sessiyani legv et
-    /// </summary>
-    [HttpPost("{id}/cancel")]
+    [HttpPost("{id:guid}/cancel")]
     [Authorize]
     public async Task<IActionResult> Cancel(Guid id, [FromBody] SessionCancelDto dto)
-    {
-        var result = await _sessionService.CancelSessionAsync(id, dto);
-        if (!result.Success) return BadRequest(result);
-        return Ok(result);
-    }
+        => Ok(await sessionService.CancelSessionAsync(id, dto));
 
-    /// <summary>
-    /// Odenis tesdiqle (callback)
-    /// </summary>
-    [HttpPost("{id}/confirm-payment")]
+    [HttpPost("{id:guid}/confirm-payment")]
     public async Task<IActionResult> ConfirmPayment(Guid id, [FromBody] Guid paymentId)
-    {
-        var result = await _sessionService.ConfirmPaymentAsync(id, paymentId);
-        if (!result.Success) return BadRequest(result);
-        return Ok(result);
-    }
+        => Ok(await sessionService.ConfirmPaymentAsync(id, paymentId));
 }

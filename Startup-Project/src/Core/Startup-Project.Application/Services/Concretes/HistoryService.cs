@@ -7,37 +7,27 @@ using Startup_Project.Application.Services.Interfaces;
 using Startup_Project.Domain.Abstractions.Repositories;
 using Startup_Project.Domain.Entities;
 using Startup_Project.Domain.Enums;
+using Startup_Project.Domain.Exceptions;
 using System.Security.Claims;
 
 namespace Startup_Project.Application.Services.Concretes;
 
-public class HistoryService : IHistoryService
+public class HistoryService(
+    IGenericRepository<Payment> paymentRepository,
+    IGenericRepository<CheckInLog> checkInRepository,
+    IHttpContextAccessor httpContextAccessor) : IHistoryService
 {
-    private readonly IGenericRepository<Payment> _paymentRepository;
-    private readonly IGenericRepository<CheckInLog> _checkInRepository;
-    private readonly IHttpContextAccessor _httpContextAccessor;
-
-    public HistoryService(
-        IGenericRepository<Payment> paymentRepository,
-        IGenericRepository<CheckInLog> checkInRepository,
-        IHttpContextAccessor httpContextAccessor)
-    {
-        _paymentRepository = paymentRepository;
-        _checkInRepository = checkInRepository;
-        _httpContextAccessor = httpContextAccessor;
-    }
-
     private Guid GetCurrentUserId()
     {
-        var userIdClaim = _httpContextAccessor.HttpContext?.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-        return Guid.TryParse(userIdClaim, out var userId) ? userId : Guid.Empty;
+        var userIdClaim = httpContextAccessor.HttpContext?.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        if (string.IsNullOrEmpty(userIdClaim) || !Guid.TryParse(userIdClaim, out var userId))
+            throw BusinessException.UnauthorizedAccess();
+        return userId;
     }
 
     public async Task<ResponseModel<HistoryResponseDto>> GetMyHistoryAsync(HistoryFilterDto filter)
     {
         var userId = GetCurrentUserId();
-        if (userId == Guid.Empty)
-            return ResponseModel<HistoryResponseDto>.FailureResponse("?stifad?çi tap?lmad?.");
 
         var page = Math.Max(1, filter.Page);
         var pageSize = Math.Clamp(filter.PageSize, 1, 100);
@@ -69,9 +59,6 @@ public class HistoryService : IHistoryService
     public async Task<ResponseModel<HistorySummaryDto>> GetHistorySummaryAsync()
     {
         var userId = GetCurrentUserId();
-        if (userId == Guid.Empty)
-            return ResponseModel<HistorySummaryDto>.FailureResponse("?stifad?çi tap?lmad?.");
-
         var summary = await GetSummaryForUserAsync(userId);
         return ResponseModel<HistorySummaryDto>.SuccessResponse(summary);
     }
@@ -79,9 +66,6 @@ public class HistoryService : IHistoryService
     public async Task<ResponseModel<List<UserActivityDto>>> GetRecentActivitiesAsync(int count = 10)
     {
         var userId = GetCurrentUserId();
-        if (userId == Guid.Empty)
-            return ResponseModel<List<UserActivityDto>>.FailureResponse("?stifad?çi tap?lmad?.");
-
         count = Math.Clamp(count, 1, 50);
 
         var activities = await GetUnifiedActivitiesAsync(userId, new HistoryFilterDto());
@@ -92,15 +76,13 @@ public class HistoryService : IHistoryService
 
     private async Task<List<UserActivityDto>> GetUnifiedActivitiesAsync(Guid userId, HistoryFilterDto filter)
     {
-        // Payment base query
-        IQueryable<Payment> paymentQuery = _paymentRepository.Table
+        IQueryable<Payment> paymentQuery = paymentRepository.Table
             .AsNoTracking()
             .Where(p => p.UserId == userId)
             .Include(p => p.Package)
                 .ThenInclude(pkg => pkg.Gym);
 
-        // CheckIn base query
-        IQueryable<CheckInLog> checkInQuery = _checkInRepository.Table
+        IQueryable<CheckInLog> checkInQuery = checkInRepository.Table
             .AsNoTracking()
             .Where(c => c.UserId == userId)
             .Include(c => c.Gym);
@@ -120,7 +102,6 @@ public class HistoryService : IHistoryService
 
         var activities = new List<UserActivityDto>();
 
-        // Fetch and map payments (if not filtered out)
         if (!filter.ActivityType.HasValue || filter.ActivityType == ActivityType.Payment)
         {
             var payments = await paymentQuery.ToListAsync();
@@ -190,7 +171,7 @@ public class HistoryService : IHistoryService
 
     private async Task<HistorySummaryDto> GetSummaryForUserAsync(Guid userId)
     {
-        var paymentStats = await _paymentRepository.Table
+        var paymentStats = await paymentRepository.Table
             .AsNoTracking()
             .Where(p => p.UserId == userId)
             .GroupBy(p => 1)
@@ -204,7 +185,7 @@ public class HistoryService : IHistoryService
             })
             .FirstOrDefaultAsync();
 
-        var checkInStats = await _checkInRepository.Table
+        var checkInStats = await checkInRepository.Table
             .AsNoTracking()
             .Where(c => c.UserId == userId)
             .GroupBy(c => 1)

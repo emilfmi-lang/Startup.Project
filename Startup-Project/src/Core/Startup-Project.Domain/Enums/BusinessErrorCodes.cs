@@ -74,6 +74,12 @@ public enum BusinessErrorCodes
     SessionNotFound = 9002,
     SessionAlreadyBooked = 9003,
     TrainerAlreadyExists = 9004,
+    TrainerNotVerified = 9005,
+    SessionNotPaid = 9006,
+    SessionExpired = 9007,
+    SessionAlreadyUsed = 9008,
+    SessionAlreadyCancelled = 9009,
+    SessionAlreadyProcessed = 9010,
 
     // CHECK-IN ERRORS (10000-10999)
     CheckInTokenInvalid = 10000,
