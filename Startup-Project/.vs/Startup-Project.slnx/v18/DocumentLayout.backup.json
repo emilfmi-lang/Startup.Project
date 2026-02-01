@@ -314,8 +314,7 @@
               "RelativeToolTip": "src\\Infrastructure\\Startup-Project.Persistance\\Configurations\\PromoCodeUsageConfiguration.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAAgAAABSAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-01T08:40:09.272Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-01T08:40:09.272Z"
             },
             {
               "$type": "Document",
@@ -327,8 +326,7 @@
               "RelativeToolTip": "src\\Infrastructure\\Startup-Project.Persistance\\Configurations\\PromoCodeConfiguration.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-01T08:39:39.22Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-01T08:39:39.22Z"
             },
             {
               "$type": "Document",
@@ -336,9 +334,9 @@
               "Title": "PromoCodeUsage.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Entities\\PromoCodeUsage.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Domain\\Entities\\PromoCodeUsage.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Entities\\PromoCodeUsage.cs",
-              "RelativeToolTip": "src\\Core\\Startup-Project.Domain\\Entities\\PromoCodeUsage.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAAA4AAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Entities\\PromoCodeUsage.cs*",
+              "RelativeToolTip": "src\\Core\\Startup-Project.Domain\\Entities\\PromoCodeUsage.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-01T08:10:20.451Z",
               "EditorCaption": ""
@@ -377,8 +375,7 @@
               "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Enums\\ActivityStatus.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-29T10:55:48.411Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-29T10:55:48.411Z"
             },
             {
               "$type": "Document",
@@ -414,8 +411,7 @@
               "RelativeToolTip": "src\\Core\\Startup-Project.Domain\\Entities\\PromoCode.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAEIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-31T18:20:34.206Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-31T18:20:34.206Z"
             },
             {
               "$type": "Document",
