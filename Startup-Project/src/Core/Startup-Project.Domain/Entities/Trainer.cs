@@ -9,7 +9,6 @@ public class Trainer : BaseEntity
     public Guid UserId { get; private set; }
     public AppUser User { get; private set; } = null!;
 
-    // GymId nullable - Online trainer ucun NULL olacaq
     public Guid? GymId { get; private set; }
     public Gym? Gym { get; private set; }
 
