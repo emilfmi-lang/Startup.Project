@@ -57,12 +57,48 @@ public class PromoCode : BaseEntity
     public bool IsApplicableToOrder(decimal orderAmount)=>
         !MinimumOrderAmount.HasValue|| orderAmount >= MinimumOrderAmount.Value;
 
-    public bool CanBeApplied(Guid packageId, decimal orderAmount)
-    {
-        return IsActive
-        && IsValidForDate()
-        && HasAvailableUsage()
-        && IsApplicableToPackage(packageId)
-        && IsApplicableToOrder(orderAmount);
+        public bool CanBeApplied(Guid packageId, decimal orderAmount)
+        {
+            return IsActive
+            && IsValidForDate()
+            && HasAvailableUsage()
+            && IsApplicableToPackage(packageId)
+            && IsApplicableToOrder(orderAmount);
+        }
+
+        public void Activate()
+        {
+            IsActive = true;
+            UpdatedAt = DateTime.UtcNow;
+        }
+
+        public void Deactivate()
+        {
+            IsActive = false;
+            UpdatedAt = DateTime.UtcNow;
+        }
+
+        public void Update(string? description, decimal? discountValue, decimal? minimumOrderAmount,
+            int? usageLimit, DateTime? startDate, DateTime? endDate)
+        {
+            if (!string.IsNullOrWhiteSpace(description))
+                Description = description;
+
+            if (discountValue.HasValue && discountValue.Value > 0)
+                DiscountValue = discountValue.Value;
+
+            if (minimumOrderAmount.HasValue)
+                MinimumOrderAmount = minimumOrderAmount.Value;
+
+            if (usageLimit.HasValue && usageLimit.Value > 0)
+                UsageLimit = usageLimit.Value;
+
+            if (startDate.HasValue)
+                StartDate = startDate.Value;
+
+            if (endDate.HasValue)
+                EndDate = endDate.Value;
+
+            UpdatedAt = DateTime.UtcNow;
+        }
     }
-}

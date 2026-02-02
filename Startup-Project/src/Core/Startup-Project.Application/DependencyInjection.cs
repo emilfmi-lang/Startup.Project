@@ -7,7 +7,6 @@ using Startup_Project.Application.Services.Interfaces;
 using Startup_Project.Application.Services.Interfaces.Account;
 using Startup_Project.Application.Services.Interfaces.Admin;
 
-
 namespace Startup_Project.Application;
 
 public static class DependencyInjection
@@ -18,18 +17,36 @@ public static class DependencyInjection
         {
             services.AddAutoMapper(cfg => cfg.AddMaps(typeof(DependencyInjection).Assembly));
             services.AddValidatorsFromAssembly(typeof(DependencyInjection).Assembly);
+
+            // Account
             services.AddScoped<IAccountService, AccountService>();
+
+            // Gym
             services.AddScoped<IGymService, GymService>();
             services.AddScoped<IGymOpeningHourService, GymOpeningHourService>();
-            services.AddScoped<IPaymentService, PaymentService>();
-            services.AddScoped<IPackageService, PackageService>();
-            services.AddScoped<IReviewService, ReviewService>();
-            services.AddScoped<IAdminService, AdminService>();
             services.AddScoped<IGymOwnerService, GymOwnerService>();
+
+            // Package & Payment
+            services.AddScoped<IPackageService, PackageService>();
+            services.AddScoped<IPaymentService, PaymentService>();
+
+            // Review & Favorite
+            services.AddScoped<IReviewService, ReviewService>();
+            services.AddScoped<IFavoriteService, FavoriteService>();
+
+            // Trainer & Session
             services.AddScoped<ITrainerService, TrainerService>();
             services.AddScoped<ITrainingSessionService, TrainingSessionService>();
+
+            // History
             services.AddScoped<IHistoryService, HistoryService>();
-            services.AddScoped<IFavoriteService, FavoriteService>();
+
+            // PromoCode
+            services.AddScoped<IPromoCodeService, PromoCodeService>();
+
+            // Admin
+            services.AddScoped<IAdminService, AdminService>();
+            services.AddScoped<IPromoCodeAdminService, PromoCodeAdminService>();
         }
     }
 }
