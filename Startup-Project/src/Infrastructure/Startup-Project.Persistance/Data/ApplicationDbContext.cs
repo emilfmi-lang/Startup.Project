@@ -23,6 +23,8 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
     public DbSet<TrainingSession> TrainingSessions { get; set; }
     public DbSet<SmsOtp> SmsOtps { get; set; }
     public DbSet<FavoriteGym> FavoriteGyms { get; set; }
+    public DbSet<PromoCode> PromoCodes { get; set; }
+    public DbSet<PromoCodeUsage> PromoCodeUsages { get; set; }
 
     public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
     {
