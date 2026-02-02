@@ -15,7 +15,8 @@ public class PromoCode : BaseEntity
     public int UsedCount { get; private set; }
     public DateTime StartDate { get; private set; }
     public DateTime EndDate { get; private set; }
-    public Guid? PackageId { get; private set; }
+    public Guid? PackageId { get; private set; } 
+    public virtual Package? Package { get; private set; }
     public bool IsActive { get; private set; } = true;
     public virtual List<PromoCodeUsage> PromoCodeUsages { get; private set; } = [];
     public PromoCode() { }

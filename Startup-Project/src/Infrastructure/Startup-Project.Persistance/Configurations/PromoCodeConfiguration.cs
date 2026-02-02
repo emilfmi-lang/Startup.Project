@@ -22,6 +22,11 @@ public class PromoCodeConfiguration : IEntityTypeConfiguration<PromoCode>
        .HasForeignKey(u => u.PromoCodeId)
        .OnDelete(DeleteBehavior.Cascade);
 
+        builder.HasOne(p => p.Package)
+            .WithMany()
+            .HasForeignKey(p => p.PackageId)
+            .OnDelete(DeleteBehavior.Cascade);
+
 
 
 
