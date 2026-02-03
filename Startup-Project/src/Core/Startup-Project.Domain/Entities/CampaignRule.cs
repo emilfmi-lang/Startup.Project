@@ -11,6 +11,7 @@ public class CampaignRule : BaseEntity
     public Operator Operator { get; private set; }
     public string Value { get; private set; } = null!;
     public bool IsRequired { get; private set; }
+    public string? Description { get; private set; }
     private CampaignRule() { }
     public CampaignRule(Guid campaignId, RuleType ruleType, Operator op, string value, bool isRequired)
     {

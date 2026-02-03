@@ -12,6 +12,7 @@ public class CampaignUsage : BaseEntity
     public decimal DiscountAmount { get; private set; }
     public decimal FinalPrice { get; private set; }
     public DateTime AppliedAt { get; private set; } 
+    public DateTime UsedAt { get; private set; }
     private CampaignUsage() { }
     public CampaignUsage(Guid campaignId, Guid userId, Guid packageId,
                         decimal originalPrice, decimal discountAmount)
