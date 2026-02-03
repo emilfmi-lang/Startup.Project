@@ -120,14 +120,58 @@ public class BusinessException : BaseException
         => new(BusinessErrorCodes.AlreadyCheckedIn,
                "Bu gün art?q giri? etmisiniz.");
 
-    // GENERAL FACTORY METHODS
-    public static BusinessException ValidationFailed(string message)
-       => new(BusinessErrorCodes.ValidationFailed, message);
+        // GENERAL FACTORY METHODS
+        public static BusinessException ValidationFailed(string message)
+           => new(BusinessErrorCodes.ValidationFailed, message);
 
-    public static BusinessException UnauthorizedAccess()
-        => new(BusinessErrorCodes.UnauthorizedAccess,
-               "Bu ?m?liyyat üçün giri? etm?lisiniz.");
+        public static BusinessException UnauthorizedAccess()
+            => new(BusinessErrorCodes.UnauthorizedAccess,
+                   "Bu ?m?liyyat üçün giri? etm?lisiniz.");
 
-    public static BusinessException Custom(BusinessErrorCodes errorCode, string message)
-        => new(errorCode, message);
-}
+        public static BusinessException Custom(BusinessErrorCodes errorCode, string message)
+            => new(errorCode, message);
+
+        // ════════════════════════════════════════════════════════════════
+        // CAMPAIGN FACTORY METHODS
+        // ════════════════════════════════════════════════════════════════
+
+        public static BusinessException CampaignExpired(string name, DateTime endDate)
+            => new(BusinessErrorCodes.CampaignExpired,
+                   $"'{name}' kampaniyasının müddəti bitib. Son tarix: {endDate:dd.MM.yyyy}");
+
+        public static BusinessException CampaignDeactivated(string name)
+            => new(BusinessErrorCodes.CampaignDeactivated,
+                   $"'{name}' kampaniyası deaktiv edilib.");
+
+        public static BusinessException CampaignUsageLimitExceeded(string name, int limit)
+            => new(BusinessErrorCodes.CampaignUsageLimitExceeded,
+                   $"'{name}' kampaniyasının istifadə limiti ({limit}) dolub.");
+
+        public static BusinessException CampaignNotApplicable(string name)
+            => new(BusinessErrorCodes.CampaignNotApplicable,
+                   $"'{name}' kampaniyası bu şərtlərə uyğun deyil.");
+
+        public static BusinessException CampaignMinimumAmountNotMet(string name, decimal minAmount, decimal actualAmount)
+            => new(BusinessErrorCodes.CampaignMinimumAmountNotMet,
+                   $"'{name}' kampaniyası üçün minimum {minAmount:F2} AZN lazımdır. Cari: {actualAmount:F2} AZN");
+
+        public static BusinessException CampaignRuleEvaluationFailed(string ruleName)
+            => new(BusinessErrorCodes.CampaignRuleEvaluationFailed,
+                   $"Kampaniya qaydası '{ruleName}' yerinə yetirilmədi.");
+
+        public static BusinessException CampaignAlreadyExists(string name)
+            => new(BusinessErrorCodes.CampaignAlreadyExists,
+                   $"'{name}' adlı kampaniya artıq mövcuddur.");
+
+        // ════════════════════════════════════════════════════════════════
+        // PRICING FACTORY METHODS
+        // ════════════════════════════════════════════════════════════════
+
+        public static BusinessException PricingCalculationFailed(string reason)
+            => new(BusinessErrorCodes.PricingCalculationFailed,
+                   $"Qiymət hesablanması uğursuz oldu: {reason}");
+
+        public static BusinessException InvalidPricingContext()
+            => new(BusinessErrorCodes.InvalidPricingContext,
+                   "Qiymət hesablaması üçün kontekst düzgün deyil.");
+    }

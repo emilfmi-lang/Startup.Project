@@ -87,7 +87,20 @@ public class NotFoundException : BaseException
         => new(BusinessErrorCodes.ReviewNotFound, $"R?y tap?lmad?. ID: {reviewId}");
 
 
-    // FAVORITE FACTORY METHODS
-    public static NotFoundException Favorite(Guid gymId)
-        => new(BusinessErrorCodes.FavoriteNotFound, $"Sevimli tap?lmad?. Gym ID: {gymId}");
-}
+        // FAVORITE FACTORY METHODS
+        public static NotFoundException Favorite(Guid gymId)
+            => new(BusinessErrorCodes.FavoriteNotFound, $"Sevimli tap?lmad?. Gym ID: {gymId}");
+
+        // ════════════════════════════════════════════════════════════════
+        // CAMPAIGN FACTORY METHODS
+        // ════════════════════════════════════════════════════════════════
+
+        public static NotFoundException Campaign(Guid campaignId)
+            => new(BusinessErrorCodes.CampaignNotFound, $"Kampaniya tapılmadı. ID: {campaignId}");
+
+        public static NotFoundException Campaign(string name)
+            => new(BusinessErrorCodes.CampaignNotFound, $"'{name}' kampaniyası tapılmadı.");
+
+        public static NotFoundException CampaignRule(Guid ruleId)
+            => new(BusinessErrorCodes.CampaignRuleNotFound, $"Kampaniya qaydası tapılmadı. ID: {ruleId}");
+    }

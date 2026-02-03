@@ -87,7 +87,23 @@ public enum BusinessErrorCodes
     AlreadyCheckedIn = 10002,
     CheckInNotAllowed = 10003,
 
-    // REVIEW ERRORS (11000-11999)
-    ReviewNotFound = 11000,
-    AlreadyReviewed = 11001
-}
+        // REVIEW ERRORS (11000-11999)
+        ReviewNotFound = 11000,
+        AlreadyReviewed = 11001,
+
+        // CAMPAIGN ERRORS (12000-12999)
+        CampaignNotFound = 12000,
+        CampaignExpired = 12001,
+        CampaignDeactivated = 12002,
+        CampaignUsageLimitExceeded = 12003,
+        CampaignNotApplicable = 12004,
+        CampaignMinimumAmountNotMet = 12005,
+        CampaignRuleNotFound = 12006,
+        CampaignRuleEvaluationFailed = 12007,
+        CampaignAlreadyExists = 12008,
+
+        // PRICING ERRORS (13000-13999)
+        PricingCalculationFailed = 13000,
+        InvalidPricingContext = 13001,
+        NoCampaignsApplicable = 13002
+    }
