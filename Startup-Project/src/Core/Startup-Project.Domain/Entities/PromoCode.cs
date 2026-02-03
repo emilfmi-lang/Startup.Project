@@ -1,6 +1,7 @@
 ﻿
 using Startup_Project.Domain.Entities.Common;
 using Startup_Project.Domain.Enums;
+using Startup_Project.Domain.Exceptions;
 
 namespace Startup_Project.Domain.Entities;
 
@@ -34,9 +35,9 @@ public class PromoCode : BaseEntity
         PackageId = packageId;
         CreatedAt = DateTime.UtcNow;
         if(discountValue <= 0)
-            throw new ArgumentException("Discount value must be greater than zero.");
+            throw BusinessException.ValidationFailed("Endirim dəyəri 0-dan böyük olmalıdır.");
         if(startDate >= endDate)
-            throw new ArgumentException("Start date must be earlier than end date.");
+            throw BusinessException.ValidationFailed("Başlama tarixi bitmə tarixindən əvvəl olmalıdır.");
     }
     public bool IsValidForDate() => DateTime.UtcNow >= StartDate && DateTime.UtcNow <= EndDate;
     public bool HasAvailableUsage() => UsedCount < UsageLimit;

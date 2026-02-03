@@ -1,5 +1,6 @@
 ﻿using Startup_Project.Domain.Entities.Common;
 using Startup_Project.Domain.Enums;
+using Startup_Project.Domain.Exceptions;
 
 namespace Startup_Project.Domain.Entities;
 
@@ -18,7 +19,7 @@ public class CampaignRule : BaseEntity
     public CampaignRule(Guid campaignId, RuleType ruleType, Operator op, string value, bool isRequired, string? description = null)
     {
         if (string.IsNullOrWhiteSpace(value))
-            throw new ArgumentException("Qayda dəyəri boş ola bilməz.");
+            throw BusinessException.ValidationFailed("Qayda dəyəri boş ola bilməz.");
 
         CampaignId = campaignId;
         RuleType = ruleType;

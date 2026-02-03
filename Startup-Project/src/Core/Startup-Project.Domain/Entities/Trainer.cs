@@ -1,6 +1,7 @@
 ﻿using Startup_Project.Domain.Entities.Common;
 using Startup_Project.Domain.Entities.Identity;
 using Startup_Project.Domain.Enums;
+using Startup_Project.Domain.Exceptions;
 
 namespace Startup_Project.Domain.Entities;
 
@@ -70,7 +71,7 @@ public class Trainer : BaseEntity
     public void SetSessionPrice(decimal price)
     {
         if (price < 0)
-            throw new ArgumentException("Qiymet menfi ola bilmez.");
+            throw BusinessException.ValidationFailed("Qiymət mənfi ola bilməz.");
         SessionPrice = price;
         UpdatedAt = DateTime.UtcNow;
     }
@@ -78,7 +79,7 @@ public class Trainer : BaseEntity
     public void SetSpecialization(string specialization)
     {
         if (string.IsNullOrWhiteSpace(specialization))
-            throw new ArgumentException("Ixtisas bos ola bilmez.");
+            throw BusinessException.ValidationFailed("İxtisas boş ola bilməz.");
         Specialization = specialization;
         UpdatedAt = DateTime.UtcNow;
     }

@@ -1,5 +1,6 @@
 ﻿using Startup_Project.Domain.Entities.Common;
 using Startup_Project.Domain.Entities.Identity;
+using Startup_Project.Domain.Exceptions;
 
 namespace Startup_Project.Domain.Entities;
 
@@ -74,7 +75,7 @@ public class Gym : BaseEntity
     public void SetName(string name)
     {
         if (string.IsNullOrWhiteSpace(name))
-            throw new ArgumentException("Gym name cannot be empty.");
+            throw BusinessException.ValidationFailed("Zal adı boş ola bilməz.");
         Name = name;
         UpdatedAt = DateTime.UtcNow;
     }
@@ -82,7 +83,7 @@ public class Gym : BaseEntity
     public void SetAddress(string address)
     {
         if (string.IsNullOrWhiteSpace(address))
-            throw new ArgumentException("Address cannot be empty.");
+            throw BusinessException.ValidationFailed("Ünvan boş ola bilməz.");
         Address = address;
         UpdatedAt = DateTime.UtcNow;
     }

@@ -1,5 +1,6 @@
 ﻿using Startup_Project.Domain.Entities.Common;
 using Startup_Project.Domain.Enums;
+using Startup_Project.Domain.Exceptions;
 
 namespace Startup_Project.Domain.Entities;
 
@@ -32,11 +33,11 @@ public class Campaign : BaseEntity
                     int? usageLimit = null)
     {
         if (discountValue <= 0)
-            throw new ArgumentException("Endirim dəyəri 0-dan böyük olmalıdır.");
+            throw BusinessException.ValidationFailed("Endirim dəyəri 0-dan böyük olmalıdır.");
         if (startDate >= endDate)
-            throw new ArgumentException("Başlama tarixi bitmə tarixindən əvvəl olmalıdır.");
+            throw BusinessException.ValidationFailed("Başlama tarixi bitmə tarixindən əvvəl olmalıdır.");
         if (discountType == DiscountType.Percentage && discountValue > 100)
-            throw new ArgumentException("Faiz endirimi 100-dən çox ola bilməz.");
+            throw BusinessException.ValidationFailed("Faiz endirimi 100-dən çox ola bilməz.");
 
         Name = name;
         Description = description;

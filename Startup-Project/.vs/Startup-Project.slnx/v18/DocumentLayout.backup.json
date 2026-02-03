@@ -3,20 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AD773E88-F03D-1A3F-FD06-6E6FFAE722E4}|src\\Core\\Startup-Project.Domain\\Startup-Project.Domain.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.domain\\entities\\campaign .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD773E88-F03D-1A3F-FD06-6E6FFAE722E4}|src\\Core\\Startup-Project.Domain\\Startup-Project.Domain.csproj|solutionrelative:src\\core\\startup-project.domain\\entities\\campaign .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AD773E88-F03D-1A3F-FD06-6E6FFAE722E4}|src\\Core\\Startup-Project.Domain\\Startup-Project.Domain.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.domain\\entities\\promocode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD773E88-F03D-1A3F-FD06-6E6FFAE722E4}|src\\Core\\Startup-Project.Domain\\Startup-Project.Domain.csproj|solutionrelative:src\\core\\startup-project.domain\\entities\\promocode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\validators\\campaign\\createcampaigndtovalidator .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\validators\\campaign\\createcampaigndtovalidator .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\validators\\pricing\\pricingrequestdtovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\validators\\pricing\\pricingrequestdtovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AD773E88-F03D-1A3F-FD06-6E6FFAE722E4}|src\\Core\\Startup-Project.Domain\\Startup-Project.Domain.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.domain\\entities\\campaign .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD773E88-F03D-1A3F-FD06-6E6FFAE722E4}|src\\Core\\Startup-Project.Domain\\Startup-Project.Domain.csproj|solutionrelative:src\\core\\startup-project.domain\\entities\\campaign .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\mappings\\campaigns\\campaignprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\mappings\\campaigns\\campaignprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\validators\\pricing\\pricingrequestdtovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\validators\\pricing\\pricingrequestdtovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\validators\\gym\\gymcreatedtovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -133,10 +137,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\services\\concretes\\admin\\promocodeadminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\services\\concretes\\admin\\promocodeadminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD773E88-F03D-1A3F-FD06-6E6FFAE722E4}|src\\Core\\Startup-Project.Domain\\Startup-Project.Domain.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.domain\\entities\\promocode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD773E88-F03D-1A3F-FD06-6E6FFAE722E4}|src\\Core\\Startup-Project.Domain\\Startup-Project.Domain.csproj|solutionrelative:src\\core\\startup-project.domain\\entities\\promocode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\services\\interfaces\\ipromocodeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -477,6 +477,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.application\\validators\\campaign\\updatecampaigndtovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9AFFCA91-AB76-D6AF-CE6B-A3E083DD87EC}|src\\Core\\Startup-Project.Application\\Startup-Project.Application.csproj|solutionrelative:src\\core\\startup-project.application\\validators\\campaign\\updatecampaigndtovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD773E88-F03D-1A3F-FD06-6E6FFAE722E4}|src\\Core\\Startup-Project.Domain\\Startup-Project.Domain.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.domain\\entities\\package.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD773E88-F03D-1A3F-FD06-6E6FFAE722E4}|src\\Core\\Startup-Project.Domain\\Startup-Project.Domain.csproj|solutionrelative:src\\core\\startup-project.domain\\entities\\package.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD773E88-F03D-1A3F-FD06-6E6FFAE722E4}|src\\Core\\Startup-Project.Domain\\Startup-Project.Domain.csproj|c:\\users\\user\\desktop\\startup-project\\startup-project\\src\\core\\startup-project.domain\\entities\\subscription.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD773E88-F03D-1A3F-FD06-6E6FFAE722E4}|src\\Core\\Startup-Project.Domain\\Startup-Project.Domain.csproj|solutionrelative:src\\core\\startup-project.domain\\entities\\subscription.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -486,8 +494,109 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 7,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 120,
+              "Title": "Subscription.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Entities\\Subscription.cs",
+              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Domain\\Entities\\Subscription.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Entities\\Subscription.cs",
+              "RelativeToolTip": "src\\Core\\Startup-Project.Domain\\Entities\\Subscription.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-03T08:32:34.818Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 119,
+              "Title": "Package.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Entities\\Package.cs",
+              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Domain\\Entities\\Package.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Entities\\Package.cs",
+              "RelativeToolTip": "src\\Core\\Startup-Project.Domain\\Entities\\Package.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-03T08:32:34.289Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GymCreateDtoValidator.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Validators\\Gym\\GymCreateDtoValidator.cs",
+              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Validators\\Gym\\GymCreateDtoValidator.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Validators\\Gym\\GymCreateDtoValidator.cs",
+              "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Validators\\Gym\\GymCreateDtoValidator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-03T08:10:22.189Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CampaignProfile.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Mappings\\Campaigns\\CampaignProfile.cs",
+              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Mappings\\Campaigns\\CampaignProfile.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Mappings\\Campaigns\\CampaignProfile.cs",
+              "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Mappings\\Campaigns\\CampaignProfile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-03T08:20:31.306Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PricingRequestDtoValidator.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Validators\\Pricing\\PricingRequestDtoValidator.cs",
+              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Validators\\Pricing\\PricingRequestDtoValidator.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Validators\\Pricing\\PricingRequestDtoValidator.cs",
+              "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Validators\\Pricing\\PricingRequestDtoValidator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-03T08:20:21.234Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CreateCampaignDtoValidator .cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Validators\\Campaign\\CreateCampaignDtoValidator .cs",
+              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Validators\\Campaign\\CreateCampaignDtoValidator .cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Validators\\Campaign\\CreateCampaignDtoValidator .cs",
+              "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Validators\\Campaign\\CreateCampaignDtoValidator .cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAEEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-03T08:09:52.262Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Campaign .cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Entities\\Campaign .cs",
+              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Domain\\Entities\\Campaign .cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Entities\\Campaign .cs",
+              "RelativeToolTip": "src\\Core\\Startup-Project.Domain\\Entities\\Campaign .cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-02T17:45:28.733Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PromoCode.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Entities\\PromoCode.cs",
+              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Domain\\Entities\\PromoCode.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Entities\\PromoCode.cs",
+              "RelativeToolTip": "src\\Core\\Startup-Project.Domain\\Entities\\PromoCode.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-31T18:20:34.206Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 116,
@@ -498,73 +607,7 @@
               "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Dtos\\Campaign\\CreateCampaignDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-03T08:18:56.743Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "GymCreateDtoValidator.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Validators\\Gym\\GymCreateDtoValidator.cs",
-              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Validators\\Gym\\GymCreateDtoValidator.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Validators\\Gym\\GymCreateDtoValidator.cs",
-              "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Validators\\Gym\\GymCreateDtoValidator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-03T08:10:22.189Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CampaignProfile.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Mappings\\Campaigns\\CampaignProfile.cs",
-              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Mappings\\Campaigns\\CampaignProfile.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Mappings\\Campaigns\\CampaignProfile.cs",
-              "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Mappings\\Campaigns\\CampaignProfile.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-03T08:20:31.306Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PricingRequestDtoValidator.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Validators\\Pricing\\PricingRequestDtoValidator.cs",
-              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Validators\\Pricing\\PricingRequestDtoValidator.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Validators\\Pricing\\PricingRequestDtoValidator.cs",
-              "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Validators\\Pricing\\PricingRequestDtoValidator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-03T08:20:21.234Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CreateCampaignDtoValidator .cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Validators\\Campaign\\CreateCampaignDtoValidator .cs",
-              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Validators\\Campaign\\CreateCampaignDtoValidator .cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Validators\\Campaign\\CreateCampaignDtoValidator .cs",
-              "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Validators\\Campaign\\CreateCampaignDtoValidator .cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEEAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-03T08:09:52.262Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Campaign .cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Entities\\Campaign .cs",
-              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Domain\\Entities\\Campaign .cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Entities\\Campaign .cs",
-              "RelativeToolTip": "src\\Core\\Startup-Project.Domain\\Entities\\Campaign .cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAhwA4AAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T17:45:28.733Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-03T08:18:56.743Z"
             },
             {
               "$type": "Document",
@@ -576,8 +619,7 @@
               "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Dtos\\Campaign\\UpdateCampaignDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-03T08:19:05.943Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-03T08:19:05.943Z"
             },
             {
               "$type": "Document",
@@ -589,12 +631,11 @@
               "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Validators\\Campaign\\UpdateCampaignDtoValidator.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-03T08:20:12.681Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-03T08:20:12.681Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "CampaignUsageDto.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Dtos\\Campaign\\CampaignUsageDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Dtos\\Campaign\\CampaignUsageDto.cs",
@@ -602,12 +643,11 @@
               "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Dtos\\Campaign\\CampaignUsageDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-03T08:08:03.905Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-03T08:08:03.905Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "CampaignRuleDto.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Dtos\\Campaign\\CampaignRuleDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Dtos\\Campaign\\CampaignRuleDto.cs",
@@ -615,12 +655,11 @@
               "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Dtos\\Campaign\\CampaignRuleDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-03T08:07:45.64Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-03T08:07:45.64Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "CampaignDetailDto .cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Dtos\\Campaign\\CampaignDetailDto .cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Dtos\\Campaign\\CampaignDetailDto .cs",
@@ -628,12 +667,11 @@
               "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Dtos\\Campaign\\CampaignDetailDto .cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-03T08:07:02.966Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-03T08:07:02.966Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "CampaignListDto.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Dtos\\Campaign\\CampaignListDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Dtos\\Campaign\\CampaignListDto.cs",
@@ -641,12 +679,11 @@
               "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Dtos\\Campaign\\CampaignListDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-03T08:06:25.848Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-03T08:06:25.848Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "PricingResultDto.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Dtos\\Pricing\\PricingResultDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Dtos\\Pricing\\PricingResultDto.cs",
@@ -654,12 +691,11 @@
               "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Dtos\\Pricing\\PricingResultDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-03T08:05:44.868Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-03T08:05:44.868Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "AppliedDiscountDto.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Dtos\\Pricing\\AppliedDiscountDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Dtos\\Pricing\\AppliedDiscountDto.cs",
@@ -667,12 +703,11 @@
               "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Dtos\\Pricing\\AppliedDiscountDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-03T08:05:05.042Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-03T08:05:05.042Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "PricingRequestDto.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Dtos\\Pricing\\PricingRequestDto.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Dtos\\Pricing\\PricingRequestDto.cs",
@@ -680,8 +715,7 @@
               "RelativeToolTip": "src\\Core\\Startup-Project.Application\\Dtos\\Pricing\\PricingRequestDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-03T08:04:11.553Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-03T08:04:11.553Z"
             },
             {
               "$type": "Document",
@@ -697,7 +731,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "CampaignUsageConfiguration.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Persistance\\Configurations\\CampaignUsageConfiguration.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\Startup-Project.Persistance\\Configurations\\CampaignUsageConfiguration.cs",
@@ -709,20 +743,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "CampaignRule.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Entities\\CampaignRule.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Domain\\Entities\\CampaignRule.cs",
               "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Entities\\CampaignRule.cs",
               "RelativeToolTip": "src\\Core\\Startup-Project.Domain\\Entities\\CampaignRule.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAEBUwA0AAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAAAEAAAAAAAAAAIBJwA4AAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-02T17:51:37.679Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "CampaignUsage.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Entities\\CampaignUsage.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Domain\\Entities\\CampaignUsage.cs",
@@ -734,7 +768,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Persistance\\Data\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\Startup-Project.Persistance\\Data\\ApplicationDbContext.cs",
@@ -742,12 +776,11 @@
               "RelativeToolTip": "src\\Infrastructure\\Startup-Project.Persistance\\Data\\ApplicationDbContext.cs",
               "ViewState": "AgIAABMAAAAAAAAAAAAkwB4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-29T10:46:00.826Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-29T10:46:00.826Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "IApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Interfaces\\IApplicationDbContext.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Interfaces\\IApplicationDbContext.cs",
@@ -759,7 +792,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "CampaignConfiguration.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Persistance\\Configurations\\CampaignConfiguration.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\Startup-Project.Persistance\\Configurations\\CampaignConfiguration.cs",
@@ -771,7 +804,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "CampaignRuleConfiguration.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Persistance\\Configurations\\CampaignRuleConfiguration.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\Startup-Project.Persistance\\Configurations\\CampaignRuleConfiguration.cs",
@@ -783,7 +816,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "Pricing-Campaign-Roadmap.md",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\docs\\Pricing-Campaign-Roadmap.md",
               "RelativeDocumentMoniker": "docs\\Pricing-Campaign-Roadmap.md",
@@ -795,7 +828,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "TargetType.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Enums\\TargetType.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Domain\\Enums\\TargetType.cs",
@@ -807,7 +840,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "FavoriteGymConfiguration.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Persistance\\Configurations\\FavoriteGymConfiguration.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\Startup-Project.Persistance\\Configurations\\FavoriteGymConfiguration.cs",
@@ -819,7 +852,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "RuleType.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Enums\\RuleType.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Domain\\Enums\\RuleType.cs",
@@ -831,7 +864,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "Operator.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Enums\\Operator.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Domain\\Enums\\Operator.cs",
@@ -843,7 +876,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "Pricing-Campaign-System-Plan.md",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\docs\\Pricing-Campaign-System-Plan.md",
               "RelativeDocumentMoniker": "docs\\Pricing-Campaign-System-Plan.md",
@@ -867,7 +900,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "ApplicationDbContextFactory.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Infrastructure\\Startup-Project.Persistance\\Data\\ApplicationDbContextFactory.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\Startup-Project.Persistance\\Data\\ApplicationDbContextFactory.cs",
@@ -879,7 +912,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 31,
               "Title": "PromoCodeAdminController.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Presentation\\Startup-Project.WebAPI\\Controllers\\Admin\\PromoCodeAdminController.cs",
               "RelativeDocumentMoniker": "src\\Presentation\\Startup-Project.WebAPI\\Controllers\\Admin\\PromoCodeAdminController.cs",
@@ -891,7 +924,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "BaseEntity.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Entities\\Common\\BaseEntity.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Domain\\Entities\\Common\\BaseEntity.cs",
@@ -903,7 +936,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 30,
               "Title": "PromoCodeUsage.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Entities\\PromoCodeUsage.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Domain\\Entities\\PromoCodeUsage.cs",
@@ -915,7 +948,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "PromoCodeService.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Services\\Concretes\\PromoCodeService.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Services\\Concretes\\PromoCodeService.cs",
@@ -927,7 +960,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "NotFoundException.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Exceptions\\NotFoundException.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Domain\\Exceptions\\NotFoundException.cs",
@@ -935,12 +968,11 @@
               "RelativeToolTip": "src\\Core\\Startup-Project.Domain\\Exceptions\\NotFoundException.cs",
               "ViewState": "AgIAAGcAAAAAAAAAAIBQwAQAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-30T19:35:38.99Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-30T19:35:38.99Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 33,
               "Title": "PromoCodeAdminService.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Services\\Concretes\\Admin\\PromoCodeAdminService.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Services\\Concretes\\Admin\\PromoCodeAdminService.cs",
@@ -964,19 +996,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "PromoCode.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Entities\\PromoCode.cs",
-              "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Domain\\Entities\\PromoCode.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Entities\\PromoCode.cs",
-              "RelativeToolTip": "src\\Core\\Startup-Project.Domain\\Entities\\PromoCode.cs",
-              "ViewState": "AgIAAFEAAAAAAAAAAAAAABIAAAA5AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-31T18:20:34.206Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 32,
               "Title": "IPromoCodeAdminService.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Application\\Services\\Interfaces\\Admin\\IPromoCodeAdminService.cs",
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Application\\Services\\Interfaces\\Admin\\IPromoCodeAdminService.cs",
@@ -1210,9 +1230,10 @@
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Domain\\Entities\\Trainer.cs",
               "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Entities\\Trainer.cs",
               "RelativeToolTip": "src\\Core\\Startup-Project.Domain\\Entities\\Trainer.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAuwBEAAAA4AAAAAAAAAA==",
+              "ViewState": "AgIAAAIAAAAAAAAAAIBJwBIAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-01T07:53:03.786Z"
+              "WhenOpened": "2026-02-01T07:53:03.786Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -1476,8 +1497,7 @@
               "RelativeToolTip": "src\\Core\\Startup-Project.Domain\\Exceptions\\BusinessException.cs",
               "ViewState": "AgIAAKYAAAAAAAAAAIBJwAsAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-30T18:59:36.774Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-30T18:59:36.774Z"
             },
             {
               "$type": "Document",
@@ -1501,8 +1521,7 @@
               "RelativeToolTip": "src\\Core\\Startup-Project.Domain\\Enums\\BusinessErrorCodes.cs",
               "ViewState": "AgIAAGoAAAAAAAAAAIBJwAgAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-30T19:35:59.743Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-30T19:35:59.743Z"
             },
             {
               "$type": "Document",
@@ -1776,9 +1795,10 @@
               "RelativeDocumentMoniker": "src\\Core\\Startup-Project.Domain\\Entities\\Gym.cs",
               "ToolTip": "C:\\Users\\User\\Desktop\\Startup-PROJECT\\Startup-Project\\src\\Core\\Startup-Project.Domain\\Entities\\Gym.cs",
               "RelativeToolTip": "src\\Core\\Startup-Project.Domain\\Entities\\Gym.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAApwGUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAEAAAAAAAAAAIBJwGYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-29T12:07:08.221Z"
+              "WhenOpened": "2026-01-29T12:07:08.221Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",

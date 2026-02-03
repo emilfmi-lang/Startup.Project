@@ -1,5 +1,6 @@
 ﻿using Startup_Project.Domain.Entities.Common;
 using Startup_Project.Domain.Entities.Identity;
+using Startup_Project.Domain.Exceptions;
 
 namespace Startup_Project.Domain.Entities;
 
@@ -23,7 +24,7 @@ public class Subscription: BaseEntity
     public void Extend(int extraDays)
     {
         if (extraDays <= 0)
-            throw new ArgumentException("Extra days must be positive");
+            throw BusinessException.ValidationFailed("Əlavə günlər 0-dan böyük olmalıdır.");
 
         EndDate = EndDate.AddDays(extraDays);
         UpdatedAt = DateTime.UtcNow;
