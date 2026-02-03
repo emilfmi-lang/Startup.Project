@@ -54,7 +54,7 @@ public class PromoCodeService(
             FinalPrice = finalPrice,
             DiscountType = promoCode.DiscountType.ToString(),
             DiscountValue = promoCode.DiscountValue,
-            Message = $"Promokod keç?rlidir. {discountAmount:F2} AZN endirim t?tbiq olunacaq."
+            Message = $"Promokod keçerlidir. {discountAmount:F2} AZN endirim t?tbiq olunacaq."
         });
     }
 

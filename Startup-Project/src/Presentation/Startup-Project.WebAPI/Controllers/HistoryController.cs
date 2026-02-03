@@ -11,26 +11,9 @@ namespace Startup_Project.WebAPI.Controllers;
 [Authorize]
 public class HistoryController(IHistoryService historyService) : ControllerBase
 {
-    [HttpGet]
-    public async Task<IActionResult> GetHistory(
-        [FromQuery] ActivityStatus? status,
-        [FromQuery] ActivityType? type,
-        [FromQuery] DateTime? startDate,
-        [FromQuery] DateTime? endDate,
-        [FromQuery] int page = 1,
-        [FromQuery] int pageSize = 20)
-    {
-        var filter = new HistoryFilterDto
-        {
-            Status = status,
-            ActivityType = type,
-            StartDate = startDate,
-            EndDate = endDate,
-            Page = page,
-            PageSize = pageSize
-        };
-        return Ok(await historyService.GetMyHistoryAsync(filter));
-    }
+   [HttpGet]
+    public async Task<IActionResult> GetHistory([FromQuery] HistoryFilterDto filter)
+        => Ok(await historyService.GetMyHistoryAsync(filter));
 
     [HttpGet("summary")]
     public async Task<IActionResult> GetSummary()
@@ -41,42 +24,16 @@ public class HistoryController(IHistoryService historyService) : ControllerBase
         => Ok(await historyService.GetRecentActivitiesAsync(count));
 
     [HttpGet("payments")]
-    public async Task<IActionResult> GetPayments(
-        [FromQuery] ActivityStatus? status,
-        [FromQuery] DateTime? startDate,
-        [FromQuery] DateTime? endDate,
-        [FromQuery] int page = 1,
-        [FromQuery] int pageSize = 20)
+    public async Task<IActionResult> GetPayments([FromQuery] HistoryFilterDto filter)
     {
-        var filter = new HistoryFilterDto
-        {
-            Status = status,
-            ActivityType = ActivityType.Payment,
-            StartDate = startDate,
-            EndDate = endDate,
-            Page = page,
-            PageSize = pageSize
-        };
+        filter.ActivityType = ActivityType.Payment; 
         return Ok(await historyService.GetMyHistoryAsync(filter));
     }
 
     [HttpGet("check-ins")]
-    public async Task<IActionResult> GetCheckIns(
-        [FromQuery] ActivityStatus? status,
-        [FromQuery] DateTime? startDate,
-        [FromQuery] DateTime? endDate,
-        [FromQuery] int page = 1,
-        [FromQuery] int pageSize = 20)
+    public async Task<IActionResult> GetCheckIns([FromQuery] HistoryFilterDto filter)
     {
-        var filter = new HistoryFilterDto
-        {
-            Status = status,
-            ActivityType = ActivityType.CheckIn,
-            StartDate = startDate,
-            EndDate = endDate,
-            Page = page,
-            PageSize = pageSize
-        };
+        filter.ActivityType = ActivityType.CheckIn; 
         return Ok(await historyService.GetMyHistoryAsync(filter));
     }
 }
