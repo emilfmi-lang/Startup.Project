@@ -34,7 +34,8 @@ try
     builder.Services.AddPersistanceServices(builder.Configuration);
     builder.Services.AddInfrastructureServices(builder.Configuration);
     builder.Services.AddHttpClient<IBankService, KapitalBankService>()
-    .ConfigurePrimaryHttpMessageHandler(() => {
+    .ConfigurePrimaryHttpMessageHandler(() =>
+    {
         var handler = new HttpClientHandler();
         handler.ClientCertificates.Add(new X509Certificate2("path_to_cert.pfx", "password"));
         return handler;
@@ -57,46 +58,58 @@ try
             ValidAudience = builder.Configuration["JwtSettings:Audience"],
             IssuerSigningKey = new SymmetricSecurityKey(
                 Encoding.UTF8.GetBytes(builder.Configuration["JwtSettings:SecretKey"]!))
-                };
-            });
+        };
+    });
 
-            builder.Services.AddAuthorization();
+    builder.Services.AddAuthorization();
 
-            builder.Services.AddControllers();
+    builder.Services.AddControllers();
 
-            builder.Services.AddOpenApi();
+    builder.Services.AddOpenApi();
 
-            var app = builder.Build();
-
-            using (var scope = app.Services.CreateScope())
-            {
-                var services = scope.ServiceProvider;
-                await Startup_Project.Persistance.Seeding.RoleSeeder.SeedRolesAsync(services);
-                await Startup_Project.Persistance.Seeding.AdminUserSeeder.SeedAdminAsync(services);
-                await Startup_Project.Persistance.Seeding.GymSeeder.SeedGymsAsync(services);
-            }
-
-            app.UseMiddleware<ExceptionHandlingMiddleware>();
-
-            app.MapOpenApi();
-            app.MapScalarApiReference(options =>
-            {
-                options.Title = "Startup Project API";
-                options.DefaultHttpClient = new(ScalarTarget.CSharp, ScalarClient.HttpClient);
-            });
-
-            app.UseStaticFiles();
-
-            app.UseAuthentication();
-            app.UseAuthorization();
-            app.MapControllers();
-
-            app.Run();
-        }
-        catch (Exception ex)
+    builder.Services.AddCors(opt =>
+    {
+        opt.AddPolicy("CorsPolicy", policy =>
         {
-            Log.Fatal(ex, "Proqramın işə düşməsi zamanı kritik xəta baş verdi!");
-        }
+            policy.AllowAnyOrigin()
+                  .AllowAnyMethod()
+                  .AllowAnyHeader();
+        });
+    });
+
+    var app = builder.Build();
+
+    using (var scope = app.Services.CreateScope())
+    {
+        var services = scope.ServiceProvider;
+        await Startup_Project.Persistance.Seeding.RoleSeeder.SeedRolesAsync(services);
+        await Startup_Project.Persistance.Seeding.AdminUserSeeder.SeedAdminAsync(services);
+        await Startup_Project.Persistance.Seeding.GymSeeder.SeedGymsAsync(services);
+    }
+
+    app.UseMiddleware<ExceptionHandlingMiddleware>();
+
+    app.MapOpenApi();
+    app.MapScalarApiReference(options =>
+    {
+        options.Title = "Startup Project API";
+        options.DefaultHttpClient = new(ScalarTarget.CSharp, ScalarClient.HttpClient);
+    });
+
+    app.UseStaticFiles();
+
+    app.UseAuthentication();
+    app.UseAuthorization();
+    app.MapControllers();
+
+    app.UseCors("CorsPolicy");
+
+    app.Run();
+}
+catch (Exception ex)
+{
+    Log.Fatal(ex, "Proqramın işə düşməsi zamanı kritik xəta baş verdi!");
+}
 finally
 {
     Log.CloseAndFlush();

@@ -6,7 +6,7 @@
   },
   "servers": [
     {
-      "url": "http://localhost:5086"
+      "url": "http://localhost:5000"
     }
   ],
   "paths": {
@@ -345,21 +345,21 @@
         ],
         "parameters": [
           {
-            "name": "status",
+            "name": "Status",
             "in": "query",
             "schema": {
               "$ref": "#/components/schemas/ActivityStatus"
             }
           },
           {
-            "name": "type",
+            "name": "ActivityType",
             "in": "query",
             "schema": {
               "$ref": "#/components/schemas/ActivityType"
             }
           },
           {
-            "name": "startDate",
+            "name": "StartDate",
             "in": "query",
             "schema": {
               "type": "string",
@@ -367,7 +367,7 @@
             }
           },
           {
-            "name": "endDate",
+            "name": "EndDate",
             "in": "query",
             "schema": {
               "type": "string",
@@ -375,7 +375,7 @@
             }
           },
           {
-            "name": "page",
+            "name": "Page",
             "in": "query",
             "schema": {
               "pattern": "^-?(?:0|[1-9]\\d*)$",
@@ -383,12 +383,11 @@
                 "integer",
                 "string"
               ],
-              "format": "int32",
-              "default": 1
+              "format": "int32"
             }
           },
           {
-            "name": "pageSize",
+            "name": "PageSize",
             "in": "query",
             "schema": {
               "pattern": "^-?(?:0|[1-9]\\d*)$",
@@ -396,8 +395,7 @@
                 "integer",
                 "string"
               ],
-              "format": "int32",
-              "default": 20
+              "format": "int32"
             }
           }
         ],
@@ -454,14 +452,21 @@
         ],
         "parameters": [
           {
-            "name": "status",
+            "name": "Status",
             "in": "query",
             "schema": {
               "$ref": "#/components/schemas/ActivityStatus"
             }
           },
           {
-            "name": "startDate",
+            "name": "ActivityType",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/ActivityType"
+            }
+          },
+          {
+            "name": "StartDate",
             "in": "query",
             "schema": {
               "type": "string",
@@ -469,7 +474,7 @@
             }
           },
           {
-            "name": "endDate",
+            "name": "EndDate",
             "in": "query",
             "schema": {
               "type": "string",
@@ -477,7 +482,7 @@
             }
           },
           {
-            "name": "page",
+            "name": "Page",
             "in": "query",
             "schema": {
               "pattern": "^-?(?:0|[1-9]\\d*)$",
@@ -485,12 +490,11 @@
                 "integer",
                 "string"
               ],
-              "format": "int32",
-              "default": 1
+              "format": "int32"
             }
           },
           {
-            "name": "pageSize",
+            "name": "PageSize",
             "in": "query",
             "schema": {
               "pattern": "^-?(?:0|[1-9]\\d*)$",
@@ -498,8 +502,7 @@
                 "integer",
                 "string"
               ],
-              "format": "int32",
-              "default": 20
+              "format": "int32"
             }
           }
         ],
@@ -517,14 +520,21 @@
         ],
         "parameters": [
           {
-            "name": "status",
+            "name": "Status",
             "in": "query",
             "schema": {
               "$ref": "#/components/schemas/ActivityStatus"
             }
           },
           {
-            "name": "startDate",
+            "name": "ActivityType",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/ActivityType"
+            }
+          },
+          {
+            "name": "StartDate",
             "in": "query",
             "schema": {
               "type": "string",
@@ -532,7 +542,7 @@
             }
           },
           {
-            "name": "endDate",
+            "name": "EndDate",
             "in": "query",
             "schema": {
               "type": "string",
@@ -540,7 +550,7 @@
             }
           },
           {
-            "name": "page",
+            "name": "Page",
             "in": "query",
             "schema": {
               "pattern": "^-?(?:0|[1-9]\\d*)$",
@@ -548,12 +558,11 @@
                 "integer",
                 "string"
               ],
-              "format": "int32",
-              "default": 1
+              "format": "int32"
             }
           },
           {
-            "name": "pageSize",
+            "name": "PageSize",
             "in": "query",
             "schema": {
               "pattern": "^-?(?:0|[1-9]\\d*)$",
@@ -561,8 +570,7 @@
                 "integer",
                 "string"
               ],
-              "format": "int32",
-              "default": 20
+              "format": "int32"
             }
           }
         ],
@@ -743,6 +751,67 @@
             }
           }
         ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/promo-codes/validate": {
+      "get": {
+        "tags": [
+          "PromoCodes"
+        ],
+        "parameters": [
+          {
+            "name": "code",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "packageId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/promo-codes/apply": {
+      "post": {
+        "tags": [
+          "PromoCodes"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ApplyPromoCodeDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ApplyPromoCodeDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ApplyPromoCodeDto"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -1895,6 +1964,278 @@
         }
       }
     },
+    "/api/admin/promo-codes": {
+      "post": {
+        "tags": [
+          "PromoCodeAdmin"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatePromoCodeDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatePromoCodeDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatePromoCodeDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "PromoCodeAdmin"
+        ],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "pattern": "^-?(?:0|[1-9]\\d*)$",
+              "type": [
+                "integer",
+                "string"
+              ],
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "schema": {
+              "pattern": "^-?(?:0|[1-9]\\d*)$",
+              "type": [
+                "integer",
+                "string"
+              ],
+              "format": "int32",
+              "default": 20
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/admin/promo-codes/{id}": {
+      "get": {
+        "tags": [
+          "PromoCodeAdmin"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "PromoCodeAdmin"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdatePromoCodeDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdatePromoCodeDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdatePromoCodeDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "PromoCodeAdmin"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/admin/promo-codes/by-code/{code}": {
+      "get": {
+        "tags": [
+          "PromoCodeAdmin"
+        ],
+        "parameters": [
+          {
+            "name": "code",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/admin/promo-codes/{id}/deactivate": {
+      "put": {
+        "tags": [
+          "PromoCodeAdmin"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/admin/promo-codes/{id}/activate": {
+      "put": {
+        "tags": [
+          "PromoCodeAdmin"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/admin/promo-codes/{id}/usage": {
+      "get": {
+        "tags": [
+          "PromoCodeAdmin"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "pattern": "^-?(?:0|[1-9]\\d*)$",
+              "type": [
+                "integer",
+                "string"
+              ],
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "schema": {
+              "pattern": "^-?(?:0|[1-9]\\d*)$",
+              "type": [
+                "integer",
+                "string"
+              ],
+              "format": "int32",
+              "default": 20
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Account/register": {
       "post": {
         "tags": [
@@ -2160,6 +2501,22 @@
       "ActivityType": {
         "type": "integer"
       },
+      "ApplyPromoCodeDto": {
+        "required": [
+          "code",
+          "packageId"
+        ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "packageId": {
+            "type": "string",
+            "format": "uuid"
+          }
+        }
+      },
       "AssignGymOwnerDto": {
         "required": [
           "userId",
@@ -2221,7 +2578,75 @@
           }
         }
       },
+      "CreatePromoCodeDto": {
+        "required": [
+          "code",
+          "description",
+          "discountType",
+          "discountValue",
+          "minimumOrderAmount",
+          "usageLimit",
+          "startDate",
+          "endDate",
+          "packageId"
+        ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "discountType": {
+            "$ref": "#/components/schemas/DiscountType"
+          },
+          "discountValue": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "number",
+              "string"
+            ],
+            "format": "double"
+          },
+          "minimumOrderAmount": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "null",
+              "number",
+              "string"
+            ],
+            "format": "double"
+          },
+          "usageLimit": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          },
+          "startDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "endDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "packageId": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          }
+        }
+      },
       "DayOfWeek": {
+        "type": "integer"
+      },
+      "DiscountType": {
         "type": "integer"
       },
       "ForgotPasswordDto": {
@@ -2571,6 +2996,73 @@
           }
         }
       },
+      "UpdatePromoCodeDto": {
+        "required": [
+          "description",
+          "discountValue",
+          "minimumOrderAmount",
+          "usageLimit",
+          "startDate",
+          "endDate",
+          "isActive"
+        ],
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "discountValue": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "null",
+              "number",
+              "string"
+            ],
+            "format": "double"
+          },
+          "minimumOrderAmount": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "null",
+              "number",
+              "string"
+            ],
+            "format": "double"
+          },
+          "usageLimit": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "null",
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          },
+          "startDate": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "date-time"
+          },
+          "endDate": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "date-time"
+          },
+          "isActive": {
+            "type": [
+              "null",
+              "boolean"
+            ]
+          }
+        }
+      },
       "UserLoginDto": {
         "type": "object",
         "properties": {
@@ -2646,6 +3138,9 @@
       "name": "Payment"
     },
     {
+      "name": "PromoCodes"
+    },
+    {
       "name": "QrToken"
     },
     {
@@ -2677,6 +3172,9 @@
     },
     {
       "name": "Admin"
+    },
+    {
+      "name": "PromoCodeAdmin"
     },
     {
       "name": "Account"
