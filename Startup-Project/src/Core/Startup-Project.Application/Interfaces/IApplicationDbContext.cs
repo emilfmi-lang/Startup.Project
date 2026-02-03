@@ -22,5 +22,8 @@ public interface IApplicationDbContext
     DbSet<FavoriteGym> FavoriteGyms { get; set; }
     DbSet<PromoCode> PromoCodes { get; set; }
     DbSet<PromoCodeUsage> PromoCodeUsages { get; set; }
+    DbSet<Campaign> Campaigns { get; set; }
+    DbSet<CampaignRule> CampaignRules { get; set; }
+    DbSet<CampaignUsage> CampaignUsages { get; set; }
     Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
 }

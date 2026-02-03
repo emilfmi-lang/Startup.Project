@@ -25,6 +25,9 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
     public DbSet<FavoriteGym> FavoriteGyms { get; set; }
     public DbSet<PromoCode> PromoCodes { get; set; }
     public DbSet<PromoCodeUsage> PromoCodeUsages { get; set; }
+    public DbSet<Campaign> Campaigns { get; set; }
+    public DbSet<CampaignRule> CampaignRules { get; set; }
+    public DbSet<CampaignUsage> CampaignUsages { get; set; }
 
     public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
     {
