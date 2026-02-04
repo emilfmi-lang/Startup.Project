@@ -9,7 +9,7 @@ namespace Startup_Project.WebAPI.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-public class PaymentController(IPaymentService service) : ControllerBase
+public class PaymentController(IPaymentService service, IConfiguration configuration) : ControllerBase
 {
     [HttpPost("initiate")]
     [Authorize]
@@ -28,9 +28,11 @@ public class PaymentController(IPaymentService service) : ControllerBase
     {
         if (string.IsNullOrEmpty(sessionId))
             throw BusinessException.ValidationFailed("SessionId boş ola bilməz.");
+
+        var successUrl = configuration["PaymentSettings:SuccessUrl"] ?? "/payment/success";
+        var failUrl = configuration["PaymentSettings:FailUrl"] ?? "/payment/fail";
+
         var result = await service.FinalizePaymentAsync(sessionId);
-        if (result.Success)
-            return Redirect("https://senin-app-saytin.com/payment/success");
-        return Redirect("https://senin-app-saytin.com/payment/fail");
+        return Redirect(result.Success ? successUrl : failUrl);
     }
 }

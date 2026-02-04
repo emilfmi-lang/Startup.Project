@@ -33,7 +33,7 @@ public class TrainingSessionController(ITrainingSessionService sessionService) :
     [Authorize]
     public async Task<IActionResult> Cancel(Guid id, [FromBody] SessionCancelDto dto)
         => Ok(await sessionService.CancelSessionAsync(id, dto));
-
+    [Authorize]
     [HttpPost("{id:guid}/confirm-payment")]
     public async Task<IActionResult> ConfirmPayment(Guid id, [FromBody] Guid paymentId)
         => Ok(await sessionService.ConfirmPaymentAsync(id, paymentId));

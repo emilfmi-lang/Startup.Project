@@ -50,11 +50,11 @@ public class PromoCodeService(
         {
             IsValid = true,
             OriginalPrice = package.Price,
-            DisCountAmount = discountAmount,
+            DiscountAmount = discountAmount,
             FinalPrice = finalPrice,
             DiscountType = promoCode.DiscountType.ToString(),
             DiscountValue = promoCode.DiscountValue,
-            Message = $"Promokod keçerlidir. {discountAmount:F2} AZN endirim t?tbiq olunacaq."
+            Message = $"Promokod keç?rlidir. {discountAmount:F2} AZN endirim t?tbiq olunacaq."
         });
     }
 
@@ -107,7 +107,7 @@ public class PromoCodeService(
         {
             IsValid = true,
             OriginalPrice = package.Price,
-            DisCountAmount = discountAmount,
+            DiscountAmount = discountAmount,
             FinalPrice = finalPrice,
             DiscountType = promoCode.DiscountType.ToString(),
             DiscountValue = promoCode.DiscountValue,

@@ -38,7 +38,7 @@ public class PaymentService : IPaymentService
 
     public async Task<ResponseModel<PaymentResponseDto>> CreatePaymentSessionAsync(Guid userId, PaymentRequestDto dto)
     {
-        var package = await _packageRepository.GetByIdAsync(dto.PackageId.ToString());
+        var package = await _packageRepository.GetByIdAsync(dto.PackageId);
         if (package == null)
             throw NotFoundException.Package(dto.PackageId);
 
@@ -62,14 +62,14 @@ public class PaymentService : IPaymentService
 
             var isActuallyPaid = await _bankService.CheckPaymentStatusAsync(sessionId);
             if (!isActuallyPaid)
-                throw BusinessException.Custom(BusinessErrorCodes.PaymentFailed, "Ödəniş bank tərəfindən təsdiqlənməyib.");
+                    throw BusinessException.Custom(BusinessErrorCodes.PaymentFailed, "Ödəniş bank tərəfindən təsdiqlənməyib.");
 
-            if (payment.Status == PaymentStatus.Successful)
-                return ResponseModel<bool>.SuccessResponse(true);
+                if (payment.Status == PaymentStatus.Successful)
+                    return ResponseModel<bool>.SuccessResponse(true);
 
-            var package = await _packageRepository.GetByIdAsync(payment.PackageId.ToString());
-            if (package == null)
-                throw NotFoundException.Package(payment.PackageId);
+                var package = await _packageRepository.GetByIdAsync(payment.PackageId);
+                if (package == null)
+                    throw NotFoundException.Package(payment.PackageId);
 
             payment.MarkAsSuccess();
 
