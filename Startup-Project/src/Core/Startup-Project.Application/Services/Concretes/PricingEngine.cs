@@ -36,7 +36,6 @@ public class PricingEngine(
         }
         catch
         {
-            // Anonymous user - no userId
         }
 
         var result = await CalculatePriceInternalAsync(packageId, null, userId, persistUsage: false);
@@ -49,7 +48,6 @@ public class PricingEngine(
         Guid? userId,
         bool persistUsage)
     {
-        // 1. Package-i yükl?
         var package = await packageRepository.GetByIdAsync(packageId);
         if (package == null)
             throw NotFoundException.Package(packageId);
@@ -59,10 +57,8 @@ public class PricingEngine(
         var appliedCampaigns = new List<AppliedDiscountDto>();
         decimal totalCampaignDiscount = 0;
 
-        // 2. RuleEvaluationContext yarat
         var context = await BuildRuleContextAsync(packageId, originalPrice, userId);
 
-        // 3. Aktiv Campaign-lar? tap
         var now = DateTime.UtcNow;
         var activeCampaigns = await campaignRepository.Table
             .Include(c => c.Rules)
@@ -74,7 +70,6 @@ public class PricingEngine(
             .OrderBy(c => c.Priority)
             .ToListAsync();
 
-        // 4. Rule-lar? evaluate et v? uy?un olanlar? seç
         var applicableCampaigns = new List<Campaign>();
         foreach (var campaign in activeCampaigns)
         {
@@ -88,16 +83,13 @@ public class PricingEngine(
             }
         }
 
-        // 5. Stackable v? non-stackable kampaniyalar? ay?r
         var nonStackable = applicableCampaigns.Where(c => !c.IsStackable).OrderBy(c => c.Priority).FirstOrDefault();
         var stackable = applicableCampaigns.Where(c => c.IsStackable).OrderBy(c => c.Priority).ToList();
 
-        // 6. Kampaniyalar? t?tbiq et
         var campaignsToApply = new List<Campaign>();
 
         if (nonStackable != null)
         {
-            // Non-stackable varsa, ya onu ya da stackable-lar? seç
             var nonStackableDiscount = nonStackable.CalculateDiscount(currentPrice);
             var stackableDiscount = CalculateStackableDiscount(stackable, currentPrice);
 
@@ -115,7 +107,6 @@ public class PricingEngine(
             campaignsToApply.AddRange(stackable);
         }
 
-        // 7. Seçil?n kampaniyalar? t?tbiq et
         foreach (var campaign in campaignsToApply)
         {
             var discount = campaign.CalculateDiscount(currentPrice);
@@ -134,7 +125,6 @@ public class PricingEngine(
                 Priority = campaign.Priority
             });
 
-            // Usage-? persist et
             if (persistUsage && userId.HasValue)
             {
                 campaign.IncrementUsedCount();
@@ -150,7 +140,6 @@ public class PricingEngine(
             }
         }
 
-        // 8. PromoCode t?tbiq et
         AppliedPromoCodeDto? appliedPromoCode = null;
         decimal promoCodeDiscount = 0;
 
@@ -161,39 +150,35 @@ public class PricingEngine(
                 var promoResult = await promoCodeService.ValidateAsync(promoCode, packageId);
                 if (promoResult.Data?.IsValid == true)
                 {
-                    // Promokod endirimi cari qiym?t? t?tbiq olunur
                     var promoDiscountAmount = CalculatePromoDiscount(
                         promoResult.Data.DiscountType,
                         promoResult.Data.DiscountValue,
                         currentPrice);
 
-                                if (promoDiscountAmount > 0)
-                                {
-                                    currentPrice -= promoDiscountAmount;
-                                    promoCodeDiscount = promoDiscountAmount;
-
-                                    appliedPromoCode = new AppliedPromoCodeDto
-                                    {
-                                        Code = promoCode.ToUpperInvariant(),
-                                        DiscountType = promoResult.Data.DiscountType,
-                                        DiscountValue = promoResult.Data.DiscountValue,
-                                        DiscountAmount = promoDiscountAmount
-                                    };
-
-                                    // PromoCode apply et
-                                    await promoCodeService.ApplyAsync(new ApplyPromoCodeDto(promoCode, packageId));
-                                }
-                            }
-                        }
-                        catch
-                        {
-                            // PromoCode x?tas? pricing-i dayand?rmamal?d?r
-                        }
-                    }
-
-                    // 9. Save changes
-                    if (persistUsage)
+                    if (promoDiscountAmount > 0)
                     {
+                        currentPrice -= promoDiscountAmount;
+                        promoCodeDiscount = promoDiscountAmount;
+
+                        appliedPromoCode = new AppliedPromoCodeDto
+                        {
+                            Code = promoCode.ToUpperInvariant(),
+                            DiscountType = promoResult.Data.DiscountType,
+                            DiscountValue = promoResult.Data.DiscountValue,
+                            DiscountAmount = promoDiscountAmount
+                        };
+
+                        await promoCodeService.ApplyAsync(new ApplyPromoCodeDto(promoCode, packageId));
+                    }
+                }
+            }
+            catch
+            {
+            }
+        }
+
+        if (persistUsage)
+        {
             await campaignRepository.SaveAsync();
         }
 
