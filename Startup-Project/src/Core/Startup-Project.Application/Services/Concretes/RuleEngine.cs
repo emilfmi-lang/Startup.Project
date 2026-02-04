@@ -1,4 +1,4 @@
-using Startup_Project.Application.Models;
+using Startup_Project.Application.Models.Common;
 using Startup_Project.Application.Services.Interfaces;
 using Startup_Project.Domain.Entities;
 using Startup_Project.Domain.Enums;

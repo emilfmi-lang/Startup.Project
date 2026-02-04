@@ -1,4 +1,4 @@
-namespace Startup_Project.Application.Models;
+namespace Startup_Project.Application.Models.Common;
 
 public class RuleEvaluationContext
 {
