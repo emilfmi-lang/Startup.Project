@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace Startup_Project.WebAPI.Controllers;
 
@@ -11,5 +10,12 @@ public class TestController : ControllerBase
     public IActionResult Get()
     {
         return Ok("API is working!");
+    }
+    [HttpGet]
+    public IActionResult Get(int id)
+    {
+        return Ok(
+            $"API is working! Your id is {id}"
+        );
     }
 }

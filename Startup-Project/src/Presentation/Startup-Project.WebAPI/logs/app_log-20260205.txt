@@ -8,3 +8,756 @@ Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
    at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
    at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
    at Program.<Main>$(String[] args) in C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI\Program.cs:line 80
+2026-02-05 16:26:23 [INF] Proqram başladılır...
+2026-02-05 16:26:24 [WRN] No store type was specified for the decimal property 'FinalPrice' on entity type 'CampaignUsage'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-02-05 16:26:24 [WRN] No store type was specified for the decimal property 'OriginalPrice' on entity type 'CampaignUsage'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-02-05 16:26:25 [INF] Executed DbCommand (72ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-02-05 16:26:25 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-02-05 16:26:25 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-02-05 16:26:25 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-02-05 16:26:25 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-02-05 16:26:25 [INF] User profile is available. Using 'C:\Users\User\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-02-05 16:26:25 [INF] Executed DbCommand (7ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-05 16:26:25 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Gyms] AS [g]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-05 16:26:25 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-05 16:26:25 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-05 16:26:25 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-05 16:26:25 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-05 16:26:25 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [g].[Id], [g].[Address], [g].[AverageRating], [g].[CreatedAt], [g].[ImagePath], [g].[IsDeleted], [g].[Name], [g].[OwnerId], [g].[ReviewCount], [g].[UpdatedAt]
+FROM [Gyms] AS [g]
+2026-02-05 16:26:25 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-05 16:26:25 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-05 16:26:25 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-05 16:26:25 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-05 16:26:25 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-05 16:26:25 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-05 16:26:25 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-05 16:26:25 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-05 16:26:25 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Trainers] AS [t]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-05 16:26:25 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Packages] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-05 16:26:25 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [GymOpeningHours] AS [g]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-05 16:26:25 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [TrainerSchedules] AS [t]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-05 16:26:25 [INF] Now listening on: http://localhost:5000
+2026-02-05 16:26:25 [INF] Application started. Press Ctrl+C to shut down.
+2026-02-05 16:26:25 [INF] Hosting environment: Development
+2026-02-05 16:26:25 [INF] Content root path: C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI
+2026-02-05 16:26:26 [INF] Request starting HTTP/1.1 GET http://localhost:5000/scalar/v1 - null null
+2026-02-05 16:26:26 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2026-02-05 16:26:26 [INF] Write content with HTTP Response ContentType of text/html
+2026-02-05 16:26:26 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2026-02-05 16:26:26 [INF] Request starting HTTP/1.1 GET http://localhost:5000/scalar/scalar.js - null null
+2026-02-05 16:26:26 [INF] Request finished HTTP/1.1 GET http://localhost:5000/scalar/v1 - 200 null text/html 320.9851ms
+2026-02-05 16:26:26 [INF] Request starting HTTP/1.1 GET http://localhost:5000/scalar/scalar.aspnetcore.js - null null
+2026-02-05 16:26:26 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_vs/browserLink - null null
+2026-02-05 16:26:26 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.js'
+2026-02-05 16:26:26 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/aspnetcore-browser-refresh.js - null null
+2026-02-05 16:26:26 [INF] CORS policy execution successful.
+2026-02-05 16:26:26 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2026-02-05 16:26:26 [INF] Sending file with download name ''.
+2026-02-05 16:26:26 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/aspnetcore-browser-refresh.js - 200 16529 application/javascript; charset=utf-8 13.0537ms
+2026-02-05 16:26:26 [INF] Sending file with download name ''.
+2026-02-05 16:26:26 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2026-02-05 16:26:26 [INF] Request finished HTTP/1.1 GET http://localhost:5000/scalar/scalar.aspnetcore.js - 200 1111 text/javascript 34.2278ms
+2026-02-05 16:26:26 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.js'
+2026-02-05 16:26:26 [INF] Request finished HTTP/1.1 GET http://localhost:5000/scalar/scalar.js - 200 922147 text/javascript 62.0035ms
+2026-02-05 16:26:26 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_vs/browserLink - 200 null text/javascript; charset=UTF-8 61.6206ms
+2026-02-05 16:26:26 [INF] Request starting HTTP/1.1 GET http://localhost:5000/openapi/v1.json - null null
+2026-02-05 16:26:26 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
+2026-02-05 16:26:27 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
+2026-02-05 16:26:27 [INF] Request finished HTTP/1.1 GET http://localhost:5000/openapi/v1.json - 200 null application/json;charset=utf-8 69.795ms
+2026-02-05 16:28:01 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Account/login - application/json 63
+2026-02-05 16:28:01 [INF] CORS policy execution successful.
+2026-02-05 16:28:01 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.Account.AccountController.Login (Startup-Project.WebAPI)'
+2026-02-05 16:28:01 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(Startup_Project.Application.Dtos.Account.UserLoginDto) on controller Startup_Project.WebAPI.Controllers.Account.AccountController (Startup-Project.WebAPI).
+2026-02-05 16:28:01 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-02-05 16:28:01 [INF] Executed DbCommand (13ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-05 16:28:02 [INF] Executed DbCommand (5ms) [Parameters=[@userId='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @userId
+2026-02-05 16:28:02 [INF] Executing OkObjectResult, writing value of type 'Startup_Project.Application.Models.ResponseModel`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-05 16:28:02 [INF] Executed action Startup_Project.WebAPI.Controllers.Account.AccountController.Login (Startup-Project.WebAPI) in 386.3327ms
+2026-02-05 16:28:02 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.Account.AccountController.Login (Startup-Project.WebAPI)'
+2026-02-05 16:28:02 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/Account/login - 200 null application/json; charset=utf-8 424.9441ms
+2026-02-05 17:07:31 [INF] Proqram başladılır...
+2026-02-05 17:07:32 [WRN] No store type was specified for the decimal property 'FinalPrice' on entity type 'CampaignUsage'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-02-05 17:07:32 [WRN] No store type was specified for the decimal property 'OriginalPrice' on entity type 'CampaignUsage'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-02-05 17:07:32 [INF] Executed DbCommand (35ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-02-05 17:07:32 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-02-05 17:07:32 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-02-05 17:07:32 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-02-05 17:07:32 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-02-05 17:07:32 [INF] User profile is available. Using 'C:\Users\User\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-02-05 17:07:32 [INF] Executed DbCommand (5ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-05 17:07:32 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Gyms] AS [g]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-05 17:07:32 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-05 17:07:32 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-05 17:07:32 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-05 17:07:32 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-05 17:07:32 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [g].[Id], [g].[Address], [g].[AverageRating], [g].[CreatedAt], [g].[ImagePath], [g].[IsDeleted], [g].[Name], [g].[OwnerId], [g].[ReviewCount], [g].[UpdatedAt]
+FROM [Gyms] AS [g]
+2026-02-05 17:07:32 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-05 17:07:32 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-05 17:07:32 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-05 17:07:32 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-05 17:07:32 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-05 17:07:32 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-05 17:07:32 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-05 17:07:32 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-05 17:07:32 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Trainers] AS [t]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-05 17:07:32 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Packages] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-05 17:07:32 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [GymOpeningHours] AS [g]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-05 17:07:32 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [TrainerSchedules] AS [t]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-05 17:07:32 [INF] Now listening on: http://localhost:5000
+2026-02-05 17:07:33 [INF] Application started. Press Ctrl+C to shut down.
+2026-02-05 17:07:33 [INF] Hosting environment: Development
+2026-02-05 17:07:33 [INF] Content root path: C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI
+2026-02-05 17:07:33 [INF] Request starting HTTP/1.1 GET http://localhost:5000/scalar/v1 - null null
+2026-02-05 17:07:33 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2026-02-05 17:07:33 [INF] Write content with HTTP Response ContentType of text/html
+2026-02-05 17:07:33 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2026-02-05 17:07:33 [INF] Request finished HTTP/1.1 GET http://localhost:5000/scalar/v1 - 200 null text/html 172.6485ms
+2026-02-05 17:07:33 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/aspnetcore-browser-refresh.js - null null
+2026-02-05 17:07:33 [INF] Request starting HTTP/1.1 GET http://localhost:5000/scalar/scalar.aspnetcore.js - null null
+2026-02-05 17:07:33 [INF] Request starting HTTP/1.1 GET http://localhost:5000/scalar/scalar.js - null null
+2026-02-05 17:07:33 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/aspnetcore-browser-refresh.js - 200 16529 application/javascript; charset=utf-8 6.1566ms
+2026-02-05 17:07:33 [INF] CORS policy execution successful.
+2026-02-05 17:07:33 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.js'
+2026-02-05 17:07:33 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_vs/browserLink - null null
+2026-02-05 17:07:33 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2026-02-05 17:07:33 [INF] Sending file with download name ''.
+2026-02-05 17:07:33 [INF] Sending file with download name ''.
+2026-02-05 17:07:33 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2026-02-05 17:07:33 [INF] Request finished HTTP/1.1 GET http://localhost:5000/scalar/scalar.aspnetcore.js - 200 1111 text/javascript 20.2911ms
+2026-02-05 17:07:33 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.js'
+2026-02-05 17:07:33 [INF] Request finished HTTP/1.1 GET http://localhost:5000/scalar/scalar.js - 200 922147 text/javascript 29.6443ms
+2026-02-05 17:07:33 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_vs/browserLink - 200 null text/javascript; charset=UTF-8 21.7031ms
+2026-02-05 17:07:33 [INF] Request starting HTTP/1.1 GET http://localhost:5000/openapi/v1.json - null null
+2026-02-05 17:07:33 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
+2026-02-05 17:07:33 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
+2026-02-05 17:07:33 [INF] Request finished HTTP/1.1 GET http://localhost:5000/openapi/v1.json - 200 null application/json;charset=utf-8 55.7852ms
+2026-02-05 17:15:31 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/Account/login - null null
+2026-02-05 17:15:31 [INF] CORS policy execution successful.
+2026-02-05 17:15:31 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/Account/login - 204 null null 5.4888ms
+2026-02-05 17:15:31 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Account/login - application/json 63
+2026-02-05 17:15:31 [INF] CORS policy execution successful.
+2026-02-05 17:15:31 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.Account.AccountController.Login (Startup-Project.WebAPI)'
+2026-02-05 17:15:31 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(Startup_Project.Application.Dtos.Account.UserLoginDto) on controller Startup_Project.WebAPI.Controllers.Account.AccountController (Startup-Project.WebAPI).
+2026-02-05 17:15:31 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-02-05 17:15:31 [INF] Executed DbCommand (11ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-05 17:15:31 [INF] Executed DbCommand (5ms) [Parameters=[@userId='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @userId
+2026-02-05 17:15:31 [INF] Executing OkObjectResult, writing value of type 'Startup_Project.Application.Models.ResponseModel`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-05 17:15:31 [INF] Executed action Startup_Project.WebAPI.Controllers.Account.AccountController.Login (Startup-Project.WebAPI) in 376.3056ms
+2026-02-05 17:15:31 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.Account.AccountController.Login (Startup-Project.WebAPI)'
+2026-02-05 17:15:31 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/Account/login - 200 null application/json; charset=utf-8 409.8237ms
+2026-02-05 17:20:11 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/Account/login - null null
+2026-02-05 17:20:11 [INF] CORS policy execution successful.
+2026-02-05 17:20:11 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/Account/login - 204 null null 3.3913ms
+2026-02-05 17:20:11 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Account/login - application/json 63
+2026-02-05 17:20:11 [INF] CORS policy execution successful.
+2026-02-05 17:20:11 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.Account.AccountController.Login (Startup-Project.WebAPI)'
+2026-02-05 17:20:11 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(Startup_Project.Application.Dtos.Account.UserLoginDto) on controller Startup_Project.WebAPI.Controllers.Account.AccountController (Startup-Project.WebAPI).
+2026-02-05 17:20:12 [INF] Executed DbCommand (3ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-05 17:20:12 [INF] Executed DbCommand (2ms) [Parameters=[@userId='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @userId
+2026-02-05 17:20:12 [INF] Executing OkObjectResult, writing value of type 'Startup_Project.Application.Models.ResponseModel`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-05 17:20:12 [INF] Executed action Startup_Project.WebAPI.Controllers.Account.AccountController.Login (Startup-Project.WebAPI) in 99.2826ms
+2026-02-05 17:20:12 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.Account.AccountController.Login (Startup-Project.WebAPI)'
+2026-02-05 17:20:12 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/Account/login - 200 null application/json; charset=utf-8 108.2689ms
+2026-02-05 17:21:26 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Gym - null null
+2026-02-05 17:21:26 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.GymController.GetAllAsync (Startup-Project.WebAPI)'
+2026-02-05 17:21:26 [INF] Route matched with {action = "GetAll", controller = "Gym"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllAsync() on controller Startup_Project.WebAPI.Controllers.GymController (Startup-Project.WebAPI).
+2026-02-05 17:21:27 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [g].[Id], [g].[Address], [g].[AverageRating], [g].[CreatedAt], [g].[ImagePath], [g].[IsDeleted], [g].[Name], [g].[OwnerId], [g].[ReviewCount], [g].[UpdatedAt], [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [Gyms] AS [g]
+LEFT JOIN [AspNetUsers] AS [a] ON [g].[OwnerId] = [a].[Id]
+WHERE [g].[IsDeleted] = CAST(0 AS bit)
+2026-02-05 17:21:27 [INF] Executing OkObjectResult, writing value of type 'Startup_Project.Application.Models.ResponseModel`1[[System.Collections.Generic.List`1[[Startup_Project.Application.Dtos.GymDtos.GymGetDto, Startup-Project.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-05 17:21:27 [INF] Executed action Startup_Project.WebAPI.Controllers.GymController.GetAllAsync (Startup-Project.WebAPI) in 76.7468ms
+2026-02-05 17:21:27 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.GymController.GetAllAsync (Startup-Project.WebAPI)'
+2026-02-05 17:21:27 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/Gym - 200 null application/json; charset=utf-8 92.5736ms
+2026-02-05 17:25:58 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Gym - null null
+2026-02-05 17:25:58 [INF] CORS policy execution successful.
+2026-02-05 17:25:58 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.GymController.GetAllAsync (Startup-Project.WebAPI)'
+2026-02-05 17:25:58 [INF] Route matched with {action = "GetAll", controller = "Gym"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllAsync() on controller Startup_Project.WebAPI.Controllers.GymController (Startup-Project.WebAPI).
+2026-02-05 17:25:58 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [g].[Id], [g].[Address], [g].[AverageRating], [g].[CreatedAt], [g].[ImagePath], [g].[IsDeleted], [g].[Name], [g].[OwnerId], [g].[ReviewCount], [g].[UpdatedAt], [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [Gyms] AS [g]
+LEFT JOIN [AspNetUsers] AS [a] ON [g].[OwnerId] = [a].[Id]
+WHERE [g].[IsDeleted] = CAST(0 AS bit)
+2026-02-05 17:25:58 [INF] Executing OkObjectResult, writing value of type 'Startup_Project.Application.Models.ResponseModel`1[[System.Collections.Generic.List`1[[Startup_Project.Application.Dtos.GymDtos.GymGetDto, Startup-Project.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-05 17:25:58 [INF] Executed action Startup_Project.WebAPI.Controllers.GymController.GetAllAsync (Startup-Project.WebAPI) in 18.519ms
+2026-02-05 17:25:58 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.GymController.GetAllAsync (Startup-Project.WebAPI)'
+2026-02-05 17:25:58 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/Gym - 200 null application/json; charset=utf-8 27.9836ms
+2026-02-05 17:26:28 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Gym - null null
+2026-02-05 17:26:28 [INF] CORS policy execution successful.
+2026-02-05 17:26:28 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.GymController.GetAllAsync (Startup-Project.WebAPI)'
+2026-02-05 17:26:28 [INF] Route matched with {action = "GetAll", controller = "Gym"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllAsync() on controller Startup_Project.WebAPI.Controllers.GymController (Startup-Project.WebAPI).
+2026-02-05 17:26:28 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [g].[Id], [g].[Address], [g].[AverageRating], [g].[CreatedAt], [g].[ImagePath], [g].[IsDeleted], [g].[Name], [g].[OwnerId], [g].[ReviewCount], [g].[UpdatedAt], [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [Gyms] AS [g]
+LEFT JOIN [AspNetUsers] AS [a] ON [g].[OwnerId] = [a].[Id]
+WHERE [g].[IsDeleted] = CAST(0 AS bit)
+2026-02-05 17:26:28 [INF] Executing OkObjectResult, writing value of type 'Startup_Project.Application.Models.ResponseModel`1[[System.Collections.Generic.List`1[[Startup_Project.Application.Dtos.GymDtos.GymGetDto, Startup-Project.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-05 17:26:28 [INF] Executed action Startup_Project.WebAPI.Controllers.GymController.GetAllAsync (Startup-Project.WebAPI) in 19.7043ms
+2026-02-05 17:26:28 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.GymController.GetAllAsync (Startup-Project.WebAPI)'
+2026-02-05 17:26:28 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/Gym - 200 null application/json; charset=utf-8 31.161ms
+2026-02-05 17:26:40 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Gym - null null
+2026-02-05 17:26:40 [INF] CORS policy execution successful.
+2026-02-05 17:26:40 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.GymController.GetAllAsync (Startup-Project.WebAPI)'
+2026-02-05 17:26:40 [INF] Route matched with {action = "GetAll", controller = "Gym"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllAsync() on controller Startup_Project.WebAPI.Controllers.GymController (Startup-Project.WebAPI).
+2026-02-05 17:26:40 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [g].[Id], [g].[Address], [g].[AverageRating], [g].[CreatedAt], [g].[ImagePath], [g].[IsDeleted], [g].[Name], [g].[OwnerId], [g].[ReviewCount], [g].[UpdatedAt], [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [Gyms] AS [g]
+LEFT JOIN [AspNetUsers] AS [a] ON [g].[OwnerId] = [a].[Id]
+WHERE [g].[IsDeleted] = CAST(0 AS bit)
+2026-02-05 17:26:40 [INF] Executing OkObjectResult, writing value of type 'Startup_Project.Application.Models.ResponseModel`1[[System.Collections.Generic.List`1[[Startup_Project.Application.Dtos.GymDtos.GymGetDto, Startup-Project.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-05 17:26:40 [INF] Executed action Startup_Project.WebAPI.Controllers.GymController.GetAllAsync (Startup-Project.WebAPI) in 5.7305ms
+2026-02-05 17:26:40 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.GymController.GetAllAsync (Startup-Project.WebAPI)'
+2026-02-05 17:26:40 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/Gym - 200 null application/json; charset=utf-8 15.9737ms
+2026-02-05 17:29:12 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Gym - null null
+2026-02-05 17:29:12 [INF] CORS policy execution successful.
+2026-02-05 17:29:12 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.GymController.GetAllAsync (Startup-Project.WebAPI)'
+2026-02-05 17:29:12 [INF] Route matched with {action = "GetAll", controller = "Gym"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllAsync() on controller Startup_Project.WebAPI.Controllers.GymController (Startup-Project.WebAPI).
+2026-02-05 17:29:12 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [g].[Id], [g].[Address], [g].[AverageRating], [g].[CreatedAt], [g].[ImagePath], [g].[IsDeleted], [g].[Name], [g].[OwnerId], [g].[ReviewCount], [g].[UpdatedAt], [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [Gyms] AS [g]
+LEFT JOIN [AspNetUsers] AS [a] ON [g].[OwnerId] = [a].[Id]
+WHERE [g].[IsDeleted] = CAST(0 AS bit)
+2026-02-05 17:29:12 [INF] Executing OkObjectResult, writing value of type 'Startup_Project.Application.Models.ResponseModel`1[[System.Collections.Generic.List`1[[Startup_Project.Application.Dtos.GymDtos.GymGetDto, Startup-Project.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-05 17:29:12 [INF] Executed action Startup_Project.WebAPI.Controllers.GymController.GetAllAsync (Startup-Project.WebAPI) in 19.6055ms
+2026-02-05 17:29:12 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.GymController.GetAllAsync (Startup-Project.WebAPI)'
+2026-02-05 17:29:12 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/Gym - 200 null application/json; charset=utf-8 29.0243ms
+2026-02-05 17:34:16 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Account/send-otp - application/json 31
+2026-02-05 17:34:16 [INF] CORS policy execution successful.
+2026-02-05 17:34:16 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.Account.AccountController.SendSmsOtp (Startup-Project.WebAPI)'
+2026-02-05 17:34:16 [INF] Route matched with {action = "SendSmsOtp", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SendSmsOtp(Startup_Project.Application.Dtos.Account.SendSmsOtpDto) on controller Startup_Project.WebAPI.Controllers.Account.AccountController (Startup-Project.WebAPI).
+2026-02-05 17:34:16 [INF] Executed DbCommand (10ms) [Parameters=[@dto_PhoneNumber='?' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[AttemptCount], [s].[Code], [s].[CreatedAt], [s].[ExpiryDate], [s].[IsDeleted], [s].[IsUsed], [s].[PhoneNumber], [s].[UpdatedAt]
+FROM [SmsOtps] AS [s]
+WHERE [s].[PhoneNumber] = @dto_PhoneNumber AND [s].[IsUsed] = CAST(0 AS bit) AND [s].[ExpiryDate] > GETUTCDATE()
+2026-02-05 17:34:16 [INF] Executed DbCommand (8ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 6), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Boolean), @p5='?' (Size = 20), @p6='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [SmsOtps] ([Id], [Code], [CreatedAt], [ExpiryDate], [IsDeleted], [PhoneNumber], [UpdatedAt])
+OUTPUT INSERTED.[AttemptCount], INSERTED.[IsUsed]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+2026-02-05 17:34:16 [INF] Executing OkObjectResult, writing value of type 'Startup_Project.Application.Models.ResponseModel`1[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-05 17:34:16 [INF] Executed action Startup_Project.WebAPI.Controllers.Account.AccountController.SendSmsOtp (Startup-Project.WebAPI) in 197.3664ms
+2026-02-05 17:34:16 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.Account.AccountController.SendSmsOtp (Startup-Project.WebAPI)'
+2026-02-05 17:34:16 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/Account/send-otp - 200 null application/json; charset=utf-8 211.7285ms
+2026-02-05 17:34:50 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Account/verify-otp - application/json 46
+2026-02-05 17:34:50 [INF] CORS policy execution successful.
+2026-02-05 17:34:50 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.Account.AccountController.VerifySmsOtp (Startup-Project.WebAPI)'
+2026-02-05 17:34:50 [INF] Route matched with {action = "VerifySmsOtp", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] VerifySmsOtp(Startup_Project.Application.Dtos.Account.VerifySmsOtpDto) on controller Startup_Project.WebAPI.Controllers.Account.AccountController (Startup-Project.WebAPI).
+2026-02-05 17:34:50 [INF] Executed action Startup_Project.WebAPI.Controllers.Account.AccountController.VerifySmsOtp (Startup-Project.WebAPI) in 13.083ms
+2026-02-05 17:34:50 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.Account.AccountController.VerifySmsOtp (Startup-Project.WebAPI)'
+2026-02-05 17:34:50 [WRN] Business Exception: ["ValidationFailed"] Telefon nömr?si +994XXXXXXXXX format?nda olmal?d?r.
+Startup_Project.Domain.Exceptions.BusinessException: Telefon nömr?si +994XXXXXXXXX format?nda olmal?d?r.
+   at Startup_Project.Application.Services.Concretes.Account.AccountService.VerifySmsOtpAsync(VerifySmsOtpDto dto) in C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Core\Startup-Project.Application\Services\Concretes\Account\AccountService.cs:line 247
+   at Startup_Project.WebAPI.Controllers.Account.AccountController.VerifySmsOtp(VerifySmsOtpDto dto) in C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI\Controllers\Account\AccountController.cs:line 43
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Startup_Project.WebAPI.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context) in C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI\Middlewares\ExceptionHandlingMiddleware.cs:line 31
+2026-02-05 17:34:50 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/Account/verify-otp - 400 null application/json 81.1929ms
+2026-02-05 17:35:10 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Account/verify-otp - application/json 47
+2026-02-05 17:35:10 [INF] CORS policy execution successful.
+2026-02-05 17:35:10 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.Account.AccountController.VerifySmsOtp (Startup-Project.WebAPI)'
+2026-02-05 17:35:10 [INF] Route matched with {action = "VerifySmsOtp", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] VerifySmsOtp(Startup_Project.Application.Dtos.Account.VerifySmsOtpDto) on controller Startup_Project.WebAPI.Controllers.Account.AccountController (Startup-Project.WebAPI).
+2026-02-05 17:35:10 [INF] Executed DbCommand (11ms) [Parameters=[@dto_PhoneNumber='?' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[AttemptCount], [s].[Code], [s].[CreatedAt], [s].[ExpiryDate], [s].[IsDeleted], [s].[IsUsed], [s].[PhoneNumber], [s].[UpdatedAt]
+FROM [SmsOtps] AS [s]
+WHERE [s].[PhoneNumber] = @dto_PhoneNumber AND [s].[IsUsed] = CAST(0 AS bit) AND [s].[ExpiryDate] > GETUTCDATE() AND [s].[AttemptCount] < 3
+ORDER BY [s].[CreatedAt] DESC
+2026-02-05 17:35:10 [INF] Executed DbCommand (5ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (DbType = Boolean), @p1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [SmsOtps] SET [IsUsed] = @p0, [UpdatedAt] = @p1
+OUTPUT 1
+WHERE [Id] = @p2;
+2026-02-05 17:35:10 [INF] Executed DbCommand (6ms) [Parameters=[@dto_PhoneNumber='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[PhoneNumber] = @dto_PhoneNumber
+2026-02-05 17:35:10 [INF] Executed DbCommand (3ms) [Parameters=[@normalizedUserName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @normalizedUserName
+2026-02-05 17:35:10 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-05 17:35:10 [INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (Size = 256), @p6='?' (DbType = Boolean), @p7='?' (Size = 100), @p8='?' (Size = 100), @p9='?' (DbType = Boolean), @p10='?' (DbType = DateTimeOffset), @p11='?' (Size = 256), @p12='?' (Size = 256), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (DbType = Boolean), @p16='?' (Size = 4000), @p17='?' (DbType = Boolean), @p18='?' (Size = 256), @p19='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [AuthProvider], [CodeExpireDate], [ConcurrencyStamp], [Email], [EmailConfirmed], [FullName], [GoogleId], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName], [VerificationCode])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19);
+2026-02-05 17:35:10 [INF] Executed DbCommand (3ms) [Parameters=[@normalizedRoleName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedRoleName
+2026-02-05 17:35:10 [INF] Executed DbCommand (2ms) [Parameters=[@p='?' (DbType = Guid), @p1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE [a].[UserId] = @p AND [a].[RoleId] = @p1
+2026-02-05 17:35:10 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedRoleName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedRoleName
+2026-02-05 17:35:10 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedUserName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @normalizedUserName
+2026-02-05 17:35:10 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-05 17:35:10 [INF] Executed DbCommand (8ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p21='?' (DbType = Guid), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32), @p4='?' (DbType = DateTime2), @p5='?' (Size = 4000), @p22='?' (Size = 4000), @p6='?' (Size = 256), @p7='?' (DbType = Boolean), @p8='?' (Size = 100), @p9='?' (Size = 100), @p10='?' (DbType = Boolean), @p11='?' (DbType = DateTimeOffset), @p12='?' (Size = 256), @p13='?' (Size = 256), @p14='?' (Size = 4000), @p15='?' (Size = 4000), @p16='?' (DbType = Boolean), @p17='?' (Size = 4000), @p18='?' (DbType = Boolean), @p19='?' (Size = 256), @p20='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AspNetUserRoles] ([RoleId], [UserId])
+VALUES (@p0, @p1);
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p2, [AuthProvider] = @p3, [CodeExpireDate] = @p4, [ConcurrencyStamp] = @p5, [Email] = @p6, [EmailConfirmed] = @p7, [FullName] = @p8, [GoogleId] = @p9, [LockoutEnabled] = @p10, [LockoutEnd] = @p11, [NormalizedEmail] = @p12, [NormalizedUserName] = @p13, [PasswordHash] = @p14, [PhoneNumber] = @p15, [PhoneNumberConfirmed] = @p16, [SecurityStamp] = @p17, [TwoFactorEnabled] = @p18, [UserName] = @p19, [VerificationCode] = @p20
+OUTPUT 1
+WHERE [Id] = @p21 AND [ConcurrencyStamp] = @p22;
+2026-02-05 17:35:10 [INF] Executed DbCommand (2ms) [Parameters=[@userId='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @userId
+2026-02-05 17:35:10 [INF] Executing OkObjectResult, writing value of type 'Startup_Project.Application.Models.ResponseModel`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-05 17:35:10 [INF] Executed action Startup_Project.WebAPI.Controllers.Account.AccountController.VerifySmsOtp (Startup-Project.WebAPI) in 207.4052ms
+2026-02-05 17:35:10 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.Account.AccountController.VerifySmsOtp (Startup-Project.WebAPI)'
+2026-02-05 17:35:10 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/Account/verify-otp - 200 null application/json; charset=utf-8 215.4606ms
+2026-02-05 17:37:04 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Account/send-otp - application/json 31
+2026-02-05 17:37:04 [INF] CORS policy execution successful.
+2026-02-05 17:37:04 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.Account.AccountController.SendSmsOtp (Startup-Project.WebAPI)'
+2026-02-05 17:37:04 [INF] Route matched with {action = "SendSmsOtp", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SendSmsOtp(Startup_Project.Application.Dtos.Account.SendSmsOtpDto) on controller Startup_Project.WebAPI.Controllers.Account.AccountController (Startup-Project.WebAPI).
+2026-02-05 17:37:04 [INF] Executed DbCommand (10ms) [Parameters=[@dto_PhoneNumber='?' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[AttemptCount], [s].[Code], [s].[CreatedAt], [s].[ExpiryDate], [s].[IsDeleted], [s].[IsUsed], [s].[PhoneNumber], [s].[UpdatedAt]
+FROM [SmsOtps] AS [s]
+WHERE [s].[PhoneNumber] = @dto_PhoneNumber AND [s].[IsUsed] = CAST(0 AS bit) AND [s].[ExpiryDate] > GETUTCDATE()
+2026-02-05 17:37:04 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 6), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Boolean), @p5='?' (Size = 20), @p6='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [SmsOtps] ([Id], [Code], [CreatedAt], [ExpiryDate], [IsDeleted], [PhoneNumber], [UpdatedAt])
+OUTPUT INSERTED.[AttemptCount], INSERTED.[IsUsed]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+2026-02-05 17:37:04 [INF] Executing OkObjectResult, writing value of type 'Startup_Project.Application.Models.ResponseModel`1[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-05 17:37:04 [INF] Executed action Startup_Project.WebAPI.Controllers.Account.AccountController.SendSmsOtp (Startup-Project.WebAPI) in 23.047ms
+2026-02-05 17:37:04 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.Account.AccountController.SendSmsOtp (Startup-Project.WebAPI)'
+2026-02-05 17:37:04 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/Account/send-otp - 200 null application/json; charset=utf-8 30.8595ms
+2026-02-05 17:37:44 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Account/send-otp - application/json 30
+2026-02-05 17:37:44 [INF] CORS policy execution successful.
+2026-02-05 17:37:44 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.Account.AccountController.SendSmsOtp (Startup-Project.WebAPI)'
+2026-02-05 17:37:44 [INF] Route matched with {action = "SendSmsOtp", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SendSmsOtp(Startup_Project.Application.Dtos.Account.SendSmsOtpDto) on controller Startup_Project.WebAPI.Controllers.Account.AccountController (Startup-Project.WebAPI).
+2026-02-05 17:37:44 [INF] Executed action Startup_Project.WebAPI.Controllers.Account.AccountController.SendSmsOtp (Startup-Project.WebAPI) in 0.9266ms
+2026-02-05 17:37:44 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.Account.AccountController.SendSmsOtp (Startup-Project.WebAPI)'
+2026-02-05 17:37:44 [WRN] Business Exception: ["ValidationFailed"] Telefon nömr?si +994XXXXXXXXX format?nda olmal?d?r.
+Startup_Project.Domain.Exceptions.BusinessException: Telefon nömr?si +994XXXXXXXXX format?nda olmal?d?r.
+   at Startup_Project.Application.Services.Concretes.Account.AccountService.SendSmsOtpAsync(SendSmsOtpDto dto) in C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Core\Startup-Project.Application\Services\Concretes\Account\AccountService.cs:line 216
+   at Startup_Project.WebAPI.Controllers.Account.AccountController.SendSmsOtp(SendSmsOtpDto dto) in C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI\Controllers\Account\AccountController.cs:line 39
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Startup_Project.WebAPI.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context) in C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI\Middlewares\ExceptionHandlingMiddleware.cs:line 31
+2026-02-05 17:37:44 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/Account/send-otp - 400 null application/json 13.0481ms
+2026-02-05 17:40:13 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Account/verify-otp - application/json 47
+2026-02-05 17:40:13 [INF] CORS policy execution successful.
+2026-02-05 17:40:13 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.Account.AccountController.VerifySmsOtp (Startup-Project.WebAPI)'
+2026-02-05 17:40:13 [INF] Route matched with {action = "VerifySmsOtp", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] VerifySmsOtp(Startup_Project.Application.Dtos.Account.VerifySmsOtpDto) on controller Startup_Project.WebAPI.Controllers.Account.AccountController (Startup-Project.WebAPI).
+2026-02-05 17:40:13 [INF] Executed DbCommand (10ms) [Parameters=[@dto_PhoneNumber='?' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[AttemptCount], [s].[Code], [s].[CreatedAt], [s].[ExpiryDate], [s].[IsDeleted], [s].[IsUsed], [s].[PhoneNumber], [s].[UpdatedAt]
+FROM [SmsOtps] AS [s]
+WHERE [s].[PhoneNumber] = @dto_PhoneNumber AND [s].[IsUsed] = CAST(0 AS bit) AND [s].[ExpiryDate] > GETUTCDATE() AND [s].[AttemptCount] < 3
+ORDER BY [s].[CreatedAt] DESC
+2026-02-05 17:40:13 [INF] Executed action Startup_Project.WebAPI.Controllers.Account.AccountController.VerifySmsOtp (Startup-Project.WebAPI) in 21.6829ms
+2026-02-05 17:40:13 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.Account.AccountController.VerifySmsOtp (Startup-Project.WebAPI)'
+2026-02-05 17:40:13 [WRN] Business Exception: ["OtpNotFound"] Aktiv doğrulama kodu tapılmadı. Yeni kod tələb edin.
+Startup_Project.Domain.Exceptions.BusinessException: Aktiv doğrulama kodu tapılmadı. Yeni kod tələb edin.
+   at Startup_Project.Application.Services.Concretes.Account.AccountService.VerifySmsOtpAsync(VerifySmsOtpDto dto) in C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Core\Startup-Project.Application\Services\Concretes\Account\AccountService.cs:line 255
+   at Startup_Project.WebAPI.Controllers.Account.AccountController.VerifySmsOtp(VerifySmsOtpDto dto) in C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI\Controllers\Account\AccountController.cs:line 43
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Startup_Project.WebAPI.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context) in C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI\Middlewares\ExceptionHandlingMiddleware.cs:line 31
+2026-02-05 17:40:13 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/Account/verify-otp - 400 null application/json 33.0921ms
+2026-02-05 17:40:55 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Account/send-otp - application/json 30
+2026-02-05 17:40:55 [INF] CORS policy execution successful.
+2026-02-05 17:40:55 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.Account.AccountController.SendSmsOtp (Startup-Project.WebAPI)'
+2026-02-05 17:40:55 [INF] Route matched with {action = "SendSmsOtp", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SendSmsOtp(Startup_Project.Application.Dtos.Account.SendSmsOtpDto) on controller Startup_Project.WebAPI.Controllers.Account.AccountController (Startup-Project.WebAPI).
+2026-02-05 17:40:55 [INF] Executed action Startup_Project.WebAPI.Controllers.Account.AccountController.SendSmsOtp (Startup-Project.WebAPI) in 0.8079ms
+2026-02-05 17:40:55 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.Account.AccountController.SendSmsOtp (Startup-Project.WebAPI)'
+2026-02-05 17:40:55 [WRN] Business Exception: ["ValidationFailed"] Telefon nömr?si +994XXXXXXXXX format?nda olmal?d?r.
+Startup_Project.Domain.Exceptions.BusinessException: Telefon nömr?si +994XXXXXXXXX format?nda olmal?d?r.
+   at Startup_Project.Application.Services.Concretes.Account.AccountService.SendSmsOtpAsync(SendSmsOtpDto dto) in C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Core\Startup-Project.Application\Services\Concretes\Account\AccountService.cs:line 216
+   at Startup_Project.WebAPI.Controllers.Account.AccountController.SendSmsOtp(SendSmsOtpDto dto) in C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI\Controllers\Account\AccountController.cs:line 39
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Startup_Project.WebAPI.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context) in C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI\Middlewares\ExceptionHandlingMiddleware.cs:line 31
+2026-02-05 17:40:55 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/Account/send-otp - 400 null application/json 12.5462ms
+2026-02-05 17:41:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Account/send-otp - application/json 31
+2026-02-05 17:41:00 [INF] CORS policy execution successful.
+2026-02-05 17:41:00 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.Account.AccountController.SendSmsOtp (Startup-Project.WebAPI)'
+2026-02-05 17:41:00 [INF] Route matched with {action = "SendSmsOtp", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SendSmsOtp(Startup_Project.Application.Dtos.Account.SendSmsOtpDto) on controller Startup_Project.WebAPI.Controllers.Account.AccountController (Startup-Project.WebAPI).
+2026-02-05 17:41:00 [INF] Executed DbCommand (10ms) [Parameters=[@dto_PhoneNumber='?' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[AttemptCount], [s].[Code], [s].[CreatedAt], [s].[ExpiryDate], [s].[IsDeleted], [s].[IsUsed], [s].[PhoneNumber], [s].[UpdatedAt]
+FROM [SmsOtps] AS [s]
+WHERE [s].[PhoneNumber] = @dto_PhoneNumber AND [s].[IsUsed] = CAST(0 AS bit) AND [s].[ExpiryDate] > GETUTCDATE()
+2026-02-05 17:41:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 6), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Boolean), @p5='?' (Size = 20), @p6='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [SmsOtps] ([Id], [Code], [CreatedAt], [ExpiryDate], [IsDeleted], [PhoneNumber], [UpdatedAt])
+OUTPUT INSERTED.[AttemptCount], INSERTED.[IsUsed]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+2026-02-05 17:41:00 [INF] Executing OkObjectResult, writing value of type 'Startup_Project.Application.Models.ResponseModel`1[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-05 17:41:00 [INF] Executed action Startup_Project.WebAPI.Controllers.Account.AccountController.SendSmsOtp (Startup-Project.WebAPI) in 19.595ms
+2026-02-05 17:41:00 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.Account.AccountController.SendSmsOtp (Startup-Project.WebAPI)'
+2026-02-05 17:41:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/Account/send-otp - 200 null application/json; charset=utf-8 27.6493ms
+2026-02-05 17:41:10 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Account/verify-otp - application/json 47
+2026-02-05 17:41:10 [INF] CORS policy execution successful.
+2026-02-05 17:41:10 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.Account.AccountController.VerifySmsOtp (Startup-Project.WebAPI)'
+2026-02-05 17:41:10 [INF] Route matched with {action = "VerifySmsOtp", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] VerifySmsOtp(Startup_Project.Application.Dtos.Account.VerifySmsOtpDto) on controller Startup_Project.WebAPI.Controllers.Account.AccountController (Startup-Project.WebAPI).
+2026-02-05 17:41:10 [INF] Executed DbCommand (3ms) [Parameters=[@dto_PhoneNumber='?' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[AttemptCount], [s].[Code], [s].[CreatedAt], [s].[ExpiryDate], [s].[IsDeleted], [s].[IsUsed], [s].[PhoneNumber], [s].[UpdatedAt]
+FROM [SmsOtps] AS [s]
+WHERE [s].[PhoneNumber] = @dto_PhoneNumber AND [s].[IsUsed] = CAST(0 AS bit) AND [s].[ExpiryDate] > GETUTCDATE() AND [s].[AttemptCount] < 3
+ORDER BY [s].[CreatedAt] DESC
+2026-02-05 17:41:10 [INF] Executed DbCommand (4ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (DbType = Boolean), @p1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [SmsOtps] SET [IsUsed] = @p0, [UpdatedAt] = @p1
+OUTPUT 1
+WHERE [Id] = @p2;
+2026-02-05 17:41:10 [INF] Executed DbCommand (5ms) [Parameters=[@dto_PhoneNumber='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[PhoneNumber] = @dto_PhoneNumber
+2026-02-05 17:41:10 [INF] Executed DbCommand (3ms) [Parameters=[@userId='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @userId
+2026-02-05 17:41:10 [INF] Executing OkObjectResult, writing value of type 'Startup_Project.Application.Models.ResponseModel`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-05 17:41:10 [INF] Executed action Startup_Project.WebAPI.Controllers.Account.AccountController.VerifySmsOtp (Startup-Project.WebAPI) in 28.2605ms
+2026-02-05 17:41:10 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.Account.AccountController.VerifySmsOtp (Startup-Project.WebAPI)'
+2026-02-05 17:41:10 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/Account/verify-otp - 200 null application/json; charset=utf-8 36.0455ms
+2026-02-05 17:42:36 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/Account/send-otp - null null
+2026-02-05 17:42:36 [INF] CORS policy execution successful.
+2026-02-05 17:42:36 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/Account/send-otp - 204 null null 3.0898ms
+2026-02-05 17:42:36 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Account/send-otp - application/json 31
+2026-02-05 17:42:36 [INF] CORS policy execution successful.
+2026-02-05 17:42:36 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.Account.AccountController.SendSmsOtp (Startup-Project.WebAPI)'
+2026-02-05 17:42:36 [INF] Route matched with {action = "SendSmsOtp", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SendSmsOtp(Startup_Project.Application.Dtos.Account.SendSmsOtpDto) on controller Startup_Project.WebAPI.Controllers.Account.AccountController (Startup-Project.WebAPI).
+2026-02-05 17:42:36 [INF] Executed DbCommand (10ms) [Parameters=[@dto_PhoneNumber='?' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[AttemptCount], [s].[Code], [s].[CreatedAt], [s].[ExpiryDate], [s].[IsDeleted], [s].[IsUsed], [s].[PhoneNumber], [s].[UpdatedAt]
+FROM [SmsOtps] AS [s]
+WHERE [s].[PhoneNumber] = @dto_PhoneNumber AND [s].[IsUsed] = CAST(0 AS bit) AND [s].[ExpiryDate] > GETUTCDATE()
+2026-02-05 17:42:36 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 6), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Boolean), @p5='?' (Size = 20), @p6='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [SmsOtps] ([Id], [Code], [CreatedAt], [ExpiryDate], [IsDeleted], [PhoneNumber], [UpdatedAt])
+OUTPUT INSERTED.[AttemptCount], INSERTED.[IsUsed]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+2026-02-05 17:42:36 [INF] Executing OkObjectResult, writing value of type 'Startup_Project.Application.Models.ResponseModel`1[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-05 17:42:36 [INF] Executed action Startup_Project.WebAPI.Controllers.Account.AccountController.SendSmsOtp (Startup-Project.WebAPI) in 19.652ms
+2026-02-05 17:42:36 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.Account.AccountController.SendSmsOtp (Startup-Project.WebAPI)'
+2026-02-05 17:42:36 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/Account/send-otp - 200 null application/json; charset=utf-8 27.0411ms
+2026-02-05 17:42:53 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/Account/verify-otp - null null
+2026-02-05 17:42:53 [INF] CORS policy execution successful.
+2026-02-05 17:42:53 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/Account/verify-otp - 204 null null 3.3006ms
+2026-02-05 17:42:53 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Account/verify-otp - application/json 47
+2026-02-05 17:42:53 [INF] CORS policy execution successful.
+2026-02-05 17:42:53 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.Account.AccountController.VerifySmsOtp (Startup-Project.WebAPI)'
+2026-02-05 17:42:53 [INF] Route matched with {action = "VerifySmsOtp", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] VerifySmsOtp(Startup_Project.Application.Dtos.Account.VerifySmsOtpDto) on controller Startup_Project.WebAPI.Controllers.Account.AccountController (Startup-Project.WebAPI).
+2026-02-05 17:42:53 [INF] Executed DbCommand (3ms) [Parameters=[@dto_PhoneNumber='?' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[AttemptCount], [s].[Code], [s].[CreatedAt], [s].[ExpiryDate], [s].[IsDeleted], [s].[IsUsed], [s].[PhoneNumber], [s].[UpdatedAt]
+FROM [SmsOtps] AS [s]
+WHERE [s].[PhoneNumber] = @dto_PhoneNumber AND [s].[IsUsed] = CAST(0 AS bit) AND [s].[ExpiryDate] > GETUTCDATE() AND [s].[AttemptCount] < 3
+ORDER BY [s].[CreatedAt] DESC
+2026-02-05 17:42:53 [INF] Executed DbCommand (4ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (DbType = Boolean), @p1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [SmsOtps] SET [IsUsed] = @p0, [UpdatedAt] = @p1
+OUTPUT 1
+WHERE [Id] = @p2;
+2026-02-05 17:42:53 [INF] Executed DbCommand (5ms) [Parameters=[@dto_PhoneNumber='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[PhoneNumber] = @dto_PhoneNumber
+2026-02-05 17:42:53 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedUserName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @normalizedUserName
+2026-02-05 17:42:53 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-05 17:42:53 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (Size = 256), @p6='?' (DbType = Boolean), @p7='?' (Size = 100), @p8='?' (Size = 100), @p9='?' (DbType = Boolean), @p10='?' (DbType = DateTimeOffset), @p11='?' (Size = 256), @p12='?' (Size = 256), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (DbType = Boolean), @p16='?' (Size = 4000), @p17='?' (DbType = Boolean), @p18='?' (Size = 256), @p19='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [AuthProvider], [CodeExpireDate], [ConcurrencyStamp], [Email], [EmailConfirmed], [FullName], [GoogleId], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName], [VerificationCode])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19);
+2026-02-05 17:42:53 [INF] Executed DbCommand (3ms) [Parameters=[@normalizedRoleName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedRoleName
+2026-02-05 17:42:53 [INF] Executed DbCommand (1ms) [Parameters=[@p='?' (DbType = Guid), @p1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE [a].[UserId] = @p AND [a].[RoleId] = @p1
+2026-02-05 17:42:53 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedRoleName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedRoleName
+2026-02-05 17:42:53 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedUserName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @normalizedUserName
+2026-02-05 17:42:53 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-05 17:42:53 [INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p21='?' (DbType = Guid), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32), @p4='?' (DbType = DateTime2), @p5='?' (Size = 4000), @p22='?' (Size = 4000), @p6='?' (Size = 256), @p7='?' (DbType = Boolean), @p8='?' (Size = 100), @p9='?' (Size = 100), @p10='?' (DbType = Boolean), @p11='?' (DbType = DateTimeOffset), @p12='?' (Size = 256), @p13='?' (Size = 256), @p14='?' (Size = 4000), @p15='?' (Size = 4000), @p16='?' (DbType = Boolean), @p17='?' (Size = 4000), @p18='?' (DbType = Boolean), @p19='?' (Size = 256), @p20='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AspNetUserRoles] ([RoleId], [UserId])
+VALUES (@p0, @p1);
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p2, [AuthProvider] = @p3, [CodeExpireDate] = @p4, [ConcurrencyStamp] = @p5, [Email] = @p6, [EmailConfirmed] = @p7, [FullName] = @p8, [GoogleId] = @p9, [LockoutEnabled] = @p10, [LockoutEnd] = @p11, [NormalizedEmail] = @p12, [NormalizedUserName] = @p13, [PasswordHash] = @p14, [PhoneNumber] = @p15, [PhoneNumberConfirmed] = @p16, [SecurityStamp] = @p17, [TwoFactorEnabled] = @p18, [UserName] = @p19, [VerificationCode] = @p20
+OUTPUT 1
+WHERE [Id] = @p21 AND [ConcurrencyStamp] = @p22;
+2026-02-05 17:42:53 [INF] Executed DbCommand (2ms) [Parameters=[@userId='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @userId
+2026-02-05 17:42:53 [INF] Executing OkObjectResult, writing value of type 'Startup_Project.Application.Models.ResponseModel`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-05 17:42:53 [INF] Executed action Startup_Project.WebAPI.Controllers.Account.AccountController.VerifySmsOtp (Startup-Project.WebAPI) in 67.0528ms
+2026-02-05 17:42:53 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.Account.AccountController.VerifySmsOtp (Startup-Project.WebAPI)'
+2026-02-05 17:42:53 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/Account/verify-otp - 200 null application/json; charset=utf-8 74.5388ms
