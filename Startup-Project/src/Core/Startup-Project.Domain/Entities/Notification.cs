@@ -8,7 +8,7 @@ namespace Startup_Project.Domain.Entities;
 public class Notification : BaseEntity
 {
     public Guid UserId { get; set; }
-    public AppUser AppUser { get; set; } = null!;
+    public AppUser User { get; set; } = null!;
     public string Title { get; set; } = null!;
     public string Body { get; set; } = null!;
     public string? ImageUrl { get; set; }

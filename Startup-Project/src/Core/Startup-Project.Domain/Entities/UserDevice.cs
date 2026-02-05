@@ -8,7 +8,7 @@ namespace Startup_Project.Domain.Entities;
 public class UserDevice : BaseEntity
 {
     public Guid UserId { get; set; }
-    public AppUser AppUser { get; set; } = null!;
+    public AppUser User { get; set; } = null!;
     public string DeviceToken { get; set; } = null!;
     public DevicePlatform PlatForm { get; set; }
     public bool IsActive { get; set; } = true;

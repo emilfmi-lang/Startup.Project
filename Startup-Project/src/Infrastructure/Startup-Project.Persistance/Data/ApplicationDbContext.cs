@@ -7,7 +7,7 @@ using Startup_Project.Domain.Entities.Identity;
 
 namespace Startup_Project.Persistance.Data;
 
-public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : IdentityDbContext<AppUser,IdentityRole<Guid>,Guid>(options), IApplicationDbContext
+public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : IdentityDbContext<AppUser, IdentityRole<Guid>, Guid>(options), IApplicationDbContext
 {
     public DbSet<Gym> Gyms { get; set; }
     public DbSet<Subscription> Subscriptions { get; set; }
@@ -15,9 +15,9 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
     public DbSet<GymReview> GymReviews { get; set; }
     public DbSet<GymOpeningHour> GymOpeningHours { get; set; }
     public DbSet<Payment> Payments { get; set; }
-    public DbSet<CheckInLog> CheckInLogs { get; set; } 
+    public DbSet<CheckInLog> CheckInLogs { get; set; }
     public DbSet<CheckInToken> CheckInTokens { get; set; }
-    public DbSet<Trainer> Trainers  { get; set; }
+    public DbSet<Trainer> Trainers { get; set; }
     public DbSet<TrainerReview> TrainerReviews { get; set; }
     public DbSet<TrainerSchedule> TrainerSchedules { get; set; }
     public DbSet<TrainingSession> TrainingSessions { get; set; }
@@ -28,7 +28,8 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
     public DbSet<Campaign> Campaigns { get; set; }
     public DbSet<CampaignRule> CampaignRules { get; set; }
     public DbSet<CampaignUsage> CampaignUsages { get; set; }
-
+    public DbSet<Notification> Notifications { get; set; }
+    public DbSet<UserDevice> UserDevices { get; set; }
     public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
     {
         return base.SaveChangesAsync(cancellationToken);

@@ -25,5 +25,7 @@ public interface IApplicationDbContext
     DbSet<Campaign> Campaigns { get; set; }
     DbSet<CampaignRule> CampaignRules { get; set; }
     DbSet<CampaignUsage> CampaignUsages { get; set; }
+    DbSet<Notification> Notifications { get; set; }
+    DbSet<UserDevice> UserDevices { get; set; }
     Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
 }
