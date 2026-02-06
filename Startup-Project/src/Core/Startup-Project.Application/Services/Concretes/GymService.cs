@@ -105,12 +105,13 @@ public class GymService(
             .Where(g => !g.IsDeleted)
             .Include(g => g.OpeningHours)
             .Include(g => g.FavoritedByUsers)
+            .Include(g => g.Amenities.Where(a => a.IsHighlighted && !a.IsDeleted))
+            .Include(g => g.Packages.Where(p => !p.IsDeleted))
             .OrderByDescending(g => g.AverageRating)
             .Skip((page - 1) * pageSize)
             .Take(pageSize)
             .ToListAsync();
 
-        // Map to DTOs with IsFavorite
         var gymDtos = gyms.Select(g => new GymListDto
         {
             Id = g.Id,
@@ -121,7 +122,18 @@ public class GymService(
             ReviewCount = g.ReviewCount,
             IsOpen = g.IsOpenNow(),
             IsFavorite = userFavoriteGymIds.Contains(g.Id),
-            FavoriteCount = g.FavoritedByUsers.Count
+            FavoriteCount = g.FavoritedByUsers.Count,
+            Tags = g.Amenities
+                .Where(a => a.IsHighlighted && !a.IsDeleted)
+                .OrderBy(a => a.DisplayOrder)
+                .Take(4)
+                .Select(a => a.AmenityType.ToString())
+                .ToList(),
+            MinMonthlyPrice = g.Packages
+                .Where(p => !p.IsDeleted)
+                .OrderBy(p => p.Price)
+                .Select(p => (decimal?)p.Price)
+                .FirstOrDefault()
         }).ToList();
 
         return ResponseModel<List<GymListDto>>.SuccessResponse(gymDtos);

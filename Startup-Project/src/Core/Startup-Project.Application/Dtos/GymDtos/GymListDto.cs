@@ -12,4 +12,6 @@ public class GymListDto
     public bool IsOpen { get; set; }
     public bool IsFavorite { get; set; }
     public int FavoriteCount { get; set; }
+    public List<string> Tags { get; set; } = [];
+    public decimal? MinMonthlyPrice { get; set; }
 }

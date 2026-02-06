@@ -30,6 +30,7 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
     public DbSet<CampaignUsage> CampaignUsages { get; set; }
     public DbSet<Notification> Notifications { get; set; }
     public DbSet<UserDevice> UserDevices { get; set; }
+    public DbSet<GymAmenity> GymAmenities { get; set; }
     public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
     {
         return base.SaveChangesAsync(cancellationToken);

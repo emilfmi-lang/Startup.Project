@@ -27,5 +27,6 @@ public interface IApplicationDbContext
     DbSet<CampaignUsage> CampaignUsages { get; set; }
     DbSet<Notification> Notifications { get; set; }
     DbSet<UserDevice> UserDevices { get; set; }
+    DbSet<GymAmenity> GymAmenities { get; set; }
     Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
 }

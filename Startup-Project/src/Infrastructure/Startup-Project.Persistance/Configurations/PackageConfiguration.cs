@@ -25,7 +25,7 @@ public class PackageConfiguration : IEntityTypeConfiguration<Package>
             .HasDefaultValue(false);
 
         builder.HasOne(p => p.Gym)
-            .WithMany()
+            .WithMany(g => g.Packages)
             .HasForeignKey(p => p.GymId)
             .OnDelete(DeleteBehavior.Cascade);
 

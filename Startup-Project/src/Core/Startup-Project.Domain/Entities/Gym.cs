@@ -18,7 +18,8 @@ public class Gym : BaseEntity
     public List<Trainer> Trainers { get; private set; } = [];
     public List<TrainingSession> TrainingSessions { get; private set; } = [];
     public List<FavoriteGym> FavoritedByUsers { get; private set; } = [];
-
+    public List<GymAmenity> Amenities { get; private set; } = [];
+    public List<Package> Packages { get; private set; } = [];
     private Gym() { }
 
     public bool IsOpenNow()

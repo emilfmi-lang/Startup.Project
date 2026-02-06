@@ -42,13 +42,23 @@ public class GymConfiguration : IEntityTypeConfiguration<Gym>
             .HasForeignKey(r => r.GymId)
             .OnDelete(DeleteBehavior.Cascade);
 
-        builder.HasMany(g => g.OpeningHours)
-            .WithOne(oh => oh.Gym)
-            .HasForeignKey(oh => oh.GymId)
-            .OnDelete(DeleteBehavior.Cascade);
+                builder.HasMany(g => g.OpeningHours)
+                    .WithOne(oh => oh.Gym)
+                    .HasForeignKey(oh => oh.GymId)
+                    .OnDelete(DeleteBehavior.Cascade);
 
-        builder.HasIndex(g => g.Name);
-        builder.HasIndex(g => g.OwnerId);
-        builder.HasIndex(g => g.IsDeleted);
-    }
-}
+                builder.HasMany(g => g.Amenities)
+                    .WithOne(a => a.Gym)
+                    .HasForeignKey(a => a.GymId)
+                    .OnDelete(DeleteBehavior.Cascade);
+
+                builder.HasMany(g => g.Packages)
+                    .WithOne(p => p.Gym)
+                    .HasForeignKey(p => p.GymId)
+                    .OnDelete(DeleteBehavior.Cascade);
+
+                builder.HasIndex(g => g.Name);
+                builder.HasIndex(g => g.OwnerId);
+                builder.HasIndex(g => g.IsDeleted);
+            }
+        }
