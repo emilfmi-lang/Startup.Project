@@ -20,6 +20,14 @@ public class Gym : BaseEntity
     public List<FavoriteGym> FavoritedByUsers { get; private set; } = [];
     public List<GymAmenity> Amenities { get; private set; } = [];
     public List<Package> Packages { get; private set; } = [];
+    public string? Description { get; private set; }
+    public string? Phone { get; private set; }
+    public string? Email { get; private set; }
+    public string? Website { get; private set; }
+    public double? Latitude { get; private set; }
+    public double? Longitude { get; private set; }
+    public List<GymImage> Images { get; private set; } = [];
+
     private Gym() { }
 
     public bool IsOpenNow()
@@ -98,6 +106,26 @@ public class Gym : BaseEntity
     public void SetOwner(Guid ownerId)
     {
         OwnerId = ownerId;
+        UpdatedAt = DateTime.UtcNow;
+    }
+    public void SetDescription(string? description)
+    {
+        Description = description;
+        UpdatedAt = DateTime.UtcNow;
+    }
+
+    public void SetContact(string? phone, string? email, string? website)
+    {
+        Phone = phone;
+        Email = email;
+        Website = website;
+        UpdatedAt = DateTime.UtcNow;
+    }
+
+    public void SetLocation(double? latitude, double? longitude)
+    {
+        Latitude = latitude;
+        Longitude = longitude;
         UpdatedAt = DateTime.UtcNow;
     }
 }

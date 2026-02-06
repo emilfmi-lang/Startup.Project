@@ -214,14 +214,12 @@ public class PricingEngine(
         {
             context.UserId = userId.Value;
 
-            // User segment-i mü?yy?n et
             var hasSubscription = await subscriptionRepository.AnyAsync(
                 s => s.UserId == userId.Value && !s.IsDeleted);
 
             context.IsNewUser = !hasSubscription;
             context.UserSegment = hasSubscription ? "ExistingUser" : "NewUser";
 
-            // Total purchase count
             context.TotalPurchaseCount = await subscriptionRepository.Table
                 .CountAsync(s => s.UserId == userId.Value && !s.IsDeleted);
         }

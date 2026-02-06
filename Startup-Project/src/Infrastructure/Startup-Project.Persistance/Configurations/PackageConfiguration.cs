@@ -14,12 +14,18 @@ public class PackageConfiguration : IEntityTypeConfiguration<Package>
             .HasMaxLength(100)
             .IsRequired();
 
+        builder.Property(p => p.Description)
+            .HasMaxLength(500);
+
         builder.Property(p => p.Price)
             .HasColumnType("decimal(18,2)")
             .IsRequired();
 
         builder.Property(p => p.DurationInDays)
             .IsRequired();
+
+        builder.Property(p => p.IsPopular)
+            .HasDefaultValue(false);
 
         builder.Property(p => p.IsDeleted)
             .HasDefaultValue(false);
@@ -29,7 +35,13 @@ public class PackageConfiguration : IEntityTypeConfiguration<Package>
             .HasForeignKey(p => p.GymId)
             .OnDelete(DeleteBehavior.Cascade);
 
+        builder.HasMany(p => p.Features)
+            .WithOne(f => f.Package)
+            .HasForeignKey(f => f.PackageId)
+            .OnDelete(DeleteBehavior.Cascade);
+
         builder.HasIndex(p => p.GymId);
         builder.HasIndex(p => p.IsDeleted);
+        builder.HasIndex(p => p.IsPopular);
     }
 }

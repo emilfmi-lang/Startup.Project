@@ -470,6 +470,14 @@ namespace Startup_Project.Persistance.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Description")
+                        .HasMaxLength(2000)
+                        .HasColumnType("nvarchar(2000)");
+
+                    b.Property<string>("Email")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
                     b.Property<string>("ImagePath")
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
@@ -479,6 +487,12 @@ namespace Startup_Project.Persistance.Migrations
                         .HasColumnType("bit")
                         .HasDefaultValue(false);
 
+                    b.Property<double?>("Latitude")
+                        .HasColumnType("float");
+
+                    b.Property<double?>("Longitude")
+                        .HasColumnType("float");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(150)
@@ -487,6 +501,10 @@ namespace Startup_Project.Persistance.Migrations
                     b.Property<Guid?>("OwnerId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("Phone")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
                     b.Property<int>("ReviewCount")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
@@ -494,6 +512,10 @@ namespace Startup_Project.Persistance.Migrations
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("Website")
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
 
                     b.HasKey("Id");
 
@@ -549,6 +571,48 @@ namespace Startup_Project.Persistance.Migrations
                     b.HasIndex("GymId", "IsHighlighted");
 
                     b.ToTable("GymAmenities");
+                });
+
+            modelBuilder.Entity("Startup_Project.Domain.Entities.GymImage", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Alt")
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("DisplayOrder")
+                        .HasColumnType("int");
+
+                    b.Property<Guid>("GymId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ImagePath")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsMain")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("GymId", "DisplayOrder");
+
+                    b.HasIndex("GymId", "IsMain");
+
+                    b.ToTable("GymImages");
                 });
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.GymOpeningHour", b =>
@@ -809,6 +873,10 @@ namespace Startup_Project.Persistance.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Description")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
                     b.Property<int>("DurationInDays")
                         .HasColumnType("int");
 
@@ -816,6 +884,11 @@ namespace Startup_Project.Persistance.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
+                    b.Property<bool>("IsPopular")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bit")
                         .HasDefaultValue(false);
@@ -837,7 +910,42 @@ namespace Startup_Project.Persistance.Migrations
 
                     b.HasIndex("IsDeleted");
 
+                    b.HasIndex("IsPopular");
+
                     b.ToTable("Packages");
+                });
+
+            modelBuilder.Entity("Startup_Project.Domain.Entities.PackageFeature", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("DisplayOrder")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<Guid>("PackageId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PackageId", "DisplayOrder");
+
+                    b.ToTable("PackageFeatures");
                 });
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.Payment", b =>
@@ -1532,6 +1640,17 @@ namespace Startup_Project.Persistance.Migrations
                     b.Navigation("Gym");
                 });
 
+            modelBuilder.Entity("Startup_Project.Domain.Entities.GymImage", b =>
+                {
+                    b.HasOne("Startup_Project.Domain.Entities.Gym", "Gym")
+                        .WithMany("Images")
+                        .HasForeignKey("GymId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Gym");
+                });
+
             modelBuilder.Entity("Startup_Project.Domain.Entities.GymOpeningHour", b =>
                 {
                     b.HasOne("Startup_Project.Domain.Entities.Gym", "Gym")
@@ -1582,6 +1701,17 @@ namespace Startup_Project.Persistance.Migrations
                         .IsRequired();
 
                     b.Navigation("Gym");
+                });
+
+            modelBuilder.Entity("Startup_Project.Domain.Entities.PackageFeature", b =>
+                {
+                    b.HasOne("Startup_Project.Domain.Entities.Package", "Package")
+                        .WithMany("Features")
+                        .HasForeignKey("PackageId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Package");
                 });
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.Payment", b =>
@@ -1756,6 +1886,8 @@ namespace Startup_Project.Persistance.Migrations
 
                     b.Navigation("FavoritedByUsers");
 
+                    b.Navigation("Images");
+
                     b.Navigation("OpeningHours");
 
                     b.Navigation("Packages");
@@ -1784,6 +1916,11 @@ namespace Startup_Project.Persistance.Migrations
                     b.Navigation("TrainerReviews");
 
                     b.Navigation("TrainingSessions");
+                });
+
+            modelBuilder.Entity("Startup_Project.Domain.Entities.Package", b =>
+                {
+                    b.Navigation("Features");
                 });
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.PromoCode", b =>

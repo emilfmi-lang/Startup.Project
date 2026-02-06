@@ -12,10 +12,7 @@ public class GymController(IGymService service) : ControllerBase
     [HttpGet]
     [AllowAnonymous]
     public async Task<IActionResult> GetAllAsync()
-    {
-        var result = await service.GetAllAsync();
-        return Ok(result);
-    }
+        => Ok(await service.GetAllAsync());
 
     /// <summary>
     /// Bütün zalları gətirir (IsFavorite flag ilə)
@@ -23,32 +20,28 @@ public class GymController(IGymService service) : ControllerBase
     [HttpGet("list")]
     [AllowAnonymous]
     public async Task<IActionResult> GetAllWithFavoritesAsync([FromQuery] int page = 1, [FromQuery] int pageSize = 20)
-    {
-        var result = await service.GetAllWithFavoritesAsync(page, pageSize);
-        return Ok(result);
-    }
+        => Ok(await service.GetAllWithFavoritesAsync(page, pageSize));
+
+    /// <summary>
+    /// Zalın detallı məlumatlarını gətirir
+    /// </summary>
+    [HttpGet("{id:guid}")]
+    [AllowAnonymous]
+    public async Task<IActionResult> GetDetailAsync(Guid id)
+        => Ok(await service.GetDetailAsync(id));
 
     [HttpPost]
     [Authorize(Roles = "Admin")]
     public async Task<IActionResult> CreateAsync([FromBody] GymCreateDto dto)
-    {
-        var result = await service.CreateAsync(dto);
-        return Ok(result);
-    }
+        => Ok(await service.CreateAsync(dto));
 
     [HttpPut("{id}")]
     [Authorize(Roles = "Admin")]
     public async Task<IActionResult> UpdateAsync(string id, [FromBody] GymUpdateDto dto)
-    {
-        var result = await service.UpdateAsync(id, dto);
-        return Ok(result);
-    }
+        => Ok(await service.UpdateAsync(id, dto));
 
     [HttpDelete("{id}")]
     [Authorize(Roles = "Admin")]
     public async Task<IActionResult> DeleteAsync(string id)
-    {
-        var result = await service.DeleteAsync(id);
-        return Ok(result);
-    }
+        => Ok(await service.DeleteAsync(id));
 }

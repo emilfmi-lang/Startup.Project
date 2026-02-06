@@ -10,6 +10,9 @@ public class Package: BaseEntity
     public int DurationInDays { get; private set; }
     public Guid GymId { get; private set; }
     public Gym Gym { get; private set; } = null!;
+    public string? Description { get; private set; }
+    public bool IsPopular { get; private set; }
+    public List<PackageFeature> Features { get; private set; } = [];
     private Package() { }
     public Package(
         string name,
@@ -56,6 +59,17 @@ public class Package: BaseEntity
     public void SetGymId(Guid gymId)
     {
         GymId = gymId;
+        UpdatedAt = DateTime.UtcNow;
+    }
+    public void SetDescription(string? description)
+    {
+        Description = description;
+        UpdatedAt = DateTime.UtcNow;
+    }
+
+    public void SetPopular(bool isPopular)
+    {
+        IsPopular = isPopular;
         UpdatedAt = DateTime.UtcNow;
     }
 }

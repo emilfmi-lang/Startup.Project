@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Startup_Project.Application.Dtos.GymDtos;
+using Startup_Project.Application.Dtos.GymDtos.GymDetail;
 using Startup_Project.Application.Dtos.GymOpeningHour;
 using Startup_Project.Domain.Entities;
 
@@ -53,6 +54,15 @@ public class GymProfile : Profile
         CreateMap<GymAmenity, GymAmenityDto>()
             .ForMember(dest => dest.Type, opt => opt.MapFrom(src => src.AmenityType.ToString()))
             .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.GetDisplayName()));
+
+        CreateMap<GymImage, GymImageDto>();
+
+        CreateMap<GymOpeningHour, OpeningHourResponseDto>()
+            .ForMember(dest => dest.Day, opt => opt.MapFrom(src => src.DayOfWeek.ToString()))
+            .ForMember(dest => dest.OpenTime, opt => opt.MapFrom(src => src.OpenTime.ToString(@"hh\:mm")))
+            .ForMember(dest => dest.CloseTime, opt => opt.MapFrom(src => src.ClosingTime.ToString(@"hh\:mm")))
+            .ForMember(dest => dest.DisplayText, opt => opt.MapFrom(src =>
+                src.IsClosed ? "Closed" : $"{src.OpenTime:hh\\:mm} - {src.ClosingTime:hh\\:mm}"));
 
         CreateMap<OpeningHourDto, GymOpeningHour>()
             .ForMember(dest => dest.OpenTime,

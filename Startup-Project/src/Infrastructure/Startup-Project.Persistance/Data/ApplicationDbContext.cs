@@ -31,6 +31,8 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
     public DbSet<Notification> Notifications { get; set; }
     public DbSet<UserDevice> UserDevices { get; set; }
     public DbSet<GymAmenity> GymAmenities { get; set; }
+    public DbSet<GymImage> GymImages { get; set; }
+    public DbSet<PackageFeature> PackageFeatures { get; set; }
     public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
     {
         return base.SaveChangesAsync(cancellationToken);
