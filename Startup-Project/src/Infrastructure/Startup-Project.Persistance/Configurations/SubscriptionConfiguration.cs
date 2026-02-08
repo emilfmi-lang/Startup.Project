@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Startup_Project.Domain.Entities;
+using Startup_Project.Domain.Enums;
 
 namespace Startup_Project.Persistance.Configurations;
 
@@ -16,7 +17,13 @@ public class SubscriptionConfiguration : IEntityTypeConfiguration<Subscription>
         builder.Property(s => s.EndDate)
             .IsRequired();
 
+        builder.Property(s => s.Status)
+            .IsRequired()
+            .HasDefaultValue(SubscriptionStatus.Active);
+
+        // Ignore computed properties
         builder.Ignore(s => s.IsActive);
+        builder.Ignore(s => s.IsExpired);
 
         builder.HasOne(s => s.User)
             .WithMany()
@@ -31,6 +38,8 @@ public class SubscriptionConfiguration : IEntityTypeConfiguration<Subscription>
         builder.HasIndex(s => s.UserId);
         builder.HasIndex(s => s.PackageId);
         builder.HasIndex(s => s.EndDate);
+        builder.HasIndex(s => s.Status);
+        builder.HasIndex(s => new { s.UserId, s.Status });
         builder.HasIndex(s => new { s.UserId, s.EndDate });
     }
 }

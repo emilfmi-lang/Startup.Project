@@ -1169,6 +1169,11 @@ namespace Startup_Project.Persistance.Migrations
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("Status")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasDefaultValue(1);
+
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
@@ -1181,9 +1186,13 @@ namespace Startup_Project.Persistance.Migrations
 
                     b.HasIndex("PackageId");
 
+                    b.HasIndex("Status");
+
                     b.HasIndex("UserId");
 
                     b.HasIndex("UserId", "EndDate");
+
+                    b.HasIndex("UserId", "Status");
 
                     b.ToTable("Subscriptions");
                 });
