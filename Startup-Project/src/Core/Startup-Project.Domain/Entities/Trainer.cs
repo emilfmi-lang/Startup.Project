@@ -38,6 +38,7 @@ public class Trainer : BaseEntity
     public List<TrainerReview> Reviews { get; private set; } = [];
     public List<TrainerSchedule> Schedules { get; private set; } = [];
     public List<TrainingSession> Sessions { get; private set; } = [];
+    public List<FavoriteTrainer> FavoritedByUsers { get; private set; } = [];
 
     // Constructors
     private Trainer() { }

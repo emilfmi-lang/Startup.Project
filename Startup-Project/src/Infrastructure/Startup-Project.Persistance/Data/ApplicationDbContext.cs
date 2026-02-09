@@ -33,6 +33,8 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
     public DbSet<GymAmenity> GymAmenities { get; set; }
     public DbSet<GymImage> GymImages { get; set; }
     public DbSet<PackageFeature> PackageFeatures { get; set; }
+    public DbSet<FavoriteTrainer> FavoriteTrainers { get; set; }
+
     public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
     {
         return base.SaveChangesAsync(cancellationToken);

@@ -18,6 +18,7 @@ public class AppUser : IdentityUser<Guid>
     public List<FavoriteGym> FavoriteGyms { get; private set; } = [];
     public List<Notification> Notifications { get; private set; } = [];
     public List<UserDevice> Devices { get; private set; } = [];
+    public List<FavoriteTrainer> FavoriteTrainers { get; private set; } = [];
     public AppUser() { }
 
     public AppUser(string fullName)
