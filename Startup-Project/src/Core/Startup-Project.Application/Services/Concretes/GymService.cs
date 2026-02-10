@@ -76,13 +76,31 @@ public class GymService(
 
     public async Task<ResponseModel<List<GymGetDto>>> GetAllAsync()
     {
+        var userId = GetCurrentUserId();
+
+        var userFavoriteGymIds = new HashSet<Guid>();
+        if (userId != null)
+        {
+            userFavoriteGymIds = (await favoriteRepository.Table
+                .AsNoTracking()
+                .Where(f => f.UserId == userId.Value)
+                .Select(f => f.GymId)
+                .ToListAsync())
+                .ToHashSet();
+        }
+
         var gyms = await repository.Table
             .Include(g => g.Owner)
             .Where(g => !g.IsDeleted)
             .AsNoTracking()
             .ToListAsync();
 
-        var gymDtos = mapper.Map<List<GymGetDto>>(gyms);
+        var gymDtos = gyms.Select(g =>
+        {
+            var dto = mapper.Map<GymGetDto>(g);
+            dto.IsFavorite = userFavoriteGymIds.Contains(g.Id);
+            return dto;
+        }).ToList();
 
         return ResponseModel<List<GymGetDto>>.SuccessResponse(gymDtos);
     }

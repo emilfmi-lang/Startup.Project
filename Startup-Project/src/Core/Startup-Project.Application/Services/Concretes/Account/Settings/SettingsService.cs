@@ -177,8 +177,8 @@ public class SettingsService(
     {
         var userId = GetCurrentUserId();
 
-        var session = await sessionRepository.Table
-            .FirstOrDefaultAsync(s => s.Id == sessionId && s.UserId == userId);
+            var session = await sessionRepository.Table
+                .FirstOrDefaultAsync(s => s.Id == sessionId && s.UserId == userId);
 
             if (session == null)
                 throw BusinessException.SessionNotFoundForRevoke();
@@ -323,8 +323,8 @@ public class SettingsService(
     {
         var userId = GetCurrentUserId();
 
-        var method = await paymentMethodRepository.Table
-            .FirstOrDefaultAsync(pm => pm.Id == methodId && pm.UserId == userId);
+            var method = await paymentMethodRepository.Table
+                .FirstOrDefaultAsync(pm => pm.Id == methodId && pm.UserId == userId);
 
             if (method == null)
                 throw BusinessException.PaymentMethodNotFound();
