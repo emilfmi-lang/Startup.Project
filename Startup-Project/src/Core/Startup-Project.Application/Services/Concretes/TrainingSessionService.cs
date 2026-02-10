@@ -8,6 +8,7 @@ using Startup_Project.Application.Services.Interfaces;
 using Startup_Project.Domain.Abstractions.Repositories;
 using Startup_Project.Domain.Entities;
 using Startup_Project.Domain.Enums;
+using Startup_Project.Domain.Enums.Errors;
 using Startup_Project.Domain.Exceptions;
 using System.Security.Claims;
 

@@ -1,4 +1,4 @@
-﻿using Startup_Project.Domain.Enums;
+﻿using Startup_Project.Domain.Enums.Errors;
 using System.Collections.Concurrent;
 
 namespace Startup_Project.Application.Models;

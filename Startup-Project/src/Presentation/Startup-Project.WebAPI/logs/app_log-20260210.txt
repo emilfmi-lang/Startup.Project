@@ -1,0 +1,1435 @@
+2026-02-10 12:08:24 [INF] Proqram başladılır...
+2026-02-10 12:08:26 [WRN] The 'SubscriptionStatus' property 'Status' on entity type 'Subscription' is configured with a database-generated default, but has no configured sentinel value. The database-generated default will always be used for inserts when the property has the value '0', since this is the CLR default for the 'SubscriptionStatus' type. Consider using a nullable type, using a nullable backing field, or setting the sentinel value for the property to ensure the database default is used when, and only when, appropriate. See https://aka.ms/efcore-docs-default-values for more information.
+2026-02-10 12:08:26 [WRN] No store type was specified for the decimal property 'FinalPrice' on entity type 'CampaignUsage'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-02-10 12:08:26 [WRN] No store type was specified for the decimal property 'OriginalPrice' on entity type 'CampaignUsage'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-02-10 12:08:27 [INF] Executed DbCommand (47ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-02-10 12:08:27 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-02-10 12:08:27 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-02-10 12:08:27 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-02-10 12:08:27 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-02-10 12:08:27 [INF] User profile is available. Using 'C:\Users\User\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-02-10 12:08:27 [INF] Executed DbCommand (5ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-10 12:08:27 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Gyms] AS [g]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-10 12:08:27 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-10 12:08:27 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-10 12:08:27 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-10 12:08:27 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-10 12:08:27 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [g].[Id], [g].[Address], [g].[AverageRating], [g].[CreatedAt], [g].[Description], [g].[Email], [g].[ImagePath], [g].[IsDeleted], [g].[Latitude], [g].[Longitude], [g].[Name], [g].[OwnerId], [g].[Phone], [g].[ReviewCount], [g].[UpdatedAt], [g].[Website]
+FROM [Gyms] AS [g]
+2026-02-10 12:08:27 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-10 12:08:27 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-10 12:08:27 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-10 12:08:27 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-10 12:08:27 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-10 12:08:27 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-10 12:08:27 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-10 12:08:27 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-10 12:08:27 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Trainers] AS [t]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-10 12:08:27 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Packages] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-10 12:08:27 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [GymOpeningHours] AS [g]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-10 12:08:27 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [TrainerSchedules] AS [t]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-10 12:08:27 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Subscriptions] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-10 12:08:27 [INF] Now listening on: http://localhost:5000
+2026-02-10 12:08:27 [INF] Application started. Press Ctrl+C to shut down.
+2026-02-10 12:08:27 [INF] Hosting environment: Development
+2026-02-10 12:08:27 [INF] Content root path: C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI
+2026-02-10 12:08:27 [INF] Request starting HTTP/1.1 GET http://localhost:5000/scalar/v1 - null null
+2026-02-10 12:08:28 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2026-02-10 12:08:28 [INF] Write content with HTTP Response ContentType of text/html
+2026-02-10 12:08:28 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2026-02-10 12:08:28 [INF] Request finished HTTP/1.1 GET http://localhost:5000/scalar/v1 - 200 null text/html 255.2218ms
+2026-02-10 12:08:28 [INF] Request starting HTTP/1.1 GET http://localhost:5000/scalar/scalar.js - null null
+2026-02-10 12:08:28 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/aspnetcore-browser-refresh.js - null null
+2026-02-10 12:08:28 [INF] Request starting HTTP/1.1 GET http://localhost:5000/scalar/scalar.aspnetcore.js - null null
+2026-02-10 12:08:28 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_vs/browserLink - null null
+2026-02-10 12:08:28 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.js'
+2026-02-10 12:08:28 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/aspnetcore-browser-refresh.js - 200 16529 application/javascript; charset=utf-8 5.8482ms
+2026-02-10 12:08:28 [INF] CORS policy execution successful.
+2026-02-10 12:08:28 [INF] Sending file with download name ''.
+2026-02-10 12:08:28 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2026-02-10 12:08:28 [INF] Sending file with download name ''.
+2026-02-10 12:08:28 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2026-02-10 12:08:28 [INF] Request finished HTTP/1.1 GET http://localhost:5000/scalar/scalar.aspnetcore.js - 200 1111 text/javascript 18.9062ms
+2026-02-10 12:08:28 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.js'
+2026-02-10 12:08:28 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_vs/browserLink - 200 null text/javascript; charset=UTF-8 39.7553ms
+2026-02-10 12:08:28 [INF] Request finished HTTP/1.1 GET http://localhost:5000/scalar/scalar.js - 200 922147 text/javascript 42.3999ms
+2026-02-10 12:08:28 [INF] Request starting HTTP/1.1 GET http://localhost:5000/openapi/v1.json - null null
+2026-02-10 12:08:28 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
+2026-02-10 12:08:28 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
+2026-02-10 12:08:28 [INF] Request finished HTTP/1.1 GET http://localhost:5000/openapi/v1.json - 200 null application/json;charset=utf-8 38.2238ms
+2026-02-10 12:14:45 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/Account/login - null null
+2026-02-10 12:14:45 [INF] CORS policy execution successful.
+2026-02-10 12:14:45 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/Account/login - 204 null null 5.7382ms
+2026-02-10 12:14:45 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Account/login - application/json 65
+2026-02-10 12:14:45 [INF] CORS policy execution successful.
+2026-02-10 12:14:45 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.Account.AccountController.Login (Startup-Project.WebAPI)'
+2026-02-10 12:14:45 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(Startup_Project.Application.Dtos.Account.UserLoginDto) on controller Startup_Project.WebAPI.Controllers.Account.AccountController (Startup-Project.WebAPI).
+2026-02-10 12:14:45 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-02-10 12:14:45 [INF] Executed DbCommand (13ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-10 12:14:45 [INF] Executed action Startup_Project.WebAPI.Controllers.Account.AccountController.Login (Startup-Project.WebAPI) in 334.9621ms
+2026-02-10 12:14:45 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.Account.AccountController.Login (Startup-Project.WebAPI)'
+2026-02-10 12:14:45 [WRN] Business Exception: ["InvalidCredentials"] Email və ya şifrə yanlışdır.
+Startup_Project.Domain.Exceptions.BusinessException: Email və ya şifrə yanlışdır.
+   at Startup_Project.Application.Services.Concretes.Account.AccountService.LoginAsync(UserLoginDto dto) in C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Core\Startup-Project.Application\Services\Concretes\Account\AccountService.cs:line 93
+   at Startup_Project.WebAPI.Controllers.Account.AccountController.Login(UserLoginDto dto) in C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI\Controllers\Account\AccountController.cs:line 19
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Startup_Project.WebAPI.Middlewares.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context) in C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI\Middlewares\ExceptionHandlingMiddleware.cs:line 31
+2026-02-10 12:14:45 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/Account/login - 400 null application/json 431.5655ms
+2026-02-10 12:15:03 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/Account/login - null null
+2026-02-10 12:15:03 [INF] CORS policy execution successful.
+2026-02-10 12:15:03 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/Account/login - 204 null null 4.1884ms
+2026-02-10 12:15:03 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Account/login - application/json 63
+2026-02-10 12:15:03 [INF] CORS policy execution successful.
+2026-02-10 12:15:03 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.Account.AccountController.Login (Startup-Project.WebAPI)'
+2026-02-10 12:15:03 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(Startup_Project.Application.Dtos.Account.UserLoginDto) on controller Startup_Project.WebAPI.Controllers.Account.AccountController (Startup-Project.WebAPI).
+2026-02-10 12:15:03 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-10 12:15:03 [INF] Executed DbCommand (4ms) [Parameters=[@userId='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @userId
+2026-02-10 12:15:03 [INF] Executing OkObjectResult, writing value of type 'Startup_Project.Application.Models.ResponseModel`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-10 12:15:03 [INF] Executed action Startup_Project.WebAPI.Controllers.Account.AccountController.Login (Startup-Project.WebAPI) in 171.3419ms
+2026-02-10 12:15:03 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.Account.AccountController.Login (Startup-Project.WebAPI)'
+2026-02-10 12:15:03 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/Account/login - 200 null application/json; charset=utf-8 179.5698ms
+2026-02-10 12:15:06 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/user/subscriptions - null null
+2026-02-10 12:15:06 [INF] CORS policy execution successful.
+2026-02-10 12:15:06 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/user/subscriptions - 204 null null 3.8615ms
+2026-02-10 12:15:06 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/user/subscriptions - null null
+2026-02-10 12:15:06 [INF] CORS policy execution successful.
+2026-02-10 12:15:06 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.UserSubscriptionController.GetMyActiveSubscriptionsAsync (Startup-Project.WebAPI)'
+2026-02-10 12:15:06 [INF] Route matched with {action = "GetMyActiveSubscriptions", controller = "UserSubscription"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetMyActiveSubscriptionsAsync() on controller Startup_Project.WebAPI.Controllers.UserSubscriptionController (Startup-Project.WebAPI).
+2026-02-10 12:15:06 [INF] Executed DbCommand (14ms) [Parameters=[@userId='?' (DbType = Guid), @now='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreatedAt], [s].[EndDate], [s].[IsDeleted], [s].[PackageId], [s].[StartDate], [s].[Status], [s].[UpdatedAt], [s].[UserId], [p].[Id], [p].[CreatedAt], [p].[Description], [p].[DurationInDays], [p].[GymId], [p].[IsDeleted], [p].[IsPopular], [p].[Name], [p].[Price], [p].[UpdatedAt], [g].[Id], [g].[Address], [g].[AverageRating], [g].[CreatedAt], [g].[Description], [g].[Email], [g].[ImagePath], [g].[IsDeleted], [g].[Latitude], [g].[Longitude], [g].[Name], [g].[OwnerId], [g].[Phone], [g].[ReviewCount], [g].[UpdatedAt], [g].[Website], [p1].[Id], [p1].[CreatedAt], [p1].[DisplayOrder], [p1].[IsDeleted], [p1].[Name], [p1].[PackageId], [p1].[UpdatedAt]
+FROM [Subscriptions] AS [s]
+INNER JOIN [Packages] AS [p] ON [s].[PackageId] = [p].[Id]
+INNER JOIN [Gyms] AS [g] ON [p].[GymId] = [g].[Id]
+LEFT JOIN (
+    SELECT [p0].[Id], [p0].[CreatedAt], [p0].[DisplayOrder], [p0].[IsDeleted], [p0].[Name], [p0].[PackageId], [p0].[UpdatedAt]
+    FROM [PackageFeatures] AS [p0]
+    WHERE [p0].[IsDeleted] = CAST(0 AS bit)
+) AS [p1] ON [p].[Id] = [p1].[PackageId]
+WHERE [s].[UserId] = @userId AND [s].[IsDeleted] = CAST(0 AS bit) AND [s].[Status] = 1 AND [s].[EndDate] >= @now
+ORDER BY [s].[EndDate] DESC, [s].[Id], [p].[Id], [g].[Id]
+2026-02-10 12:15:06 [INF] Executing OkObjectResult, writing value of type 'Startup_Project.Application.Models.ResponseModel`1[[System.Collections.Generic.List`1[[Startup_Project.Application.Dtos.Subscriptions.UserSubscriptionDto, Startup-Project.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-10 12:15:06 [INF] Executed action Startup_Project.WebAPI.Controllers.UserSubscriptionController.GetMyActiveSubscriptionsAsync (Startup-Project.WebAPI) in 110.8818ms
+2026-02-10 12:15:06 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.UserSubscriptionController.GetMyActiveSubscriptionsAsync (Startup-Project.WebAPI)'
+2026-02-10 12:15:06 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/user/subscriptions - 200 null application/json; charset=utf-8 171.4793ms
+2026-02-10 12:15:10 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/history/full?period=week - null null
+2026-02-10 12:15:10 [INF] CORS policy execution successful.
+2026-02-10 12:15:10 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/history/full?period=week - 204 null null 3.8021ms
+2026-02-10 12:15:10 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/history/full?period=week - null null
+2026-02-10 12:15:10 [INF] CORS policy execution successful.
+2026-02-10 12:15:10 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.HistoryController.GetFullHistory (Startup-Project.WebAPI)'
+2026-02-10 12:15:10 [INF] Route matched with {action = "GetFullHistory", controller = "History"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFullHistory(System.String) on controller Startup_Project.WebAPI.Controllers.HistoryController (Startup-Project.WebAPI).
+2026-02-10 12:15:10 [INF] Executed DbCommand (11ms) [Parameters=[@userId='?' (DbType = Guid), @startDate='?' (DbType = DateTime2), @endDate='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [CheckInLogs] AS [c]
+WHERE [c].[UserId] = @userId AND [c].[CheckInTime] >= @startDate AND [c].[CheckInTime] <= @endDate AND [c].[Status] = 1
+2026-02-10 12:15:10 [INF] Executed DbCommand (3ms) [Parameters=[@userId='?' (DbType = Guid), @startDate='?' (DbType = DateTime2), @endDate='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CheckInTime], [c].[CheckOutTime], [c].[CreatedAt], [c].[FailureReason], [c].[GymId], [c].[IsDeleted], [c].[Status], [c].[TokenUsed], [c].[UpdatedAt], [c].[UserId]
+FROM [CheckInLogs] AS [c]
+WHERE [c].[UserId] = @userId AND [c].[CheckInTime] >= @startDate AND [c].[CheckInTime] <= @endDate AND [c].[CheckOutTime] IS NOT NULL
+2026-02-10 12:15:10 [INF] Executed DbCommand (3ms) [Parameters=[@userId='?' (DbType = Guid), @startDate='?' (DbType = DateTime2), @endDate='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [CheckInLogs] AS [c]
+WHERE [c].[UserId] = @userId AND [c].[CheckInTime] >= @startDate AND [c].[CheckInTime] <= @endDate AND [c].[CheckOutTime] IS NULL AND [c].[Status] = 1
+2026-02-10 12:15:10 [INF] Executed DbCommand (5ms) [Parameters=[@userId='?' (DbType = Guid), @startDate='?' (DbType = DateTime2), @endDate='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [TrainingSessions] AS [t]
+WHERE [t].[UserId] = @userId AND [t].[UsedAt] >= @startDate AND [t].[UsedAt] <= @endDate AND [t].[Status] = 2
+2026-02-10 12:15:10 [INF] Executed DbCommand (4ms) [Parameters=[@p='?' (DbType = Int32), @userId='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(@p) [c0].[c]
+FROM (
+    SELECT DISTINCT CONVERT(date, [c].[CheckInTime]) AS [c]
+    FROM [CheckInLogs] AS [c]
+    WHERE [c].[UserId] = @userId AND [c].[Status] = 1
+) AS [c0]
+ORDER BY [c0].[c] DESC
+2026-02-10 12:15:10 [INF] Executed DbCommand (3ms) [Parameters=[@userId='?' (DbType = Guid), @date='?' (DbType = DateTime2), @nextDate='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CheckInTime], [c].[CheckOutTime], [c].[CreatedAt], [c].[FailureReason], [c].[GymId], [c].[IsDeleted], [c].[Status], [c].[TokenUsed], [c].[UpdatedAt], [c].[UserId]
+FROM [CheckInLogs] AS [c]
+WHERE [c].[UserId] = @userId AND [c].[CheckInTime] >= @date AND [c].[CheckInTime] < @nextDate AND [c].[CheckOutTime] IS NOT NULL
+2026-02-10 12:15:10 [INF] Executed DbCommand (3ms) [Parameters=[@userId='?' (DbType = Guid), @date='?' (DbType = DateTime2), @nextDate='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [CheckInLogs] AS [c]
+WHERE [c].[UserId] = @userId AND [c].[CheckInTime] >= @date AND [c].[CheckInTime] < @nextDate AND [c].[CheckOutTime] IS NULL AND [c].[Status] = 1
+2026-02-10 12:15:10 [INF] Executed DbCommand (0ms) [Parameters=[@userId='?' (DbType = Guid), @date='?' (DbType = DateTime2), @nextDate='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CheckInTime], [c].[CheckOutTime], [c].[CreatedAt], [c].[FailureReason], [c].[GymId], [c].[IsDeleted], [c].[Status], [c].[TokenUsed], [c].[UpdatedAt], [c].[UserId]
+FROM [CheckInLogs] AS [c]
+WHERE [c].[UserId] = @userId AND [c].[CheckInTime] >= @date AND [c].[CheckInTime] < @nextDate AND [c].[CheckOutTime] IS NOT NULL
+2026-02-10 12:15:10 [INF] Executed DbCommand (1ms) [Parameters=[@userId='?' (DbType = Guid), @date='?' (DbType = DateTime2), @nextDate='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [CheckInLogs] AS [c]
+WHERE [c].[UserId] = @userId AND [c].[CheckInTime] >= @date AND [c].[CheckInTime] < @nextDate AND [c].[CheckOutTime] IS NULL AND [c].[Status] = 1
+2026-02-10 12:15:10 [INF] Executed DbCommand (1ms) [Parameters=[@userId='?' (DbType = Guid), @date='?' (DbType = DateTime2), @nextDate='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CheckInTime], [c].[CheckOutTime], [c].[CreatedAt], [c].[FailureReason], [c].[GymId], [c].[IsDeleted], [c].[Status], [c].[TokenUsed], [c].[UpdatedAt], [c].[UserId]
+FROM [CheckInLogs] AS [c]
+WHERE [c].[UserId] = @userId AND [c].[CheckInTime] >= @date AND [c].[CheckInTime] < @nextDate AND [c].[CheckOutTime] IS NOT NULL
+2026-02-10 12:15:10 [INF] Executed DbCommand (1ms) [Parameters=[@userId='?' (DbType = Guid), @date='?' (DbType = DateTime2), @nextDate='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [CheckInLogs] AS [c]
+WHERE [c].[UserId] = @userId AND [c].[CheckInTime] >= @date AND [c].[CheckInTime] < @nextDate AND [c].[CheckOutTime] IS NULL AND [c].[Status] = 1
+2026-02-10 12:15:10 [INF] Executed DbCommand (0ms) [Parameters=[@userId='?' (DbType = Guid), @date='?' (DbType = DateTime2), @nextDate='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CheckInTime], [c].[CheckOutTime], [c].[CreatedAt], [c].[FailureReason], [c].[GymId], [c].[IsDeleted], [c].[Status], [c].[TokenUsed], [c].[UpdatedAt], [c].[UserId]
+FROM [CheckInLogs] AS [c]
+WHERE [c].[UserId] = @userId AND [c].[CheckInTime] >= @date AND [c].[CheckInTime] < @nextDate AND [c].[CheckOutTime] IS NOT NULL
+2026-02-10 12:15:10 [INF] Executed DbCommand (0ms) [Parameters=[@userId='?' (DbType = Guid), @date='?' (DbType = DateTime2), @nextDate='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [CheckInLogs] AS [c]
+WHERE [c].[UserId] = @userId AND [c].[CheckInTime] >= @date AND [c].[CheckInTime] < @nextDate AND [c].[CheckOutTime] IS NULL AND [c].[Status] = 1
+2026-02-10 12:15:10 [INF] Executed DbCommand (0ms) [Parameters=[@userId='?' (DbType = Guid), @date='?' (DbType = DateTime2), @nextDate='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CheckInTime], [c].[CheckOutTime], [c].[CreatedAt], [c].[FailureReason], [c].[GymId], [c].[IsDeleted], [c].[Status], [c].[TokenUsed], [c].[UpdatedAt], [c].[UserId]
+FROM [CheckInLogs] AS [c]
+WHERE [c].[UserId] = @userId AND [c].[CheckInTime] >= @date AND [c].[CheckInTime] < @nextDate AND [c].[CheckOutTime] IS NOT NULL
+2026-02-10 12:15:10 [INF] Executed DbCommand (0ms) [Parameters=[@userId='?' (DbType = Guid), @date='?' (DbType = DateTime2), @nextDate='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [CheckInLogs] AS [c]
+WHERE [c].[UserId] = @userId AND [c].[CheckInTime] >= @date AND [c].[CheckInTime] < @nextDate AND [c].[CheckOutTime] IS NULL AND [c].[Status] = 1
+2026-02-10 12:15:10 [INF] Executed DbCommand (0ms) [Parameters=[@userId='?' (DbType = Guid), @date='?' (DbType = DateTime2), @nextDate='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CheckInTime], [c].[CheckOutTime], [c].[CreatedAt], [c].[FailureReason], [c].[GymId], [c].[IsDeleted], [c].[Status], [c].[TokenUsed], [c].[UpdatedAt], [c].[UserId]
+FROM [CheckInLogs] AS [c]
+WHERE [c].[UserId] = @userId AND [c].[CheckInTime] >= @date AND [c].[CheckInTime] < @nextDate AND [c].[CheckOutTime] IS NOT NULL
+2026-02-10 12:15:10 [INF] Executed DbCommand (0ms) [Parameters=[@userId='?' (DbType = Guid), @date='?' (DbType = DateTime2), @nextDate='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [CheckInLogs] AS [c]
+WHERE [c].[UserId] = @userId AND [c].[CheckInTime] >= @date AND [c].[CheckInTime] < @nextDate AND [c].[CheckOutTime] IS NULL AND [c].[Status] = 1
+2026-02-10 12:15:10 [INF] Executed DbCommand (0ms) [Parameters=[@userId='?' (DbType = Guid), @date='?' (DbType = DateTime2), @nextDate='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CheckInTime], [c].[CheckOutTime], [c].[CreatedAt], [c].[FailureReason], [c].[GymId], [c].[IsDeleted], [c].[Status], [c].[TokenUsed], [c].[UpdatedAt], [c].[UserId]
+FROM [CheckInLogs] AS [c]
+WHERE [c].[UserId] = @userId AND [c].[CheckInTime] >= @date AND [c].[CheckInTime] < @nextDate AND [c].[CheckOutTime] IS NOT NULL
+2026-02-10 12:15:10 [INF] Executed DbCommand (0ms) [Parameters=[@userId='?' (DbType = Guid), @date='?' (DbType = DateTime2), @nextDate='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [CheckInLogs] AS [c]
+WHERE [c].[UserId] = @userId AND [c].[CheckInTime] >= @date AND [c].[CheckInTime] < @nextDate AND [c].[CheckOutTime] IS NULL AND [c].[Status] = 1
+2026-02-10 12:15:10 [INF] Executed DbCommand (3ms) [Parameters=[@userId='?' (DbType = Guid), @startDate='?' (DbType = DateTime2), @endDate='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CheckInTime], [c].[CheckOutTime], [c].[CreatedAt], [c].[FailureReason], [c].[GymId], [c].[IsDeleted], [c].[Status], [c].[TokenUsed], [c].[UpdatedAt], [c].[UserId], [g].[Id], [g].[Address], [g].[AverageRating], [g].[CreatedAt], [g].[Description], [g].[Email], [g].[ImagePath], [g].[IsDeleted], [g].[Latitude], [g].[Longitude], [g].[Name], [g].[OwnerId], [g].[Phone], [g].[ReviewCount], [g].[UpdatedAt], [g].[Website]
+FROM [CheckInLogs] AS [c]
+INNER JOIN [Gyms] AS [g] ON [c].[GymId] = [g].[Id]
+WHERE [c].[UserId] = @userId AND [c].[CheckInTime] >= @startDate AND [c].[CheckInTime] <= @endDate AND [c].[Status] = 1
+ORDER BY [c].[CheckInTime] DESC
+2026-02-10 12:15:10 [INF] Executed DbCommand (8ms) [Parameters=[@userId='?' (DbType = Guid), @startDate='?' (DbType = DateTime2), @endDate='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CancellationReason], [t].[CancelledAt], [t].[CreatedAt], [t].[ExpiresAt], [t].[GymId], [t].[IsDeleted], [t].[PaidAt], [t].[PaymentId], [t].[Price], [t].[QrGeneratedAt], [t].[QrToken], [t].[Status], [t].[TrainerId], [t].[UpdatedAt], [t].[UsedAt], [t].[UserId], [t0].[Id], [t0].[AverageRating], [t0].[Bio], [t0].[CertificateUrl], [t0].[CreatedAt], [t0].[GymId], [t0].[IsDeleted], [t0].[IsOnlineTrainer], [t0].[IsVerified], [t0].[ProfileImageUrl], [t0].[ReviewCount], [t0].[SessionPrice], [t0].[SocialMediaLinks], [t0].[Specialization], [t0].[Status], [t0].[TotalClients], [t0].[TotalSessions], [t0].[UpdatedAt], [t0].[UserId], [t0].[VideoIntroUrl], [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode], [g].[Id], [g].[Address], [g].[AverageRating], [g].[CreatedAt], [g].[Description], [g].[Email], [g].[ImagePath], [g].[IsDeleted], [g].[Latitude], [g].[Longitude], [g].[Name], [g].[OwnerId], [g].[Phone], [g].[ReviewCount], [g].[UpdatedAt], [g].[Website]
+FROM [TrainingSessions] AS [t]
+INNER JOIN [Trainers] AS [t0] ON [t].[TrainerId] = [t0].[Id]
+INNER JOIN [AspNetUsers] AS [a] ON [t0].[UserId] = [a].[Id]
+LEFT JOIN [Gyms] AS [g] ON [t].[GymId] = [g].[Id]
+WHERE [t].[UserId] = @userId AND [t].[UsedAt] >= @startDate AND [t].[UsedAt] <= @endDate AND [t].[Status] = 2
+ORDER BY [t].[UsedAt] DESC
+2026-02-10 12:15:10 [INF] Executing OkObjectResult, writing value of type 'Startup_Project.Application.Models.ResponseModel`1[[Startup_Project.Application.Dtos.History.FullHistoryResponseDto, Startup-Project.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-10 12:15:10 [INF] Executed action Startup_Project.WebAPI.Controllers.HistoryController.GetFullHistory (Startup-Project.WebAPI) in 240.5555ms
+2026-02-10 12:15:10 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.HistoryController.GetFullHistory (Startup-Project.WebAPI)'
+2026-02-10 12:15:10 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/history/full?period=week - 200 null application/json; charset=utf-8 258.7825ms
+2026-02-10 12:15:10 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/favorites/gyms - null null
+2026-02-10 12:15:10 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/favorites/trainers - null null
+2026-02-10 12:15:10 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/favorites/counts - null null
+2026-02-10 12:15:10 [INF] CORS policy execution successful.
+2026-02-10 12:15:11 [INF] CORS policy execution successful.
+2026-02-10 12:15:11 [INF] CORS policy execution successful.
+2026-02-10 12:15:11 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/favorites/gyms - 204 null null 7.4928ms
+2026-02-10 12:15:11 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/favorites/trainers - 204 null null 7.119ms
+2026-02-10 12:15:11 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/favorites/counts - 204 null null 7.5302ms
+2026-02-10 12:15:11 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/favorites/gyms - null null
+2026-02-10 12:15:11 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/favorites/trainers - null null
+2026-02-10 12:15:11 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/favorites/counts - null null
+2026-02-10 12:15:11 [INF] CORS policy execution successful.
+2026-02-10 12:15:11 [INF] CORS policy execution successful.
+2026-02-10 12:15:11 [INF] CORS policy execution successful.
+2026-02-10 12:15:11 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.FavoritesController.GetFavoriteGyms (Startup-Project.WebAPI)'
+2026-02-10 12:15:11 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.FavoritesController.GetFavoriteTrainers (Startup-Project.WebAPI)'
+2026-02-10 12:15:11 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.FavoritesController.GetFavoriteCounts (Startup-Project.WebAPI)'
+2026-02-10 12:15:11 [INF] Route matched with {action = "GetFavoriteCounts", controller = "Favorites"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFavoriteCounts() on controller Startup_Project.WebAPI.Controllers.FavoritesController (Startup-Project.WebAPI).
+2026-02-10 12:15:11 [INF] Route matched with {action = "GetFavoriteGyms", controller = "Favorites"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFavoriteGyms(Int32, Int32) on controller Startup_Project.WebAPI.Controllers.FavoritesController (Startup-Project.WebAPI).
+2026-02-10 12:15:11 [INF] Route matched with {action = "GetFavoriteTrainers", controller = "Favorites"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFavoriteTrainers(Int32, Int32) on controller Startup_Project.WebAPI.Controllers.FavoritesController (Startup-Project.WebAPI).
+2026-02-10 12:15:11 [INF] Executed DbCommand (4ms) [Parameters=[@userId='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [FavoriteGyms] AS [f]
+INNER JOIN [Gyms] AS [g] ON [f].[GymId] = [g].[Id]
+WHERE [f].[UserId] = @userId AND [g].[IsDeleted] = CAST(0 AS bit)
+2026-02-10 12:15:11 [INF] Executed DbCommand (0ms) [Parameters=[@userId='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [FavoriteGyms] AS [f]
+INNER JOIN [Gyms] AS [g] ON [f].[GymId] = [g].[Id]
+WHERE [f].[UserId] = @userId AND [g].[IsDeleted] = CAST(0 AS bit)
+2026-02-10 12:15:11 [INF] Executed DbCommand (5ms) [Parameters=[@userId='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [FavoriteTrainers] AS [f]
+INNER JOIN [Trainers] AS [t] ON [f].[TrainerId] = [t].[Id]
+WHERE [f].[UserId] = @userId AND [t].[IsDeleted] = CAST(0 AS bit)
+2026-02-10 12:15:11 [INF] Executed DbCommand (0ms) [Parameters=[@userId='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [FavoriteTrainers] AS [f]
+INNER JOIN [Trainers] AS [t] ON [f].[TrainerId] = [t].[Id]
+WHERE [f].[UserId] = @userId AND [t].[IsDeleted] = CAST(0 AS bit)
+2026-02-10 12:15:11 [INF] Executing OkObjectResult, writing value of type 'Startup_Project.Application.Models.ResponseModel`1[[Startup_Project.Application.Dtos.Favorites.FavoriteCountsDto, Startup-Project.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-10 12:15:11 [INF] Executed action Startup_Project.WebAPI.Controllers.FavoritesController.GetFavoriteCounts (Startup-Project.WebAPI) in 33.1564ms
+2026-02-10 12:15:11 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.FavoritesController.GetFavoriteCounts (Startup-Project.WebAPI)'
+2026-02-10 12:15:11 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/favorites/counts - 200 null application/json; charset=utf-8 54.0176ms
+2026-02-10 12:15:11 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2026-02-10 12:15:11 [INF] Executed DbCommand (8ms) [Parameters=[@userId='?' (DbType = Guid), @p='?' (DbType = Int32), @p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreatedAt], [s].[IsDeleted], [s].[TrainerId], [s].[UpdatedAt], [s].[UserId], [s].[Id0], [s].[AverageRating], [s].[Bio], [s].[CertificateUrl], [s].[CreatedAt0], [s].[GymId], [s].[IsDeleted0], [s].[IsOnlineTrainer], [s].[IsVerified], [s].[ProfileImageUrl], [s].[ReviewCount], [s].[SessionPrice], [s].[SocialMediaLinks], [s].[Specialization], [s].[Status], [s].[TotalClients], [s].[TotalSessions], [s].[UpdatedAt0], [s].[UserId0], [s].[VideoIntroUrl], [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode], [g].[Id], [g].[Address], [g].[AverageRating], [g].[CreatedAt], [g].[Description], [g].[Email], [g].[ImagePath], [g].[IsDeleted], [g].[Latitude], [g].[Longitude], [g].[Name], [g].[OwnerId], [g].[Phone], [g].[ReviewCount], [g].[UpdatedAt], [g].[Website]
+FROM (
+    SELECT [f].[Id], [f].[CreatedAt], [f].[IsDeleted], [f].[TrainerId], [f].[UpdatedAt], [f].[UserId], [t].[Id] AS [Id0], [t].[AverageRating], [t].[Bio], [t].[CertificateUrl], [t].[CreatedAt] AS [CreatedAt0], [t].[GymId], [t].[IsDeleted] AS [IsDeleted0], [t].[IsOnlineTrainer], [t].[IsVerified], [t].[ProfileImageUrl], [t].[ReviewCount], [t].[SessionPrice], [t].[SocialMediaLinks], [t].[Specialization], [t].[Status], [t].[TotalClients], [t].[TotalSessions], [t].[UpdatedAt] AS [UpdatedAt0], [t].[UserId] AS [UserId0], [t].[VideoIntroUrl]
+    FROM [FavoriteTrainers] AS [f]
+    INNER JOIN [Trainers] AS [t] ON [f].[TrainerId] = [t].[Id]
+    WHERE [f].[UserId] = @userId AND [t].[IsDeleted] = CAST(0 AS bit)
+    ORDER BY [f].[CreatedAt] DESC
+    OFFSET @p ROWS FETCH NEXT @p2 ROWS ONLY
+) AS [s]
+INNER JOIN [AspNetUsers] AS [a] ON [s].[UserId0] = [a].[Id]
+LEFT JOIN [Gyms] AS [g] ON [s].[GymId] = [g].[Id]
+ORDER BY [s].[CreatedAt] DESC
+2026-02-10 12:15:11 [INF] Executing OkObjectResult, writing value of type 'Startup_Project.Application.Models.ResponseModel`1[[Startup_Project.Application.Dtos.Common.PaginatedResult`1[[Startup_Project.Application.Dtos.Favorites.FavoriteTrainerDto, Startup-Project.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], Startup-Project.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-10 12:15:11 [INF] Executed action Startup_Project.WebAPI.Controllers.FavoritesController.GetFavoriteTrainers (Startup-Project.WebAPI) in 69.6357ms
+2026-02-10 12:15:11 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.FavoritesController.GetFavoriteTrainers (Startup-Project.WebAPI)'
+2026-02-10 12:15:11 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/favorites/trainers - 200 null application/json; charset=utf-8 96.7192ms
+2026-02-10 12:15:11 [INF] Executed DbCommand (26ms) [Parameters=[@userId='?' (DbType = Guid), @p='?' (DbType = Int32), @p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreatedAt], [s].[GymId], [s].[IsDeleted], [s].[UpdatedAt], [s].[UserId], [s].[Id0], [s].[Address], [s].[AverageRating], [s].[CreatedAt0], [s].[Description], [s].[Email], [s].[ImagePath], [s].[IsDeleted0], [s].[Latitude], [s].[Longitude], [s].[Name], [s].[OwnerId], [s].[Phone], [s].[ReviewCount], [s].[UpdatedAt0], [s].[Website], [g0].[Id], [g0].[ClosingTime], [g0].[CreatedAt], [g0].[DayOfWeek], [g0].[GymId], [g0].[IsClosed], [g0].[IsDeleted], [g0].[OpenTime], [g0].[UpdatedAt], [p0].[Id], [p0].[CreatedAt], [p0].[Description], [p0].[DurationInDays], [p0].[GymId], [p0].[IsDeleted], [p0].[IsPopular], [p0].[Name], [p0].[Price], [p0].[UpdatedAt], [g2].[Id], [g2].[AmenityType], [g2].[CreatedAt], [g2].[CustomName], [g2].[DisplayOrder], [g2].[GymId], [g2].[IconName], [g2].[IsDeleted], [g2].[IsHighlighted], [g2].[UpdatedAt]
+FROM (
+    SELECT [f].[Id], [f].[CreatedAt], [f].[GymId], [f].[IsDeleted], [f].[UpdatedAt], [f].[UserId], [g].[Id] AS [Id0], [g].[Address], [g].[AverageRating], [g].[CreatedAt] AS [CreatedAt0], [g].[Description], [g].[Email], [g].[ImagePath], [g].[IsDeleted] AS [IsDeleted0], [g].[Latitude], [g].[Longitude], [g].[Name], [g].[OwnerId], [g].[Phone], [g].[ReviewCount], [g].[UpdatedAt] AS [UpdatedAt0], [g].[Website]
+    FROM [FavoriteGyms] AS [f]
+    INNER JOIN [Gyms] AS [g] ON [f].[GymId] = [g].[Id]
+    WHERE [f].[UserId] = @userId AND [g].[IsDeleted] = CAST(0 AS bit)
+    ORDER BY [f].[CreatedAt] DESC
+    OFFSET @p ROWS FETCH NEXT @p2 ROWS ONLY
+) AS [s]
+LEFT JOIN [GymOpeningHours] AS [g0] ON [s].[Id0] = [g0].[GymId]
+LEFT JOIN (
+    SELECT [p].[Id], [p].[CreatedAt], [p].[Description], [p].[DurationInDays], [p].[GymId], [p].[IsDeleted], [p].[IsPopular], [p].[Name], [p].[Price], [p].[UpdatedAt]
+    FROM [Packages] AS [p]
+    WHERE [p].[IsDeleted] = CAST(0 AS bit)
+) AS [p0] ON [s].[Id0] = [p0].[GymId]
+LEFT JOIN (
+    SELECT [g1].[Id], [g1].[AmenityType], [g1].[CreatedAt], [g1].[CustomName], [g1].[DisplayOrder], [g1].[GymId], [g1].[IconName], [g1].[IsDeleted], [g1].[IsHighlighted], [g1].[UpdatedAt]
+    FROM [GymAmenities] AS [g1]
+    WHERE [g1].[IsDeleted] = CAST(0 AS bit)
+) AS [g2] ON [s].[Id0] = [g2].[GymId]
+ORDER BY [s].[CreatedAt] DESC, [s].[Id], [s].[Id0], [g0].[Id], [p0].[Id]
+2026-02-10 12:15:11 [INF] Executing OkObjectResult, writing value of type 'Startup_Project.Application.Models.ResponseModel`1[[Startup_Project.Application.Dtos.Common.PaginatedResult`1[[Startup_Project.Application.Dtos.Favorites.FavoriteGymDto, Startup-Project.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], Startup-Project.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-10 12:15:11 [INF] Executed action Startup_Project.WebAPI.Controllers.FavoritesController.GetFavoriteGyms (Startup-Project.WebAPI) in 114.1484ms
+2026-02-10 12:15:11 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.FavoritesController.GetFavoriteGyms (Startup-Project.WebAPI)'
+2026-02-10 12:15:11 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/favorites/gyms - 200 null application/json; charset=utf-8 141.0421ms
+2026-02-10 12:15:13 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/history/full?period=week - null null
+2026-02-10 12:15:13 [INF] CORS policy execution successful.
+2026-02-10 12:15:13 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.HistoryController.GetFullHistory (Startup-Project.WebAPI)'
+2026-02-10 12:15:13 [INF] Route matched with {action = "GetFullHistory", controller = "History"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFullHistory(System.String) on controller Startup_Project.WebAPI.Controllers.HistoryController (Startup-Project.WebAPI).
+2026-02-10 12:15:13 [INF] Executed DbCommand (1ms) [Parameters=[@userId='?' (DbType = Guid), @startDate='?' (DbType = DateTime2), @endDate='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [CheckInLogs] AS [c]
+WHERE [c].[UserId] = @userId AND [c].[CheckInTime] >= @startDate AND [c].[CheckInTime] <= @endDate AND [c].[Status] = 1
+2026-02-10 12:15:13 [INF] Executed DbCommand (0ms) [Parameters=[@userId='?' (DbType = Guid), @startDate='?' (DbType = DateTime2), @endDate='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CheckInTime], [c].[CheckOutTime], [c].[CreatedAt], [c].[FailureReason], [c].[GymId], [c].[IsDeleted], [c].[Status], [c].[TokenUsed], [c].[UpdatedAt], [c].[UserId]
+FROM [CheckInLogs] AS [c]
+WHERE [c].[UserId] = @userId AND [c].[CheckInTime] >= @startDate AND [c].[CheckInTime] <= @endDate AND [c].[CheckOutTime] IS NOT NULL
+2026-02-10 12:15:13 [INF] Executed DbCommand (0ms) [Parameters=[@userId='?' (DbType = Guid), @startDate='?' (DbType = DateTime2), @endDate='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [CheckInLogs] AS [c]
+WHERE [c].[UserId] = @userId AND [c].[CheckInTime] >= @startDate AND [c].[CheckInTime] <= @endDate AND [c].[CheckOutTime] IS NULL AND [c].[Status] = 1
+2026-02-10 12:15:13 [INF] Executed DbCommand (0ms) [Parameters=[@userId='?' (DbType = Guid), @startDate='?' (DbType = DateTime2), @endDate='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [TrainingSessions] AS [t]
+WHERE [t].[UserId] = @userId AND [t].[UsedAt] >= @startDate AND [t].[UsedAt] <= @endDate AND [t].[Status] = 2
+2026-02-10 12:15:13 [INF] Executed DbCommand (0ms) [Parameters=[@p='?' (DbType = Int32), @userId='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(@p) [c0].[c]
+FROM (
+    SELECT DISTINCT CONVERT(date, [c].[CheckInTime]) AS [c]
+    FROM [CheckInLogs] AS [c]
+    WHERE [c].[UserId] = @userId AND [c].[Status] = 1
+) AS [c0]
+ORDER BY [c0].[c] DESC
+2026-02-10 12:15:13 [INF] Executed DbCommand (0ms) [Parameters=[@userId='?' (DbType = Guid), @date='?' (DbType = DateTime2), @nextDate='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CheckInTime], [c].[CheckOutTime], [c].[CreatedAt], [c].[FailureReason], [c].[GymId], [c].[IsDeleted], [c].[Status], [c].[TokenUsed], [c].[UpdatedAt], [c].[UserId]
+FROM [CheckInLogs] AS [c]
+WHERE [c].[UserId] = @userId AND [c].[CheckInTime] >= @date AND [c].[CheckInTime] < @nextDate AND [c].[CheckOutTime] IS NOT NULL
+2026-02-10 12:15:13 [INF] Executed DbCommand (0ms) [Parameters=[@userId='?' (DbType = Guid), @date='?' (DbType = DateTime2), @nextDate='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [CheckInLogs] AS [c]
+WHERE [c].[UserId] = @userId AND [c].[CheckInTime] >= @date AND [c].[CheckInTime] < @nextDate AND [c].[CheckOutTime] IS NULL AND [c].[Status] = 1
+2026-02-10 12:15:13 [INF] Executed DbCommand (0ms) [Parameters=[@userId='?' (DbType = Guid), @date='?' (DbType = DateTime2), @nextDate='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CheckInTime], [c].[CheckOutTime], [c].[CreatedAt], [c].[FailureReason], [c].[GymId], [c].[IsDeleted], [c].[Status], [c].[TokenUsed], [c].[UpdatedAt], [c].[UserId]
+FROM [CheckInLogs] AS [c]
+WHERE [c].[UserId] = @userId AND [c].[CheckInTime] >= @date AND [c].[CheckInTime] < @nextDate AND [c].[CheckOutTime] IS NOT NULL
+2026-02-10 12:15:13 [INF] Executed DbCommand (0ms) [Parameters=[@userId='?' (DbType = Guid), @date='?' (DbType = DateTime2), @nextDate='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [CheckInLogs] AS [c]
+WHERE [c].[UserId] = @userId AND [c].[CheckInTime] >= @date AND [c].[CheckInTime] < @nextDate AND [c].[CheckOutTime] IS NULL AND [c].[Status] = 1
+2026-02-10 12:15:13 [INF] Executed DbCommand (0ms) [Parameters=[@userId='?' (DbType = Guid), @date='?' (DbType = DateTime2), @nextDate='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CheckInTime], [c].[CheckOutTime], [c].[CreatedAt], [c].[FailureReason], [c].[GymId], [c].[IsDeleted], [c].[Status], [c].[TokenUsed], [c].[UpdatedAt], [c].[UserId]
+FROM [CheckInLogs] AS [c]
+WHERE [c].[UserId] = @userId AND [c].[CheckInTime] >= @date AND [c].[CheckInTime] < @nextDate AND [c].[CheckOutTime] IS NOT NULL
+2026-02-10 12:15:13 [INF] Executed DbCommand (0ms) [Parameters=[@userId='?' (DbType = Guid), @date='?' (DbType = DateTime2), @nextDate='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [CheckInLogs] AS [c]
+WHERE [c].[UserId] = @userId AND [c].[CheckInTime] >= @date AND [c].[CheckInTime] < @nextDate AND [c].[CheckOutTime] IS NULL AND [c].[Status] = 1
+2026-02-10 12:15:13 [INF] Executed DbCommand (0ms) [Parameters=[@userId='?' (DbType = Guid), @date='?' (DbType = DateTime2), @nextDate='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CheckInTime], [c].[CheckOutTime], [c].[CreatedAt], [c].[FailureReason], [c].[GymId], [c].[IsDeleted], [c].[Status], [c].[TokenUsed], [c].[UpdatedAt], [c].[UserId]
+FROM [CheckInLogs] AS [c]
+WHERE [c].[UserId] = @userId AND [c].[CheckInTime] >= @date AND [c].[CheckInTime] < @nextDate AND [c].[CheckOutTime] IS NOT NULL
+2026-02-10 12:15:13 [INF] Executed DbCommand (0ms) [Parameters=[@userId='?' (DbType = Guid), @date='?' (DbType = DateTime2), @nextDate='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [CheckInLogs] AS [c]
+WHERE [c].[UserId] = @userId AND [c].[CheckInTime] >= @date AND [c].[CheckInTime] < @nextDate AND [c].[CheckOutTime] IS NULL AND [c].[Status] = 1
+2026-02-10 12:15:13 [INF] Executed DbCommand (0ms) [Parameters=[@userId='?' (DbType = Guid), @date='?' (DbType = DateTime2), @nextDate='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CheckInTime], [c].[CheckOutTime], [c].[CreatedAt], [c].[FailureReason], [c].[GymId], [c].[IsDeleted], [c].[Status], [c].[TokenUsed], [c].[UpdatedAt], [c].[UserId]
+FROM [CheckInLogs] AS [c]
+WHERE [c].[UserId] = @userId AND [c].[CheckInTime] >= @date AND [c].[CheckInTime] < @nextDate AND [c].[CheckOutTime] IS NOT NULL
+2026-02-10 12:15:13 [INF] Executed DbCommand (0ms) [Parameters=[@userId='?' (DbType = Guid), @date='?' (DbType = DateTime2), @nextDate='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [CheckInLogs] AS [c]
+WHERE [c].[UserId] = @userId AND [c].[CheckInTime] >= @date AND [c].[CheckInTime] < @nextDate AND [c].[CheckOutTime] IS NULL AND [c].[Status] = 1
+2026-02-10 12:15:13 [INF] Executed DbCommand (0ms) [Parameters=[@userId='?' (DbType = Guid), @date='?' (DbType = DateTime2), @nextDate='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CheckInTime], [c].[CheckOutTime], [c].[CreatedAt], [c].[FailureReason], [c].[GymId], [c].[IsDeleted], [c].[Status], [c].[TokenUsed], [c].[UpdatedAt], [c].[UserId]
+FROM [CheckInLogs] AS [c]
+WHERE [c].[UserId] = @userId AND [c].[CheckInTime] >= @date AND [c].[CheckInTime] < @nextDate AND [c].[CheckOutTime] IS NOT NULL
+2026-02-10 12:15:13 [INF] Executed DbCommand (0ms) [Parameters=[@userId='?' (DbType = Guid), @date='?' (DbType = DateTime2), @nextDate='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [CheckInLogs] AS [c]
+WHERE [c].[UserId] = @userId AND [c].[CheckInTime] >= @date AND [c].[CheckInTime] < @nextDate AND [c].[CheckOutTime] IS NULL AND [c].[Status] = 1
+2026-02-10 12:15:13 [INF] Executed DbCommand (0ms) [Parameters=[@userId='?' (DbType = Guid), @date='?' (DbType = DateTime2), @nextDate='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CheckInTime], [c].[CheckOutTime], [c].[CreatedAt], [c].[FailureReason], [c].[GymId], [c].[IsDeleted], [c].[Status], [c].[TokenUsed], [c].[UpdatedAt], [c].[UserId]
+FROM [CheckInLogs] AS [c]
+WHERE [c].[UserId] = @userId AND [c].[CheckInTime] >= @date AND [c].[CheckInTime] < @nextDate AND [c].[CheckOutTime] IS NOT NULL
+2026-02-10 12:15:13 [INF] Executed DbCommand (0ms) [Parameters=[@userId='?' (DbType = Guid), @date='?' (DbType = DateTime2), @nextDate='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [CheckInLogs] AS [c]
+WHERE [c].[UserId] = @userId AND [c].[CheckInTime] >= @date AND [c].[CheckInTime] < @nextDate AND [c].[CheckOutTime] IS NULL AND [c].[Status] = 1
+2026-02-10 12:15:13 [INF] Executed DbCommand (0ms) [Parameters=[@userId='?' (DbType = Guid), @startDate='?' (DbType = DateTime2), @endDate='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CheckInTime], [c].[CheckOutTime], [c].[CreatedAt], [c].[FailureReason], [c].[GymId], [c].[IsDeleted], [c].[Status], [c].[TokenUsed], [c].[UpdatedAt], [c].[UserId], [g].[Id], [g].[Address], [g].[AverageRating], [g].[CreatedAt], [g].[Description], [g].[Email], [g].[ImagePath], [g].[IsDeleted], [g].[Latitude], [g].[Longitude], [g].[Name], [g].[OwnerId], [g].[Phone], [g].[ReviewCount], [g].[UpdatedAt], [g].[Website]
+FROM [CheckInLogs] AS [c]
+INNER JOIN [Gyms] AS [g] ON [c].[GymId] = [g].[Id]
+WHERE [c].[UserId] = @userId AND [c].[CheckInTime] >= @startDate AND [c].[CheckInTime] <= @endDate AND [c].[Status] = 1
+ORDER BY [c].[CheckInTime] DESC
+2026-02-10 12:15:13 [INF] Executed DbCommand (0ms) [Parameters=[@userId='?' (DbType = Guid), @startDate='?' (DbType = DateTime2), @endDate='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CancellationReason], [t].[CancelledAt], [t].[CreatedAt], [t].[ExpiresAt], [t].[GymId], [t].[IsDeleted], [t].[PaidAt], [t].[PaymentId], [t].[Price], [t].[QrGeneratedAt], [t].[QrToken], [t].[Status], [t].[TrainerId], [t].[UpdatedAt], [t].[UsedAt], [t].[UserId], [t0].[Id], [t0].[AverageRating], [t0].[Bio], [t0].[CertificateUrl], [t0].[CreatedAt], [t0].[GymId], [t0].[IsDeleted], [t0].[IsOnlineTrainer], [t0].[IsVerified], [t0].[ProfileImageUrl], [t0].[ReviewCount], [t0].[SessionPrice], [t0].[SocialMediaLinks], [t0].[Specialization], [t0].[Status], [t0].[TotalClients], [t0].[TotalSessions], [t0].[UpdatedAt], [t0].[UserId], [t0].[VideoIntroUrl], [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode], [g].[Id], [g].[Address], [g].[AverageRating], [g].[CreatedAt], [g].[Description], [g].[Email], [g].[ImagePath], [g].[IsDeleted], [g].[Latitude], [g].[Longitude], [g].[Name], [g].[OwnerId], [g].[Phone], [g].[ReviewCount], [g].[UpdatedAt], [g].[Website]
+FROM [TrainingSessions] AS [t]
+INNER JOIN [Trainers] AS [t0] ON [t].[TrainerId] = [t0].[Id]
+INNER JOIN [AspNetUsers] AS [a] ON [t0].[UserId] = [a].[Id]
+LEFT JOIN [Gyms] AS [g] ON [t].[GymId] = [g].[Id]
+WHERE [t].[UserId] = @userId AND [t].[UsedAt] >= @startDate AND [t].[UsedAt] <= @endDate AND [t].[Status] = 2
+ORDER BY [t].[UsedAt] DESC
+2026-02-10 12:15:13 [INF] Executing OkObjectResult, writing value of type 'Startup_Project.Application.Models.ResponseModel`1[[Startup_Project.Application.Dtos.History.FullHistoryResponseDto, Startup-Project.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-10 12:15:13 [INF] Executed action Startup_Project.WebAPI.Controllers.HistoryController.GetFullHistory (Startup-Project.WebAPI) in 58.0132ms
+2026-02-10 12:15:13 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.HistoryController.GetFullHistory (Startup-Project.WebAPI)'
+2026-02-10 12:15:13 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/history/full?period=week - 200 null application/json; charset=utf-8 66.1557ms
+2026-02-10 12:16:06 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/Gym - null null
+2026-02-10 12:16:06 [INF] CORS policy execution successful.
+2026-02-10 12:16:06 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/Gym - 204 null null 3.1654ms
+2026-02-10 12:16:06 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Gym - null null
+2026-02-10 12:16:06 [INF] CORS policy execution successful.
+2026-02-10 12:16:06 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.GymController.GetAllAsync (Startup-Project.WebAPI)'
+2026-02-10 12:16:06 [INF] Route matched with {action = "GetAll", controller = "Gym"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllAsync() on controller Startup_Project.WebAPI.Controllers.GymController (Startup-Project.WebAPI).
+2026-02-10 12:16:06 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [g].[Id], [g].[Address], [g].[AverageRating], [g].[CreatedAt], [g].[Description], [g].[Email], [g].[ImagePath], [g].[IsDeleted], [g].[Latitude], [g].[Longitude], [g].[Name], [g].[OwnerId], [g].[Phone], [g].[ReviewCount], [g].[UpdatedAt], [g].[Website], [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [Gyms] AS [g]
+LEFT JOIN [AspNetUsers] AS [a] ON [g].[OwnerId] = [a].[Id]
+WHERE [g].[IsDeleted] = CAST(0 AS bit)
+2026-02-10 12:16:06 [INF] Executing OkObjectResult, writing value of type 'Startup_Project.Application.Models.ResponseModel`1[[System.Collections.Generic.List`1[[Startup_Project.Application.Dtos.GymDtos.GymGetDto, Startup-Project.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-10 12:16:06 [INF] Executed action Startup_Project.WebAPI.Controllers.GymController.GetAllAsync (Startup-Project.WebAPI) in 38.7491ms
+2026-02-10 12:16:06 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.GymController.GetAllAsync (Startup-Project.WebAPI)'
+2026-02-10 12:16:06 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/Gym - 200 null application/json; charset=utf-8 52.5171ms
+2026-02-10 12:16:12 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/favorites/gyms - null null
+2026-02-10 12:16:12 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/favorites/trainers - null null
+2026-02-10 12:16:12 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/favorites/counts - null null
+2026-02-10 12:16:12 [INF] CORS policy execution successful.
+2026-02-10 12:16:12 [INF] CORS policy execution successful.
+2026-02-10 12:16:12 [INF] CORS policy execution successful.
+2026-02-10 12:16:12 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/favorites/gyms - 204 null null 6.9945ms
+2026-02-10 12:16:12 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/favorites/trainers - 204 null null 5.8407ms
+2026-02-10 12:16:12 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/favorites/counts - 204 null null 6.1026ms
+2026-02-10 12:16:12 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/favorites/trainers - null null
+2026-02-10 12:16:12 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/favorites/gyms - null null
+2026-02-10 12:16:12 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/favorites/counts - null null
+2026-02-10 12:16:12 [INF] CORS policy execution successful.
+2026-02-10 12:16:12 [INF] CORS policy execution successful.
+2026-02-10 12:16:12 [INF] CORS policy execution successful.
+2026-02-10 12:16:12 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.FavoritesController.GetFavoriteTrainers (Startup-Project.WebAPI)'
+2026-02-10 12:16:12 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.FavoritesController.GetFavoriteGyms (Startup-Project.WebAPI)'
+2026-02-10 12:16:12 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.FavoritesController.GetFavoriteCounts (Startup-Project.WebAPI)'
+2026-02-10 12:16:12 [INF] Route matched with {action = "GetFavoriteTrainers", controller = "Favorites"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFavoriteTrainers(Int32, Int32) on controller Startup_Project.WebAPI.Controllers.FavoritesController (Startup-Project.WebAPI).
+2026-02-10 12:16:12 [INF] Route matched with {action = "GetFavoriteGyms", controller = "Favorites"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFavoriteGyms(Int32, Int32) on controller Startup_Project.WebAPI.Controllers.FavoritesController (Startup-Project.WebAPI).
+2026-02-10 12:16:12 [INF] Route matched with {action = "GetFavoriteCounts", controller = "Favorites"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFavoriteCounts() on controller Startup_Project.WebAPI.Controllers.FavoritesController (Startup-Project.WebAPI).
+2026-02-10 12:16:12 [INF] Executed DbCommand (4ms) [Parameters=[@userId='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [FavoriteGyms] AS [f]
+INNER JOIN [Gyms] AS [g] ON [f].[GymId] = [g].[Id]
+WHERE [f].[UserId] = @userId AND [g].[IsDeleted] = CAST(0 AS bit)
+2026-02-10 12:16:12 [INF] Executed DbCommand (6ms) [Parameters=[@userId='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [FavoriteTrainers] AS [f]
+INNER JOIN [Trainers] AS [t] ON [f].[TrainerId] = [t].[Id]
+WHERE [f].[UserId] = @userId AND [t].[IsDeleted] = CAST(0 AS bit)
+2026-02-10 12:16:12 [INF] Executed DbCommand (4ms) [Parameters=[@userId='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [FavoriteGyms] AS [f]
+INNER JOIN [Gyms] AS [g] ON [f].[GymId] = [g].[Id]
+WHERE [f].[UserId] = @userId AND [g].[IsDeleted] = CAST(0 AS bit)
+2026-02-10 12:16:12 [INF] Executed DbCommand (0ms) [Parameters=[@userId='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [FavoriteTrainers] AS [f]
+INNER JOIN [Trainers] AS [t] ON [f].[TrainerId] = [t].[Id]
+WHERE [f].[UserId] = @userId AND [t].[IsDeleted] = CAST(0 AS bit)
+2026-02-10 12:16:12 [INF] Executing OkObjectResult, writing value of type 'Startup_Project.Application.Models.ResponseModel`1[[Startup_Project.Application.Dtos.Favorites.FavoriteCountsDto, Startup-Project.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-10 12:16:12 [INF] Executed action Startup_Project.WebAPI.Controllers.FavoritesController.GetFavoriteCounts (Startup-Project.WebAPI) in 14.1609ms
+2026-02-10 12:16:12 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.FavoritesController.GetFavoriteCounts (Startup-Project.WebAPI)'
+2026-02-10 12:16:12 [INF] Executed DbCommand (8ms) [Parameters=[@userId='?' (DbType = Guid), @p='?' (DbType = Int32), @p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreatedAt], [s].[IsDeleted], [s].[TrainerId], [s].[UpdatedAt], [s].[UserId], [s].[Id0], [s].[AverageRating], [s].[Bio], [s].[CertificateUrl], [s].[CreatedAt0], [s].[GymId], [s].[IsDeleted0], [s].[IsOnlineTrainer], [s].[IsVerified], [s].[ProfileImageUrl], [s].[ReviewCount], [s].[SessionPrice], [s].[SocialMediaLinks], [s].[Specialization], [s].[Status], [s].[TotalClients], [s].[TotalSessions], [s].[UpdatedAt0], [s].[UserId0], [s].[VideoIntroUrl], [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode], [g].[Id], [g].[Address], [g].[AverageRating], [g].[CreatedAt], [g].[Description], [g].[Email], [g].[ImagePath], [g].[IsDeleted], [g].[Latitude], [g].[Longitude], [g].[Name], [g].[OwnerId], [g].[Phone], [g].[ReviewCount], [g].[UpdatedAt], [g].[Website]
+FROM (
+    SELECT [f].[Id], [f].[CreatedAt], [f].[IsDeleted], [f].[TrainerId], [f].[UpdatedAt], [f].[UserId], [t].[Id] AS [Id0], [t].[AverageRating], [t].[Bio], [t].[CertificateUrl], [t].[CreatedAt] AS [CreatedAt0], [t].[GymId], [t].[IsDeleted] AS [IsDeleted0], [t].[IsOnlineTrainer], [t].[IsVerified], [t].[ProfileImageUrl], [t].[ReviewCount], [t].[SessionPrice], [t].[SocialMediaLinks], [t].[Specialization], [t].[Status], [t].[TotalClients], [t].[TotalSessions], [t].[UpdatedAt] AS [UpdatedAt0], [t].[UserId] AS [UserId0], [t].[VideoIntroUrl]
+    FROM [FavoriteTrainers] AS [f]
+    INNER JOIN [Trainers] AS [t] ON [f].[TrainerId] = [t].[Id]
+    WHERE [f].[UserId] = @userId AND [t].[IsDeleted] = CAST(0 AS bit)
+    ORDER BY [f].[CreatedAt] DESC
+    OFFSET @p ROWS FETCH NEXT @p2 ROWS ONLY
+) AS [s]
+INNER JOIN [AspNetUsers] AS [a] ON [s].[UserId0] = [a].[Id]
+LEFT JOIN [Gyms] AS [g] ON [s].[GymId] = [g].[Id]
+ORDER BY [s].[CreatedAt] DESC
+2026-02-10 12:16:12 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/favorites/counts - 200 null application/json; charset=utf-8 34.0729ms
+2026-02-10 12:16:12 [INF] Executing OkObjectResult, writing value of type 'Startup_Project.Application.Models.ResponseModel`1[[Startup_Project.Application.Dtos.Common.PaginatedResult`1[[Startup_Project.Application.Dtos.Favorites.FavoriteTrainerDto, Startup-Project.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], Startup-Project.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-10 12:16:12 [INF] Executed action Startup_Project.WebAPI.Controllers.FavoritesController.GetFavoriteTrainers (Startup-Project.WebAPI) in 25.9548ms
+2026-02-10 12:16:12 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.FavoritesController.GetFavoriteTrainers (Startup-Project.WebAPI)'
+2026-02-10 12:16:12 [INF] Executed DbCommand (19ms) [Parameters=[@userId='?' (DbType = Guid), @p='?' (DbType = Int32), @p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreatedAt], [s].[GymId], [s].[IsDeleted], [s].[UpdatedAt], [s].[UserId], [s].[Id0], [s].[Address], [s].[AverageRating], [s].[CreatedAt0], [s].[Description], [s].[Email], [s].[ImagePath], [s].[IsDeleted0], [s].[Latitude], [s].[Longitude], [s].[Name], [s].[OwnerId], [s].[Phone], [s].[ReviewCount], [s].[UpdatedAt0], [s].[Website], [g0].[Id], [g0].[ClosingTime], [g0].[CreatedAt], [g0].[DayOfWeek], [g0].[GymId], [g0].[IsClosed], [g0].[IsDeleted], [g0].[OpenTime], [g0].[UpdatedAt], [p0].[Id], [p0].[CreatedAt], [p0].[Description], [p0].[DurationInDays], [p0].[GymId], [p0].[IsDeleted], [p0].[IsPopular], [p0].[Name], [p0].[Price], [p0].[UpdatedAt], [g2].[Id], [g2].[AmenityType], [g2].[CreatedAt], [g2].[CustomName], [g2].[DisplayOrder], [g2].[GymId], [g2].[IconName], [g2].[IsDeleted], [g2].[IsHighlighted], [g2].[UpdatedAt]
+FROM (
+    SELECT [f].[Id], [f].[CreatedAt], [f].[GymId], [f].[IsDeleted], [f].[UpdatedAt], [f].[UserId], [g].[Id] AS [Id0], [g].[Address], [g].[AverageRating], [g].[CreatedAt] AS [CreatedAt0], [g].[Description], [g].[Email], [g].[ImagePath], [g].[IsDeleted] AS [IsDeleted0], [g].[Latitude], [g].[Longitude], [g].[Name], [g].[OwnerId], [g].[Phone], [g].[ReviewCount], [g].[UpdatedAt] AS [UpdatedAt0], [g].[Website]
+    FROM [FavoriteGyms] AS [f]
+    INNER JOIN [Gyms] AS [g] ON [f].[GymId] = [g].[Id]
+    WHERE [f].[UserId] = @userId AND [g].[IsDeleted] = CAST(0 AS bit)
+    ORDER BY [f].[CreatedAt] DESC
+    OFFSET @p ROWS FETCH NEXT @p2 ROWS ONLY
+) AS [s]
+LEFT JOIN [GymOpeningHours] AS [g0] ON [s].[Id0] = [g0].[GymId]
+LEFT JOIN (
+    SELECT [p].[Id], [p].[CreatedAt], [p].[Description], [p].[DurationInDays], [p].[GymId], [p].[IsDeleted], [p].[IsPopular], [p].[Name], [p].[Price], [p].[UpdatedAt]
+    FROM [Packages] AS [p]
+    WHERE [p].[IsDeleted] = CAST(0 AS bit)
+) AS [p0] ON [s].[Id0] = [p0].[GymId]
+LEFT JOIN (
+    SELECT [g1].[Id], [g1].[AmenityType], [g1].[CreatedAt], [g1].[CustomName], [g1].[DisplayOrder], [g1].[GymId], [g1].[IconName], [g1].[IsDeleted], [g1].[IsHighlighted], [g1].[UpdatedAt]
+    FROM [GymAmenities] AS [g1]
+    WHERE [g1].[IsDeleted] = CAST(0 AS bit)
+) AS [g2] ON [s].[Id0] = [g2].[GymId]
+ORDER BY [s].[CreatedAt] DESC, [s].[Id], [s].[Id0], [g0].[Id], [p0].[Id]
+2026-02-10 12:16:12 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/favorites/trainers - 200 null application/json; charset=utf-8 48.9669ms
+2026-02-10 12:16:12 [INF] Executing OkObjectResult, writing value of type 'Startup_Project.Application.Models.ResponseModel`1[[Startup_Project.Application.Dtos.Common.PaginatedResult`1[[Startup_Project.Application.Dtos.Favorites.FavoriteGymDto, Startup-Project.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], Startup-Project.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-10 12:16:12 [INF] Executed action Startup_Project.WebAPI.Controllers.FavoritesController.GetFavoriteGyms (Startup-Project.WebAPI) in 34.4241ms
+2026-02-10 12:16:12 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.FavoritesController.GetFavoriteGyms (Startup-Project.WebAPI)'
+2026-02-10 12:16:12 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/favorites/gyms - 200 null application/json; charset=utf-8 55.7724ms
+2026-02-10 12:16:15 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/favorites/gyms - null null
+2026-02-10 12:16:15 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/favorites/counts - null null
+2026-02-10 12:16:15 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/favorites/trainers - null null
+2026-02-10 12:16:15 [INF] CORS policy execution successful.
+2026-02-10 12:16:15 [INF] CORS policy execution successful.
+2026-02-10 12:16:15 [INF] CORS policy execution successful.
+2026-02-10 12:16:15 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.FavoritesController.GetFavoriteGyms (Startup-Project.WebAPI)'
+2026-02-10 12:16:15 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.FavoritesController.GetFavoriteCounts (Startup-Project.WebAPI)'
+2026-02-10 12:16:15 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.FavoritesController.GetFavoriteTrainers (Startup-Project.WebAPI)'
+2026-02-10 12:16:15 [INF] Route matched with {action = "GetFavoriteGyms", controller = "Favorites"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFavoriteGyms(Int32, Int32) on controller Startup_Project.WebAPI.Controllers.FavoritesController (Startup-Project.WebAPI).
+2026-02-10 12:16:15 [INF] Route matched with {action = "GetFavoriteCounts", controller = "Favorites"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFavoriteCounts() on controller Startup_Project.WebAPI.Controllers.FavoritesController (Startup-Project.WebAPI).
+2026-02-10 12:16:15 [INF] Route matched with {action = "GetFavoriteTrainers", controller = "Favorites"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFavoriteTrainers(Int32, Int32) on controller Startup_Project.WebAPI.Controllers.FavoritesController (Startup-Project.WebAPI).
+2026-02-10 12:16:15 [INF] Executed DbCommand (1ms) [Parameters=[@userId='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [FavoriteGyms] AS [f]
+INNER JOIN [Gyms] AS [g] ON [f].[GymId] = [g].[Id]
+WHERE [f].[UserId] = @userId AND [g].[IsDeleted] = CAST(0 AS bit)
+2026-02-10 12:16:15 [INF] Executed DbCommand (0ms) [Parameters=[@userId='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [FavoriteGyms] AS [f]
+INNER JOIN [Gyms] AS [g] ON [f].[GymId] = [g].[Id]
+WHERE [f].[UserId] = @userId AND [g].[IsDeleted] = CAST(0 AS bit)
+2026-02-10 12:16:15 [INF] Executed DbCommand (0ms) [Parameters=[@userId='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [FavoriteTrainers] AS [f]
+INNER JOIN [Trainers] AS [t] ON [f].[TrainerId] = [t].[Id]
+WHERE [f].[UserId] = @userId AND [t].[IsDeleted] = CAST(0 AS bit)
+2026-02-10 12:16:15 [INF] Executed DbCommand (0ms) [Parameters=[@userId='?' (DbType = Guid), @p='?' (DbType = Int32), @p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreatedAt], [s].[GymId], [s].[IsDeleted], [s].[UpdatedAt], [s].[UserId], [s].[Id0], [s].[Address], [s].[AverageRating], [s].[CreatedAt0], [s].[Description], [s].[Email], [s].[ImagePath], [s].[IsDeleted0], [s].[Latitude], [s].[Longitude], [s].[Name], [s].[OwnerId], [s].[Phone], [s].[ReviewCount], [s].[UpdatedAt0], [s].[Website], [g0].[Id], [g0].[ClosingTime], [g0].[CreatedAt], [g0].[DayOfWeek], [g0].[GymId], [g0].[IsClosed], [g0].[IsDeleted], [g0].[OpenTime], [g0].[UpdatedAt], [p0].[Id], [p0].[CreatedAt], [p0].[Description], [p0].[DurationInDays], [p0].[GymId], [p0].[IsDeleted], [p0].[IsPopular], [p0].[Name], [p0].[Price], [p0].[UpdatedAt], [g2].[Id], [g2].[AmenityType], [g2].[CreatedAt], [g2].[CustomName], [g2].[DisplayOrder], [g2].[GymId], [g2].[IconName], [g2].[IsDeleted], [g2].[IsHighlighted], [g2].[UpdatedAt]
+FROM (
+    SELECT [f].[Id], [f].[CreatedAt], [f].[GymId], [f].[IsDeleted], [f].[UpdatedAt], [f].[UserId], [g].[Id] AS [Id0], [g].[Address], [g].[AverageRating], [g].[CreatedAt] AS [CreatedAt0], [g].[Description], [g].[Email], [g].[ImagePath], [g].[IsDeleted] AS [IsDeleted0], [g].[Latitude], [g].[Longitude], [g].[Name], [g].[OwnerId], [g].[Phone], [g].[ReviewCount], [g].[UpdatedAt] AS [UpdatedAt0], [g].[Website]
+    FROM [FavoriteGyms] AS [f]
+    INNER JOIN [Gyms] AS [g] ON [f].[GymId] = [g].[Id]
+    WHERE [f].[UserId] = @userId AND [g].[IsDeleted] = CAST(0 AS bit)
+    ORDER BY [f].[CreatedAt] DESC
+    OFFSET @p ROWS FETCH NEXT @p2 ROWS ONLY
+) AS [s]
+LEFT JOIN [GymOpeningHours] AS [g0] ON [s].[Id0] = [g0].[GymId]
+LEFT JOIN (
+    SELECT [p].[Id], [p].[CreatedAt], [p].[Description], [p].[DurationInDays], [p].[GymId], [p].[IsDeleted], [p].[IsPopular], [p].[Name], [p].[Price], [p].[UpdatedAt]
+    FROM [Packages] AS [p]
+    WHERE [p].[IsDeleted] = CAST(0 AS bit)
+) AS [p0] ON [s].[Id0] = [p0].[GymId]
+LEFT JOIN (
+    SELECT [g1].[Id], [g1].[AmenityType], [g1].[CreatedAt], [g1].[CustomName], [g1].[DisplayOrder], [g1].[GymId], [g1].[IconName], [g1].[IsDeleted], [g1].[IsHighlighted], [g1].[UpdatedAt]
+    FROM [GymAmenities] AS [g1]
+    WHERE [g1].[IsDeleted] = CAST(0 AS bit)
+) AS [g2] ON [s].[Id0] = [g2].[GymId]
+ORDER BY [s].[CreatedAt] DESC, [s].[Id], [s].[Id0], [g0].[Id], [p0].[Id]
+2026-02-10 12:16:15 [INF] Executed DbCommand (0ms) [Parameters=[@userId='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [FavoriteTrainers] AS [f]
+INNER JOIN [Trainers] AS [t] ON [f].[TrainerId] = [t].[Id]
+WHERE [f].[UserId] = @userId AND [t].[IsDeleted] = CAST(0 AS bit)
+2026-02-10 12:16:15 [INF] Executed DbCommand (0ms) [Parameters=[@userId='?' (DbType = Guid), @p='?' (DbType = Int32), @p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreatedAt], [s].[IsDeleted], [s].[TrainerId], [s].[UpdatedAt], [s].[UserId], [s].[Id0], [s].[AverageRating], [s].[Bio], [s].[CertificateUrl], [s].[CreatedAt0], [s].[GymId], [s].[IsDeleted0], [s].[IsOnlineTrainer], [s].[IsVerified], [s].[ProfileImageUrl], [s].[ReviewCount], [s].[SessionPrice], [s].[SocialMediaLinks], [s].[Specialization], [s].[Status], [s].[TotalClients], [s].[TotalSessions], [s].[UpdatedAt0], [s].[UserId0], [s].[VideoIntroUrl], [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode], [g].[Id], [g].[Address], [g].[AverageRating], [g].[CreatedAt], [g].[Description], [g].[Email], [g].[ImagePath], [g].[IsDeleted], [g].[Latitude], [g].[Longitude], [g].[Name], [g].[OwnerId], [g].[Phone], [g].[ReviewCount], [g].[UpdatedAt], [g].[Website]
+FROM (
+    SELECT [f].[Id], [f].[CreatedAt], [f].[IsDeleted], [f].[TrainerId], [f].[UpdatedAt], [f].[UserId], [t].[Id] AS [Id0], [t].[AverageRating], [t].[Bio], [t].[CertificateUrl], [t].[CreatedAt] AS [CreatedAt0], [t].[GymId], [t].[IsDeleted] AS [IsDeleted0], [t].[IsOnlineTrainer], [t].[IsVerified], [t].[ProfileImageUrl], [t].[ReviewCount], [t].[SessionPrice], [t].[SocialMediaLinks], [t].[Specialization], [t].[Status], [t].[TotalClients], [t].[TotalSessions], [t].[UpdatedAt] AS [UpdatedAt0], [t].[UserId] AS [UserId0], [t].[VideoIntroUrl]
+    FROM [FavoriteTrainers] AS [f]
+    INNER JOIN [Trainers] AS [t] ON [f].[TrainerId] = [t].[Id]
+    WHERE [f].[UserId] = @userId AND [t].[IsDeleted] = CAST(0 AS bit)
+    ORDER BY [f].[CreatedAt] DESC
+    OFFSET @p ROWS FETCH NEXT @p2 ROWS ONLY
+) AS [s]
+INNER JOIN [AspNetUsers] AS [a] ON [s].[UserId0] = [a].[Id]
+LEFT JOIN [Gyms] AS [g] ON [s].[GymId] = [g].[Id]
+ORDER BY [s].[CreatedAt] DESC
+2026-02-10 12:16:15 [INF] Executing OkObjectResult, writing value of type 'Startup_Project.Application.Models.ResponseModel`1[[Startup_Project.Application.Dtos.Common.PaginatedResult`1[[Startup_Project.Application.Dtos.Favorites.FavoriteGymDto, Startup-Project.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], Startup-Project.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-10 12:16:15 [INF] Executing OkObjectResult, writing value of type 'Startup_Project.Application.Models.ResponseModel`1[[Startup_Project.Application.Dtos.Favorites.FavoriteCountsDto, Startup-Project.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-10 12:16:15 [INF] Executing OkObjectResult, writing value of type 'Startup_Project.Application.Models.ResponseModel`1[[Startup_Project.Application.Dtos.Common.PaginatedResult`1[[Startup_Project.Application.Dtos.Favorites.FavoriteTrainerDto, Startup-Project.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], Startup-Project.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-10 12:16:15 [INF] Executed action Startup_Project.WebAPI.Controllers.FavoritesController.GetFavoriteGyms (Startup-Project.WebAPI) in 15.5615ms
+2026-02-10 12:16:15 [INF] Executed action Startup_Project.WebAPI.Controllers.FavoritesController.GetFavoriteCounts (Startup-Project.WebAPI) in 14.7063ms
+2026-02-10 12:16:15 [INF] Executed action Startup_Project.WebAPI.Controllers.FavoritesController.GetFavoriteTrainers (Startup-Project.WebAPI) in 14.435ms
+2026-02-10 12:16:15 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.FavoritesController.GetFavoriteTrainers (Startup-Project.WebAPI)'
+2026-02-10 12:16:15 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.FavoritesController.GetFavoriteCounts (Startup-Project.WebAPI)'
+2026-02-10 12:16:15 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.FavoritesController.GetFavoriteGyms (Startup-Project.WebAPI)'
+2026-02-10 12:16:15 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/favorites/trainers - 200 null application/json; charset=utf-8 34.8892ms
+2026-02-10 12:16:15 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/favorites/counts - 200 null application/json; charset=utf-8 35.7818ms
+2026-02-10 12:16:15 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/favorites/gyms - 200 null application/json; charset=utf-8 36.7131ms
+2026-02-10 12:16:23 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/Gym - null null
+2026-02-10 12:16:23 [INF] CORS policy execution successful.
+2026-02-10 12:16:23 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/Gym - 204 null null 3.4436ms
+2026-02-10 12:16:23 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Gym - null null
+2026-02-10 12:16:23 [INF] CORS policy execution successful.
+2026-02-10 12:16:23 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.GymController.GetAllAsync (Startup-Project.WebAPI)'
+2026-02-10 12:16:23 [INF] Route matched with {action = "GetAll", controller = "Gym"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllAsync() on controller Startup_Project.WebAPI.Controllers.GymController (Startup-Project.WebAPI).
+2026-02-10 12:16:23 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [g].[Id], [g].[Address], [g].[AverageRating], [g].[CreatedAt], [g].[Description], [g].[Email], [g].[ImagePath], [g].[IsDeleted], [g].[Latitude], [g].[Longitude], [g].[Name], [g].[OwnerId], [g].[Phone], [g].[ReviewCount], [g].[UpdatedAt], [g].[Website], [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [Gyms] AS [g]
+LEFT JOIN [AspNetUsers] AS [a] ON [g].[OwnerId] = [a].[Id]
+WHERE [g].[IsDeleted] = CAST(0 AS bit)
+2026-02-10 12:16:23 [INF] Executing OkObjectResult, writing value of type 'Startup_Project.Application.Models.ResponseModel`1[[System.Collections.Generic.List`1[[Startup_Project.Application.Dtos.GymDtos.GymGetDto, Startup-Project.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-10 12:16:23 [INF] Executed action Startup_Project.WebAPI.Controllers.GymController.GetAllAsync (Startup-Project.WebAPI) in 6.3239ms
+2026-02-10 12:16:23 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.GymController.GetAllAsync (Startup-Project.WebAPI)'
+2026-02-10 12:16:23 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/Gym - 200 null application/json; charset=utf-8 14.2508ms
+2026-02-10 12:16:41 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/favorites/gyms - null null
+2026-02-10 12:16:41 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/favorites/trainers - null null
+2026-02-10 12:16:41 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/favorites/counts - null null
+2026-02-10 12:16:41 [INF] CORS policy execution successful.
+2026-02-10 12:16:41 [INF] CORS policy execution successful.
+2026-02-10 12:16:41 [INF] CORS policy execution successful.
+2026-02-10 12:16:41 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/favorites/gyms - 204 null null 8.2007ms
+2026-02-10 12:16:41 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/favorites/trainers - 204 null null 8.5654ms
+2026-02-10 12:16:41 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/favorites/counts - 204 null null 8.8699ms
+2026-02-10 12:16:41 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/favorites/gyms - null null
+2026-02-10 12:16:41 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/favorites/trainers - null null
+2026-02-10 12:16:41 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/favorites/counts - null null
+2026-02-10 12:16:41 [INF] CORS policy execution successful.
+2026-02-10 12:16:41 [INF] CORS policy execution successful.
+2026-02-10 12:16:41 [INF] CORS policy execution successful.
+2026-02-10 12:16:41 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.FavoritesController.GetFavoriteGyms (Startup-Project.WebAPI)'
+2026-02-10 12:16:41 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.FavoritesController.GetFavoriteTrainers (Startup-Project.WebAPI)'
+2026-02-10 12:16:41 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.FavoritesController.GetFavoriteCounts (Startup-Project.WebAPI)'
+2026-02-10 12:16:41 [INF] Route matched with {action = "GetFavoriteGyms", controller = "Favorites"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFavoriteGyms(Int32, Int32) on controller Startup_Project.WebAPI.Controllers.FavoritesController (Startup-Project.WebAPI).
+2026-02-10 12:16:41 [INF] Route matched with {action = "GetFavoriteTrainers", controller = "Favorites"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFavoriteTrainers(Int32, Int32) on controller Startup_Project.WebAPI.Controllers.FavoritesController (Startup-Project.WebAPI).
+2026-02-10 12:16:41 [INF] Route matched with {action = "GetFavoriteCounts", controller = "Favorites"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFavoriteCounts() on controller Startup_Project.WebAPI.Controllers.FavoritesController (Startup-Project.WebAPI).
+2026-02-10 12:16:41 [INF] Executed DbCommand (11ms) [Parameters=[@userId='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [FavoriteTrainers] AS [f]
+INNER JOIN [Trainers] AS [t] ON [f].[TrainerId] = [t].[Id]
+WHERE [f].[UserId] = @userId AND [t].[IsDeleted] = CAST(0 AS bit)
+2026-02-10 12:16:41 [INF] Executed DbCommand (13ms) [Parameters=[@userId='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [FavoriteGyms] AS [f]
+INNER JOIN [Gyms] AS [g] ON [f].[GymId] = [g].[Id]
+WHERE [f].[UserId] = @userId AND [g].[IsDeleted] = CAST(0 AS bit)
+2026-02-10 12:16:41 [INF] Executed DbCommand (12ms) [Parameters=[@userId='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [FavoriteGyms] AS [f]
+INNER JOIN [Gyms] AS [g] ON [f].[GymId] = [g].[Id]
+WHERE [f].[UserId] = @userId AND [g].[IsDeleted] = CAST(0 AS bit)
+2026-02-10 12:16:41 [INF] Executed DbCommand (0ms) [Parameters=[@userId='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [FavoriteTrainers] AS [f]
+INNER JOIN [Trainers] AS [t] ON [f].[TrainerId] = [t].[Id]
+WHERE [f].[UserId] = @userId AND [t].[IsDeleted] = CAST(0 AS bit)
+2026-02-10 12:16:41 [INF] Executing OkObjectResult, writing value of type 'Startup_Project.Application.Models.ResponseModel`1[[Startup_Project.Application.Dtos.Favorites.FavoriteCountsDto, Startup-Project.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-10 12:16:41 [INF] Executed action Startup_Project.WebAPI.Controllers.FavoritesController.GetFavoriteCounts (Startup-Project.WebAPI) in 19.2921ms
+2026-02-10 12:16:41 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.FavoritesController.GetFavoriteCounts (Startup-Project.WebAPI)'
+2026-02-10 12:16:41 [INF] Executed DbCommand (8ms) [Parameters=[@userId='?' (DbType = Guid), @p='?' (DbType = Int32), @p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreatedAt], [s].[IsDeleted], [s].[TrainerId], [s].[UpdatedAt], [s].[UserId], [s].[Id0], [s].[AverageRating], [s].[Bio], [s].[CertificateUrl], [s].[CreatedAt0], [s].[GymId], [s].[IsDeleted0], [s].[IsOnlineTrainer], [s].[IsVerified], [s].[ProfileImageUrl], [s].[ReviewCount], [s].[SessionPrice], [s].[SocialMediaLinks], [s].[Specialization], [s].[Status], [s].[TotalClients], [s].[TotalSessions], [s].[UpdatedAt0], [s].[UserId0], [s].[VideoIntroUrl], [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode], [g].[Id], [g].[Address], [g].[AverageRating], [g].[CreatedAt], [g].[Description], [g].[Email], [g].[ImagePath], [g].[IsDeleted], [g].[Latitude], [g].[Longitude], [g].[Name], [g].[OwnerId], [g].[Phone], [g].[ReviewCount], [g].[UpdatedAt], [g].[Website]
+FROM (
+    SELECT [f].[Id], [f].[CreatedAt], [f].[IsDeleted], [f].[TrainerId], [f].[UpdatedAt], [f].[UserId], [t].[Id] AS [Id0], [t].[AverageRating], [t].[Bio], [t].[CertificateUrl], [t].[CreatedAt] AS [CreatedAt0], [t].[GymId], [t].[IsDeleted] AS [IsDeleted0], [t].[IsOnlineTrainer], [t].[IsVerified], [t].[ProfileImageUrl], [t].[ReviewCount], [t].[SessionPrice], [t].[SocialMediaLinks], [t].[Specialization], [t].[Status], [t].[TotalClients], [t].[TotalSessions], [t].[UpdatedAt] AS [UpdatedAt0], [t].[UserId] AS [UserId0], [t].[VideoIntroUrl]
+    FROM [FavoriteTrainers] AS [f]
+    INNER JOIN [Trainers] AS [t] ON [f].[TrainerId] = [t].[Id]
+    WHERE [f].[UserId] = @userId AND [t].[IsDeleted] = CAST(0 AS bit)
+    ORDER BY [f].[CreatedAt] DESC
+    OFFSET @p ROWS FETCH NEXT @p2 ROWS ONLY
+) AS [s]
+INNER JOIN [AspNetUsers] AS [a] ON [s].[UserId0] = [a].[Id]
+LEFT JOIN [Gyms] AS [g] ON [s].[GymId] = [g].[Id]
+ORDER BY [s].[CreatedAt] DESC
+2026-02-10 12:16:41 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/favorites/counts - 200 null application/json; charset=utf-8 37.2211ms
+2026-02-10 12:16:41 [INF] Executing OkObjectResult, writing value of type 'Startup_Project.Application.Models.ResponseModel`1[[Startup_Project.Application.Dtos.Common.PaginatedResult`1[[Startup_Project.Application.Dtos.Favorites.FavoriteTrainerDto, Startup-Project.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], Startup-Project.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-10 12:16:41 [INF] Executed action Startup_Project.WebAPI.Controllers.FavoritesController.GetFavoriteTrainers (Startup-Project.WebAPI) in 29.8139ms
+2026-02-10 12:16:41 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.FavoritesController.GetFavoriteTrainers (Startup-Project.WebAPI)'
+2026-02-10 12:16:41 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/favorites/trainers - 200 null application/json; charset=utf-8 48.2148ms
+2026-02-10 12:16:41 [INF] Executed DbCommand (18ms) [Parameters=[@userId='?' (DbType = Guid), @p='?' (DbType = Int32), @p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreatedAt], [s].[GymId], [s].[IsDeleted], [s].[UpdatedAt], [s].[UserId], [s].[Id0], [s].[Address], [s].[AverageRating], [s].[CreatedAt0], [s].[Description], [s].[Email], [s].[ImagePath], [s].[IsDeleted0], [s].[Latitude], [s].[Longitude], [s].[Name], [s].[OwnerId], [s].[Phone], [s].[ReviewCount], [s].[UpdatedAt0], [s].[Website], [g0].[Id], [g0].[ClosingTime], [g0].[CreatedAt], [g0].[DayOfWeek], [g0].[GymId], [g0].[IsClosed], [g0].[IsDeleted], [g0].[OpenTime], [g0].[UpdatedAt], [p0].[Id], [p0].[CreatedAt], [p0].[Description], [p0].[DurationInDays], [p0].[GymId], [p0].[IsDeleted], [p0].[IsPopular], [p0].[Name], [p0].[Price], [p0].[UpdatedAt], [g2].[Id], [g2].[AmenityType], [g2].[CreatedAt], [g2].[CustomName], [g2].[DisplayOrder], [g2].[GymId], [g2].[IconName], [g2].[IsDeleted], [g2].[IsHighlighted], [g2].[UpdatedAt]
+FROM (
+    SELECT [f].[Id], [f].[CreatedAt], [f].[GymId], [f].[IsDeleted], [f].[UpdatedAt], [f].[UserId], [g].[Id] AS [Id0], [g].[Address], [g].[AverageRating], [g].[CreatedAt] AS [CreatedAt0], [g].[Description], [g].[Email], [g].[ImagePath], [g].[IsDeleted] AS [IsDeleted0], [g].[Latitude], [g].[Longitude], [g].[Name], [g].[OwnerId], [g].[Phone], [g].[ReviewCount], [g].[UpdatedAt] AS [UpdatedAt0], [g].[Website]
+    FROM [FavoriteGyms] AS [f]
+    INNER JOIN [Gyms] AS [g] ON [f].[GymId] = [g].[Id]
+    WHERE [f].[UserId] = @userId AND [g].[IsDeleted] = CAST(0 AS bit)
+    ORDER BY [f].[CreatedAt] DESC
+    OFFSET @p ROWS FETCH NEXT @p2 ROWS ONLY
+) AS [s]
+LEFT JOIN [GymOpeningHours] AS [g0] ON [s].[Id0] = [g0].[GymId]
+LEFT JOIN (
+    SELECT [p].[Id], [p].[CreatedAt], [p].[Description], [p].[DurationInDays], [p].[GymId], [p].[IsDeleted], [p].[IsPopular], [p].[Name], [p].[Price], [p].[UpdatedAt]
+    FROM [Packages] AS [p]
+    WHERE [p].[IsDeleted] = CAST(0 AS bit)
+) AS [p0] ON [s].[Id0] = [p0].[GymId]
+LEFT JOIN (
+    SELECT [g1].[Id], [g1].[AmenityType], [g1].[CreatedAt], [g1].[CustomName], [g1].[DisplayOrder], [g1].[GymId], [g1].[IconName], [g1].[IsDeleted], [g1].[IsHighlighted], [g1].[UpdatedAt]
+    FROM [GymAmenities] AS [g1]
+    WHERE [g1].[IsDeleted] = CAST(0 AS bit)
+) AS [g2] ON [s].[Id0] = [g2].[GymId]
+ORDER BY [s].[CreatedAt] DESC, [s].[Id], [s].[Id0], [g0].[Id], [p0].[Id]
+2026-02-10 12:16:41 [INF] Executing OkObjectResult, writing value of type 'Startup_Project.Application.Models.ResponseModel`1[[Startup_Project.Application.Dtos.Common.PaginatedResult`1[[Startup_Project.Application.Dtos.Favorites.FavoriteGymDto, Startup-Project.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], Startup-Project.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-10 12:16:41 [INF] Executed action Startup_Project.WebAPI.Controllers.FavoritesController.GetFavoriteGyms (Startup-Project.WebAPI) in 39.6796ms
+2026-02-10 12:16:41 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.FavoritesController.GetFavoriteGyms (Startup-Project.WebAPI)'
+2026-02-10 12:16:41 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/favorites/gyms - 200 null application/json; charset=utf-8 59.9494ms
+2026-02-10 12:16:44 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/Gym - null null
+2026-02-10 12:16:44 [INF] CORS policy execution successful.
+2026-02-10 12:16:44 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/Gym - 204 null null 2.9376ms
+2026-02-10 12:16:44 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Gym - null null
+2026-02-10 12:16:44 [INF] CORS policy execution successful.
+2026-02-10 12:16:44 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.GymController.GetAllAsync (Startup-Project.WebAPI)'
+2026-02-10 12:16:44 [INF] Route matched with {action = "GetAll", controller = "Gym"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllAsync() on controller Startup_Project.WebAPI.Controllers.GymController (Startup-Project.WebAPI).
+2026-02-10 12:16:44 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [g].[Id], [g].[Address], [g].[AverageRating], [g].[CreatedAt], [g].[Description], [g].[Email], [g].[ImagePath], [g].[IsDeleted], [g].[Latitude], [g].[Longitude], [g].[Name], [g].[OwnerId], [g].[Phone], [g].[ReviewCount], [g].[UpdatedAt], [g].[Website], [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [Gyms] AS [g]
+LEFT JOIN [AspNetUsers] AS [a] ON [g].[OwnerId] = [a].[Id]
+WHERE [g].[IsDeleted] = CAST(0 AS bit)
+2026-02-10 12:16:44 [INF] Executing OkObjectResult, writing value of type 'Startup_Project.Application.Models.ResponseModel`1[[System.Collections.Generic.List`1[[Startup_Project.Application.Dtos.GymDtos.GymGetDto, Startup-Project.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-10 12:16:44 [INF] Executed action Startup_Project.WebAPI.Controllers.GymController.GetAllAsync (Startup-Project.WebAPI) in 10.9616ms
+2026-02-10 12:16:44 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.GymController.GetAllAsync (Startup-Project.WebAPI)'
+2026-02-10 12:16:44 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/Gym - 200 null application/json; charset=utf-8 18.6059ms
+2026-02-10 12:16:49 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/favorites/gyms - null null
+2026-02-10 12:16:49 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/favorites/trainers - null null
+2026-02-10 12:16:49 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/favorites/counts - null null
+2026-02-10 12:16:49 [INF] CORS policy execution successful.
+2026-02-10 12:16:49 [INF] CORS policy execution successful.
+2026-02-10 12:16:49 [INF] CORS policy execution successful.
+2026-02-10 12:16:49 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/favorites/gyms - 204 null null 6.7194ms
+2026-02-10 12:16:49 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/favorites/trainers - 204 null null 7.3775ms
+2026-02-10 12:16:49 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/favorites/counts - 204 null null 7.9301ms
+2026-02-10 12:16:49 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/favorites/gyms - null null
+2026-02-10 12:16:49 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/favorites/trainers - null null
+2026-02-10 12:16:49 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/favorites/counts - null null
+2026-02-10 12:16:49 [INF] CORS policy execution successful.
+2026-02-10 12:16:49 [INF] CORS policy execution successful.
+2026-02-10 12:16:49 [INF] CORS policy execution successful.
+2026-02-10 12:16:49 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.FavoritesController.GetFavoriteGyms (Startup-Project.WebAPI)'
+2026-02-10 12:16:49 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.FavoritesController.GetFavoriteTrainers (Startup-Project.WebAPI)'
+2026-02-10 12:16:49 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.FavoritesController.GetFavoriteCounts (Startup-Project.WebAPI)'
+2026-02-10 12:16:49 [INF] Route matched with {action = "GetFavoriteGyms", controller = "Favorites"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFavoriteGyms(Int32, Int32) on controller Startup_Project.WebAPI.Controllers.FavoritesController (Startup-Project.WebAPI).
+2026-02-10 12:16:49 [INF] Route matched with {action = "GetFavoriteTrainers", controller = "Favorites"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFavoriteTrainers(Int32, Int32) on controller Startup_Project.WebAPI.Controllers.FavoritesController (Startup-Project.WebAPI).
+2026-02-10 12:16:49 [INF] Route matched with {action = "GetFavoriteCounts", controller = "Favorites"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFavoriteCounts() on controller Startup_Project.WebAPI.Controllers.FavoritesController (Startup-Project.WebAPI).
+2026-02-10 12:16:49 [INF] Executed DbCommand (4ms) [Parameters=[@userId='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [FavoriteGyms] AS [f]
+INNER JOIN [Gyms] AS [g] ON [f].[GymId] = [g].[Id]
+WHERE [f].[UserId] = @userId AND [g].[IsDeleted] = CAST(0 AS bit)
+2026-02-10 12:16:49 [INF] Executed DbCommand (2ms) [Parameters=[@userId='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [FavoriteGyms] AS [f]
+INNER JOIN [Gyms] AS [g] ON [f].[GymId] = [g].[Id]
+WHERE [f].[UserId] = @userId AND [g].[IsDeleted] = CAST(0 AS bit)
+2026-02-10 12:16:49 [INF] Executed DbCommand (4ms) [Parameters=[@userId='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [FavoriteTrainers] AS [f]
+INNER JOIN [Trainers] AS [t] ON [f].[TrainerId] = [t].[Id]
+WHERE [f].[UserId] = @userId AND [t].[IsDeleted] = CAST(0 AS bit)
+2026-02-10 12:16:49 [INF] Executed DbCommand (0ms) [Parameters=[@userId='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [FavoriteTrainers] AS [f]
+INNER JOIN [Trainers] AS [t] ON [f].[TrainerId] = [t].[Id]
+WHERE [f].[UserId] = @userId AND [t].[IsDeleted] = CAST(0 AS bit)
+2026-02-10 12:16:49 [INF] Executing OkObjectResult, writing value of type 'Startup_Project.Application.Models.ResponseModel`1[[Startup_Project.Application.Dtos.Favorites.FavoriteCountsDto, Startup-Project.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-10 12:16:49 [INF] Executed action Startup_Project.WebAPI.Controllers.FavoritesController.GetFavoriteCounts (Startup-Project.WebAPI) in 10.7561ms
+2026-02-10 12:16:49 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.FavoritesController.GetFavoriteCounts (Startup-Project.WebAPI)'
+2026-02-10 12:16:49 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/favorites/counts - 200 null application/json; charset=utf-8 28.259ms
+2026-02-10 12:16:49 [INF] Executed DbCommand (7ms) [Parameters=[@userId='?' (DbType = Guid), @p='?' (DbType = Int32), @p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreatedAt], [s].[IsDeleted], [s].[TrainerId], [s].[UpdatedAt], [s].[UserId], [s].[Id0], [s].[AverageRating], [s].[Bio], [s].[CertificateUrl], [s].[CreatedAt0], [s].[GymId], [s].[IsDeleted0], [s].[IsOnlineTrainer], [s].[IsVerified], [s].[ProfileImageUrl], [s].[ReviewCount], [s].[SessionPrice], [s].[SocialMediaLinks], [s].[Specialization], [s].[Status], [s].[TotalClients], [s].[TotalSessions], [s].[UpdatedAt0], [s].[UserId0], [s].[VideoIntroUrl], [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode], [g].[Id], [g].[Address], [g].[AverageRating], [g].[CreatedAt], [g].[Description], [g].[Email], [g].[ImagePath], [g].[IsDeleted], [g].[Latitude], [g].[Longitude], [g].[Name], [g].[OwnerId], [g].[Phone], [g].[ReviewCount], [g].[UpdatedAt], [g].[Website]
+FROM (
+    SELECT [f].[Id], [f].[CreatedAt], [f].[IsDeleted], [f].[TrainerId], [f].[UpdatedAt], [f].[UserId], [t].[Id] AS [Id0], [t].[AverageRating], [t].[Bio], [t].[CertificateUrl], [t].[CreatedAt] AS [CreatedAt0], [t].[GymId], [t].[IsDeleted] AS [IsDeleted0], [t].[IsOnlineTrainer], [t].[IsVerified], [t].[ProfileImageUrl], [t].[ReviewCount], [t].[SessionPrice], [t].[SocialMediaLinks], [t].[Specialization], [t].[Status], [t].[TotalClients], [t].[TotalSessions], [t].[UpdatedAt] AS [UpdatedAt0], [t].[UserId] AS [UserId0], [t].[VideoIntroUrl]
+    FROM [FavoriteTrainers] AS [f]
+    INNER JOIN [Trainers] AS [t] ON [f].[TrainerId] = [t].[Id]
+    WHERE [f].[UserId] = @userId AND [t].[IsDeleted] = CAST(0 AS bit)
+    ORDER BY [f].[CreatedAt] DESC
+    OFFSET @p ROWS FETCH NEXT @p2 ROWS ONLY
+) AS [s]
+INNER JOIN [AspNetUsers] AS [a] ON [s].[UserId0] = [a].[Id]
+LEFT JOIN [Gyms] AS [g] ON [s].[GymId] = [g].[Id]
+ORDER BY [s].[CreatedAt] DESC
+2026-02-10 12:16:49 [INF] Executing OkObjectResult, writing value of type 'Startup_Project.Application.Models.ResponseModel`1[[Startup_Project.Application.Dtos.Common.PaginatedResult`1[[Startup_Project.Application.Dtos.Favorites.FavoriteTrainerDto, Startup-Project.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], Startup-Project.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-10 12:16:49 [INF] Executed action Startup_Project.WebAPI.Controllers.FavoritesController.GetFavoriteTrainers (Startup-Project.WebAPI) in 21.2729ms
+2026-02-10 12:16:49 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.FavoritesController.GetFavoriteTrainers (Startup-Project.WebAPI)'
+2026-02-10 12:16:49 [INF] Executed DbCommand (17ms) [Parameters=[@userId='?' (DbType = Guid), @p='?' (DbType = Int32), @p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreatedAt], [s].[GymId], [s].[IsDeleted], [s].[UpdatedAt], [s].[UserId], [s].[Id0], [s].[Address], [s].[AverageRating], [s].[CreatedAt0], [s].[Description], [s].[Email], [s].[ImagePath], [s].[IsDeleted0], [s].[Latitude], [s].[Longitude], [s].[Name], [s].[OwnerId], [s].[Phone], [s].[ReviewCount], [s].[UpdatedAt0], [s].[Website], [g0].[Id], [g0].[ClosingTime], [g0].[CreatedAt], [g0].[DayOfWeek], [g0].[GymId], [g0].[IsClosed], [g0].[IsDeleted], [g0].[OpenTime], [g0].[UpdatedAt], [p0].[Id], [p0].[CreatedAt], [p0].[Description], [p0].[DurationInDays], [p0].[GymId], [p0].[IsDeleted], [p0].[IsPopular], [p0].[Name], [p0].[Price], [p0].[UpdatedAt], [g2].[Id], [g2].[AmenityType], [g2].[CreatedAt], [g2].[CustomName], [g2].[DisplayOrder], [g2].[GymId], [g2].[IconName], [g2].[IsDeleted], [g2].[IsHighlighted], [g2].[UpdatedAt]
+FROM (
+    SELECT [f].[Id], [f].[CreatedAt], [f].[GymId], [f].[IsDeleted], [f].[UpdatedAt], [f].[UserId], [g].[Id] AS [Id0], [g].[Address], [g].[AverageRating], [g].[CreatedAt] AS [CreatedAt0], [g].[Description], [g].[Email], [g].[ImagePath], [g].[IsDeleted] AS [IsDeleted0], [g].[Latitude], [g].[Longitude], [g].[Name], [g].[OwnerId], [g].[Phone], [g].[ReviewCount], [g].[UpdatedAt] AS [UpdatedAt0], [g].[Website]
+    FROM [FavoriteGyms] AS [f]
+    INNER JOIN [Gyms] AS [g] ON [f].[GymId] = [g].[Id]
+    WHERE [f].[UserId] = @userId AND [g].[IsDeleted] = CAST(0 AS bit)
+    ORDER BY [f].[CreatedAt] DESC
+    OFFSET @p ROWS FETCH NEXT @p2 ROWS ONLY
+) AS [s]
+LEFT JOIN [GymOpeningHours] AS [g0] ON [s].[Id0] = [g0].[GymId]
+LEFT JOIN (
+    SELECT [p].[Id], [p].[CreatedAt], [p].[Description], [p].[DurationInDays], [p].[GymId], [p].[IsDeleted], [p].[IsPopular], [p].[Name], [p].[Price], [p].[UpdatedAt]
+    FROM [Packages] AS [p]
+    WHERE [p].[IsDeleted] = CAST(0 AS bit)
+) AS [p0] ON [s].[Id0] = [p0].[GymId]
+LEFT JOIN (
+    SELECT [g1].[Id], [g1].[AmenityType], [g1].[CreatedAt], [g1].[CustomName], [g1].[DisplayOrder], [g1].[GymId], [g1].[IconName], [g1].[IsDeleted], [g1].[IsHighlighted], [g1].[UpdatedAt]
+    FROM [GymAmenities] AS [g1]
+    WHERE [g1].[IsDeleted] = CAST(0 AS bit)
+) AS [g2] ON [s].[Id0] = [g2].[GymId]
+ORDER BY [s].[CreatedAt] DESC, [s].[Id], [s].[Id0], [g0].[Id], [p0].[Id]
+2026-02-10 12:16:49 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/favorites/trainers - 200 null application/json; charset=utf-8 39.567ms
+2026-02-10 12:16:49 [INF] Executing OkObjectResult, writing value of type 'Startup_Project.Application.Models.ResponseModel`1[[Startup_Project.Application.Dtos.Common.PaginatedResult`1[[Startup_Project.Application.Dtos.Favorites.FavoriteGymDto, Startup-Project.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], Startup-Project.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-10 12:16:49 [INF] Executed action Startup_Project.WebAPI.Controllers.FavoritesController.GetFavoriteGyms (Startup-Project.WebAPI) in 30.9764ms
+2026-02-10 12:16:49 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.FavoritesController.GetFavoriteGyms (Startup-Project.WebAPI)'
+2026-02-10 12:16:49 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/favorites/gyms - 200 null application/json; charset=utf-8 50.0071ms
+2026-02-10 12:16:50 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/Gym - null null
+2026-02-10 12:16:50 [INF] CORS policy execution successful.
+2026-02-10 12:16:50 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/Gym - 204 null null 3.178ms
+2026-02-10 12:16:50 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Gym - null null
+2026-02-10 12:16:50 [INF] CORS policy execution successful.
+2026-02-10 12:16:50 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.GymController.GetAllAsync (Startup-Project.WebAPI)'
+2026-02-10 12:16:50 [INF] Route matched with {action = "GetAll", controller = "Gym"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllAsync() on controller Startup_Project.WebAPI.Controllers.GymController (Startup-Project.WebAPI).
+2026-02-10 12:16:50 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [g].[Id], [g].[Address], [g].[AverageRating], [g].[CreatedAt], [g].[Description], [g].[Email], [g].[ImagePath], [g].[IsDeleted], [g].[Latitude], [g].[Longitude], [g].[Name], [g].[OwnerId], [g].[Phone], [g].[ReviewCount], [g].[UpdatedAt], [g].[Website], [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [Gyms] AS [g]
+LEFT JOIN [AspNetUsers] AS [a] ON [g].[OwnerId] = [a].[Id]
+WHERE [g].[IsDeleted] = CAST(0 AS bit)
+2026-02-10 12:16:50 [INF] Executing OkObjectResult, writing value of type 'Startup_Project.Application.Models.ResponseModel`1[[System.Collections.Generic.List`1[[Startup_Project.Application.Dtos.GymDtos.GymGetDto, Startup-Project.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-10 12:16:50 [INF] Executed action Startup_Project.WebAPI.Controllers.GymController.GetAllAsync (Startup-Project.WebAPI) in 4.4134ms
+2026-02-10 12:16:50 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.GymController.GetAllAsync (Startup-Project.WebAPI)'
+2026-02-10 12:16:50 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/Gym - 200 null application/json; charset=utf-8 11.8196ms
+2026-02-10 12:17:54 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/Gym - null null
+2026-02-10 12:17:54 [INF] CORS policy execution successful.
+2026-02-10 12:17:54 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/Gym - 204 null null 3.066ms
+2026-02-10 12:17:54 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Gym - null null
+2026-02-10 12:17:54 [INF] CORS policy execution successful.
+2026-02-10 12:17:54 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.GymController.GetAllAsync (Startup-Project.WebAPI)'
+2026-02-10 12:17:54 [INF] Route matched with {action = "GetAll", controller = "Gym"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllAsync() on controller Startup_Project.WebAPI.Controllers.GymController (Startup-Project.WebAPI).
+2026-02-10 12:17:54 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [g].[Id], [g].[Address], [g].[AverageRating], [g].[CreatedAt], [g].[Description], [g].[Email], [g].[ImagePath], [g].[IsDeleted], [g].[Latitude], [g].[Longitude], [g].[Name], [g].[OwnerId], [g].[Phone], [g].[ReviewCount], [g].[UpdatedAt], [g].[Website], [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [Gyms] AS [g]
+LEFT JOIN [AspNetUsers] AS [a] ON [g].[OwnerId] = [a].[Id]
+WHERE [g].[IsDeleted] = CAST(0 AS bit)
+2026-02-10 12:17:55 [INF] Executing OkObjectResult, writing value of type 'Startup_Project.Application.Models.ResponseModel`1[[System.Collections.Generic.List`1[[Startup_Project.Application.Dtos.GymDtos.GymGetDto, Startup-Project.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-10 12:17:55 [INF] Executed action Startup_Project.WebAPI.Controllers.GymController.GetAllAsync (Startup-Project.WebAPI) in 10.4533ms
+2026-02-10 12:17:55 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.GymController.GetAllAsync (Startup-Project.WebAPI)'
+2026-02-10 12:17:55 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/Gym - 200 null application/json; charset=utf-8 18.6483ms
+2026-02-10 12:19:15 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/Gym - null null
+2026-02-10 12:19:15 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/favorites/gyms?pageSize=50 - null null
+2026-02-10 12:19:15 [INF] CORS policy execution successful.
+2026-02-10 12:19:15 [INF] CORS policy execution successful.
+2026-02-10 12:19:15 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/Gym - 204 null null 5.3282ms
+2026-02-10 12:19:15 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/favorites/gyms?pageSize=50 - 204 null null 4.3567ms
+2026-02-10 12:19:15 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Gym - null null
+2026-02-10 12:19:15 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/favorites/gyms?pageSize=50 - null null
+2026-02-10 12:19:15 [INF] CORS policy execution successful.
+2026-02-10 12:19:15 [INF] CORS policy execution successful.
+2026-02-10 12:19:15 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.GymController.GetAllAsync (Startup-Project.WebAPI)'
+2026-02-10 12:19:15 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.FavoritesController.GetFavoriteGyms (Startup-Project.WebAPI)'
+2026-02-10 12:19:15 [INF] Route matched with {action = "GetAll", controller = "Gym"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllAsync() on controller Startup_Project.WebAPI.Controllers.GymController (Startup-Project.WebAPI).
+2026-02-10 12:19:15 [INF] Route matched with {action = "GetFavoriteGyms", controller = "Favorites"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFavoriteGyms(Int32, Int32) on controller Startup_Project.WebAPI.Controllers.FavoritesController (Startup-Project.WebAPI).
+2026-02-10 12:19:15 [INF] Executed DbCommand (3ms) [Parameters=[@userId='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [FavoriteGyms] AS [f]
+INNER JOIN [Gyms] AS [g] ON [f].[GymId] = [g].[Id]
+WHERE [f].[UserId] = @userId AND [g].[IsDeleted] = CAST(0 AS bit)
+2026-02-10 12:19:15 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [g].[Id], [g].[Address], [g].[AverageRating], [g].[CreatedAt], [g].[Description], [g].[Email], [g].[ImagePath], [g].[IsDeleted], [g].[Latitude], [g].[Longitude], [g].[Name], [g].[OwnerId], [g].[Phone], [g].[ReviewCount], [g].[UpdatedAt], [g].[Website], [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [Gyms] AS [g]
+LEFT JOIN [AspNetUsers] AS [a] ON [g].[OwnerId] = [a].[Id]
+WHERE [g].[IsDeleted] = CAST(0 AS bit)
+2026-02-10 12:19:15 [INF] Executing OkObjectResult, writing value of type 'Startup_Project.Application.Models.ResponseModel`1[[System.Collections.Generic.List`1[[Startup_Project.Application.Dtos.GymDtos.GymGetDto, Startup-Project.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-10 12:19:15 [INF] Executed action Startup_Project.WebAPI.Controllers.GymController.GetAllAsync (Startup-Project.WebAPI) in 11.1886ms
+2026-02-10 12:19:15 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.GymController.GetAllAsync (Startup-Project.WebAPI)'
+2026-02-10 12:19:15 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/Gym - 200 null application/json; charset=utf-8 24.5098ms
+2026-02-10 12:19:15 [INF] Executed DbCommand (16ms) [Parameters=[@userId='?' (DbType = Guid), @p='?' (DbType = Int32), @p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreatedAt], [s].[GymId], [s].[IsDeleted], [s].[UpdatedAt], [s].[UserId], [s].[Id0], [s].[Address], [s].[AverageRating], [s].[CreatedAt0], [s].[Description], [s].[Email], [s].[ImagePath], [s].[IsDeleted0], [s].[Latitude], [s].[Longitude], [s].[Name], [s].[OwnerId], [s].[Phone], [s].[ReviewCount], [s].[UpdatedAt0], [s].[Website], [g0].[Id], [g0].[ClosingTime], [g0].[CreatedAt], [g0].[DayOfWeek], [g0].[GymId], [g0].[IsClosed], [g0].[IsDeleted], [g0].[OpenTime], [g0].[UpdatedAt], [p0].[Id], [p0].[CreatedAt], [p0].[Description], [p0].[DurationInDays], [p0].[GymId], [p0].[IsDeleted], [p0].[IsPopular], [p0].[Name], [p0].[Price], [p0].[UpdatedAt], [g2].[Id], [g2].[AmenityType], [g2].[CreatedAt], [g2].[CustomName], [g2].[DisplayOrder], [g2].[GymId], [g2].[IconName], [g2].[IsDeleted], [g2].[IsHighlighted], [g2].[UpdatedAt]
+FROM (
+    SELECT [f].[Id], [f].[CreatedAt], [f].[GymId], [f].[IsDeleted], [f].[UpdatedAt], [f].[UserId], [g].[Id] AS [Id0], [g].[Address], [g].[AverageRating], [g].[CreatedAt] AS [CreatedAt0], [g].[Description], [g].[Email], [g].[ImagePath], [g].[IsDeleted] AS [IsDeleted0], [g].[Latitude], [g].[Longitude], [g].[Name], [g].[OwnerId], [g].[Phone], [g].[ReviewCount], [g].[UpdatedAt] AS [UpdatedAt0], [g].[Website]
+    FROM [FavoriteGyms] AS [f]
+    INNER JOIN [Gyms] AS [g] ON [f].[GymId] = [g].[Id]
+    WHERE [f].[UserId] = @userId AND [g].[IsDeleted] = CAST(0 AS bit)
+    ORDER BY [f].[CreatedAt] DESC
+    OFFSET @p ROWS FETCH NEXT @p2 ROWS ONLY
+) AS [s]
+LEFT JOIN [GymOpeningHours] AS [g0] ON [s].[Id0] = [g0].[GymId]
+LEFT JOIN (
+    SELECT [p].[Id], [p].[CreatedAt], [p].[Description], [p].[DurationInDays], [p].[GymId], [p].[IsDeleted], [p].[IsPopular], [p].[Name], [p].[Price], [p].[UpdatedAt]
+    FROM [Packages] AS [p]
+    WHERE [p].[IsDeleted] = CAST(0 AS bit)
+) AS [p0] ON [s].[Id0] = [p0].[GymId]
+LEFT JOIN (
+    SELECT [g1].[Id], [g1].[AmenityType], [g1].[CreatedAt], [g1].[CustomName], [g1].[DisplayOrder], [g1].[GymId], [g1].[IconName], [g1].[IsDeleted], [g1].[IsHighlighted], [g1].[UpdatedAt]
+    FROM [GymAmenities] AS [g1]
+    WHERE [g1].[IsDeleted] = CAST(0 AS bit)
+) AS [g2] ON [s].[Id0] = [g2].[GymId]
+ORDER BY [s].[CreatedAt] DESC, [s].[Id], [s].[Id0], [g0].[Id], [p0].[Id]
+2026-02-10 12:19:15 [INF] Executing OkObjectResult, writing value of type 'Startup_Project.Application.Models.ResponseModel`1[[Startup_Project.Application.Dtos.Common.PaginatedResult`1[[Startup_Project.Application.Dtos.Favorites.FavoriteGymDto, Startup-Project.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], Startup-Project.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-10 12:19:15 [INF] Executed action Startup_Project.WebAPI.Controllers.FavoritesController.GetFavoriteGyms (Startup-Project.WebAPI) in 26.639ms
+2026-02-10 12:19:15 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.FavoritesController.GetFavoriteGyms (Startup-Project.WebAPI)'
+2026-02-10 12:19:15 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/favorites/gyms?pageSize=50 - 200 null application/json; charset=utf-8 38.9074ms
+2026-02-10 12:19:26 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/favorites/gyms/FitLife Gym/toggle - null null
+2026-02-10 12:19:26 [INF] CORS policy execution successful.
+2026-02-10 12:19:26 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/favorites/gyms/FitLife Gym/toggle - 204 null null 2.9816ms
+2026-02-10 12:19:26 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/favorites/gyms/FitLife Gym/toggle - null 0
+2026-02-10 12:19:26 [INF] CORS policy execution successful.
+2026-02-10 12:19:26 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/favorites/gyms/FitLife Gym/toggle - 404 0 null 5.3627ms
+2026-02-10 12:19:26 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/api/favorites/gyms/FitLife%20Gym/toggle, Response status code: 404
+2026-02-10 12:19:27 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/Gym - null null
+2026-02-10 12:19:27 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/favorites/gyms?pageSize=50 - null null
+2026-02-10 12:19:27 [INF] CORS policy execution successful.
+2026-02-10 12:19:27 [INF] CORS policy execution successful.
+2026-02-10 12:19:27 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/Gym - 204 null null 6.1296ms
+2026-02-10 12:19:27 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/favorites/gyms?pageSize=50 - 204 null null 6.664ms
+2026-02-10 12:19:27 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/favorites/gyms?pageSize=50 - null null
+2026-02-10 12:19:27 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Gym - null null
+2026-02-10 12:19:27 [INF] CORS policy execution successful.
+2026-02-10 12:19:27 [INF] CORS policy execution successful.
+2026-02-10 12:19:27 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.FavoritesController.GetFavoriteGyms (Startup-Project.WebAPI)'
+2026-02-10 12:19:27 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.GymController.GetAllAsync (Startup-Project.WebAPI)'
+2026-02-10 12:19:27 [INF] Route matched with {action = "GetFavoriteGyms", controller = "Favorites"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFavoriteGyms(Int32, Int32) on controller Startup_Project.WebAPI.Controllers.FavoritesController (Startup-Project.WebAPI).
+2026-02-10 12:19:27 [INF] Route matched with {action = "GetAll", controller = "Gym"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllAsync() on controller Startup_Project.WebAPI.Controllers.GymController (Startup-Project.WebAPI).
+2026-02-10 12:19:27 [INF] Executed DbCommand (1ms) [Parameters=[@userId='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [FavoriteGyms] AS [f]
+INNER JOIN [Gyms] AS [g] ON [f].[GymId] = [g].[Id]
+WHERE [f].[UserId] = @userId AND [g].[IsDeleted] = CAST(0 AS bit)
+2026-02-10 12:19:27 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [g].[Id], [g].[Address], [g].[AverageRating], [g].[CreatedAt], [g].[Description], [g].[Email], [g].[ImagePath], [g].[IsDeleted], [g].[Latitude], [g].[Longitude], [g].[Name], [g].[OwnerId], [g].[Phone], [g].[ReviewCount], [g].[UpdatedAt], [g].[Website], [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [Gyms] AS [g]
+LEFT JOIN [AspNetUsers] AS [a] ON [g].[OwnerId] = [a].[Id]
+WHERE [g].[IsDeleted] = CAST(0 AS bit)
+2026-02-10 12:19:27 [INF] Executed DbCommand (0ms) [Parameters=[@userId='?' (DbType = Guid), @p='?' (DbType = Int32), @p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreatedAt], [s].[GymId], [s].[IsDeleted], [s].[UpdatedAt], [s].[UserId], [s].[Id0], [s].[Address], [s].[AverageRating], [s].[CreatedAt0], [s].[Description], [s].[Email], [s].[ImagePath], [s].[IsDeleted0], [s].[Latitude], [s].[Longitude], [s].[Name], [s].[OwnerId], [s].[Phone], [s].[ReviewCount], [s].[UpdatedAt0], [s].[Website], [g0].[Id], [g0].[ClosingTime], [g0].[CreatedAt], [g0].[DayOfWeek], [g0].[GymId], [g0].[IsClosed], [g0].[IsDeleted], [g0].[OpenTime], [g0].[UpdatedAt], [p0].[Id], [p0].[CreatedAt], [p0].[Description], [p0].[DurationInDays], [p0].[GymId], [p0].[IsDeleted], [p0].[IsPopular], [p0].[Name], [p0].[Price], [p0].[UpdatedAt], [g2].[Id], [g2].[AmenityType], [g2].[CreatedAt], [g2].[CustomName], [g2].[DisplayOrder], [g2].[GymId], [g2].[IconName], [g2].[IsDeleted], [g2].[IsHighlighted], [g2].[UpdatedAt]
+FROM (
+    SELECT [f].[Id], [f].[CreatedAt], [f].[GymId], [f].[IsDeleted], [f].[UpdatedAt], [f].[UserId], [g].[Id] AS [Id0], [g].[Address], [g].[AverageRating], [g].[CreatedAt] AS [CreatedAt0], [g].[Description], [g].[Email], [g].[ImagePath], [g].[IsDeleted] AS [IsDeleted0], [g].[Latitude], [g].[Longitude], [g].[Name], [g].[OwnerId], [g].[Phone], [g].[ReviewCount], [g].[UpdatedAt] AS [UpdatedAt0], [g].[Website]
+    FROM [FavoriteGyms] AS [f]
+    INNER JOIN [Gyms] AS [g] ON [f].[GymId] = [g].[Id]
+    WHERE [f].[UserId] = @userId AND [g].[IsDeleted] = CAST(0 AS bit)
+    ORDER BY [f].[CreatedAt] DESC
+    OFFSET @p ROWS FETCH NEXT @p2 ROWS ONLY
+) AS [s]
+LEFT JOIN [GymOpeningHours] AS [g0] ON [s].[Id0] = [g0].[GymId]
+LEFT JOIN (
+    SELECT [p].[Id], [p].[CreatedAt], [p].[Description], [p].[DurationInDays], [p].[GymId], [p].[IsDeleted], [p].[IsPopular], [p].[Name], [p].[Price], [p].[UpdatedAt]
+    FROM [Packages] AS [p]
+    WHERE [p].[IsDeleted] = CAST(0 AS bit)
+) AS [p0] ON [s].[Id0] = [p0].[GymId]
+LEFT JOIN (
+    SELECT [g1].[Id], [g1].[AmenityType], [g1].[CreatedAt], [g1].[CustomName], [g1].[DisplayOrder], [g1].[GymId], [g1].[IconName], [g1].[IsDeleted], [g1].[IsHighlighted], [g1].[UpdatedAt]
+    FROM [GymAmenities] AS [g1]
+    WHERE [g1].[IsDeleted] = CAST(0 AS bit)
+) AS [g2] ON [s].[Id0] = [g2].[GymId]
+ORDER BY [s].[CreatedAt] DESC, [s].[Id], [s].[Id0], [g0].[Id], [p0].[Id]
+2026-02-10 12:19:27 [INF] Executing OkObjectResult, writing value of type 'Startup_Project.Application.Models.ResponseModel`1[[System.Collections.Generic.List`1[[Startup_Project.Application.Dtos.GymDtos.GymGetDto, Startup-Project.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-10 12:19:27 [INF] Executing OkObjectResult, writing value of type 'Startup_Project.Application.Models.ResponseModel`1[[Startup_Project.Application.Dtos.Common.PaginatedResult`1[[Startup_Project.Application.Dtos.Favorites.FavoriteGymDto, Startup-Project.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], Startup-Project.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-10 12:19:27 [INF] Executed action Startup_Project.WebAPI.Controllers.GymController.GetAllAsync (Startup-Project.WebAPI) in 8.7833ms
+2026-02-10 12:19:27 [INF] Executed action Startup_Project.WebAPI.Controllers.FavoritesController.GetFavoriteGyms (Startup-Project.WebAPI) in 11.7867ms
+2026-02-10 12:19:27 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.GymController.GetAllAsync (Startup-Project.WebAPI)'
+2026-02-10 12:19:27 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.FavoritesController.GetFavoriteGyms (Startup-Project.WebAPI)'
+2026-02-10 12:19:27 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/Gym - 200 null application/json; charset=utf-8 25.5583ms
+2026-02-10 12:19:27 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/favorites/gyms?pageSize=50 - 200 null application/json; charset=utf-8 29.2277ms
+2026-02-10 12:19:28 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/favorites/gyms/undefined/toggle - null null
+2026-02-10 12:19:28 [INF] CORS policy execution successful.
+2026-02-10 12:19:28 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/favorites/gyms/undefined/toggle - 204 null null 3.1093ms
+2026-02-10 12:19:28 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/favorites/gyms/undefined/toggle - null 0
+2026-02-10 12:19:28 [INF] CORS policy execution successful.
+2026-02-10 12:19:28 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/favorites/gyms/undefined/toggle - 404 0 null 3.3147ms
+2026-02-10 12:19:28 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/api/favorites/gyms/undefined/toggle, Response status code: 404
+2026-02-10 12:19:32 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/favorites/gyms/undefined/toggle - null 0
+2026-02-10 12:19:32 [INF] CORS policy execution successful.
+2026-02-10 12:19:32 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/favorites/gyms/undefined/toggle - 404 0 null 3.9224ms
+2026-02-10 12:19:32 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/api/favorites/gyms/undefined/toggle, Response status code: 404
+2026-02-10 12:19:33 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/favorites/gyms/undefined/toggle - null 0
+2026-02-10 12:19:33 [INF] CORS policy execution successful.
+2026-02-10 12:19:33 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/favorites/gyms/undefined/toggle - 404 0 null 3.4954ms
+2026-02-10 12:19:33 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/api/favorites/gyms/undefined/toggle, Response status code: 404
+2026-02-10 12:19:44 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/favorites/gyms/undefined/toggle - null null
+2026-02-10 12:19:44 [INF] CORS policy execution successful.
+2026-02-10 12:19:44 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/favorites/gyms/undefined/toggle - 204 null null 3.0464ms
+2026-02-10 12:19:44 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/favorites/gyms/undefined/toggle - null 0
+2026-02-10 12:19:44 [INF] CORS policy execution successful.
+2026-02-10 12:19:44 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/favorites/gyms/undefined/toggle - 404 0 null 3.5037ms
+2026-02-10 12:19:44 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/api/favorites/gyms/undefined/toggle, Response status code: 404
+2026-02-10 12:19:45 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/favorites/gyms/undefined/toggle - null 0
+2026-02-10 12:19:45 [INF] CORS policy execution successful.
+2026-02-10 12:19:45 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/favorites/gyms/undefined/toggle - 404 0 null 3.2973ms
+2026-02-10 12:19:45 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/api/favorites/gyms/undefined/toggle, Response status code: 404
+2026-02-10 12:20:13 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/favorites/gyms/undefined/toggle - null null
+2026-02-10 12:20:13 [INF] CORS policy execution successful.
+2026-02-10 12:20:13 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/favorites/gyms/undefined/toggle - 204 null null 3.5764ms
+2026-02-10 12:20:13 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/favorites/gyms/undefined/toggle - null 0
+2026-02-10 12:20:13 [INF] CORS policy execution successful.
+2026-02-10 12:20:13 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/favorites/gyms/undefined/toggle - 404 0 null 2.8144ms
+2026-02-10 12:20:13 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/api/favorites/gyms/undefined/toggle, Response status code: 404
+2026-02-10 12:21:26 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/favorites/gyms/undefined/toggle - null null
+2026-02-10 12:21:26 [INF] CORS policy execution successful.
+2026-02-10 12:21:26 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/favorites/gyms/undefined/toggle - 204 null null 3.225ms
+2026-02-10 12:21:26 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/favorites/gyms/undefined/toggle - null 0
+2026-02-10 12:21:26 [INF] CORS policy execution successful.
+2026-02-10 12:21:26 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/favorites/gyms/undefined/toggle - 404 0 null 3.0486ms
+2026-02-10 12:21:26 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/api/favorites/gyms/undefined/toggle, Response status code: 404
+2026-02-10 12:24:23 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/history/full?period=week - null null
+2026-02-10 12:24:23 [INF] CORS policy execution successful.
+2026-02-10 12:24:23 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/history/full?period=week - 204 null null 3.2656ms
+2026-02-10 12:24:23 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/history/full?period=week - null null
+2026-02-10 12:24:23 [INF] CORS policy execution successful.
+2026-02-10 12:24:23 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.HistoryController.GetFullHistory (Startup-Project.WebAPI)'
+2026-02-10 12:24:23 [INF] Route matched with {action = "GetFullHistory", controller = "History"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFullHistory(System.String) on controller Startup_Project.WebAPI.Controllers.HistoryController (Startup-Project.WebAPI).
+2026-02-10 12:24:23 [INF] Executed DbCommand (10ms) [Parameters=[@userId='?' (DbType = Guid), @startDate='?' (DbType = DateTime2), @endDate='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [CheckInLogs] AS [c]
+WHERE [c].[UserId] = @userId AND [c].[CheckInTime] >= @startDate AND [c].[CheckInTime] <= @endDate AND [c].[Status] = 1
+2026-02-10 12:24:23 [INF] Executed DbCommand (2ms) [Parameters=[@userId='?' (DbType = Guid), @startDate='?' (DbType = DateTime2), @endDate='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CheckInTime], [c].[CheckOutTime], [c].[CreatedAt], [c].[FailureReason], [c].[GymId], [c].[IsDeleted], [c].[Status], [c].[TokenUsed], [c].[UpdatedAt], [c].[UserId]
+FROM [CheckInLogs] AS [c]
+WHERE [c].[UserId] = @userId AND [c].[CheckInTime] >= @startDate AND [c].[CheckInTime] <= @endDate AND [c].[CheckOutTime] IS NOT NULL
+2026-02-10 12:24:23 [INF] Executed DbCommand (2ms) [Parameters=[@userId='?' (DbType = Guid), @startDate='?' (DbType = DateTime2), @endDate='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [CheckInLogs] AS [c]
+WHERE [c].[UserId] = @userId AND [c].[CheckInTime] >= @startDate AND [c].[CheckInTime] <= @endDate AND [c].[CheckOutTime] IS NULL AND [c].[Status] = 1
+2026-02-10 12:24:23 [INF] Executed DbCommand (4ms) [Parameters=[@userId='?' (DbType = Guid), @startDate='?' (DbType = DateTime2), @endDate='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [TrainingSessions] AS [t]
+WHERE [t].[UserId] = @userId AND [t].[UsedAt] >= @startDate AND [t].[UsedAt] <= @endDate AND [t].[Status] = 2
+2026-02-10 12:24:23 [INF] Executed DbCommand (4ms) [Parameters=[@p='?' (DbType = Int32), @userId='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(@p) [c0].[c]
+FROM (
+    SELECT DISTINCT CONVERT(date, [c].[CheckInTime]) AS [c]
+    FROM [CheckInLogs] AS [c]
+    WHERE [c].[UserId] = @userId AND [c].[Status] = 1
+) AS [c0]
+ORDER BY [c0].[c] DESC
+2026-02-10 12:24:23 [INF] Executed DbCommand (2ms) [Parameters=[@userId='?' (DbType = Guid), @date='?' (DbType = DateTime2), @nextDate='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CheckInTime], [c].[CheckOutTime], [c].[CreatedAt], [c].[FailureReason], [c].[GymId], [c].[IsDeleted], [c].[Status], [c].[TokenUsed], [c].[UpdatedAt], [c].[UserId]
+FROM [CheckInLogs] AS [c]
+WHERE [c].[UserId] = @userId AND [c].[CheckInTime] >= @date AND [c].[CheckInTime] < @nextDate AND [c].[CheckOutTime] IS NOT NULL
+2026-02-10 12:24:23 [INF] Executed DbCommand (2ms) [Parameters=[@userId='?' (DbType = Guid), @date='?' (DbType = DateTime2), @nextDate='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [CheckInLogs] AS [c]
+WHERE [c].[UserId] = @userId AND [c].[CheckInTime] >= @date AND [c].[CheckInTime] < @nextDate AND [c].[CheckOutTime] IS NULL AND [c].[Status] = 1
+2026-02-10 12:24:23 [INF] Executed DbCommand (0ms) [Parameters=[@userId='?' (DbType = Guid), @date='?' (DbType = DateTime2), @nextDate='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CheckInTime], [c].[CheckOutTime], [c].[CreatedAt], [c].[FailureReason], [c].[GymId], [c].[IsDeleted], [c].[Status], [c].[TokenUsed], [c].[UpdatedAt], [c].[UserId]
+FROM [CheckInLogs] AS [c]
+WHERE [c].[UserId] = @userId AND [c].[CheckInTime] >= @date AND [c].[CheckInTime] < @nextDate AND [c].[CheckOutTime] IS NOT NULL
+2026-02-10 12:24:23 [INF] Executed DbCommand (0ms) [Parameters=[@userId='?' (DbType = Guid), @date='?' (DbType = DateTime2), @nextDate='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [CheckInLogs] AS [c]
+WHERE [c].[UserId] = @userId AND [c].[CheckInTime] >= @date AND [c].[CheckInTime] < @nextDate AND [c].[CheckOutTime] IS NULL AND [c].[Status] = 1
+2026-02-10 12:24:23 [INF] Executed DbCommand (0ms) [Parameters=[@userId='?' (DbType = Guid), @date='?' (DbType = DateTime2), @nextDate='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CheckInTime], [c].[CheckOutTime], [c].[CreatedAt], [c].[FailureReason], [c].[GymId], [c].[IsDeleted], [c].[Status], [c].[TokenUsed], [c].[UpdatedAt], [c].[UserId]
+FROM [CheckInLogs] AS [c]
+WHERE [c].[UserId] = @userId AND [c].[CheckInTime] >= @date AND [c].[CheckInTime] < @nextDate AND [c].[CheckOutTime] IS NOT NULL
+2026-02-10 12:24:23 [INF] Executed DbCommand (0ms) [Parameters=[@userId='?' (DbType = Guid), @date='?' (DbType = DateTime2), @nextDate='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [CheckInLogs] AS [c]
+WHERE [c].[UserId] = @userId AND [c].[CheckInTime] >= @date AND [c].[CheckInTime] < @nextDate AND [c].[CheckOutTime] IS NULL AND [c].[Status] = 1
+2026-02-10 12:24:23 [INF] Executed DbCommand (0ms) [Parameters=[@userId='?' (DbType = Guid), @date='?' (DbType = DateTime2), @nextDate='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CheckInTime], [c].[CheckOutTime], [c].[CreatedAt], [c].[FailureReason], [c].[GymId], [c].[IsDeleted], [c].[Status], [c].[TokenUsed], [c].[UpdatedAt], [c].[UserId]
+FROM [CheckInLogs] AS [c]
+WHERE [c].[UserId] = @userId AND [c].[CheckInTime] >= @date AND [c].[CheckInTime] < @nextDate AND [c].[CheckOutTime] IS NOT NULL
+2026-02-10 12:24:23 [INF] Executed DbCommand (0ms) [Parameters=[@userId='?' (DbType = Guid), @date='?' (DbType = DateTime2), @nextDate='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [CheckInLogs] AS [c]
+WHERE [c].[UserId] = @userId AND [c].[CheckInTime] >= @date AND [c].[CheckInTime] < @nextDate AND [c].[CheckOutTime] IS NULL AND [c].[Status] = 1
+2026-02-10 12:24:23 [INF] Executed DbCommand (0ms) [Parameters=[@userId='?' (DbType = Guid), @date='?' (DbType = DateTime2), @nextDate='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CheckInTime], [c].[CheckOutTime], [c].[CreatedAt], [c].[FailureReason], [c].[GymId], [c].[IsDeleted], [c].[Status], [c].[TokenUsed], [c].[UpdatedAt], [c].[UserId]
+FROM [CheckInLogs] AS [c]
+WHERE [c].[UserId] = @userId AND [c].[CheckInTime] >= @date AND [c].[CheckInTime] < @nextDate AND [c].[CheckOutTime] IS NOT NULL
+2026-02-10 12:24:23 [INF] Executed DbCommand (0ms) [Parameters=[@userId='?' (DbType = Guid), @date='?' (DbType = DateTime2), @nextDate='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [CheckInLogs] AS [c]
+WHERE [c].[UserId] = @userId AND [c].[CheckInTime] >= @date AND [c].[CheckInTime] < @nextDate AND [c].[CheckOutTime] IS NULL AND [c].[Status] = 1
+2026-02-10 12:24:23 [INF] Executed DbCommand (0ms) [Parameters=[@userId='?' (DbType = Guid), @date='?' (DbType = DateTime2), @nextDate='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CheckInTime], [c].[CheckOutTime], [c].[CreatedAt], [c].[FailureReason], [c].[GymId], [c].[IsDeleted], [c].[Status], [c].[TokenUsed], [c].[UpdatedAt], [c].[UserId]
+FROM [CheckInLogs] AS [c]
+WHERE [c].[UserId] = @userId AND [c].[CheckInTime] >= @date AND [c].[CheckInTime] < @nextDate AND [c].[CheckOutTime] IS NOT NULL
+2026-02-10 12:24:23 [INF] Executed DbCommand (0ms) [Parameters=[@userId='?' (DbType = Guid), @date='?' (DbType = DateTime2), @nextDate='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [CheckInLogs] AS [c]
+WHERE [c].[UserId] = @userId AND [c].[CheckInTime] >= @date AND [c].[CheckInTime] < @nextDate AND [c].[CheckOutTime] IS NULL AND [c].[Status] = 1
+2026-02-10 12:24:23 [INF] Executed DbCommand (0ms) [Parameters=[@userId='?' (DbType = Guid), @date='?' (DbType = DateTime2), @nextDate='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CheckInTime], [c].[CheckOutTime], [c].[CreatedAt], [c].[FailureReason], [c].[GymId], [c].[IsDeleted], [c].[Status], [c].[TokenUsed], [c].[UpdatedAt], [c].[UserId]
+FROM [CheckInLogs] AS [c]
+WHERE [c].[UserId] = @userId AND [c].[CheckInTime] >= @date AND [c].[CheckInTime] < @nextDate AND [c].[CheckOutTime] IS NOT NULL
+2026-02-10 12:24:23 [INF] Executed DbCommand (0ms) [Parameters=[@userId='?' (DbType = Guid), @date='?' (DbType = DateTime2), @nextDate='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [CheckInLogs] AS [c]
+WHERE [c].[UserId] = @userId AND [c].[CheckInTime] >= @date AND [c].[CheckInTime] < @nextDate AND [c].[CheckOutTime] IS NULL AND [c].[Status] = 1
+2026-02-10 12:24:23 [INF] Executed DbCommand (4ms) [Parameters=[@userId='?' (DbType = Guid), @startDate='?' (DbType = DateTime2), @endDate='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CheckInTime], [c].[CheckOutTime], [c].[CreatedAt], [c].[FailureReason], [c].[GymId], [c].[IsDeleted], [c].[Status], [c].[TokenUsed], [c].[UpdatedAt], [c].[UserId], [g].[Id], [g].[Address], [g].[AverageRating], [g].[CreatedAt], [g].[Description], [g].[Email], [g].[ImagePath], [g].[IsDeleted], [g].[Latitude], [g].[Longitude], [g].[Name], [g].[OwnerId], [g].[Phone], [g].[ReviewCount], [g].[UpdatedAt], [g].[Website]
+FROM [CheckInLogs] AS [c]
+INNER JOIN [Gyms] AS [g] ON [c].[GymId] = [g].[Id]
+WHERE [c].[UserId] = @userId AND [c].[CheckInTime] >= @startDate AND [c].[CheckInTime] <= @endDate AND [c].[Status] = 1
+ORDER BY [c].[CheckInTime] DESC
+2026-02-10 12:24:23 [INF] Executed DbCommand (9ms) [Parameters=[@userId='?' (DbType = Guid), @startDate='?' (DbType = DateTime2), @endDate='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CancellationReason], [t].[CancelledAt], [t].[CreatedAt], [t].[ExpiresAt], [t].[GymId], [t].[IsDeleted], [t].[PaidAt], [t].[PaymentId], [t].[Price], [t].[QrGeneratedAt], [t].[QrToken], [t].[Status], [t].[TrainerId], [t].[UpdatedAt], [t].[UsedAt], [t].[UserId], [t0].[Id], [t0].[AverageRating], [t0].[Bio], [t0].[CertificateUrl], [t0].[CreatedAt], [t0].[GymId], [t0].[IsDeleted], [t0].[IsOnlineTrainer], [t0].[IsVerified], [t0].[ProfileImageUrl], [t0].[ReviewCount], [t0].[SessionPrice], [t0].[SocialMediaLinks], [t0].[Specialization], [t0].[Status], [t0].[TotalClients], [t0].[TotalSessions], [t0].[UpdatedAt], [t0].[UserId], [t0].[VideoIntroUrl], [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode], [g].[Id], [g].[Address], [g].[AverageRating], [g].[CreatedAt], [g].[Description], [g].[Email], [g].[ImagePath], [g].[IsDeleted], [g].[Latitude], [g].[Longitude], [g].[Name], [g].[OwnerId], [g].[Phone], [g].[ReviewCount], [g].[UpdatedAt], [g].[Website]
+FROM [TrainingSessions] AS [t]
+INNER JOIN [Trainers] AS [t0] ON [t].[TrainerId] = [t0].[Id]
+INNER JOIN [AspNetUsers] AS [a] ON [t0].[UserId] = [a].[Id]
+LEFT JOIN [Gyms] AS [g] ON [t].[GymId] = [g].[Id]
+WHERE [t].[UserId] = @userId AND [t].[UsedAt] >= @startDate AND [t].[UsedAt] <= @endDate AND [t].[Status] = 2
+ORDER BY [t].[UsedAt] DESC
+2026-02-10 12:24:23 [INF] Executing OkObjectResult, writing value of type 'Startup_Project.Application.Models.ResponseModel`1[[Startup_Project.Application.Dtos.History.FullHistoryResponseDto, Startup-Project.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-10 12:24:23 [INF] Executed action Startup_Project.WebAPI.Controllers.HistoryController.GetFullHistory (Startup-Project.WebAPI) in 95.7451ms
+2026-02-10 12:24:23 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.HistoryController.GetFullHistory (Startup-Project.WebAPI)'
+2026-02-10 12:24:23 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/history/full?period=week - 200 null application/json; charset=utf-8 103.8588ms
+2026-02-10 12:24:23 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/favorites/gyms - null null
+2026-02-10 12:24:23 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/favorites/trainers - null null
+2026-02-10 12:24:23 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/favorites/counts - null null
+2026-02-10 12:24:23 [INF] CORS policy execution successful.
+2026-02-10 12:24:23 [INF] CORS policy execution successful.
+2026-02-10 12:24:23 [INF] CORS policy execution successful.
+2026-02-10 12:24:23 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/favorites/gyms - 204 null null 8.7551ms
+2026-02-10 12:24:23 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/favorites/trainers - 204 null null 7.9947ms
+2026-02-10 12:24:23 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/favorites/counts - 204 null null 8.2422ms
+2026-02-10 12:24:23 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/favorites/gyms - null null
+2026-02-10 12:24:23 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/favorites/trainers - null null
+2026-02-10 12:24:23 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/favorites/counts - null null
+2026-02-10 12:24:23 [INF] CORS policy execution successful.
+2026-02-10 12:24:23 [INF] CORS policy execution successful.
+2026-02-10 12:24:23 [INF] CORS policy execution successful.
+2026-02-10 12:24:23 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.FavoritesController.GetFavoriteGyms (Startup-Project.WebAPI)'
+2026-02-10 12:24:23 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.FavoritesController.GetFavoriteTrainers (Startup-Project.WebAPI)'
+2026-02-10 12:24:23 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.FavoritesController.GetFavoriteCounts (Startup-Project.WebAPI)'
+2026-02-10 12:24:23 [INF] Route matched with {action = "GetFavoriteGyms", controller = "Favorites"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFavoriteGyms(Int32, Int32) on controller Startup_Project.WebAPI.Controllers.FavoritesController (Startup-Project.WebAPI).
+2026-02-10 12:24:23 [INF] Route matched with {action = "GetFavoriteTrainers", controller = "Favorites"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFavoriteTrainers(Int32, Int32) on controller Startup_Project.WebAPI.Controllers.FavoritesController (Startup-Project.WebAPI).
+2026-02-10 12:24:23 [INF] Route matched with {action = "GetFavoriteCounts", controller = "Favorites"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFavoriteCounts() on controller Startup_Project.WebAPI.Controllers.FavoritesController (Startup-Project.WebAPI).
+2026-02-10 12:24:23 [INF] Executed DbCommand (12ms) [Parameters=[@userId='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [FavoriteGyms] AS [f]
+INNER JOIN [Gyms] AS [g] ON [f].[GymId] = [g].[Id]
+WHERE [f].[UserId] = @userId AND [g].[IsDeleted] = CAST(0 AS bit)
+2026-02-10 12:24:23 [INF] Executed DbCommand (5ms) [Parameters=[@userId='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [FavoriteTrainers] AS [f]
+INNER JOIN [Trainers] AS [t] ON [f].[TrainerId] = [t].[Id]
+WHERE [f].[UserId] = @userId AND [t].[IsDeleted] = CAST(0 AS bit)
+2026-02-10 12:24:23 [INF] Executed DbCommand (3ms) [Parameters=[@userId='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [FavoriteGyms] AS [f]
+INNER JOIN [Gyms] AS [g] ON [f].[GymId] = [g].[Id]
+WHERE [f].[UserId] = @userId AND [g].[IsDeleted] = CAST(0 AS bit)
+2026-02-10 12:24:23 [INF] Executed DbCommand (0ms) [Parameters=[@userId='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [FavoriteTrainers] AS [f]
+INNER JOIN [Trainers] AS [t] ON [f].[TrainerId] = [t].[Id]
+WHERE [f].[UserId] = @userId AND [t].[IsDeleted] = CAST(0 AS bit)
+2026-02-10 12:24:23 [INF] Executing OkObjectResult, writing value of type 'Startup_Project.Application.Models.ResponseModel`1[[Startup_Project.Application.Dtos.Favorites.FavoriteCountsDto, Startup-Project.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-10 12:24:23 [INF] Executed action Startup_Project.WebAPI.Controllers.FavoritesController.GetFavoriteCounts (Startup-Project.WebAPI) in 20.8151ms
+2026-02-10 12:24:23 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.FavoritesController.GetFavoriteCounts (Startup-Project.WebAPI)'
+2026-02-10 12:24:23 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/favorites/counts - 200 null application/json; charset=utf-8 41.1513ms
+2026-02-10 12:24:23 [INF] Executed DbCommand (19ms) [Parameters=[@userId='?' (DbType = Guid), @p='?' (DbType = Int32), @p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreatedAt], [s].[GymId], [s].[IsDeleted], [s].[UpdatedAt], [s].[UserId], [s].[Id0], [s].[Address], [s].[AverageRating], [s].[CreatedAt0], [s].[Description], [s].[Email], [s].[ImagePath], [s].[IsDeleted0], [s].[Latitude], [s].[Longitude], [s].[Name], [s].[OwnerId], [s].[Phone], [s].[ReviewCount], [s].[UpdatedAt0], [s].[Website], [g0].[Id], [g0].[ClosingTime], [g0].[CreatedAt], [g0].[DayOfWeek], [g0].[GymId], [g0].[IsClosed], [g0].[IsDeleted], [g0].[OpenTime], [g0].[UpdatedAt], [p0].[Id], [p0].[CreatedAt], [p0].[Description], [p0].[DurationInDays], [p0].[GymId], [p0].[IsDeleted], [p0].[IsPopular], [p0].[Name], [p0].[Price], [p0].[UpdatedAt], [g2].[Id], [g2].[AmenityType], [g2].[CreatedAt], [g2].[CustomName], [g2].[DisplayOrder], [g2].[GymId], [g2].[IconName], [g2].[IsDeleted], [g2].[IsHighlighted], [g2].[UpdatedAt]
+FROM (
+    SELECT [f].[Id], [f].[CreatedAt], [f].[GymId], [f].[IsDeleted], [f].[UpdatedAt], [f].[UserId], [g].[Id] AS [Id0], [g].[Address], [g].[AverageRating], [g].[CreatedAt] AS [CreatedAt0], [g].[Description], [g].[Email], [g].[ImagePath], [g].[IsDeleted] AS [IsDeleted0], [g].[Latitude], [g].[Longitude], [g].[Name], [g].[OwnerId], [g].[Phone], [g].[ReviewCount], [g].[UpdatedAt] AS [UpdatedAt0], [g].[Website]
+    FROM [FavoriteGyms] AS [f]
+    INNER JOIN [Gyms] AS [g] ON [f].[GymId] = [g].[Id]
+    WHERE [f].[UserId] = @userId AND [g].[IsDeleted] = CAST(0 AS bit)
+    ORDER BY [f].[CreatedAt] DESC
+    OFFSET @p ROWS FETCH NEXT @p2 ROWS ONLY
+) AS [s]
+LEFT JOIN [GymOpeningHours] AS [g0] ON [s].[Id0] = [g0].[GymId]
+LEFT JOIN (
+    SELECT [p].[Id], [p].[CreatedAt], [p].[Description], [p].[DurationInDays], [p].[GymId], [p].[IsDeleted], [p].[IsPopular], [p].[Name], [p].[Price], [p].[UpdatedAt]
+    FROM [Packages] AS [p]
+    WHERE [p].[IsDeleted] = CAST(0 AS bit)
+) AS [p0] ON [s].[Id0] = [p0].[GymId]
+LEFT JOIN (
+    SELECT [g1].[Id], [g1].[AmenityType], [g1].[CreatedAt], [g1].[CustomName], [g1].[DisplayOrder], [g1].[GymId], [g1].[IconName], [g1].[IsDeleted], [g1].[IsHighlighted], [g1].[UpdatedAt]
+    FROM [GymAmenities] AS [g1]
+    WHERE [g1].[IsDeleted] = CAST(0 AS bit)
+) AS [g2] ON [s].[Id0] = [g2].[GymId]
+ORDER BY [s].[CreatedAt] DESC, [s].[Id], [s].[Id0], [g0].[Id], [p0].[Id]
+2026-02-10 12:24:23 [INF] Executed DbCommand (20ms) [Parameters=[@userId='?' (DbType = Guid), @p='?' (DbType = Int32), @p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreatedAt], [s].[IsDeleted], [s].[TrainerId], [s].[UpdatedAt], [s].[UserId], [s].[Id0], [s].[AverageRating], [s].[Bio], [s].[CertificateUrl], [s].[CreatedAt0], [s].[GymId], [s].[IsDeleted0], [s].[IsOnlineTrainer], [s].[IsVerified], [s].[ProfileImageUrl], [s].[ReviewCount], [s].[SessionPrice], [s].[SocialMediaLinks], [s].[Specialization], [s].[Status], [s].[TotalClients], [s].[TotalSessions], [s].[UpdatedAt0], [s].[UserId0], [s].[VideoIntroUrl], [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode], [g].[Id], [g].[Address], [g].[AverageRating], [g].[CreatedAt], [g].[Description], [g].[Email], [g].[ImagePath], [g].[IsDeleted], [g].[Latitude], [g].[Longitude], [g].[Name], [g].[OwnerId], [g].[Phone], [g].[ReviewCount], [g].[UpdatedAt], [g].[Website]
+FROM (
+    SELECT [f].[Id], [f].[CreatedAt], [f].[IsDeleted], [f].[TrainerId], [f].[UpdatedAt], [f].[UserId], [t].[Id] AS [Id0], [t].[AverageRating], [t].[Bio], [t].[CertificateUrl], [t].[CreatedAt] AS [CreatedAt0], [t].[GymId], [t].[IsDeleted] AS [IsDeleted0], [t].[IsOnlineTrainer], [t].[IsVerified], [t].[ProfileImageUrl], [t].[ReviewCount], [t].[SessionPrice], [t].[SocialMediaLinks], [t].[Specialization], [t].[Status], [t].[TotalClients], [t].[TotalSessions], [t].[UpdatedAt] AS [UpdatedAt0], [t].[UserId] AS [UserId0], [t].[VideoIntroUrl]
+    FROM [FavoriteTrainers] AS [f]
+    INNER JOIN [Trainers] AS [t] ON [f].[TrainerId] = [t].[Id]
+    WHERE [f].[UserId] = @userId AND [t].[IsDeleted] = CAST(0 AS bit)
+    ORDER BY [f].[CreatedAt] DESC
+    OFFSET @p ROWS FETCH NEXT @p2 ROWS ONLY
+) AS [s]
+INNER JOIN [AspNetUsers] AS [a] ON [s].[UserId0] = [a].[Id]
+LEFT JOIN [Gyms] AS [g] ON [s].[GymId] = [g].[Id]
+ORDER BY [s].[CreatedAt] DESC
+2026-02-10 12:24:23 [INF] Executing OkObjectResult, writing value of type 'Startup_Project.Application.Models.ResponseModel`1[[Startup_Project.Application.Dtos.Common.PaginatedResult`1[[Startup_Project.Application.Dtos.Favorites.FavoriteGymDto, Startup-Project.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], Startup-Project.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-10 12:24:23 [INF] Executing OkObjectResult, writing value of type 'Startup_Project.Application.Models.ResponseModel`1[[Startup_Project.Application.Dtos.Common.PaginatedResult`1[[Startup_Project.Application.Dtos.Favorites.FavoriteTrainerDto, Startup-Project.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], Startup-Project.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-10 12:24:23 [INF] Executed action Startup_Project.WebAPI.Controllers.FavoritesController.GetFavoriteGyms (Startup-Project.WebAPI) in 41.7075ms
+2026-02-10 12:24:23 [INF] Executed action Startup_Project.WebAPI.Controllers.FavoritesController.GetFavoriteTrainers (Startup-Project.WebAPI) in 41.2098ms
+2026-02-10 12:24:23 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.FavoritesController.GetFavoriteGyms (Startup-Project.WebAPI)'
+2026-02-10 12:24:23 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.FavoritesController.GetFavoriteTrainers (Startup-Project.WebAPI)'
+2026-02-10 12:24:23 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/favorites/gyms - 200 null application/json; charset=utf-8 66.5684ms
+2026-02-10 12:24:23 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/favorites/trainers - 200 null application/json; charset=utf-8 64.3956ms
+2026-02-10 12:24:25 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/user/subscriptions - null null
+2026-02-10 12:24:25 [INF] CORS policy execution successful.
+2026-02-10 12:24:25 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/user/subscriptions - 204 null null 3.2604ms
+2026-02-10 12:24:25 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/user/subscriptions - null null
+2026-02-10 12:24:25 [INF] CORS policy execution successful.
+2026-02-10 12:24:25 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.UserSubscriptionController.GetMyActiveSubscriptionsAsync (Startup-Project.WebAPI)'
+2026-02-10 12:24:25 [INF] Route matched with {action = "GetMyActiveSubscriptions", controller = "UserSubscription"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetMyActiveSubscriptionsAsync() on controller Startup_Project.WebAPI.Controllers.UserSubscriptionController (Startup-Project.WebAPI).
+2026-02-10 12:24:25 [INF] Executed DbCommand (12ms) [Parameters=[@userId='?' (DbType = Guid), @now='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreatedAt], [s].[EndDate], [s].[IsDeleted], [s].[PackageId], [s].[StartDate], [s].[Status], [s].[UpdatedAt], [s].[UserId], [p].[Id], [p].[CreatedAt], [p].[Description], [p].[DurationInDays], [p].[GymId], [p].[IsDeleted], [p].[IsPopular], [p].[Name], [p].[Price], [p].[UpdatedAt], [g].[Id], [g].[Address], [g].[AverageRating], [g].[CreatedAt], [g].[Description], [g].[Email], [g].[ImagePath], [g].[IsDeleted], [g].[Latitude], [g].[Longitude], [g].[Name], [g].[OwnerId], [g].[Phone], [g].[ReviewCount], [g].[UpdatedAt], [g].[Website], [p1].[Id], [p1].[CreatedAt], [p1].[DisplayOrder], [p1].[IsDeleted], [p1].[Name], [p1].[PackageId], [p1].[UpdatedAt]
+FROM [Subscriptions] AS [s]
+INNER JOIN [Packages] AS [p] ON [s].[PackageId] = [p].[Id]
+INNER JOIN [Gyms] AS [g] ON [p].[GymId] = [g].[Id]
+LEFT JOIN (
+    SELECT [p0].[Id], [p0].[CreatedAt], [p0].[DisplayOrder], [p0].[IsDeleted], [p0].[Name], [p0].[PackageId], [p0].[UpdatedAt]
+    FROM [PackageFeatures] AS [p0]
+    WHERE [p0].[IsDeleted] = CAST(0 AS bit)
+) AS [p1] ON [p].[Id] = [p1].[PackageId]
+WHERE [s].[UserId] = @userId AND [s].[IsDeleted] = CAST(0 AS bit) AND [s].[Status] = 1 AND [s].[EndDate] >= @now
+ORDER BY [s].[EndDate] DESC, [s].[Id], [p].[Id], [g].[Id]
+2026-02-10 12:24:25 [INF] Executing OkObjectResult, writing value of type 'Startup_Project.Application.Models.ResponseModel`1[[System.Collections.Generic.List`1[[Startup_Project.Application.Dtos.Subscriptions.UserSubscriptionDto, Startup-Project.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-10 12:24:25 [INF] Executed action Startup_Project.WebAPI.Controllers.UserSubscriptionController.GetMyActiveSubscriptionsAsync (Startup-Project.WebAPI) in 16.742ms
+2026-02-10 12:24:25 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.UserSubscriptionController.GetMyActiveSubscriptionsAsync (Startup-Project.WebAPI)'
+2026-02-10 12:24:25 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/user/subscriptions - 200 null application/json; charset=utf-8 24.0465ms
+2026-02-10 13:01:02 [INF] Proqram başladılır...
+2026-02-10 13:01:03 [WRN] The 'SubscriptionStatus' property 'Status' on entity type 'Subscription' is configured with a database-generated default, but has no configured sentinel value. The database-generated default will always be used for inserts when the property has the value '0', since this is the CLR default for the 'SubscriptionStatus' type. Consider using a nullable type, using a nullable backing field, or setting the sentinel value for the property to ensure the database default is used when, and only when, appropriate. See https://aka.ms/efcore-docs-default-values for more information.
+2026-02-10 13:01:03 [WRN] No store type was specified for the decimal property 'FinalPrice' on entity type 'CampaignUsage'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-02-10 13:01:03 [WRN] No store type was specified for the decimal property 'OriginalPrice' on entity type 'CampaignUsage'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-02-10 13:01:04 [INF] Executed DbCommand (31ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-02-10 13:01:04 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-02-10 13:01:04 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-02-10 13:01:04 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-02-10 13:01:04 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-02-10 13:01:04 [INF] User profile is available. Using 'C:\Users\User\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-02-10 13:01:04 [ERR] Failed executing DbCommand (6ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[Bio], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[DistanceUnit], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[Language], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[NotifyEmail], [a].[NotifyNewFeatures], [a].[NotifyPromotions], [a].[NotifyPush], [a].[NotifySessionUpdates], [a].[NotifySms], [a].[NotifyWorkoutReminders], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfileImagePath], [a].[ProfileImageUrl], [a].[SecurityStamp], [a].[Theme], [a].[TimeZone], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-10 13:01:04 [ERR] An exception occurred while iterating over the results of a query for context type 'Startup_Project.Persistance.Data.ApplicationDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'Bio'.
+Invalid column name 'DistanceUnit'.
+Invalid column name 'Language'.
+Invalid column name 'NotifyEmail'.
+Invalid column name 'NotifyNewFeatures'.
+Invalid column name 'NotifyPromotions'.
+Invalid column name 'NotifyPush'.
+Invalid column name 'NotifySessionUpdates'.
+Invalid column name 'NotifySms'.
+Invalid column name 'NotifyWorkoutReminders'.
+Invalid column name 'ProfileImagePath'.
+Invalid column name 'ProfileImageUrl'.
+Invalid column name 'Theme'.
+Invalid column name 'TimeZone'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__195_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:d397e76b-a0f9-43ce-9db6-e043d59912c4
+Error Number:207,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'Bio'.
+Invalid column name 'DistanceUnit'.
+Invalid column name 'Language'.
+Invalid column name 'NotifyEmail'.
+Invalid column name 'NotifyNewFeatures'.
+Invalid column name 'NotifyPromotions'.
+Invalid column name 'NotifyPush'.
+Invalid column name 'NotifySessionUpdates'.
+Invalid column name 'NotifySms'.
+Invalid column name 'NotifyWorkoutReminders'.
+Invalid column name 'ProfileImagePath'.
+Invalid column name 'ProfileImageUrl'.
+Invalid column name 'Theme'.
+Invalid column name 'TimeZone'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__195_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:d397e76b-a0f9-43ce-9db6-e043d59912c4
+Error Number:207,State:1,Class:16
+2026-02-10 13:01:04 [FTL] Proqramın işə düşməsi zamanı kritik xəta baş verdi!
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'Bio'.
+Invalid column name 'DistanceUnit'.
+Invalid column name 'Language'.
+Invalid column name 'NotifyEmail'.
+Invalid column name 'NotifyNewFeatures'.
+Invalid column name 'NotifyPromotions'.
+Invalid column name 'NotifyPush'.
+Invalid column name 'NotifySessionUpdates'.
+Invalid column name 'NotifySms'.
+Invalid column name 'NotifyWorkoutReminders'.
+Invalid column name 'ProfileImagePath'.
+Invalid column name 'ProfileImageUrl'.
+Invalid column name 'Theme'.
+Invalid column name 'TimeZone'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__195_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Identity.UserManager`1.FindByEmailAsync(String email)
+   at Startup_Project.Persistance.Seeding.AdminUserSeeder.SeedAdminAsync(IServiceProvider serviceProvider) in C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Infrastructure\Startup-Project.Persistance\Seeding\AdminUserSeeder.cs:line 16
+   at Program.<Main>$(String[] args) in C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI\Program.cs:line 86
+ClientConnectionId:d397e76b-a0f9-43ce-9db6-e043d59912c4
+Error Number:207,State:1,Class:16

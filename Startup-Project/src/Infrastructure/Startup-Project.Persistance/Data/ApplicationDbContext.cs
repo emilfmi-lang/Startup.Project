@@ -34,6 +34,8 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
     public DbSet<GymImage> GymImages { get; set; }
     public DbSet<PackageFeature> PackageFeatures { get; set; }
     public DbSet<FavoriteTrainer> FavoriteTrainers { get; set; }
+    public DbSet<UserSession> UserSessions { get; set; }
+    public DbSet<UserPaymentMethod> UserPaymentMethods { get; set; }
 
     public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
     {

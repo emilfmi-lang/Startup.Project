@@ -1,4 +1,4 @@
-﻿using Startup_Project.Domain.Enums;
+﻿using Startup_Project.Domain.Enums.Errors;
 
 namespace Startup_Project.Domain.Exceptions;
 

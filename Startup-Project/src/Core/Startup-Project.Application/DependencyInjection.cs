@@ -2,10 +2,12 @@
 using Microsoft.Extensions.DependencyInjection;
 using Startup_Project.Application.Services.Concretes;
 using Startup_Project.Application.Services.Concretes.Account;
+using Startup_Project.Application.Services.Concretes.Account.Settings;
 using Startup_Project.Application.Services.Concretes.Admin;
 using Startup_Project.Application.Services.Concretes.RuleHandlers;
 using Startup_Project.Application.Services.Interfaces;
 using Startup_Project.Application.Services.Interfaces.Account;
+using Startup_Project.Application.Services.Interfaces.Account.Settings;
 using Startup_Project.Application.Services.Interfaces.Admin;
 
 namespace Startup_Project.Application;
@@ -21,6 +23,7 @@ public static class DependencyInjection
 
             // Account
             services.AddScoped<IAccountService, AccountService>();
+            services.AddScoped<ISettingsService, SettingsService>();
 
             // Gym
             services.AddScoped<IGymService, GymService>();

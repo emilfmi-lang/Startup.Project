@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 using Startup_Project.Application.Models;
-using Startup_Project.Domain.Enums;
+using Startup_Project.Domain.Enums.Errors;
 using Startup_Project.Domain.Exceptions;
 using System.Text.Json;
 using System.Text.Json.Serialization;
