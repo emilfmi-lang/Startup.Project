@@ -32,12 +32,12 @@ public static class GymSeeder
 
         // 2. Seed GymOwners (4 user)
         var gymOwnerEmails = new[]
-        {
-            "owner1@fitnessapp.az",
-            "owner2@fitnessapp.az",
-            "owner3@fitnessapp.az",
-            "owner4@fitnessapp.az"
-        };
+            {
+                "owner1@fitnessapp.az",
+                "owner2@fitnessapp.az",
+                "owner3@fitnessapp.az",
+                "owner4@fitnessapp.az"
+            };
 
         var gymOwnerNames = new[]
         {
