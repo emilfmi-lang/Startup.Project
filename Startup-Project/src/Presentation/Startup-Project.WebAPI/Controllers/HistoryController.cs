@@ -38,7 +38,6 @@ public class HistoryController(IHistoryService historyService) : ControllerBase
     public async Task<IActionResult> GetActivityStats([FromQuery] string period = "month")
         => Ok(await historyService.GetActivityStatsAsync(period));
 
-    /// <summary>
     /// H?ft?lik aktivlik chart data
     /// </summary>
     [HttpGet("weekly-activity")]
@@ -97,9 +96,7 @@ public class HistoryController(IHistoryService historyService) : ControllerBase
         return Ok(await historyService.GetMyHistoryAsync(filter));
     }
 
-    /// <summary>
     /// Yaln?z PT sessiyalar
-    /// </summary>
     [HttpGet("sessions")]
     public async Task<IActionResult> GetSessions([FromQuery] HistoryFilterDto filter)
     {
