@@ -13,9 +13,8 @@ public class HistoryController(IHistoryService historyService) : ControllerBase
 {
     #region ??????????????????? YEN? ENDPOINTS ???????????????????
 
-    /// <summary>
     /// Tam History s?hif?si data (Stats + Chart + Timeline + Achievements)
-    /// </summary>
+  
     /// <param name="period">week | month | year | all</param>
     [HttpGet("full")]
     public async Task<IActionResult> GetFullHistory([FromQuery] string period = "week")
