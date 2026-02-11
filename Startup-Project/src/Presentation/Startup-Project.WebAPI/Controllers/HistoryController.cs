@@ -32,9 +32,8 @@ public class HistoryController(IHistoryService historyService) : ControllerBase
         [FromQuery] int pageSize = 10)
         => Ok(await historyService.GetActivityTimelineAsync(startDate, endDate, page, pageSize));
 
-    /// <summary>
     /// Statistika kartlar? (4 kart)
-    /// </summary>
+  
     /// <param name="period">week | month | year</param>
     [HttpGet("stats")]
     public async Task<IActionResult> GetActivityStats([FromQuery] string period = "month")
