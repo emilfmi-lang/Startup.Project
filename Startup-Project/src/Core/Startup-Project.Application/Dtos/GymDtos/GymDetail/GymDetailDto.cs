@@ -1,4 +1,5 @@
 ﻿using Startup_Project.Application.Dtos.GymDtos;
+using Startup_Project.Application.Dtos.GymDtos.GymReview;
 using Startup_Project.Application.Dtos.GymOpeningHour;
 using Startup_Project.Application.Dtos.Packages;
 using Startup_Project.Application.Dtos.Trainer;
@@ -11,6 +12,7 @@ public class GymDetailDto
     public string Name { get; set; } = null!;
     public string Address { get; set; } = null!;
     public string? Description { get; set; }
+    public string? OwnerName { get; set; }
     public string? MainImage { get; set; }
     public List<GymImageDto> Images { get; set; } = [];
 
@@ -28,6 +30,8 @@ public class GymDetailDto
     public List<PackageDetailDto> Packages { get; set; } = [];
 
     public List<TrainerListDto> Trainers { get; set; } = [];
+
+    public List<ReviewGetDto> Reviews { get; set; } = [];
 
     public string? Phone { get; set; }
     public string? Email { get; set; }

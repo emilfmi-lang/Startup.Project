@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Startup_Project.Domain.Entities;
 using Startup_Project.Domain.Entities.Identity;
-using Startup_Project.Domain.Enums;
 using Startup_Project.Persistance.Data;
 
 namespace Startup_Project.Persistance.Seeding;

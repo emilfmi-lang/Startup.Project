@@ -15,12 +15,17 @@ public class TrainerProfile : Profile
             .ForMember(dest => dest.UserFullName, opt => opt.MapFrom(src => src.User.FullName))
             .ForMember(dest => dest.GymName, opt => opt.MapFrom(src => src.Gym != null ? src.Gym.Name : "Online"))
             .ForMember(dest => dest.GymId, opt => opt.MapFrom(src => src.GymId))
-            .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status.ToString()));
+            .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status.ToString()))
+            .ForMember(dest => dest.Specializations, opt => opt.MapFrom(src =>
+                src.Specialization.Split(", ", StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries)));
 
         // Trainer -> TrainerListDto
         CreateMap<Trainer, TrainerListDto>()
             .ForMember(dest => dest.UserFullName, opt => opt.MapFrom(src => src.User.FullName))
-            .ForMember(dest => dest.GymName, opt => opt.MapFrom(src => src.Gym != null ? src.Gym.Name : "Online"));
+            .ForMember(dest => dest.GymName, opt => opt.MapFrom(src => src.Gym != null ? src.Gym.Name : "Online"))
+            .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status.ToString()))
+            .ForMember(dest => dest.Specializations, opt => opt.MapFrom(src =>
+                src.Specialization.Split(", ", StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries)));
 
         // TrainerReview -> TrainerReviewDto
         CreateMap<TrainerReview, TrainerReviewDto>()

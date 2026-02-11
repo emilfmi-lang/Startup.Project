@@ -69,6 +69,14 @@ public class TrainerService : ITrainerService
         return userId;
     }
 
+    private Guid? GetCurrentUserIdOrNull()
+    {
+        var userIdClaim = _httpContextAccessor.HttpContext?.User.FindFirstValue(ClaimTypes.NameIdentifier);
+        if (string.IsNullOrEmpty(userIdClaim) || !Guid.TryParse(userIdClaim, out var userId))
+            return null;
+        return userId;
+    }
+
     private async Task<Guid> GetCurrentUserGymIdAsync()
     {
         var userId = GetCurrentUserId();
@@ -98,18 +106,86 @@ public class TrainerService : ITrainerService
         return ResponseModel<List<TrainerListDto>>.SuccessResponse(dtos);
     }
 
-    public async Task<ResponseModel<TrainerDto>> GetTrainerByIdAsync(Guid trainerId)
+    public async Task<ResponseModel<TrainerDetailDto>> GetTrainerDetailAsync(Guid trainerId)
     {
+        var userId = GetCurrentUserIdOrNull();
+
         var trainer = await _trainerRepository.Table
+            .AsNoTracking()
+            .Where(t => t.Id == trainerId && !t.IsDeleted)
             .Include(t => t.User)
             .Include(t => t.Gym)
-            .FirstOrDefaultAsync(t => t.Id == trainerId && !t.IsDeleted);
+            .Include(t => t.Reviews.Where(r => !r.IsDeleted))
+                .ThenInclude(r => r.User)
+            .Include(t => t.Schedules.Where(s => !s.IsDeleted))
+            .Include(t => t.FavoritedByUsers)
+            .FirstOrDefaultAsync();
 
         if (trainer == null)
             throw NotFoundException.Trainer(trainerId);
 
-        var dto = _mapper.Map<TrainerDto>(trainer);
-        return ResponseModel<TrainerDto>.SuccessResponse(dto);
+        var isFavorite = userId.HasValue && trainer.FavoritedByUsers.Any(f => f.UserId == userId.Value);
+        var yearsExperience = (int)((DateTime.UtcNow - trainer.CreatedAt).TotalDays / 365);
+
+        var dto = new TrainerDetailDto
+        {
+            Id = trainer.Id,
+            UserId = trainer.UserId,
+            UserFullName = trainer.User.FullName,
+            ProfileImageUrl = trainer.ProfileImageUrl,
+            IsVerified = trainer.IsVerified,
+            IsOnlineTrainer = trainer.IsOnlineTrainer,
+            Status = trainer.Status.ToString(),
+
+            GymId = trainer.GymId,
+            GymName = trainer.Gym?.Name,
+            GymAddress = trainer.Gym?.Address,
+            GymImagePath = trainer.Gym?.ImagePath,
+
+            AverageRating = trainer.AverageRating,
+            ReviewCount = trainer.ReviewCount,
+            TotalClients = trainer.TotalClients,
+            TotalSessions = trainer.TotalSessions,
+            SessionPrice = trainer.SessionPrice,
+            YearsExperience = Math.Max(yearsExperience, 1),
+
+            Bio = trainer.Bio,
+            Specialization = trainer.Specialization,
+            Specializations = trainer.Specialization
+                .Split(", ", StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries)
+                .ToList(),
+
+            VideoIntroUrl = trainer.VideoIntroUrl,
+            SocialMediaLinks = trainer.SocialMediaLinks,
+            CertificateUrl = trainer.CertificateUrl,
+
+            IsFavorite = isFavorite,
+            FavoriteCount = trainer.FavoritedByUsers.Count,
+
+            Reviews = trainer.Reviews
+                .OrderByDescending(r => r.CreatedAt)
+                .Select(r => new TrainerReviewDto
+                {
+                    Id = r.Id,
+                    UserId = r.UserId,
+                    UserFullName = r.User.FullName,
+                    StarCount = r.StarCount,
+                    Comment = r.Comment,
+                    CreatedAt = r.CreatedAt
+                }).ToList(),
+
+            Schedule = trainer.Schedules
+                .OrderBy(s => (int)s.DayOfWeek == 0 ? 7 : (int)s.DayOfWeek)
+                .Select(s => new TrainerScheduleDto
+                {
+                    DayOfWeek = s.DayOfWeek,
+                    StartTime = s.StartTime.ToString(@"hh\:mm"),
+                    EndTime = s.EndTime.ToString(@"hh\:mm"),
+                    IsAvailable = s.IsAvailable
+                }).ToList()
+        };
+
+        return ResponseModel<TrainerDetailDto>.SuccessResponse(dto);
     }
 
     public async Task<ResponseModel<List<TrainerListDto>>> GetTrainersByGymAsync(Guid gymId)

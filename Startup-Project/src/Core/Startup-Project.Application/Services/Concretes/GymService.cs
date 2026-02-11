@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Startup_Project.Application.Dtos.GymDtos;
 using Startup_Project.Application.Dtos.GymDtos.GymDetail;
+using Startup_Project.Application.Dtos.GymDtos.GymReview;
 using Startup_Project.Application.Dtos.GymOpeningHour;
 using Startup_Project.Application.Dtos.Packages;
 using Startup_Project.Application.Dtos.Trainer;
@@ -185,6 +186,7 @@ public class GymService(
             var gym = await repository.Table
                 .AsNoTracking()
                 .Where(g => g.Id == gymId && !g.IsDeleted)
+                .Include(g => g.Owner)
                 .Include(g => g.Images.Where(i => !i.IsDeleted).OrderBy(i => i.DisplayOrder))
                 .Include(g => g.OpeningHours)
                 .Include(g => g.Amenities.Where(a => !a.IsDeleted))
@@ -192,6 +194,8 @@ public class GymService(
                     .ThenInclude(p => p.Features.Where(f => !f.IsDeleted).OrderBy(f => f.DisplayOrder))
                 .Include(g => g.Trainers.Where(t => !t.IsDeleted && t.Status == TrainerStatus.Active))
                     .ThenInclude(t => t.User)
+                .Include(g => g.Reviews.Where(r => !r.IsDeleted))
+                    .ThenInclude(r => r.User)
                 .Include(g => g.FavoritedByUsers)
                 .FirstOrDefaultAsync();
 
@@ -208,6 +212,7 @@ public class GymService(
                 Name = gym.Name,
                 Address = gym.Address,
                 Description = gym.Description,
+                OwnerName = gym.Owner?.FullName,
 
                 MainImage = mainImage,
                 Images = gym.Images.Select(i => new GymImageDto
@@ -271,13 +276,31 @@ public class GymService(
                         Id = t.Id,
                         UserFullName = t.User.FullName,
                         Specialization = t.Specialization,
+                        Specializations = t.Specialization
+                            .Split(", ", StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries)
+                            .ToList(),
+                        Bio = t.Bio,
                         ProfileImageUrl = t.ProfileImageUrl,
                         SessionPrice = t.SessionPrice,
                         AverageRating = t.AverageRating,
                         ReviewCount = t.ReviewCount,
+                        TotalClients = t.TotalClients,
+                        TotalSessions = t.TotalSessions,
                         GymName = gym.Name,
                         IsOnlineTrainer = t.IsOnlineTrainer,
-                        IsVerified = t.IsVerified
+                        IsVerified = t.IsVerified,
+                        Status = t.Status.ToString()
+                    }).ToList(),
+
+                Reviews = gym.Reviews
+                    .OrderByDescending(r => r.CreatedAt)
+                    .Select(r => new ReviewGetDto
+                    {
+                        Id = r.Id,
+                        UserFullName = r.User.FullName,
+                        StarCount = r.StarCount,
+                        Comment = r.Comment,
+                        CreatedAt = r.CreatedAt
                     }).ToList(),
 
                 Phone = gym.Phone,

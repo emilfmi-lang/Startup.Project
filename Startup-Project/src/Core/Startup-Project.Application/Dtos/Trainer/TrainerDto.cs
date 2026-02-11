@@ -8,6 +8,7 @@ public class TrainerDto
     public Guid? GymId { get; set; }
     public string? GymName { get; set; }
     public string Specialization { get; set; } = null!;
+    public List<string> Specializations { get; set; } = [];
     public string? Bio { get; set; }
     public string? CertificateUrl { get; set; }
     public string? ProfileImageUrl { get; set; }

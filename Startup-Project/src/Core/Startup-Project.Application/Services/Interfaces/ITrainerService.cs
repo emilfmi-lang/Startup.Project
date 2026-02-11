@@ -9,7 +9,7 @@ public interface ITrainerService
 {
     // Public endpoints
     Task<ResponseModel<List<TrainerListDto>>> GetAllTrainersAsync();
-    Task<ResponseModel<TrainerDto>> GetTrainerByIdAsync(Guid trainerId);
+    Task<ResponseModel<TrainerDetailDto>> GetTrainerDetailAsync(Guid trainerId);
     Task<ResponseModel<List<TrainerListDto>>> GetTrainersByGymAsync(Guid gymId);
     Task<ResponseModel<List<TrainerReviewDto>>> GetTrainerReviewsAsync(Guid trainerId);
     Task<ResponseModel<List<TrainerScheduleDto>>> GetTrainerScheduleAsync(Guid trainerId);
