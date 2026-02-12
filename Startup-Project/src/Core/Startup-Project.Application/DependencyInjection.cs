@@ -14,61 +14,60 @@ namespace Startup_Project.Application;
 
 public static class DependencyInjection
 {
-    extension(IServiceCollection services)
+    public static IServiceCollection AddApplicationServices(this IServiceCollection services)
     {
-        public void AddApplicationServices()
-        {
-            services.AddAutoMapper(cfg => cfg.AddMaps(typeof(DependencyInjection).Assembly));
-            services.AddValidatorsFromAssembly(typeof(DependencyInjection).Assembly);
+        services.AddAutoMapper(cfg => cfg.AddMaps(typeof(DependencyInjection).Assembly));
+        services.AddValidatorsFromAssembly(typeof(DependencyInjection).Assembly);
 
-            // Account
-            services.AddScoped<IAccountService, AccountService>();
-            services.AddScoped<ISettingsService, SettingsService>();
+        // Account
+        services.AddScoped<IAccountService, AccountService>();
+        services.AddScoped<ISettingsService, SettingsService>();
 
-            // Gym
-            services.AddScoped<IGymService, GymService>();
-            services.AddScoped<IGymOpeningHourService, GymOpeningHourService>();
-            services.AddScoped<IGymOwnerService, GymOwnerService>();
+        // Gym
+        services.AddScoped<IGymService, GymService>();
+        services.AddScoped<IGymOpeningHourService, GymOpeningHourService>();
+        services.AddScoped<IGymOwnerService, GymOwnerService>();
 
-            // Package & Payment
-            services.AddScoped<IPackageService, PackageService>();
-            services.AddScoped<IPaymentService, PaymentService>();
+        // Package & Payment
+        services.AddScoped<IPackageService, PackageService>();
+        services.AddScoped<IPaymentService, PaymentService>();
 
-            // Review & Favorite
-            services.AddScoped<IReviewService, ReviewService>();
-            services.AddScoped<IFavoriteService, FavoriteService>();
+        // Review & Favorite
+        services.AddScoped<IReviewService, ReviewService>();
+        services.AddScoped<IFavoriteService, FavoriteService>();
 
-            // Trainer & Session
-            services.AddScoped<ITrainerService, TrainerService>();
-            services.AddScoped<ITrainingSessionService, TrainingSessionService>();
+        // Trainer & Session
+        services.AddScoped<ITrainerService, TrainerService>();
+        services.AddScoped<ITrainingSessionService, TrainingSessionService>();
 
-            // History
-            services.AddScoped<IHistoryService, HistoryService>();
+        // History
+        services.AddScoped<IHistoryService, HistoryService>();
 
-            // PromoCode
-            services.AddScoped<IPromoCodeService, PromoCodeService>();
+        // PromoCode
+        services.AddScoped<IPromoCodeService, PromoCodeService>();
 
-            // User Dashboard
-            services.AddScoped<IUserSubscriptionService, UserSubscriptionService>();
+        // User Dashboard
+        services.AddScoped<IUserSubscriptionService, UserSubscriptionService>();
 
-            // Admin
-            services.AddScoped<IAdminService, AdminService>();
-            services.AddScoped<IPromoCodeAdminService, PromoCodeAdminService>();
+        // Admin
+        services.AddScoped<IAdminService, AdminService>();
+        services.AddScoped<IPromoCodeAdminService, PromoCodeAdminService>();
 
-            // Campaign & Pricing - Rule Handlers (Strategy Pattern)
-            services.AddScoped<IRuleHandler, DayOfWeekRuleHandler>();
-            services.AddScoped<IRuleHandler, TimeRangeRuleHandler>();
-            services.AddScoped<IRuleHandler, UserSegmentRuleHandler>();
-            services.AddScoped<IRuleHandler, PackageRuleHandler>();
-            services.AddScoped<IRuleHandler, MinimumOrderAmountRuleHandler>();
+        // Campaign & Pricing - Rule Handlers (Strategy Pattern)
+        services.AddScoped<IRuleHandler, DayOfWeekRuleHandler>();
+        services.AddScoped<IRuleHandler, TimeRangeRuleHandler>();
+        services.AddScoped<IRuleHandler, UserSegmentRuleHandler>();
+        services.AddScoped<IRuleHandler, PackageRuleHandler>();
+        services.AddScoped<IRuleHandler, MinimumOrderAmountRuleHandler>();
 
-            // Campaign & Pricing - Engines
-            services.AddScoped<IRuleEngine, RuleEngine>();
-            services.AddScoped<IPricingEngine, PricingEngine>();
+        // Campaign & Pricing - Engines
+        services.AddScoped<IRuleEngine, RuleEngine>();
+        services.AddScoped<IPricingEngine, PricingEngine>();
 
-            // Campaign & Pricing - Services
-            services.AddScoped<ICampaignService, CampaignService>();
-            services.AddScoped<ICampaignAdminService, CampaignAdminService>();
-        }
+        // Campaign & Pricing - Services
+        services.AddScoped<ICampaignService, CampaignService>();
+        services.AddScoped<ICampaignAdminService, CampaignAdminService>();
+
+        return services;
     }
 }

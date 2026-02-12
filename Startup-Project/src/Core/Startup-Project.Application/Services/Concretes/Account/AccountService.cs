@@ -24,6 +24,7 @@ public class AccountService(
     IJwtTokenService jwtTokenService,
     IMailService mailService,
     IGoogleTokenValidator googleTokenValidator,
+    IGoogleAuthService googleAuthService,
     IGenericRepository<SmsOtp> smsOtpRepository,
     IGenericRepository<EmailOtp> emailOtpRepository,
     ISmsService smsService,
@@ -104,55 +105,8 @@ public class AccountService(
 
     public async Task<ResponseModel<string>> GoogleLoginAsync(GoogleLoginDto dto)
     {
-        var googleUser = await googleTokenValidator.ValidateAsync(dto.IdToken);
-        if (googleUser == null)
-            throw BusinessException.GoogleTokenInvalid();
-
-        if (!googleUser.EmailVerified)
-            throw BusinessException.GoogleEmailNotVerified();
-
-        var existingUserByGoogleId = await userManager.Users
-            .FirstOrDefaultAsync(u => u.GoogleId == googleUser.GoogleId);
-
-        if (existingUserByGoogleId != null)
-        {
-            var roles = await userManager.GetRolesAsync(existingUserByGoogleId);
-            var token = jwtTokenService.GenerateTokenAsync(existingUserByGoogleId, roles);
-            return ResponseModel<string>.SuccessResponse(token);
-        }
-
-        var existingUserByEmail = await userManager.FindByEmailAsync(googleUser.Email);
-        if (existingUserByEmail != null)
-        {
-            existingUserByEmail.GoogleId = googleUser.GoogleId;
-            if (existingUserByEmail.AuthProvider == AuthProvider.Local)
-            {
-                existingUserByEmail.AuthProvider = AuthProvider.Google;
-            }
-            existingUserByEmail.EmailConfirmed = true;
-            await userManager.UpdateAsync(existingUserByEmail);
-
-            var roles = await userManager.GetRolesAsync(existingUserByEmail);
-            var token = jwtTokenService.GenerateTokenAsync(existingUserByEmail, roles);
-            return ResponseModel<string>.SuccessResponse(token);
-        }
-
-        var newUser = new AppUser(googleUser.FullName, googleUser.GoogleId, AuthProvider.Google)
-        {
-            UserName = googleUser.Email,
-            Email = googleUser.Email,
-            EmailConfirmed = true
-        };
-
-        var createResult = await userManager.CreateAsync(newUser);
-        if (!createResult.Succeeded)
-            throw BusinessException.ValidationFailed(string.Join(", ", createResult.Errors.Select(e => e.Description)));
-
-        await userManager.AddToRoleAsync(newUser, "User");
-
-        var newUserRoles = await userManager.GetRolesAsync(newUser);
-        var newUserToken = jwtTokenService.GenerateTokenAsync(newUser, newUserRoles);
-        return ResponseModel<string>.SuccessResponse(newUserToken);
+        // Yeni IGoogleAuthService istifadə et
+        return await googleAuthService.GoogleLoginAsync(dto.IdToken);
     }
 
     public async Task<ResponseModel<bool>> ForgotPasswordAsync(string email)

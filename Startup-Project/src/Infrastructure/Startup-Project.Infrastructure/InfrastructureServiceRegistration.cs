@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Startup_Project.Application.Abstractions.Services;
 using Startup_Project.Application.Interfaces;
 using Startup_Project.Application.Services.Interfaces;
+using Startup_Project.Application.Services.Interfaces.Account;
 using Startup_Project.Infrastructure.Concretes.Services;
 using Startup_Project.Infrastructure.Security;
 
@@ -21,6 +22,10 @@ public static class InfrastructureServiceRegistration
         services.AddScoped<IQrTokenService, QrTokenService>();
         services.AddScoped<IGoogleTokenValidator, GoogleTokenValidator>();
         services.AddScoped<ISmsService, ConsoleSmsService>();
+
+        // Google OAuth2 Authentication Service
+        services.AddScoped<IGoogleAuthService, GoogleAuthService>();
+
         return services;
     }
 }
