@@ -179,7 +179,6 @@ public class GoogleAuthService : IGoogleAuthService
             _logger.LogDebug($"ClientId: {googleClientId}");
             _logger.LogDebug($"Token (first 50 chars): {idToken?.Substring(0, Math.Min(50, idToken?.Length ?? 0))}...");
 
-            // Token bo? olub olmad???n? yoxla
             if (string.IsNullOrWhiteSpace(idToken))
             {
                 _logger.LogError("IdToken bo? v? ya null-d?r");
