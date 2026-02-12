@@ -2,4 +2,5 @@
 
 public class OrderService
 {
+    public string Name { get; set; }
 }
