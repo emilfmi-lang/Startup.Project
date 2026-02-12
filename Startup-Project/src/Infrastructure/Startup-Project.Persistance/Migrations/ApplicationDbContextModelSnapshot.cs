@@ -417,6 +417,57 @@ namespace Startup_Project.Persistance.Migrations
                     b.ToTable("CheckInTokens");
                 });
 
+            modelBuilder.Entity("Startup_Project.Domain.Entities.EmailOtp", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("AttemptCount")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasDefaultValue(0);
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasMaxLength(6)
+                        .HasColumnType("nvarchar(6)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<DateTime>("ExpiryDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsUsed")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Email");
+
+                    b.HasIndex("Email", "Code");
+
+                    b.HasIndex("Email", "IsUsed");
+
+                    b.HasIndex("Email", "IsUsed", "ExpiryDate");
+
+                    b.ToTable("EmailOtps");
+                });
+
             modelBuilder.Entity("Startup_Project.Domain.Entities.FavoriteGym", b =>
                 {
                     b.Property<Guid>("Id")

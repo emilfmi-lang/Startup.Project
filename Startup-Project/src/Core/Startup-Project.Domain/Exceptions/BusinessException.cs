@@ -73,6 +73,23 @@ public class BusinessException : BaseException
         => new(BusinessErrorCodes.OtpMaxAttemptsExceeded,
                "3 səhv cəhd. Kod ləğv edildi. Yeni kod tələb edin.");
 
+    // EMAIL OTP FACTORY METHODS
+    public static BusinessException EmailOtpNotFound()
+        => new(BusinessErrorCodes.EmailOtpNotFound,
+               "Aktiv doğrulama kodu tapılmadı. Yeni kod tələb edin.");
+
+    public static BusinessException EmailOtpInvalidCode(int remainingAttempts)
+        => new(BusinessErrorCodes.EmailOtpInvalidCode,
+               $"Kod səhvdir. {remainingAttempts} cəhd qalıb.");
+
+    public static BusinessException EmailOtpMaxAttemptsExceeded()
+        => new(BusinessErrorCodes.EmailOtpMaxAttemptsExceeded,
+               "3 səhv cəhd. Kod ləğv edildi. Yeni kod tələb edin.");
+
+    public static BusinessException EmailOtpExpired()
+        => new(BusinessErrorCodes.EmailOtpExpired,
+               "Doğrulama kodunun müddəti bitib. Yeni kod tələb edin.");
+
     public static BusinessException EmailNotConfirmed()
         => new(BusinessErrorCodes.EmailNotConfirmed,
                "Email t?sdiql?nm?yib. Z?hm?t olmasa emailinizi t?sdiql?yin.");

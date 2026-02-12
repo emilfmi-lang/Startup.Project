@@ -25,6 +25,7 @@ public class AccountService(
     IMailService mailService,
     IGoogleTokenValidator googleTokenValidator,
     IGenericRepository<SmsOtp> smsOtpRepository,
+    IGenericRepository<EmailOtp> emailOtpRepository,
     ISmsService smsService,
     IUnitOfWork unitOfWork
     ) : IAccountService
@@ -166,24 +167,45 @@ public class AccountService(
         if (user.AuthProvider == AuthProvider.Phone)
             throw BusinessException.PasswordResetNotAllowed("Telefon");
 
-        var token = await userManager.GeneratePasswordResetTokenAsync(user);
+        // Deactivate previous OTP codes
+        var activeCodes = await emailOtpRepository.Table
+            .Where(x => x.Email == email && !x.IsUsed && x.ExpiryDate > DateTime.UtcNow)
+            .ToListAsync();
 
-        byte[] tokenBytes = System.Text.Encoding.UTF8.GetBytes(token);
-        var encodedToken = Microsoft.AspNetCore.WebUtilities.WebEncoders.Base64UrlEncode(tokenBytes);
-        var callbackUrl = $"https://localhost:7000/api/Account/ResetPassword?email={user.Email}&token={encodedToken}";
-        string mailBody = $@"<h3>Sifre Sifirlama Isteyi</h3>
+        foreach (var code in activeCodes)
+        {
+            code.MarkAsUsed();
+        }
+
+        // Generate new OTP code
+        var random = new Random();
+        var otpCode = random.Next(100000, 999999).ToString();
+
+        // Create and save OTP record
+        var emailOtp = new EmailOtp(email, otpCode, expiryMinutes: 5);
+        await emailOtpRepository.AddAsync(emailOtp);
+        await unitOfWork.SaveChangesAsync();
+
+        // Send email with OTP code
+        string mailBody = $@"<h3>Şifrə Sıfırlama</h3>
                              <p>Salam {user.FullName},</p>
-                             <p>Sifrenizi yenilemek ucun asagidaki linke klikleyin:</p>
-                             <a href='{callbackUrl}'>Sifreni Yenile</a>
+                             <p>Şifrənizi sıfırlamaq üçün aşağıdakı kodu istifadə edin:</p>
+                             <h2 style='color: #007bff; text-align: center;'>{otpCode}</h2>
+                             <p>Bu kod 5 dəqiqə ərzində etibarlıdır.</p>
                              <p>Eger bu isteyi siz etmemisinizse, bu emaili gormezden gelin.</p>";
 
-        await mailService.SendEmailAsync(user.Email!, "Sifre Sifirlama", mailBody);
+        await mailService.SendEmailAsync(user.Email!, "Şifrə Sıfırlama Kodu", mailBody);
 
         return ResponseModel<bool>.SuccessResponse(true);
     }
 
     public async Task<ResponseModel<bool>> ResetPasswordAsync(ResetPasswordDto dto)
     {
+        var validator = new ResetPasswordDtoValidator();
+        var validationResult = await validator.ValidateAsync(dto);
+        if (!validationResult.IsValid)
+            throw BusinessException.ValidationFailed(string.Join(", ", validationResult.Errors.Select(e => e.ErrorMessage)));
+
         var user = await userManager.FindByEmailAsync(dto.Email);
         if (user == null)
             throw NotFoundException.UserByEmail(dto.Email);
@@ -194,12 +216,38 @@ public class AccountService(
         if (user.AuthProvider == AuthProvider.Phone)
             throw BusinessException.PasswordResetNotAllowed("Telefon");
 
-        if (dto.NewPassword != dto.ConfirmPassword)
-            throw BusinessException.ValidationFailed("Yeni şifrə və təsdiq şifrəsi uyğun gəlmir.");
+        // Verify Email OTP
+        var otp = await emailOtpRepository.Table
+            .Where(x => x.Email == dto.Email && !x.IsUsed && x.ExpiryDate > DateTime.UtcNow && x.AttemptCount < 3)
+            .OrderByDescending(x => x.CreatedAt)
+            .FirstOrDefaultAsync();
 
-        var decodedTokenBytes = Microsoft.AspNetCore.WebUtilities.WebEncoders.Base64UrlDecode(dto.Token);
-        var orginalToken = System.Text.Encoding.UTF8.GetString(decodedTokenBytes);
-        var result = await userManager.ResetPasswordAsync(user, orginalToken, dto.NewPassword);
+        if (otp == null)
+            throw BusinessException.EmailOtpNotFound();
+
+        if (otp.Code != dto.Code)
+        {
+            otp.IncrementAttempt();
+
+            if (otp.AttemptCount >= 3)
+            {
+                otp.MarkAsUsed();
+                await unitOfWork.SaveChangesAsync();
+                throw BusinessException.EmailOtpMaxAttemptsExceeded();
+            }
+
+            await unitOfWork.SaveChangesAsync();
+            throw BusinessException.EmailOtpInvalidCode(3 - otp.AttemptCount);
+        }
+
+        // Mark OTP as used
+        otp.MarkAsUsed();
+        await unitOfWork.SaveChangesAsync();
+
+        // Change password using UserManager
+        var token = await userManager.GeneratePasswordResetTokenAsync(user);
+        var result = await userManager.ResetPasswordAsync(user, token, dto.NewPassword);
+
         if (!result.Succeeded)
             throw BusinessException.ValidationFailed(string.Join(", ", result.Errors.Select(e => e.Description)));
 
@@ -305,11 +353,25 @@ public class AccountService(
             }
         }
 
-        var roles = await userManager.GetRolesAsync(user);
-        var token = jwtTokenService.GenerateTokenAsync(user, roles);
+                var roles = await userManager.GetRolesAsync(user);
+                var token = jwtTokenService.GenerateTokenAsync(user, roles);
 
-        return ResponseModel<string>.SuccessResponse(token);
-    }
+                return ResponseModel<string>.SuccessResponse(token);
+            }
 
-    #endregion
-}
+            #endregion
+
+            #region Email OTP Methods (for Password Reset)
+
+            public async Task<ResponseModel<bool>> SendPasswordResetOtpAsync(string email)
+            {
+                return await ForgotPasswordAsync(email);
+            }
+
+            public async Task<ResponseModel<bool>> VerifyPasswordResetOtpAsync(ResetPasswordDto dto)
+            {
+                return await ResetPasswordAsync(dto);
+            }
+
+            #endregion
+        }

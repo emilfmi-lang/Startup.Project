@@ -17,4 +17,8 @@ public interface IAccountService
     // SMS OTP Methods
     Task<ResponseModel<bool>> SendSmsOtpAsync(SendSmsOtpDto dto);
     Task<ResponseModel<string>> VerifySmsOtpAsync(VerifySmsOtpDto dto);
+
+    // Email OTP Methods (for Password Reset)
+    Task<ResponseModel<bool>> SendPasswordResetOtpAsync(string email);
+    Task<ResponseModel<bool>> VerifyPasswordResetOtpAsync(ResetPasswordDto dto);
 }

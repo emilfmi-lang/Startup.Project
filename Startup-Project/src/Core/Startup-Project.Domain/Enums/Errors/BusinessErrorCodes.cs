@@ -31,6 +31,12 @@ public enum BusinessErrorCodes
     OtpInvalidCode = 2202,
     OtpMaxAttemptsExceeded = 2203,
 
+    // EMAIL OTP ERRORS (2250-2299)
+    EmailOtpNotFound = 2250,
+    EmailOtpExpired = 2251,
+    EmailOtpInvalidCode = 2252,
+    EmailOtpMaxAttemptsExceeded = 2253,
+
     // GYM ERRORS (3000-3999)
     GymNotFound = 3000,
     GymAlreadyExists = 3001,

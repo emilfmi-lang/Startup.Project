@@ -22,6 +22,7 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
     public DbSet<TrainerSchedule> TrainerSchedules { get; set; }
     public DbSet<TrainingSession> TrainingSessions { get; set; }
     public DbSet<SmsOtp> SmsOtps { get; set; }
+    public DbSet<EmailOtp> EmailOtps { get; set; }
     public DbSet<FavoriteGym> FavoriteGyms { get; set; }
     public DbSet<PromoCode> PromoCodes { get; set; }
     public DbSet<PromoCodeUsage> PromoCodeUsages { get; set; }
