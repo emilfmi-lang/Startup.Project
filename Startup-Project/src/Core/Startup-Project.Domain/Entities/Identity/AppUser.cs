@@ -7,6 +7,7 @@ public class AppUser : IdentityUser<Guid>
 {
     public string FullName { get; set; } = null!;
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+    public Guid? GymId { get; set; }
     public List<Gym> Gyms { get; set; } = [];
     public string? VerificationCode { get; set; }
     public DateTime? CodeExpireDate { get; set; }
