@@ -85,6 +85,7 @@ try
         await Startup_Project.Persistance.Seeding.RoleSeeder.SeedRolesAsync(services);
         await Startup_Project.Persistance.Seeding.AdminUserSeeder.SeedAdminAsync(services);
         await Startup_Project.Persistance.Seeding.GymSeeder.SeedGymsAsync(services);
+        await Startup_Project.Persistance.Seeding.AdminPanelTestDataSeeder.SeedAdminPanelTestDataAsync(services);
     }
 
     app.UseMiddleware<ExceptionHandlingMiddleware>();

@@ -10,7 +10,7 @@ public class AppUser : IdentityUser<Guid>
     public Guid? GymId { get; set; }
     public List<Gym> Gyms { get; set; } = [];
     public string? VerificationCode { get; set; }
-    public DateTime? CodeExpireDate { get; set; }
+    public DateTime? CodeExpireDate { get; set; } 
     public List<GymReview> Reviews { get; set; } = [];
     public string? GoogleId { get; set; }
     public AuthProvider AuthProvider { get; set; } = AuthProvider.Local;

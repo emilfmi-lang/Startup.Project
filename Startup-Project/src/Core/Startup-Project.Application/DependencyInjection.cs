@@ -52,6 +52,7 @@ public static class DependencyInjection
         // Admin
         services.AddScoped<IAdminService, AdminService>();
         services.AddScoped<IPromoCodeAdminService, PromoCodeAdminService>();
+        services.AddScoped<IGymAdminMembersService, GymAdminMembersService>();
 
         // Campaign & Pricing - Rule Handlers (Strategy Pattern)
         services.AddScoped<IRuleHandler, DayOfWeekRuleHandler>();

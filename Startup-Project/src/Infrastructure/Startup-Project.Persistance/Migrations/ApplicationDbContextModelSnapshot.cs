@@ -828,6 +828,9 @@ namespace Startup_Project.Persistance.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
+                    b.Property<Guid?>("GymId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("Language")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
