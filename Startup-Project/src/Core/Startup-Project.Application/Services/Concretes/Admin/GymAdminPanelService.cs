@@ -1,7 +1,9 @@
 using AutoMapper;
+using FluentValidation;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Startup_Project.Application.Abstractions.Services;
 using Startup_Project.Application.Dtos.Admin;
 using Startup_Project.Application.Dtos.Common;
 using Startup_Project.Application.Interfaces;
@@ -27,6 +29,8 @@ public class GymAdminPanelService(
     IGenericRepository<CheckInLog> checkInLogRepository,
     IGenericRepository<Package> packageRepository,
     IGenericRepository<Payment> paymentRepository,
+    IMailService mailService,
+    IValidator<SendEmailRequestDto> emailValidator,
     IMapper mapper,
     IHttpContextAccessor httpContextAccessor) : IGymAdminPanelService
 {
@@ -408,5 +412,20 @@ public class GymAdminPanelService(
         return ResponseModel<PaginatedResult<TrainerListItemDto>>.SuccessResponse(result);
     }
 
-    #endregion
-}
+        #endregion
+
+        #region ==================== 4. EMAIL ====================
+
+        public async Task<ResponseModel<string>> SendEmailAsync(SendEmailRequestDto request)
+        {
+            var validationResult = await emailValidator.ValidateAsync(request);
+            if (!validationResult.IsValid)
+                throw new ValidationException(validationResult.Errors);
+
+            await mailService.SendEmailAsync(request.Email, request.Subject, request.Body);
+
+            return ResponseModel<string>.SuccessResponse("Email ugurla gonderildi.");
+        }
+
+        #endregion
+    }
