@@ -129,17 +129,22 @@ public class GymAdminMembersService(
             ? new HashSet<Guid> { filter.SelectedGymId.Value }
             : ownerGymIds;
 
-        // Trainer olan user-leri xaric et
-        var trainerUserIds = await trainerRepository.Table
+        // Trainers table-dan trainer olan user ID-leri
+        var trainerTableIds = await trainerRepository.Table
             .Where(t => filterGymIds.Contains(t.GymId ?? Guid.Empty) && !t.IsDeleted)
             .Select(t => t.UserId)
             .ToListAsync();
+
+        // AspNetUserRoles-dan "Trainer" rolu olan user ID-leri
+        var trainerRoleUsers = await userManager.GetUsersInRoleAsync("Trainer");
+        var allTrainerIds = trainerTableIds.ToHashSet();
+        allTrainerIds.UnionWith(trainerRoleUsers.Select(u => u.Id));
 
         // Base query: trainer-ler ve owner xaric
         var query = userManager.Users
             .Where(u => filterGymIds.Contains(u.GymId ?? Guid.Empty)
                 && u.Id != ownerId
-                && !trainerUserIds.Contains(u.Id))
+                && !allTrainerIds.Contains(u.Id))
             .AsNoTracking();
 
         // Search filteri

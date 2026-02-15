@@ -90,14 +90,19 @@ public class GymAdminPanelService(
 
         // EF Core DbContext tek thread-de isleyir — sorgular ardicil icra olunmalidir
 
-        // Trainer olan user ID-leri (members sayisindan cixarilacaq)
-        var dashboardTrainerUserIds = await trainerRepository.Table
+        // Trainers table-dan trainer olan user ID-leri
+        var dashboardTrainerTableIds = await trainerRepository.Table
             .Where(t => t.GymId == gymId && !t.IsDeleted)
             .Select(t => t.UserId)
             .ToListAsync();
 
+        // AspNetUserRoles-dan "Trainer" rolu olan user ID-leri
+        var dashboardTrainerRoleUsers = await userManager.GetUsersInRoleAsync("Trainer");
+        var dashboardAllTrainerIds = dashboardTrainerTableIds.ToHashSet();
+        dashboardAllTrainerIds.UnionWith(dashboardTrainerRoleUsers.Select(u => u.Id));
+
         var totalMembers = await userManager.Users
-            .CountAsync(u => u.GymId == gymId && u.Id != ownerId && !dashboardTrainerUserIds.Contains(u.Id));
+            .CountAsync(u => u.GymId == gymId && u.Id != ownerId && !dashboardAllTrainerIds.Contains(u.Id));
 
         var activeMembers = await context.Subscriptions
             .Where(s => gymPackageIds.Contains(s.PackageId) && s.EndDate > now)
@@ -164,15 +169,23 @@ public class GymAdminPanelService(
         var (gym, ownerId) = await GetAdminGymWithOwnerAsync();
         var gymId = gym.Id;
 
-        // Bu zala aid trainer olan user ID-leri (members siyahisindan cixarilacaq)
-        var gymTrainerUserIds = await trainerRepository.Table
+        // Trainers table-dan trainer olan user ID-leri
+        var trainerTableUserIds = await trainerRepository.Table
             .Where(t => t.GymId == gymId && !t.IsDeleted)
             .Select(t => t.UserId)
             .ToListAsync();
 
+        // AspNetUserRoles-dan "Trainer" rolu olan user ID-leri
+        var trainerRoleUserIds = await userManager.GetUsersInRoleAsync("Trainer");
+        var trainerRoleUserIdSet = trainerRoleUserIds.Select(u => u.Id).ToHashSet();
+
+        // Her iki menbeden trainer olanlari birlesdir
+        var allTrainerUserIds = trainerTableUserIds.ToHashSet();
+        allTrainerUserIds.UnionWith(trainerRoleUserIdSet);
+
         // Base query: bu zala aid user-ler (owner ve trainer-ler xaric)
         var query = userManager.Users
-            .Where(u => u.GymId == gymId && u.Id != ownerId && !gymTrainerUserIds.Contains(u.Id))
+            .Where(u => u.GymId == gymId && u.Id != ownerId && !allTrainerUserIds.Contains(u.Id))
             .AsNoTracking();
 
         // Search filter
@@ -319,31 +332,27 @@ public class GymAdminPanelService(
         var (gym, _) = await GetAdminGymWithOwnerAsync();
         var gymId = gym.Id;
 
-        // Base query: bu zala aid trainer-ler
-        var query = trainerRepository.Table
+        // 1) Trainers table-dan olan trainer-ler (tam data: specialization, bio, rating...)
+        var trainersFromTable = await trainerRepository.Table
             .Include(t => t.User)
             .Where(t => t.GymId == gymId && !t.IsDeleted)
-            .AsNoTracking();
-
-        // Search filter
-        if (!string.IsNullOrWhiteSpace(search))
-        {
-            var s = search.ToLower();
-            query = query.Where(t =>
-                t.User.FullName.ToLower().Contains(s) ||
-                t.User.Email!.ToLower().Contains(s) ||
-                t.Specialization.ToLower().Contains(s));
-        }
-
-        var totalCount = await query.CountAsync();
-
-        var trainers = await query
-            .OrderBy(t => t.User.FullName)
-            .Skip((page - 1) * pageSize)
-            .Take(pageSize)
+            .AsNoTracking()
             .ToListAsync();
 
-        var trainerDtos = trainers.Select(t => new TrainerListItemDto
+        var trainerTableUserIds = trainersFromTable.Select(t => t.UserId).ToHashSet();
+
+        // 2) AspNetUserRoles-dan "Trainer" rolu olan, amma Trainers table-da OLMAYAN user-ler
+        //    (database-den manual rol verilmis user-ler)
+        var trainerRoleUsers = await userManager.GetUsersInRoleAsync("Trainer");
+        var roleOnlyUsers = trainerRoleUsers
+            .Where(u => u.GymId == gymId && !trainerTableUserIds.Contains(u.Id))
+            .ToList();
+
+        // 3) Her iki menbeni birlesdirb DTO-lari yarat
+        var allTrainerDtos = new List<TrainerListItemDto>();
+
+        // Trainers table-dan gelenler (tam data)
+        allTrainerDtos.AddRange(trainersFromTable.Select(t => new TrainerListItemDto
         {
             Id = t.Id,
             UserId = t.UserId,
@@ -357,9 +366,45 @@ public class GymAdminPanelService(
             Rating = t.AverageRating,
             SessionPrice = t.SessionPrice,
             CreatedAt = t.CreatedAt
-        }).ToList();
+        }));
 
-        var result = PaginatedResult<TrainerListItemDto>.Create(trainerDtos, totalCount, page, pageSize);
+        // Yalniz rol ile trainer edilmis user-ler (Trainers table-da yoxdur)
+        allTrainerDtos.AddRange(roleOnlyUsers.Select(u => new TrainerListItemDto
+        {
+            Id = Guid.Empty,
+            UserId = u.Id,
+            FullName = u.FullName,
+            Email = u.Email!,
+            ProfileImageUrl = u.ProfileImageUrl,
+            Specialization = "T?yin edilm?yib",
+            Bio = u.Bio,
+            IsVerified = false,
+            SessionCount = 0,
+            Rating = 0,
+            SessionPrice = 0,
+            CreatedAt = u.CreatedAt
+        }));
+
+        // Search filter
+        if (!string.IsNullOrWhiteSpace(search))
+        {
+            var s = search.ToLower();
+            allTrainerDtos = allTrainerDtos
+                .Where(t => t.FullName.ToLower().Contains(s)
+                    || t.Email.ToLower().Contains(s)
+                    || t.Specialization.ToLower().Contains(s))
+                .ToList();
+        }
+
+        // Sort + Pagination
+        var totalCount = allTrainerDtos.Count;
+        var paginatedDtos = allTrainerDtos
+            .OrderBy(t => t.FullName)
+            .Skip((page - 1) * pageSize)
+            .Take(pageSize)
+            .ToList();
+
+        var result = PaginatedResult<TrainerListItemDto>.Create(paginatedDtos, totalCount, page, pageSize);
         return ResponseModel<PaginatedResult<TrainerListItemDto>>.SuccessResponse(result);
     }
 
