@@ -37,6 +37,7 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
     public DbSet<FavoriteTrainer> FavoriteTrainers { get; set; }
     public DbSet<UserSession> UserSessions { get; set; }
     public DbSet<UserPaymentMethod> UserPaymentMethods { get; set; }
+    public DbSet<ScheduledSession> ScheduledSessions { get; set; }
 
     public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
     {

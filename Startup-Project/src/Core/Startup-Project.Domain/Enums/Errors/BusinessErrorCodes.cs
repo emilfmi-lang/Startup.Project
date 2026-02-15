@@ -127,7 +127,13 @@ public enum BusinessErrorCodes
     PaymentMethodLimitExceeded = 15001,
     PaymentMethodExpired = 15002,
     PaymentMethodAlreadyExists = 15003,
-    CannotRemoveDefaultPaymentMethod = 15004,
+        CannotRemoveDefaultPaymentMethod = 15004,
+
+        // SCHEDULED SESSION ERRORS (16000-16999)
+        ScheduledSessionNotFound = 16000,
+        SessionTimeCollision = 16001,
+        MemberSubscriptionExpired = 16002,
+        ScheduledSessionInvalidStatus = 16003,
 
 
-}
+    }

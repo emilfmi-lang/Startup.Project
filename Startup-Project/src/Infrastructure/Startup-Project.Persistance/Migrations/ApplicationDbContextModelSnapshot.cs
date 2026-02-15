@@ -1234,6 +1234,79 @@ namespace Startup_Project.Persistance.Migrations
                     b.ToTable("PromoCodeUsages");
                 });
 
+            modelBuilder.Entity("Startup_Project.Domain.Entities.ScheduledSession", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .HasMaxLength(2000)
+                        .HasColumnType("nvarchar(2000)");
+
+                    b.Property<int>("DurationMinutes")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ExerciseType")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<Guid>("GymId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("MaxParticipants")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasDefaultValue(1);
+
+                    b.Property<Guid?>("MemberId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<decimal>("PricePerPerson")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("decimal(18,2)")
+                        .HasDefaultValue(0m);
+
+                    b.Property<DateTime>("ScheduledTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Title")
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<Guid>("TrainerId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("GymId");
+
+                    b.HasIndex("MemberId");
+
+                    b.HasIndex("ScheduledTime");
+
+                    b.HasIndex("Status");
+
+                    b.HasIndex("TrainerId");
+
+                    b.HasIndex("TrainerId", "ScheduledTime");
+
+                    b.ToTable("ScheduledSessions");
+                });
+
             modelBuilder.Entity("Startup_Project.Domain.Entities.SmsOtp", b =>
                 {
                     b.Property<Guid>("Id")
@@ -2037,6 +2110,32 @@ namespace Startup_Project.Persistance.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("Startup_Project.Domain.Entities.ScheduledSession", b =>
+                {
+                    b.HasOne("Startup_Project.Domain.Entities.Gym", "Gym")
+                        .WithMany("ScheduledSessions")
+                        .HasForeignKey("GymId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Startup_Project.Domain.Entities.Identity.AppUser", "Member")
+                        .WithMany("ScheduledSessions")
+                        .HasForeignKey("MemberId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Startup_Project.Domain.Entities.Trainer", "Trainer")
+                        .WithMany("ScheduledSessions")
+                        .HasForeignKey("TrainerId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Gym");
+
+                    b.Navigation("Member");
+
+                    b.Navigation("Trainer");
+                });
+
             modelBuilder.Entity("Startup_Project.Domain.Entities.Subscription", b =>
                 {
                     b.HasOne("Startup_Project.Domain.Entities.Package", "Package")
@@ -2191,6 +2290,8 @@ namespace Startup_Project.Persistance.Migrations
 
                     b.Navigation("Reviews");
 
+                    b.Navigation("ScheduledSessions");
+
                     b.Navigation("Trainers");
 
                     b.Navigation("TrainingSessions");
@@ -2211,6 +2312,8 @@ namespace Startup_Project.Persistance.Migrations
                     b.Navigation("PaymentMethods");
 
                     b.Navigation("Reviews");
+
+                    b.Navigation("ScheduledSessions");
 
                     b.Navigation("Sessions");
 
@@ -2236,6 +2339,8 @@ namespace Startup_Project.Persistance.Migrations
                     b.Navigation("FavoritedByUsers");
 
                     b.Navigation("Reviews");
+
+                    b.Navigation("ScheduledSessions");
 
                     b.Navigation("Schedules");
 

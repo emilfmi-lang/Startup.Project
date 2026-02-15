@@ -39,6 +39,7 @@ public static class DependencyInjection
         // Trainer & Session
         services.AddScoped<ITrainerService, TrainerService>();
         services.AddScoped<ITrainingSessionService, TrainingSessionService>();
+        services.AddScoped<ITrainerSessionService, TrainerSessionService>();
 
         // History
         services.AddScoped<IHistoryService, HistoryService>();
@@ -54,6 +55,7 @@ public static class DependencyInjection
         services.AddScoped<IPromoCodeAdminService, PromoCodeAdminService>();
         services.AddScoped<IGymAdminMembersService, GymAdminMembersService>();
         services.AddScoped<IGymAdminPanelService, GymAdminPanelService>();
+        services.AddScoped<IGymAdminSessionService, GymAdminSessionService>();
 
         // Campaign & Pricing - Rule Handlers (Strategy Pattern)
         services.AddScoped<IRuleHandler, DayOfWeekRuleHandler>();

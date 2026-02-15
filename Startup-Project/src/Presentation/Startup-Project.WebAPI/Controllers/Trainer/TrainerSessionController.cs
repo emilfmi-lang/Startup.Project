@@ -16,9 +16,6 @@ public class TrainerSessionController : ControllerBase
         _sessionService = sessionService;
     }
 
-    /// <summary>
-    /// Menim sessiyalarim (trainer olaraq)
-    /// </summary>
     [HttpGet]
     public async Task<IActionResult> GetMySessions()
     {

@@ -30,6 +30,7 @@ public interface IApplicationDbContext
     DbSet<GymAmenity> GymAmenities { get; set; }
     DbSet<GymImage> GymImages { get; set; }
     DbSet<PackageFeature> PackageFeatures { get; set; }
-    DbSet<FavoriteTrainer> FavoriteTrainers { get; set; }   
+    DbSet<FavoriteTrainer> FavoriteTrainers { get; set; }
+    DbSet<ScheduledSession> ScheduledSessions { get; set; }
     Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
 }
