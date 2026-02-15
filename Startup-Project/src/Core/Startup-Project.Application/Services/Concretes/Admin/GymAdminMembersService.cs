@@ -129,9 +129,17 @@ public class GymAdminMembersService(
             ? new HashSet<Guid> { filter.SelectedGymId.Value }
             : ownerGymIds;
 
-        // Base query - DÜZ?LDILDI: Do?ru ??kild? AppUser-l?ri filtrel?yir
+        // Trainer olan user-leri xaric et
+        var trainerUserIds = await trainerRepository.Table
+            .Where(t => filterGymIds.Contains(t.GymId ?? Guid.Empty) && !t.IsDeleted)
+            .Select(t => t.UserId)
+            .ToListAsync();
+
+        // Base query: trainer-ler ve owner xaric
         var query = userManager.Users
-            .Where(u => filterGymIds.Contains(u.GymId ?? Guid.Empty) && u.Id != ownerId)
+            .Where(u => filterGymIds.Contains(u.GymId ?? Guid.Empty)
+                && u.Id != ownerId
+                && !trainerUserIds.Contains(u.Id))
             .AsNoTracking();
 
         // Search filteri
@@ -158,16 +166,13 @@ public class GymAdminMembersService(
         {
             var dto = mapper.Map<MemberListItemDto>(member);
 
-            // Dynamic enrichment (check-ins, trainer status, subscription)
-            // DÜZ?LDILDI: Döngü yerin? direkt sorgu
+            // Dynamic enrichment (check-ins, subscription)
             var checkInCount = await checkInLogRepository.Table
                 .CountAsync(x => x.UserId == member.Id && filterGymIds.Contains(x.GymId));
             dto.CheckIns = checkInCount;
 
-            // Trainer status
-            var isTrainer = await trainerRepository.Table
-                .AnyAsync(t => t.UserId == member.Id && filterGymIds.Contains(t.GymId ?? Guid.Empty));
-            dto.IsTrainer = isTrainer;
+            // Trainer-ler artiq base query-de xaric edilib
+            dto.IsTrainer = false;
 
             // Subscription
             var subscription = await context.Subscriptions

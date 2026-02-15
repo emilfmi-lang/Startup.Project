@@ -1,7 +1,7 @@
 namespace Startup_Project.Application.Dtos.Admin;
 
 /// <summary>
-/// Trainers siyah?s? DTO
+/// Admin paneli üçün trainer siyah?s? DTO
 /// </summary>
 public class TrainerListItemDto
 {
@@ -16,5 +16,6 @@ public class TrainerListItemDto
     public bool IsVerified { get; set; }
     public int SessionCount { get; set; }
     public double Rating { get; set; }
+    public decimal SessionPrice { get; set; }
     public DateTime CreatedAt { get; set; }
 }

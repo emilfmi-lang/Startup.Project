@@ -41,15 +41,16 @@ public class AdminMembersProfile : Profile
         CreateMap<Trainer, TrainerListItemDto>()
             .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
             .ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.UserId))
-            .ForMember(dest => dest.FullName, opt => opt.Ignore())
-            .ForMember(dest => dest.Email, opt => opt.Ignore())
-            .ForMember(dest => dest.ProfileImageUrl, opt => opt.Ignore())
+            .ForMember(dest => dest.FullName, opt => opt.MapFrom(src => src.User != null ? src.User.FullName : string.Empty))
+            .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.User != null ? src.User.Email : string.Empty))
+            .ForMember(dest => dest.ProfileImageUrl, opt => opt.MapFrom(src => src.User != null ? src.User.ProfileImageUrl ?? src.ProfileImageUrl : src.ProfileImageUrl))
             .ForMember(dest => dest.Specialization, opt => opt.MapFrom(src => src.Specialization))
             .ForMember(dest => dest.Experience, opt => opt.Ignore())
             .ForMember(dest => dest.Bio, opt => opt.MapFrom(src => src.Bio))
             .ForMember(dest => dest.IsVerified, opt => opt.MapFrom(src => src.IsVerified))
             .ForMember(dest => dest.SessionCount, opt => opt.MapFrom(src => src.TotalSessions))
             .ForMember(dest => dest.Rating, opt => opt.MapFrom(src => src.AverageRating))
+            .ForMember(dest => dest.SessionPrice, opt => opt.MapFrom(src => src.SessionPrice))
             .ForMember(dest => dest.CreatedAt, opt => opt.MapFrom(src => src.CreatedAt));
 
         // Gym -> GymInfoDto
