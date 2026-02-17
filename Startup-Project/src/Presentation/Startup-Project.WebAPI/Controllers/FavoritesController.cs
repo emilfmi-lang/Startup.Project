@@ -11,24 +11,14 @@ public class FavoritesController(IFavoriteService favoriteService) : ControllerB
 {
     #region ??????????????????? GYM FAVORITES ???????????????????
 
-    /// <summary>
-    /// Gym-i sevimlil?r? ?lav? et / sil (Toggle)
-    /// </summary>
-    /// <returns>true = ?lav? edildi, false = silindi</returns>
     [HttpPost("gyms/{gymId:guid}/toggle")]
     public async Task<IActionResult> ToggleGymFavorite(Guid gymId)
         => Ok(await favoriteService.ToggleGymFavoriteAsync(gymId));
 
-    /// <summary>
-    /// ?stifad?çinin sevimli gym-l?rini g?tirir (Gyms tab)
-    /// </summary>
     [HttpGet("gyms")]
     public async Task<IActionResult> GetFavoriteGyms([FromQuery] int page = 1, [FromQuery] int pageSize = 20)
         => Ok(await favoriteService.GetFavoriteGymsAsync(page, pageSize));
 
-    /// <summary>
-    /// Bu gym favorit-d?dir?
-    /// </summary>
     [HttpGet("gyms/{gymId:guid}/check")]
     public async Task<IActionResult> IsGymFavorite(Guid gymId)
         => Ok(await favoriteService.IsGymFavoriteAsync(gymId));
@@ -37,10 +27,6 @@ public class FavoritesController(IFavoriteService favoriteService) : ControllerB
 
     #region ??????????????????? TRAINER FAVORITES ???????????????????
 
-    /// <summary>
-    /// Trainer-i sevimlil?r? ?lav? et / sil (Toggle)
-    /// </summary>
-    /// <returns>true = ?lav? edildi, false = silindi</returns>
     [HttpPost("trainers/{trainerId:guid}/toggle")]
     public async Task<IActionResult> ToggleTrainerFavorite(Guid trainerId)
         => Ok(await favoriteService.ToggleTrainerFavoriteAsync(trainerId));
