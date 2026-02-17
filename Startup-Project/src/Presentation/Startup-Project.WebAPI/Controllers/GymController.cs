@@ -14,17 +14,11 @@ public class GymController(IGymService service) : ControllerBase
     public async Task<IActionResult> GetAllAsync()
         => Ok(await service.GetAllAsync());
 
-    /// <summary>
-    /// Bütün zalları gətirir (IsFavorite flag ilə)
-    /// </summary>
     [HttpGet("list")]
     [AllowAnonymous]
     public async Task<IActionResult> GetAllWithFavoritesAsync([FromQuery] int page = 1, [FromQuery] int pageSize = 20)
         => Ok(await service.GetAllWithFavoritesAsync(page, pageSize));
 
-    /// <summary>
-    /// Zalın detallı məlumatlarını gətirir
-    /// </summary>
     [HttpGet("{id:guid}")]
     [AllowAnonymous]
     public async Task<IActionResult> GetDetailAsync(Guid id)
