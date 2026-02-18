@@ -129,11 +129,15 @@ public enum BusinessErrorCodes
     PaymentMethodAlreadyExists = 15003,
         CannotRemoveDefaultPaymentMethod = 15004,
 
-        // SCHEDULED SESSION ERRORS (16000-16999)
-        ScheduledSessionNotFound = 16000,
-        SessionTimeCollision = 16001,
-        MemberSubscriptionExpired = 16002,
-        ScheduledSessionInvalidStatus = 16003,
+            // SCHEDULED SESSION ERRORS (16000-16999)
+            ScheduledSessionNotFound = 16000,
+            SessionTimeCollision = 16001,
+            MemberSubscriptionExpired = 16002,
+            ScheduledSessionInvalidStatus = 16003,
+
+            // TRAINER STUDENT ERRORS (17000-17999)
+            StudentAlreadyAssigned = 17000,
+            StudentNotFound = 17001,
 
 
-    }
+        }

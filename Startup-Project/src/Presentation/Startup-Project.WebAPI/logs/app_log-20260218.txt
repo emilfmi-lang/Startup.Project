@@ -2723,3 +2723,662 @@ ORDER BY [s].[ScheduledTime] DESC
 2026-02-18 13:15:51 [INF] Executed action Startup_Project.WebAPI.Controllers.Trainer.TrainerSessionsController.GetMySessions (Startup-Project.WebAPI) in 56.0911ms
 2026-02-18 13:15:51 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.Trainer.TrainerSessionsController.GetMySessions (Startup-Project.WebAPI)'
 2026-02-18 13:15:51 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/trainer/me/sessions - 200 null application/json; charset=utf-8 71.897ms
+2026-02-18 13:40:25 [INF] Proqram başladılır...
+2026-02-18 13:40:26 [WRN] The 'SubscriptionStatus' property 'Status' on entity type 'Subscription' is configured with a database-generated default, but has no configured sentinel value. The database-generated default will always be used for inserts when the property has the value '0', since this is the CLR default for the 'SubscriptionStatus' type. Consider using a nullable type, using a nullable backing field, or setting the sentinel value for the property to ensure the database default is used when, and only when, appropriate. See https://aka.ms/efcore-docs-default-values for more information.
+2026-02-18 13:40:26 [WRN] No store type was specified for the decimal property 'FinalPrice' on entity type 'CampaignUsage'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-02-18 13:40:26 [WRN] No store type was specified for the decimal property 'OriginalPrice' on entity type 'CampaignUsage'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-02-18 13:40:27 [INF] Executed DbCommand (51ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-02-18 13:40:27 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-02-18 13:40:27 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-02-18 13:40:27 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-02-18 13:40:27 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-02-18 13:40:27 [INF] User profile is available. Using 'C:\Users\User\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-02-18 13:40:27 [INF] Executed DbCommand (10ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[Bio], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DistanceUnit], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[GymId], [a].[Language], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[NotifyEmail], [a].[NotifyNewFeatures], [a].[NotifyPromotions], [a].[NotifyPush], [a].[NotifySessionUpdates], [a].[NotifySms], [a].[NotifyWorkoutReminders], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfileImagePath], [a].[ProfileImageUrl], [a].[SecurityStamp], [a].[Theme], [a].[TimeZone], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-18 13:40:27 [INF] Executed DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Gyms] AS [g]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-18 13:40:27 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[Bio], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DistanceUnit], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[GymId], [a].[Language], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[NotifyEmail], [a].[NotifyNewFeatures], [a].[NotifyPromotions], [a].[NotifyPush], [a].[NotifySessionUpdates], [a].[NotifySms], [a].[NotifyWorkoutReminders], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfileImagePath], [a].[ProfileImageUrl], [a].[SecurityStamp], [a].[Theme], [a].[TimeZone], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-18 13:40:27 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[Bio], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DistanceUnit], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[GymId], [a].[Language], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[NotifyEmail], [a].[NotifyNewFeatures], [a].[NotifyPromotions], [a].[NotifyPush], [a].[NotifySessionUpdates], [a].[NotifySms], [a].[NotifyWorkoutReminders], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfileImagePath], [a].[ProfileImageUrl], [a].[SecurityStamp], [a].[Theme], [a].[TimeZone], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-18 13:40:27 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[Bio], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DistanceUnit], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[GymId], [a].[Language], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[NotifyEmail], [a].[NotifyNewFeatures], [a].[NotifyPromotions], [a].[NotifyPush], [a].[NotifySessionUpdates], [a].[NotifySms], [a].[NotifyWorkoutReminders], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfileImagePath], [a].[ProfileImageUrl], [a].[SecurityStamp], [a].[Theme], [a].[TimeZone], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-18 13:40:27 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[Bio], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DistanceUnit], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[GymId], [a].[Language], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[NotifyEmail], [a].[NotifyNewFeatures], [a].[NotifyPromotions], [a].[NotifyPush], [a].[NotifySessionUpdates], [a].[NotifySms], [a].[NotifyWorkoutReminders], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfileImagePath], [a].[ProfileImageUrl], [a].[SecurityStamp], [a].[Theme], [a].[TimeZone], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-18 13:40:27 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [g].[Id], [g].[Address], [g].[AverageRating], [g].[CreatedAt], [g].[Description], [g].[Email], [g].[ImagePath], [g].[IsDeleted], [g].[Latitude], [g].[Longitude], [g].[Name], [g].[OwnerId], [g].[Phone], [g].[ReviewCount], [g].[UpdatedAt], [g].[Website]
+FROM [Gyms] AS [g]
+2026-02-18 13:40:27 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[Bio], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DistanceUnit], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[GymId], [a].[Language], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[NotifyEmail], [a].[NotifyNewFeatures], [a].[NotifyPromotions], [a].[NotifyPush], [a].[NotifySessionUpdates], [a].[NotifySms], [a].[NotifyWorkoutReminders], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfileImagePath], [a].[ProfileImageUrl], [a].[SecurityStamp], [a].[Theme], [a].[TimeZone], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-18 13:40:27 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[Bio], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DistanceUnit], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[GymId], [a].[Language], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[NotifyEmail], [a].[NotifyNewFeatures], [a].[NotifyPromotions], [a].[NotifyPush], [a].[NotifySessionUpdates], [a].[NotifySms], [a].[NotifyWorkoutReminders], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfileImagePath], [a].[ProfileImageUrl], [a].[SecurityStamp], [a].[Theme], [a].[TimeZone], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-18 13:40:27 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[Bio], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DistanceUnit], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[GymId], [a].[Language], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[NotifyEmail], [a].[NotifyNewFeatures], [a].[NotifyPromotions], [a].[NotifyPush], [a].[NotifySessionUpdates], [a].[NotifySms], [a].[NotifyWorkoutReminders], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfileImagePath], [a].[ProfileImageUrl], [a].[SecurityStamp], [a].[Theme], [a].[TimeZone], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-18 13:40:27 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[Bio], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DistanceUnit], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[GymId], [a].[Language], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[NotifyEmail], [a].[NotifyNewFeatures], [a].[NotifyPromotions], [a].[NotifyPush], [a].[NotifySessionUpdates], [a].[NotifySms], [a].[NotifyWorkoutReminders], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfileImagePath], [a].[ProfileImageUrl], [a].[SecurityStamp], [a].[Theme], [a].[TimeZone], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-18 13:40:27 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[Bio], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DistanceUnit], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[GymId], [a].[Language], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[NotifyEmail], [a].[NotifyNewFeatures], [a].[NotifyPromotions], [a].[NotifyPush], [a].[NotifySessionUpdates], [a].[NotifySms], [a].[NotifyWorkoutReminders], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfileImagePath], [a].[ProfileImageUrl], [a].[SecurityStamp], [a].[Theme], [a].[TimeZone], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-18 13:40:27 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[Bio], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DistanceUnit], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[GymId], [a].[Language], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[NotifyEmail], [a].[NotifyNewFeatures], [a].[NotifyPromotions], [a].[NotifyPush], [a].[NotifySessionUpdates], [a].[NotifySms], [a].[NotifyWorkoutReminders], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfileImagePath], [a].[ProfileImageUrl], [a].[SecurityStamp], [a].[Theme], [a].[TimeZone], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-18 13:40:27 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[Bio], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DistanceUnit], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[GymId], [a].[Language], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[NotifyEmail], [a].[NotifyNewFeatures], [a].[NotifyPromotions], [a].[NotifyPush], [a].[NotifySessionUpdates], [a].[NotifySms], [a].[NotifyWorkoutReminders], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfileImagePath], [a].[ProfileImageUrl], [a].[SecurityStamp], [a].[Theme], [a].[TimeZone], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-18 13:40:27 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[Bio], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DistanceUnit], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[GymId], [a].[Language], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[NotifyEmail], [a].[NotifyNewFeatures], [a].[NotifyPromotions], [a].[NotifyPush], [a].[NotifySessionUpdates], [a].[NotifySms], [a].[NotifyWorkoutReminders], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfileImagePath], [a].[ProfileImageUrl], [a].[SecurityStamp], [a].[Theme], [a].[TimeZone], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-18 13:40:27 [INF] Executed DbCommand (41ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Trainers] AS [t]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-18 13:40:27 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Packages] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-18 13:40:28 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [GymOpeningHours] AS [g]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-18 13:40:28 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [TrainerSchedules] AS [t]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-18 13:40:28 [INF] Now listening on: http://localhost:5000
+2026-02-18 13:40:28 [INF] Application started. Press Ctrl+C to shut down.
+2026-02-18 13:40:28 [INF] Hosting environment: Development
+2026-02-18 13:40:28 [INF] Content root path: C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI
+2026-02-18 13:40:28 [INF] Request starting HTTP/1.1 GET http://localhost:5000/scalar/v1 - null null
+2026-02-18 13:40:29 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2026-02-18 13:40:29 [INF] Write content with HTTP Response ContentType of text/html
+2026-02-18 13:40:29 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2026-02-18 13:40:29 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/aspnetcore-browser-refresh.js - null null
+2026-02-18 13:40:29 [INF] Request finished HTTP/1.1 GET http://localhost:5000/scalar/v1 - 200 null text/html 488.6626ms
+2026-02-18 13:40:29 [INF] Request starting HTTP/1.1 GET http://localhost:5000/scalar/scalar.js - null null
+2026-02-18 13:40:29 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_vs/browserLink - null null
+2026-02-18 13:40:29 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/aspnetcore-browser-refresh.js - 200 16529 application/javascript; charset=utf-8 9.285ms
+2026-02-18 13:40:29 [INF] Request starting HTTP/1.1 GET http://localhost:5000/scalar/scalar.aspnetcore.js - null null
+2026-02-18 13:40:29 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.js'
+2026-02-18 13:40:29 [INF] CORS policy execution successful.
+2026-02-18 13:40:29 [INF] Sending file with download name ''.
+2026-02-18 13:40:29 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2026-02-18 13:40:29 [INF] Sending file with download name ''.
+2026-02-18 13:40:29 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2026-02-18 13:40:29 [INF] Request finished HTTP/1.1 GET http://localhost:5000/scalar/scalar.aspnetcore.js - 200 1111 text/javascript 50.8455ms
+2026-02-18 13:40:29 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.js'
+2026-02-18 13:40:29 [INF] Request finished HTTP/1.1 GET http://localhost:5000/scalar/scalar.js - 200 922147 text/javascript 91.8208ms
+2026-02-18 13:40:29 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_vs/browserLink - 200 null text/javascript; charset=UTF-8 102.1461ms
+2026-02-18 13:40:29 [INF] Request starting HTTP/1.1 GET http://localhost:5000/openapi/v1.json - null null
+2026-02-18 13:40:29 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
+2026-02-18 13:40:29 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
+2026-02-18 13:40:29 [INF] Request finished HTTP/1.1 GET http://localhost:5000/openapi/v1.json - 200 null application/json;charset=utf-8 113.8086ms
+2026-02-18 13:43:39 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/trainer/me/students - null null
+2026-02-18 13:43:39 [INF] CORS policy execution successful.
+2026-02-18 13:43:39 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/trainer/me/students - 204 null null 12.2913ms
+2026-02-18 13:43:39 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/trainer/me/students - null null
+2026-02-18 13:43:39 [INF] CORS policy execution successful.
+2026-02-18 13:43:39 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.Trainer.TrainerStudentsController.GetMyStudents (Startup-Project.WebAPI)'
+2026-02-18 13:43:39 [INF] Route matched with {action = "GetMyStudents", controller = "TrainerStudents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetMyStudents(System.String, System.String) on controller Startup_Project.WebAPI.Controllers.Trainer.TrainerStudentsController (Startup-Project.WebAPI).
+2026-02-18 13:43:40 [INF] Executed DbCommand (16ms) [Parameters=[@userId='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[AverageRating], [t].[Bio], [t].[CertificateUrl], [t].[CreatedAt], [t].[GymId], [t].[IsDeleted], [t].[IsOnlineTrainer], [t].[IsVerified], [t].[ProfileImageUrl], [t].[ReviewCount], [t].[SessionPrice], [t].[SocialMediaLinks], [t].[Specialization], [t].[Status], [t].[TotalClients], [t].[TotalSessions], [t].[UpdatedAt], [t].[UserId], [t].[VideoIntroUrl], [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[Bio], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DistanceUnit], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[GymId], [a].[Language], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[NotifyEmail], [a].[NotifyNewFeatures], [a].[NotifyPromotions], [a].[NotifyPush], [a].[NotifySessionUpdates], [a].[NotifySms], [a].[NotifyWorkoutReminders], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfileImagePath], [a].[ProfileImageUrl], [a].[SecurityStamp], [a].[Theme], [a].[TimeZone], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [Trainers] AS [t]
+INNER JOIN [AspNetUsers] AS [a] ON [t].[UserId] = [a].[Id]
+WHERE [t].[UserId] = @userId AND [t].[IsDeleted] = CAST(0 AS bit)
+2026-02-18 13:43:40 [INF] Executed DbCommand (46ms) [Parameters=[@trainer_Id='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreatedAt], [s].[Description], [s].[DurationMinutes], [s].[ExerciseType], [s].[GymId], [s].[IsDeleted], [s].[MaxParticipants], [s].[MemberId], [s].[PricePerPerson], [s].[ScheduledTime], [s].[Status], [s].[Title], [s].[TrainerId], [s].[UpdatedAt], [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[Bio], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DistanceUnit], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[GymId], [a].[Language], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[NotifyEmail], [a].[NotifyNewFeatures], [a].[NotifyPromotions], [a].[NotifyPush], [a].[NotifySessionUpdates], [a].[NotifySms], [a].[NotifyWorkoutReminders], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfileImagePath], [a].[ProfileImageUrl], [a].[SecurityStamp], [a].[Theme], [a].[TimeZone], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [ScheduledSessions] AS [s]
+LEFT JOIN [AspNetUsers] AS [a] ON [s].[MemberId] = [a].[Id]
+WHERE [s].[TrainerId] = @trainer_Id AND [s].[MemberId] IS NOT NULL AND [s].[IsDeleted] = CAST(0 AS bit)
+2026-02-18 13:43:40 [INF] Executed DbCommand (4ms) [Parameters=[@trainer_GymId_Value='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[Bio], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DistanceUnit], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[GymId], [a].[Language], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[NotifyEmail], [a].[NotifyNewFeatures], [a].[NotifyPromotions], [a].[NotifyPush], [a].[NotifySessionUpdates], [a].[NotifySms], [a].[NotifyWorkoutReminders], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfileImagePath], [a].[ProfileImageUrl], [a].[SecurityStamp], [a].[Theme], [a].[TimeZone], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[GymId] = @trainer_GymId_Value
+2026-02-18 13:43:40 [INF] Executed DbCommand (6ms) [Parameters=[@trainer_GymId_Value='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id]
+FROM [Packages] AS [p]
+WHERE [p].[GymId] = @trainer_GymId_Value AND [p].[IsDeleted] = CAST(0 AS bit)
+2026-02-18 13:43:40 [INF] Executed DbCommand (12ms) [Parameters=[@studentIds1='?' (DbType = Guid), @studentIds2='?' (DbType = Guid), @gymPackageIds1='?' (DbType = Guid), @gymPackageIds2='?' (DbType = Guid), @gymPackageIds3='?' (DbType = Guid), @gymPackageIds4='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT DISTINCT [s].[UserId]
+FROM [Subscriptions] AS [s]
+WHERE [s].[UserId] IN (@studentIds1, @studentIds2) AND [s].[PackageId] IN (@gymPackageIds1, @gymPackageIds2, @gymPackageIds3, @gymPackageIds4) AND [s].[EndDate] > GETUTCDATE()
+2026-02-18 13:43:40 [INF] Executed DbCommand (4ms) [Parameters=[@studentIds1='?' (DbType = Guid), @studentIds2='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[Bio], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DistanceUnit], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[GymId], [a].[Language], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[NotifyEmail], [a].[NotifyNewFeatures], [a].[NotifyPromotions], [a].[NotifyPush], [a].[NotifySessionUpdates], [a].[NotifySms], [a].[NotifyWorkoutReminders], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfileImagePath], [a].[ProfileImageUrl], [a].[SecurityStamp], [a].[Theme], [a].[TimeZone], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] IN (@studentIds1, @studentIds2)
+2026-02-18 13:43:40 [INF] Executing OkObjectResult, writing value of type 'Startup_Project.Application.Models.ResponseModel`1[[Startup_Project.Application.Dtos.Trainer.TrainerStudentsPageDto, Startup-Project.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-18 13:43:40 [INF] Executed action Startup_Project.WebAPI.Controllers.Trainer.TrainerStudentsController.GetMyStudents (Startup-Project.WebAPI) in 783.9659ms
+2026-02-18 13:43:40 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.Trainer.TrainerStudentsController.GetMyStudents (Startup-Project.WebAPI)'
+2026-02-18 13:43:40 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/trainer/me/students - 200 null application/json; charset=utf-8 978.4882ms
+2026-02-18 13:47:19 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/trainer/me/sessions - null null
+2026-02-18 13:47:19 [INF] CORS policy execution successful.
+2026-02-18 13:47:19 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/trainer/me/sessions - 204 null null 7.082ms
+2026-02-18 13:47:19 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/trainer/me/sessions - null null
+2026-02-18 13:47:19 [INF] CORS policy execution successful.
+2026-02-18 13:47:19 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.Trainer.TrainerSessionsController.GetMySessions (Startup-Project.WebAPI)'
+2026-02-18 13:47:19 [INF] Route matched with {action = "GetMySessions", controller = "TrainerSessions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetMySessions(System.String, System.String) on controller Startup_Project.WebAPI.Controllers.Trainer.TrainerSessionsController (Startup-Project.WebAPI).
+2026-02-18 13:47:19 [INF] Executed DbCommand (24ms) [Parameters=[@userId='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[AverageRating], [t].[Bio], [t].[CertificateUrl], [t].[CreatedAt], [t].[GymId], [t].[IsDeleted], [t].[IsOnlineTrainer], [t].[IsVerified], [t].[ProfileImageUrl], [t].[ReviewCount], [t].[SessionPrice], [t].[SocialMediaLinks], [t].[Specialization], [t].[Status], [t].[TotalClients], [t].[TotalSessions], [t].[UpdatedAt], [t].[UserId], [t].[VideoIntroUrl], [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[Bio], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DistanceUnit], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[GymId], [a].[Language], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[NotifyEmail], [a].[NotifyNewFeatures], [a].[NotifyPromotions], [a].[NotifyPush], [a].[NotifySessionUpdates], [a].[NotifySms], [a].[NotifyWorkoutReminders], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfileImagePath], [a].[ProfileImageUrl], [a].[SecurityStamp], [a].[Theme], [a].[TimeZone], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [Trainers] AS [t]
+INNER JOIN [AspNetUsers] AS [a] ON [t].[UserId] = [a].[Id]
+WHERE [t].[UserId] = @userId AND [t].[IsDeleted] = CAST(0 AS bit)
+2026-02-18 13:47:19 [INF] Executed DbCommand (18ms) [Parameters=[@trainer_Id='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreatedAt], [s].[Description], [s].[DurationMinutes], [s].[ExerciseType], [s].[GymId], [s].[IsDeleted], [s].[MaxParticipants], [s].[MemberId], [s].[PricePerPerson], [s].[ScheduledTime], [s].[Status], [s].[Title], [s].[TrainerId], [s].[UpdatedAt], [t].[Id], [t].[AverageRating], [t].[Bio], [t].[CertificateUrl], [t].[CreatedAt], [t].[GymId], [t].[IsDeleted], [t].[IsOnlineTrainer], [t].[IsVerified], [t].[ProfileImageUrl], [t].[ReviewCount], [t].[SessionPrice], [t].[SocialMediaLinks], [t].[Specialization], [t].[Status], [t].[TotalClients], [t].[TotalSessions], [t].[UpdatedAt], [t].[UserId], [t].[VideoIntroUrl], [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[Bio], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DistanceUnit], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[GymId], [a].[Language], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[NotifyEmail], [a].[NotifyNewFeatures], [a].[NotifyPromotions], [a].[NotifyPush], [a].[NotifySessionUpdates], [a].[NotifySms], [a].[NotifyWorkoutReminders], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfileImagePath], [a].[ProfileImageUrl], [a].[SecurityStamp], [a].[Theme], [a].[TimeZone], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode], [a0].[Id], [a0].[AccessFailedCount], [a0].[AuthProvider], [a0].[Bio], [a0].[CodeExpireDate], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[DistanceUnit], [a0].[Email], [a0].[EmailConfirmed], [a0].[FullName], [a0].[GoogleId], [a0].[GymId], [a0].[Language], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[NotifyEmail], [a0].[NotifyNewFeatures], [a0].[NotifyPromotions], [a0].[NotifyPush], [a0].[NotifySessionUpdates], [a0].[NotifySms], [a0].[NotifyWorkoutReminders], [a0].[PasswordHash], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[ProfileImagePath], [a0].[ProfileImageUrl], [a0].[SecurityStamp], [a0].[Theme], [a0].[TimeZone], [a0].[TwoFactorEnabled], [a0].[UserName], [a0].[VerificationCode]
+FROM [ScheduledSessions] AS [s]
+INNER JOIN [Trainers] AS [t] ON [s].[TrainerId] = [t].[Id]
+INNER JOIN [AspNetUsers] AS [a] ON [t].[UserId] = [a].[Id]
+LEFT JOIN [AspNetUsers] AS [a0] ON [s].[MemberId] = [a0].[Id]
+WHERE [s].[TrainerId] = @trainer_Id AND [s].[IsDeleted] = CAST(0 AS bit)
+ORDER BY [s].[ScheduledTime] DESC
+2026-02-18 13:47:19 [INF] Executing OkObjectResult, writing value of type 'Startup_Project.Application.Models.ResponseModel`1[[System.Collections.Generic.List`1[[Startup_Project.Application.Dtos.Trainer.TrainerSessionResponseDto, Startup-Project.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-18 13:47:19 [INF] Executed action Startup_Project.WebAPI.Controllers.Trainer.TrainerSessionsController.GetMySessions (Startup-Project.WebAPI) in 198.1081ms
+2026-02-18 13:47:19 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.Trainer.TrainerSessionsController.GetMySessions (Startup-Project.WebAPI)'
+2026-02-18 13:47:19 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/trainer/me/sessions - 200 null application/json; charset=utf-8 227.7502ms
+2026-02-18 13:47:20 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/trainer/me/students - null null
+2026-02-18 13:47:20 [INF] CORS policy execution successful.
+2026-02-18 13:47:20 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/trainer/me/students - 204 null null 6.2546ms
+2026-02-18 13:47:20 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/trainer/me/students - null null
+2026-02-18 13:47:20 [INF] CORS policy execution successful.
+2026-02-18 13:47:20 [INF] Executing endpoint 'Startup_Project.WebAPI.Controllers.Trainer.TrainerStudentsController.GetMyStudents (Startup-Project.WebAPI)'
+2026-02-18 13:47:20 [INF] Route matched with {action = "GetMyStudents", controller = "TrainerStudents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetMyStudents(System.String, System.String) on controller Startup_Project.WebAPI.Controllers.Trainer.TrainerStudentsController (Startup-Project.WebAPI).
+2026-02-18 13:47:20 [INF] Executed DbCommand (1ms) [Parameters=[@userId='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[AverageRating], [t].[Bio], [t].[CertificateUrl], [t].[CreatedAt], [t].[GymId], [t].[IsDeleted], [t].[IsOnlineTrainer], [t].[IsVerified], [t].[ProfileImageUrl], [t].[ReviewCount], [t].[SessionPrice], [t].[SocialMediaLinks], [t].[Specialization], [t].[Status], [t].[TotalClients], [t].[TotalSessions], [t].[UpdatedAt], [t].[UserId], [t].[VideoIntroUrl], [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[Bio], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DistanceUnit], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[GymId], [a].[Language], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[NotifyEmail], [a].[NotifyNewFeatures], [a].[NotifyPromotions], [a].[NotifyPush], [a].[NotifySessionUpdates], [a].[NotifySms], [a].[NotifyWorkoutReminders], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfileImagePath], [a].[ProfileImageUrl], [a].[SecurityStamp], [a].[Theme], [a].[TimeZone], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [Trainers] AS [t]
+INNER JOIN [AspNetUsers] AS [a] ON [t].[UserId] = [a].[Id]
+WHERE [t].[UserId] = @userId AND [t].[IsDeleted] = CAST(0 AS bit)
+2026-02-18 13:47:20 [INF] Executed DbCommand (6ms) [Parameters=[@trainer_Id='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreatedAt], [s].[Description], [s].[DurationMinutes], [s].[ExerciseType], [s].[GymId], [s].[IsDeleted], [s].[MaxParticipants], [s].[MemberId], [s].[PricePerPerson], [s].[ScheduledTime], [s].[Status], [s].[Title], [s].[TrainerId], [s].[UpdatedAt], [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[Bio], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DistanceUnit], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[GymId], [a].[Language], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[NotifyEmail], [a].[NotifyNewFeatures], [a].[NotifyPromotions], [a].[NotifyPush], [a].[NotifySessionUpdates], [a].[NotifySms], [a].[NotifyWorkoutReminders], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfileImagePath], [a].[ProfileImageUrl], [a].[SecurityStamp], [a].[Theme], [a].[TimeZone], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [ScheduledSessions] AS [s]
+LEFT JOIN [AspNetUsers] AS [a] ON [s].[MemberId] = [a].[Id]
+WHERE [s].[TrainerId] = @trainer_Id AND [s].[MemberId] IS NOT NULL AND [s].[IsDeleted] = CAST(0 AS bit)
+2026-02-18 13:47:20 [INF] Executed DbCommand (3ms) [Parameters=[@trainer_GymId_Value='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[Bio], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DistanceUnit], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[GymId], [a].[Language], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[NotifyEmail], [a].[NotifyNewFeatures], [a].[NotifyPromotions], [a].[NotifyPush], [a].[NotifySessionUpdates], [a].[NotifySms], [a].[NotifyWorkoutReminders], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfileImagePath], [a].[ProfileImageUrl], [a].[SecurityStamp], [a].[Theme], [a].[TimeZone], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[GymId] = @trainer_GymId_Value
+2026-02-18 13:47:20 [INF] Executed DbCommand (37ms) [Parameters=[@trainer_GymId_Value='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id]
+FROM [Packages] AS [p]
+WHERE [p].[GymId] = @trainer_GymId_Value AND [p].[IsDeleted] = CAST(0 AS bit)
+2026-02-18 13:47:20 [INF] Executed DbCommand (10ms) [Parameters=[@studentIds1='?' (DbType = Guid), @studentIds2='?' (DbType = Guid), @gymPackageIds1='?' (DbType = Guid), @gymPackageIds2='?' (DbType = Guid), @gymPackageIds3='?' (DbType = Guid), @gymPackageIds4='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT DISTINCT [s].[UserId]
+FROM [Subscriptions] AS [s]
+WHERE [s].[UserId] IN (@studentIds1, @studentIds2) AND [s].[PackageId] IN (@gymPackageIds1, @gymPackageIds2, @gymPackageIds3, @gymPackageIds4) AND [s].[EndDate] > GETUTCDATE()
+2026-02-18 13:47:21 [INF] Executed DbCommand (4ms) [Parameters=[@studentIds1='?' (DbType = Guid), @studentIds2='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[Bio], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DistanceUnit], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[GymId], [a].[Language], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[NotifyEmail], [a].[NotifyNewFeatures], [a].[NotifyPromotions], [a].[NotifyPush], [a].[NotifySessionUpdates], [a].[NotifySms], [a].[NotifyWorkoutReminders], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfileImagePath], [a].[ProfileImageUrl], [a].[SecurityStamp], [a].[Theme], [a].[TimeZone], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] IN (@studentIds1, @studentIds2)
+2026-02-18 13:47:21 [INF] Executing OkObjectResult, writing value of type 'Startup_Project.Application.Models.ResponseModel`1[[Startup_Project.Application.Dtos.Trainer.TrainerStudentsPageDto, Startup-Project.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-18 13:47:21 [INF] Executed action Startup_Project.WebAPI.Controllers.Trainer.TrainerStudentsController.GetMyStudents (Startup-Project.WebAPI) in 97.631ms
+2026-02-18 13:47:21 [INF] Executed endpoint 'Startup_Project.WebAPI.Controllers.Trainer.TrainerStudentsController.GetMyStudents (Startup-Project.WebAPI)'
+2026-02-18 13:47:21 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/trainer/me/students - 200 null application/json; charset=utf-8 113.888ms
+2026-02-18 14:24:01 [INF] Proqram başladılır...
+2026-02-18 14:24:02 [WRN] The 'SubscriptionStatus' property 'Status' on entity type 'Subscription' is configured with a database-generated default, but has no configured sentinel value. The database-generated default will always be used for inserts when the property has the value '0', since this is the CLR default for the 'SubscriptionStatus' type. Consider using a nullable type, using a nullable backing field, or setting the sentinel value for the property to ensure the database default is used when, and only when, appropriate. See https://aka.ms/efcore-docs-default-values for more information.
+2026-02-18 14:24:02 [WRN] No store type was specified for the decimal property 'FinalPrice' on entity type 'CampaignUsage'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-02-18 14:24:02 [WRN] No store type was specified for the decimal property 'OriginalPrice' on entity type 'CampaignUsage'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-02-18 14:24:03 [INF] Executed DbCommand (66ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-02-18 14:24:03 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-02-18 14:24:03 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-02-18 14:24:03 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-02-18 14:24:03 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-02-18 14:24:03 [INF] User profile is available. Using 'C:\Users\User\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-02-18 14:24:03 [INF] Executed DbCommand (7ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[Bio], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DistanceUnit], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[GymId], [a].[Language], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[NotifyEmail], [a].[NotifyNewFeatures], [a].[NotifyPromotions], [a].[NotifyPush], [a].[NotifySessionUpdates], [a].[NotifySms], [a].[NotifyWorkoutReminders], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfileImagePath], [a].[ProfileImageUrl], [a].[SecurityStamp], [a].[Theme], [a].[TimeZone], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-18 14:24:03 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Gyms] AS [g]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-18 14:24:03 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[Bio], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DistanceUnit], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[GymId], [a].[Language], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[NotifyEmail], [a].[NotifyNewFeatures], [a].[NotifyPromotions], [a].[NotifyPush], [a].[NotifySessionUpdates], [a].[NotifySms], [a].[NotifyWorkoutReminders], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfileImagePath], [a].[ProfileImageUrl], [a].[SecurityStamp], [a].[Theme], [a].[TimeZone], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-18 14:24:03 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[Bio], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DistanceUnit], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[GymId], [a].[Language], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[NotifyEmail], [a].[NotifyNewFeatures], [a].[NotifyPromotions], [a].[NotifyPush], [a].[NotifySessionUpdates], [a].[NotifySms], [a].[NotifyWorkoutReminders], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfileImagePath], [a].[ProfileImageUrl], [a].[SecurityStamp], [a].[Theme], [a].[TimeZone], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-18 14:24:03 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[Bio], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DistanceUnit], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[GymId], [a].[Language], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[NotifyEmail], [a].[NotifyNewFeatures], [a].[NotifyPromotions], [a].[NotifyPush], [a].[NotifySessionUpdates], [a].[NotifySms], [a].[NotifyWorkoutReminders], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfileImagePath], [a].[ProfileImageUrl], [a].[SecurityStamp], [a].[Theme], [a].[TimeZone], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-18 14:24:03 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[Bio], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DistanceUnit], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[GymId], [a].[Language], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[NotifyEmail], [a].[NotifyNewFeatures], [a].[NotifyPromotions], [a].[NotifyPush], [a].[NotifySessionUpdates], [a].[NotifySms], [a].[NotifyWorkoutReminders], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfileImagePath], [a].[ProfileImageUrl], [a].[SecurityStamp], [a].[Theme], [a].[TimeZone], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-18 14:24:03 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [g].[Id], [g].[Address], [g].[AverageRating], [g].[CreatedAt], [g].[Description], [g].[Email], [g].[ImagePath], [g].[IsDeleted], [g].[Latitude], [g].[Longitude], [g].[Name], [g].[OwnerId], [g].[Phone], [g].[ReviewCount], [g].[UpdatedAt], [g].[Website]
+FROM [Gyms] AS [g]
+2026-02-18 14:24:03 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[Bio], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DistanceUnit], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[GymId], [a].[Language], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[NotifyEmail], [a].[NotifyNewFeatures], [a].[NotifyPromotions], [a].[NotifyPush], [a].[NotifySessionUpdates], [a].[NotifySms], [a].[NotifyWorkoutReminders], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfileImagePath], [a].[ProfileImageUrl], [a].[SecurityStamp], [a].[Theme], [a].[TimeZone], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-18 14:24:03 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[Bio], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DistanceUnit], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[GymId], [a].[Language], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[NotifyEmail], [a].[NotifyNewFeatures], [a].[NotifyPromotions], [a].[NotifyPush], [a].[NotifySessionUpdates], [a].[NotifySms], [a].[NotifyWorkoutReminders], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfileImagePath], [a].[ProfileImageUrl], [a].[SecurityStamp], [a].[Theme], [a].[TimeZone], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-18 14:24:03 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[Bio], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DistanceUnit], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[GymId], [a].[Language], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[NotifyEmail], [a].[NotifyNewFeatures], [a].[NotifyPromotions], [a].[NotifyPush], [a].[NotifySessionUpdates], [a].[NotifySms], [a].[NotifyWorkoutReminders], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfileImagePath], [a].[ProfileImageUrl], [a].[SecurityStamp], [a].[Theme], [a].[TimeZone], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-18 14:24:03 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[Bio], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DistanceUnit], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[GymId], [a].[Language], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[NotifyEmail], [a].[NotifyNewFeatures], [a].[NotifyPromotions], [a].[NotifyPush], [a].[NotifySessionUpdates], [a].[NotifySms], [a].[NotifyWorkoutReminders], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfileImagePath], [a].[ProfileImageUrl], [a].[SecurityStamp], [a].[Theme], [a].[TimeZone], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-18 14:24:03 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[Bio], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DistanceUnit], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[GymId], [a].[Language], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[NotifyEmail], [a].[NotifyNewFeatures], [a].[NotifyPromotions], [a].[NotifyPush], [a].[NotifySessionUpdates], [a].[NotifySms], [a].[NotifyWorkoutReminders], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfileImagePath], [a].[ProfileImageUrl], [a].[SecurityStamp], [a].[Theme], [a].[TimeZone], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-18 14:24:03 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[Bio], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DistanceUnit], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[GymId], [a].[Language], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[NotifyEmail], [a].[NotifyNewFeatures], [a].[NotifyPromotions], [a].[NotifyPush], [a].[NotifySessionUpdates], [a].[NotifySms], [a].[NotifyWorkoutReminders], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfileImagePath], [a].[ProfileImageUrl], [a].[SecurityStamp], [a].[Theme], [a].[TimeZone], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-18 14:24:03 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[Bio], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DistanceUnit], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[GymId], [a].[Language], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[NotifyEmail], [a].[NotifyNewFeatures], [a].[NotifyPromotions], [a].[NotifyPush], [a].[NotifySessionUpdates], [a].[NotifySms], [a].[NotifyWorkoutReminders], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfileImagePath], [a].[ProfileImageUrl], [a].[SecurityStamp], [a].[Theme], [a].[TimeZone], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-18 14:24:03 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[Bio], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DistanceUnit], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[GymId], [a].[Language], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[NotifyEmail], [a].[NotifyNewFeatures], [a].[NotifyPromotions], [a].[NotifyPush], [a].[NotifySessionUpdates], [a].[NotifySms], [a].[NotifyWorkoutReminders], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfileImagePath], [a].[ProfileImageUrl], [a].[SecurityStamp], [a].[Theme], [a].[TimeZone], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-18 14:24:04 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Trainers] AS [t]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-18 14:24:04 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Packages] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-18 14:24:04 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [GymOpeningHours] AS [g]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-18 14:24:04 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [TrainerSchedules] AS [t]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-18 14:24:04 [INF] Now listening on: http://localhost:5000
+2026-02-18 14:24:04 [INF] Application started. Press Ctrl+C to shut down.
+2026-02-18 14:24:04 [INF] Hosting environment: Development
+2026-02-18 14:24:04 [INF] Content root path: C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI
+2026-02-18 14:24:04 [INF] Request starting HTTP/1.1 GET http://localhost:5000/scalar/v1 - null null
+2026-02-18 14:24:05 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2026-02-18 14:24:05 [INF] Write content with HTTP Response ContentType of text/html
+2026-02-18 14:24:05 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2026-02-18 14:24:05 [INF] Request starting HTTP/1.1 GET http://localhost:5000/scalar/scalar.js - null null
+2026-02-18 14:24:05 [INF] Request finished HTTP/1.1 GET http://localhost:5000/scalar/v1 - 200 null text/html 451.546ms
+2026-02-18 14:24:05 [INF] Request starting HTTP/1.1 GET http://localhost:5000/scalar/scalar.aspnetcore.js - null null
+2026-02-18 14:24:05 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.js'
+2026-02-18 14:24:05 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/aspnetcore-browser-refresh.js - null null
+2026-02-18 14:24:05 [INF] CORS policy execution successful.
+2026-02-18 14:24:05 [INF] Sending file with download name ''.
+2026-02-18 14:24:05 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/aspnetcore-browser-refresh.js - 200 16529 application/javascript; charset=utf-8 22.0268ms
+2026-02-18 14:24:05 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2026-02-18 14:24:05 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_vs/browserLink - null null
+2026-02-18 14:24:05 [INF] Sending file with download name ''.
+2026-02-18 14:24:05 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.js'
+2026-02-18 14:24:05 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2026-02-18 14:24:05 [INF] Request finished HTTP/1.1 GET http://localhost:5000/scalar/scalar.js - 200 922147 text/javascript 84.4621ms
+2026-02-18 14:24:05 [INF] Request finished HTTP/1.1 GET http://localhost:5000/scalar/scalar.aspnetcore.js - 200 1111 text/javascript 82.0878ms
+2026-02-18 14:24:05 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_vs/browserLink - 200 null text/javascript; charset=UTF-8 57.2293ms
+2026-02-18 14:24:05 [INF] Request starting HTTP/1.1 GET http://localhost:5000/openapi/v1.json - null null
+2026-02-18 14:24:05 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
+2026-02-18 14:24:05 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
+2026-02-18 14:24:05 [INF] Request finished HTTP/1.1 GET http://localhost:5000/openapi/v1.json - 200 null application/json;charset=utf-8 126.1276ms
+2026-02-18 14:28:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/trainer/me/students - null null
+2026-02-18 14:28:00 [INF] CORS policy execution successful.
+2026-02-18 14:28:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/trainer/me/students - 204 null null 12.1683ms
+2026-02-18 14:28:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/trainer/me/students - null null
+2026-02-18 14:28:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2/18/2026 9:44:48 AM', Current time (UTC): '2/18/2026 10:28:00 AM'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-02-18 14:28:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2/18/2026 9:44:48 AM', Current time (UTC): '2/18/2026 10:28:00 AM'.
+2026-02-18 14:28:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Trainer)
+2026-02-18 14:28:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-02-18 14:28:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/trainer/me/students - 401 0 null 102.6724ms
+2026-02-18 14:29:13 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/trainer/me/students - null null
+2026-02-18 14:29:13 [INF] CORS policy execution successful.
+2026-02-18 14:29:13 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/trainer/me/students - 204 null null 8.7376ms
+2026-02-18 14:29:13 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/trainer/me/students - application/json 91
+2026-02-18 14:29:13 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2/18/2026 9:44:48 AM', Current time (UTC): '2/18/2026 10:29:13 AM'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-02-18 14:29:13 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2/18/2026 9:44:48 AM', Current time (UTC): '2/18/2026 10:29:13 AM'.
+2026-02-18 14:29:13 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Trainer)
+2026-02-18 14:29:13 [INF] AuthenticationScheme: Bearer was challenged.
+2026-02-18 14:29:13 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/trainer/me/students - 401 0 null 27.1545ms
+2026-02-18 14:29:18 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/trainer/me/students - null null
+2026-02-18 14:29:18 [INF] CORS policy execution successful.
+2026-02-18 14:29:18 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/trainer/me/students - 204 null null 9.8263ms
+2026-02-18 14:29:18 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/trainer/me/students - application/json 86
+2026-02-18 14:29:18 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2/18/2026 9:44:48 AM', Current time (UTC): '2/18/2026 10:29:18 AM'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-02-18 14:29:18 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2/18/2026 9:44:48 AM', Current time (UTC): '2/18/2026 10:29:18 AM'.
+2026-02-18 14:29:18 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Trainer)
+2026-02-18 14:29:18 [INF] AuthenticationScheme: Bearer was challenged.
+2026-02-18 14:29:18 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/trainer/me/students - 401 0 null 26.9426ms
+2026-02-18 14:29:56 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/trainer/me/students - null null
+2026-02-18 14:29:56 [INF] CORS policy execution successful.
+2026-02-18 14:29:56 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/trainer/me/students - 204 null null 10.5733ms
+2026-02-18 14:29:56 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/trainer/me/students - null null
+2026-02-18 14:29:56 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2/18/2026 9:44:48 AM', Current time (UTC): '2/18/2026 10:29:56 AM'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-02-18 14:29:56 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2/18/2026 9:44:48 AM', Current time (UTC): '2/18/2026 10:29:56 AM'.
+2026-02-18 14:29:56 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Trainer)
+2026-02-18 14:29:56 [INF] AuthenticationScheme: Bearer was challenged.
+2026-02-18 14:29:56 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/trainer/me/students - 401 0 null 20.7159ms
+2026-02-18 15:28:11 [INF] Proqram başladılır...
+2026-02-18 15:28:12 [WRN] The 'SubscriptionStatus' property 'Status' on entity type 'Subscription' is configured with a database-generated default, but has no configured sentinel value. The database-generated default will always be used for inserts when the property has the value '0', since this is the CLR default for the 'SubscriptionStatus' type. Consider using a nullable type, using a nullable backing field, or setting the sentinel value for the property to ensure the database default is used when, and only when, appropriate. See https://aka.ms/efcore-docs-default-values for more information.
+2026-02-18 15:28:12 [WRN] No store type was specified for the decimal property 'FinalPrice' on entity type 'CampaignUsage'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-02-18 15:28:12 [WRN] No store type was specified for the decimal property 'OriginalPrice' on entity type 'CampaignUsage'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-02-18 15:28:13 [INF] Executed DbCommand (36ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-02-18 15:28:13 [INF] Executed DbCommand (5ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-02-18 15:28:13 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-02-18 15:28:13 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-02-18 15:28:13 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-02-18 15:28:13 [INF] User profile is available. Using 'C:\Users\User\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-02-18 15:28:13 [INF] Executed DbCommand (46ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[Bio], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DistanceUnit], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[GymId], [a].[Language], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[NotifyEmail], [a].[NotifyNewFeatures], [a].[NotifyPromotions], [a].[NotifyPush], [a].[NotifySessionUpdates], [a].[NotifySms], [a].[NotifyWorkoutReminders], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfileImagePath], [a].[ProfileImageUrl], [a].[SecurityStamp], [a].[Theme], [a].[TimeZone], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-18 15:28:13 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Gyms] AS [g]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-18 15:28:13 [INF] Executed DbCommand (5ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[Bio], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DistanceUnit], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[GymId], [a].[Language], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[NotifyEmail], [a].[NotifyNewFeatures], [a].[NotifyPromotions], [a].[NotifyPush], [a].[NotifySessionUpdates], [a].[NotifySms], [a].[NotifyWorkoutReminders], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfileImagePath], [a].[ProfileImageUrl], [a].[SecurityStamp], [a].[Theme], [a].[TimeZone], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-18 15:28:13 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[Bio], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DistanceUnit], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[GymId], [a].[Language], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[NotifyEmail], [a].[NotifyNewFeatures], [a].[NotifyPromotions], [a].[NotifyPush], [a].[NotifySessionUpdates], [a].[NotifySms], [a].[NotifyWorkoutReminders], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfileImagePath], [a].[ProfileImageUrl], [a].[SecurityStamp], [a].[Theme], [a].[TimeZone], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-18 15:28:13 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[Bio], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DistanceUnit], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[GymId], [a].[Language], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[NotifyEmail], [a].[NotifyNewFeatures], [a].[NotifyPromotions], [a].[NotifyPush], [a].[NotifySessionUpdates], [a].[NotifySms], [a].[NotifyWorkoutReminders], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfileImagePath], [a].[ProfileImageUrl], [a].[SecurityStamp], [a].[Theme], [a].[TimeZone], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-18 15:28:13 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[Bio], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DistanceUnit], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[GymId], [a].[Language], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[NotifyEmail], [a].[NotifyNewFeatures], [a].[NotifyPromotions], [a].[NotifyPush], [a].[NotifySessionUpdates], [a].[NotifySms], [a].[NotifyWorkoutReminders], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfileImagePath], [a].[ProfileImageUrl], [a].[SecurityStamp], [a].[Theme], [a].[TimeZone], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-18 15:28:13 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [g].[Id], [g].[Address], [g].[AverageRating], [g].[CreatedAt], [g].[Description], [g].[Email], [g].[ImagePath], [g].[IsDeleted], [g].[Latitude], [g].[Longitude], [g].[Name], [g].[OwnerId], [g].[Phone], [g].[ReviewCount], [g].[UpdatedAt], [g].[Website]
+FROM [Gyms] AS [g]
+2026-02-18 15:28:13 [INF] Executed DbCommand (6ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[Bio], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DistanceUnit], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[GymId], [a].[Language], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[NotifyEmail], [a].[NotifyNewFeatures], [a].[NotifyPromotions], [a].[NotifyPush], [a].[NotifySessionUpdates], [a].[NotifySms], [a].[NotifyWorkoutReminders], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfileImagePath], [a].[ProfileImageUrl], [a].[SecurityStamp], [a].[Theme], [a].[TimeZone], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-18 15:28:13 [INF] Executed DbCommand (6ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[Bio], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DistanceUnit], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[GymId], [a].[Language], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[NotifyEmail], [a].[NotifyNewFeatures], [a].[NotifyPromotions], [a].[NotifyPush], [a].[NotifySessionUpdates], [a].[NotifySms], [a].[NotifyWorkoutReminders], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfileImagePath], [a].[ProfileImageUrl], [a].[SecurityStamp], [a].[Theme], [a].[TimeZone], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-18 15:28:13 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[Bio], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DistanceUnit], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[GymId], [a].[Language], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[NotifyEmail], [a].[NotifyNewFeatures], [a].[NotifyPromotions], [a].[NotifyPush], [a].[NotifySessionUpdates], [a].[NotifySms], [a].[NotifyWorkoutReminders], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfileImagePath], [a].[ProfileImageUrl], [a].[SecurityStamp], [a].[Theme], [a].[TimeZone], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-18 15:28:13 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[Bio], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DistanceUnit], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[GymId], [a].[Language], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[NotifyEmail], [a].[NotifyNewFeatures], [a].[NotifyPromotions], [a].[NotifyPush], [a].[NotifySessionUpdates], [a].[NotifySms], [a].[NotifyWorkoutReminders], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfileImagePath], [a].[ProfileImageUrl], [a].[SecurityStamp], [a].[Theme], [a].[TimeZone], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-18 15:28:13 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[Bio], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DistanceUnit], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[GymId], [a].[Language], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[NotifyEmail], [a].[NotifyNewFeatures], [a].[NotifyPromotions], [a].[NotifyPush], [a].[NotifySessionUpdates], [a].[NotifySms], [a].[NotifyWorkoutReminders], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfileImagePath], [a].[ProfileImageUrl], [a].[SecurityStamp], [a].[Theme], [a].[TimeZone], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-18 15:28:13 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[Bio], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DistanceUnit], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[GymId], [a].[Language], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[NotifyEmail], [a].[NotifyNewFeatures], [a].[NotifyPromotions], [a].[NotifyPush], [a].[NotifySessionUpdates], [a].[NotifySms], [a].[NotifyWorkoutReminders], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfileImagePath], [a].[ProfileImageUrl], [a].[SecurityStamp], [a].[Theme], [a].[TimeZone], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-18 15:28:13 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[Bio], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DistanceUnit], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[GymId], [a].[Language], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[NotifyEmail], [a].[NotifyNewFeatures], [a].[NotifyPromotions], [a].[NotifyPush], [a].[NotifySessionUpdates], [a].[NotifySms], [a].[NotifyWorkoutReminders], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfileImagePath], [a].[ProfileImageUrl], [a].[SecurityStamp], [a].[Theme], [a].[TimeZone], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-18 15:28:13 [INF] Executed DbCommand (0ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AuthProvider], [a].[Bio], [a].[CodeExpireDate], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DistanceUnit], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[GoogleId], [a].[GymId], [a].[Language], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[NotifyEmail], [a].[NotifyNewFeatures], [a].[NotifyPromotions], [a].[NotifyPush], [a].[NotifySessionUpdates], [a].[NotifySms], [a].[NotifyWorkoutReminders], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfileImagePath], [a].[ProfileImageUrl], [a].[SecurityStamp], [a].[Theme], [a].[TimeZone], [a].[TwoFactorEnabled], [a].[UserName], [a].[VerificationCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-18 15:28:13 [INF] Executed DbCommand (26ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Trainers] AS [t]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-18 15:28:13 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Packages] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-18 15:28:13 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [GymOpeningHours] AS [g]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-18 15:28:13 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [TrainerSchedules] AS [t]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-18 15:28:13 [INF] Now listening on: http://localhost:5000
+2026-02-18 15:28:13 [INF] Application started. Press Ctrl+C to shut down.
+2026-02-18 15:28:13 [INF] Hosting environment: Development
+2026-02-18 15:28:13 [INF] Content root path: C:\Users\User\Desktop\Startup-PROJECT\Startup-Project\src\Presentation\Startup-Project.WebAPI
+2026-02-18 15:28:14 [INF] Request starting HTTP/1.1 GET http://localhost:5000/scalar/v1 - null null
+2026-02-18 15:28:14 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2026-02-18 15:28:14 [INF] Write content with HTTP Response ContentType of text/html
+2026-02-18 15:28:14 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2026-02-18 15:28:14 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/aspnetcore-browser-refresh.js - null null
+2026-02-18 15:28:14 [INF] Request finished HTTP/1.1 GET http://localhost:5000/scalar/v1 - 200 null text/html 323.5168ms
+2026-02-18 15:28:14 [INF] Request starting HTTP/1.1 GET http://localhost:5000/scalar/scalar.aspnetcore.js - null null
+2026-02-18 15:28:14 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_vs/browserLink - null null
+2026-02-18 15:28:14 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/aspnetcore-browser-refresh.js - 200 16529 application/javascript; charset=utf-8 7.3673ms
+2026-02-18 15:28:14 [INF] Request starting HTTP/1.1 GET http://localhost:5000/scalar/scalar.js - null null
+2026-02-18 15:28:14 [INF] CORS policy execution successful.
+2026-02-18 15:28:14 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2026-02-18 15:28:14 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.js'
+2026-02-18 15:28:14 [INF] Sending file with download name ''.
+2026-02-18 15:28:14 [INF] Sending file with download name ''.
+2026-02-18 15:28:14 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2026-02-18 15:28:14 [INF] Request finished HTTP/1.1 GET http://localhost:5000/scalar/scalar.aspnetcore.js - 200 1111 text/javascript 51.515ms
+2026-02-18 15:28:14 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.js'
+2026-02-18 15:28:14 [INF] Request finished HTTP/1.1 GET http://localhost:5000/scalar/scalar.js - 200 922147 text/javascript 53.8252ms
+2026-02-18 15:28:14 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_vs/browserLink - 200 null text/javascript; charset=UTF-8 84.2139ms
+2026-02-18 15:28:14 [INF] Request starting HTTP/1.1 GET http://localhost:5000/openapi/v1.json - null null
+2026-02-18 15:28:14 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
+2026-02-18 15:28:15 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
+2026-02-18 15:28:15 [INF] Request finished HTTP/1.1 GET http://localhost:5000/openapi/v1.json - 200 null application/json;charset=utf-8 143.0353ms
+2026-02-18 15:28:24 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/trainer/me/students - null null
+2026-02-18 15:28:24 [INF] CORS policy execution successful.
+2026-02-18 15:28:24 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/trainer/me/students - 204 null null 9.74ms
+2026-02-18 15:28:24 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/trainer/me/students - application/json 97
+2026-02-18 15:28:24 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2/18/2026 9:44:48 AM', Current time (UTC): '2/18/2026 11:28:24 AM'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-02-18 15:28:24 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2/18/2026 9:44:48 AM', Current time (UTC): '2/18/2026 11:28:24 AM'.
+2026-02-18 15:28:24 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Trainer)
+2026-02-18 15:28:24 [INF] AuthenticationScheme: Bearer was challenged.
+2026-02-18 15:28:24 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/trainer/me/students - 401 0 null 111.1475ms
+2026-02-18 15:28:26 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/trainer/me/students - application/json 97
+2026-02-18 15:28:26 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2/18/2026 9:44:48 AM', Current time (UTC): '2/18/2026 11:28:26 AM'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-02-18 15:28:26 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2/18/2026 9:44:48 AM', Current time (UTC): '2/18/2026 11:28:26 AM'.
+2026-02-18 15:28:26 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Trainer)
+2026-02-18 15:28:26 [INF] AuthenticationScheme: Bearer was challenged.
+2026-02-18 15:28:26 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/trainer/me/students - 401 0 null 18.7351ms
+2026-02-18 15:28:58 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/trainer/me/students - null null
+2026-02-18 15:28:58 [INF] CORS policy execution successful.
+2026-02-18 15:28:58 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/trainer/me/students - 204 null null 7.0274ms
+2026-02-18 15:28:58 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/trainer/me/students - application/json 97
+2026-02-18 15:28:59 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2/18/2026 9:44:48 AM', Current time (UTC): '2/18/2026 11:28:59 AM'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-02-18 15:28:59 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2/18/2026 9:44:48 AM', Current time (UTC): '2/18/2026 11:28:59 AM'.
+2026-02-18 15:28:59 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Trainer)
+2026-02-18 15:28:59 [INF] AuthenticationScheme: Bearer was challenged.
+2026-02-18 15:28:59 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/trainer/me/students - 401 0 null 14.9821ms
+2026-02-18 15:34:17 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/trainer/me/students - null null
+2026-02-18 15:34:17 [INF] CORS policy execution successful.
+2026-02-18 15:34:17 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/trainer/me/students - 204 null null 5.6261ms
+2026-02-18 15:34:17 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/trainer/me/students - null null
+2026-02-18 15:34:17 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2/18/2026 9:44:48 AM', Current time (UTC): '2/18/2026 11:34:17 AM'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-02-18 15:34:17 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2/18/2026 9:44:48 AM', Current time (UTC): '2/18/2026 11:34:17 AM'.
+2026-02-18 15:34:17 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Trainer)
+2026-02-18 15:34:17 [INF] AuthenticationScheme: Bearer was challenged.
+2026-02-18 15:34:17 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/trainer/me/students - 401 0 null 13.4017ms
+2026-02-18 15:35:36 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/trainer/me/students - null null
+2026-02-18 15:35:36 [INF] CORS policy execution successful.
+2026-02-18 15:35:36 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/trainer/me/students - 204 null null 4.1478ms
+2026-02-18 15:35:36 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/trainer/me/students - null null
+2026-02-18 15:35:36 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2/18/2026 9:44:48 AM', Current time (UTC): '2/18/2026 11:35:36 AM'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-02-18 15:35:36 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2/18/2026 9:44:48 AM', Current time (UTC): '2/18/2026 11:35:36 AM'.
+2026-02-18 15:35:36 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Trainer)
+2026-02-18 15:35:36 [INF] AuthenticationScheme: Bearer was challenged.
+2026-02-18 15:35:36 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/trainer/me/students - 401 0 null 8.6878ms

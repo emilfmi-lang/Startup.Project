@@ -40,6 +40,7 @@ public class Trainer : BaseEntity
     public List<TrainingSession> Sessions { get; private set; } = [];
     public List<ScheduledSession> ScheduledSessions { get; private set; } = [];
     public List<FavoriteTrainer> FavoritedByUsers { get; private set; } = [];
+    public List<TrainerStudent> Students { get; private set; } = [];
 
     // Constructors
     private Trainer() { }
@@ -180,3 +181,4 @@ public class Trainer : BaseEntity
         UpdatedAt = DateTime.UtcNow;
     }
 }
+  

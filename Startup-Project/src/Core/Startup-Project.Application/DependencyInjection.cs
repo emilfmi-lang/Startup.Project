@@ -40,6 +40,7 @@ public static class DependencyInjection
         services.AddScoped<ITrainerService, TrainerService>();
         services.AddScoped<ITrainingSessionService, TrainingSessionService>();
         services.AddScoped<ITrainerSessionService, TrainerSessionService>();
+        services.AddScoped<ITrainerStudentService, TrainerStudentService>();
 
         // History
         services.AddScoped<IHistoryService, HistoryService>();
@@ -64,11 +65,9 @@ public static class DependencyInjection
         services.AddScoped<IRuleHandler, PackageRuleHandler>();
         services.AddScoped<IRuleHandler, MinimumOrderAmountRuleHandler>();
 
-        // Campaign & Pricing - Engines
         services.AddScoped<IRuleEngine, RuleEngine>();
         services.AddScoped<IPricingEngine, PricingEngine>();
 
-        // Campaign & Pricing - Services
         services.AddScoped<ICampaignService, CampaignService>();
         services.AddScoped<ICampaignAdminService, CampaignAdminService>();
 

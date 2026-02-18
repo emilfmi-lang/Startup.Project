@@ -32,5 +32,6 @@ public interface IApplicationDbContext
     DbSet<PackageFeature> PackageFeatures { get; set; }
     DbSet<FavoriteTrainer> FavoriteTrainers { get; set; }
     DbSet<ScheduledSession> ScheduledSessions { get; set; }
+    DbSet<TrainerStudent> TrainerStudents { get; set; }
     Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
 }
