@@ -23,10 +23,11 @@ public class ScheduledSession : BaseEntity
     public int DurationMinutes { get; private set; }
     public int MaxParticipants { get; private set; } = 1;
     public decimal PricePerPerson { get; private set; }
-    public ScheduledSessionStatus Status { get; private set; } = ScheduledSessionStatus.Upcoming;
+    public ScheduledSessionStatus Status { get; private set; } = ScheduledSessionStatus.Pending;
 
     private ScheduledSession() { }
 
+    // Admin panel ucun — konkret member-e teyin olunan seans
     public ScheduledSession(
         Guid trainerId,
         Guid memberId,
@@ -42,10 +43,11 @@ public class ScheduledSession : BaseEntity
         ScheduledTime = scheduledTime;
         DurationMinutes = durationMinutes;
         MaxParticipants = 1;
-        Status = ScheduledSessionStatus.Upcoming;
+        Status = ScheduledSessionStatus.Pending;
         CreatedAt = DateTime.UtcNow;
     }
 
+    // Trainer panel ucun — trainerin ozunun yaratdigi seans
     public ScheduledSession(
         Guid trainerId,
         Guid gymId,
@@ -66,16 +68,25 @@ public class ScheduledSession : BaseEntity
         DurationMinutes = durationMinutes;
         MaxParticipants = maxParticipants;
         PricePerPerson = pricePerPerson;
-        Status = ScheduledSessionStatus.Upcoming;
+        Status = ScheduledSessionStatus.Pending;
         CreatedAt = DateTime.UtcNow;
     }
 
     public DateTime EndTime => ScheduledTime.AddMinutes(DurationMinutes);
 
+    public void Confirm()
+    {
+        if (Status != ScheduledSessionStatus.Pending)
+            throw new InvalidOperationException("Yalniz gozleyen seans tesdiq edile biler.");
+
+        Status = ScheduledSessionStatus.Confirmed;
+        UpdatedAt = DateTime.UtcNow;
+    }
+
     public void MarkAsCompleted()
     {
-        if (Status != ScheduledSessionStatus.Upcoming)
-            throw new InvalidOperationException("Yalniz gozleyen seans tamamlana biler.");
+        if (Status is not (ScheduledSessionStatus.Pending or ScheduledSessionStatus.Confirmed))
+            throw new InvalidOperationException("Yalniz gozleyen ve ya tesdiq edilmis seans tamamlana biler.");
 
         Status = ScheduledSessionStatus.Completed;
         UpdatedAt = DateTime.UtcNow;
@@ -83,8 +94,8 @@ public class ScheduledSession : BaseEntity
 
     public void Cancel()
     {
-        if (Status != ScheduledSessionStatus.Upcoming)
-            throw new InvalidOperationException("Yalniz gozleyen seans legv edile biler.");
+        if (Status is not (ScheduledSessionStatus.Pending or ScheduledSessionStatus.Confirmed))
+            throw new InvalidOperationException("Yalniz gozleyen ve ya tesdiq edilmis seans legv edile biler.");
 
         Status = ScheduledSessionStatus.Cancelled;
         UpdatedAt = DateTime.UtcNow;

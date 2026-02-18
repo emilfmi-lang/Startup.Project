@@ -143,7 +143,7 @@ public class GymAdminSessionService(
         // Collision Check — eyni trainer-in eyni vaxtda baska seansi olmamalidir
         var hasCollision = await context.ScheduledSessions
             .Where(s => s.TrainerId == request.TrainerId
-                && s.Status == ScheduledSessionStatus.Upcoming
+                && (s.Status == ScheduledSessionStatus.Pending || s.Status == ScheduledSessionStatus.Confirmed)
                 && !s.IsDeleted)
             .AnyAsync(s =>
                 s.ScheduledTime < request.ScheduledTime.AddMinutes(request.DurationMinutes)
@@ -200,6 +200,9 @@ public class GymAdminSessionService(
 
         switch (request.Status)
         {
+            case ScheduledSessionStatus.Confirmed:
+                session.Confirm();
+                break;
             case ScheduledSessionStatus.Completed:
                 session.MarkAsCompleted();
                 break;
