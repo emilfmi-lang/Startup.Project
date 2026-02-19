@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Startup_Project.Application.Dtos.Account;
 using Startup_Project.Application.Dtos.Account.Password;
+using Startup_Project.Application.Dtos.Token;
 using Startup_Project.Application.Dtos.User;
 using Startup_Project.Application.Services.Interfaces.Account;
 
@@ -25,6 +26,10 @@ public class AccountController(IAccountService accountService) : ControllerBase
     [HttpPost("verify-login")]
     public async Task<IActionResult> VerifyAndLogin([FromBody] VerifyCodeDto dto)
         => Ok(await accountService.VerifyAndLoginAsync(dto));
+
+    [HttpPost("refresh-token")]
+    public async Task<IActionResult> RefreshToken([FromBody] RefreshTokenRequestDto dto)
+        => Ok(await accountService.RefreshTokenAsync(dto));
 
     [HttpPost("forgot-password")]
     public async Task<IActionResult> ForgotPassword([FromBody] ForgotPasswordDto dto)

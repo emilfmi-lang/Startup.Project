@@ -54,6 +54,7 @@ try
             ValidateAudience = true,
             ValidateLifetime = true,
             ValidateIssuerSigningKey = true,
+            ClockSkew = TimeSpan.Zero,
             ValidIssuer = builder.Configuration["JwtSettings:Issuer"],
             ValidAudience = builder.Configuration["JwtSettings:Audience"],
             IssuerSigningKey = new SymmetricSecurityKey(
@@ -71,9 +72,10 @@ try
     {
         opt.AddPolicy("CorsPolicy", policy =>
         {
-            policy.AllowAnyOrigin()
+            policy.WithOrigins("http://localhost:5173", "http://localhost:3000")
                   .AllowAnyMethod()
-                  .AllowAnyHeader();
+                  .AllowAnyHeader()
+                  .AllowCredentials();
         });
     });
 
@@ -98,11 +100,11 @@ try
 
     app.UseStaticFiles();
 
+    app.UseCors("CorsPolicy");
+
     app.UseAuthentication();
     app.UseAuthorization();
     app.MapControllers();
-
-    app.UseCors("CorsPolicy");
 
     app.Run();
 }

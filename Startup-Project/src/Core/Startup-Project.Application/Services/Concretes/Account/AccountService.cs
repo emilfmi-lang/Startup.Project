@@ -1,11 +1,15 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Startup_Project.Application.Abstractions.Services;
 using Startup_Project.Application.Abstractions.UnitOfWork;
 using Startup_Project.Application.Dtos.Account;
 using Startup_Project.Application.Dtos.Account.Password;
+using Startup_Project.Application.Dtos.Token;
 using Startup_Project.Application.Dtos.User;
+using Startup_Project.Application.Interfaces;
 using Startup_Project.Application.Models;
 using Startup_Project.Application.Services.Interfaces.Account;
 using Startup_Project.Application.Validators.Account;
@@ -14,6 +18,7 @@ using Startup_Project.Domain.Entities;
 using Startup_Project.Domain.Entities.Identity;
 using Startup_Project.Domain.Enums;
 using Startup_Project.Domain.Exceptions;
+using System.Security.Claims;
 
 
 namespace Startup_Project.Application.Services.Concretes.Account;
@@ -28,10 +33,13 @@ public class AccountService(
     IGenericRepository<SmsOtp> smsOtpRepository,
     IGenericRepository<EmailOtp> emailOtpRepository,
     ISmsService smsService,
-    IUnitOfWork unitOfWork
+    IUnitOfWork unitOfWork,
+    IApplicationDbContext context,
+    IHttpContextAccessor httpContextAccessor,
+    IConfiguration configuration
     ) : IAccountService
 {
-    public async Task<ResponseModel<string>> VerifyAndLoginAsync(VerifyCodeDto dto)
+    public async Task<ResponseModel<TokenDto>> VerifyAndLoginAsync(VerifyCodeDto dto)
     {
         var user = await userManager.FindByEmailAsync(dto.Email);
         if (user == null)
@@ -44,9 +52,7 @@ public class AccountService(
         user.VerificationCode = null;
         user.CodeExpireDate = null;
         await userManager.UpdateAsync(user);
-        var roles = await userManager.GetRolesAsync(user);
-        var token = jwtTokenService.GenerateTokenAsync(user, roles);
-        return ResponseModel<string>.SuccessResponse(token);
+        return await CreateTokenResponseAsync(user);
     }
 
     public async Task<ResponseModel<bool>> RegisterAsync(UserRegisterDto dto)
@@ -78,7 +84,7 @@ public class AccountService(
         return ResponseModel<bool>.SuccessResponse(true);
     }
 
-    public async Task<ResponseModel<string>> LoginAsync(UserLoginDto dto)
+    public async Task<ResponseModel<TokenDto>> LoginAsync(UserLoginDto dto)
     {
         var user = await userManager.FindByEmailAsync(dto.Email);
         if (user == null)
@@ -97,15 +103,11 @@ public class AccountService(
         if (!user.EmailConfirmed)
             throw BusinessException.EmailNotConfirmed();
 
-        var roles = await userManager.GetRolesAsync(user);
-        var token = jwtTokenService.GenerateTokenAsync(user, roles);
-
-        return ResponseModel<string>.SuccessResponse(token);
+        return await CreateTokenResponseAsync(user);
     }
 
-    public async Task<ResponseModel<string>> GoogleLoginAsync(GoogleLoginDto dto)
+    public async Task<ResponseModel<TokenDto>> GoogleLoginAsync(GoogleLoginDto dto)
     {
-        // Yeni IGoogleAuthService istifadə et
         return await googleAuthService.GoogleLoginAsync(dto.IdToken);
     }
 
@@ -307,25 +309,135 @@ public class AccountService(
             }
         }
 
-                var roles = await userManager.GetRolesAsync(user);
-                var token = jwtTokenService.GenerateTokenAsync(user, roles);
+                        var tokenResult = await CreateTokenResponseAsync(user);
+                        return ResponseModel<string>.SuccessResponse(tokenResult.Data!.AccessToken);
+                    }
 
-                return ResponseModel<string>.SuccessResponse(token);
-            }
+                    #endregion
 
-            #endregion
+                    #region Refresh Token
 
-            #region Email OTP Methods (for Password Reset)
+                    public async Task<ResponseModel<TokenDto>> RefreshTokenAsync(RefreshTokenRequestDto dto)
+                    {
+                        // 1. Expired access token-den user melumatlari cixart
+                        var principal = jwtTokenService.GetPrincipalFromExpiredToken(dto.AccessToken);
+                        if (principal is null)
+                            throw BusinessException.UnauthorizedAccess();
 
-            public async Task<ResponseModel<bool>> SendPasswordResetOtpAsync(string email)
-            {
-                return await ForgotPasswordAsync(email);
-            }
+                        var userIdClaim = principal.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+                        if (string.IsNullOrEmpty(userIdClaim) || !Guid.TryParse(userIdClaim, out var userId))
+                            throw BusinessException.UnauthorizedAccess();
 
-            public async Task<ResponseModel<bool>> VerifyPasswordResetOtpAsync(ResetPasswordDto dto)
-            {
-                return await ResetPasswordAsync(dto);
-            }
+                        // 2. Database-den refresh token-i yoxla
+                        var session = await context.UserSessions
+                            .FirstOrDefaultAsync(s => s.UserId == userId
+                                && s.RefreshToken == dto.RefreshToken
+                                && !s.IsDeleted);
 
-            #endregion
-        }
+                        if (session is null || session.RefreshTokenExpiry <= DateTime.UtcNow)
+                        {
+                            // Refresh token etibarsizdir — butun sessionlari sil
+                            if (session is not null)
+                                session.Revoke();
+                            await context.SaveChangesAsync();
+                            throw BusinessException.UnauthorizedAccess();
+                        }
+
+                        // 3. Yeni token pair yarat
+                        var user = await userManager.FindByIdAsync(userId.ToString())
+                            ?? throw BusinessException.UnauthorizedAccess();
+
+                        var roles = await userManager.GetRolesAsync(user);
+                        var newAccessToken = jwtTokenService.GenerateAccessToken(user, roles);
+                        var newRefreshToken = jwtTokenService.GenerateRefreshToken();
+
+                        var refreshDays = int.TryParse(configuration["JwtSettings:RefreshTokenExpiryDays"], out var d) ? d : 14;
+
+                        // 4. Kohne sessioni yenile (token rotation)
+                        session.Revoke();
+
+                        var newSession = new UserSession(
+                            userId: user.Id,
+                            deviceInfo: session.DeviceInfo ?? "Unknown",
+                            refreshToken: newRefreshToken,
+                            refreshTokenExpiry: DateTime.UtcNow.AddDays(refreshDays),
+                            ipAddress: session.IpAddress,
+                            userAgent: session.UserAgent);
+                        newSession.MarkAsCurrent();
+
+                        context.UserSessions.Add(newSession);
+                        await context.SaveChangesAsync();
+
+                        var expiryMinutes = int.TryParse(configuration["JwtSettings:AccessTokenExpiryMinutes"], out var m) ? m : 15;
+
+                        return ResponseModel<TokenDto>.SuccessResponse(new TokenDto
+                        {
+                            AccessToken = newAccessToken,
+                            RefreshToken = newRefreshToken,
+                            Expiration = DateTime.UtcNow.AddMinutes(expiryMinutes)
+                        });
+                    }
+
+                    #endregion
+
+                    #region Private Helper — Token + Session yaratma
+
+                    private async Task<ResponseModel<TokenDto>> CreateTokenResponseAsync(AppUser user)
+                    {
+                        var roles = await userManager.GetRolesAsync(user);
+                        var accessToken = jwtTokenService.GenerateAccessToken(user, roles);
+                        var refreshToken = jwtTokenService.GenerateRefreshToken();
+
+                        var refreshDays = int.TryParse(configuration["JwtSettings:RefreshTokenExpiryDays"], out var d) ? d : 14;
+                        var expiryMinutes = int.TryParse(configuration["JwtSettings:AccessTokenExpiryMinutes"], out var m) ? m : 15;
+
+                        // Device info
+                        var httpContext = httpContextAccessor.HttpContext;
+                        var userAgent = httpContext?.Request.Headers.UserAgent.ToString() ?? "Unknown";
+                        var ipAddress = httpContext?.Connection.RemoteIpAddress?.ToString();
+                        var deviceInfo = userAgent.Length > 200 ? userAgent[..200] : userAgent;
+
+                        // Kohne current sessionlari uncurrent et
+                        var oldSessions = await context.UserSessions
+                            .Where(s => s.UserId == user.Id && s.IsCurrent && !s.IsDeleted)
+                            .ToListAsync();
+                        foreach (var old in oldSessions)
+                            old.UnmarkAsCurrent();
+
+                        // Yeni session yarat
+                        var session = new UserSession(
+                            userId: user.Id,
+                            deviceInfo: deviceInfo,
+                            refreshToken: refreshToken,
+                            refreshTokenExpiry: DateTime.UtcNow.AddDays(refreshDays),
+                            ipAddress: ipAddress,
+                            userAgent: userAgent.Length > 500 ? userAgent[..500] : userAgent);
+                        session.MarkAsCurrent();
+
+                        context.UserSessions.Add(session);
+                        await context.SaveChangesAsync();
+
+                        return ResponseModel<TokenDto>.SuccessResponse(new TokenDto
+                        {
+                            AccessToken = accessToken,
+                            RefreshToken = refreshToken,
+                            Expiration = DateTime.UtcNow.AddMinutes(expiryMinutes)
+                        });
+                    }
+
+                    #endregion
+
+                    #region Email OTP Methods (for Password Reset)
+
+                    public async Task<ResponseModel<bool>> SendPasswordResetOtpAsync(string email)
+                    {
+                        return await ForgotPasswordAsync(email);
+                    }
+
+                    public async Task<ResponseModel<bool>> VerifyPasswordResetOtpAsync(ResetPasswordDto dto)
+                    {
+                        return await ResetPasswordAsync(dto);
+                    }
+
+                    #endregion
+                }

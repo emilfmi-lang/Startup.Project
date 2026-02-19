@@ -371,7 +371,7 @@ namespace Startup_Project.Persistance.Migrations
 
                     b.HasIndex("UserId", "Status");
 
-                    b.ToTable("CheckInLogs");
+                    b.ToTable("CheckInLogs", (string)null);
                 });
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.CheckInToken", b =>
@@ -414,7 +414,7 @@ namespace Startup_Project.Persistance.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("CheckInTokens");
+                    b.ToTable("CheckInTokens", (string)null);
                 });
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.EmailOtp", b =>
@@ -465,7 +465,7 @@ namespace Startup_Project.Persistance.Migrations
 
                     b.HasIndex("Email", "IsUsed", "ExpiryDate");
 
-                    b.ToTable("EmailOtps");
+                    b.ToTable("EmailOtps", (string)null);
                 });
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.FavoriteGym", b =>
@@ -499,7 +499,7 @@ namespace Startup_Project.Persistance.Migrations
                         .IsUnique()
                         .HasDatabaseName("IX_FavoriteGyms_UserId_GymId");
 
-                    b.ToTable("FavoriteGyms");
+                    b.ToTable("FavoriteGyms", (string)null);
                 });
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.FavoriteTrainer", b =>
@@ -533,7 +533,7 @@ namespace Startup_Project.Persistance.Migrations
                         .IsUnique()
                         .HasDatabaseName("IX_FavoriteTrainers_UserId_TrainerId");
 
-                    b.ToTable("FavoriteTrainers");
+                    b.ToTable("FavoriteTrainers", (string)null);
                 });
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.Gym", b =>
@@ -610,7 +610,7 @@ namespace Startup_Project.Persistance.Migrations
 
                     b.HasIndex("OwnerId");
 
-                    b.ToTable("Gyms");
+                    b.ToTable("Gyms", (string)null);
                 });
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.GymAmenity", b =>
@@ -655,7 +655,7 @@ namespace Startup_Project.Persistance.Migrations
 
                     b.HasIndex("GymId", "IsHighlighted");
 
-                    b.ToTable("GymAmenities");
+                    b.ToTable("GymAmenities", (string)null);
                 });
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.GymImage", b =>
@@ -697,7 +697,7 @@ namespace Startup_Project.Persistance.Migrations
 
                     b.HasIndex("GymId", "IsMain");
 
-                    b.ToTable("GymImages");
+                    b.ToTable("GymImages", (string)null);
                 });
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.GymOpeningHour", b =>
@@ -737,7 +737,7 @@ namespace Startup_Project.Persistance.Migrations
                     b.HasIndex("GymId", "DayOfWeek")
                         .IsUnique();
 
-                    b.ToTable("GymOpeningHours");
+                    b.ToTable("GymOpeningHours", (string)null);
                 });
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.GymReview", b =>
@@ -778,7 +778,7 @@ namespace Startup_Project.Persistance.Migrations
                     b.HasIndex("GymId", "UserId")
                         .IsUnique();
 
-                    b.ToTable("GymReviews");
+                    b.ToTable("GymReviews", (string)null);
                 });
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.Identity.AppUser", b =>
@@ -998,7 +998,7 @@ namespace Startup_Project.Persistance.Migrations
 
                     b.HasIndex("UserId", "Status");
 
-                    b.ToTable("Notifications");
+                    b.ToTable("Notifications", (string)null);
                 });
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.Package", b =>
@@ -1049,7 +1049,7 @@ namespace Startup_Project.Persistance.Migrations
 
                     b.HasIndex("IsPopular");
 
-                    b.ToTable("Packages");
+                    b.ToTable("Packages", (string)null);
                 });
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.PackageFeature", b =>
@@ -1082,7 +1082,7 @@ namespace Startup_Project.Persistance.Migrations
 
                     b.HasIndex("PackageId", "DisplayOrder");
 
-                    b.ToTable("PackageFeatures");
+                    b.ToTable("PackageFeatures", (string)null);
                 });
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.Payment", b =>
@@ -1126,7 +1126,7 @@ namespace Startup_Project.Persistance.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Payments");
+                    b.ToTable("Payments", (string)null);
                 });
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.PromoCode", b =>
@@ -1190,7 +1190,7 @@ namespace Startup_Project.Persistance.Migrations
 
                     b.HasIndex("PackageId");
 
-                    b.ToTable("PromoCodes");
+                    b.ToTable("PromoCodes", (string)null);
                 });
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.PromoCodeUsage", b =>
@@ -1231,7 +1231,7 @@ namespace Startup_Project.Persistance.Migrations
                     b.HasIndex("PromoCodeId", "UserId")
                         .IsUnique();
 
-                    b.ToTable("PromoCodeUsages");
+                    b.ToTable("PromoCodeUsages", (string)null);
                 });
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.ScheduledSession", b =>
@@ -1304,7 +1304,7 @@ namespace Startup_Project.Persistance.Migrations
 
                     b.HasIndex("TrainerId", "ScheduledTime");
 
-                    b.ToTable("ScheduledSessions");
+                    b.ToTable("ScheduledSessions", (string)null);
                 });
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.SmsOtp", b =>
@@ -1355,7 +1355,7 @@ namespace Startup_Project.Persistance.Migrations
 
                     b.HasIndex("PhoneNumber", "IsUsed", "ExpiryDate");
 
-                    b.ToTable("SmsOtps");
+                    b.ToTable("SmsOtps", (string)null);
                 });
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.Subscription", b =>
@@ -1404,7 +1404,7 @@ namespace Startup_Project.Persistance.Migrations
 
                     b.HasIndex("UserId", "Status");
 
-                    b.ToTable("Subscriptions");
+                    b.ToTable("Subscriptions", (string)null);
                 });
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.Trainer", b =>
@@ -1506,7 +1506,7 @@ namespace Startup_Project.Persistance.Migrations
 
                     b.HasIndex("IsOnlineTrainer", "Status");
 
-                    b.ToTable("Trainers");
+                    b.ToTable("Trainers", (string)null);
                 });
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.TrainerReview", b =>
@@ -1546,7 +1546,7 @@ namespace Startup_Project.Persistance.Migrations
                     b.HasIndex("TrainerId", "UserId")
                         .IsUnique();
 
-                    b.ToTable("TrainerReviews");
+                    b.ToTable("TrainerReviews", (string)null);
                 });
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.TrainerSchedule", b =>
@@ -1586,7 +1586,7 @@ namespace Startup_Project.Persistance.Migrations
                     b.HasIndex("TrainerId", "DayOfWeek")
                         .IsUnique();
 
-                    b.ToTable("TrainerSchedules");
+                    b.ToTable("TrainerSchedules", (string)null);
                 });
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.TrainerStudent", b =>
@@ -1628,7 +1628,7 @@ namespace Startup_Project.Persistance.Migrations
                         .IsUnique()
                         .HasDatabaseName("IX_TrainerStudents_TrainerId_StudentId");
 
-                    b.ToTable("TrainerStudents");
+                    b.ToTable("TrainerStudents", (string)null);
                 });
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.TrainingSession", b =>
@@ -1705,7 +1705,7 @@ namespace Startup_Project.Persistance.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("TrainingSessions");
+                    b.ToTable("TrainingSessions", (string)null);
                 });
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.UserDevice", b =>
@@ -1755,7 +1755,7 @@ namespace Startup_Project.Persistance.Migrations
 
                     b.HasIndex("UserId", "IsActive");
 
-                    b.ToTable("UserDevices");
+                    b.ToTable("UserDevices", (string)null);
                 });
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.UserPaymentMethod", b =>
@@ -1804,7 +1804,7 @@ namespace Startup_Project.Persistance.Migrations
                     b.HasIndex("UserId")
                         .HasDatabaseName("IX_UserPaymentMethods_UserId");
 
-                    b.ToTable("UserPaymentMethods");
+                    b.ToTable("UserPaymentMethods", (string)null);
                 });
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.UserSession", b =>
@@ -1865,7 +1865,7 @@ namespace Startup_Project.Persistance.Migrations
                     b.HasIndex("UserId")
                         .HasDatabaseName("IX_UserSessions_UserId");
 
-                    b.ToTable("UserSessions");
+                    b.ToTable("UserSessions", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
