@@ -98,7 +98,8 @@ public class TrainerScheduleService(
     private static DateTime ParseScheduledTime(DateTime date, string startTime)
     {
         var time = TimeSpan.ParseExact(startTime, [@"hh\:mm", @"h\:mm"], CultureInfo.InvariantCulture);
-        return date.Date.Add(time);
+        var dateOnly = new DateTime(date.Year, date.Month, date.Day, 0, 0, 0, DateTimeKind.Utc);
+        return dateOnly.Add(time);
     }
 
     #endregion
@@ -210,8 +211,8 @@ public class TrainerScheduleService(
 
         var scheduledTime = ParseScheduledTime(request.Date, request.StartTime);
 
-        if (scheduledTime <= DateTime.UtcNow)
-            throw BusinessException.ValidationFailed("Kecmis zamana schedule teyin etmek olmaz.");
+        if (scheduledTime.Date < DateTime.UtcNow.Date)
+            throw BusinessException.ValidationFailed("Kecmis gune schedule teyin etmek olmaz.");
 
         // Collision check
         var hasCollision = await context.ScheduledSessions
