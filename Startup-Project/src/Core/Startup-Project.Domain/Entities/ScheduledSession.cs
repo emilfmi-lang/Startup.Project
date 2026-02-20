@@ -101,9 +101,28 @@ public class ScheduledSession : BaseEntity
         UpdatedAt = DateTime.UtcNow;
     }
 
-    public bool OverlapsWith(DateTime otherStart, int otherDurationMinutes)
-    {
-        var otherEnd = otherStart.AddMinutes(otherDurationMinutes);
-        return ScheduledTime < otherEnd && EndTime > otherStart;
+        public bool OverlapsWith(DateTime otherStart, int otherDurationMinutes)
+        {
+            var otherEnd = otherStart.AddMinutes(otherDurationMinutes);
+            return ScheduledTime < otherEnd && EndTime > otherStart;
+        }
+
+        public void UpdateSchedule(
+            string? title,
+            string exerciseType,
+            string? description,
+            DateTime scheduledTime,
+            int durationMinutes,
+            int maxParticipants,
+            decimal pricePerPerson)
+        {
+            Title = title;
+            ExerciseType = exerciseType;
+            Description = description;
+            ScheduledTime = scheduledTime;
+            DurationMinutes = durationMinutes;
+            MaxParticipants = maxParticipants;
+            PricePerPerson = pricePerPerson;
+            UpdatedAt = DateTime.UtcNow;
+        }
     }
-}

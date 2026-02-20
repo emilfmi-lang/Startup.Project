@@ -41,6 +41,7 @@ public static class DependencyInjection
         services.AddScoped<ITrainingSessionService, TrainingSessionService>();
         services.AddScoped<ITrainerSessionService, TrainerSessionService>();
         services.AddScoped<ITrainerStudentService, TrainerStudentService>();
+        services.AddScoped<ITrainerScheduleService, TrainerScheduleService>();
 
         // History
         services.AddScoped<IHistoryService, HistoryService>();
