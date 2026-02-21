@@ -47,7 +47,6 @@ public class ScheduledSession : BaseEntity
         CreatedAt = DateTime.UtcNow;
     }
 
-    // Trainer panel ucun — trainerin ozunun yaratdigi seans
     public ScheduledSession(
         Guid trainerId,
         Guid gymId,
