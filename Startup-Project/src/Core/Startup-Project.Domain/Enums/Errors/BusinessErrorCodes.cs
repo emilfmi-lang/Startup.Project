@@ -135,9 +135,14 @@ public enum BusinessErrorCodes
             MemberSubscriptionExpired = 16002,
             ScheduledSessionInvalidStatus = 16003,
 
-            // TRAINER STUDENT ERRORS (17000-17999)
-            StudentAlreadyAssigned = 17000,
-            StudentNotFound = 17001,
+                // TRAINER STUDENT ERRORS (17000-17999)
+                StudentAlreadyAssigned = 17000,
+                StudentNotFound = 17001,
+
+                // SESSION PAYMENT ERRORS (18000-18999)
+                SessionPaymentNotFound = 18000,
+                SessionPaymentAlreadyPaid = 18001,
+                SessionPaymentFailed = 18002,
 
 
-        }
+            }

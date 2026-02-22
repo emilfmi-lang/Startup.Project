@@ -31,6 +31,7 @@ public static class DependencyInjection
         // Package & Payment
         services.AddScoped<IPackageService, PackageService>();
         services.AddScoped<IPaymentService, PaymentService>();
+        services.AddScoped<ISessionPaymentService, SessionPaymentService>();
 
         // Review & Favorite
         services.AddScoped<IReviewService, ReviewService>();

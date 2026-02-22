@@ -5,7 +5,6 @@ namespace Startup_Project.Application.Services.Interfaces;
 
 public interface IPaymentService
 {
-    Task<ResponseModel<PaymentResponseDto>> CreatePaymentSessionAsync(Guid userId, PaymentRequestDto dto);
-    Task<ResponseModel<bool>> FinalizePaymentAsync(string sessionId);
-
+    Task<ResponseModel<PaymentResponseDto>> CreatePackagePaymentAsync(PaymentRequestDto request);
+    Task<ResponseModel<bool>> HandlePackageCallbackAsync(string sessionId);
 }

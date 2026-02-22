@@ -20,7 +20,7 @@ public static class InfrastructureServiceRegistration
         services.AddScoped<IMailService, MailService>();
         services.AddScoped<ITokenHandler, TokenHandler>();
         services.AddScoped<IFileService, FileService>();
-        services.AddScoped<IBankService, KapitalBankService>();
+        services.AddHttpClient<IBankService, KapitalBankService>();
         services.AddScoped<IQrTokenService, QrTokenService>();
         services.AddScoped<IGoogleTokenValidator, GoogleTokenValidator>();
         services.AddScoped<ISmsService, ConsoleSmsService>();

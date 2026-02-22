@@ -34,5 +34,6 @@ public interface IApplicationDbContext
     DbSet<ScheduledSession> ScheduledSessions { get; set; }
     DbSet<TrainerStudent> TrainerStudents { get; set; }
     DbSet<UserSession> UserSessions { get; set; }
+    DbSet<SessionPayment> SessionPayments { get; set; }
     Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
 }

@@ -1,88 +1,151 @@
-﻿using AutoMapper;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Startup_Project.Application.Abstractions.UnitOfWork;
 using Startup_Project.Application.Dtos.Payment;
 using Startup_Project.Application.Interfaces;
 using Startup_Project.Application.Models;
 using Startup_Project.Application.Services.Interfaces;
-using Startup_Project.Domain.Abstractions.Repositories;
 using Startup_Project.Domain.Entities;
 using Startup_Project.Domain.Enums;
 using Startup_Project.Domain.Enums.Errors;
 using Startup_Project.Domain.Exceptions;
+using System.Security.Claims;
 
 namespace Startup_Project.Application.Services.Concretes;
 
-public class PaymentService : IPaymentService
+public class PaymentService(
+    IApplicationDbContext context,
+    IBankService bankService,
+    IUnitOfWork unitOfWork,
+    IHttpContextAccessor httpContextAccessor) : IPaymentService
 {
-    private readonly IGenericRepository<Payment> _paymentRepository;
-    private readonly IGenericRepository<Subscription> _subscriptionRepository;
-    private readonly IGenericRepository<Package> _packageRepository;
-    private readonly IBankService _bankService;
-    private readonly IUnitOfWork _unitOfWork;
-    private readonly IMapper _mapper;
+    #region ==================== PRIVATE HELPERS ====================
 
-    public PaymentService(
-        IGenericRepository<Payment> paymentRepository,
-        IGenericRepository<Subscription> subscriptionRepository,
-        IGenericRepository<Package> packageRepository,
-        IBankService bankService,
-        IUnitOfWork unitOfWork,
-        IMapper mapper)
+    private Guid GetCurrentUserId()
     {
-        _paymentRepository = paymentRepository;
-        _subscriptionRepository = subscriptionRepository;
-        _packageRepository = packageRepository;
-        _bankService = bankService;
-        _unitOfWork = unitOfWork;
-        _mapper = mapper;
+        var userIdClaim = httpContextAccessor.HttpContext?.User
+            .FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+        if (string.IsNullOrEmpty(userIdClaim) || !Guid.TryParse(userIdClaim, out var userId))
+            throw BusinessException.UnauthorizedAccess();
+
+        return userId;
     }
 
-    public async Task<ResponseModel<PaymentResponseDto>> CreatePaymentSessionAsync(Guid userId, PaymentRequestDto dto)
+    #endregion
+
+    #region ==================== CREATE PACKAGE PAYMENT ====================
+
+    public async Task<ResponseModel<PaymentResponseDto>> CreatePackagePaymentAsync(PaymentRequestDto request)
     {
-        var package = await _packageRepository.GetByIdAsync(dto.PackageId);
-        if (package == null)
-            throw NotFoundException.Package(dto.PackageId);
+        var userId = GetCurrentUserId();
 
-        var bankResponse = await _bankService.CreateSessionAsync(package.Price, package.Name);
+        var package = await context.Packages
+            .AsNoTracking()
+            .FirstOrDefaultAsync(p => p.Id == request.PackageId && !p.IsDeleted);
 
-        var payment = _mapper.Map<Payment>(dto);
+        if (package is null)
+            throw NotFoundException.Package(request.PackageId);
 
-        payment.SetInitialDetails(userId, package.Price, bankResponse.SessionId);
+        // Eyni paket ucun pending odenis varsa legv et (yeniden cehd)
+        var pendingPayment = await context.Payments
+            .FirstOrDefaultAsync(p => p.UserId == userId
+                && p.PackageId == request.PackageId
+                && p.Status == PaymentStatus.Pending);
 
-        await _paymentRepository.AddAsync(payment);
-        await _unitOfWork.SaveChangesAsync();
+        if (pendingPayment is not null)
+            pendingPayment.MarkAsFailed("Yeni odenis cehdi - kohne legv edildi.");
+
+        // Yeni payment yarat
+        var payment = new Payment(
+            userId: userId,
+            packageId: package.Id,
+            amount: package.Price);
+
+        // Banka sorgu at
+        var bankResponse = await bankService.CreateSessionAsync(package.Price, package.Name);
+
+        payment.SetBankSessionId(bankResponse.SessionId);
+
+        context.Payments.Add(payment);
+        await context.SaveChangesAsync();
 
         return ResponseModel<PaymentResponseDto>.SuccessResponse(bankResponse);
     }
 
-        public async Task<ResponseModel<bool>> FinalizePaymentAsync(string sessionId)
+    #endregion
+
+    #region ==================== HANDLE PACKAGE CALLBACK ====================
+
+    public async Task<ResponseModel<bool>> HandlePackageCallbackAsync(string sessionId)
+    {
+        var payment = await context.Payments
+            .Include(p => p.Package)
+            .FirstOrDefaultAsync(p => p.SessionId == sessionId);
+
+        if (payment is null)
+            throw NotFoundException.Payment(sessionId);
+
+        // Idempotent: artiq ugurlu olubsa tekrar islemir
+        if (payment.IsSuccessful)
+            return ResponseModel<bool>.SuccessResponse(true);
+
+        // Bankdan status yoxla
+        var isApproved = await bankService.CheckPaymentStatusAsync(sessionId);
+
+        if (!isApproved)
         {
-            var payment = await _paymentRepository.GetSingleAsync(p => p.SessionId == sessionId);
-            if (payment == null)
-                throw NotFoundException.Payment(sessionId);
+            payment.MarkAsFailed("Bank terefinden tesdiqlenmeyi.");
+            await unitOfWork.SaveChangesAsync();
+            throw BusinessException.Custom(BusinessErrorCodes.PaymentFailed, "Odenis bank terefinden tesdiqlenmeyi.");
+        }
 
-            var isActuallyPaid = await _bankService.CheckPaymentStatusAsync(sessionId);
-            if (!isActuallyPaid)
-                    throw BusinessException.Custom(BusinessErrorCodes.PaymentFailed, "Ödəniş bank tərəfindən təsdiqlənməyib.");
+        // ===== ATOMIC TRANSACTION =====
+        // 1) Payment -> Successful
+        // 2) Subscription -> yaradilir ve ya uzadilir (extension)
+        // Xeta olsa butun deyisiklikler geri qaytarilir.
 
-                if (payment.Status == PaymentStatus.Successful)
-                    return ResponseModel<bool>.SuccessResponse(true);
+        await unitOfWork.BeginTransactionAsync();
 
-                var package = await _packageRepository.GetByIdAsync(payment.PackageId);
-                if (package == null)
-                    throw NotFoundException.Package(payment.PackageId);
-
+        try
+        {
+            // 1. Odenisi ugurlu isare et
             payment.MarkAsSuccess();
 
-            var subscription = _mapper.Map<Subscription>(package);
-            subscription.SetUser(payment.UserId);
+            // 2. Subscription mentiqi
+            var package = payment.Package;
 
-            await _subscriptionRepository.AddAsync(subscription);
+            // Eyni gym paketin aktiv abuneliyini yoxla
+            var activeSubscription = await context.Subscriptions
+                .Where(s => s.UserId == payment.UserId
+                    && s.Status == SubscriptionStatus.Active
+                    && s.EndDate > DateTime.UtcNow
+                    && !s.IsDeleted)
+                .OrderByDescending(s => s.EndDate)
+                .FirstOrDefaultAsync();
 
-            var result = await _unitOfWork.SaveChangesAsync();
-            if (result <= 0)
-                throw BusinessException.Custom(BusinessErrorCodes.UnknownError, "Abunəlik bazaya yazıla bilmədi.");
+            if (activeSubscription is not null)
+            {
+                // EXTENSION: movcud abunelyin EndDate-inden baslayir
+                activeSubscription.Extend(package.DurationInDays);
+            }
+            else
+            {
+                // YENI: bugun baslayir
+                var subscription = new Subscription(payment.UserId, package, DateTime.UtcNow);
+                context.Subscriptions.Add(subscription);
+            }
 
-            return ResponseModel<bool>.SuccessResponse(true);
+            await unitOfWork.CommitAsync();
         }
+        catch
+        {
+            await unitOfWork.RollbackAsync();
+            throw;
+        }
+
+        return ResponseModel<bool>.SuccessResponse(true);
     }
+
+    #endregion
+}

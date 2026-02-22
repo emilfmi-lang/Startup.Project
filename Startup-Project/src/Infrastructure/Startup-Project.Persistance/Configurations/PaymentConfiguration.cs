@@ -20,6 +20,12 @@ public class PaymentConfiguration : IEntityTypeConfiguration<Payment>
         builder.Property(p => p.Status)
             .IsRequired();
 
+        builder.Property(p => p.FailureReason)
+            .HasMaxLength(1000);
+
+        builder.Ignore(p => p.IsPending);
+        builder.Ignore(p => p.IsSuccessful);
+
         builder.HasOne(p => p.User)
             .WithMany()
             .HasForeignKey(p => p.UserId)

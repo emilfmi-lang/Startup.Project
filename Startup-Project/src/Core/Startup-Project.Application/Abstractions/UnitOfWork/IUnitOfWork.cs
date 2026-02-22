@@ -1,6 +1,9 @@
 ﻿namespace Startup_Project.Application.Abstractions.UnitOfWork;
 
-public interface IUnitOfWork: IAsyncDisposable
+public interface IUnitOfWork : IAsyncDisposable
 {
     Task<int> SaveChangesAsync();
+    Task BeginTransactionAsync();
+    Task CommitAsync();
+    Task RollbackAsync();
 }
