@@ -7,4 +7,6 @@ public interface IPromoCodeService
 {
     Task<ResponseModel<PromoCodeResultDto>> ValidateAsync(string code, Guid packageId);
     Task<ResponseModel<PromoCodeResultDto>> ApplyAsync(ApplyPromoCodeDto dto);
+    Task<ResponseModel<PromoCodeResultDto>> ValidateForSessionAsync(string code, Guid scheduledSessionId);
+    Task<ResponseModel<PromoCodeResultDto>> ApplyForSessionAsync(ApplySessionPromoCodeDto dto);
 }

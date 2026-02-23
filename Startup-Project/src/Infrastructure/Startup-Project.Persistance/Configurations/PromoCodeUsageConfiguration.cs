@@ -14,14 +14,15 @@ public class PromoCodeUsageConfiguration : IEntityTypeConfiguration<PromoCodeUsa
         builder.HasIndex(u => new { u.PromoCodeId, u.UserId }).IsUnique();
         builder.Property(u => u.AppliedDiscount).HasPrecision(18, 2);
         builder.Property(x => x.UsedAt).IsRequired();
+
         builder.HasOne(u => u.PromoCode)
-               .WithMany(p => p.PromoCodeUsages)
-               .HasForeignKey(u => u.PromoCodeId)
-               .OnDelete(DeleteBehavior.Cascade);
+            .WithMany(p => p.PromoCodeUsages)
+            .HasForeignKey(u => u.PromoCodeId)
+            .OnDelete(DeleteBehavior.Cascade);
+
         builder.HasOne(u => u.User)
             .WithMany()
             .HasForeignKey(u => u.UserId)
             .OnDelete(DeleteBehavior.Restrict);
-
     }
 }

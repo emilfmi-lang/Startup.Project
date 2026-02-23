@@ -7,6 +7,7 @@ public record CreatePromoCodeDto(
     string Description,
     DiscountType DiscountType,
     decimal DiscountValue,
+    PromoCodeTargetType TargetType,
     decimal? MinimumOrderAmount,
     int UsageLimit,
     DateTime StartDate,

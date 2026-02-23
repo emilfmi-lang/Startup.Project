@@ -57,6 +57,8 @@ public enum BusinessErrorCodes
     PromoCodeNotApplicable = 5005,
     PromoCodeMinimumAmountNotMet = 5006,
     PromoCodeConcurrencyError = 5007,
+    PromoCodeTargetMismatch = 5008,
+    PromoCodeTrainerMismatch = 5009,
 
     // PAYMENT ERRORS (6000-6999)
     PaymentNotFound = 6000,

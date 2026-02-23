@@ -25,7 +25,6 @@ public static class InfrastructureServiceRegistration
         services.AddScoped<IGoogleTokenValidator, GoogleTokenValidator>();
         services.AddScoped<ISmsService, ConsoleSmsService>();
 
-        // Google OAuth2 Authentication Service
         services.AddScoped<IGoogleAuthService, GoogleAuthService>();
 
         return services;

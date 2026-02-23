@@ -49,6 +49,7 @@ public static class DependencyInjection
 
         // PromoCode
         services.AddScoped<IPromoCodeService, PromoCodeService>();
+        services.AddScoped<ITrainerPromoCodeService, TrainerPromoCodeService>();
 
         // User Dashboard
         services.AddScoped<IUserSubscriptionService, UserSubscriptionService>();

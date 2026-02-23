@@ -7,6 +7,7 @@ public class PromoCodeListDto
     public string Description { get; set; } = null!;
     public string DiscountType { get; set; } = null!;
     public decimal DiscountValue { get; set; }
+    public string TargetType { get; set; } = null!;
     public int UsageLimit { get; set; }
     public int UsedCount { get; set; }
     public int RemainingUsage => UsageLimit - UsedCount;
@@ -15,4 +16,5 @@ public class PromoCodeListDto
     public bool IsActive { get; set; }
     public bool IsExpired => DateTime.UtcNow > EndDate;
     public string? PackageName { get; set; }
+    public string? TrainerName { get; set; }
 }

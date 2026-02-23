@@ -1,4 +1,5 @@
 using FluentValidation;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Startup_Project.Application.Dtos.PromoCode;
 using Startup_Project.Application.Models;
@@ -7,6 +8,7 @@ using Startup_Project.Domain.Abstractions.Repositories;
 using Startup_Project.Domain.Entities;
 using Startup_Project.Domain.Enums.Errors;
 using Startup_Project.Domain.Exceptions;
+using System.Security.Claims;
 
 namespace Startup_Project.Application.Services.Concretes.Admin;
 
@@ -14,9 +16,18 @@ public class PromoCodeAdminService(
     IGenericRepository<PromoCode> promoCodeRepository,
     IGenericRepository<PromoCodeUsage> usageRepository,
     IGenericRepository<Package> packageRepository,
+    IHttpContextAccessor httpContextAccessor,
     IValidator<CreatePromoCodeDto> createValidator,
     IValidator<UpdatePromoCodeDto> updateValidator) : IPromoCodeAdminService
 {
+    private Guid GetCurrentUserId()
+    {
+        var userId = httpContextAccessor.HttpContext?.User.FindFirstValue(ClaimTypes.NameIdentifier);
+        if (string.IsNullOrEmpty(userId) || !Guid.TryParse(userId, out var userGuid))
+            throw BusinessException.UnauthorizedAccess();
+        return userGuid;
+    }
+
     public async Task<ResponseModel<Guid>> CreateAsync(CreatePromoCodeDto dto)
     {
         var validationResult = await createValidator.ValidateAsync(dto);
@@ -37,14 +48,18 @@ public class PromoCodeAdminService(
                 throw NotFoundException.Package(dto.PackageId.Value);
         }
 
+        var currentUserId = GetCurrentUserId();
+
         var promoCode = new PromoCode(
             code: normalizedCode,
             description: dto.Description,
             discountType: dto.DiscountType,
             discountValue: dto.DiscountValue,
+            targetType: dto.TargetType,
             startDate: dto.StartDate,
             endDate: dto.EndDate,
             usageLimit: dto.UsageLimit,
+            createdById: currentUserId,
             minimumOrderAmount: dto.MinimumOrderAmount,
             packageId: dto.PackageId
         );
@@ -62,6 +77,8 @@ public class PromoCodeAdminService(
 
         var promoCodes = await promoCodeRepository.Table
             .Include(p => p.Package)
+            .Include(p => p.Trainer).ThenInclude(t => t!.User)
+            .Include(p => p.CreatedBy)
             .Where(p => !p.IsDeleted)
             .OrderByDescending(p => p.CreatedAt)
             .Skip((page - 1) * pageSize)
@@ -78,6 +95,8 @@ public class PromoCodeAdminService(
     {
         var promoCode = await promoCodeRepository.Table
             .Include(p => p.Package)
+            .Include(p => p.Trainer).ThenInclude(t => t!.User)
+            .Include(p => p.CreatedBy)
             .Include(p => p.PromoCodeUsages.OrderByDescending(u => u.UsedAt).Take(10))
                 .ThenInclude(u => u.User)
             .FirstOrDefaultAsync(p => p.Id == id && !p.IsDeleted);
@@ -94,6 +113,8 @@ public class PromoCodeAdminService(
 
         var promoCode = await promoCodeRepository.Table
             .Include(p => p.Package)
+            .Include(p => p.Trainer).ThenInclude(t => t!.User)
+            .Include(p => p.CreatedBy)
             .Include(p => p.PromoCodeUsages.OrderByDescending(u => u.UsedAt).Take(10))
                 .ThenInclude(u => u.User)
             .FirstOrDefaultAsync(p => p.Code == normalizedCode && !p.IsDeleted);
@@ -200,7 +221,7 @@ public class PromoCodeAdminService(
             UserId = u.UserId,
             UserFullName = u.User.FullName,
             UserEmail = u.User.Email ?? "",
-            PackageId = u.PackageId,
+            PackageId = u.PackageId ?? Guid.Empty,
             PackageName = "",
             AppliedDiscount = u.AppliedDiscount,
             UsedAt = u.UsedAt
@@ -220,12 +241,14 @@ public class PromoCodeAdminService(
         Description = p.Description,
         DiscountType = p.DiscountType.ToString(),
         DiscountValue = p.DiscountValue,
+        TargetType = p.TargetType.ToString(),
         UsageLimit = p.UsageLimit,
         UsedCount = p.UsedCount,
         StartDate = p.StartDate,
         EndDate = p.EndDate,
         IsActive = p.IsActive,
-        PackageName = p.Package?.Name
+        PackageName = p.Package?.Name,
+        TrainerName = p.Trainer?.User?.FullName
     };
 
     private static PromoCodeDetailDto MapToDetailDto(PromoCode promoCode) => new()
@@ -235,6 +258,7 @@ public class PromoCodeAdminService(
         Description = promoCode.Description,
         DiscountType = promoCode.DiscountType.ToString(),
         DiscountValue = promoCode.DiscountValue,
+        TargetType = promoCode.TargetType.ToString(),
         MinimumOrderAmount = promoCode.MinimumOrderAmount,
         UsageLimit = promoCode.UsageLimit,
         UsedCount = promoCode.UsedCount,
@@ -243,18 +267,22 @@ public class PromoCodeAdminService(
         IsActive = promoCode.IsActive,
         PackageId = promoCode.PackageId,
         PackageName = promoCode.Package?.Name,
+        CreatedById = promoCode.CreatedById,
+        CreatedByName = promoCode.CreatedBy?.FullName,
+        TrainerId = promoCode.TrainerId,
+        TrainerName = promoCode.Trainer?.User?.FullName,
         CreatedAt = promoCode.CreatedAt,
         UpdatedAt = promoCode.UpdatedAt,
-        RecentUsages = promoCode.PromoCodeUsages.Select(u => new PromoCodeUsageDto
-        {
-            Id = u.Id,
-            UserId = u.UserId,
-            UserFullName = u.User?.FullName ?? "",
-            UserEmail = u.User?.Email ?? "",
-            PackageId = u.PackageId,
-            PackageName = "",
-            AppliedDiscount = u.AppliedDiscount,
-            UsedAt = u.UsedAt
-        }).ToList()
-    };
-}
+                RecentUsages = promoCode.PromoCodeUsages.Select(u => new PromoCodeUsageDto
+                {
+                    Id = u.Id,
+                    UserId = u.UserId,
+                    UserFullName = u.User?.FullName ?? "",
+                    UserEmail = u.User?.Email ?? "",
+                    PackageId = u.PackageId ?? Guid.Empty,
+                    PackageName = "",
+                    AppliedDiscount = u.AppliedDiscount,
+                    UsedAt = u.UsedAt
+                }).ToList()
+            };
+        }

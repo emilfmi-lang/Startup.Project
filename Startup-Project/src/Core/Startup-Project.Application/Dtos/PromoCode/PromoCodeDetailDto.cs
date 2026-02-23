@@ -7,6 +7,7 @@ public class PromoCodeDetailDto
     public string Description { get; set; } = null!;
     public string DiscountType { get; set; } = null!;
     public decimal DiscountValue { get; set; }
+    public string TargetType { get; set; } = null!;
     public decimal? MinimumOrderAmount { get; set; }
     public int UsageLimit { get; set; }
     public int UsedCount { get; set; }
@@ -18,6 +19,10 @@ public class PromoCodeDetailDto
     public bool IsValid => IsActive && !IsExpired && RemainingUsage > 0;
     public Guid? PackageId { get; set; }
     public string? PackageName { get; set; }
+    public Guid CreatedById { get; set; }
+    public string? CreatedByName { get; set; }
+    public Guid? TrainerId { get; set; }
+    public string? TrainerName { get; set; }
     public DateTime CreatedAt { get; set; }
     public DateTime? UpdatedAt { get; set; }
     public List<PromoCodeUsageDto> RecentUsages { get; set; } = [];

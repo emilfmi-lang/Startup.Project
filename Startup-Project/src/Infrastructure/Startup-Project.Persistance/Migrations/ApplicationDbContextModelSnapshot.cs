@@ -1147,6 +1147,9 @@ namespace Startup_Project.Persistance.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
+                    b.Property<Guid>("CreatedById")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -1177,6 +1180,12 @@ namespace Startup_Project.Persistance.Migrations
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("TargetType")
+                        .HasColumnType("int");
+
+                    b.Property<Guid?>("TrainerId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
@@ -1192,7 +1201,11 @@ namespace Startup_Project.Persistance.Migrations
                     b.HasIndex("Code")
                         .IsUnique();
 
+                    b.HasIndex("CreatedById");
+
                     b.HasIndex("PackageId");
+
+                    b.HasIndex("TrainerId");
 
                     b.ToTable("PromoCodes");
                 });
@@ -1213,10 +1226,13 @@ namespace Startup_Project.Persistance.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<Guid>("PackageId")
+                    b.Property<Guid?>("PackageId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid>("PromoCodeId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("ScheduledSessionId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime?>("UpdatedAt")
@@ -2192,12 +2208,27 @@ namespace Startup_Project.Persistance.Migrations
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.PromoCode", b =>
                 {
+                    b.HasOne("Startup_Project.Domain.Entities.Identity.AppUser", "CreatedBy")
+                        .WithMany()
+                        .HasForeignKey("CreatedById")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.HasOne("Startup_Project.Domain.Entities.Package", "Package")
                         .WithMany()
                         .HasForeignKey("PackageId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.SetNull);
+
+                    b.HasOne("Startup_Project.Domain.Entities.Trainer", "Trainer")
+                        .WithMany()
+                        .HasForeignKey("TrainerId")
+                        .OnDelete(DeleteBehavior.SetNull);
+
+                    b.Navigation("CreatedBy");
 
                     b.Navigation("Package");
+
+                    b.Navigation("Trainer");
                 });
 
             modelBuilder.Entity("Startup_Project.Domain.Entities.PromoCodeUsage", b =>

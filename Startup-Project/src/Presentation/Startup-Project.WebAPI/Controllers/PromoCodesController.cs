@@ -17,4 +17,12 @@ public class PromoCodesController(IPromoCodeService promoCodeService) : Controll
     [HttpPost("apply")]
     public async Task<IActionResult> Apply([FromBody] ApplyPromoCodeDto dto)
         => Ok(await promoCodeService.ApplyAsync(dto));
+
+    [HttpGet("validate-session")]
+    public async Task<IActionResult> ValidateForSession([FromQuery] string code, [FromQuery] Guid scheduledSessionId)
+        => Ok(await promoCodeService.ValidateForSessionAsync(code, scheduledSessionId));
+
+    [HttpPost("apply-session")]
+    public async Task<IActionResult> ApplyForSession([FromBody] ApplySessionPromoCodeDto dto)
+        => Ok(await promoCodeService.ApplyForSessionAsync(dto));
 }
