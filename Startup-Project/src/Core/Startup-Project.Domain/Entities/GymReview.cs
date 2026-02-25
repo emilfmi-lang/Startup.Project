@@ -15,13 +15,23 @@ public class GymReview:BaseEntity
     {
         
     }
-    public GymReview(string comment, int starCount, Guid gymId, Guid userId)
-    {
-        if (starCount < 1 || starCount > 5) throw new ArgumentException("Ulduz 1-5 arası olmalıdır.");
+        public GymReview(string comment, int starCount, Guid gymId, Guid userId)
+        {
+            if (starCount < 1 || starCount > 5) throw new ArgumentException("Ulduz 1-5 arası olmalıdır.");
 
-        Comment = comment;
-        StarCount = starCount;
-        GymId = gymId;
-        UserId = userId;
+            Comment = comment;
+            StarCount = starCount;
+            GymId = gymId;
+            UserId = userId;
+        }
+
+        public void Reactivate(int starCount, string comment)
+        {
+            if (starCount < 1 || starCount > 5) throw new ArgumentException("Ulduz 1-5 arası olmalıdır.");
+
+            StarCount = starCount;
+            Comment = comment;
+            IsDeleted = false;
+            UpdatedAt = DateTime.UtcNow;
+        }
     }
-}

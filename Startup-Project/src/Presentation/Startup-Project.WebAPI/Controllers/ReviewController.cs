@@ -13,11 +13,11 @@ public class ReviewController(IReviewService service) : ControllerBase
     [Authorize]
     public async Task<IActionResult> AddReview([FromBody] ReviewCreateDto dto)
         => Ok(await service.AddReviewAsync(dto));
-
+    
     [HttpGet("gym/{gymId}")]
     [AllowAnonymous]
-    public async Task<IActionResult> GetGymReviews([FromRoute] Guid gymId)
-        => Ok(await service.GetGymReviewsAsync(gymId));
+    public async Task<IActionResult> GetGymReviews([FromRoute] Guid gymId, [FromQuery] int page = 1, [FromQuery] int pageSize = 10)
+        => Ok(await service.GetGymReviewsAsync(gymId, page, pageSize));
 
     [HttpDelete("{reviewId}")]
     [Authorize]

@@ -32,8 +32,8 @@ public class TrainerController(ITrainerService trainerService) : ControllerBase
 
     [HttpGet("{id}/reviews")]
     [AllowAnonymous]
-    public async Task<IActionResult> GetReviews(Guid id)
-        => Ok(await trainerService.GetTrainerReviewsAsync(id));
+    public async Task<IActionResult> GetReviews(Guid id, [FromQuery] int page = 1, [FromQuery] int pageSize = 10)
+        => Ok(await trainerService.GetTrainerReviewsAsync(id, page, pageSize));
 
     [HttpGet("{id}/schedule")]
     [AllowAnonymous]
@@ -44,6 +44,11 @@ public class TrainerController(ITrainerService trainerService) : ControllerBase
     [Authorize]
     public async Task<IActionResult> AddReview(Guid id, [FromBody] TrainerReviewCreateDto dto)
         => Ok(await trainerService.AddReviewAsync(id, dto));
+
+    [HttpDelete("{id}/reviews/{reviewId}")]
+    [Authorize]
+    public async Task<IActionResult> DeleteReview(Guid id, string reviewId)
+        => Ok(await trainerService.DeleteTrainerReviewAsync(id, reviewId));
 
     [HttpPost("apply-online")]
     [Authorize]

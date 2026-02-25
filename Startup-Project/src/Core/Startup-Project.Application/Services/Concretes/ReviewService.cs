@@ -39,17 +39,25 @@ public class ReviewService(
         if (gym == null)
             throw NotFoundException.Gym(dto.GymId);
 
-        var hasAlreadyReviewed = await reviewRepository.AnyAsync(
-            r => r.GymId == dto.GymId && r.UserId == userGuid && !r.IsDeleted
-        );
-        if (hasAlreadyReviewed)
-            throw BusinessException.AlreadyReviewed();
+        var existingReview = await reviewRepository.Table
+            .FirstOrDefaultAsync(r => r.GymId == dto.GymId && r.UserId == userGuid);
 
-        var review = mapper.Map<GymReview>(dto);
-        review.UserId = userGuid;
+        if (existingReview != null)
+        {
+            if (!existingReview.IsDeleted)
+                throw BusinessException.AlreadyReviewed();
 
-        await reviewRepository.AddAsync(review);
-        gym.AddReview(review.StarCount);
+            existingReview.Reactivate(dto.StarCount, dto.Comment);
+            reviewRepository.Update(existingReview);
+            gym.AddReview(dto.StarCount);
+        }
+        else
+        {
+            var review = mapper.Map<GymReview>(dto);
+            review.UserId = userGuid;
+            await reviewRepository.AddAsync(review);
+            gym.AddReview(review.StarCount);
+        }
 
         await reviewRepository.SaveAsync();
         await repository.SaveAsync();
@@ -57,17 +65,49 @@ public class ReviewService(
         return ResponseModel<bool>.SuccessResponse(true);
     }
 
-    public async Task<ResponseModel<List<ReviewGetDto>>> GetGymReviewsAsync(Guid gymId)
+    public async Task<ResponseModel<PaginatedReviewsDto>> GetGymReviewsAsync(Guid gymId, int page = 1, int pageSize = 10)
     {
-        var reviews = await reviewRepository.Table
+        page = Math.Max(1, page);
+        pageSize = Math.Clamp(pageSize, 1, 50);
+
+        var query = reviewRepository.Table
             .Include(r => r.User)
-            .Where(r => r.GymId == gymId && !r.IsDeleted)
+            .Where(r => r.GymId == gymId && !r.IsDeleted);
+
+        var totalCount = await query.CountAsync();
+
+        var averageRating = totalCount > 0
+            ? await query.AverageAsync(r => (double)r.StarCount)
+            : 0;
+
+        var reviews = await query
             .OrderByDescending(r => r.CreatedAt)
+            .Skip((page - 1) * pageSize)
+            .Take(pageSize)
             .AsNoTracking()
             .ToListAsync();
 
-        var dtos = mapper.Map<List<ReviewGetDto>>(reviews);
-        return ResponseModel<List<ReviewGetDto>>.SuccessResponse(dtos);
+        var dtos = reviews.Select(r => new ReviewGetDto
+        {
+            Id = r.Id,
+            Comment = r.Comment,
+            StarCount = r.StarCount,
+            UserFullName = r.User?.FullName ?? "İstifadəçi",
+            UserEmail = r.User?.Email,
+            UserProfileImageUrl = r.User?.ProfileImageUrl,
+            CreatedAt = r.CreatedAt
+        }).ToList();
+
+        var result = new PaginatedReviewsDto
+        {
+            Reviews = dtos,
+            TotalCount = totalCount,
+            AverageRating = Math.Round(averageRating, 1),
+            Page = page,
+            PageSize = pageSize
+        };
+
+        return ResponseModel<PaginatedReviewsDto>.SuccessResponse(result);
     }
 
     public async Task<ResponseModel<bool>> DeleteReviewAsync(string reviewId)

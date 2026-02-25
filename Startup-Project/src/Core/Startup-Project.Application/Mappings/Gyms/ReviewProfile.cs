@@ -12,6 +12,10 @@ public class ReviewProfile : Profile
         CreateMap<GymReview, ReviewGetDto>()
             .ForMember(dest => dest.UserFullName,
                        opt => opt.MapFrom(src => src.User.FullName))
+            .ForMember(dest => dest.UserEmail,
+                       opt => opt.MapFrom(src => src.User.Email))
+            .ForMember(dest => dest.UserProfileImageUrl,
+                       opt => opt.MapFrom(src => src.User.ProfileImageUrl))
             .ForMember(dest => dest.CreatedAt,
                        opt => opt.MapFrom(src => src.CreatedAt));
         CreateMap<ReviewCreateDto, GymReview>();

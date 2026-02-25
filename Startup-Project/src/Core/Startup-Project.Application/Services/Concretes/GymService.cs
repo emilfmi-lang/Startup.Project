@@ -298,6 +298,8 @@ public class GymService(
                     {
                         Id = r.Id,
                         UserFullName = r.User.FullName,
+                        UserEmail = r.User.Email,
+                        UserProfileImageUrl = r.User.ProfileImageUrl,
                         StarCount = r.StarCount,
                         Comment = r.Comment,
                         CreatedAt = r.CreatedAt

@@ -169,6 +169,8 @@ public class TrainerService : ITrainerService
                     Id = r.Id,
                     UserId = r.UserId,
                     UserFullName = r.User.FullName,
+                    UserEmail = r.User.Email,
+                    UserProfileImageUrl = r.User.ProfileImageUrl,
                     StarCount = r.StarCount,
                     Comment = r.Comment,
                     CreatedAt = r.CreatedAt
@@ -213,17 +215,79 @@ public class TrainerService : ITrainerService
         return ResponseModel<List<TrainerListDto>>.SuccessResponse(dtos);
     }
 
-    public async Task<ResponseModel<List<TrainerReviewDto>>> GetTrainerReviewsAsync(Guid trainerId)
+    public async Task<ResponseModel<PaginatedTrainerReviewsDto>> GetTrainerReviewsAsync(Guid trainerId, int page = 1, int pageSize = 10)
     {
-        var reviews = await _reviewRepository.Table
+        page = Math.Max(1, page);
+        pageSize = Math.Clamp(pageSize, 1, 50);
+
+        var query = _reviewRepository.Table
             .Include(r => r.User)
-            .Where(r => r.TrainerId == trainerId && !r.IsDeleted)
+            .Where(r => r.TrainerId == trainerId && !r.IsDeleted);
+
+        var totalCount = await query.CountAsync();
+
+        var averageRating = totalCount > 0
+            ? await query.AverageAsync(r => (double)r.StarCount)
+            : 0;
+
+        var reviews = await query
             .OrderByDescending(r => r.CreatedAt)
+            .Skip((page - 1) * pageSize)
+            .Take(pageSize)
             .AsNoTracking()
             .ToListAsync();
 
-        var dtos = _mapper.Map<List<TrainerReviewDto>>(reviews);
-        return ResponseModel<List<TrainerReviewDto>>.SuccessResponse(dtos);
+        var dtos = reviews.Select(r => new TrainerReviewDto
+        {
+            Id = r.Id,
+            UserId = r.UserId,
+            UserFullName = r.User?.FullName ?? "İstifadəçi",
+            UserEmail = r.User?.Email,
+            UserProfileImageUrl = r.User?.ProfileImageUrl,
+            StarCount = r.StarCount,
+            Comment = r.Comment,
+            CreatedAt = r.CreatedAt
+        }).ToList();
+
+        var result = new PaginatedTrainerReviewsDto
+        {
+            Reviews = dtos,
+            TotalCount = totalCount,
+            AverageRating = Math.Round(averageRating, 1),
+            Page = page,
+            PageSize = pageSize
+        };
+
+        return ResponseModel<PaginatedTrainerReviewsDto>.SuccessResponse(result);
+    }
+
+    public async Task<ResponseModel<bool>> DeleteTrainerReviewAsync(Guid trainerId, string reviewId)
+    {
+        if (!Guid.TryParse(reviewId, out var reviewGuid))
+            throw BusinessException.ValidationFailed("Rəy ID-si yanlışdır.");
+
+        var review = await _reviewRepository.Table
+            .FirstOrDefaultAsync(r => r.Id == reviewGuid && r.TrainerId == trainerId && !r.IsDeleted);
+        if (review == null)
+            throw NotFoundException.Review(reviewGuid);
+
+        var userId = GetCurrentUserId();
+        if (review.UserId != userId)
+            throw BusinessException.UnauthorizedAccess();
+
+        var trainer = await _trainerRepository.GetByIdAsync(trainerId);
+        if (trainer == null)
+            throw NotFoundException.Trainer(trainerId);
+
+        review.IsDeleted = true;
+        _reviewRepository.Update(review);
+
+        trainer.RemoveReview(review.StarCount);
+        _trainerRepository.Update(trainer);
+
+        await _trainerRepository.SaveAsync();
+
+        return ResponseModel<bool>.SuccessResponse(true);
     }
 
     public async Task<ResponseModel<List<TrainerScheduleDto>>> GetTrainerScheduleAsync(Guid trainerId)
@@ -246,16 +310,25 @@ public class TrainerService : ITrainerService
         if (trainer == null || trainer.IsDeleted)
             throw NotFoundException.Trainer(trainerId);
 
-        var existingReview = await _reviewRepository.Table
-            .FirstOrDefaultAsync(r => r.TrainerId == trainerId && r.UserId == userId);
-        if (existingReview != null)
-            throw BusinessException.AlreadyReviewed();
-
         if (dto.StarCount < 1 || dto.StarCount > 5)
             throw BusinessException.ValidationFailed("Ulduz 1-5 arası olmalıdır.");
 
-        var review = new TrainerReview(trainerId, userId, dto.StarCount, dto.Comment);
-        await _reviewRepository.AddAsync(review);
+        var existingReview = await _reviewRepository.Table
+            .FirstOrDefaultAsync(r => r.TrainerId == trainerId && r.UserId == userId);
+
+        if (existingReview != null)
+        {
+            if (!existingReview.IsDeleted)
+                throw BusinessException.AlreadyReviewed();
+
+            existingReview.Reactivate(dto.StarCount, dto.Comment);
+            _reviewRepository.Update(existingReview);
+        }
+        else
+        {
+            var review = new TrainerReview(trainerId, userId, dto.StarCount, dto.Comment);
+            await _reviewRepository.AddAsync(review);
+        }
 
         trainer.AddReview(dto.StarCount);
         _trainerRepository.Update(trainer);

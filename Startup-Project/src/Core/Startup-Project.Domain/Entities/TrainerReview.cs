@@ -27,13 +27,24 @@ public class TrainerReview:BaseEntity
         CreatedAt = DateTime.UtcNow;
     }
 
-    public void Update(int starCount, string? comment)
-    {
-        if (starCount < 1 || starCount > 5)
-            throw new ArgumentException("Ulduz 1-5 arasi olmalidir.");
+        public void Update(int starCount, string? comment)
+        {
+            if (starCount < 1 || starCount > 5)
+                throw new ArgumentException("Ulduz 1-5 arasi olmalidir.");
 
-        StarCount = starCount;
-        Comment = comment;
-        UpdatedAt = DateTime.UtcNow;
+            StarCount = starCount;
+            Comment = comment;
+            UpdatedAt = DateTime.UtcNow;
+        }
+
+        public void Reactivate(int starCount, string? comment)
+        {
+            if (starCount < 1 || starCount > 5)
+                throw new ArgumentException("Ulduz 1-5 arasi olmalidir.");
+
+            StarCount = starCount;
+            Comment = comment;
+            IsDeleted = false;
+            UpdatedAt = DateTime.UtcNow;
+        }
     }
-}

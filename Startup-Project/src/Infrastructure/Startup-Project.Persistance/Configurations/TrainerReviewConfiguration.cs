@@ -26,7 +26,9 @@ public class TrainerReviewConfiguration : IEntityTypeConfiguration<TrainerReview
             .HasForeignKey(r => r.UserId)
             .OnDelete(DeleteBehavior.NoAction);
 
-        builder.HasIndex(r => new { r.TrainerId, r.UserId }).IsUnique();
+        builder.HasIndex(r => new { r.TrainerId, r.UserId })
+            .IsUnique()
+            .HasFilter("IsDeleted = 0");
         builder.HasIndex(r => r.TrainerId);
     }
 }

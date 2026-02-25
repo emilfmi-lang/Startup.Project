@@ -29,6 +29,8 @@ public class GymReviewConfiguration : IEntityTypeConfiguration<GymReview>
 
         builder.HasIndex(r => r.GymId);
         builder.HasIndex(r => r.UserId);
-        builder.HasIndex(r => new { r.GymId, r.UserId }).IsUnique();
+        builder.HasIndex(r => new { r.GymId, r.UserId })
+            .IsUnique()
+            .HasFilter("IsDeleted = 0");
     }
 }

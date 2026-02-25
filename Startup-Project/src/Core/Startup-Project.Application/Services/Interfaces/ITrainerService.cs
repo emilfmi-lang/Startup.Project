@@ -11,9 +11,10 @@ public interface ITrainerService
     Task<ResponseModel<List<TrainerListDto>>> GetAllTrainersAsync();
     Task<ResponseModel<TrainerDetailDto>> GetTrainerDetailAsync(Guid trainerId);
     Task<ResponseModel<List<TrainerListDto>>> GetTrainersByGymAsync(Guid gymId);
-    Task<ResponseModel<List<TrainerReviewDto>>> GetTrainerReviewsAsync(Guid trainerId);
+    Task<ResponseModel<PaginatedTrainerReviewsDto>> GetTrainerReviewsAsync(Guid trainerId, int page = 1, int pageSize = 10);
     Task<ResponseModel<List<TrainerScheduleDto>>> GetTrainerScheduleAsync(Guid trainerId);
     Task<ResponseModel<bool>> AddReviewAsync(Guid trainerId, TrainerReviewCreateDto dto);
+    Task<ResponseModel<bool>> DeleteTrainerReviewAsync(Guid trainerId, string reviewId);
 
     // Online Trainer endpoints
     Task<ResponseModel<List<TrainerListDto>>> GetOnlineTrainersAsync();

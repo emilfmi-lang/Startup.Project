@@ -29,7 +29,9 @@ public class TrainerProfile : Profile
 
         // TrainerReview -> TrainerReviewDto
         CreateMap<TrainerReview, TrainerReviewDto>()
-            .ForMember(dest => dest.UserFullName, opt => opt.MapFrom(src => src.User.FullName));
+            .ForMember(dest => dest.UserFullName, opt => opt.MapFrom(src => src.User.FullName))
+            .ForMember(dest => dest.UserEmail, opt => opt.MapFrom(src => src.User.Email))
+            .ForMember(dest => dest.UserProfileImageUrl, opt => opt.MapFrom(src => src.User.ProfileImageUrl));
 
         // TrainerSchedule -> TrainerScheduleDto
         CreateMap<TrainerSchedule, TrainerScheduleDto>()
