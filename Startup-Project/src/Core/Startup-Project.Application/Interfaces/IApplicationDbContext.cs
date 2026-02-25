@@ -35,5 +35,8 @@ public interface IApplicationDbContext
     DbSet<TrainerStudent> TrainerStudents { get; set; }
     DbSet<UserSession> UserSessions { get; set; }
     DbSet<SessionPayment> SessionPayments { get; set; }
+    DbSet<Conversation> Conversations { get; set; }
+    DbSet<ConversationParticipant> ConversationParticipants { get; set; }
+    DbSet<ChatMessage> ChatMessages { get; set; }
     Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
 }

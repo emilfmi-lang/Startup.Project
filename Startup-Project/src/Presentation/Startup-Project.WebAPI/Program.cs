@@ -6,6 +6,7 @@ using Serilog;
 using Startup_Project.Application;
 using Startup_Project.Infrastructure;
 using Startup_Project.Persistance;
+using Startup_Project.WebAPI.Hubs;
 using Startup_Project.WebAPI.Middlewares;
 using System.Text;
 
@@ -31,6 +32,8 @@ try
     builder.Services.AddPersistanceServices(builder.Configuration);
     builder.Services.AddInfrastructureServices(builder.Configuration);
 
+    builder.Services.AddSignalR();
+
     builder.Services.AddAuthentication(options =>
     {
         options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -47,10 +50,26 @@ try
             ClockSkew = TimeSpan.Zero,
             ValidIssuer = builder.Configuration["JwtSettings:Issuer"],
             ValidAudience = builder.Configuration["JwtSettings:Audience"],
-            IssuerSigningKey = new SymmetricSecurityKey(
-                Encoding.UTF8.GetBytes(builder.Configuration["JwtSettings:SecretKey"]!))
-        };
-    });
+                    IssuerSigningKey = new SymmetricSecurityKey(
+                        Encoding.UTF8.GetBytes(builder.Configuration["JwtSettings:SecretKey"]!))
+                };
+
+                options.Events = new JwtBearerEvents
+                {
+                    OnMessageReceived = context =>
+                    {
+                        var accessToken = context.Request.Query["access_token"];
+                        var path = context.HttpContext.Request.Path;
+
+                        if (!string.IsNullOrEmpty(accessToken) && path.StartsWithSegments("/hubs/chat"))
+                        {
+                            context.Token = accessToken;
+                        }
+
+                        return Task.CompletedTask;
+                    }
+                };
+            });
 
     builder.Services.AddAuthorization();
 
@@ -62,7 +81,7 @@ try
     {
         opt.AddPolicy("CorsPolicy", policy =>
         {
-            policy.WithOrigins("http://localhost:5173", "http://localhost:8080")
+            policy.WithOrigins("http://localhost:5173", "http://localhost:8080", "http://localhost:3000")
                   .AllowAnyMethod()
                   .AllowAnyHeader()
                   .AllowCredentials();
@@ -95,6 +114,7 @@ try
     app.UseAuthentication();
     app.UseAuthorization();
     app.MapControllers();
+    app.MapHub<ChatHub>("/hubs/chat");
 
     app.Run();
 }

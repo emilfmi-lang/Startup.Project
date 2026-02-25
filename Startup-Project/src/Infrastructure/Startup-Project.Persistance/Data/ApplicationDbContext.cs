@@ -40,6 +40,9 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
     public DbSet<ScheduledSession> ScheduledSessions { get; set; }
     public DbSet<TrainerStudent> TrainerStudents { get; set; }
     public DbSet<SessionPayment> SessionPayments { get; set; }
+    public DbSet<Conversation> Conversations { get; set; }
+    public DbSet<ConversationParticipant> ConversationParticipants { get; set; }
+    public DbSet<ChatMessage> ChatMessages { get; set; }
 
     public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
     {

@@ -141,10 +141,16 @@ public enum BusinessErrorCodes
                 StudentAlreadyAssigned = 17000,
                 StudentNotFound = 17001,
 
-                // SESSION PAYMENT ERRORS (18000-18999)
-                SessionPaymentNotFound = 18000,
-                SessionPaymentAlreadyPaid = 18001,
-                SessionPaymentFailed = 18002,
+                                // SESSION PAYMENT ERRORS (18000-18999)
+                                SessionPaymentNotFound = 18000,
+                                SessionPaymentAlreadyPaid = 18001,
+                                SessionPaymentFailed = 18002,
 
-
-            }
+                    // CHAT ERRORS (19000-19999)
+                    ChatConversationNotFound = 19000,
+                    ChatMessageNotFound = 19001,
+                    ChatCannotMessageSelf = 19002,
+                    ChatUserNotFound = 19003,
+                    ChatNotParticipant = 19004,
+                    ChatMessageTooLong = 19005,
+                }

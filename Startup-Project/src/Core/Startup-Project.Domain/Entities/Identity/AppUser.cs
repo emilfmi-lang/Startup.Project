@@ -38,6 +38,8 @@ public class AppUser : IdentityUser<Guid>
     public string TimeZone { get; set; } = "Asia/Baku";
     public List<UserSession> Sessions { get; private set; } = [];
     public List<UserPaymentMethod> PaymentMethods { get; private set; } = [];
+    public List<ConversationParticipant> ChatParticipations { get; private set; } = [];
+    public List<ChatMessage> SentMessages { get; private set; } = [];
 
     public AppUser() { }
 

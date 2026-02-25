@@ -1,11 +1,12 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Startup_Project.Application.Abstractions.Chat;
 using Startup_Project.Application.Abstractions.Services;
 using Startup_Project.Application.Interfaces;
 using Startup_Project.Application.Services.Interfaces;
 using Startup_Project.Application.Services.Interfaces.Account;
 using Startup_Project.Infrastructure.Concretes.Services;
-using Startup_Project.Infrastructure.Security;
+using Startup_Project.Infrastructure.Concretes.Services.Chat;
 using Startup_Project.Infrastructure.Security;
 
 namespace Startup_Project.Infrastructure;
@@ -26,6 +27,9 @@ public static class InfrastructureServiceRegistration
         services.AddScoped<ISmsService, ConsoleSmsService>();
 
         services.AddScoped<IGoogleAuthService, GoogleAuthService>();
+
+        // Chat — Presence Tracker (Singleton)
+        services.AddSingleton<IPresenceTracker, InMemoryPresenceTracker>();
 
         return services;
     }

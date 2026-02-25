@@ -74,6 +74,9 @@ public static class DependencyInjection
         services.AddScoped<ICampaignService, CampaignService>();
         services.AddScoped<ICampaignAdminService, CampaignAdminService>();
 
+        // Chat
+        services.AddScoped<IChatService, ChatService>();
+
         return services;
     }
 }
