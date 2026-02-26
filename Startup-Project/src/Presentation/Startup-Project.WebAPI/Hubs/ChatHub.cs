@@ -57,7 +57,6 @@ public class ChatHub : Hub
             var connections = await _presenceTracker.GetConnectionsForUser(userId);
             foreach (var connId in connections)
             {
-                // Qar?? t?r?f üçün IsMine = false olmal?d?r
                 if (userId != currentUserId)
                 {
                     var otherDto = new ChatMessageDto
