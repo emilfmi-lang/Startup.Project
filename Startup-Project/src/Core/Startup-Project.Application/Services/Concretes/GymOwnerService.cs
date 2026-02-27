@@ -91,6 +91,18 @@ public class GymOwnerService : IGymOwnerService
         if (!string.IsNullOrWhiteSpace(dto.Address))
             gym.SetAddress(dto.Address);
 
+        if (dto.Description is not null)
+            gym.SetDescription(dto.Description);
+
+        if (dto.Phone is not null || dto.Email is not null || dto.Website is not null)
+            gym.SetContact(
+                dto.Phone ?? gym.Phone,
+                dto.Email ?? gym.Email,
+                dto.Website ?? gym.Website);
+
+        if (dto.Latitude.HasValue || dto.Longitude.HasValue)
+            gym.SetLocation(dto.Latitude, dto.Longitude);
+
         _gymRepository.Update(gym);
         await _gymRepository.SaveAsync();
 

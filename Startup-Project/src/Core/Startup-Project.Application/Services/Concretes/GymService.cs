@@ -47,6 +47,9 @@ public class GymService(
             throw BusinessException.UnauthorizedAccess();
 
         var gym = new Gym(dto.Name, dto.Address, userId.Value);
+        gym.SetDescription(dto.Description);
+        gym.SetContact(dto.Phone, dto.Email, dto.Website);
+        gym.SetLocation(dto.Latitude, dto.Longitude);
 
         await repository.AddAsync(gym);
         await repository.SaveAsync();
@@ -63,17 +66,29 @@ public class GymService(
         if (gym == null || gym.IsDeleted)
             throw NotFoundException.Gym(gymGuid);
 
-        if (!string.IsNullOrWhiteSpace(dto.Name))
-            gym.SetName(dto.Name);
+            if (!string.IsNullOrWhiteSpace(dto.Name))
+                gym.SetName(dto.Name);
 
-        if (!string.IsNullOrWhiteSpace(dto.Address))
-            gym.SetAddress(dto.Address);
+            if (!string.IsNullOrWhiteSpace(dto.Address))
+                gym.SetAddress(dto.Address);
 
-        repository.Update(gym);
-        await repository.SaveAsync();
+            if (dto.Description is not null)
+                gym.SetDescription(dto.Description);
 
-        return ResponseModel<bool>.SuccessResponse(true);
-    }
+            if (dto.Phone is not null || dto.Email is not null || dto.Website is not null)
+                gym.SetContact(
+                    dto.Phone ?? gym.Phone,
+                    dto.Email ?? gym.Email,
+                    dto.Website ?? gym.Website);
+
+            if (dto.Latitude.HasValue || dto.Longitude.HasValue)
+                gym.SetLocation(dto.Latitude, dto.Longitude);
+
+            repository.Update(gym);
+            await repository.SaveAsync();
+
+            return ResponseModel<bool>.SuccessResponse(true);
+        }
 
     public async Task<ResponseModel<List<GymGetDto>>> GetAllAsync()
     {

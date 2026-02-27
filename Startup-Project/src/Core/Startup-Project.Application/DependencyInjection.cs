@@ -53,6 +53,7 @@ public static class DependencyInjection
 
         // User Dashboard
         services.AddScoped<IUserSubscriptionService, UserSubscriptionService>();
+        services.AddScoped<IUserSessionService, UserSessionService>();
 
         // Admin
         services.AddScoped<IAdminService, AdminService>();
