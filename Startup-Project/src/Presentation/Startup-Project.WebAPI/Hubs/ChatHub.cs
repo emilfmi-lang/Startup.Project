@@ -139,7 +139,7 @@ public class ChatHub : Hub
     {
         var userIdClaim = Context.User?.FindFirstValue(ClaimTypes.NameIdentifier);
         if (string.IsNullOrEmpty(userIdClaim) || !Guid.TryParse(userIdClaim, out var userId))
-            throw new HubException("?stifad?çi t?yin edil? bilm?di.");
+            throw new HubException("Istifadiçi teyin edile bilmedi.");
         return userId;
     }
 
