@@ -66,12 +66,18 @@ public class GoogleAuthService : IGoogleAuthService
             var user = await _userManager.Users
                 .FirstOrDefaultAsync(u => u.GoogleId == googleTokenValidation.GoogleId);
 
+            if (user is not null && user.IsDeleted)
+                throw BusinessException.AccountDeleted();
+
             if (user is null)
             {
                 // Email ile axtar
                 user = await _userManager.FindByEmailAsync(googleTokenValidation.Email);
                 if (user is not null)
                 {
+                    if (user.IsDeleted)
+                        throw BusinessException.AccountDeleted();
+
                     user.GoogleId = googleTokenValidation.GoogleId;
                     if (user.AuthProvider == AuthProvider.Local)
                         user.AuthProvider = AuthProvider.Google;

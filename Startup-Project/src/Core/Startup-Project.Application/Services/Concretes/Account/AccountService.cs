@@ -44,6 +44,8 @@ public class AccountService(
         var user = await userManager.FindByEmailAsync(dto.Email);
         if (user == null)
             throw NotFoundException.UserByEmail(dto.Email);
+        if (user.IsDeleted)
+            throw BusinessException.AccountDeleted();
         if (user.VerificationCode != dto.Code)
             throw BusinessException.InvalidVerificationCode();
         if (user.CodeExpireDate < DateTime.UtcNow)
@@ -89,6 +91,9 @@ public class AccountService(
         var user = await userManager.FindByEmailAsync(dto.Email);
         if (user == null)
             throw NotFoundException.UserByEmail(dto.Email);
+
+        if (user.IsDeleted)
+            throw BusinessException.AccountDeleted();
 
         if (user.AuthProvider == AuthProvider.Google)
             throw BusinessException.GoogleAuthRequired();

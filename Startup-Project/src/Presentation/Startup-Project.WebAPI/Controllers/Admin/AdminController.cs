@@ -94,9 +94,33 @@ public class AdminController : ControllerBase
         return Ok(result);
     }
 
-    // ------------------------------------------------------------?????
-    // ONLINE TRAINER MANAGEMENT
-    // ------------------------------------------------------------?????
+    // ???????????????????????? DELETED USERS ????????????????????????
+
+    /// <summary>
+    /// Silinmi? istifad?çil?r siyah?s? (soft delete)
+    /// </summary>
+    [HttpGet("users/deleted")]
+    public async Task<IActionResult> GetDeletedUsers()
+    {
+        var result = await _adminService.GetDeletedUsersAsync();
+        if (!result.Success)
+            return BadRequest(result);
+        return Ok(result);
+    }
+
+    /// <summary>
+    /// Silinmi? istifad?çini b?rpa et
+    /// </summary>
+    [HttpPost("users/{userId}/restore")]
+    public async Task<IActionResult> RestoreUser(Guid userId)
+    {
+        var result = await _adminService.RestoreUserAsync(userId);
+        if (!result.Success)
+            return BadRequest(result);
+        return Ok(result);
+    }
+
+    // ???????????????????????? ONLINE TRAINER MANAGEMENT ????????????????????????
 
     [HttpGet("trainers/pending-online")]
     public async Task<IActionResult> GetPendingOnlineTrainers()

@@ -369,6 +369,7 @@ public class SettingsService(
     {
         var user = await GetCurrentUserAsync();
 
+        // Bütün sessiyaları ləğv et
         var sessions = await sessionRepository.Table
             .Where(s => s.UserId == user.Id)
             .ToListAsync();
@@ -376,6 +377,7 @@ public class SettingsService(
         foreach (var session in sessions)
             session.Revoke();
 
+        // Ödəniş metodlarını sil
         var paymentMethods = await paymentMethodRepository.Table
             .Where(pm => pm.UserId == user.Id)
             .ToListAsync();
@@ -385,6 +387,10 @@ public class SettingsService(
 
         await unitOfWork.SaveChangesAsync();
 
+        // Soft delete — hesab silinmiş kimi qeyd olunur, DB-dən fiziki silinmir
+        user.IsDeleted = true;
+        user.DeletedAt = DateTime.UtcNow;
+        user.DeletionReason = "User tərəfindən silinib";
         user.LockoutEnabled = true;
         user.LockoutEnd = DateTimeOffset.MaxValue;
 

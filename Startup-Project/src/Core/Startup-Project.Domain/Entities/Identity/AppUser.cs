@@ -41,6 +41,11 @@ public class AppUser : IdentityUser<Guid>
     public List<ConversationParticipant> ChatParticipations { get; private set; } = [];
     public List<ChatMessage> SentMessages { get; private set; } = [];
 
+    // Soft Delete
+    public bool IsDeleted { get; set; }
+    public DateTime? DeletedAt { get; set; }
+    public string? DeletionReason { get; set; }
+
     public AppUser() { }
 
     public AppUser(string fullName)

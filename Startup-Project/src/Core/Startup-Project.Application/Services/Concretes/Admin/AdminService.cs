@@ -81,7 +81,7 @@ public class AdminService : IAdminService
 
     public async Task<ResponseModel<List<UserListDto>>> GetAllUsersAsync()
     {
-        var users = await _userManager.Users.ToListAsync();
+        var users = await _userManager.Users.Where(u => !u.IsDeleted).ToListAsync();
         var userDtos = new List<UserListDto>();
 
         foreach (var user in users)
@@ -99,6 +99,54 @@ public class AdminService : IAdminService
         }
 
         return ResponseModel<List<UserListDto>>.SuccessResponse(userDtos);
+    }
+
+    public async Task<ResponseModel<List<DeletedUserDto>>> GetDeletedUsersAsync()
+    {
+        var users = await _userManager.Users
+            .Where(u => u.IsDeleted)
+            .OrderByDescending(u => u.DeletedAt)
+            .ToListAsync();
+
+        var dtos = new List<DeletedUserDto>();
+
+        foreach (var user in users)
+        {
+            var roles = await _userManager.GetRolesAsync(user);
+            dtos.Add(new DeletedUserDto
+            {
+                Id = user.Id,
+                FullName = user.FullName,
+                Email = user.Email!,
+                Roles = roles.ToList(),
+                DeletedAt = user.DeletedAt,
+                DeletionReason = user.DeletionReason,
+                CreatedAt = user.CreatedAt
+            });
+        }
+
+        return ResponseModel<List<DeletedUserDto>>.SuccessResponse(dtos);
+    }
+
+    public async Task<ResponseModel<bool>> RestoreUserAsync(Guid userId)
+    {
+        var user = await _userManager.FindByIdAsync(userId.ToString());
+        if (user == null)
+            return ResponseModel<bool>.FailureResponse("?stifad?çi tap?lmad?.");
+
+        if (!user.IsDeleted)
+            return ResponseModel<bool>.FailureResponse("Bu hesab silinm?yib.");
+
+        user.IsDeleted = false;
+        user.DeletedAt = null;
+        user.DeletionReason = null;
+        user.LockoutEnd = null;
+
+        var result = await _userManager.UpdateAsync(user);
+        if (!result.Succeeded)
+            return ResponseModel<bool>.FailureResponse("Hesab b?rpa edil? bilm?di.");
+
+        return ResponseModel<bool>.SuccessResponse(true);
     }
 
     public async Task<ResponseModel<bool>> AssignRoleAsync(AssignRoleDto dto)

@@ -98,6 +98,10 @@ public class BusinessException : BaseException
         => new(BusinessErrorCodes.AccountLocked,
                "Hesab?n?z kilidl?nib. Z?hm?t olmasa d?st?k il? ?laq? saxlay?n.");
 
+    public static BusinessException AccountDeleted()
+        => new(BusinessErrorCodes.AccountDeleted,
+               "Bu hesab silinib. Dəstək ilə əlaqə saxlayın.");
+
     public static BusinessException VerificationCodeExpired()
         => new(BusinessErrorCodes.VerificationCodeExpired,
                "Do?rulama kodunun müdd?ti bitib. Yeni kod t?l?b edin.");

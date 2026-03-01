@@ -17,6 +17,7 @@ public enum BusinessErrorCodes
     AccountLocked = 2005,
     InvalidVerificationCode = 2006,
     VerificationCodeExpired = 2007,
+    AccountDeleted = 2008,
 
     // AUTH PROVIDER ERRORS (2100-2199)
     GoogleTokenInvalid = 2100,

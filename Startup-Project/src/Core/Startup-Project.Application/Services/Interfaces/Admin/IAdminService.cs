@@ -8,6 +8,8 @@ public interface IAdminService
 {
     Task<ResponseModel<DashboardStatsDto>> GetDashboardStatsAsync();
     Task<ResponseModel<List<UserListDto>>> GetAllUsersAsync();
+    Task<ResponseModel<List<DeletedUserDto>>> GetDeletedUsersAsync();
+    Task<ResponseModel<bool>> RestoreUserAsync(Guid userId);
     Task<ResponseModel<bool>> AssignRoleAsync(AssignRoleDto dto);
     Task<ResponseModel<bool>> RemoveRoleAsync(Guid userId, string roleName);
     Task<ResponseModel<bool>> BlockUserAsync(Guid userId);

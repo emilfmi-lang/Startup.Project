@@ -920,6 +920,12 @@ namespace Startup_Project.Persistance.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DeletionReason")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("DistanceUnit")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -942,6 +948,9 @@ namespace Startup_Project.Persistance.Migrations
 
                     b.Property<Guid?>("GymId")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Language")
                         .IsRequired()
