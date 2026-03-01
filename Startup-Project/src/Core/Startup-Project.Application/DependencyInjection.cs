@@ -1,5 +1,6 @@
 ﻿using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
+using Startup_Project.Application.Abstractions.Notification;
 using Startup_Project.Application.Services.Concretes;
 using Startup_Project.Application.Services.Concretes.Account;
 using Startup_Project.Application.Services.Concretes.Account.Settings;
@@ -43,6 +44,7 @@ public static class DependencyInjection
         services.AddScoped<ITrainerSessionService, TrainerSessionService>();
         services.AddScoped<ITrainerStudentService, TrainerStudentService>();
         services.AddScoped<ITrainerScheduleService, TrainerScheduleService>();
+        services.AddScoped<ITrainerDashboardService, TrainerDashboardService>();
 
         // History
         services.AddScoped<IHistoryService, HistoryService>();
@@ -75,6 +77,9 @@ public static class DependencyInjection
 
         services.AddScoped<ICampaignService, CampaignService>();
         services.AddScoped<ICampaignAdminService, CampaignAdminService>();
+
+        // Notification
+        services.AddScoped<INotificationService, NotificationService>();
 
         // Chat
         services.AddScoped<IChatService, ChatService>();

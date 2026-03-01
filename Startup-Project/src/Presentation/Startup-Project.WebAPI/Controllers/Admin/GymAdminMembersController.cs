@@ -8,8 +8,10 @@ namespace Startup_Project.WebAPI.Controllers.Admin;
 
 [Route("api/admin/members")]
 [ApiController]
-[Authorize(Roles = "GymOwner")]  // ? GymOwner role-? üçün
-public class GymAdminMembersController(IGymAdminMembersService service) : ControllerBase
+[Authorize(Roles = "GymOwner,Admin")]
+public class GymAdminMembersController(
+    IGymAdminMembersService service,
+    IAdminService adminService) : ControllerBase
 {
     /// <summary>
     /// GymOwner-? m?xsus gyms-l?rin siyah?s?n? getir
@@ -102,6 +104,20 @@ public class GymAdminMembersController(IGymAdminMembersService service) : Contro
     {
         var ownerId = GetAdminId();
         var result = await service.GetTrainerDetailAsync(ownerId, trainerId);
+        return Ok(result);
+    }
+
+    // ???????????????????????? SEND MESSAGE ????????????????????????
+
+    /// <summary>
+    /// Admin/GymOwner t?r?find?n istifad?çiy? mesaj gönd?r (notification)
+    /// </summary>
+    [HttpPost("{memberId:guid}/send-message")]
+    public async Task<IActionResult> SendMessageToUser(Guid memberId, [FromBody] AdminSendMessageDto dto)
+    {
+        var result = await adminService.SendMessageToUserAsync(memberId, dto);
+        if (!result.Success)
+            return BadRequest(result);
         return Ok(result);
     }
 

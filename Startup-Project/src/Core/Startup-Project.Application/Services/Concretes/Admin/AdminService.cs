@@ -1,6 +1,7 @@
 using AutoMapper;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Startup_Project.Application.Abstractions.Notification;
 using Startup_Project.Application.Dtos.Admin;
 using Startup_Project.Application.Dtos.GymDtos;
 using Startup_Project.Application.Models;
@@ -9,6 +10,7 @@ using Startup_Project.Domain.Abstractions.Repositories;
 using Startup_Project.Domain.Entities;
 using Startup_Project.Domain.Entities.Identity;
 using Startup_Project.Domain.Enums;
+using Startup_Project.Domain.Enums.Notifications;
 
 namespace Startup_Project.Application.Services.Concretes.Admin;
 
@@ -21,6 +23,7 @@ public class AdminService : IAdminService
     private readonly IGenericRepository<Payment> _paymentRepository;
     private readonly IGenericRepository<CheckInLog> _checkInLogRepository;
     private readonly IMapper _mapper;
+    private readonly INotificationService _notificationService;
 
     public AdminService(
         UserManager<AppUser> userManager,
@@ -29,7 +32,8 @@ public class AdminService : IAdminService
         IGenericRepository<Subscription> subscriptionRepository,
         IGenericRepository<Payment> paymentRepository,
         IGenericRepository<CheckInLog> checkInLogRepository,
-        IMapper mapper)
+        IMapper mapper,
+        INotificationService notificationService)
     {
         _userManager = userManager;
         _roleManager = roleManager;
@@ -38,6 +42,7 @@ public class AdminService : IAdminService
         _paymentRepository = paymentRepository;
         _checkInLogRepository = checkInLogRepository;
         _mapper = mapper;
+        _notificationService = notificationService;
     }
 
     public async Task<ResponseModel<DashboardStatsDto>> GetDashboardStatsAsync()
@@ -243,7 +248,23 @@ public class AdminService : IAdminService
             .Where(g => !g.IsDeleted)
             .ToListAsync();
 
-        var dtos = _mapper.Map<List<GymGetDto>>(gyms);
-        return ResponseModel<List<GymGetDto>>.SuccessResponse(dtos);
-    }
-}
+                var dtos = _mapper.Map<List<GymGetDto>>(gyms);
+                return ResponseModel<List<GymGetDto>>.SuccessResponse(dtos);
+            }
+
+            public async Task<ResponseModel<bool>> SendMessageToUserAsync(Guid userId, AdminSendMessageDto dto)
+            {
+                var user = await _userManager.FindByIdAsync(userId.ToString());
+                if (user == null)
+                    return ResponseModel<bool>.FailureResponse("?stifad?çi tap?lmad?.");
+
+                await _notificationService.SendAsync(
+                    userId,
+                    NotificationType.AdminMessage,
+                    dto.Title,
+                    dto.Body,
+                    NotificationChannel.InApp);
+
+                return ResponseModel<bool>.SuccessResponse(true);
+            }
+        }

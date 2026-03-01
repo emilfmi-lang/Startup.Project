@@ -16,4 +16,5 @@ public interface IAdminService
     Task<ResponseModel<bool>> UnblockUserAsync(Guid userId);
     Task<ResponseModel<bool>> AssignGymOwnerAsync(AssignGymOwnerDto dto);
     Task<ResponseModel<List<GymGetDto>>> GetAllGymsAsync();
+    Task<ResponseModel<bool>> SendMessageToUserAsync(Guid userId, AdminSendMessageDto dto);
 }

@@ -25,5 +25,6 @@ public enum NotificationType
 
     // System
     SystemAnnouncement = 900,
-    WelcomeMessage = 901
+    WelcomeMessage = 901,
+    AdminMessage = 902
 }

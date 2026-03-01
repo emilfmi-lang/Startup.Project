@@ -21,7 +21,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Dtos\AI\" />
     <Folder Include="Services\Interfaces\Notifications\" />
+    <Folder Include="Validators\AI\" />
   </ItemGroup>
 
 </Project>
