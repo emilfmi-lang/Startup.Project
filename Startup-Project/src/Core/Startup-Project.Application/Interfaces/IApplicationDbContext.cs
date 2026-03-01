@@ -35,8 +35,10 @@ public interface IApplicationDbContext
     DbSet<TrainerStudent> TrainerStudents { get; set; }
     DbSet<UserSession> UserSessions { get; set; }
     DbSet<SessionPayment> SessionPayments { get; set; }
-    DbSet<Conversation> Conversations { get; set; }
-    DbSet<ConversationParticipant> ConversationParticipants { get; set; }
-            DbSet<ChatMessage> ChatMessages { get; set; }
-            Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
-        }
+        DbSet<Conversation> Conversations { get; set; }
+        DbSet<ConversationParticipant> ConversationParticipants { get; set; }
+        DbSet<ChatMessage> ChatMessages { get; set; }
+        DbSet<AiConversation> AiConversations { get; set; }
+        DbSet<AiMessage> AiMessages { get; set; }
+        Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
+    }

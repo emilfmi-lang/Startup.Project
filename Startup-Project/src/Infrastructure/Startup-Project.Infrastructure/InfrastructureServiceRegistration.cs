@@ -1,11 +1,13 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Startup_Project.Application.Abstractions.AI;
 using Startup_Project.Application.Abstractions.Chat;
 using Startup_Project.Application.Abstractions.Services;
 using Startup_Project.Application.Interfaces;
 using Startup_Project.Application.Services.Interfaces;
 using Startup_Project.Application.Services.Interfaces.Account;
 using Startup_Project.Infrastructure.Concretes.Services;
+using Startup_Project.Infrastructure.Concretes.Services.AI;
 using Startup_Project.Infrastructure.Concretes.Services.Chat;
 using Startup_Project.Infrastructure.Security;
 
@@ -30,6 +32,10 @@ public static class InfrastructureServiceRegistration
 
         // Chat — Presence Tracker (Singleton)
         services.AddSingleton<IPresenceTracker, InMemoryPresenceTracker>();
+
+        // AI — Gemini Provider
+        services.Configure<GeminiSettings>(configuration.GetSection(GeminiSettings.SectionName));
+        services.AddScoped<IAiProvider, GeminiProvider>();
 
         return services;
     }
