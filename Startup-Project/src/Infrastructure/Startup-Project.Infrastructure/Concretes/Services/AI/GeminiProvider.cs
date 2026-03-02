@@ -50,7 +50,6 @@ public class GeminiProvider(
                 }
             };
 
-            // Timeout: max 30 saniy? gözl?, sonra x?ta qaytar
             using var timeoutCts = new CancellationTokenSource(TimeSpan.FromSeconds(30));
             using var linkedCts = CancellationTokenSource.CreateLinkedTokenSource(ct, timeoutCts.Token);
 
@@ -69,7 +68,7 @@ public class GeminiProvider(
                 };
             }
 
-            var content = response?.Text;
+            var content = ExtractResponseText(response);
             var tokensUsed = response?.UsageMetadata?.TotalTokenCount ?? 0;
 
             if (string.IsNullOrWhiteSpace(content))
@@ -122,7 +121,6 @@ public class GeminiProvider(
         {
             logger.LogError(ex, "Gemini API unexpected error: {Type} {Message}", ex.GetType().Name, ex.Message);
 
-            // Mscc.GenerativeAI 429/quota x?talar?n? öz exception tipi il? ata bil?r
             if (ex.Message.Contains("429") || ex.Message.Contains("quota", StringComparison.OrdinalIgnoreCase)
                 || ex.Message.Contains("RESOURCE_EXHAUSTED", StringComparison.OrdinalIgnoreCase))
             {
@@ -141,26 +139,43 @@ public class GeminiProvider(
         }
     }
 
-    private static string BuildFullPrompt(string? systemPrompt, List<AiChatMessage> chatMessages)
-    {
-        var parts = new List<string>();
-
-        if (!string.IsNullOrWhiteSpace(systemPrompt))
+        private static string BuildFullPrompt(string? systemPrompt, List<AiChatMessage> chatMessages)
         {
-            parts.Add($"[System Instructions]\n{systemPrompt}\n");
+            var parts = new List<string>();
+
+            if (!string.IsNullOrWhiteSpace(systemPrompt))
+            {
+                parts.Add($"[System Instructions]\n{systemPrompt}\n");
+            }
+
+            foreach (var msg in chatMessages.Take(chatMessages.Count - 1))
+            {
+                var label = msg.Role == "assistant" ? "Assistant" : "User";
+                parts.Add($"[{label}]\n{msg.Content}");
+            }
+
+            var lastMessage = chatMessages.Last();
+            parts.Add($"[User]\n{lastMessage.Content}");
+
+            return string.Join("\n\n", parts);
         }
 
-        foreach (var msg in chatMessages.Take(chatMessages.Count - 1))
+        private static string? ExtractResponseText(GenerateContentResponse? response)
         {
-            var label = msg.Role == "assistant" ? "Assistant" : "User";
-            parts.Add($"[{label}]\n{msg.Content}");
+            if (response is null) return null;
+
+            var text = response.Text;
+            if (!string.IsNullOrWhiteSpace(text)) return text;
+
+            var candidate = response.Candidates?.FirstOrDefault();
+            if (candidate?.Content?.Parts is null) return null;
+
+            var contentParts = candidate.Content.Parts
+                .Where(p => p.Thought is null or false)
+                .Where(p => !string.IsNullOrWhiteSpace(p.Text))
+                .Select(p => p.Text)
+                .ToList();
+
+            return contentParts.Count > 0 ? string.Join("\n", contentParts) : null;
         }
-
-        var lastMessage = chatMessages.Last();
-        parts.Add($"[User]\n{lastMessage.Content}");
-
-        parts.Add("\n[Assistant]\n");
-
-        return string.Join("\n\n", parts);
     }
-}
