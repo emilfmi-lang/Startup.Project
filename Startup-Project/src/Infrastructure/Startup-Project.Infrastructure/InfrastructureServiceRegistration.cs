@@ -23,7 +23,14 @@ public static class InfrastructureServiceRegistration
         services.AddScoped<IMailService, MailService>();
         services.AddScoped<ITokenHandler, TokenHandler>();
         services.AddScoped<IFileService, FileService>();
-        services.AddHttpClient<IBankService, KapitalBankService>();
+
+        // Bank Service — Mock v? ya Real KapitalBank
+        var useMockBank = configuration.GetValue<bool>("KapitalBank:UseMock");
+        if (useMockBank)
+            services.AddSingleton<IBankService, MockBankService>();
+        else
+            services.AddHttpClient<IBankService, KapitalBankService>();
+
         services.AddScoped<IQrTokenService, QrTokenService>();
         services.AddScoped<IGoogleTokenValidator, GoogleTokenValidator>();
         services.AddScoped<ISmsService, ConsoleSmsService>();

@@ -17,6 +17,7 @@ public class SessionPaymentController(
     public async Task<IActionResult> InitiatePayment([FromBody] SessionPaymentRequestDto request)
         => Ok(await service.CreatePaymentAsync(request));
 
+    [HttpGet("callback")]
     [HttpPost("callback")]
     [AllowAnonymous]
     public async Task<IActionResult> PaymentCallback([FromQuery] string sessionId)

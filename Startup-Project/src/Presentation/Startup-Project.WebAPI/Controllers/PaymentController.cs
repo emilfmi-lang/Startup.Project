@@ -15,6 +15,7 @@ public class PaymentController(IPaymentService service, IConfiguration configura
     public async Task<IActionResult> InitiatePackagePayment([FromBody] PaymentRequestDto request)
         => Ok(await service.CreatePackagePaymentAsync(request));
 
+    [HttpGet("package-callback")]
     [HttpPost("package-callback")]
     [AllowAnonymous]
     public async Task<IActionResult> PackageCallback([FromQuery] string sessionId)
