@@ -8,7 +8,10 @@ namespace Startup_Project.WebAPI.Controllers;
 
 [Route("api/payment")]
 [ApiController]
-public class PaymentController(IPaymentService service, IConfiguration configuration) : ControllerBase
+public class PaymentController(
+    IPaymentService service,
+    IConfiguration configuration,
+    ILogger<PaymentController> logger) : ControllerBase
 {
     [HttpPost("initiate-package")]
     [Authorize]
@@ -23,17 +26,42 @@ public class PaymentController(IPaymentService service, IConfiguration configura
         if (string.IsNullOrEmpty(sessionId))
             throw BusinessException.ValidationFailed("SessionId bos ola bilmez.");
 
-        var successUrl = configuration["PaymentSettings:SuccessUrl"] ?? "/payment/success";
-        var failUrl = configuration["PaymentSettings:FailUrl"] ?? "/payment/fail";
+        var successUrl = GetRedirectUrl("PaymentSettings:SuccessUrl", "/payment/success");
+        var failUrl = GetRedirectUrl("PaymentSettings:FailUrl", "/payment/fail");
 
         try
         {
             await service.HandlePackageCallbackAsync(sessionId);
+            logger.LogInformation("Payment callback SUCCESS — SessionId={SessionId}, RedirectTo={Url}",
+                sessionId, successUrl);
             return Redirect(successUrl);
         }
-        catch
+        catch (Exception ex)
         {
+            logger.LogError(ex, "Payment callback FAILED — SessionId={SessionId}, Error={Error}",
+                sessionId, ex.Message);
             return Redirect(failUrl);
         }
+    }
+
+    private string GetRedirectUrl(string configKey, string fallback)
+    {
+        var url = configuration[configKey];
+
+        if (string.IsNullOrEmpty(url))
+        {
+            logger.LogWarning("Config key '{Key}' is empty, using fallback: {Fallback}", configKey, fallback);
+            return fallback;
+        }
+
+        // Production URL-lərini localhost-da istifadə etmə
+        if (url.Contains("senin-app-saytin") || url.Contains("example.com"))
+        {
+            logger.LogWarning("Config key '{Key}' has placeholder URL: {Url}, using fallback: {Fallback}",
+                configKey, url, fallback);
+            return fallback;
+        }
+
+        return url;
     }
 }

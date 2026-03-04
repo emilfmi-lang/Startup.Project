@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using Startup_Project.Application.Abstractions.UnitOfWork;
 using Startup_Project.Application.Dtos.Payment;
 using Startup_Project.Application.Interfaces;
@@ -17,7 +18,8 @@ public class SessionPaymentService(
     IApplicationDbContext context,
     IBankService bankService,
     IUnitOfWork unitOfWork,
-    IHttpContextAccessor httpContextAccessor) : ISessionPaymentService
+    IHttpContextAccessor httpContextAccessor,
+    ILogger<SessionPaymentService> logger) : ISessionPaymentService
 {
     #region ==================== PRIVATE HELPERS ====================
 
@@ -129,67 +131,51 @@ public class SessionPaymentService(
             throw BusinessException.Custom(BusinessErrorCodes.PaymentFailed, "Odenis bank terefinden tesdiqlenmeyi.");
         }
 
-        // ===== ATOMIC TRANSACTION =====
-        // 3 emeliyyat tek bir transaction icinde isleyir:
-        // 1) Payment.MarkAsSuccess()
-        // 2) TrainerStudent yaradilir / session sayi artirilir
-        // 3) Trainer.IncrementClients() + Trainer.IncrementSessions()
-        // Her hansi xeta olsa butun deyisiklikler geri qaytarilir.
+        // 1. Odenisi ugurlu isare et
+        payment.MarkAsSuccess();
 
-        await unitOfWork.BeginTransactionAsync();
+        // 2. Session-u tesdiq et (eger pending-dirse)
+        var session = payment.ScheduledSession;
+        if (session.Status == ScheduledSessionStatus.Pending)
+            session.Confirm();
 
-        try
+        // 3. Trainer-Student bagliligi
+        var alreadyLinked = await context.TrainerStudents
+            .AnyAsync(ts => ts.TrainerId == payment.TrainerId
+                && ts.StudentId == payment.StudentId
+                && !ts.IsDeleted);
+
+        if (!alreadyLinked)
         {
-            // 1. Odenisi ugurlu isare et
-            payment.MarkAsSuccess();
+            var trainerStudent = new TrainerStudent(
+                trainerId: payment.TrainerId,
+                studentId: payment.StudentId,
+                program: session.Title ?? session.ExerciseType,
+                totalSessions: 1);
 
-            // 2. Session-u tesdiq et (eger pending-dirse)
-            var session = payment.ScheduledSession;
-            if (session.Status == ScheduledSessionStatus.Pending)
-                session.Confirm();
+            context.TrainerStudents.Add(trainerStudent);
 
-            // 3. Trainer-Student bagliligi
-            var alreadyLinked = await context.TrainerStudents
-                .AnyAsync(ts => ts.TrainerId == payment.TrainerId
+            var trainer = session.Trainer;
+            trainer.IncrementClients();
+        }
+        else
+        {
+            var existing = await context.TrainerStudents
+                .FirstAsync(ts => ts.TrainerId == payment.TrainerId
                     && ts.StudentId == payment.StudentId
                     && !ts.IsDeleted);
 
-            if (!alreadyLinked)
-            {
-                var trainerStudent = new TrainerStudent(
-                    trainerId: payment.TrainerId,
-                    studentId: payment.StudentId,
-                    program: session.Title ?? session.ExerciseType,
-                    totalSessions: 1);
-
-                context.TrainerStudents.Add(trainerStudent);
-
-                // Yeni client elave olundu - TotalClients artirilir
-                var trainer = session.Trainer;
-                trainer.IncrementClients();
-            }
-            else
-            {
-                var existing = await context.TrainerStudents
-                    .FirstAsync(ts => ts.TrainerId == payment.TrainerId
-                        && ts.StudentId == payment.StudentId
-                        && !ts.IsDeleted);
-
-                existing.UpdateTotalSessions(existing.TotalSessions + 1);
-            }
-
-            // 4. Trainer session sayini artir
-            var trainerEntity = session.Trainer;
-            trainerEntity.IncrementSessions();
-
-            // Butun deyisiklikleri tek bir commit ile yaz
-            await unitOfWork.CommitAsync();
+            existing.UpdateTotalSessions(existing.TotalSessions + 1);
         }
-        catch
-        {
-            await unitOfWork.RollbackAsync();
-            throw;
-        }
+
+        // 4. Trainer session sayini artir
+        var trainerEntity = session.Trainer;
+        trainerEntity.IncrementSessions();
+
+        // Tek SaveChanges — butun deyisiklikleri birdefeye yaz
+        await context.SaveChangesAsync();
+
+        logger.LogInformation("Session payment callback: SUCCESS — SessionId={SessionId}", sessionId);
 
         return ResponseModel<bool>.SuccessResponse(true);
     }

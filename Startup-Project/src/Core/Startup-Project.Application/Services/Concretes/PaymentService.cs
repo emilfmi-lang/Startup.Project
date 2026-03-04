@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using Startup_Project.Application.Abstractions.UnitOfWork;
 using Startup_Project.Application.Dtos.Payment;
 using Startup_Project.Application.Interfaces;
@@ -17,7 +18,8 @@ public class PaymentService(
     IApplicationDbContext context,
     IBankService bankService,
     IUnitOfWork unitOfWork,
-    IHttpContextAccessor httpContextAccessor) : IPaymentService
+    IHttpContextAccessor httpContextAccessor,
+    ILogger<PaymentService> logger) : IPaymentService
 {
     #region ==================== PRIVATE HELPERS ====================
 
@@ -86,11 +88,9 @@ public class PaymentService(
         if (payment is null)
             throw NotFoundException.Payment(sessionId);
 
-        // Idempotent: artiq ugurlu olubsa tekrar islemir
         if (payment.IsSuccessful)
             return ResponseModel<bool>.SuccessResponse(true);
 
-        // Bankdan status yoxla
         var isApproved = await bankService.CheckPaymentStatusAsync(sessionId);
 
         if (!isApproved)
@@ -100,49 +100,49 @@ public class PaymentService(
             throw BusinessException.Custom(BusinessErrorCodes.PaymentFailed, "Odenis bank terefinden tesdiqlenmeyi.");
         }
 
-        // ===== ATOMIC TRANSACTION =====
-        // 1) Payment -> Successful
-        // 2) Subscription -> yaradilir ve ya uzadilir (extension)
-        // Xeta olsa butun deyisiklikler geri qaytarilir.
+        var package = payment.Package;
 
-        await unitOfWork.BeginTransactionAsync();
-
-        try
+        if (package is null)
         {
-            // 1. Odenisi ugurlu isare et
-            payment.MarkAsSuccess();
-
-            // 2. Subscription mentiqi
-            var package = payment.Package;
-
-            // Eyni gym paketin aktiv abuneliyini yoxla
-            var activeSubscription = await context.Subscriptions
-                .Where(s => s.UserId == payment.UserId
-                    && s.Status == SubscriptionStatus.Active
-                    && s.EndDate > DateTime.UtcNow
-                    && !s.IsDeleted)
-                .OrderByDescending(s => s.EndDate)
-                .FirstOrDefaultAsync();
-
-            if (activeSubscription is not null)
-            {
-                // EXTENSION: movcud abunelyin EndDate-inden baslayir
-                activeSubscription.Extend(package.DurationInDays);
-            }
-            else
-            {
-                // YENI: bugun baslayir
-                var subscription = new Subscription(payment.UserId, package, DateTime.UtcNow);
-                context.Subscriptions.Add(subscription);
-            }
-
-            await unitOfWork.CommitAsync();
+            logger.LogError("Payment callback: Package is NULL for SessionId={SessionId}, PackageId={PackageId}",
+                sessionId, payment.PackageId);
+            payment.MarkAsFailed("Paket tapilmadi.");
+            await unitOfWork.SaveChangesAsync();
+            throw BusinessException.Custom(BusinessErrorCodes.PackageNotFound, "Paket tapilmadi.");
         }
-        catch
+
+        logger.LogInformation("Payment callback: Processing — SessionId={SessionId}, Package={Name}, Duration={Days}, UserId={UserId}",
+            sessionId, package.Name, package.DurationInDays, payment.UserId);
+
+        // 1. Payment -> Successful
+        payment.MarkAsSuccess();
+
+        // 2. Subscription yarat/uzat
+        var activeSubscription = await context.Subscriptions
+            .Where(s => s.UserId == payment.UserId
+                && s.Status == SubscriptionStatus.Active
+                && s.EndDate > DateTime.UtcNow
+                && !s.IsDeleted)
+            .OrderByDescending(s => s.EndDate)
+            .FirstOrDefaultAsync();
+
+        if (activeSubscription is not null)
         {
-            await unitOfWork.RollbackAsync();
-            throw;
+            activeSubscription.Extend(package.DurationInDays);
+            logger.LogInformation("Payment callback: Extended existing subscription, NewEndDate={EndDate}", activeSubscription.EndDate);
         }
+        else
+        {
+            var subscription = new Subscription(payment.UserId, package, DateTime.UtcNow);
+            context.Subscriptions.Add(subscription);
+            logger.LogInformation("Payment callback: New subscription created — StartDate={Start}, EndDate={End}",
+                subscription.StartDate, subscription.EndDate);
+        }
+
+        // Tek SaveChanges — Payment UPDATE + Subscription INSERT birdəfəyə
+        await context.SaveChangesAsync();
+
+        logger.LogInformation("Payment callback: SUCCESS — SessionId={SessionId}, Subscription saved to DB", sessionId);
 
         return ResponseModel<bool>.SuccessResponse(true);
     }

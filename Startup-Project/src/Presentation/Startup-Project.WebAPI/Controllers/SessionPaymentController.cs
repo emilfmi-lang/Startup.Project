@@ -10,7 +10,8 @@ namespace Startup_Project.WebAPI.Controllers;
 [ApiController]
 public class SessionPaymentController(
     ISessionPaymentService service,
-    IConfiguration configuration) : ControllerBase
+    IConfiguration configuration,
+    ILogger<SessionPaymentController> logger) : ControllerBase
 {
     [HttpPost("initiate")]
     [Authorize]
@@ -25,18 +26,38 @@ public class SessionPaymentController(
         if (string.IsNullOrEmpty(sessionId))
             throw BusinessException.ValidationFailed("SessionId bos ola bilmez.");
 
-        var successUrl = configuration["PaymentSettings:SuccessUrl"] ?? "/payment/success";
-        var failUrl = configuration["PaymentSettings:FailUrl"] ?? "/payment/fail";
+        var successUrl = GetRedirectUrl("PaymentSettings:SuccessUrl", "/payment/success");
+        var failUrl = GetRedirectUrl("PaymentSettings:FailUrl", "/payment/fail");
 
         try
         {
             await service.HandleCallbackAsync(sessionId);
+            logger.LogInformation("Session payment callback SUCCESS — SessionId={SessionId}, RedirectTo={Url}",
+                sessionId, successUrl);
             return Redirect(successUrl);
         }
-        catch
+        catch (Exception ex)
         {
+            logger.LogError(ex, "Session payment callback FAILED — SessionId={SessionId}, Error={Error}",
+                sessionId, ex.Message);
             return Redirect(failUrl);
         }
+    }
+
+    private string GetRedirectUrl(string configKey, string fallback)
+    {
+        var url = configuration[configKey];
+
+        if (string.IsNullOrEmpty(url))
+            return fallback;
+
+        if (url.Contains("senin-app-saytin") || url.Contains("example.com"))
+        {
+            logger.LogWarning("Config '{Key}' has placeholder URL: {Url}, using fallback", configKey, url);
+            return fallback;
+        }
+
+        return url;
     }
 
     [HttpGet("status/{orderId}")]
