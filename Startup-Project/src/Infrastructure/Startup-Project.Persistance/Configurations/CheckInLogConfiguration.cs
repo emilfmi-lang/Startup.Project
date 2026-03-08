@@ -35,6 +35,11 @@ public class CheckInLogConfiguration : IEntityTypeConfiguration<CheckInLog>
             .HasForeignKey(c => c.GymId)
             .OnDelete(DeleteBehavior.Restrict);
 
+        builder.HasOne(c => c.Subscription)
+            .WithMany()
+            .HasForeignKey(c => c.SubscriptionId)
+            .OnDelete(DeleteBehavior.Restrict);
+
         // Performance indexes
         builder.HasIndex(c => c.UserId);
         builder.HasIndex(c => c.GymId);

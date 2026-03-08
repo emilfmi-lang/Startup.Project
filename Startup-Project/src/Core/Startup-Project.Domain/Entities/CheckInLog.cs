@@ -12,6 +12,9 @@ public class CheckInLog : BaseEntity
     public Guid GymId { get; private set; }
     public Gym Gym { get; private set; } = null!;
 
+    public Guid? SubscriptionId { get; private set; }
+    public Subscription? Subscription { get; private set; }
+
     public DateTime CheckInTime { get; private set; }
     public DateTime? CheckOutTime { get; private set; }
 
@@ -21,10 +24,11 @@ public class CheckInLog : BaseEntity
 
     private CheckInLog() { }
 
-    public CheckInLog(Guid userId, Guid gymId, string? token = null)
+    public CheckInLog(Guid userId, Guid gymId, Guid? subscriptionId, string? token = null)
     {
         UserId = userId;
         GymId = gymId;
+        SubscriptionId = subscriptionId;
         TokenUsed = token;
         CheckInTime = DateTime.UtcNow;
         Status = CheckInStatus.Success;

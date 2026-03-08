@@ -17,6 +17,7 @@ public class HistoryService(
     IGenericRepository<Payment> paymentRepository,
     IGenericRepository<CheckInLog> checkInRepository,
     IGenericRepository<TrainingSession> sessionRepository,
+    IGenericRepository<Subscription> subscriptionRepository,
     IMapper mapper,
     IHttpContextAccessor httpContextAccessor) : IHistoryService
 {
@@ -383,6 +384,9 @@ public class HistoryService(
         if (!filter.ActivityType.HasValue || filter.ActivityType == ActivityType.Session)
             activities.AddRange(await GetSessionActivitiesAsync(userId, filter));
 
+        if (!filter.ActivityType.HasValue || filter.ActivityType == ActivityType.Subscription)
+            activities.AddRange(await GetSubscriptionActivitiesAsync(userId, filter));
+
         activities = activities.OrderByDescending(a => a.Date).ToList();
 
         if (filter.Status.HasValue)
@@ -427,6 +431,34 @@ public class HistoryService(
 
         return (await query.ToListAsync()).Select(MapSessionToActivity).ToList();
     }
+
+    private async Task<List<UserActivityDto>> GetSubscriptionActivitiesAsync(Guid userId, HistoryFilterDto filter)
+    {
+        IQueryable<Subscription> query = subscriptionRepository.Table.AsNoTracking()
+            .Where(s => s.UserId == userId && !s.IsDeleted)
+            .Include(s => s.Package).ThenInclude(p => p.Gym);
+
+        if (filter.StartDate.HasValue) query = query.Where(s => s.CreatedAt >= filter.StartDate.Value);
+        if (filter.EndDate.HasValue) query = query.Where(s => s.CreatedAt <= filter.EndDate.Value);
+
+        return (await query.ToListAsync()).Select(MapSubscriptionToActivity).ToList();
+    }
+
+    private static UserActivityDto MapSubscriptionToActivity(Subscription s) => new()
+    {
+        Id = s.Id,
+        ActivityType = ActivityType.Subscription,
+        Title = $"{s.Package?.Name ?? "Paket"} aktivl??di",
+        Description = $"{s.Package?.Gym?.Name ?? "Zal"} — {s.Package?.DurationInDays ?? 0} günlük",
+        Amount = s.Package?.Price,
+        Status = s.Status == SubscriptionStatus.Active ? ActivityStatus.Success : ActivityStatus.Failed,
+        StatusText = s.Status == SubscriptionStatus.Active ? "Aktiv" : s.Status.ToString(),
+        Date = s.CreatedAt,
+        Icon = "subscription",
+        Color = s.Status == SubscriptionStatus.Active ? "#4CAF50" : "#9E9E9E",
+        GymName = s.Package?.Gym?.Name,
+        PackageName = s.Package?.Name
+    };
 
     private async Task<HistorySummaryDto> GetSummaryForUserAsync(Guid userId)
     {
