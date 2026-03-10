@@ -1,6 +1,7 @@
 ﻿using Startup_Project.Application.Dtos.Trainer;
 using Startup_Project.Application.Dtos.TrainerReview;
 using Startup_Project.Application.Dtos.TrainerSchedule;
+using Startup_Project.Application.Dtos.UserSession;
 using Startup_Project.Application.Models;
 
 namespace Startup_Project.Application.Services.Interfaces;
@@ -13,6 +14,7 @@ public interface ITrainerService
     Task<ResponseModel<List<TrainerListDto>>> GetTrainersByGymAsync(Guid gymId);
     Task<ResponseModel<PaginatedTrainerReviewsDto>> GetTrainerReviewsAsync(Guid trainerId, int page = 1, int pageSize = 10);
     Task<ResponseModel<List<TrainerScheduleDto>>> GetTrainerScheduleAsync(Guid trainerId);
+    Task<ResponseModel<List<UserSessionDto>>> GetTrainerPublicSessionsAsync(Guid trainerId);
     Task<ResponseModel<bool>> AddReviewAsync(Guid trainerId, TrainerReviewCreateDto dto);
     Task<ResponseModel<bool>> DeleteTrainerReviewAsync(Guid trainerId, string reviewId);
 

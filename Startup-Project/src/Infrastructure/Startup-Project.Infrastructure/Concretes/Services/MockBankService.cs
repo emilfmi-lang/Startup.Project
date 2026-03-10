@@ -17,7 +17,7 @@ public class MockBankService(
     private static readonly Dictionary<string, MockPaymentSession> Sessions = new();
     private static readonly Lock Lock = new();
 
-    public Task<PaymentResponseDto> CreateSessionAsync(decimal amount, string packageName)
+    public Task<PaymentResponseDto> CreateSessionAsync(decimal amount, string packageName, string callbackPath = "/api/payment/package-callback")
     {
         var sessionId = "MOCK-" + Guid.NewGuid().ToString("N")[..20];
         var baseUrl = config["KapitalBank:MockBaseUrl"] ?? "http://localhost:5000";
@@ -30,6 +30,7 @@ public class MockBankService(
                 Amount = amount,
                 Description = packageName,
                 Status = "PENDING",
+                CallbackPath = callbackPath,
                 CreatedAt = DateTime.UtcNow
             };
         }
@@ -54,8 +55,11 @@ public class MockBankService(
             }
         }
 
-        logger.LogWarning("MockBank: Session tap?lmad? — {SessionId}", sessionId);
-        return Task.FromResult(false);
+        // API restart olduqda in-memory session itirilir.
+        // Mock bank oldu?u üçün callback-a çatm?? session-? APPROVED say?r?q.
+        // Real bank-da bu hal olmayacaq çünki status bank API-d?n yoxlan?l?r.
+        logger.LogWarning("MockBank: Session tap?lmad? (API restart?), auto-approve — {SessionId}", sessionId);
+        return Task.FromResult(true);
     }
 
     public static MockPaymentSession? GetSession(string sessionId)
@@ -66,14 +70,14 @@ public class MockBankService(
         }
     }
 
-    public static void ApproveSession(string sessionId)
-    {
-        lock (Lock)
+        public static void ApproveSession(string sessionId)
         {
-            if (Sessions.TryGetValue(sessionId, out var s))
-                s.Status = "APPROVED";
+            lock (Lock)
+            {
+                if (Sessions.TryGetValue(sessionId, out var s))
+                    s.Status = "APPROVED";
+            }
         }
-    }
 
         public static void DeclineSession(string sessionId)
         {
@@ -95,6 +99,25 @@ public class MockBankService(
                 }
             }
         }
+
+        public static void RecoverSession(string sessionId, decimal amount, string description, string callbackPath)
+        {
+            lock (Lock)
+            {
+                if (!Sessions.ContainsKey(sessionId))
+                {
+                    Sessions[sessionId] = new MockPaymentSession
+                    {
+                        SessionId = sessionId,
+                        Amount = amount,
+                        Description = description,
+                        Status = "PENDING",
+                        CallbackPath = callbackPath,
+                        CreatedAt = DateTime.UtcNow
+                    };
+                }
+            }
+        }
     }
 
     public class MockPaymentSession
@@ -103,6 +126,7 @@ public class MockBankService(
         public decimal Amount { get; set; }
         public string Description { get; set; } = null!;
         public string Status { get; set; } = "PENDING";
+        public string CallbackPath { get; set; } = "/api/payment/package-callback";
         public string? MaskedCard { get; set; }
         public string? CardHolder { get; set; }
         public DateTime CreatedAt { get; set; }

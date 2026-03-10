@@ -68,13 +68,16 @@ public static class GymSeeder
                     gymOwners.Add(owner);
                 }
             }
-            else
-            {
-                gymOwners.Add(existingUser);
-            }
-        }
+                else
+                {
+                    if (!await userManager.IsInRoleAsync(existingUser, "GymOwner"))
+                        await userManager.AddToRoleAsync(existingUser, "GymOwner");
 
-        // 3. Assign Gyms to Owners
+                    gymOwners.Add(existingUser);
+                }
+            }
+
+            // 3. Assign Gyms to Owners
         var allGyms = await context.Gyms.ToListAsync();
         for (int i = 0; i < allGyms.Count && i < gymOwners.Count; i++)
         {
@@ -124,13 +127,16 @@ public static class GymSeeder
                     regularUsers.Add(user);
                 }
             }
-            else
-            {
-                regularUsers.Add(existingUser);
-            }
-        }
+                else
+                {
+                    if (!await userManager.IsInRoleAsync(existingUser, "User"))
+                        await userManager.AddToRoleAsync(existingUser, "User");
 
-        // 5. Seed Trainer Users (4 user for trainers)
+                    regularUsers.Add(existingUser);
+                }
+            }
+
+            // 5. Seed Trainer Users
         var trainerEmails = new[]
         {
             "trainer1@fitnessapp.az",
@@ -169,13 +175,16 @@ public static class GymSeeder
                     trainerUsers.Add(user);
                 }
             }
-            else
-            {
-                trainerUsers.Add(existingUser);
-            }
-        }
+                else
+                {
+                    if (!await userManager.IsInRoleAsync(existingUser, "Trainer"))
+                        await userManager.AddToRoleAsync(existingUser, "Trainer");
 
-        // 6. Seed Trainers (2 gym-based + 2 online)
+                    trainerUsers.Add(existingUser);
+                }
+            }
+
+            // 6. Seed Trainers
         if (!await context.Trainers.AnyAsync())
         {
             var gyms = await context.Gyms.ToListAsync();

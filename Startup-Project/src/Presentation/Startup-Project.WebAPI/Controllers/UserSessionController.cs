@@ -15,8 +15,9 @@ public class UserSessionController(IUserSessionService service) : ControllerBase
     [HttpGet("available")]
     public async Task<IActionResult> GetAvailableSessions(
         [FromQuery] string? search = null,
-        [FromQuery] string? exerciseType = null)
-        => Ok(await service.GetAvailableSessionsAsync(search, exerciseType));
+        [FromQuery] string? exerciseType = null,
+        [FromQuery] Guid? trainerId = null)
+        => Ok(await service.GetAvailableSessionsAsync(search, exerciseType, trainerId));
 
     /// <summary>
     /// "Upcoming" tab — user-?n qeyd? ald??? g?l?c?k sessiyalar.

@@ -58,14 +58,60 @@ public class PaymentService(
         if (pendingPayment is not null)
             pendingPayment.MarkAsFailed("Yeni odenis cehdi - kohne legv edildi.");
 
+        var finalAmount = package.Price;
+        PromoCode? appliedPromo = null;
+
+        // PromoCode varsa endirim tetbiq et
+        if (!string.IsNullOrWhiteSpace(request.PromoCode))
+        {
+            var normalizedCode = request.PromoCode.Trim().ToUpperInvariant();
+
+            appliedPromo = await context.PromoCodes
+                .FirstOrDefaultAsync(p => p.Code == normalizedCode && !p.IsDeleted);
+
+            if (appliedPromo is null)
+                throw NotFoundException.PromoCode(request.PromoCode);
+
+            if (!appliedPromo.CanBeApplied(request.PackageId, package.Price))
+            {
+                if (!appliedPromo.IsActive)
+                    throw BusinessException.PromoCodeDeactivated(normalizedCode);
+                if (!appliedPromo.IsValidForDate())
+                    throw BusinessException.PromoCodeExpired(normalizedCode, appliedPromo.EndDate);
+                if (!appliedPromo.HasAvailableUsage())
+                    throw BusinessException.PromoCodeUsageLimitExceeded(normalizedCode, appliedPromo.UsageLimit);
+
+                throw BusinessException.PromoCodeNotApplicable(normalizedCode);
+            }
+
+            // User artıq bu promo code-u istifadə edibmi?
+            var alreadyUsed = await context.PromoCodeUsages
+                .AnyAsync(u => u.PromoCodeId == appliedPromo.Id && u.UserId == userId);
+
+            if (alreadyUsed)
+                throw BusinessException.PromoCodeAlreadyUsed(normalizedCode);
+
+            var discountAmount = appliedPromo.CalculateDiscount(package.Price);
+            finalAmount = Math.Max(0, package.Price - discountAmount);
+
+            // PromoCode usage qeydiyyatı
+            appliedPromo.IncrementUsedCount();
+            var usage = new PromoCodeUsage(appliedPromo.Id, userId, discountAmount, packageId: request.PackageId);
+            context.PromoCodeUsages.Add(usage);
+
+            logger.LogInformation(
+                "PromoCode applied: Code={Code}, OriginalPrice={Original}, Discount={Discount}, FinalPrice={Final}",
+                normalizedCode, package.Price, discountAmount, finalAmount);
+        }
+
         // Yeni payment yarat
         var payment = new Payment(
             userId: userId,
             packageId: package.Id,
-            amount: package.Price);
+            amount: finalAmount);
 
         // Banka sorgu at
-        var bankResponse = await bankService.CreateSessionAsync(package.Price, package.Name);
+        var bankResponse = await bankService.CreateSessionAsync(finalAmount, package.Name);
 
         payment.SetBankSessionId(bankResponse.SessionId);
 

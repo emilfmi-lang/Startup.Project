@@ -17,7 +17,7 @@ public class KapitalBankService : IBankService
         _httpClient = httpClient;
         _config = config;
     }
-    public async Task<PaymentResponseDto> CreateSessionAsync(decimal amount, string packageName)
+    public async Task<PaymentResponseDto> CreateSessionAsync(decimal amount, string packageName, string callbackPath = "/api/payment/package-callback")
     {
         var paymentRequest = new
         {

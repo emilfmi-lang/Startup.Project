@@ -28,17 +28,30 @@ public class UserSessionService(
 
     public async Task<ResponseModel<List<UserSessionDto>>> GetAvailableSessionsAsync(
         string? search = null,
-        string? exerciseType = null)
+        string? exerciseType = null,
+        Guid? trainerId = null)
     {
         var userId = GetCurrentUserId();
 
-        // User-?n art?q öd?ni? etdiyi session ID-l?ri
+        var subscribedGymIds = await context.Subscriptions
+            .Where(s => s.UserId == userId
+                && s.Status == SubscriptionStatus.Active
+                && s.EndDate > DateTime.UtcNow
+                && !s.IsDeleted)
+            .Include(s => s.Package)
+            .Select(s => s.Package.GymId)
+            .Distinct()
+            .ToListAsync();
+
+        if (subscribedGymIds.Count == 0)
+            return ResponseModel<List<UserSessionDto>>.FailureResponse(
+                "Aktiv abun?liyiniz yoxdur. Session görm?k üçün ?vv?lc? bir zala abun? olun.");
+
         var bookedSessionIds = await context.SessionPayments
             .Where(p => p.StudentId == userId && p.Status == PaymentStatus.Successful)
             .Select(p => p.ScheduledSessionId)
             .ToListAsync();
 
-        // H?r session üçün u?urlu öd?ni? say? (currentParticipants)
         var participantCounts = await context.SessionPayments
             .Where(p => p.Status == PaymentStatus.Successful)
             .GroupBy(p => p.ScheduledSessionId)
@@ -49,9 +62,13 @@ public class UserSessionService(
             .Include(s => s.Trainer).ThenInclude(t => t.User)
             .Include(s => s.Gym)
             .Where(s => !s.IsDeleted
+                && subscribedGymIds.Contains(s.GymId)
                 && s.ScheduledTime > DateTime.UtcNow
                 && (s.Status == ScheduledSessionStatus.Pending || s.Status == ScheduledSessionStatus.Confirmed))
             .AsNoTracking();
+
+        if (trainerId.HasValue)
+            query = query.Where(s => s.TrainerId == trainerId.Value);
 
         if (!string.IsNullOrWhiteSpace(search))
         {

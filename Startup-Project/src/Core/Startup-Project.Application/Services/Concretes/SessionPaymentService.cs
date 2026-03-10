@@ -89,7 +89,7 @@ public class SessionPaymentService(
             amount: amount);
 
         // Banka sorgu at
-        var bankResponse = await bankService.CreateSessionAsync(amount, $"FitZone Session: {sessionTitle}");
+        var bankResponse = await bankService.CreateSessionAsync(amount, $"FitZone Session: {sessionTitle}", "/api/session-payment/callback");
 
         payment.SetBankSessionId(bankResponse.SessionId);
 

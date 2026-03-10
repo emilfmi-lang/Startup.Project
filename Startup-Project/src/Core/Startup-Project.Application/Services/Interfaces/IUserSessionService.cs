@@ -10,7 +10,8 @@ public interface IUserSessionService
     /// </summary>
     Task<ResponseModel<List<UserSessionDto>>> GetAvailableSessionsAsync(
         string? search = null,
-        string? exerciseType = null);
+        string? exerciseType = null,
+        Guid? trainerId = null);
 
     /// <summary>
     /// "Upcoming" tab — user-?n öd?ni? edib qeyd? ald??? g?l?c?k sessiyalar.

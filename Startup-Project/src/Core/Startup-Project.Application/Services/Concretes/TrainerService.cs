@@ -6,6 +6,8 @@ using Microsoft.EntityFrameworkCore;
 using Startup_Project.Application.Dtos.Trainer;
 using Startup_Project.Application.Dtos.TrainerReview;
 using Startup_Project.Application.Dtos.TrainerSchedule;
+using Startup_Project.Application.Dtos.UserSession;
+using Startup_Project.Application.Interfaces;
 using Startup_Project.Application.Models;
 using Startup_Project.Application.Services.Interfaces;
 using Startup_Project.Domain.Abstractions.Repositories;
@@ -27,6 +29,7 @@ public class TrainerService : ITrainerService
     private readonly UserManager<AppUser> _userManager;
     private readonly RoleManager<IdentityRole<Guid>> _roleManager;
     private readonly IHttpContextAccessor _httpContextAccessor;
+    private readonly IApplicationDbContext _context;
     private readonly IMapper _mapper;
     private readonly IValidator<TrainerCreateDto> _createValidator;
     private readonly IValidator<TrainerUpdateDto> _updateValidator;
@@ -41,6 +44,7 @@ public class TrainerService : ITrainerService
         UserManager<AppUser> userManager,
         RoleManager<IdentityRole<Guid>> roleManager,
         IHttpContextAccessor httpContextAccessor,
+        IApplicationDbContext context,
         IMapper mapper,
         IValidator<TrainerCreateDto> createValidator,
         IValidator<TrainerUpdateDto> updateValidator,
@@ -54,6 +58,7 @@ public class TrainerService : ITrainerService
         _userManager = userManager;
         _roleManager = roleManager;
         _httpContextAccessor = httpContextAccessor;
+        _context = context;
         _mapper = mapper;
         _createValidator = createValidator;
         _updateValidator = updateValidator;
@@ -627,18 +632,81 @@ public class TrainerService : ITrainerService
             foreach (var s in existingSchedules)
                 _scheduleRepository.Remove(s);
 
-            foreach (var dto in schedules)
-            {
-                if (!TimeSpan.TryParse(dto.StartTime, out var startTime) ||
-                    !TimeSpan.TryParse(dto.EndTime, out var endTime))
-                    continue;
+                        foreach (var dto in schedules)
+                        {
+                            if (!TimeSpan.TryParse(dto.StartTime, out var startTime) ||
+                                !TimeSpan.TryParse(dto.EndTime, out var endTime))
+                                continue;
 
-                var schedule = new TrainerSchedule(trainer.Id, dto.DayOfWeek, startTime, endTime);
-                await _scheduleRepository.AddAsync(schedule);
+                            var schedule = new TrainerSchedule(trainer.Id, dto.DayOfWeek, startTime, endTime);
+                            await _scheduleRepository.AddAsync(schedule);
+                        }
+
+                        await _scheduleRepository.SaveAsync();
+
+                        return ResponseModel<bool>.SuccessResponse(true);
+                    }
+
+                public async Task<ResponseModel<List<UserSessionDto>>> GetTrainerPublicSessionsAsync(Guid trainerId)
+                {
+                    var trainer = await _trainerRepository.Table
+                        .Include(t => t.User)
+                        .FirstOrDefaultAsync(t => t.Id == trainerId && !t.IsDeleted);
+
+                    if (trainer == null)
+                        throw NotFoundException.Trainer(trainerId);
+
+                    var participantCounts = await _context.SessionPayments
+                        .Where(p => p.Status == PaymentStatus.Successful)
+                        .GroupBy(p => p.ScheduledSessionId)
+                        .Select(g => new { SessionId = g.Key, Count = g.Count() })
+                        .ToDictionaryAsync(x => x.SessionId, x => x.Count);
+
+                    var sessions = await _context.ScheduledSessions
+                        .Include(s => s.Trainer).ThenInclude(t => t.User)
+                        .Include(s => s.Gym)
+                        .Where(s => s.TrainerId == trainerId
+                            && !s.IsDeleted
+                            && s.ScheduledTime > DateTime.UtcNow
+                            && (s.Status == ScheduledSessionStatus.Pending || s.Status == ScheduledSessionStatus.Confirmed))
+                        .OrderBy(s => s.ScheduledTime)
+                        .AsNoTracking()
+                        .ToListAsync();
+
+                    var dtos = sessions.Select(s =>
+                    {
+                        var currentParticipants = participantCounts.GetValueOrDefault(s.Id, 0);
+                        var isFull = currentParticipants >= s.MaxParticipants;
+
+                        return new UserSessionDto
+                        {
+                            Id = s.Id,
+                            Title = s.Title ?? s.ExerciseType,
+                            ExerciseType = s.ExerciseType,
+                            Description = s.Description,
+                            TrainerId = s.TrainerId,
+                            TrainerName = s.Trainer.User.FullName,
+                            Specialization = s.Trainer.Specialization,
+                            TrainerProfileImage = s.Trainer.ProfileImageUrl,
+                            TrainerRating = s.Trainer.AverageRating,
+                            Date = s.ScheduledTime.Date,
+                            StartTime = s.ScheduledTime.ToString("HH:mm"),
+                            EndTime = s.EndTime.ToString("HH:mm"),
+                            DurationMinutes = s.DurationMinutes,
+                            GymId = s.GymId,
+                            GymName = s.Gym?.Name ?? "Online",
+                            IsOnline = s.Trainer.IsOnlineTrainer,
+                            Price = s.PricePerPerson,
+                            MaxParticipants = s.MaxParticipants,
+                            CurrentParticipants = currentParticipants,
+                            IsFull = isFull,
+                            Status = s.Status.ToString(),
+                            CanCancel = false,
+                            CanBook = !isFull,
+                            IsBooked = false
+                        };
+                    }).ToList();
+
+                    return ResponseModel<List<UserSessionDto>>.SuccessResponse(dtos);
+                }
             }
-
-            await _scheduleRepository.SaveAsync();
-
-            return ResponseModel<bool>.SuccessResponse(true);
-        }
-    }

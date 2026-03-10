@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Startup_Project.Application.Interfaces;
 using Startup_Project.Infrastructure.Concretes.Services;
 
 namespace Startup_Project.WebAPI.Controllers;
@@ -7,7 +8,9 @@ namespace Startup_Project.WebAPI.Controllers;
 [Route("api/mock-payment")]
 [ApiController]
 [AllowAnonymous]
-public class MockPaymentController(IConfiguration configuration) : ControllerBase
+public class MockPaymentController(
+    IConfiguration configuration,
+    IApplicationDbContext context) : ControllerBase
 {
     [HttpGet("checkout")]
     public IActionResult Checkout([FromQuery] string sessionId)
@@ -16,13 +19,36 @@ public class MockPaymentController(IConfiguration configuration) : ControllerBas
             return NotFound();
 
         var session = MockBankService.GetSession(sessionId);
-        if (session is null)
+
+        if (session is not null)
+            return Content(CheckoutPage.Build(session.SessionId, session.Amount, session.Description), "text/html");
+
+        // API restart olduqda in-memory session itirilir.
+        // DB-dan öd?ni? m?lumat?n? oxuyub checkout page yarad?r?q.
+            var sessionPayment = context.SessionPayments
+                .FirstOrDefault(p => p.BankSessionId == sessionId);
+
+            if (sessionPayment is not null)
+            {
+                MockBankService.RecoverSession(sessionId, sessionPayment.Amount,
+                    "FitZone Session", "/api/session-payment/callback");
+                return Content(CheckoutPage.Build(sessionId, sessionPayment.Amount, "FitZone Session"), "text/html");
+            }
+
+            var packagePayment = context.Payments
+                .FirstOrDefault(p => p.SessionId == sessionId);
+
+            if (packagePayment is not null)
+            {
+                MockBankService.RecoverSession(sessionId, packagePayment.Amount,
+                    "FitZone Package", "/api/payment/package-callback");
+                return Content(CheckoutPage.Build(sessionId, packagePayment.Amount, "FitZone Package"), "text/html");
+            }
+
             return NotFound("Sessiya tap?lmad?.");
+        }
 
-        return Content(CheckoutPage.Build(session.SessionId, session.Amount, session.Description), "text/html");
-    }
-
-    [HttpPost("process")]
+        [HttpPost("process")]
     public IActionResult Process(
         [FromForm] string sessionId,
         [FromForm] string action,
@@ -35,22 +61,35 @@ public class MockPaymentController(IConfiguration configuration) : ControllerBas
             return NotFound();
 
         var session = MockBankService.GetSession(sessionId);
-        if (session is null)
-            return NotFound("Sessiya tap?lmad?.");
 
-        if (action == "approve")
+        if (session is not null)
         {
-            if (!string.IsNullOrEmpty(cardNumber))
-                MockBankService.SetCardInfo(sessionId, cardNumber, cardHolder ?? "TEST USER");
+            if (action == "approve")
+            {
+                if (!string.IsNullOrEmpty(cardNumber))
+                    MockBankService.SetCardInfo(sessionId, cardNumber, cardHolder ?? "TEST USER");
 
-            MockBankService.ApproveSession(sessionId);
-        }
-        else
-        {
-            MockBankService.DeclineSession(sessionId);
+                MockBankService.ApproveSession(sessionId);
+            }
+            else
+            {
+                MockBankService.DeclineSession(sessionId);
+            }
+
+            var callbackPath = session.CallbackPath ?? "/api/payment/package-callback";
+            return Redirect(callbackPath + "?sessionId=" + sessionId);
         }
 
-        return Redirect("/api/payment/package-callback?sessionId=" + sessionId);
+        // API restart olduqda in-memory session itirilir.
+        // SessionPayments c?dv?lind?n BankSessionId il? callback path-? mü?yy?n edirik.
+        var isSessionPayment = context.SessionPayments
+            .Any(p => p.BankSessionId == sessionId);
+
+        var fallbackCallback = isSessionPayment
+            ? "/api/session-payment/callback"
+            : "/api/payment/package-callback";
+
+        return Redirect(fallbackCallback + "?sessionId=" + sessionId);
     }
 
     [HttpGet("3dsecure")]
@@ -79,7 +118,8 @@ public class MockPaymentController(IConfiguration configuration) : ControllerBas
         if (otp is "123456" or "000000")
         {
             MockBankService.ApproveSession(sessionId);
-            return Redirect("/api/payment/package-callback?sessionId=" + sessionId);
+            var callbackPath = session.CallbackPath ?? "/api/payment/package-callback";
+            return Redirect(callbackPath + "?sessionId=" + sessionId);
         }
 
         return Content(ThreeDSecurePage.BuildError(session.SessionId, session.Amount), "text/html");

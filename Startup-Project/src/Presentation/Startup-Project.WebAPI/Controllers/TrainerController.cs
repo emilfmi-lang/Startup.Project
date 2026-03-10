@@ -45,13 +45,18 @@ public class TrainerController(ITrainerService trainerService) : ControllerBase
     public async Task<IActionResult> AddReview(Guid id, [FromBody] TrainerReviewCreateDto dto)
         => Ok(await trainerService.AddReviewAsync(id, dto));
 
-    [HttpDelete("{id}/reviews/{reviewId}")]
-    [Authorize]
-    public async Task<IActionResult> DeleteReview(Guid id, string reviewId)
-        => Ok(await trainerService.DeleteTrainerReviewAsync(id, reviewId));
+        [HttpDelete("{id}/reviews/{reviewId}")]
+        [Authorize]
+        public async Task<IActionResult> DeleteReview(Guid id, string reviewId)
+            => Ok(await trainerService.DeleteTrainerReviewAsync(id, reviewId));
 
-    [HttpPost("apply-online")]
-    [Authorize]
-    public async Task<IActionResult> ApplyAsOnlineTrainer([FromBody] OnlineTrainerApplyDto dto)
-        => Ok(await trainerService.ApplyAsOnlineTrainerAsync(dto));
-}
+        [HttpGet("{id}/sessions")]
+        [AllowAnonymous]
+        public async Task<IActionResult> GetTrainerSessions(Guid id)
+            => Ok(await trainerService.GetTrainerPublicSessionsAsync(id));
+
+        [HttpPost("apply-online")]
+        [Authorize]
+        public async Task<IActionResult> ApplyAsOnlineTrainer([FromBody] OnlineTrainerApplyDto dto)
+            => Ok(await trainerService.ApplyAsOnlineTrainerAsync(dto));
+    }
