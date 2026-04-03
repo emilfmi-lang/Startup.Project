@@ -12,9 +12,6 @@ public class SettingsController(ISettingsService settingsService) : ControllerBa
 {
     #region -------------------- OVERVIEW --------------------
 
-    /// <summary>
-    /// Tam Settings data (Profile + Notifications + Preferences + Sessions count)
-    /// </summary>
     [HttpGet]
     public async Task<IActionResult> GetOverview()
         => Ok(await settingsService.GetSettingsOverviewAsync());
@@ -23,30 +20,18 @@ public class SettingsController(ISettingsService settingsService) : ControllerBa
 
     #region -------------------- PROFILE --------------------
 
-    /// <summary>
-    /// Profil m?lumatlar?
-    /// </summary>
     [HttpGet("profile")]
     public async Task<IActionResult> GetProfile()
         => Ok(await settingsService.GetProfileAsync());
 
-    /// <summary>
-    /// Profil yenil?
-    /// </summary>
     [HttpPut("profile")]
     public async Task<IActionResult> UpdateProfile([FromBody] UpdateProfileDto dto)
         => Ok(await settingsService.UpdateProfileAsync(dto));
 
-    /// <summary>
-    /// Profil ??kli yükl?
-    /// </summary>
     [HttpPost("profile/photo")]
     public async Task<IActionResult> ChangePhoto(IFormFile photo)
         => Ok(await settingsService.ChangePhotoAsync(photo));
 
-    /// <summary>
-    /// Profil ??kli sil
-    /// </summary>
     [HttpDelete("profile/photo")]
     public async Task<IActionResult> RemovePhoto()
         => Ok(await settingsService.RemovePhotoAsync());
